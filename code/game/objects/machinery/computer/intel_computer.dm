@@ -70,13 +70,15 @@
 	supply_reward = initial(supply_reward)
 	dropship_reward = initial(dropship_reward)
 	visible_message(span_notice("[src] beeps as it finishes printing the disc."))
-	minor_announce("Classified data extraction has been completed in [get_area(src)].  A disk has been produced that is worth [supply_reward] supply points, [dropship_reward] dropship points, [dropship_reward/2] credits, and is [max_chain ? "part of an intel chain of length [max_chain]" : "not part of an intel chain"].", title = "Intel Division")
+	var/sound/printed_ding = sound('sound/machines/ding.ogg', volume = 25)
+	minor_announce("Classified data extraction has been completed in [get_area(src)].  A disk has been produced that is worth [supply_reward] supply points, [dropship_reward] dropship points, [dropship_reward/2] credits, and is [max_chain ? "part of an intel chain of length [max_chain]" : "not part of an intel chain"].", title = "Intel Division", alert = printed_ding, should_play_sound = TRUE)
 	for(var/hivenumber in GLOB.hive_datums)
 		var/datum/job/xeno_job = SSjob.GetJobType(GLOB.hivenumber_to_job_type[hivenumber])
 		GLOB.hive_datums[hivenumber].xeno_message(
 			"A disk has been produced at [get_area(src)] that is worth [floor(supply_reward/160)] ambrosia, [round(supply_reward/2, 0.1)] psypoints and [round(floor(supply_reward/60)/xeno_job.job_points_needed, 0.01)] burrowed larvae. It is [max_chain ? "part of an intel chain of length [max_chain]" : "not part of an intel chain"].",
 			size = 3,
 			target = new_disk,
+			sound = printed_ding,
 			report_distance = TRUE,
 			)
 	SStgui.close_uis(src)
