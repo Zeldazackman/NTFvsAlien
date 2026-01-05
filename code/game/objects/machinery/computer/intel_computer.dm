@@ -166,7 +166,8 @@
 		supply_reward += used_disk.supply_reward + max_chain*75
 		dropship_reward += used_disk.dropship_reward + max_chain*50
 		qdel(used_disk)
-		to_chat(user, span_notice("You insert the disk into the intel computer.  The next disk this computer produces will be worth [supply_reward] supply points, [dropship_reward] dropship points, [round(dropship_reward/2)] credits, and be part of an intel chain of length [max_chain]."))
+		to_chat(user, span_notice("You insert the disk into [src].  The next disk [src] produces will be worth [supply_reward] supply points, [dropship_reward] dropship points, [round(dropship_reward/2)] credits, and be part of an intel chain of length [max_chain]."))
+		visible_message(span_notice("[user] inserts the disk into [src].  The next disk [src] produces will be worth [supply_reward] supply points, [dropship_reward] dropship points, [round(dropship_reward/2)] credits, and be part of an intel chain of length [max_chain]."), ignored_mob = user)
 		return TRUE
 	. = ..()
 
