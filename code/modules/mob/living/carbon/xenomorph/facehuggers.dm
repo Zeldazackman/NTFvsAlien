@@ -562,9 +562,9 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 		else
 			catch_chance -= max(hugged.getStaminaLoss() * 0.25)
 		if(hugged.get_inactive_held_item())
-			catch_chance  *= 0.8
+			catch_chance  *= 0.7
 		if(hugged.get_active_held_item())
-			catch_chance *= 0.65
+			catch_chance *= 0.45
 		if(implanted_embryos)
 			catch_chance = 100 * (catch_chance*3 / (catch_chance*2 + 100))
 
