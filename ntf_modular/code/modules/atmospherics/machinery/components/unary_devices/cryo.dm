@@ -72,6 +72,8 @@
 
 /obj/structure/bed/chair/stasis/AltClick(mob/user)
 	. = ..()
+	if(!user.Adjacent(src))
+		return
 	playsound(loc, 'sound/items/ratchet.ogg', 25, 1)
 	if(anchored)
 		to_chat(user, span_notice("You unanchor [src]."))
