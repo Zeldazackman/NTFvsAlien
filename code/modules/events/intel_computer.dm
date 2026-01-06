@@ -48,7 +48,7 @@
 				weight = initial(weight)
 				return
 
-	switch(active_computers)
+	switch(length(active_computers))
 		if(0)
 			weight = initial(weight)*108
 		if(1)
