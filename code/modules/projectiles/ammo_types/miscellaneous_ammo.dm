@@ -51,7 +51,7 @@
 	accurate_range = 15
 	damage_type = STAMINA
 	armor_type = BIO
-	damage = 40
+	damage = 57
 	penetration = 0
 	shrapnel_chance = 0
 	///percentage of xenos total plasma to drain when hit by a pepperball
@@ -66,7 +66,7 @@
 			X.use_plasma(drain_multiplier * X.xeno_caste.plasma_max * X.xeno_caste.plasma_regen_limit)
 
 /datum/ammo/bullet/pepperball/pepperball_mini
-	damage = 30
+	damage = 42
 	drain_multiplier = 0.02
 	plasma_drain = 15
 
