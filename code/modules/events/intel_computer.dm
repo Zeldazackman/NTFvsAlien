@@ -20,7 +20,6 @@
 	weight *= 108
 
 /datum/round_event_control/intel_computer/proc/recalculate_weight(datum/controller/subsystem/processing/dcs/dcs, obj/machinery/computer/intel_computer/source_computer, obj/item/disk/intel_disk/new_disk)
-	log_world("round_event_control/intel_computer : source computer = [logdetails(source_computer)], new disk = [logdetails(new_disk)]")
 	if(istype(source_computer))
 		if(istype(new_disk))
 			active_computers.RemoveAll(source_computer)
