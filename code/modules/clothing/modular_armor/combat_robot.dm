@@ -175,7 +175,11 @@
 
 //---- Medium helmets with attachments
 /obj/item/clothing/head/modular/robot/hod
-	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/visor/marine/robot, /obj/item/armor_module/module/hod_head)
+	starting_attachments = list(
+	/obj/item/armor_module/storage/helmet,
+	/obj/item/armor_module/armor/visor/marine/robot,
+	// /obj/item/armor_module/module/hod_head
+	)
 
 /obj/item/clothing/head/modular/robot/light
 	name = "\improper XN-1-L upper armor plating"
