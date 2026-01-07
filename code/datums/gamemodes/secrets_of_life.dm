@@ -154,14 +154,14 @@
 		xenorespawn_time = 5 MINUTES
 		bioscan_interval = 15 MINUTES
 		round_type_flags &= ~MODE_XENO_GRAB_DEAD_ALLOWED
-		GLOB.time_before_dnr = 150
+		GLOB.time_before_dnr = initial(GLOB.time_before_dnr)
 	else
 		evo_requirements = list(
 			/datum/xeno_caste/queen = 0,
 			/datum/xeno_caste/king = 0,
 			/datum/xeno_caste/dragon = 0,
 		)
-		GLOB.time_before_dnr = 1300
+		GLOB.time_before_dnr = 2400 // 40 minutes
 		respawn_time = initial(respawn_time)
 		xenorespawn_time = initial(xenorespawn_time)
 		bioscan_interval = initial(bioscan_interval)
