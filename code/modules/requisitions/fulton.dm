@@ -274,7 +274,7 @@
 	if(care_about_anchored && movable_target.anchored)
 		balloon_alert(user, "Cannot extract anchored")
 		return FALSE
-	if(do_after_time && (user.do_actions || !do_after(user, do_after_time, TRUE, target)))
+	if(do_after_time && (user.do_actions || !do_after(user, do_after_time, TRUE, target, BUSY_ICON_HOSTILE, BUSY_ICON_DANGER, PROG_BAR_GENERIC)))
 		return
 	if(require_living_to_be_dead && isliving(target))
 		var/mob/living/living_target = target
