@@ -52,7 +52,7 @@
 
 /obj/item/clothing/suit/modular/tdf/hodgrenades
 	starting_attachments = list(
-		/obj/item/armor_module/module/ballistic_armor,
+//		/obj/item/armor_module/module/ballistic_armor,
 		/obj/item/armor_module/storage/grenade,
 	)
 
