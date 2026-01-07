@@ -116,6 +116,7 @@
 	respawn_time = 5 MINUTES
 	bioscan_interval = 30 MINUTES
 	deploy_time_lock = 15 SECONDS
+	custom_dnr_time = 2400 //40 minutes till DNR
 	var/list/datum/job/stat_restricted_jobs = list(/datum/job/survivor/prisoner,/datum/job/other/prisoner,/datum/job/other/prisonersom,/datum/job/other/prisonerclf)
 
 	var/pop_lock = FALSE //turns false post setup
