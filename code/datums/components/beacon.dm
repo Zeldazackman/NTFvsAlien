@@ -233,5 +233,7 @@
 
 /datum/component/beacon/proc/throw_activate(atom/movable/source)
 	SIGNAL_HANDLER
+	/* This does not compile
 	if(!active)
 		INVOKE_ASYNC(src, PROC_REF(activate), source, user)
+	*/
