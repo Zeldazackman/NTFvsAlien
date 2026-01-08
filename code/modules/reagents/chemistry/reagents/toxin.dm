@@ -470,14 +470,14 @@
 	var/crit_threshold = L.get_crit_threshold()
 	var/healthfactor = (L.health - crit_threshold)/(L.getMaxHealth() - crit_threshold)
 	switch(current_cycle * healthfactor)
-		if(1 to 20)
+		if(1 to 18)
 			power = (2*effect_str) //While stamina loss is going, stamina regen apparently doesn't happen, so I can keep this smaller.
 			L.reagent_pain_modifier -= PAIN_REDUCTION_LIGHT
-		if(21 to 45)
+		if(19 to 40)
 			power = (6*effect_str)
 			L.reagent_pain_modifier -= PAIN_REDUCTION_HEAVY
 			L.jitter(4) //Shows that things are bad
-		if(46 to INFINITY)
+		if(41 to INFINITY)
 			power = (15*effect_str)
 			L.reagent_pain_modifier -= PAIN_REDUCTION_VERY_HEAVY
 			L.jitter(8) //Shows that things are *really* bad
