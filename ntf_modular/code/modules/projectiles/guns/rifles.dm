@@ -108,7 +108,6 @@
 	name = "high caliber tranq rifle bullet"
 	hud_state = "sniper_heavy"
 	damage_type = STAMINA
-	plasma_drain = 30
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_SNIPER
 	damage = 50
 	penetration = 30
@@ -125,7 +124,6 @@
 	name = "high caliber bluescreen rifle bullet"
 	hud_state = "sniper_heavy"
 	damage_type = BRUTE
-	plasma_drain = 20
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_SNIPER
 	damage = 50
 	penetration = 10

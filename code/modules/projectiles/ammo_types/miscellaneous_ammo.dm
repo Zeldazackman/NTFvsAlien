@@ -57,6 +57,7 @@
 	///percentage of xenos total plasma to drain when hit by a pepperball
 	var/drain_multiplier = 0.025
 	bullet_color = COLOR_LIGHT_PINK
+	plasma_drain = 20
 
 /datum/ammo/bullet/pepperball/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
 	if(isxeno(target_mob))
@@ -66,6 +67,7 @@
 /datum/ammo/bullet/pepperball/pepperball_mini
 	damage = 42
 	drain_multiplier = 0.02
+	plasma_drain = 15
 
 /datum/ammo/alloy_spike
 	name = "alloy spike"
