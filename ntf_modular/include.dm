@@ -121,6 +121,8 @@
 #include "code\modules\clothing\suits\marine_armor.dm"
 #include "code\modules\clothing\under\marine_uniform.dm"
 #include "code\modules\clothing\under\miscellaneous.dm"
+#include "code\modules\cm_phone\internal_phone.dm"
+#include "code\modules\cm_phone\phone.dm"
 #include "code\modules\condor\cas_chair.dm"
 #include "code\modules\factory\howtopaper.dm"
 #include "code\modules\factory\parts.dm"

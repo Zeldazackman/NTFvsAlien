@@ -27,7 +27,10 @@
 	active_icon_state = _active_icon_state
 
 /datum/component/beacon/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, PROC_REF(on_attack_self))
+	if(!anchor)
+		RegisterSignal(parent, COMSIG_MOVABLE_POST_THROW, PROC_REF(throw_activate))
+	else
+		RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, PROC_REF(on_attack_self))
 	RegisterSignal(parent, COMSIG_ATOM_UPDATE_NAME, PROC_REF(on_update_name))
 	RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, PROC_REF(on_attack_hand))
 	RegisterSignal(parent, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
@@ -42,6 +45,7 @@
 		COMSIG_ATOM_EXAMINE,
 		COMSIG_ATOM_UPDATE_ICON_STATE,
 		COMSIG_MOVABLE_Z_CHANGED,
+		COMSIG_MOVABLE_POST_THROW,
 		))
 	QDEL_NULL(beacon_datum)
 	QDEL_NULL(beacon_cam)
@@ -61,6 +65,9 @@
 	SIGNAL_HANDLER
 
 	if(!ishuman(user))
+		return
+
+	if(!user.get_active_held_item(source))
 		return
 
 	if(length(user.do_actions))
@@ -164,7 +171,7 @@
 ///Adds an extra line of instructions to the examine
 /datum/component/beacon/proc/on_examine(atom/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
-	examine_list += span_notice("Activate in hand to create a supply beacon signal.")
+	examine_list += span_notice(anchor ? "Activate in hand to create a supply beacon signal." : "Toss this to activate a supply beacon signal.")
 
 ///If the signal source dies, the beacon datum should as well
 /datum/component/beacon/proc/clean_beacon_datum()
@@ -223,3 +230,8 @@
 /datum/supply_beacon/Destroy()
 	GLOB.supply_beacon -= name
 	return ..()
+
+/datum/component/beacon/proc/throw_activate(atom/movable/source)
+	SIGNAL_HANDLER
+	if(!active)
+		INVOKE_ASYNC(src, PROC_REF(activate), source, user)
