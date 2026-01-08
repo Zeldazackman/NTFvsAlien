@@ -9126,7 +9126,7 @@
 /obj/machinery/light{
 	light_color = "#da2f1b"
 	},
-/obj/structure/prop/tgbrokenvendor/colablack,
+/obj/machinery/vending/cola,
 /turf/open/floor/wood,
 /area/mainship/hull/starboard_hull)
 "iTF" = (
@@ -21772,7 +21772,7 @@
 	},
 /area/mainship/hallways/starboard_hallway)
 "uVE" = (
-/obj/structure/prop/tgbrokenvendor/coffee,
+/obj/machinery/vending/coffee,
 /turf/open/floor/wood,
 /area/mainship/hull/starboard_hull)
 "uVR" = (
@@ -21816,7 +21816,7 @@
 /turf/open/floor/plating,
 /area/mainship/hallways/hangar)
 "uWU" = (
-/obj/structure/prop/tgbrokenvendor/snackbrokebed,
+/obj/machinery/vending/snack,
 /turf/open/floor/wood,
 /area/mainship/hull/starboard_hull)
 "uXy" = (
