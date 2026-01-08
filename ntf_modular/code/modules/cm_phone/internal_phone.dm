@@ -124,6 +124,19 @@ GLOBAL_LIST_EMPTY(radio_packs)
 		return
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
+		switch(user.faction)
+			if(FACTION_TERRAGOV)
+				internal_transmitter.phone_category = PHONE_MARINE
+			if(FACTION_SOM)
+				internal_transmitter.phone_category = PHONE_SOM
+			if(FACTION_VSD)
+				internal_transmitter.phone_category = PHONE_KZ
+			if(FACTION_CLF)
+				internal_transmitter.phone_category = PHONE_CLF
+			if(FACTION_ICC)
+				internal_transmitter.phone_category = PHONE_CM
+			else
+				internal_transmitter.phone_category = "Civilian"
 		internal_transmitter.networks_receive = list(H.faction)
 		internal_transmitter.networks_transmit = list(H.faction)
 		if(H.comm_title)

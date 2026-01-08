@@ -44,8 +44,8 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 /datum/looping_sound/telephone/ring
 	start_sound = 'ntf_modular/sound/machines/telephone/dial.ogg'
 	start_length = 3.2 SECONDS
-	mid_sounds = 'ntf_modular/sound/machines/telephone/ring_outgoing.ogg'
-	mid_length = 2.1 SECONDS
+	mid_sounds = 'ntf_modular/sound/machines/telephone/ring_outgoing_long.ogg'
+	mid_length = 2.9 SECONDS
 	volume = 10
 
 /datum/looping_sound/telephone/busy
@@ -73,9 +73,9 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	RegisterSignal(attached_to, COMSIG_QDELETING, PROC_REF(override_delete))
 	update_icon()
 
-	outring_loop = new(attached_to)
-	busy_loop = new(attached_to)
-	hangup_loop = new(attached_to)
+	outring_loop = new(list(attached_to))
+	busy_loop = new(list(attached_to))
+	hangup_loop = new(list(attached_to))
 
 	if(!get_turf(src))
 		return
@@ -212,7 +212,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	to_chat(user, span_purple("[icon2html(src, user)] Dialing [calling_phone_id].."))
 	playsound(get_turf(user), pickup_sound)
 	timeout_timer_id = addtimer(CALLBACK(src, PROC_REF(reset_call), TRUE), timeout_duration, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
-	outring_loop.start()
+	outring_loop.start(attached_to)
 
 	START_PROCESSING(SSobj, src)
 	START_PROCESSING(SSobj, T)
@@ -261,7 +261,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	to_chat(user, span_purple("[icon2html(src, user)] Picked up a call from [T.phone_id]."))
 	playsound(get_turf(user), pickup_sound)
 
-	T.outring_loop.stop()
+	T.outring_loop.stop(attached_to)
 	user.put_in_active_hand(attached_to)
 	update_icon()
 
@@ -286,14 +286,14 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 		if(T.attached_to && ismob(T.attached_to.loc))
 			var/mob/M = T.attached_to.loc
 			to_chat(M, span_purple("[icon2html(src, M)] You hear a click as the phone goes dead. [phone_id] has hung up on you."))
-			T.hangup_loop.start()
+			T.hangup_loop.start(attached_to)
 
 		if(attached_to && ismob(attached_to.loc))
 			var/mob/M = attached_to.loc
 			if(timeout)
 				to_chat(M, span_purple("[icon2html(src, M)] Your call to [T.phone_id] has reached voicemail, nobody picked up the phone."))
-				busy_loop.start()
-				outring_loop.stop()
+				busy_loop.start(attached_to)
+				outring_loop.stop(attached_to)
 			else
 				to_chat(M, span_purple("[icon2html(src, M)] You have hung up on [T.phone_id]."))
 
@@ -317,7 +317,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 		T.update_icon()
 		STOP_PROCESSING(SSobj, T)
 
-	outring_loop.stop()
+	outring_loop.stop(attached_to)
 
 	STOP_PROCESSING(SSobj, src)
 
@@ -359,9 +359,9 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 	attached_to.forceMove(src)
 	reset_call()
-	busy_loop.stop()
-	outring_loop.stop()
-	hangup_loop.stop()
+	busy_loop.stop(attached_to)
+	outring_loop.stop(attached_to)
+	hangup_loop.stop(attached_to)
 
 	update_icon()
 
@@ -519,6 +519,9 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 	if(attached_to.tether_holder)
 		tether_from = attached_to.tether_holder
+
+	if(tether_from == tether_to)
+		return
 
 	tether_effect = tether_from.beam(tether_to, "wire", 'ntf_modular/icons/effects/beam.dmi', INFINITY, attached_to.range)
 	RegisterSignal(tether_effect, COMSIG_QDELETING, PROC_REF(reset_tether))

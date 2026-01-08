@@ -15846,7 +15846,7 @@
 /obj/structure/transmitter/rotary{
 	pixel_y = 6;
 	phone_category = "Combat Information Center";
-	phone_id = "NTC CIC"
+	phone_id = "CIC"
 	},
 /turf/open/floor/plating/mainship,
 /area/mainship/command/cic)
