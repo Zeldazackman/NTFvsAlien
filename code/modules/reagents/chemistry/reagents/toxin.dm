@@ -220,8 +220,8 @@
 	color = COLOR_TOXIN_SLEEPTOXIN
 	toxpwr = 0
 	custom_metabolism = REAGENTS_METABOLISM
-	overdose_threshold = REAGENTS_OVERDOSE*2
-	overdose_crit_threshold = REAGENTS_OVERDOSE_CRITICAL*2
+	overdose_threshold = REAGENTS_OVERDOSE*3
+	overdose_crit_threshold = REAGENTS_OVERDOSE_CRITICAL*3
 	scannable = TRUE
 	taste_description = "cough syrup"
 	trait_flags = BRADYCARDICS
