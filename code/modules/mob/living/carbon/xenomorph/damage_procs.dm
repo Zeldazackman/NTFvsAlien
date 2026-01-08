@@ -87,7 +87,7 @@
 			adjustFireLoss(damage)
 		if(STAMINA)
 			use_plasma(damage*0.125)
-			use_stun_health(damage*1.3)
+			use_stun_health(damage*1.15)
 
 	if(updating_health)
 		updatehealth()

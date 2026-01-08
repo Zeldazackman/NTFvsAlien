@@ -84,7 +84,6 @@
 /mob/living/carbon/xenomorph/proc/handle_critical_health_updates(seconds_per_tick)
 	if(loc_weeds_type)
 		heal_wounds(XENO_RESTING_HEAL, FALSE, seconds_per_tick) // healing in critical while on weeds ignores scaling
-		gain_stun_health(XENO_RESTING_HEAL)
 	else if(!endure) //If we're not Enduring we bleed out
 		adjustBruteLoss(XENO_CRIT_DAMAGE * seconds_per_tick * XENO_PER_SECOND_LIFE_MOD)
 
@@ -112,7 +111,7 @@
 	var/list/heal_data = list(amount, amount)
 	SEND_SIGNAL(src, COMSIG_XENOMORPH_HEALTH_REGEN, heal_data, seconds_per_tick)
 	HEAL_XENO_DAMAGE(src, heal_data[1], TRUE)
-	gain_stun_health(heal_data[2])
+	gain_stun_health(heal_data[2] * (CHECK_BITFIELD(xeno_caste.caste_flags, CASTE_PLASMADRAIN_IMMUNE) ? (health / maxHealth) : (plasma_stored / (xeno_caste.plasma_max))))
 	return heal_data // [1] = amount of unused healing, [2] = raw healing
 
 /mob/living/carbon/xenomorph/proc/handle_living_plasma_updates(seconds_per_tick)
