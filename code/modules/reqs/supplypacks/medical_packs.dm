@@ -132,6 +132,7 @@ MEDICAL
 	contains = list(
 		/obj/item/reagent_containers/hypospray/autoinjector/russian_red,
 	)
+	containertype = /obj/structure/closet/crate/secure/surgery
 	cost = 350
 
 /datum/supply_packs/medical/earmuffs
