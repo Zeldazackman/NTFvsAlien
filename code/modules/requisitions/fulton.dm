@@ -52,7 +52,11 @@
 		user.temporarilyRemoveItemFromInventory(src) //Removes the item without qdeling it, qdeling it this early will break the rest of the procs
 		moveToNullspace()
 
-	qdel(spirited_away)
+	if(isliving(spirited_away))
+		var/mob/living/spirited_away_living = spirited_away
+		spirited_away_living.despawn()
+	if(!QDELETED(spirited_away))
+		qdel(spirited_away)
 
 
 /obj/item/fulton_extraction_pack/proc/do_checks(atom/movable/spirited_away, mob/user)

@@ -16378,6 +16378,12 @@
 	},
 /turf/open/floor/wood,
 /area/mainship/hallways/dorm3)
+"nHY" = (
+/obj/structure/fulton_extraction_point{
+	pixel_x = -1
+	},
+/turf/open/floor/prison,
+/area/mainship/groundhq/ntf/shipboard/brig_cells)
 "nIJ" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment,
@@ -56357,7 +56363,7 @@ ihL
 tXd
 tXd
 ihL
-tXd
+nHY
 tXd
 tXd
 ihL
