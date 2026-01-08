@@ -132,7 +132,7 @@ MEDICAL
 	contains = list(
 		/obj/item/reagent_containers/hypospray/autoinjector/russian_red,
 	)
-	cost = 50
+	cost = 350
 
 /datum/supply_packs/medical/earmuffs
 	name = "Earmuffs"
