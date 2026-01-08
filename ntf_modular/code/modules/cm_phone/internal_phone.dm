@@ -24,6 +24,7 @@ GLOBAL_LIST_EMPTY(radio_packs)
 	var/phone_category = PHONE_MARINE
 	var/list/networks_receive = list(FACTION_TERRAGOV)
 	var/list/networks_transmit = list(FACTION_TERRAGOV)
+	var/mode = 1  /// 0 = beacon, 1 = phone
 
 /datum/action/item_action/rto_pack/use_phone/New(mob/living/user, obj/item/holder)
 	..()
@@ -49,6 +50,31 @@ GLOBAL_LIST_EMPTY(radio_packs)
 	internal_transmitter.networks_transmit = networks_transmit
 	RegisterSignal(internal_transmitter, "COMSIG_TRANSMITTER_UPDATE_ICON", PROC_REF(check_for_ringing))
 	GLOB.radio_packs += src
+	update_mode()
+
+/obj/item/storage/backpack/marine/radiopack/examine(mob/user)
+	. = ..()
+	. += "\The [src] can switch between beacon mode and phone mode using a screwdriver."
+
+/obj/item/storage/backpack/marine/radiopack/screwdriver_act(mob/living/user, obj/item/I)
+	mode = !mode
+	playsound(src, 'sound/items/screwdriver2.ogg', 15, 1)
+	update_mode(user)
+	return TRUE
+
+/obj/item/storage/backpack/marine/radiopack/proc/update_mode(mob/living/user)
+	if(mode)
+		if(user)
+			user.balloon_alert(user, "Phone mode")
+		var/datum/component/beacon/elbeacon = GetComponent(/datum/component/beacon)
+		if(elbeacon.active)
+			elbeacon.toggle_activation(src, user)
+		remove_component(/datum/component/beacon)
+	else
+		if(user)
+			user.balloon_alert(user, "Beacon mode")
+		AddComponent(/datum/component/beacon, FALSE, 0, icon_state + "_active")
+
 
 /obj/item/storage/backpack/marine/radiopack/proc/check_for_ringing()
 	SIGNAL_HANDLER
@@ -98,6 +124,8 @@ GLOBAL_LIST_EMPTY(radio_packs)
 		return
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
+		internal_transmitter.networks_receive = list(H.faction)
+		internal_transmitter.networks_transmit = list(H.faction)
 		if(H.comm_title)
 			internal_transmitter.phone_id = "[H.comm_title] [H]"
 		else if(H.job)
@@ -116,6 +144,9 @@ GLOBAL_LIST_EMPTY(radio_packs)
 	autoset_phone_id(null) // Disable phone when dropped
 
 /obj/item/storage/backpack/marine/radiopack/proc/use_phone(mob/user)
+	if(!mode)
+		balloon_alert(user, "\The [src] is currently in beacon mode.")
+		return
 	internal_transmitter.attack_hand(user)
 
 

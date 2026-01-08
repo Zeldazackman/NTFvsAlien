@@ -36,9 +36,9 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	var/list/networks_receive = list(FACTION_TERRAGOV)
 	var/list/networks_transmit = list(FACTION_TERRAGOV)
 
-	var/datum/looping_sound/busy_loop
-	var/datum/looping_sound/hangup_loop
-	var/datum/looping_sound/outring_loop
+	var/datum/looping_sound/telephone/busy/busy_loop
+	var/datum/looping_sound/telephone/hangup/hangup_loop
+	var/datum/looping_sound/telephone/ring/outring_loop
 	var/call_sound = 'ntf_modular/sound/machines/telephone/telephone_ring.ogg'
 
 /datum/looping_sound/telephone/ring
@@ -627,40 +627,35 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 /obj/structure/transmitter/rotary/no_dnd
 	do_not_disturb = PHONE_DND_FORBIDDEN
 
-/obj/structure/transmitter/rotary/fax_responder
-	phone_category = "Comms Relay"
-	networks_receive = list("Fax Responders")
-	pixel_x = -6
-	pixel_y = 6
-
 /obj/structure/transmitter/colony_net
+	color = COLOR_CYAN
 	networks_receive = list(FACTION_NEUTRAL)
 	networks_transmit = list(FACTION_NEUTRAL)
 
 /obj/structure/transmitter/colony_net/rotary
 	name = "rotary telephone"
 	icon_state = "rotary_phone"
-	color = COLOR_CYAN
 	desc = "The finger plate is a little stiff."
 
 /obj/structure/transmitter/som_net
+	color = COLOR_ORANGE
 	networks_receive = list(FACTION_SOM)
 	networks_transmit = list(FACTION_SOM)
 
 /obj/structure/transmitter/som_net/rotary
 	name = "rotary telephone"
 	icon_state = "rotary_phone"
-	color = COLOR_ORANGE
+
 	desc = "The finger plate is a little stiff."
 
 /obj/structure/transmitter/clf_net
+	color = COLOR_PURPLE
 	networks_receive = list(FACTION_CLF)
 	networks_transmit = list(FACTION_CLF)
 
 /obj/structure/transmitter/clf_net/rotary
 	name = "rotary telephone"
 	icon_state = "rotary_phone"
-	color = COLOR_PURPLE
 	desc = "The finger plate is a little stiff."
 
 /obj/structure/transmitter/kz_net
@@ -668,9 +663,9 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	networks_transmit = list(FACTION_VSD)
 
 /obj/structure/transmitter/kz_net/rotary
+	color = COLOR_YELLOW
 	name = "rotary telephone"
 	icon_state = "rotary_phone"
-	color = COLOR_YELLOW
 	desc = "The finger plate is a little stiff."
 
 /obj/structure/transmitter/cm_net
@@ -678,7 +673,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	networks_transmit = list(FACTION_ICC)
 
 /obj/structure/transmitter/cm_net/rotary
+	color = COLOR_MODERATE_BLUE
 	name = "rotary telephone"
 	icon_state = "rotary_phone"
-	color = COLOR_MODERATE_BLUE
 	desc = "The finger plate is a little stiff."

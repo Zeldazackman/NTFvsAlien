@@ -286,7 +286,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/freezer,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "amY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -728,7 +728,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/mainship/security{
-	name = "\improper Corpsec Office"
+	name = "\improper Luxury Cell"
 	},
 /turf/open/floor/wood,
 /area/mainship/shipboard/port_missiles{
@@ -2066,6 +2066,12 @@
 /obj/structure/table/mainship/nometal,
 /obj/effect/spawner/random/misc/paperbin,
 /obj/item/tool/pen/blue,
+/obj/structure/transmitter/rotary{
+	pixel_x = 6;
+	pixel_y = 6;
+	phone_category = "Command";
+	phone_id = "Commander's Office"
+	},
 /turf/open/floor/carpet/side{
 	dir = 4
 	},
@@ -2716,6 +2722,11 @@
 	},
 /obj/structure/cable,
 /obj/machinery/camera/autoname/mainship,
+/obj/structure/transmitter{
+	pixel_y = 24;
+	phone_category = "Engineering";
+	phone_id = "Telecommunications"
+	},
 /turf/open/floor/mainship/mono,
 /area/mainship/command/telecomms)
 "ckh" = (
@@ -2937,7 +2948,9 @@
 /area/mainship/hull/upper_hull)
 "cuj" = (
 /obj/structure/table/mainship/nometal,
-/obj/machinery/computer/marine_card,
+/obj/machinery/computer/marine_card{
+	dir = 1
+	},
 /obj/machinery/camera/autoname/mainship{
 	dir = 4
 	},
@@ -3606,13 +3619,13 @@
 	},
 /obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
 	dir = 2;
-	id = "bigdorm2";
+	id = "bigdorm5";
 	name = "\improper Quarters Privacy Shutters"
 	},
 /obj/structure/cable,
 /obj/machinery/door/airlock/mainship/generic{
 	dir = 1;
-	name = "\improper Quarters 6"
+	name = "\improper Quarters 5"
 	},
 /turf/open/floor/wood,
 /area/mainship/hallways/dorm3)
@@ -3926,6 +3939,15 @@
 /obj/effect/landmark/start/latejoin,
 /turf/open/floor/mainship/mono,
 /area/mainship/living/cryo_cells)
+"diD" = (
+/obj/structure/cable,
+/obj/structure/transmitter{
+	pixel_y = 22;
+	phone_category = "Dormitories";
+	phone_id = "Quarters 7"
+	},
+/turf/open/floor/wood,
+/area/mainship/hallways/dorm3)
 "diF" = (
 /obj/structure/rack,
 /obj/item/weapon/gun/rifle/famas,
@@ -4600,6 +4622,11 @@
 /obj/structure/paper_bin,
 /obj/item/tool/pen/blue,
 /obj/structure/table/wood/fancy,
+/obj/structure/transmitter/rotary{
+	phone_category = "Command";
+	phone_id = "OO Office";
+	pixel_y = 10
+	},
 /turf/open/floor/wood,
 /area/mainship/groundhq/ntf/command/corporateliaison)
 "dTM" = (
@@ -4816,6 +4843,11 @@
 /area/mainship/command/self_destruct)
 "eeM" = (
 /obj/structure/table/wood/fancy,
+/obj/structure/transmitter/rotary{
+	phone_category = "Corpsec";
+	phone_id = "Luxury Cell";
+	pixel_x = 6
+	},
 /turf/open/floor/carpet{
 	dir = 10;
 	icon_state = "carpetside"
@@ -4916,6 +4948,12 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/reagent_containers/glass/beaker,
 /obj/item/reagent_containers/glass/beaker,
+/obj/structure/transmitter/rotary{
+	pixel_x = 6;
+	pixel_y = 6;
+	phone_id = "Chemistry";
+	phone_category = "Medical"
+	},
 /turf/open/floor/mainship/sterile/side,
 /area/mainship/medical/upper_medical{
 	name = "Shipside Medbay"
@@ -5726,6 +5764,11 @@
 /obj/structure/table/mainship,
 /obj/item/storage/box/ids,
 /obj/item/tool/pen,
+/obj/structure/transmitter/colony_net/rotary{
+	phone_category = "Diplomacy";
+	phone_id = "NTC";
+	pixel_y = 12
+	},
 /turf/open/floor/mainship/mono,
 /area/mainship/command/cic)
 "eWT" = (
@@ -5965,6 +6008,15 @@
 /obj/effect/decal/cleanable/blood/gibs/robot,
 /turf/open/floor/mech_bay_recharge_floor,
 /area/mainship/living/tankerbunks)
+"fff" = (
+/obj/structure/transmitter{
+	pixel_y = -22;
+	phone_category = "Dormitories";
+	phone_id = "Quarters 4";
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/mainship/hallways/dorm3)
 "ffB" = (
 /obj/machinery/door/poddoor/shutters/mainship/open/checkpoint{
 	dir = 2;
@@ -6475,6 +6527,11 @@
 "fBl" = (
 /obj/effect/ai_node,
 /obj/structure/table/wood/fancy,
+/obj/structure/transmitter/rotary{
+	phone_category = "Corpsec";
+	phone_id = "Corpsec Commander";
+	pixel_x = -5
+	},
 /turf/open/floor/wood,
 /area/mainship/groundhq/ntf/shipboard/chief_mp_office{
 	name = "CC Office"
@@ -6662,6 +6719,11 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/transmitter{
+	pixel_y = 24;
+	phone_category = "Dormitories";
+	phone_id = "Public Phone"
+	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/aft_hallway{
 	name = "Ship Floor 3 Hallways"
@@ -6748,6 +6810,12 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/surgical_tray,
 /obj/item/reagent_containers/spray/cleaner,
+/obj/structure/transmitter/rotary{
+	pixel_x = 6;
+	pixel_y = 6;
+	phone_id = "Operating Theatre 2";
+	phone_category = "Medical"
+	},
 /turf/open/floor/mainship/sterile/side{
 	dir = 1
 	},
@@ -7087,6 +7155,12 @@
 "fXy" = (
 /obj/structure/table/mainship,
 /obj/machinery/computer/marine_card,
+/obj/structure/transmitter/rotary{
+	pixel_x = -10;
+	pixel_y = 6;
+	phone_category = "Combat Information Center";
+	phone_id = "NTC CIC"
+	},
 /turf/open/floor/mainship/mono,
 /area/mainship/command/cic)
 "fXH" = (
@@ -7196,6 +7270,12 @@
 /obj/item/storage/firstaid/adv,
 /obj/machinery/light/mainship{
 	dir = 1
+	},
+/obj/structure/transmitter/rotary{
+	pixel_x = 6;
+	pixel_y = 6;
+	phone_id = "Operating Theatre";
+	phone_category = "Medical"
 	},
 /turf/open/floor/mainship/sterile/side{
 	dir = 1
@@ -7471,7 +7551,7 @@
 "gnT" = (
 /obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
 	dir = 2;
-	id = 1006;
+	id = "bigdorm5";
 	name = "\improper Quarters Privacy Shutters"
 	},
 /obj/structure/window/framed/mainship/toughened{
@@ -7900,7 +7980,7 @@
 /area/mainship/squads/general)
 "gJd" = (
 /obj/machinery/door_control{
-	id = "bigdorm6"
+	id = "bigdorm1"
 	},
 /turf/open/floor/wood,
 /area/mainship/hallways/dorm2)
@@ -8021,6 +8101,11 @@
 "gMs" = (
 /obj/structure/table/mainship,
 /obj/item/storage/pill_bottle/imidazoline,
+/obj/structure/transmitter/rotary{
+	phone_category = "Engineering";
+	phone_id = "Reactors";
+	pixel_y = 6
+	},
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/engineering/engine_core)
 "gNf" = (
@@ -8808,6 +8893,9 @@
 /area/mainship/hallways/dorm2)
 "htb" = (
 /obj/machinery/optable,
+/obj/machinery/light/mainship{
+	dir = 1
+	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/medical/surgery_hallway{
 	name = "Research"
@@ -8826,6 +8914,11 @@
 "hvs" = (
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/transmitter{
+	pixel_y = 22;
+	phone_category = "Service";
+	phone_id = "Bar"
 	},
 /turf/open/floor/freezer,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
@@ -8912,6 +9005,14 @@
 /area/mainship/hallways/bow_hallway{
 	name = "Ship Floor 1 Hallways"
 	})
+"hAQ" = (
+/obj/structure/transmitter{
+	pixel_y = 24;
+	phone_category = "Service";
+	phone_id = "Strip Club"
+	},
+/turf/open/floor/mainship_hull,
+/area/mainship/groundhq/ntf/crimsonveil)
 "hBm" = (
 /obj/structure/closet/secure_closet/engineering_personal,
 /obj/item/storage/backpack/marine/engineerpack,
@@ -9389,6 +9490,12 @@
 "hYk" = (
 /obj/structure/table/mainship,
 /obj/machinery/computer/security/marinemainship_network,
+/obj/structure/transmitter/rotary{
+	pixel_x = -10;
+	pixel_y = 6;
+	phone_category = "Combat Information Center";
+	phone_id = "Bravo SO"
+	},
 /turf/open/floor/mainship/mono,
 /area/mainship/command/cic)
 "hYl" = (
@@ -9781,7 +9888,7 @@
 "inR" = (
 /obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
 	dir = 2;
-	id = 1005;
+	id = "bigdorm4";
 	name = "\improper Quarters Privacy Shutters"
 	},
 /obj/structure/window/framed/mainship/toughened{
@@ -10629,6 +10736,12 @@
 	pixel_y = 1
 	},
 /obj/item/tool/pen,
+/obj/structure/transmitter/rotary{
+	pixel_x = 6;
+	pixel_y = 6;
+	phone_category = "Medical";
+	phone_id = "Research"
+	},
 /turf/open/floor/mainship/sterile/purple/side{
 	dir = 8
 	},
@@ -11028,6 +11141,12 @@
 /area/mainship/hallways/hangar)
 "jpZ" = (
 /obj/machinery/camera/autoname,
+/obj/structure/transmitter{
+	phone_category = "Corpsec";
+	phone_id = "Prison";
+	pixel_y = 25;
+	max_integrity = 50
+	},
 /turf/open/floor/prison/darkyellow{
 	dir = 1
 	},
@@ -12288,7 +12407,7 @@
 "ksj" = (
 /obj/machinery/door/airlock/mainship/generic{
 	dir = 1;
-	name = "\improper Quarters 7"
+	name = "\improper Quarters 6"
 	},
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -12296,7 +12415,7 @@
 	},
 /obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
 	dir = 2;
-	id = "bigdorm1";
+	id = "bigdorm6";
 	name = "\improper Quarters Privacy Shutters"
 	},
 /turf/open/floor/wood,
@@ -12825,7 +12944,7 @@
 	})
 "kNB" = (
 /obj/machinery/door_control{
-	id = "bigdorm2"
+	id = "bigdorm4"
 	},
 /turf/open/floor/wood,
 /area/mainship/hallways/dorm3)
@@ -13936,7 +14055,7 @@
 	dir = 1
 	},
 /obj/machinery/door_control{
-	id = "bigdorm1";
+	id = "bigdorm6";
 	pixel_y = 8
 	},
 /turf/open/floor/wood,
@@ -14176,6 +14295,15 @@
 	},
 /turf/open/floor/mainship/stripesquare,
 /area/mainship/living/basketball)
+"lJY" = (
+/obj/structure/transmitter{
+	pixel_y = -22;
+	phone_category = "Dormitories";
+	phone_id = "Quarters 5";
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/mainship/hallways/dorm3)
 "lJZ" = (
 /obj/structure/cable,
 /obj/machinery/light/small,
@@ -14445,6 +14573,14 @@
 /obj/effect/landmark/start/job/crash/squadmarine,
 /turf/open/floor/mainship/mono,
 /area/mainship/living/cryo_cells)
+"lVv" = (
+/obj/structure/transmitter{
+	pixel_y = 24;
+	phone_category = "Corpsec";
+	phone_id = "Corpsec Lobby"
+	},
+/turf/open/floor/mainship/mono,
+/area/mainship/groundhq/ntf/shipboard/brig)
 "lWk" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -14809,6 +14945,11 @@
 /obj/machinery/camera/autoname/mainship{
 	dir = 8
 	},
+/obj/structure/transmitter/rotary{
+	phone_category = "Engineering";
+	phone_id = "CSE Office";
+	pixel_x = 12
+	},
 /turf/open/floor/mainship/orange{
 	dir = 4
 	},
@@ -15160,6 +15301,15 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/lower_hull)
+"mzm" = (
+/obj/structure/transmitter{
+	phone_category = "Service";
+	phone_id = "Synthetic Dorms";
+	dir = 8;
+	pixel_x = 15
+	},
+/turf/open/floor/mainship/mono,
+/area/mainship/hallways/synthdorms)
 "mzw" = (
 /obj/item/weapon/gun/sentry/big_sentry/premade,
 /obj/structure/barricade/solid,
@@ -15781,6 +15931,18 @@
 	},
 /turf/open/floor/wood,
 /area/mainship/living/chapel)
+"ncL" = (
+/obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
+	dir = 2;
+	id = "bigdorm3";
+	name = "\improper Quarters Privacy Shutters"
+	},
+/obj/structure/window/framed/mainship/toughened{
+	name = "kevlar-weave infused bulletproof window"
+	},
+/obj/structure/curtain/open/black,
+/turf/open/floor/plating,
+/area/mainship/hallways/dorm2)
 "ncQ" = (
 /obj/effect/turf_decal/warning_stripes/thin,
 /turf/open/floor/mainship/cargo/arrow,
@@ -15888,6 +16050,11 @@
 /obj/item/flashlight/lamp{
 	pixel_y = 10
 	},
+/obj/structure/transmitter/rotary{
+	phone_category = "Corpsec";
+	phone_id = "Interrogation";
+	pixel_y = -6
+	},
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/shipboard/brig_cells)
 "niq" = (
@@ -15942,6 +16109,12 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/groundhq/ntf/engineering/upper_engine_monitoring)
 "nks" = (
+/obj/structure/transmitter{
+	phone_category = "Medbay";
+	phone_id = "Infirmary";
+	dir = 4;
+	pixel_x = -15
+	},
 /turf/open/floor/mainship/sterile/side{
 	dir = 8
 	},
@@ -16039,6 +16212,12 @@
 /obj/item/whistle,
 /obj/item/megaphone,
 /obj/item/ammo_magazine/packet/acp,
+/obj/structure/transmitter/rotary{
+	pixel_x = 6;
+	pixel_y = 6;
+	phone_id = "FC Office";
+	phone_category = "Command"
+	},
 /turf/open/floor/wood,
 /area/mainship/ntf/fcroom)
 "nqF" = (
@@ -16360,6 +16539,11 @@
 /obj/structure/table/mainship/nometal,
 /obj/effect/spawner/random/engineering/toolbox,
 /obj/machinery/air_alarm,
+/obj/structure/transmitter/rotary{
+	phone_category = "Engineering";
+	phone_id = "Atmospherics";
+	pixel_y = 6
+	},
 /turf/open/floor/mainship/mono,
 /area/mainship/engineering/port_atmos)
 "nHD" = (
@@ -16636,6 +16820,12 @@
 	dir = 8
 	},
 /obj/item/autopsy_scanner,
+/obj/structure/transmitter/rotary{
+	pixel_x = 6;
+	pixel_y = 6;
+	phone_id = "Morgue";
+	phone_category = "Medical"
+	},
 /turf/open/floor/mainship/mono,
 /area/mainship/medical/surgery_hallway{
 	name = "Research"
@@ -16712,6 +16902,15 @@
 	dir = 4
 	},
 /area/mainship/living/basketball)
+"nVK" = (
+/obj/structure/transmitter{
+	pixel_y = -22;
+	phone_category = "Dormitories";
+	phone_id = "Quarters 3";
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/mainship/hallways/dorm2)
 "nVN" = (
 /obj/structure/bed/bunkbed,
 /obj/effect/landmark/start/job/squadmarine,
@@ -17120,6 +17319,11 @@
 /obj/item/reagent_containers/food/condiment/sugar,
 /obj/item/reagent_containers/glass/rag,
 /obj/item/book/manual/chef_recipes,
+/obj/structure/transmitter/rotary{
+	pixel_x = 10;
+	phone_category = "Service";
+	phone_id = "Bar Kitchen"
+	},
 /turf/open/floor/prison/kitchen,
 /area/mainship/groundhq/ntf/living/captain_mess{
 	name = "Kitchen"
@@ -17455,6 +17659,12 @@
 "ozW" = (
 /obj/structure/table/mainship,
 /obj/machinery/computer/secure_data,
+/obj/structure/transmitter/rotary{
+	pixel_x = -10;
+	pixel_y = 6;
+	phone_category = "Corpsec";
+	phone_id = "Third Floor Checkpoint"
+	},
 /turf/open/floor/mainship/mono,
 /area/security/checkpoint{
 	outside = 0;
@@ -17469,13 +17679,13 @@
 	},
 /obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
 	dir = 2;
-	id = "bigdorm3";
+	id = "bigdorm4";
 	name = "\improper Quarters Privacy Shutters"
 	},
 /obj/structure/cable,
 /obj/machinery/door/airlock/mainship/generic{
 	dir = 1;
-	name = "\improper Quarters 5"
+	name = "\improper Quarters 4"
 	},
 /turf/open/floor/wood,
 /area/mainship/hallways/dorm3)
@@ -17506,15 +17716,14 @@
 "oBL" = (
 /obj/machinery/door/airlock/mainship/generic{
 	dir = 1;
-	id = 7;
-	name = "\improper Quarters 7"
+	name = "\improper Quarters 3"
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
 	dir = 2;
-	id = "bigdorm4";
+	id = "bigdorm3";
 	name = "\improper Quarters Privacy Shutters"
 	},
 /obj/structure/cable,
@@ -17768,6 +17977,15 @@
 	dir = 4
 	},
 /area/mainship/squads/general)
+"oNC" = (
+/obj/structure/transmitter{
+	phone_category = "Command";
+	phone_id = "Orbital Cannon";
+	dir = 8;
+	pixel_x = 15
+	},
+/turf/open/floor/plating/plating_catwalk,
+/area/mainship/hull/upper_hull)
 "oOa" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 4
@@ -17830,6 +18048,15 @@
 /obj/structure/table/wood/fancy,
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/command/corporateliaison)
+"oRy" = (
+/obj/structure/transmitter{
+	pixel_y = -22;
+	phone_category = "Dormitories";
+	phone_id = "Quarters 2";
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/mainship/hallways/dorm2)
 "oSa" = (
 /obj/structure/cable,
 /turf/open/floor/plating/plating_catwalk,
@@ -18802,7 +19029,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/freezer,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "pRW" = (
 /obj/structure/bed/chair/comfy/black{
@@ -19074,6 +19301,12 @@
 "qcc" = (
 /obj/structure/table/mainship,
 /obj/machinery/computer/squad_changer,
+/obj/structure/transmitter/rotary{
+	pixel_x = 10;
+	pixel_y = 6;
+	phone_category = "Combat Information Center";
+	phone_id = "Charlie SO"
+	},
 /turf/open/floor/mainship/mono,
 /area/mainship/command/cic)
 "qcy" = (
@@ -19096,6 +19329,10 @@
 /area/mainship/engineering/port_atmos)
 "qcW" = (
 /obj/structure/table/reinforced,
+/obj/structure/transmitter/rotary{
+	phone_category = "Command";
+	phone_id = "NM CEO Office"
+	},
 /turf/open/floor/wood/darker,
 /area/mainship/hallways/port_hallway{
 	name = "Ship Floor 2 Hallways"
@@ -19159,6 +19396,12 @@
 	pixel_x = -17
 	},
 /obj/item/tool/pen,
+/obj/structure/transmitter/rotary{
+	pixel_x = 10;
+	pixel_y = 6;
+	phone_category = "Combat Information Center";
+	phone_id = "Delta SO"
+	},
 /turf/open/floor/mainship/blue{
 	dir = 9
 	},
@@ -19369,8 +19612,7 @@
 "qoX" = (
 /obj/machinery/door/airlock/mainship/generic{
 	dir = 1;
-	id = 6;
-	name = "\improper Quarters 6"
+	name = "\improper Quarters 3"
 	},
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -19378,7 +19620,7 @@
 	},
 /obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
 	dir = 2;
-	id = "bigdorm5";
+	id = "bigdorm2";
 	name = "\improper Quarters Privacy Shutters"
 	},
 /obj/structure/cable,
@@ -20613,6 +20855,10 @@
 /obj/item/camera,
 /turf/open/floor/wood,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
+"rsk" = (
+/obj/structure/table/mainship,
+/turf/open/floor/freezer,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "rsm" = (
 /turf/open/ground/coast{
 	dir = 8
@@ -20746,6 +20992,11 @@
 /obj/item/clothing/shoes/orange,
 /obj/item/clothing/shoes/orange,
 /obj/structure/table/reinforced,
+/obj/structure/transmitter/rotary{
+	phone_category = "Corpsec";
+	phone_id = "Prisoner Processing";
+	pixel_x = 10
+	},
 /turf/open/floor/mainship/red,
 /area/mainship/groundhq/ntf/shipboard/brig_cells)
 "rxA" = (
@@ -21762,7 +22013,7 @@
 	})
 "srd" = (
 /obj/machinery/door_control{
-	id = "bigdorm4"
+	id = "bigdorm3"
 	},
 /turf/open/floor/wood,
 /area/mainship/hallways/dorm2)
@@ -22420,8 +22671,10 @@
 	name = "Ship Floor 3 Hallways"
 	})
 "sRF" = (
-/obj/machinery/light/mainship{
-	dir = 1
+/obj/structure/transmitter{
+	pixel_y = 24;
+	phone_category = "Medbay";
+	phone_id = "Morgue"
 	},
 /turf/open/floor/mainship/mono,
 /area/mainship/medical/surgery_hallway{
@@ -22582,6 +22835,12 @@
 	pixel_x = 17
 	},
 /obj/item/tool/pen,
+/obj/structure/transmitter/rotary{
+	pixel_x = -10;
+	pixel_y = 6;
+	phone_category = "Combat Information Center";
+	phone_id = "Alpha SO"
+	},
 /turf/open/floor/mainship/red{
 	dir = 5
 	},
@@ -22952,6 +23211,12 @@
 /obj/item/folder/white,
 /obj/item/folder/white,
 /obj/item/folder/white,
+/obj/structure/transmitter/rotary{
+	pixel_x = 6;
+	pixel_y = 6;
+	phone_id = "CMO";
+	phone_category = "Medical"
+	},
 /turf/open/floor/wood,
 /area/mainship/medical/upper_medical{
 	name = "Shipside Medbay"
@@ -23470,6 +23735,12 @@
 	pixel_y = 6
 	},
 /obj/item/tool/pen,
+/obj/structure/transmitter/rotary{
+	pixel_x = -10;
+	pixel_y = 6;
+	phone_category = "Combat Information Center";
+	phone_id = "Comms Decryption Desk"
+	},
 /turf/open/floor/mainship/mono,
 /area/mainship/command/cic)
 "tLW" = (
@@ -23618,13 +23889,19 @@
 	})
 "tSR" = (
 /obj/machinery/door_control{
-	id = "bigdorm5"
+	id = "bigdorm2"
 	},
 /turf/open/floor/wood,
 /area/mainship/hallways/dorm2)
 "tTm" = (
 /obj/structure/table/mainship,
 /obj/machinery/computer/secure_data,
+/obj/structure/transmitter/rotary{
+	pixel_x = -10;
+	pixel_y = 6;
+	phone_category = "Corpsec";
+	phone_id = "Second Floor Checkpoint"
+	},
 /turf/open/floor/mainship/red{
 	dir = 4
 	},
@@ -24522,6 +24799,12 @@
 /obj/machinery/light/mainship/small{
 	dir = 4
 	},
+/obj/structure/transmitter{
+	phone_category = "Command";
+	phone_id = "Self Destruct Room";
+	dir = 8;
+	pixel_x = 15
+	},
 /turf/open/floor/mainship/black{
 	dir = 8
 	},
@@ -24565,6 +24848,10 @@
 /area/mainship/hallways/dorm2)
 "uJS" = (
 /obj/structure/table/reinforced,
+/obj/structure/transmitter/rotary{
+	phone_category = "Corpsec";
+	phone_id = "Corpsec Office"
+	},
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/shipboard/brig)
 "uJZ" = (
@@ -24783,6 +25070,11 @@
 "uUn" = (
 /obj/structure/table/mainship,
 /obj/machinery/computer/atmos_alert,
+/obj/structure/transmitter/rotary{
+	pixel_x = -10;
+	phone_category = "Engineering";
+	phone_id = "Aux Power Monitoring"
+	},
 /turf/open/floor/mainship/mono,
 /area/deltastation/engineering{
 	name = "Engine Monitoring";
@@ -25726,6 +26018,12 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/hangar)
 "vHr" = (
+/obj/structure/transmitter{
+	phone_category = "Command";
+	phone_id = "Pilot Office";
+	dir = 8;
+	pixel_x = 15
+	},
 /turf/open/floor/mainship/white{
 	dir = 4
 	},
@@ -25875,6 +26173,12 @@
 /obj/structure/cable,
 /obj/structure/table/mainship/nometal,
 /obj/machinery/door_control/old/req,
+/obj/structure/transmitter/rotary{
+	pixel_x = 6;
+	pixel_y = 6;
+	phone_id = "Requisitions";
+	phone_category = "Logistics"
+	},
 /turf/open/floor/mainship/green{
 	dir = 4
 	},
@@ -25999,7 +26303,7 @@
 "vZK" = (
 /obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
 	dir = 2;
-	id = 1003;
+	id = "bigdorm2";
 	name = "\improper Quarters Privacy Shutters"
 	},
 /obj/structure/window/framed/mainship/toughened{
@@ -26109,7 +26413,9 @@
 "weP" = (
 /obj/machinery/light,
 /obj/structure/table/mainship,
-/obj/machinery/computer/secure_data,
+/obj/machinery/computer/secure_data{
+	dir = 1
+	},
 /turf/open/floor/mainship/mono,
 /area/mainship/command/cic)
 "weT" = (
@@ -26162,6 +26468,12 @@
 /obj/item/storage/syringe_case/regular,
 /obj/machinery/power/apc/mainship,
 /obj/structure/cable,
+/obj/structure/transmitter/rotary{
+	pixel_x = 6;
+	pixel_y = 6;
+	phone_id = "Medbay";
+	phone_category = "Medical"
+	},
 /turf/open/floor/mainship/sterile/side{
 	dir = 1
 	},
@@ -27138,8 +27450,7 @@
 "wTa" = (
 /obj/machinery/door/airlock/mainship/generic{
 	dir = 1;
-	id = 5;
-	name = "\improper Quarters 5"
+	name = "\improper Quarters 1"
 	},
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -27147,7 +27458,7 @@
 	},
 /obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
 	dir = 2;
-	id = "bigdorm6";
+	id = "bigdorm1";
 	name = "\improper Quarters Privacy Shutters"
 	},
 /obj/structure/cable,
@@ -27297,6 +27608,15 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/command/corporateliaison)
+"wZh" = (
+/obj/structure/transmitter{
+	pixel_x = 15;
+	dir = 8;
+	phone_category = "Service";
+	phone_id = "Chapel"
+	},
+/turf/open/floor/wood,
+/area/mainship/living/chapel)
 "wZo" = (
 /obj/structure/cable,
 /obj/machinery/light/small,
@@ -27357,7 +27677,9 @@
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "xbI" = (
 /obj/structure/table/mainship,
-/obj/machinery/computer/station_alert,
+/obj/machinery/computer/station_alert{
+	dir = 1
+	},
 /turf/open/floor/mainship/mono,
 /area/mainship/command/cic)
 "xcx" = (
@@ -28396,6 +28718,15 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/upper_hull)
+"xQQ" = (
+/obj/structure/transmitter{
+	pixel_y = -22;
+	phone_category = "Dormitories";
+	phone_id = "Quarters 1";
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/mainship/hallways/dorm2)
 "xRm" = (
 /obj/machinery/holopad,
 /turf/open/floor/mainship/black{
@@ -28799,6 +29130,10 @@
 	points = 10000
 	},
 /obj/structure/table/wood/fancy,
+/obj/structure/transmitter/rotary{
+	phone_category = "Command";
+	phone_id = "NT CEO Office"
+	},
 /turf/open/floor/carpet{
 	dir = 5;
 	icon_state = "carpetside"
@@ -36041,9 +36376,9 @@ mRG
 qsO
 urx
 urx
+wUw
+wUw
 urx
-wUw
-wUw
 wUw
 wUw
 hUg
@@ -36162,7 +36497,7 @@ vZa
 lZb
 lZb
 lZb
-lZb
+lDQ
 lZb
 lZb
 vZa
@@ -44085,7 +44420,7 @@ reV
 reV
 reV
 fvh
-reV
+oNC
 baU
 dLO
 iSM
@@ -44449,10 +44784,10 @@ pyn
 igy
 aYd
 aYd
-aYd
-aYd
+rPs
+rPs
 aHv
-aYd
+rPs
 aYd
 aYd
 jki
@@ -55878,7 +56213,7 @@ uKL
 tfX
 bpo
 glW
-bpo
+wZh
 ePl
 aPj
 vgM
@@ -56498,7 +56833,7 @@ qZo
 cqi
 igK
 xGb
-ilX
+xQQ
 cqi
 uby
 hsY
@@ -57212,7 +57547,7 @@ qZo
 cqi
 igK
 xGb
-ilX
+oRy
 cqi
 jOZ
 fLz
@@ -57392,8 +57727,8 @@ yco
 gbP
 lPQ
 inB
-sQj
-sQj
+rsk
+aNP
 amr
 pRi
 uXI
@@ -57510,7 +57845,7 @@ nwr
 yco
 sPm
 sQj
-nlR
+sQj
 sQj
 sQj
 roJ
@@ -57665,7 +58000,7 @@ kQG
 pXX
 pXX
 mmj
-kQG
+lVv
 xUN
 jJw
 azt
@@ -57811,7 +58146,7 @@ ilX
 cqe
 knA
 tMU
-vZK
+ncL
 own
 bfu
 kAG
@@ -57821,7 +58156,7 @@ kAG
 rVr
 dbT
 vpC
-weU
+hAQ
 sAB
 meT
 kBj
@@ -57926,7 +58261,7 @@ qZo
 cqi
 igK
 xGb
-ilX
+nVK
 cqi
 eZp
 nbS
@@ -59235,7 +59570,7 @@ qZo
 typ
 weT
 elF
-tvr
+fff
 typ
 xMb
 sDc
@@ -59566,7 +59901,7 @@ lwu
 vRt
 iie
 rJx
-uXT
+mzm
 plq
 rJx
 iie
@@ -59821,7 +60156,7 @@ typ
 rPp
 dtP
 typ
-cJM
+diD
 ivq
 nHI
 typ
@@ -59949,7 +60284,7 @@ qZo
 typ
 weT
 elF
-tvr
+lJY
 typ
 rPp
 sDc
