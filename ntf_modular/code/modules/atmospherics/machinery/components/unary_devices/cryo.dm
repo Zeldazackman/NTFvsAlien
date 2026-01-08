@@ -170,7 +170,7 @@
 
 	if(usr.incapacitated(TRUE))
 		return
-	if(occupant.client)
+	if(occupant.client && occupant != usr)
 		to_chat(usr, span_warning("You cannot send away an awake person."))
 		return
 	if(!occupant)
