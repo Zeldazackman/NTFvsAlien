@@ -135,3 +135,8 @@
 	name = "Sterling Combat Robot"
 	icobase = 'icons/mob/human_races/r_robot_bravada.dmi'
 	joinable_roundstart = FALSE
+
+/datum/species/robot/synskin
+	name = "Synskin Combat Robot"
+	icobase = 'icons/mob/human_races/r_robot_bravada.dmi'
+	joinable_roundstart = FALSE

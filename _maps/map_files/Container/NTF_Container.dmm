@@ -9431,6 +9431,12 @@
 /obj/effect/decal/cleanable/blood/splatter/cum,
 /turf/open/floor/mainship/floor,
 /area/mainship/shipboard/starboard_point_defense)
+"jkm" = (
+/obj/structure/fulton_extraction_point{
+	pixel_x = -1
+	},
+/turf/open/floor/mainship/floor,
+/area/mainship/shipboard/brig_cells)
 "jku" = (
 /obj/structure/bed/chair/sofa{
 	dir = 1
@@ -39026,7 +39032,7 @@ oWr
 oWr
 oWr
 oWr
-oWr
+jkm
 hoc
 oWr
 pAM
