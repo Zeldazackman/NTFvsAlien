@@ -141,6 +141,7 @@
 /obj/item/restraints/handcuffs/shackles
 	name = "xenomorph suppression shackles"
 	desc = "Oversized alloy shackles used to restrain alien lifeforms and nullify their psionic abilities."
+	icon = 'ntf_modular/icons/obj/items/items.dmi'
 	icon_state = "xeno_cuffs"
 	throwforce = 15 // Heavy as fuck
 	w_class = WEIGHT_CLASS_HUGE

@@ -11,7 +11,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	var/phone_id = "Telephone"
 	var/phone_icon
 
-	var/obj/item/phone/attached_to
+	var/obj/item/phone/functional/attached_to
 	var/atom/tether_holder
 
 	var/obj/structure/transmitter/outbound_call
@@ -20,7 +20,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 	var/next_ring = 0
 
-	var/phone_type = /obj/item/phone
+	var/phone_type = /obj/item/phone/functional
 
 	var/range = 7
 
@@ -39,7 +39,8 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	var/datum/looping_sound/telephone/busy/busy_loop
 	var/datum/looping_sound/telephone/hangup/hangup_loop
 	var/datum/looping_sound/telephone/ring/outring_loop
-	var/call_sound = 'ntf_modular/sound/machines/telephone/telephone_ring.ogg'
+	var/call_sound = 'ntf_modular/sound/machines/telephone/fnaf3_phonecall.ogg'
+	var/call_sound_length = 2 SECONDS
 
 /datum/looping_sound/telephone/ring
 	start_sound = 'ntf_modular/sound/machines/telephone/dial.ogg'
@@ -47,6 +48,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	mid_sounds = 'ntf_modular/sound/machines/telephone/ring_outgoing_long.ogg'
 	mid_length = 2.9 SECONDS
 	volume = 10
+	range = 0
 
 /datum/looping_sound/telephone/busy
 	start_sound = 'ntf_modular/sound/vo/callstation_unavailable.ogg'
@@ -54,6 +56,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	mid_sounds = 'ntf_modular/sound/machines/telephone/phone_busy.ogg'
 	mid_length = 5 SECONDS
 	volume = 15
+	range = 0
 
 /datum/looping_sound/telephone/hangup
 	start_sound = 'ntf_modular/sound/machines/telephone/remote_hangup.ogg'
@@ -61,6 +64,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	mid_sounds = 'ntf_modular/sound/machines/telephone/phone_busy.ogg'
 	mid_length = 5 SECONDS
 	volume = 15
+	range = 0
 
 /obj/structure/transmitter/hidden
 	do_not_disturb = PHONE_DND_FORCED
@@ -254,9 +258,9 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 		var/mob/M = T.attached_to.loc
 		to_chat(M, span_purple("[icon2html(src, M)] [phone_id] has picked up."))
 		playsound(T.attached_to.loc, 'ntf_modular/sound/machines/telephone/remote_pickup.ogg', 20)
-		if(T.timeout_timer_id)
-			deltimer(T.timeout_timer_id)
-			T.timeout_timer_id = null
+	if(T.timeout_timer_id)
+		deltimer(T.timeout_timer_id)
+		T.timeout_timer_id = null
 
 	to_chat(user, span_purple("[icon2html(src, user)] Picked up a call from [T.phone_id]."))
 	playsound(get_turf(user), pickup_sound)
@@ -339,7 +343,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 			STOP_PROCESSING(SSobj, src)
 			return
 
-		var/obj/item/phone/P = T.attached_to
+		var/obj/item/phone/functional/P = T.attached_to
 
 		if(P && attached_to.loc == src && P.loc == T && next_ring < world.time)
 			playsound(get_turf(attached_to), call_sound, 20, FALSE, 14)
@@ -381,7 +385,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	if(!istype(T))
 		return
 
-	var/obj/item/phone/P = T.attached_to
+	var/obj/item/phone/functional/P = T.attached_to
 
 	if(!P || !attached_to)
 		return
@@ -412,12 +416,18 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	reset_call()
 	return ..()
 
-/obj/item/phone
+/obj/item/phone/functional
 	name = "telephone"
 	icon = 'ntf_modular/icons/obj/structures/phone.dmi'
-	icon_state = "rpb_phone"
+	icon_state = "d_phone"
 
+	force = 3
+	throwforce = 2
+	throw_speed = 1
+	throw_range = 4
 	w_class = WEIGHT_CLASS_BULKY
+	attack_verb = list("calls", "rings")
+	hitsound = 'sound/weapons/ring.ogg'
 
 	var/obj/structure/transmitter/attached_to
 	var/datum/tether_effect
@@ -428,19 +438,23 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	var/zlevel_transfer_timeout = 5 SECONDS
 	var/can_be_raised = TRUE // This is for items like the scout helmet where you don't need to raise it.
 
-/obj/item/phone/equipped(mob/user, slot)
+/obj/item/phone/functional/old
+
+	icon_state = "rpb_phone"
+
+/obj/item/phone/functional/equipped(mob/user, slot)
 	. = ..()
 
-/obj/item/phone/Initialize(mapload)
+/obj/item/phone/functional/Initialize(mapload)
 	. = ..()
 	if(istype(loc, /obj/structure/transmitter))
 		attach_to(loc)
 
-/obj/item/phone/Destroy()
+/obj/item/phone/functional/Destroy()
 	remove_attached()
 	return ..()
 
-/obj/item/phone/proc/handle_speak(datum/source, list/speech_args)
+/obj/item/phone/functional/proc/handle_speak(datum/source, list/speech_args)
 	SIGNAL_HANDLER
 
 	if(!attached_to || loc == attached_to)
@@ -449,7 +463,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 	attached_to.handle_speak(source, speech_args)
 
-/obj/item/phone/proc/handle_hear(datum/source, list/speech_args)
+/obj/item/phone/functional/proc/handle_hear(datum/source, list/speech_args)
 	if(!attached_to)
 		return
 
@@ -463,12 +477,11 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	var/mob/M = loc
 
 	if(!raised)
-		to_chat(M, span_purple("[icon2html(src, M)] You hear muffled speech through \the [src] in your hand."))
+		to_chat(M, span_lightpurple("[icon2html(src, M)] You hear muffled, unintelligible speech through \the [src] in your hand."))
 		return
+	to_chat(M, span_lightpurple("[icon2html(src, M)] [T.phone_id]: \"[speech_args[SPEECH_MESSAGE]].\"")) //i didnt include name cause I guess it makes sense not to.
 
-	M.Hear(speech_args[SPEECH_MESSAGE], source, speech_args[SPEECH_LANGUAGE], speech_args[SPEECH_MESSAGE], spans = speech_args[SPEECH_SPANS], message_mode = MODE_INTERCOM)
-
-/obj/item/phone/proc/attach_to(obj/structure/transmitter/to_attach)
+/obj/item/phone/functional/proc/attach_to(obj/structure/transmitter/to_attach)
 	if(!istype(to_attach))
 		return
 
@@ -477,11 +490,11 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	attached_to = to_attach
 
 
-/obj/item/phone/proc/remove_attached()
+/obj/item/phone/functional/proc/remove_attached()
 	attached_to = null
 	reset_tether()
 
-/obj/item/phone/proc/reset_tether()
+/obj/item/phone/functional/proc/reset_tether()
 	SIGNAL_HANDLER
 	if (tether_effect)
 		UnregisterSignal(tether_effect, COMSIG_QDELETING)
@@ -491,13 +504,13 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	if(!do_zlevel_check())
 		on_beam_removed()
 
-/obj/item/phone/attack_hand(mob/user)
+/obj/item/phone/functional/attack_hand(mob/user)
 	if(attached_to && get_dist(user, attached_to) > attached_to.range)
 		return FALSE
 	return ..()
 
 
-/obj/item/phone/proc/on_beam_removed()
+/obj/item/phone/functional/proc/on_beam_removed()
 	if(!attached_to)
 		return
 
@@ -526,7 +539,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	tether_effect = tether_from.beam(tether_to, "wire", 'ntf_modular/icons/effects/beam.dmi', INFINITY, attached_to.range)
 	RegisterSignal(tether_effect, COMSIG_QDELETING, PROC_REF(reset_tether))
 
-/obj/item/phone/attack_self(mob/user)
+/obj/item/phone/functional/attack_self(mob/user)
 	..()
 	if(can_be_raised)
 		if(raised)
@@ -539,7 +552,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 		set_raised(TRUE, user)
 
 
-/obj/item/phone/proc/set_raised(to_raise, mob/living/carbon/human/H)
+/obj/item/phone/functional/proc/set_raised(to_raise, mob/living/carbon/human/H)
 	if(!istype(H))
 		return
 
@@ -548,14 +561,14 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 	if(!to_raise)
 		raised = FALSE
-		icon_state = "rpb_phone"
+		icon_state = initial(icon_state)
 
 		var/obj/item/radio/R = H.wear_ear
 		if(R)
 			R?.set_on(TRUE)
 	else
 		raised = TRUE
-		icon_state = "rpb_phone_ear"
+		icon_state = "[initial(icon_state)]_ear"
 
 		var/obj/item/radio/R = H.wear_ear
 		if(R)
@@ -564,27 +577,27 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	H.update_inv_r_hand()
 	H.update_inv_l_hand()
 
-/obj/item/phone/dropped(mob/user)
+/obj/item/phone/functional/dropped(mob/user)
 	. = ..()
 	UnregisterSignal(user, COMSIG_MOB_SAY)
 
 	set_raised(FALSE, user)
 
-/obj/item/phone/on_enter_storage(obj/item/storage/S)
+/obj/item/phone/functional/on_enter_storage(obj/item/storage/S)
 	. = ..()
 	if(attached_to)
 		attached_to.recall_phone()
 
-/obj/item/phone/pickup(mob/user)
+/obj/item/phone/functional/pickup(mob/user)
 	. = ..()
 	RegisterSignal(user, COMSIG_MOB_SAY, PROC_REF(handle_speak))
 
-/obj/item/phone/forceMove(atom/dest)
+/obj/item/phone/functional/forceMove(atom/dest)
 	. = ..()
 	if(.)
 		reset_tether()
 
-/obj/item/phone/proc/do_zlevel_check()
+/obj/item/phone/functional/proc/do_zlevel_check()
 	if(!attached_to || !loc.z || !attached_to.z)
 		return FALSE
 
@@ -604,7 +617,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 		return TRUE
 	return FALSE
 
-/obj/item/phone/proc/transmitter_move_handler(datum/source)
+/obj/item/phone/functional/proc/transmitter_move_handler(datum/source)
 	SIGNAL_HANDLER
 	zlevel_transfer = FALSE
 	if(zlevel_transfer_timer)
@@ -612,7 +625,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	UnregisterSignal(attached_to, COMSIG_MOVABLE_MOVED)
 	reset_tether()
 
-/obj/item/phone/proc/try_doing_tether()
+/obj/item/phone/functional/proc/try_doing_tether()
 	zlevel_transfer_timer = TIMER_ID_NULL
 	zlevel_transfer = FALSE
 	UnregisterSignal(attached_to, COMSIG_MOVABLE_MOVED)
@@ -622,13 +635,19 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	do_not_disturb = PHONE_DND_FORBIDDEN
 
 //rotary desk phones (need a touch tone handset at some point)
-/obj/structure/transmitter/rotary
+/obj/structure/transmitter/desk
+	name = "wired telephone"
+	icon_state = "desk_phone"
+	desc = "There is always ol' reliable."
+
+/obj/structure/transmitter/desk/no_dnd
+	do_not_disturb = PHONE_DND_FORBIDDEN
+
+/obj/structure/transmitter/desk/rotary
 	name = "rotary telephone"
 	icon_state = "rotary_phone"
 	desc = "The finger plate is a little stiff."
-
-/obj/structure/transmitter/rotary/no_dnd
-	do_not_disturb = PHONE_DND_FORBIDDEN
+	phone_type = /obj/item/phone/functional/old
 
 /obj/structure/transmitter/colony_net
 	color = COLOR_CYAN
@@ -636,8 +655,8 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	networks_transmit = list(FACTION_NEUTRAL)
 
 /obj/structure/transmitter/colony_net/rotary
-	name = "rotary telephone"
-	icon_state = "rotary_phone"
+	name = "wired telephone"
+	icon_state = "desk_phone"
 	desc = "The finger plate is a little stiff."
 
 /obj/structure/transmitter/som_net
@@ -646,8 +665,8 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	networks_transmit = list(FACTION_SOM)
 
 /obj/structure/transmitter/som_net/rotary
-	name = "rotary telephone"
-	icon_state = "rotary_phone"
+	name = "wired telephone"
+	icon_state = "desk_phone"
 
 	desc = "The finger plate is a little stiff."
 
@@ -657,8 +676,8 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	networks_transmit = list(FACTION_CLF)
 
 /obj/structure/transmitter/clf_net/rotary
-	name = "rotary telephone"
-	icon_state = "rotary_phone"
+	name = "wired telephone"
+	icon_state = "desk_phone"
 	desc = "The finger plate is a little stiff."
 
 /obj/structure/transmitter/kz_net
@@ -667,8 +686,8 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 /obj/structure/transmitter/kz_net/rotary
 	color = COLOR_YELLOW
-	name = "rotary telephone"
-	icon_state = "rotary_phone"
+	name = "wired telephone"
+	icon_state = "desk_phone"
 	desc = "The finger plate is a little stiff."
 
 /obj/structure/transmitter/cm_net
@@ -677,6 +696,6 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 /obj/structure/transmitter/cm_net/rotary
 	color = COLOR_MODERATE_BLUE
-	name = "rotary telephone"
-	icon_state = "rotary_phone"
+	name = "wired telephone"
+	icon_state = "desk_phone"
 	desc = "The finger plate is a little stiff."

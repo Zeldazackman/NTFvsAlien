@@ -1064,7 +1064,7 @@
 /obj/item/clipboard{
 	pixel_x = 6
 	},
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	phone_category = "Engineering";
 	phone_id = "CSE Office";
 	pixel_x = -5
@@ -4849,7 +4849,7 @@
 "eFR" = (
 /obj/structure/table/mainship/nometal,
 /obj/machinery/camera/autoname/mainship,
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	pixel_x = 6;
 	pixel_y = 6;
 	phone_id = "CMO";
@@ -4915,7 +4915,7 @@
 /obj/item/folder/red,
 /obj/item/folder/red,
 /obj/item/tool/stamp/hos,
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	phone_category = "Corpsec";
 	phone_id = "Corpsec Commander";
 	pixel_x = -5
@@ -6338,7 +6338,7 @@
 "fTi" = (
 /obj/structure/table/mainship,
 /obj/machinery/keycard_auth,
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	pixel_x = 10;
 	pixel_y = 6;
 	phone_category = "Combat Information Center";
@@ -6756,7 +6756,7 @@
 /obj/structure/table/mainship/nometal,
 /obj/effect/spawner/random/misc/paperbin,
 /obj/item/tool/pen/blue,
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	pixel_x = 6;
 	pixel_y = 6;
 	phone_id = "FC Office";
@@ -7211,7 +7211,7 @@
 "gOR" = (
 /obj/structure/table/mainship/nometal,
 /obj/effect/urban/decal/dirt,
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	phone_category = "Engineering";
 	phone_id = "Monitoring";
 	pixel_y = 6
@@ -9141,7 +9141,7 @@
 /area/mainship/living/cafeteria)
 "iQc" = (
 /obj/structure/table/mainship/nometal,
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	pixel_x = 6;
 	pixel_y = 6;
 	phone_id = "Chemistry";
@@ -9812,7 +9812,7 @@
 	dir = 8
 	},
 /obj/item/tool/hand_labeler,
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	phone_category = "Command";
 	phone_id = "OO Office";
 	pixel_y = 10
@@ -10194,7 +10194,7 @@
 /obj/structure/table/mainship/nometal,
 /obj/effect/spawner/random/misc/paperbin,
 /obj/item/tool/pen/blue,
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	pixel_x = 6;
 	pixel_y = 6;
 	phone_category = "Command";
@@ -13830,7 +13830,7 @@
 	name = "Prison Lockdown";
 	pixel_y = 8
 	},
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	phone_category = "Corpsec";
 	phone_id = "Prisoner Processing";
 	pixel_x = -5
@@ -15343,7 +15343,7 @@
 	pixel_y = 3;
 	pixel_x = -5
 	},
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	phone_category = "Command";
 	phone_id = "NM CEO Office";
 	pixel_y = 10;
@@ -15525,7 +15525,7 @@
 	dir = 8;
 	pixel_x = -17
 	},
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	pixel_x = 10;
 	pixel_y = 6;
 	phone_category = "Combat Information Center";
@@ -15843,7 +15843,7 @@
 	})
 "oWX" = (
 /obj/structure/table/black,
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	pixel_y = 6;
 	phone_category = "Combat Information Center";
 	phone_id = "CIC"
@@ -16223,7 +16223,7 @@
 	dir = 4;
 	pixel_x = 17
 	},
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	pixel_x = -10;
 	pixel_y = 6;
 	phone_category = "Combat Information Center";
@@ -17596,7 +17596,7 @@
 "qTB" = (
 /obj/structure/table/mainship,
 /obj/machinery/keycard_auth,
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	pixel_x = -10;
 	pixel_y = 6;
 	phone_category = "Combat Information Center";
@@ -18786,7 +18786,7 @@
 	},
 /obj/item/tool/hand_labeler,
 /obj/structure/table/mainship/nometal,
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	pixel_x = 6;
 	pixel_y = 6;
 	phone_id = "Requisitions";
@@ -19083,7 +19083,7 @@
 /area/mainship/hallways/port_hallway)
 "sln" = (
 /obj/structure/table/mainship/nometal,
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	pixel_x = 6;
 	pixel_y = 6;
 	phone_category = "Medical";
@@ -19368,7 +19368,7 @@
 /obj/machinery/computer/marine_card{
 	dir = 8
 	},
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	pixel_x = 10;
 	pixel_y = 10;
 	phone_category = "Combat Information Center";
@@ -21160,7 +21160,7 @@
 /obj/item/flashlight/lamp{
 	pixel_y = 10
 	},
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	phone_category = "Corpsec";
 	phone_id = "Interrogation";
 	pixel_y = -6
@@ -21261,7 +21261,7 @@
 	},
 /obj/item/reagent_containers/hypospray/autoinjector/spacedrugs,
 /obj/item/reagent_containers/hypospray/autoinjector/spacedrugs,
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	phone_category = "Command";
 	phone_id = "NT CEO Office"
 	},
@@ -24876,7 +24876,7 @@
 /obj/item/reagent_containers/glass/beaker/cryomix,
 /obj/item/reagent_containers/glass/beaker/cryomix,
 /obj/item/reagent_containers/glass/beaker/cryomix,
-/obj/structure/transmitter/rotary{
+/obj/structure/transmitter/desk{
 	pixel_x = 6;
 	pixel_y = 6;
 	phone_id = "Medbay";

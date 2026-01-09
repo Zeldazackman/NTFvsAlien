@@ -48,6 +48,8 @@ GLOBAL_LIST_EMPTY(radio_packs)
 	internal_transmitter.enabled = FALSE
 	internal_transmitter.networks_receive = networks_receive
 	internal_transmitter.networks_transmit = networks_transmit
+	internal_transmitter.call_sound = 'ntf_modular/sound/machines/telephone/telephone_ring.ogg'
+	internal_transmitter.call_sound_length = 3 SECONDS
 	RegisterSignal(internal_transmitter, "COMSIG_TRANSMITTER_UPDATE_ICON", PROC_REF(check_for_ringing))
 	GLOB.radio_packs += src
 	update_mode()
