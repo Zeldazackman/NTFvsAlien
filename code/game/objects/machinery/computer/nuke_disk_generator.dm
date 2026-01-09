@@ -25,7 +25,7 @@
 	)
 	///The type of disk we're printing
 	var/disk_type
-	max_integrity = 1000
+	max_integrity = 1500
 	integrity_failure = 250
 	resistance_flags = DROPSHIP_IMMUNE|XENO_DAMAGEABLE|PORTAL_IMMUNE|BANISH_IMMUNE|PLASMACUTTER_IMMUNE|CRUSHER_IMMUNE
 
