@@ -1456,6 +1456,8 @@
 		"Standard" = list(
 			/obj/item/clothing/under/marine/robotic = -1,
 			/obj/item/clothing/under/marine = -1,
+			/obj/item/clothing/under/tdf = -1,
+			/obj/item/clothing/under/tdf/medic = -1,
 			/obj/item/clothing/under/marine_skirt = -1,
 			/obj/item/clothing/under/marine/hyperscale = -1,
 			/obj/item/clothing/under/marine/hyperscale_skirt = -1,
