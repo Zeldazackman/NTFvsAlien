@@ -1,0 +1,5 @@
+author: "EaglePhntm"
+delete-after: True
+changes:
+  - rscadd: "Added resin sacks and bodysuit stuff"
+  - bugfix: "nests now give pleasure, no longer caretake their victims and they instead inject acid in time, they are no longer put marine and forget 1x1 room hellholes, they'll end up dying and becoming useless without supervising, use regular nests for keeping people, tentacle for fun and traps. Also tentacles only take 1 second with a cooldown of (30 seconds on fail) to catch people who walk over them instead of 10 now so dont stay on it, proper trap."
