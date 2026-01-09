@@ -24,6 +24,7 @@
 	addtimer(CALLBACK(src, PROC_REF(mature)), 30 SECONDS)
 
 /obj/structure/bed/nest/advanced/proc/mature()
+	var/datum/hive_status/hive = GLOB.hive_datums[hivenumber]
 	name = "mature [hive.prefix][name]"
 	visible_message(span_notice("[src] shudders as its tentacles thicken and harden, becoming more effective at capturing prey!"))
 	resist_time *= 2
