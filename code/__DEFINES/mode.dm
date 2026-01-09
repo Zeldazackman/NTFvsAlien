@@ -75,6 +75,7 @@
 #define MODE_BIOMASS_POINTS (1<<19)
 #define MODE_SURVIVAL (1<<20)
 #define MODE_NO_GHOSTS (1<<21)
+#define MODE_SINGLE_USE_NUKE_DISK_GENERATOR (1<<22)
 
 #define MODE_INFESTATION_X_MAJOR "Xenomorph Major Victory"
 #define MODE_INFESTATION_M_MAJOR "Ninetails Major Victory"
