@@ -679,7 +679,7 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 		user.apply_damage(stamina_dmg, STAMINA) // complete winds the target
 	playsound(src, 'sound/effects/alien_plapping.ogg', 5)
 	if(targethole == 1)
-		user.Unconscious(15 SECONDS)
+		user.Unconscious(5 SECONDS)
 		if(ishuman(user))
 			var/hugsound = user.gender == FEMALE ? SFX_FEMALE_HUGGED : SFX_MALE_HUGGED
 			playsound(loc, hugsound, 25, 0)
