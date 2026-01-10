@@ -161,7 +161,7 @@
 					to_chat(blame_mob, span_infoplain("You feel healthier as you drain [user]'s stamina through [user.p_their()] orgasm."))
 					if(isxeno(user))
 						var/mob/living/carbon/xenomorph/xeno_user = user
-						xeno_user.use_plasma(rand(80,160)+(100*blame_mob.skills.sex))
+						xeno_user.use_stun_health(rand(80,160)+(100*blame_mob.skills.sex))
 					else
 						user.adjustStaminaLoss(rand(40,80)+(60*blame_mob.skills.sex))
 			if(SEX_DRAIN_STYLE_DRAIN_BLOOD_FAST)
@@ -292,11 +292,11 @@
 		return FALSE
 	if(isxeno(action_target))
 		var/mob/living/carbon/xenomorph/xeno_target = action_target
-		if(xeno_target.plasma_stored == 0)
+		if(xeno_target.stun_health_damage == xeno_target.health)
 			xeno_target.adjustBruteLoss(oxyloss_amt*2)
 		else
-			xeno_target.use_plasma(oxyloss_amt*2)
-		if(xeno_target.plasma_stored < xeno_target.xeno_caste.plasma_max * 0.33)
+			xeno_target.use_stun_health(oxyloss_amt*2)
+		if(xeno_target.stun_health_damage > xeno_target.health * 0.66)
 			action_target.emote(pick(list("gag", "choke", "choke")))
 	else
 		action_target.adjustOxyLoss(oxyloss_amt)
@@ -330,13 +330,13 @@
 					user.heal_overall_damage(healing_amount*(1+blame_mob.skills.sex), healing_amount*(1+blame_mob.skills.sex), TRUE, TRUE)
 					if(isxeno(user))
 						var/mob/living/carbon/xenomorph/xeno_user = user
-						xeno_user.gain_plasma(5*(1+blame_mob.skills.sex), TRUE)
+						xeno_user.gain_stun_health(5*(1+blame_mob.skills.sex), TRUE)
 				if(SEX_DRAIN_STYLE_DRAIN_STAMINA)
 					if((!(user.mind)) || (user.client?.prefs.harmful_sex_flags & HARMFUL_SEX_STAMINA_DRAIN))
 						blame_mob.heal_overall_damage((healing_amount*0.5)+(3*blame_mob.skills.sex), (healing_amount*0.3)+(3*blame_mob.skills.sex), TRUE, TRUE)
 						if(isxeno(user))
 							var/mob/living/carbon/xenomorph/xeno_user = user
-							xeno_user.use_plasma(healing_amount*(2+blame_mob.skills.sex))
+							xeno_user.use_stun_health(healing_amount*(2+blame_mob.skills.sex))
 						else
 							user.adjustStaminaLoss(healing_amount*(1+blame_mob.skills.sex))
 				if(SEX_DRAIN_STYLE_DRAIN_BLOOD_FAST)

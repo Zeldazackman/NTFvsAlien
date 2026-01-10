@@ -43,9 +43,12 @@
 /obj/machinery/computer/code_generator/nuke/Destroy(force)
 	if(!force)
 		set_broken()
-		return
+		message_admins("([logdetails(src)]) Nuke disk generator broken.")
+		log_game("([logdetails(src)]) Nuke disk generator broken.")
+		return QDEL_HINT_LETMELIVE
 	GLOB.nuke_disk_generators -= src
-	message_admins("([src]) Nuke disk generator destroyed!")
+	message_admins("([logdetails(src)]) Nuke disk generator destroyed!")
+	log_game("([logdetails(src)]) Nuke disk generator destroyed!")
 	. = ..()
 
 /obj/machinery/computer/code_generator/nuke/complete_segment()
