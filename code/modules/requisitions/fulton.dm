@@ -52,7 +52,11 @@
 		user.temporarilyRemoveItemFromInventory(src) //Removes the item without qdeling it, qdeling it this early will break the rest of the procs
 		moveToNullspace()
 
-	qdel(spirited_away)
+	if(isliving(spirited_away))
+		var/mob/living/spirited_away_living = spirited_away
+		spirited_away_living.despawn()
+	if(!QDELETED(spirited_away))
+		qdel(spirited_away)
 
 
 /obj/item/fulton_extraction_pack/proc/do_checks(atom/movable/spirited_away, mob/user)
@@ -274,7 +278,7 @@
 	if(care_about_anchored && movable_target.anchored)
 		balloon_alert(user, "Cannot extract anchored")
 		return FALSE
-	if(do_after_time && (user.do_actions || !do_after(user, do_after_time, TRUE, target)))
+	if(do_after_time && (user.do_actions || !do_after(user, do_after_time, TRUE, target, BUSY_ICON_HOSTILE, BUSY_ICON_DANGER, PROG_BAR_GENERIC)))
 		return
 	if(require_living_to_be_dead && isliving(target))
 		var/mob/living/living_target = target
@@ -348,6 +352,8 @@
 	density = FALSE
 
 /obj/structure/fulton_extraction_point/wrench_act(mob/living/user, obj/item/I)
+	if(!user.Adjacent(src))
+		return
 	playsound(loc, 'sound/items/ratchet.ogg', 25, 1)
 	if(anchored)
 		to_chat(user, span_notice("You unanchor [src]."))

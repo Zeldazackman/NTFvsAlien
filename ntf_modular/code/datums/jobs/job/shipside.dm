@@ -448,8 +448,8 @@ You are expected to make sure the operations are functioning as intended with th
 Your primary job is to build good relations, protect the interests of the company and then the corporate council and report critical events to Kaizoku. Follow regular game rules unless told otherwise by your superiors.
 Use a fax machine to communicate with corporate headquarters or to acquire new directives when in doubt. You may not receive anything back (especially if the game staff is absent or otherwise busy), and this is normal.
 Kaizoku Corporation competes in different wings of weapons development against Archercorp, though Archercorp sees them as no opponent due their isolationist behavior. Kaizoku Has no hand in the corporate council ship, they operate seperately in their own ship... Which was not taken well by the council to begin with. Your job is tough.
-Kaizoku is secretive and untrustworthy to other corporations, following their own agenda and researching borderline black market cybernetics and neural technologies. Your corporation is the primary developer of the neural implants everyone have today.
-Your ranking allows you to know your corporation has vital backing from the criminal syndicate of the slums which leader of also detonated the nuke in center of the corpo plaza. You will have to maintain relationship with the corporate council despite the difficulties or else there is nothing even another nuke can do."}
+Kaizoku is secretive and untrustworthy to other corporations, following their own agenda and researching straight up war crime neural technologies. Your corporation is the primary developer of the neural implants everyone have today, together with Novamed.
+Your ranking allows you to know your corporation has vital backing from the criminal syndicate of the slums which leader of also detonated the nuke in center of the city which of course affected the slums right, quite literally beneath the center underground too. You will have to maintain relationship with the corporate council despite the difficulties or else there is nothing even another nuke can do."}
 
 /datum/outfit/job/civilian/liaison_kaizoku
 	name = "Kaizoku Liaison"
