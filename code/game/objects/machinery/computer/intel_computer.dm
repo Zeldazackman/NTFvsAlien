@@ -97,7 +97,7 @@
 	return ..()
 
 /obj/machinery/computer/intel_computer/interact(mob/user)
-	if(machine_stat & BROKEN||DISABLED)
+	if(machine_stat & (BROKEN|DISABLED))
 		to_chat(user, span_warning("The terminal is currently broken and cannot be used."))
 		return
 	if(!active)
