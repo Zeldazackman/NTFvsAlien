@@ -129,6 +129,7 @@
 	if(new_max_health == maxHealth)
 		return
 	var/needed_healing = 0
+	var/new_stun_damage = (stun_health_damage * new_max_health)/maxHealth
 
 	if(health < 0) //In crit. Death threshold below 0 doesn't change with stat buff, so we can just apply damage equal to the max health change
 		needed_healing = maxHealth - new_max_health //Positive means our max health is going down, so heal to keep parity
@@ -146,6 +147,7 @@
 
 	maxHealth = new_max_health
 	updatehealth()
+	set_stun_health(new_stun_damage)
 
 /mob/living/carbon/xenomorph/proc/generate_nicknumber()
 	//We don't have a nicknumber yet, assign one to stick with us
