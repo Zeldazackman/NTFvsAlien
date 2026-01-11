@@ -573,7 +573,7 @@
 		msg += separator_hr("Xeno Info")
 		if(species.species_flags & IS_SYNTHETIC)
 			msg += "[span_xenowarning("You sense [t_he] [t_is] not organic.")]\n"
-		if(ishuman() && (SSticker.mode.round_type_flags & MODE_FREE_LARVABURST))
+		if(SSticker.mode.round_type_flags & MODE_FREE_LARVABURST)
 			if(getCloneLoss() >= 40) //I guess they remain dormant
 				msg += "<span style='color: red;'>You sense that even though [t_he] [t_is] suitable for carrying larva, they are unable to grow in this host due irrepairable damage!</span>\n"
 		if(status_flags & XENO_HOST)
