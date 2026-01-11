@@ -322,7 +322,7 @@
 		victim.visible_message(span_green("Remaining acidic cum spills out from [victim]'s holes!"),
 				span_green("Remaining acidic cum spills out of your holes!"),
 				span_notice("You hear splashing."))
-	Destroy()
+	qdel(src)
 
 /obj/structure/bed/nest/advanced/special
 	name = "sentient tentacle breeding nest"
