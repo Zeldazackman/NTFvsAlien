@@ -90,11 +90,14 @@
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_INTEL_DISK_PRINTED, src, new_disk)
 
 /obj/machinery/computer/intel_computer/Destroy()
+	if(!force)
+		set_disabled()
+		return QDEL_HINT_LETMELIVE
 	GLOB.intel_computers -= src
 	return ..()
 
 /obj/machinery/computer/intel_computer/interact(mob/user)
-	if(machine_stat & BROKEN||DISABLED)
+	if(machine_stat & (BROKEN|DISABLED))
 		to_chat(user, span_warning("The terminal is currently broken and cannot be used."))
 		return
 	if(!active)
@@ -186,6 +189,34 @@
 		var/datum/job/xeno_job = SSjob.GetJobType(GLOB.hivenumber_to_job_type[user.get_xeno_hivenumber()])
 		. += span_notice("You could redeem it at a silo for [floor(supply_reward/160)] ambrosia, [round(supply_reward/2, 0.1)] psypoints and [round(floor(supply_reward/60)/xeno_job.job_points_needed, 0.01)] burrowed larvae.")
 	. += span_notice("[active ? "Y":"Once it is active, y"]ou could insert an intel disk to increase these rewards. [max_chain ? "This will extend its intel chain if it is already part of a chain of length [max_chain] or more" : "This will also start an intel chain"].")
+
+/obj/machinery/computer/intel_computer/ex_act(severity)
+	switch(severity)
+		if(EXPLODE_DEVASTATE)
+			set_disabled()
+			return
+		if(EXPLODE_HEAVY)
+			if (prob(50))
+				set_disabled()
+				return
+		if(EXPLODE_LIGHT)
+			if (prob(25))
+				set_disabled()
+				return
+		if(EXPLODE_WEAK)
+			if (prob(15))
+				set_disabled()
+				return
+
+/obj/machinery/computer/intel_computer/obj_break(damage_flag)
+	obj_integrity = max_integrity
+	. = ..()
+	set_disabled()
+
+/obj/machinery/computer/intel_computer/do_acid_melt()
+	visible_message(span_xenodanger("[src] is disabled by the acid!"))
+	playsound(src, SFX_ACID_HIT, 25)
+	set_disabled()
 
 /obj/item/disk/intel_disk
 	name = "classified data disk"

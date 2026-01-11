@@ -29,6 +29,8 @@
 	visible_message(span_notice("[src] shudders as its tentacles thicken and harden, becoming more effective at capturing prey!"))
 	resist_time *= 2
 	capture_time *= 0.5
+	max_integrity += 150
+	obj_integrity += 150
 
 /obj/structure/bed/nest/advanced/examine(mob/user)
 	. = ..()
@@ -320,7 +322,7 @@
 		victim.visible_message(span_green("Remaining acidic cum spills out from [victim]'s holes!"),
 				span_green("Remaining acidic cum spills out of your holes!"),
 				span_notice("You hear splashing."))
-	Destroy()
+	qdel(src)
 
 /obj/structure/bed/nest/advanced/special
 	name = "sentient tentacle breeding nest"

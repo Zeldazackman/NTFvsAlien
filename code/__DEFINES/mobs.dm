@@ -387,8 +387,11 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 #define LIMB_METAL_AMOUNT 125
 #define LIMB_MATTER_AMOUNT 100
 
+#define STANDARD_DNR_TIME 300 //10 minutes
+#define SOL_DNR_TIME 2400 //80 minutes
+
 //How long it takes for a human to become undefibbable
-GLOBAL_VAR_INIT(time_before_dnr, 300) //multiply by 2
+GLOBAL_VAR_INIT(time_before_dnr, STANDARD_DNR_TIME) //multiply by 2
 
 ///Default living `maxHealth`
 #define LIVING_DEFAULT_MAX_HEALTH 100
@@ -578,7 +581,7 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 #define XENO_LARVAL_AMOUNT_RECURRING 5
 #define XENO_LARVAL_CHANNEL_TIME 0.5 SECONDS
 
-#define XENO_NEURO_AMOUNT_RECURRING 5
+#define XENO_NEURO_AMOUNT_RECURRING 6
 #define XENO_NEURO_CHANNEL_TIME 0.25 SECONDS
 
 #define XENO_HEALTH_ALERT_TRIGGER_PERCENT 0.25 //If a xeno is damaged while its current hit points are less than this percent of its maximum, we send out an alert to the hive

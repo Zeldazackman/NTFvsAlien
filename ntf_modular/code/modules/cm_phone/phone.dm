@@ -390,7 +390,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	if(!P || !attached_to)
 		return
 
-	P.handle_hear(source, speech_args)
+	//P.handle_hear(source, speech_args)
 	attached_to.handle_hear(source, speech_args)
 	playsound(P, "talk_phone", 5)
 	log_say("TELEPHONE: [key_name(source)] on Phone '[phone_id]' to '[T.phone_id]' said '[speech_args[SPEECH_MESSAGE]]'")

@@ -26,11 +26,12 @@
 	. = ..()
 	REMOVE_TRAIT(src, TRAIT_NODROP, "parasite_trait")
 	unequipper.dropItemToGround(src)
+	if(!QDELETED(src))
+		qdel(src)
 
 /obj/item/clothing/suit/resin_bodysuit/fire_act(burn_level)
 	. = ..()
 	unequipped(wearer)
-	qdel()
 
 /obj/item/clothing/suit/resin_bodysuit/welder_act(mob/living/user, obj/item/I)
 	. = ..()

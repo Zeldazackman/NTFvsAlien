@@ -5,23 +5,23 @@
 	var/bino_cooldown_mult = 1
 
 /datum/fire_support/gau/solmode
-	uses = 5
+	uses = 4
 	impact_quantity = 8
-	solmode_rearm_duration = 5 SECONDS
+	solmode_rearm_duration = 5 MINUTES
 	cooldown_duration = 15 SECONDS
 	bino_cooldown_mult = 0.2
 
 /datum/fire_support/rockets/solmode
-	uses = 4
+	uses = 3
 	impact_quantity = 12
-	solmode_rearm_duration = 5 MINUTES
+	solmode_rearm_duration = 10 MINUTES
 	cooldown_duration = 15 SECONDS
 	bino_cooldown_mult = 0.5
 
 /datum/fire_support/cruise_missile/solmode
 	uses = 2
-	cooldown_duration = 30 SECONDS
-	solmode_rearm_duration = 10 MINUTES
+	cooldown_duration = 1 MINUTES
+	solmode_rearm_duration = 15 MINUTES
 
 /datum/fire_support/droppod/solmode
 	fire_support_type = FIRESUPPORT_TYPE_SENTRY_POD_SOLMODE
@@ -35,25 +35,25 @@
 
 //som shit has also lasting fire and overall crazy so i gotta gut em a bit.
 /datum/fire_support/volkite/solmode
-	uses = 4
+	uses = 3
 	cooldown_duration = 30 SECONDS //they still got fire so give it a break
-	solmode_rearm_duration = 5 MINUTES
+	solmode_rearm_duration = 4 MINUTES
 	fire_support_type = FIRESUPPORT_TYPE_VOLKITE_SOLMODE
 	bino_cooldown_mult = 0.2
 
 /datum/fire_support/incendiary_rockets/solmode
-	uses = 3
+	uses = 2
 	impact_quantity = 6
 	fire_support_type = FIRESUPPORT_TYPE_INCEND_ROCKETS_SOLMODE
-	solmode_rearm_duration = 5 MINUTES
+	solmode_rearm_duration = 8 MINUTES
 	cooldown_duration = 30 SECONDS
 	bino_cooldown_mult = 0.5
 
 /datum/fire_support/rad_missile/solmode
 	uses = 2
-	cooldown_duration = 1 MINUTES
+	cooldown_duration = 2 MINUTES
 	fire_support_type = FIRESUPPORT_TYPE_RAD_MISSILE_SOLMODE
-	solmode_rearm_duration = 10 MINUTES
+	solmode_rearm_duration = 15 MINUTES
 
 /datum/fire_support/tele_cope/solmode
 	uses = 2

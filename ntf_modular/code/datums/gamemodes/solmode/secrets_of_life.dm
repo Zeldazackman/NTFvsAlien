@@ -2,7 +2,7 @@
 	name = "Secret of Life - Main"
 	config_tag = "Secret of Life - Main"
 	silo_scaling = 1
-	round_type_flags = MODE_INFESTATION|MODE_PSY_POINTS|MODE_PSY_POINTS_ADVANCED|MODE_HIJACK_POSSIBLE|MODE_SILO_RESPAWN|MODE_ALLOW_XENO_QUICKBUILD|MODE_MUTATIONS_OBTAINABLE|MODE_BIOMASS_POINTS|MODE_XENO_GRAB_DEAD_ALLOWED|MODE_SINGLE_USE_NUKE_DISK_GENERATOR
+	round_type_flags = MODE_INFESTATION|MODE_PSY_POINTS|MODE_PSY_POINTS_ADVANCED|MODE_HIJACK_POSSIBLE|MODE_SILO_RESPAWN|MODE_ALLOW_XENO_QUICKBUILD|MODE_MUTATIONS_OBTAINABLE|MODE_BIOMASS_POINTS|MODE_XENO_GRAB_DEAD_ALLOWED|MODE_SINGLE_USE_NUKE_DISK_GENERATOR|MODE_FREE_LARVABURST
 	shutters_drop_time = 15 MINUTES
 	xeno_abilities_flags = ABILITY_ALL_GAMEMODE
 	factions = list(FACTION_TERRAGOV, FACTION_SOM, FACTION_XENO, FACTION_CLF, FACTION_ICC, FACTION_VSD, FACTION_NANOTRASEN)
@@ -58,7 +58,7 @@
 		/datum/job/survivor/maid = 3,
 		/datum/job/other/prisoner = 4,
 		/datum/job/survivor/synth = 2,
-		/datum/job/xenomorph = 5,
+		/datum/job/xenomorph = 8,
 		/datum/job/xenomorph/green = FREE_XENO_AT_START_CORRUPT,
 		/datum/job/xenomorph/queen = 1,
 		/datum/job/som/silicon/synthetic/som = 1,
@@ -116,7 +116,7 @@
 	respawn_time = 5 MINUTES
 	bioscan_interval = 30 MINUTES
 	deploy_time_lock = 15 SECONDS
-	custom_dnr_time = 2400 //40 minutes till DNR
+	custom_dnr_time = SOL_DNR_TIME //40 minutes till DNR
 	var/list/datum/job/stat_restricted_jobs = list(/datum/job/survivor/prisoner,/datum/job/other/prisoner,/datum/job/other/prisonersom,/datum/job/other/prisonerclf)
 
 	var/pop_lock = FALSE //turns false post setup
@@ -156,7 +156,8 @@
 		xenorespawn_time = 5 MINUTES
 		bioscan_interval = 15 MINUTES
 		round_type_flags &= ~MODE_XENO_GRAB_DEAD_ALLOWED
-		GLOB.time_before_dnr = initial(GLOB.time_before_dnr)
+		round_type_flags |= MODE_FREE_LARVABURST
+		GLOB.time_before_dnr = STANDARD_DNR_TIME
 	else
 		evo_requirements = list(
 			/datum/xeno_caste/queen = 0,
@@ -165,11 +166,12 @@
 		)
 		for(var/obj/item/teleporter_kit/indestructible/teles in GLOB.indestructible_teleporters)
 			teles.resistance_flags = initial(teles.resistance_flags)
-		GLOB.time_before_dnr = 2400 // 40 minutes
+		GLOB.time_before_dnr = SOL_DNR_TIME
 		respawn_time = initial(respawn_time)
 		xenorespawn_time = initial(xenorespawn_time)
 		bioscan_interval = initial(bioscan_interval)
 		round_type_flags |= MODE_XENO_GRAB_DEAD_ALLOWED
+		round_type_flags &= ~MODE_FREE_LARVABURST
 
 	for(var/datum/xeno_caste/caste AS in evo_requirements)
 		GLOB.xeno_caste_datums[caste][XENO_UPGRADE_BASETYPE].evolve_min_xenos = evo_requirements[caste]

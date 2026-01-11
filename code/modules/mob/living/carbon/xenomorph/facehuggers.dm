@@ -893,6 +893,7 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 	name = "neurotoxin hugger"
 	filtercolor = COLOR_DARK_ORANGE
 	injected_chemical_type = /datum/reagent/toxin/xeno_neurotoxin
+	amount_injected = 12
 
 /obj/item/clothing/mask/facehugger/combat/chem_injector/neuro/try_attach(mob/living/hugged, mob/user, no_evade)
 	if(!..())
