@@ -43,7 +43,8 @@
 	LAZYADDASSOC(GLOB.xeno_resin_silos_by_hive, hivenumber, src)
 
 	if(!locate(/obj/alien/weeds) in loc)
-		new /obj/alien/weeds/node(loc)
+		var/obj/alien/weeds/node/thenode = new /obj/alien/weeds/node(loc)
+		thenode.hivenumber = hivenumber
 	if(GLOB.hive_datums[hivenumber])
 		RegisterSignals(GLOB.hive_datums[hivenumber], list(COMSIG_HIVE_XENO_MOTHER_PRE_CHECK, COMSIG_HIVE_XENO_MOTHER_CHECK), PROC_REF(is_burrowed_larva_host))
 		if(length(GLOB.xeno_resin_silos_by_hive[hivenumber]) == 1)

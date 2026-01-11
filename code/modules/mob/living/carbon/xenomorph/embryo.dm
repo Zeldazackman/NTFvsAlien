@@ -67,8 +67,12 @@
 		qdel(src)
 		return PROCESS_KILL
 
+	if(ishuman(affected_mob) && (SSticker.mode.round_type_flags & MODE_FREE_LARVABURST))
+		if(affected_mob.getCloneLoss() > 50) //I guess they remain dormant
+			return PROCESS_KILL
+
 	if(affected_mob.stat == DEAD) //No more corpsefucking for infinite larva, thanks
-		return FALSE
+		return PROCESS_KILL
 
 	if(loc != affected_mob)
 		var/anyleft = FALSE
@@ -293,6 +297,11 @@
 			monkey.set_undefibbable()
 		victim.take_overall_damage(140, BRUTE, MELEE)
 		victim.take_overall_damage(20, BURN, MELEE)
+	if(ishuman(victim) && !(SSticker.mode.round_type_flags & MODE_FREE_LARVABURST))
+		if(victim.getCloneLoss() < 50)
+			victim.take_overall_damage(50, CLONE, NONE)
+			victim.visible_message(span_warning("[victim]'s body and genitals are too devastated from this to perform another larva burst without treatment."))
+
 	if(((locate(/obj/structure/bed/nest) in loc) || loc_weeds_type) && !mind)
 		var/suitablesilo = FALSE
 		for(var/obj/silo in GLOB.xeno_resin_silos_by_hive[hivenumber])
