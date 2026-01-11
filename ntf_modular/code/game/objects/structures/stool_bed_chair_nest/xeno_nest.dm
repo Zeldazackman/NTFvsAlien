@@ -1,7 +1,6 @@
 /obj/structure/bed/nest/advanced
 	name = "tentacle breeding nest"
 	desc = "A trap nest, It's a gruesome pile of thick, sticky resin-covered tentacles shaped like a nest. It will quickly capture who stay on it and cum acid and larva inside if given opportunity. It is rather easy to escape from."
-	max_integrity = 175
 	var/hivenumber = XENO_HIVE_NORMAL
 	var/targethole = 1
 	var/settings_locked = FALSE
@@ -30,8 +29,8 @@
 	visible_message(span_notice("[src] shudders as its tentacles thicken and harden, becoming more effective at capturing prey!"))
 	resist_time *= 2
 	capture_time *= 0.5
-	max_integrity += 75
-	obj_integrity += 75
+	max_integrity += 150
+	obj_integrity += 150
 
 /obj/structure/bed/nest/advanced/examine(mob/user)
 	. = ..()
