@@ -390,7 +390,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	if(!P || !attached_to)
 		return
 
-	//P.handle_hear(source, speech_args)
+	P.handle_hear(source, speech_args)
 	attached_to.handle_hear(source, speech_args)
 	playsound(P, "talk_phone", 5)
 	log_say("TELEPHONE: [key_name(source)] on Phone '[phone_id]' to '[T.phone_id]' said '[speech_args[SPEECH_MESSAGE]]'")
@@ -476,10 +476,13 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 		return
 	var/mob/M = loc
 
+	if(M == source) //you are speaking to yourself
+		return
+
 	if(!raised)
 		to_chat(M, span_lightpurple("[icon2html(src, M)] You hear muffled, unintelligible speech through \the [src] in your hand."))
 		return
-	to_chat(M, span_lightpurple("[icon2html(src, M)] [T.phone_id]: \"[speech_args[SPEECH_MESSAGE]].\"")) //i didnt include name cause I guess it makes sense not to.
+	to_chat(M, span_lightpurple("[icon2html(src, M)] [T.phone_id]: \"[speech_args[SPEECH_MESSAGE]]\"")) //i didnt include name cause I guess it makes sense not to.
 
 /obj/item/phone/functional/proc/attach_to(obj/structure/transmitter/to_attach)
 	if(!istype(to_attach))
@@ -634,7 +637,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 /obj/structure/transmitter/no_dnd
 	do_not_disturb = PHONE_DND_FORBIDDEN
 
-//rotary desk phones (need a touch tone handset at some point)
+//desk desk phones (need a touch tone handset at some point)
 /obj/structure/transmitter/desk
 	name = "wired telephone"
 	icon_state = "desk_phone"
@@ -654,7 +657,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	networks_receive = list(FACTION_NEUTRAL)
 	networks_transmit = list(FACTION_NEUTRAL)
 
-/obj/structure/transmitter/colony_net/rotary
+/obj/structure/transmitter/colony_net/desk
 	name = "wired telephone"
 	icon_state = "desk_phone"
 	desc = "The finger plate is a little stiff."
@@ -664,7 +667,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	networks_receive = list(FACTION_SOM)
 	networks_transmit = list(FACTION_SOM)
 
-/obj/structure/transmitter/som_net/rotary
+/obj/structure/transmitter/som_net/desk
 	name = "wired telephone"
 	icon_state = "desk_phone"
 
@@ -675,27 +678,27 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	networks_receive = list(FACTION_CLF)
 	networks_transmit = list(FACTION_CLF)
 
-/obj/structure/transmitter/clf_net/rotary
+/obj/structure/transmitter/clf_net/desk
 	name = "wired telephone"
 	icon_state = "desk_phone"
 	desc = "The finger plate is a little stiff."
 
 /obj/structure/transmitter/kz_net
+	color = COLOR_YELLOW
 	networks_receive = list(FACTION_VSD)
 	networks_transmit = list(FACTION_VSD)
 
-/obj/structure/transmitter/kz_net/rotary
-	color = COLOR_YELLOW
+/obj/structure/transmitter/kz_net/desk
 	name = "wired telephone"
 	icon_state = "desk_phone"
 	desc = "The finger plate is a little stiff."
 
 /obj/structure/transmitter/cm_net
+	color = COLOR_MODERATE_BLUE
 	networks_receive = list(FACTION_ICC)
 	networks_transmit = list(FACTION_ICC)
 
-/obj/structure/transmitter/cm_net/rotary
-	color = COLOR_MODERATE_BLUE
+/obj/structure/transmitter/cm_net/desk
 	name = "wired telephone"
 	icon_state = "desk_phone"
 	desc = "The finger plate is a little stiff."

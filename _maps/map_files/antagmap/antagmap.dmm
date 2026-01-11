@@ -217,7 +217,7 @@
 /area/antag_ship/som/maintenance/north)
 "bA" = (
 /obj/structure/table/black,
-/obj/structure/transmitter/kz_net/rotary{
+/obj/structure/transmitter/kz_net/desk{
 	phone_category = "Combat Information Center";
 	phone_id = "KZ CIC"
 	},
@@ -3077,7 +3077,7 @@
 /area/antag_ship/som/hangar)
 "pe" = (
 /obj/structure/table/reinforced,
-/obj/structure/transmitter/colony_net/rotary{
+/obj/structure/transmitter/colony_net/desk{
 	phone_category = "Diplomacy";
 	phone_id = "SOM"
 	},
@@ -3175,7 +3175,7 @@
 /area/antag_ship/som/requisition)
 "pz" = (
 /obj/structure/table/reinforced/prison,
-/obj/structure/transmitter/clf_net/rotary{
+/obj/structure/transmitter/clf_net/desk{
 	phone_category = "CLF Base";
 	phone_id = "Base"
 	},
@@ -3566,7 +3566,7 @@
 /area/antag_ship/som/hangar)
 "rl" = (
 /obj/structure/table/reinforced/prison,
-/obj/structure/transmitter/colony_net/rotary{
+/obj/structure/transmitter/colony_net/desk{
 	phone_category = "Diplomacy";
 	phone_id = "CLF"
 	},
@@ -3664,13 +3664,13 @@
 	},
 /area/antag_ship/vsd/hall)
 "rK" = (
-/obj/structure/transmitter/cm_net/rotary{
+/obj/structure/transmitter/cm_net/desk{
 	phone_category = "Combat Information Center";
 	phone_id = "CM CIC";
 	pixel_x = -6
 	},
 /obj/structure/table/mainship,
-/obj/structure/transmitter/colony_net/rotary{
+/obj/structure/transmitter/colony_net/desk{
 	phone_category = "Diplomacy";
 	phone_id = "CM";
 	pixel_x = 6
@@ -5722,7 +5722,7 @@
 /area/antag_ship/som/bridge)
 "Cg" = (
 /obj/structure/table/wood/fancy,
-/obj/structure/transmitter/som_net/rotary{
+/obj/structure/transmitter/som_net/desk{
 	phone_category = "Command";
 	phone_id = "SOM FC Office"
 	},
@@ -6277,7 +6277,7 @@
 "EC" = (
 /obj/structure/table/reinforced,
 /obj/item/circuitboard/airlock,
-/obj/structure/transmitter/som_net/rotary{
+/obj/structure/transmitter/som_net/desk{
 	phone_category = "Command";
 	phone_id = "Mech Bay"
 	},
@@ -6850,7 +6850,7 @@
 /area/antag_ship/clf_base/lounge)
 "Hd" = (
 /obj/structure/table/black,
-/obj/structure/transmitter/colony_net/rotary{
+/obj/structure/transmitter/colony_net/desk{
 	phone_category = "Diplomacy";
 	phone_id = "KZ"
 	},
@@ -7033,7 +7033,7 @@
 /area/antag_ship/som/barracks)
 "HY" = (
 /obj/structure/table/reinforced,
-/obj/structure/transmitter/som_net/rotary{
+/obj/structure/transmitter/som_net/desk{
 	phone_category = "Combat Information Center";
 	phone_id = "SOM CIC"
 	},
@@ -7998,7 +7998,7 @@
 	dir = 8;
 	on = 1
 	},
-/obj/structure/transmitter/som_net/rotary{
+/obj/structure/transmitter/som_net/desk{
 	phone_category = "Command";
 	phone_id = "Commander Office";
 	pixel_x = 10;
@@ -9623,7 +9623,7 @@
 /obj/structure/table/mainship/nometal,
 /obj/item/tool/pen,
 /obj/structure/paper_bin,
-/obj/structure/transmitter/colony_net/rotary{
+/obj/structure/transmitter/colony_net/desk{
 	phone_category = "Diplomacy";
 	phone_id = "ACAP";
 	pixel_y = 10
