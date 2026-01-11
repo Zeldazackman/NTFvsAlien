@@ -251,6 +251,10 @@
 	return TRUE
 
 /obj/machinery/miner/wrench_act(mob/living/user, obj/item/I)
+	var/area/cavezone = get_area(src)
+	if(user.faction == FACTION_CLF && ((cavezone && cavezone.ceiling > CEILING_UNDERGROUND) || is_platinum()))
+		user.visible_message(span_warning("Repairing this would go against your masters' wishes and wellbeing."))
+		return FALSE
 	if(miner_status != MINER_SMALL_DAMAGE)
 		return
 	if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
