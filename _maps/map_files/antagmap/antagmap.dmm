@@ -5724,7 +5724,7 @@
 /obj/structure/table/wood/fancy,
 /obj/structure/transmitter/som_net/rotary{
 	phone_category = "Command";
-	phone_id = "FC Office"
+	phone_id = "SOM FC Office"
 	},
 /turf/open/floor/iron/grimy,
 /area/antag_ship/som/office/commander/field)
