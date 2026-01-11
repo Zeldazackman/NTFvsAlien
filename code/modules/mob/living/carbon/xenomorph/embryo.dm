@@ -119,12 +119,21 @@
 	for(var/obj/item/alien_embryo/embryo in affected_mob.contents)
 		if(embryo.affected_mob == affected_mob)
 			embryos_in_host++
+	var/current_psypoint_reward = psych_points_output * (1/3) / embryos_in_host
+	var/current_biomass_reward =  MUTATION_BIOMASS_PER_EMBRYO_TICK * (1/3) / embryos_in_host
 	if(affected_mob.client && (affected_mob.client.inactivity < 10 MINUTES))
-		psypoint_reward += psych_points_output * 10 / embryos_in_host
-		biomass_reward += MUTATION_BIOMASS_PER_EMBRYO_TICK * 10 / embryos_in_host
-	else
-		psypoint_reward += psych_points_output / embryos_in_host
-		biomass_reward += MUTATION_BIOMASS_PER_EMBRYO_TICK / embryos_in_host
+		current_psypoint_reward *= 10
+		current_biomass_reward *= 10
+
+
+	GLOB.round_statistics.strategic_psypoints_from_embryos += current_psypoint_reward
+	GLOB.round_statistics.biomass_from_embryos += current_biomass_reward
+	SSpoints.add_strategic_psy_points(hivenumber, current_psypoint_reward)
+	SSpoints.add_tactical_psy_points(hivenumber, current_psypoint_reward*0.25)
+	SSpoints.add_biomass_points(hivenumber, current_biomass_reward)
+
+	psypoint_reward += current_psypoint_reward * 2
+	biomass_reward += current_psypoint_reward * 2
 
 	if(stage <= 4)
 		counter += 2.5 //Free burst time in ~7/8 min.
