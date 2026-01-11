@@ -26,7 +26,8 @@
 	. = ..()
 	REMOVE_TRAIT(src, TRAIT_NODROP, "parasite_trait")
 	unequipper.dropItemToGround(src)
-	Destroy()
+	if(!QDELETED(src))
+		qdel(src)
 
 /obj/item/clothing/suit/resin_bodysuit/fire_act(burn_level)
 	. = ..()
