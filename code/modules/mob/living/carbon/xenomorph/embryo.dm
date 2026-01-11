@@ -68,7 +68,7 @@
 		return PROCESS_KILL
 
 	if(affected_mob.stat == DEAD) //No more corpsefucking for infinite larva, thanks
-		return PROCESS_KILL
+		return FALSE
 
 	if(loc != affected_mob)
 		var/anyleft = FALSE
