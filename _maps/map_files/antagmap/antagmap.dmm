@@ -8336,9 +8336,7 @@
 	},
 /area/antag_ship/vsd/port)
 "NV" = (
-/obj/structure/bed/chair/sofa/right{
-	dir = 8
-	},
+/obj/structure/bed/chair/sofa/right,
 /turf/open/floor/wood,
 /area/antag_ship/som/office/commander/field)
 "NX" = (
