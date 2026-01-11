@@ -51,7 +51,7 @@
 	if(!printing)
 		STOP_PROCESSING(SSmachines, src)
 		return
-	if (machine_stat & NOPOWER||DISABLED||BROKEN)
+	if (machine_stat & (NOPOWER|DISABLED|BROKEN))
 		printing = FALSE
 		update_minimap_icon()
 		visible_message("<b>[src]</b> shuts down as it loses power. Any running programs will now exit.")
