@@ -5,7 +5,7 @@ import { resolveAsset } from '../../assets';
 import { useBackend } from '../../backend';
 import { getGridSpotKey, GridSpotKey, LoadoutSlotData, SLOTS } from './Types';
 
-const ROWS = 5;
+const ROWS = 6;
 const COLUMNS = 4;
 
 const BUTTON_DIMENSION_WIDTH = '70px';
