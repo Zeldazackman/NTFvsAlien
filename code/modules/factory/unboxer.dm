@@ -9,6 +9,7 @@
 	var/obj/item/factory_part/antag_refill_type = /obj/item/factory_part
 	///By how much we wan to refill the target machine
 	var/refill_amount = 30
+	var/ticks_per_object = 1
 
 /obj/item/factory_refill/Initialize(mapload)
 	. = ..()
@@ -38,6 +39,8 @@
 	var/obj/item/factory_part/production_type = /obj/item/factory_part
 	///Bool for whether the unboxer is producing things
 	var/on = FALSE
+	var/progress = 0
+	var/ticks_per_object = 1
 
 /obj/machinery/unboxer/Initialize(mapload)
 	. = ..()
@@ -86,8 +89,11 @@
 	if(production_amount_left <= 0)
 		change_state()
 		return
-	new production_type(get_step(src, dir))
-	production_amount_left--
+	progress++
+	if(progress >= ticks_per_object)
+		new production_type(get_step(src, dir))
+		production_amount_left--
+		progress = 0
 
 /obj/machinery/unboxer/attackby(obj/item/I, mob/living/user, def_zone)
 	if(!isfactoryrefill(I) || user.a_intent == INTENT_HARM)
@@ -98,6 +104,7 @@
 			balloon_alert(user, "filler incompatible!")
 			return
 		production_type = refill.refill_type
+		ticks_per_object = refill.ticks_per_object
 	var/to_refill = min(max_fill_amount - production_amount_left, refill.refill_amount)
 	production_amount_left += to_refill
 	refill.refill_amount -= to_refill
@@ -179,6 +186,8 @@
 	desc = "A box with round metal plates inside. Used to refill Unboxers. These will become 'Pizzas', once finished."
 	refill_type = /obj/item/factory_part/pizza
 	antag_refill_type = /obj/item/factory_part/pizza
+	refill_amount = 50
+	ticks_per_object = 2
 
 /obj/item/factory_refill/plastique_refill
 	name = "box of rounded polymer plates (C4)"
