@@ -42,9 +42,9 @@
 
 /obj/machinery/computer/code_generator/nuke/Destroy(force)
 	if(!force)
-		set_broken()
-		message_admins("([logdetails(src)]) Nuke disk generator broken.")
-		log_game("([logdetails(src)]) Nuke disk generator broken.")
+		set_disabled()
+		message_admins("([logdetails(src)]) Nuke disk generator was broken.")
+		log_game("([logdetails(src)]) Nuke disk generator was broken.")
 		return QDEL_HINT_LETMELIVE
 	GLOB.nuke_disk_generators -= src
 	message_admins("([logdetails(src)]) Nuke disk generator destroyed!")
@@ -124,7 +124,7 @@
 
 /obj/machinery/computer/code_generator/nuke/set_disabled()
 	. = ..()
-	message_admins("[ADMIN_COORDJMP(src)] [src] was broken!")
+	message_admins("[ADMIN_COORDJMP(src)] [src] was disabled!")
 
 /obj/machinery/computer/code_generator/nuke/repair()
 	. = ..()
