@@ -68,11 +68,11 @@
 		return FALSE
 	if(!COOLDOWN_FINISHED(src, rev_cooldown))
 		return FALSE
-	if(fuel_count < 5)
+	if(fuel_count < 0.3)
 		return FALSE
 	COOLDOWN_START(src, rev_cooldown, 3 SECONDS)
 	to_chat(user, span_notice("You rev the [src]'s engine."))
-	fuel_count -= 5
+	fuel_count -= 0.3
 	playsound(src, pick(rev_sounds), 50, TRUE, falloff = 3)
 	return TRUE
 
@@ -117,7 +117,7 @@
 				canmove = FALSE
 				playsound(src, pick(rev_sounds), 40, TRUE, falloff = 3)
 				balloon_alert(user, "Your [name] struggles on sticky resin!")
-				fuel_count -= 2
+				fuel_count -= 0.3
 				if(prob(25))
 					var/datum/effect_system/smoke_spread/smoke = new
 					smoke.set_up(0, src)
@@ -131,7 +131,7 @@
 	. = ..()
 	if(!LAZYLEN(buckled_mobs)) // dont use fuel or make noise unless we're being used
 		return
-	fuel_count--
+	fuel_count -= 0.1
 	if(fuel_count == LOW_FUEL_LEFT_MESSAGE)
 		for(var/mob/rider AS in buckled_mobs)
 			balloon_alert(rider, "[fuel_count/fuel_max*100]% fuel left")
