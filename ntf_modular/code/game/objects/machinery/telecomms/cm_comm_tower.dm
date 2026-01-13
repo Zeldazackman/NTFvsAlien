@@ -84,7 +84,7 @@
 	use_power = NO_POWER_USE
 	idle_power_usage = 0
 	netspeed = 40
-	resistance_flags = UNACIDABLE|XENO_DAMAGEABLE|CAN_BE_HIT|PORTAL_IMMUNE|BANISH_IMMUNE
+	resistance_flags = UNACIDABLE|XENO_DAMAGEABLE|CAN_BE_HIT|PORTAL_IMMUNE|BANISH_IMMUNE|DROPSHIP_IMMUNE
 	var/health = 450 //we use this seperate var so shit dont delete I guess.
 	freq_listening = NTC_SIDED_FREQS
 
