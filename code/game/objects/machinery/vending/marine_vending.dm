@@ -1149,6 +1149,7 @@
 			/obj/item/defibrillator = 8,
 			/obj/item/healthanalyzer = 16,
 			/obj/item/bodybag/cryobag = 24,
+			/obj/item/bodybag = 24,
 		),
 	)
 
