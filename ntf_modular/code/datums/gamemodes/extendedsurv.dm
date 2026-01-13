@@ -11,6 +11,7 @@
 		/datum/job/xenomorph/queen = 1,
 		/datum/job/clf/medic = 1,
 		/datum/job/clf/tech = 2,
+		/datum/job/other/prisonerclf = 2,
 		/datum/job/som/command/staffofficer = 1,
 		/datum/job/som/squad/medic = 1,
 		/datum/job/som/squad/engineer = 1,
