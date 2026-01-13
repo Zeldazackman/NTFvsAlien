@@ -9742,7 +9742,7 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/slumbridge/caves/mining)
 "hrQ" = (
-/obj/machinery/constructable_frame/machine_frame,
+/obj/machinery/constructable_frame,
 /obj/machinery/power/apc/drained{
 	dir = 8
 	},

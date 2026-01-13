@@ -107,21 +107,8 @@
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
-/obj/item/weapon/gun/sentry/big_sentry/premade/radial{
-	name = "\improper ST-571 sentry gun"
-	},
-/obj/structure/barricade/solid{
-	dir = 4
-	},
-/obj/structure/barricade/solid{
+/turf/open/floor/plating/ground/dirtgrassborder{
 	dir = 1
-	},
-/obj/structure/barricade/solid{
-	dir = 8
-	},
-/obj/structure/barricade/solid,
-/turf/open/floor/plating/ground/dirtgrassborder/corner2{
-	dir = 8
 	},
 /area/mainship/groundhq/ntf/hallways/gardens)
 "afx" = (
@@ -232,6 +219,10 @@
 /obj/structure/cable,
 /turf/open/floor/mainship/floor,
 /area/campaign/jungle_outpost/outpost/living/bathroom)
+"akc" = (
+/obj/structure/flora/pottedplant/twentyone,
+/turf/open/floor/mainship_hull,
+/area/mainship/groundhq/ntf/crimsonveil)
 "akz" = (
 /obj/structure/table/mainship/nometal,
 /obj/item/stack/cable_coil,
@@ -3024,6 +3015,22 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1,
 /turf/open/floor/mainship,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
+"cxr" = (
+/obj/item/weapon/gun/sentry/big_sentry/premade/radial{
+	name = "\improper ST-571 sentry gun"
+	},
+/obj/structure/barricade/solid{
+	dir = 4
+	},
+/obj/structure/barricade/solid{
+	dir = 1
+	},
+/obj/structure/barricade/solid{
+	dir = 8
+	},
+/obj/structure/barricade/solid,
+/turf/open/floor/mainship_hull,
+/area/mainship/groundhq/ntf/hallways/gardens)
 "cxO" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
@@ -5427,6 +5434,12 @@
 	},
 /turf/open/floor/mainship_hull,
 /area/mainship/groundhq/ntf/hallways/gardens)
+"eKd" = (
+/mob/living/simple_animal/mouse,
+/turf/open/ground/coast/corner2{
+	dir = 1
+	},
+/area/mainship/groundhq/ntf/hallways/gardens)
 "eKs" = (
 /obj/machinery/door/poddoor/mainship/open/cic{
 	id = "shipside_cic_lockdown"
@@ -5739,6 +5752,10 @@
 	name = "Engine Monitoring";
 	outside = 0
 	})
+"eVh" = (
+/obj/effect/landmark/mob_spawner/monkey,
+/turf/open/ground/grass,
+/area/mainship/groundhq/ntf/hallways/gardens)
 "eVM" = (
 /obj/structure/rack,
 /obj/item/storage/belt/utility/full,
@@ -6546,6 +6563,7 @@
 /area/mainship/living/tankerbunks)
 "fBC" = (
 /mob/living/carbon/human/species/monkey,
+/obj/structure/flora/tree/jungle/small,
 /turf/open/ground/grass,
 /area/mainship/groundhq/ntf/hallways/gardens)
 "fBZ" = (
@@ -7381,6 +7399,16 @@
 	},
 /turf/open/floor/stairs/rampbottom,
 /area/mainship/hull/lower_hull)
+"gfR" = (
+/obj/structure/window/reinforced/tinted/frosted{
+	dir = 4;
+	pixel_x = 4
+	},
+/obj/structure/bed/chair/sofa/right{
+	dir = 8
+	},
+/turf/open/floor/mainship_hull,
+/area/mainship/groundhq/ntf/crimsonveil)
 "ggd" = (
 /turf/open/floor/mainship_hull/dir{
 	dir = 4
@@ -7728,14 +7756,9 @@
 /turf/open/floor/mainship/cargo,
 /area/mainship/hallways/hangar)
 "guu" = (
-/obj/machinery/light{
+/obj/structure/bed/chair/sofa/right{
 	dir = 8
 	},
-/obj/structure/window/reinforced/tinted/frosted{
-	dir = 4;
-	pixel_x = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/mainship_hull,
 /area/mainship/groundhq/ntf/crimsonveil)
 "guP" = (
@@ -7973,6 +7996,10 @@
 /area/mainship/hallways/aft_hallway{
 	name = "Ship Floor 3 Hallways"
 	})
+"gHw" = (
+/mob/living/simple_animal/cow,
+/turf/open/ground/grass,
+/area/mainship/groundhq/ntf/hallways/gardens)
 "gHT" = (
 /obj/machinery/light{
 	dir = 1
@@ -10455,6 +10482,13 @@
 /area/outpost/cargo{
 	outside = 1
 	})
+"iKo" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/mainship_hull,
+/area/mainship/groundhq/ntf/crimsonveil)
 "iKr" = (
 /obj/structure/window/framed/mainship,
 /obj/structure/curtain/open/temple,
@@ -10944,6 +10978,16 @@
 	},
 /turf/open/floor/mainship/cargo,
 /area/mainship/hallways/hangar)
+"jgI" = (
+/obj/structure/window/reinforced/tinted/frosted{
+	dir = 4;
+	pixel_x = 4
+	},
+/obj/structure/bed/chair/sofa/left{
+	dir = 8
+	},
+/turf/open/floor/mainship_hull,
+/area/mainship/groundhq/ntf/crimsonveil)
 "jgM" = (
 /obj/structure/bed/chair/office/dark,
 /obj/item/radio/intercom/general{
@@ -12003,6 +12047,11 @@
 	name = "Prison Lockdown";
 	pixel_y = 8
 	},
+/obj/structure/transmitter/desk{
+	phone_category = "Corpsec";
+	phone_id = "Corpsec Warden Office";
+	pixel_x = 10
+	},
 /turf/open/floor/wood,
 /area/mainship/hallways/aft_hallway{
 	name = "Ship Floor 3 Hallways"
@@ -12933,6 +12982,14 @@
 	dir = 4
 	},
 /area/mainship/living/cryo_cells)
+"kNf" = (
+/obj/structure/window/reinforced/tinted/frosted{
+	dir = 4;
+	pixel_x = 4
+	},
+/obj/machinery/vending/cigarette,
+/turf/open/floor/mainship_hull,
+/area/mainship/groundhq/ntf/crimsonveil)
 "kNA" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/mainship{
@@ -13245,6 +13302,10 @@
 	dir = 1
 	},
 /area/mainship/command/self_destruct)
+"kUu" = (
+/mob/living/simple_animal/lizard,
+/turf/open/floor/plating/ground/dirt,
+/area/mainship/groundhq/ntf/hallways/gardens)
 "kUN" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 10
@@ -16384,6 +16445,12 @@
 /obj/machinery/cic_maptable,
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
+"nAk" = (
+/obj/structure/bed/chair/sofa/left{
+	dir = 8
+	},
+/turf/open/floor/mainship_hull,
+/area/mainship/groundhq/ntf/crimsonveil)
 "nAP" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -18013,6 +18080,14 @@
 	dir = 8
 	},
 /area/mainship/command/self_destruct)
+"oOX" = (
+/obj/structure/window/reinforced/tinted/frosted{
+	dir = 4;
+	pixel_x = 4
+	},
+/obj/machinery/vending/snack,
+/turf/open/floor/mainship_hull,
+/area/mainship/groundhq/ntf/crimsonveil)
 "oPM" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -18460,6 +18535,10 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/command/telecomms)
+"pjz" = (
+/obj/effect/landmark/mob_spawner/farwa,
+/turf/open/floor/plating/ground/dirtgrassborder,
+/area/mainship/groundhq/ntf/hallways/gardens)
 "pjA" = (
 /obj/docking_port/stationary/marine_dropship/cas,
 /turf/open/floor/plating,
@@ -20087,7 +20166,9 @@
 	dir = 4;
 	pixel_x = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/structure/bed/chair/sofa{
+	dir = 8
+	},
 /turf/open/floor/mainship_hull,
 /area/mainship/groundhq/ntf/crimsonveil)
 "qFI" = (
@@ -22609,15 +22690,9 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/groundhq/ntf/shipboard/brig_cells)
 "sPI" = (
-/obj/structure/window/reinforced/tinted/frosted{
-	dir = 4;
-	pixel_x = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
-	dir = 4
-	},
-/turf/open/floor/mainship_hull,
-/area/mainship/groundhq/ntf/crimsonveil)
+/mob/living/simple_animal/hostile/retaliate/goat,
+/turf/open/floor/plating/ground/dirt,
+/area/mainship/groundhq/ntf/hallways/gardens)
 "sPS" = (
 /obj/structure/sink{
 	dir = 4
@@ -24077,6 +24152,11 @@
 /area/mainship/medical/surgery_hallway{
 	name = "Research"
 	})
+"uaM" = (
+/obj/structure/catwalk,
+/mob/living/simple_animal/parrot,
+/turf/open/floor/mainship/mono,
+/area/mainship/groundhq/ntf/hallways/gardens)
 "ubs" = (
 /obj/machinery/light,
 /turf/open/floor/wood,
@@ -26588,6 +26668,10 @@
 /area/mainship/medical/upper_medical{
 	name = "Shipside Medbay"
 	})
+"wiO" = (
+/mob/living/simple_animal/chick,
+/turf/open/ground/coast/corner,
+/area/mainship/groundhq/ntf/hallways/gardens)
 "wje" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10
@@ -26638,6 +26722,10 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/mainship/hull/lower_hull)
+"wkV" = (
+/mob/living/simple_animal/chick,
+/turf/open/floor/plating/ground/dirt,
+/area/mainship/groundhq/ntf/hallways/gardens)
 "wli" = (
 /turf/open/floor/mainship/orange{
 	dir = 10
@@ -27470,6 +27558,7 @@
 /obj/machinery/camera/autoname/mainship{
 	dir = 1
 	},
+/obj/structure/flora/pottedplant/twentyone,
 /turf/open/floor/mainship_hull,
 /area/mainship/groundhq/ntf/crimsonveil)
 "wUw" = (
@@ -28551,13 +28640,6 @@
 /area/outpost/cargo{
 	outside = 1
 	})
-"xKo" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/effect/turf_decal/siding/dark{
-	dir = 4
-	},
-/turf/closed/wall/mainship,
-/area/mainship/groundhq/ntf/hallways/gardens)
 "xLj" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -29056,10 +29138,6 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/hull/lower_hull)
 "yiz" = (
-/obj/structure/window/reinforced/tinted/frosted{
-	dir = 4;
-	pixel_x = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 10
 	},
@@ -56721,14 +56799,14 @@ xnD
 szY
 lXC
 cqi
-weU
+akc
 yiz
-qFH
-guu
-qFH
-sPI
-qFH
 oCh
+ifz
+oCh
+mce
+oCh
+iKo
 oCh
 mce
 oCh
@@ -56840,14 +56918,14 @@ cqi
 uby
 hsY
 cqi
-vpC
-iKr
-iKr
-iKr
-iKr
-iKr
-iKr
-vpC
+guu
+qFH
+jgI
+kNf
+oOX
+gfR
+qFH
+nAk
 vpC
 wyY
 vpC
@@ -56959,14 +57037,14 @@ cqi
 cqi
 cqi
 cqi
-iaz
-iaz
-iaz
-qHL
-sTI
-iaz
-iaz
-iaz
+vpC
+iKr
+iKr
+iKr
+iKr
+iKr
+iKr
+vpC
 vpC
 eMC
 kXK
@@ -57081,7 +57159,7 @@ cqi
 iaz
 jkq
 iaz
-iaz
+qHL
 lNJ
 fBC
 iaz
@@ -57317,11 +57395,11 @@ cqi
 cqi
 cqi
 iaz
-iaz
+gHw
 iaz
 iaz
 sTI
-iaz
+eVh
 iaz
 sTI
 iKr
@@ -58150,7 +58228,7 @@ knA
 tMU
 ncL
 own
-bfu
+eKd
 kAG
 kAG
 kAG
@@ -58747,7 +58825,7 @@ xLo
 mEB
 taD
 taD
-taD
+uaM
 taD
 jmF
 taD
@@ -59221,7 +59299,7 @@ stw
 lPh
 typ
 vSB
-vSB
+kUu
 qDN
 jpt
 kAG
@@ -59340,7 +59418,7 @@ typ
 typ
 typ
 tzK
-vSB
+wkV
 qDN
 kAG
 kAG
@@ -59459,7 +59537,7 @@ tPg
 nlD
 inR
 vSB
-qUY
+wiO
 hgP
 kAG
 kAG
@@ -59703,7 +59781,7 @@ kAG
 kAG
 kAG
 rVr
-vSB
+sPI
 dbT
 ptx
 adM
@@ -59935,7 +60013,7 @@ stw
 lPh
 typ
 iaz
-qSu
+pjz
 qDN
 kAG
 uYD
@@ -60662,7 +60740,7 @@ qBo
 cqs
 qBo
 qBo
-qBo
+cxr
 aMa
 shj
 aMa
@@ -60779,7 +60857,7 @@ aMa
 pPn
 pPn
 jNJ
-xKo
+pPn
 pPn
 qPC
 pPn

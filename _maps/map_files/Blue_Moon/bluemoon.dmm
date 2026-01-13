@@ -11105,7 +11105,7 @@
 /turf/open/floor/bcircuit/off,
 /area/bluemoon/caves/facility/lambda/s)
 "myX" = (
-/obj/machinery/constructable_frame/machine_frame,
+/obj/machinery/constructable_frame,
 /turf/open/floor/urban/carpet/carpetblackdeco,
 /area/bluemoon/outside/building/dorms/rec)
 "mBf" = (

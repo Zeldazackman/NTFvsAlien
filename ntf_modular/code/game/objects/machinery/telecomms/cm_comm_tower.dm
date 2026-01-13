@@ -77,7 +77,7 @@
 	name = "TC-4T telecommunications tower"
 	icon = 'ntf_modular/icons/obj/structures/machinery/comm_tower2.dmi'
 	icon_state = "comm_tower"
-	desc = "A portable compact TC-4T telecommunications tower. Used to set up subspace communications lines between planetary and extra-planetary locations."
+	desc = "A portable compact TC-4T telecommunications tower. Used to set up subspace communications lines between planetary and extra-planetary locations. Will cause a devastating EMP burst once destroyed."
 	id = "TC-4T Relay"
 	autolinkers = list("relay")
 	layer = FLY_LAYER
@@ -87,6 +87,7 @@
 	resistance_flags = UNACIDABLE|XENO_DAMAGEABLE|CAN_BE_HIT|PORTAL_IMMUNE|BANISH_IMMUNE|DROPSHIP_IMMUNE
 	var/health = 450 //we use this seperate var so shit dont delete I guess.
 	freq_listening = NTC_SIDED_FREQS
+	destroy_sound = 'sound/effects/metal_crash.ogg'
 
 /obj/machinery/telecomms/relay/preset/tower/Initialize()
 	GLOB.all_static_telecomms_towers += src
@@ -97,6 +98,12 @@
 
 /obj/machinery/telecomms/relay/preset/tower/Destroy()
 	GLOB.all_static_telecomms_towers -= src
+	//spill your shit cause those are not replacable.
+	for(var/obj/item/i in contents)
+		i.forceMove(loc)
+		i.throw_at(get_open_turf_in_dir(loc, pick(CARDINAL_ALL_DIRS)), pick(2,4))
+	new /obj/item/stack/sheet/metal(loc)
+	empulse(loc, 4,6,8,10)
 	. = ..()
 
 // doesn't need power, instead uses health
