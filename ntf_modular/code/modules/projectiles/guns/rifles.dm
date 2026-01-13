@@ -248,7 +248,7 @@
 	gun_features_flags = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER|GUN_SMOKE_PARTICLES
 	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC) //no twink ass firemodes, like god intended
 	attachable_offset = list("muzzle_x" = 51, "muzzle_y" = 19,"rail_x" = 25, "rail_y" = 23, "under_x" = 35, "under_y" = 13, "stock_x" = 0, "stock_y" = 13)
-	fire_delay = 0.18 SECONDS
+	fire_delay = 0.2 SECONDS //must be a multiple of 0.05 SECONDS
 	burst_amount = 1
 	burst_delay = 0.15 SECONDS
 	wield_delay = 0.7 SECONDS
