@@ -66,3 +66,21 @@
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
 	inventory_flags = BLOCKSHARPOBJ
 	inv_hide_flags = HIDEEARS|HIDETOPHAIR
+
+//black bag
+/obj/item/clothing/head/head_sack
+	name = "head sack"
+	desc = "Legendary kidnapping equipment, Covers the eyes, preventing sight."
+	icon = 'ntf_modular/icons/obj/clothing/headwear/head.dmi'
+	worn_icon_list = list(
+		slot_head_str = 'ntf_modular/icons/mob/clothing/headwear/head.dmi',
+		slot_l_hand_str = 'icons/mob/inhands/items/items_left.dmi',
+		slot_r_hand_str = 'icons/mob/inhands/items/items_right.dmi',
+	)
+	icon_state = "blackbag"
+	worn_icon_state = "blackbag"
+	eye_protection = 2
+
+/obj/item/clothing/head/head_sack/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/clothing_tint, TINT_BLIND)

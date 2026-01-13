@@ -40,6 +40,15 @@
 	GLOB.nuke_disk_generators += src
 	RegisterSignal(SSdcs, COMSIG_GLOB_DROPSHIP_HIJACKED, PROC_REF(set_broken))
 
+//no guaranteed disable
+/obj/machinery/computer/code_generator/nuke/bullet_act(atom/movable/projectile/proj)
+	if(CHECK_BITFIELD(resistance_flags, INDESTRUCTIBLE))
+		visible_message("[proj] ricochets off [src]!")
+		return 0
+	else
+		..()
+		return 1
+
 /obj/machinery/computer/code_generator/nuke/Destroy(force)
 	if(!force)
 		set_disabled()
