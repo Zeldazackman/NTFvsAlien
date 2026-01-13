@@ -49,7 +49,8 @@
 /obj/machinery/unboxer/examine(mob/user, distance, infix, suffix)
 	. = ..()
 	. += "It is currently facing [dir2text(dir)], and is outputting [initial(production_type.name)]. It has [production_amount_left] resources remaining."
-
+	if(production_amount_left && ticks_per_object > 1)
+		. += "The current object is [round(100*progress/ticks_per_object, 0.1)]% processed."
 /obj/machinery/unboxer/wrench_act(mob/living/user, obj/item/I)
 	anchored = !anchored
 	balloon_alert(user, "[anchored ? "" : "un"]anchored")
@@ -186,8 +187,8 @@
 	desc = "A box with round metal plates inside. Used to refill Unboxers. These will become 'Pizzas', once finished."
 	refill_type = /obj/item/factory_part/pizza
 	antag_refill_type = /obj/item/factory_part/pizza
-	refill_amount = 50
-	ticks_per_object = 2
+	refill_amount = 5
+	ticks_per_object = 12
 
 /obj/item/factory_refill/plastique_refill
 	name = "box of rounded polymer plates (C4)"
