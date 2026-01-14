@@ -333,5 +333,5 @@
 	desc = "An utility nest, It's a gruesome pile of thick, sticky resin-covered tentacles shaped like a nest. It will cum acid into talls who stay stuck too long. Best watch out. This one is less prominent in catching people but it will be harder to escape and will tend to them. Uupon escape it will cling to them until burned off.."
 	color = COLOR_VIOLET
 	resist_time = 15 SECONDS
-	capture_time = 4 SECONDS
+	capture_time = 10 SECONDS
 	cooldown_time = 6 SECONDS
