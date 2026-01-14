@@ -211,6 +211,8 @@
 		return FALSE
 	if(pass_flags & PASS_FIRE)
 		return FALSE
+	if(stat == DEAD)
+		return FALSE
 	if(soft_armor.getRating(FIRE) >= 100)
 		to_chat(src, span_warning("You are untouched by the flames."))
 		return FALSE
