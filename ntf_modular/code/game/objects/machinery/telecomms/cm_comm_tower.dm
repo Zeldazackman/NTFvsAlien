@@ -306,6 +306,8 @@
 		. += span_xenonotice("Corruption cooldown: [(COOLDOWN_TIMELEFT(src, corruption_delay) / (1 SECONDS))] seconds.")
 
 /obj/machinery/telecomms/relay/preset/tower/mapcomms/attack_hand(mob/user)
+	if(!ishuman(user))
+		return ..()
 	if(length(user.do_actions))
 		balloon_alert(user, "Busy!")
 		return
@@ -340,6 +342,8 @@
 	update_icon_state()
 
 /obj/machinery/telecomms/relay/preset/tower/mapcomms/attackby(obj/item/I, mob/user)
+	if(!ishuman(user))
+		return ..()
 	if(ismultitool(I))
 		if(!is_operational() || (health <= initial(health) * 0.5))
 			to_chat(user, span_warning("\The [src.name] needs repairs to have frequencies added to its software!"))
