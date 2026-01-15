@@ -30,6 +30,7 @@
 	restricted_castes = list(/datum/xeno_caste/wraith, /datum/xeno_caste/hivemind)
 	*/
 	time_between_round = 32 HOURS
+	silo_scaling = 0.3
 
 	// Round end conditions
 	var/shuttle_landed = FALSE
