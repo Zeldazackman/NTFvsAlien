@@ -16,7 +16,7 @@
 	var/boost_timer = 0
 	var/hivenumber = XENO_HIVE_NORMAL
 	var/admin = FALSE
-	var/emerge_target = 1
+	var/emerge_target = HOLE_MOUTH
 	var/emerge_target_flavor = null
 	var/mob/living/carbon/xenomorph/larva/new_xeno = null
 	var/psypoint_reward = 0
@@ -232,7 +232,7 @@
 		return
 
 	to_chat(src, span_danger("We start slithering out of [victim]!"))
-	if(!embryo || embryo.emerge_target == 1)
+	if(!embryo || embryo.emerge_target == HOLE_MOUTH)
 		playsound(victim, 'modular_skyrat/sound/weapons/gagging.ogg', 15, TRUE)
 	else
 		victim.emote_burstscream()

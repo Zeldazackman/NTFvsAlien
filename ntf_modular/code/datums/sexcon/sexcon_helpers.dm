@@ -128,18 +128,18 @@
 		var/obj/item/alien_embryo/embryo2 = new(victim)
 		embryo2.hivenumber = hivenumber
 		if(overrideflavor == "mouth")
-			embryo2.emerge_target = 1
+			embryo2.emerge_target = HOLE_MOUTH
 			embryo2.emerge_target_flavor = "mouth"
 		else
 			if(!overrideflavor)
 				if(victim.gender==FEMALE)
-					embryo2.emerge_target = 2
+					embryo2.emerge_target = HOLE_VAGINA
 					embryo2.emerge_target_flavor = "pussy"
 				else
-					embryo2.emerge_target = 3
+					embryo2.emerge_target = HOLE_ASS
 					embryo2.emerge_target_flavor = "ass"
 			else
-				embryo2.emerge_target = 4
+				embryo2.emerge_target = HOLE_CUSTOM
 				embryo2.emerge_target_flavor = overrideflavor
 		GLOB.round_statistics.now_pregnant++
 		SSblackbox.record_feedback("tally", "round_statistics", 1, "now_pregnant")
@@ -147,18 +147,18 @@
 		personal_statistics.impregnations++
 	embryo.hivenumber = hivenumber
 	if(overrideflavor == "mouth")
-		embryo.emerge_target = 1
+		embryo.emerge_target = HOLE_MOUTH
 		embryo.emerge_target_flavor = "mouth"
 	else
 		if(!overrideflavor)
 			if(victim.gender==FEMALE)
-				embryo.emerge_target = 2
+				embryo.emerge_target = HOLE_VAGINA
 				embryo.emerge_target_flavor = "pussy"
 			else
-				embryo.emerge_target = 3
+				embryo.emerge_target = HOLE_ASS
 				embryo.emerge_target_flavor = "ass"
 		else
-			embryo.emerge_target = 4
+			embryo.emerge_target = HOLE_CUSTOM
 			embryo.emerge_target_flavor = overrideflavor
 	GLOB.round_statistics.now_pregnant++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "now_pregnant")

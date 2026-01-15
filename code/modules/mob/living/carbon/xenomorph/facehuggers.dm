@@ -699,11 +699,11 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 		embryo.hivenumber = hivenumber
 		embryo.emerge_target = targethole
 		switch(embryo.emerge_target)
-			if(1)
+			if(HOLE_MOUTH)
 				embryo.emerge_target_flavor = "throat"
-			if(2)
+			if(HOLE_ASS)
 				embryo.emerge_target_flavor = "ass"
-			if(3)
+			if(HOLE_VAGINA)
 				if(target.gender==FEMALE)
 					embryo.emerge_target_flavor = "pussy"
 				else

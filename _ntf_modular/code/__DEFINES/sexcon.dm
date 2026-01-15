@@ -66,3 +66,12 @@
 
 
 #define VIOLATED_ALLOWED_TIME (10 MINUTES)
+
+///hole numbers
+#define HOLE_MOUTH 1
+#define HOLE_ASS 2
+#define HOLE_VAGINA 3
+#define HOLE_NIPPLE 4
+#define HOLE_EAR 5
+#define HOLE_CUSTOM 6
+
