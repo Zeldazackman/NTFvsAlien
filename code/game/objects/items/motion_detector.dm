@@ -102,7 +102,7 @@
 
 /obj/item/attachable/motiondetector/equipped(mob/user, slot)
 	. = ..()
-	if(!ishandslot(slot))
+	if(!ishandslot(slot) && !(slot & SLOT_BELT|SLOT_S_STORE|SLOT_R_STORE|SLOT_L_STORE))
 		clean_operator()
 
 /obj/item/attachable/motiondetector/removed_from_inventory(mob/user)
@@ -140,7 +140,11 @@
 			continue
 		prepare_blip(nearby_xeno, nearby_xeno.get_iff_signal() & operator.get_iff_signal() ?  MOTION_DETECTOR_FRIENDLY : MOTION_DETECTOR_HOSTILE)
 	if(hostile_detected)
-		playsound(loc, 'sound/items/tick.ogg', 100, 0, 7, 2)
+		//playsound(loc, 'sound/items/tick.ogg', 100, 0, 7, 2)
+		playsound(loc, pick('ntf_modular/sound/items/detector_ping_1.ogg', 'ntf_modular/sound/items/detector_ping_2.ogg', 'ntf_modular/sound/items/detector_ping_3.ogg', 'ntf_modular/sound/items/detector_ping_4.ogg'), 60, 0, 7, 2)
+	else
+		playsound(loc, 'ntf_modular/sound/items/detector.ogg', 60, 0, 7, 2)
+
 	addtimer(CALLBACK(src, PROC_REF(clean_blips)), 1 SECONDS)
 
 ///Clean all blips from operator screen

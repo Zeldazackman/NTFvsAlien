@@ -67,7 +67,7 @@
 		return FALSE
 	user.visible_message(span_notice("[user] starts attaching [src] to [spirited_away]."),\
 	span_notice("You start attaching the pack to [spirited_away]..."), null, 5)
-	if(!do_after(user, 5 SECONDS, TRUE, spirited_away))
+	if(!do_after(user, 5 SECONDS, NONE, spirited_away, BUSY_ICON_HOSTILE, BUSY_ICON_DANGER))
 		return FALSE
 	if(!isturf(spirited_away.loc))
 		balloon_alert(user, "Must extract on the ground")
@@ -278,8 +278,8 @@
 	if(care_about_anchored && movable_target.anchored)
 		balloon_alert(user, "Cannot extract anchored")
 		return FALSE
-	if(do_after_time && (user.do_actions || !do_after(user, do_after_time, TRUE, target, BUSY_ICON_HOSTILE, BUSY_ICON_DANGER, PROG_BAR_GENERIC)))
-		return
+	if(!do_after(user, do_after_time, NONE, target, BUSY_ICON_HOSTILE, BUSY_ICON_DANGER))
+		return FALSE
 	if(require_living_to_be_dead && isliving(target))
 		var/mob/living/living_target = target
 		if(living_target.stat == DEAD)
