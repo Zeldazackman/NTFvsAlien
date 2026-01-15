@@ -43,6 +43,9 @@ SUBSYSTEM_DEF(silo)
 			active_xenos ++
 		//The larval spawn is based on the amount of silo, ponderated with a define. Larval follow a f(x) = (x + a)/(1 + a) * something law, which is smoother that f(x) = x * something
 		current_larva_spawn_rate[hivenumber] = length(GLOB.xeno_resin_silos_by_hive[hivenumber]) ? SILO_OUTPUT_PONDERATION + length(GLOB.xeno_resin_silos_by_hive[hivenumber]) : 0
+		//if MODE_SILO_RESPAWN is off we don't get extra larva for more silos
+		if(!(SSticker.mode?.round_type_flags & MODE_SILO_RESPAWN))
+			current_larva_spawn_rate[hivenumber] = min(current_larva_spawn_rate[hivenumber], SILO_OUTPUT_PONDERATION + 1)
 		//We then are normalising with the number of alive marines, so the balance is roughly the same whether or not we are in high pop
 		current_larva_spawn_rate[hivenumber] *= SILO_BASE_OUTPUT_PER_MARINE * active_humans
 		//We normalize the larval output for one silo, so the value for silo = 1 is independant of SILO_OUTPUT_PONDERATION
@@ -65,5 +68,5 @@ SUBSYSTEM_DEF(silo)
 /datum/controller/subsystem/silo/proc/start_spawning()
 	SIGNAL_HANDLER
 	UnregisterSignal(SSdcs, COMSIG_GLOB_GAMESTATE_GROUNDSIDE)
-	if(SSticker.mode?.round_type_flags & MODE_SILO_RESPAWN)
+	if(SSticker.mode?.round_type_flags & MODE_INFESTATION)
 		can_fire = TRUE
