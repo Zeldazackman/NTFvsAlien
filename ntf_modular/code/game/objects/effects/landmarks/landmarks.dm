@@ -32,3 +32,19 @@
 /obj/effect/landmark/static_comms/net_two/Destroy()
 	GLOB.comm_tower_landmarks_net_two -= src
 	return ..()
+
+/obj/effect/landmark/corrupted_xeno_silo_spawn
+	name = "corrupted xeno silo spawn landmark"
+	icon = 'icons/Xeno/resin_silo.dmi'
+	icon_state = "weed_silo"
+	color = "#00ff80"
+	var/hivenumber = XENO_HIVE_CORRUPTED
+
+/obj/effect/landmark/corrupted_xeno_silo_spawn/Initialize(mapload)
+	. = ..()
+	RegisterSignal(SSdcs, COMSIG_GLOB_GAMEMODE_LOADED, PROC_REF(spawn_silo))
+
+/obj/effect/landmark/corrupted_xeno_silo_spawn/proc/spawn_silo(dcs)
+	var/datum/job/xenomorph/xeno_job = SSjob.GetJobType(GLOB.hivenumber_to_job_type[hivenumber])
+	if(xeno_job.total_positions) //if this gamemode even has any corrupted
+		new /obj/structure/xeno/silo(loc, hivenumber)

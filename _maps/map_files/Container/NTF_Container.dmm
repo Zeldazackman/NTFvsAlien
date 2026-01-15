@@ -1469,9 +1469,7 @@
 	},
 /area/mainship/living/cafeteria)
 "byw" = (
-/obj/structure/xeno/silo{
-	hivenumber = "corrupted_hive"
-	},
+/obj/effect/landmark/corrupted_xeno_silo_spawn,
 /turf/open/floor/mainship/mono,
 /area/mainship/hull/port_hull)
 "byy" = (
