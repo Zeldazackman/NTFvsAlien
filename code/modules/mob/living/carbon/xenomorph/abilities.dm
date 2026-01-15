@@ -1216,7 +1216,7 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_HEADBITE,
 	)
-	gamemode_flags = ABILITY_NUCLEARWAR
+	gamemode_flags = ABILITY_ALL_GAMEMODE
 	///How much larva points it gives (10 points for one larva in NW)
 	var/larva_point_reward = 1
 	var/drain_time = 5 SECONDS
@@ -1419,7 +1419,7 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_REGURGITATE,
 	)
 	ability_cost = 100
-	gamemode_flags = ABILITY_NUCLEARWAR
+	gamemode_flags = ABILITY_ALL_GAMEMODE
 	///In how much time the cocoon will be ejected
 	var/cocoon_production_time = 3 SECONDS
 	var/devour_time = 7 SECONDS
