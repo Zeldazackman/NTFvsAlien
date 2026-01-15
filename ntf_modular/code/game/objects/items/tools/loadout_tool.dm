@@ -1,21 +1,43 @@
 /obj/item/radio/loadout_tool
 	name = "Personal Holophone"
-	desc = "A holophone used for radio communication and other personal things, duh. Also used to download miniskillsofts into your neural implant RAM, temporary and less effective than actual skillsofts that are chip based. ALT+CLICK to view loadout and skillsoft menu."
+	desc = "A holophone used for radio communication and other personal things, duh. Also used to download miniskillsofts into your neural implant RAM, temporary and less effective than actual skillsofts that are chip based. ALT+CLICK to view loadout and skillsoft menu. RCLICK to turn it on/off."
 	icon = 'ntf_modular/icons/obj/items/pda.dmi'
 	icon_state = "pda_white"
 	var/screen_overlay = "pda_on"
+	active = FALSE
 
-/obj/item/pda/Initialize(mapload)
+/obj/item/radio/loadout_tool/RightClick(mob/user)
+	active = !active
+	playsound(loc, 'sound/machines/terminal_button01.ogg', 50, TRUE)
+	update_appearance(UPDATE_OVERLAYS)
+
+/obj/item/radio/loadout_tool/Initialize(mapload)
 	. = ..()
 	update_appearance(UPDATE_OVERLAYS)
 
-/obj/item/pda/update_overlays()
+/obj/item/radio/loadout_tool/on_enter_storage(obj/item/storage/S)
 	. = ..()
-	. += mutable_appearance(icon, screen_overlay)
-	. += emissive_appearance(icon, screen_overlay, src)
+	active = FALSE
+	playsound(loc, 'sound/machines/terminal_button01.ogg', 50, TRUE)
+	update_appearance(UPDATE_OVERLAYS)
+
+/obj/item/radio/loadout_tool/update_overlays()
+	. = ..()
+	if(active)
+		. += mutable_appearance(icon, screen_overlay)
+		. += emissive_appearance(icon, screen_overlay, src)
+
+/obj/item/radio/loadout_tool/interact(mob/user)
+	if(!active)
+		to_chat(user, span_notice("You have to turn on the screen first."))
+		return
+	. = ..()
 
 /obj/item/radio/loadout_tool/AltClick(mob/user)
 	. = ..()
+	if(!active)
+		to_chat(user, span_notice("You have to turn on the screen first."))
+		return
 	var/datum/faction_stats/your_faction = GLOB.faction_stats_datums[user.faction]
 	if(!your_faction)
 		to_chat(user, "You don't have the credentials to this network.")

@@ -17,11 +17,6 @@
 	var/ping_overlay
 	var/quiet = FALSE
 
-
-/obj/item/attachable/motiondetector/advanced/clean_operator(datum/source, obj/item/weapon/gun/gun, forced)
-	. = ..()
-	update_icon_state()
-
 /obj/item/attachable/motiondetector/advanced/pocket
 	name = "AC-2M pocket tactical motion tracker"
 	desc = "A smaller version of the AC-2 which can go into the smartpistol but also would fit in a pocket but is lesser in range similiar to standard motion trackers but it still transmits into the faction map. This one is usually found in hands of solos."
