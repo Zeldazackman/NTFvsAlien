@@ -480,7 +480,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	if(radio_freq || get_dist(src, speaker) > 0)
 		return FALSE
 
-	if((message_mode == MODE_WHISPER || message_mode == MODE_WHISPER_CRIT) && (!raised || !ismob(loc)))
+	if((message_mode == MODE_WHISPER || message_mode == MODE_WHISPER_CRIT) && ((can_be_raised && !raised) || !ismob(loc)))
 		raw_message = stars(raw_message)
 
 	attached_to.handle_speak(speaker, raw_message)
@@ -498,7 +498,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 		return
 	var/mob/M = loc
 
-	if(!raised)
+	if(can_be_raised && !raised)
 		//to_chat(M, span_lightpurple("[icon2html(src, M)] You hear muffled, unintelligible speech through \the [src] in your hand."))
 		message = stars(message)
 	to_chat(M, span_lightpurple("[icon2html(src, M)] [T.phone_id]: \"[message]\"")) //i didnt include name cause I guess it makes sense not to.
