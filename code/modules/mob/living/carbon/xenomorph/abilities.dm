@@ -1670,6 +1670,8 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 	return TRUE
 
 /obj/machinery/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier, stab_description = "swift tail-stab!", disorientamount, can_hit_turf) //Break open the machine
+	if(!(resistance_flags & XENO_DAMAGEABLE))
+		return FALSE
 	if(line_of_sight(xeno, src, 1))
 		xeno.face_atom(src) //Face the target if adjacent so you dont look dumb.
 	else
@@ -1701,15 +1703,22 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 	return TRUE
 
 /obj/machinery/computer/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier, stab_description = "swift tail-stab!", disorientamount, can_hit_turf) //Break open the machine
-	set_disabled()
+	if(!(resistance_flags & XENO_DAMAGEABLE))
+		return FALSE
+	durability-- //extra durability damage
+	attack_alien(xeno)
 	return ..()
 
 /obj/machinery/light/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier, stab_description = "swift tail-stab!", disorientamount, can_hit_turf)
 	. = ..()
+	if(!(resistance_flags & XENO_DAMAGEABLE))
+		return FALSE
 	attack_alien(xeno) //Smash it
 
 /obj/machinery/camera/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier, stab_description = "swift tail-stab!", disorientamount, can_hit_turf)
 	. = ..()
+	if(!(resistance_flags & XENO_DAMAGEABLE))
+		return FALSE
 	var/datum/effect_system/spark_spread/sparks = new //Avoid the slash text, go direct to sparks
 	sparks.set_up(2, 0, src)
 	sparks.attach(src)
@@ -1720,7 +1729,8 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 
 /obj/machinery/power/apc/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier,  stab_description = "swift tail-stab!", disorientamount, can_hit_turf)
 	. = ..()
-
+	if(!(resistance_flags & XENO_DAMAGEABLE))
+		return FALSE
 	var/allcut = wires.is_all_cut()
 	if(beenhit >= pick(3, 4)) //wow it is actually be a challenge to kill apcs from afar with a tail, compared to woyer.
 		if(!CHECK_BITFIELD(machine_stat, PANEL_OPEN))
@@ -1748,6 +1758,8 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 
 /obj/machinery/vending/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier,  stab_description = "swift tail-stab!", disorientamount, can_hit_turf)
 	. = ..()
+	if(!(resistance_flags & XENO_DAMAGEABLE))
+		return FALSE
 	if(tipped_level < 2) //Knock it down if it isn't
 		xeno.visible_message(span_danger("\The [xeno] pulls \the [src] down while retracting it's tail!"), \
 			span_danger("You pull \the [src] down with your tail!"), null, 5)
@@ -1755,6 +1767,8 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 
 /obj/structure/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier,  stab_description = "devastating tail-jab!", disorientamount, can_hit_turf) //Smash structures
 	. = ..()
+	if(!(resistance_flags & XENO_DAMAGEABLE))
+		return FALSE
 	if(line_of_sight(xeno, src, 1))
 		xeno.face_atom(src) //Face the target if adjacent so you dont look dumb.
 	else
@@ -1773,6 +1787,8 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 
 /obj/vehicle/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier, stab_description = "devastating tail-jab!", disorientamount, can_hit_turf)
 	. = ..()
+	if(!(resistance_flags & XENO_DAMAGEABLE))
+		return FALSE
 	if(line_of_sight(xeno, src, 1))
 		xeno.face_atom(src) //Face the target if adjacent so you dont look dumb.
 	else
@@ -1792,6 +1808,9 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 
 /mob/living/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier, stab_description = "swift tail-stab!", disorientamount, can_hit_turf)
 	. = ..()
+	if(status_flags & (GODMODE|INCORPOREAL))
+		return FALSE
+
 	if(pulledby == xeno) //If we're being grappled
 		if(length(xeno.do_actions))
 			xeno.balloon_alert(xeno, "busy!")
