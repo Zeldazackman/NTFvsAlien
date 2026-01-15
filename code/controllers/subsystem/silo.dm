@@ -4,8 +4,8 @@ SUBSYSTEM_DEF(silo)
 	priority = FIRE_PRIORITY_SILO
 	can_fire = FALSE
 	init_order = INIT_ORDER_SPAWNING_POOL
-	///How many larva points are added every minutes in total
-	var/current_larva_spawn_rate = 0
+	///How many larva points are added every minutes in total, associative list by hivenumber
+	var/current_larva_spawn_rate = list()
 
 /datum/controller/subsystem/silo/Initialize()
 	RegisterSignal(SSdcs, COMSIG_GLOB_GAMESTATE_GROUNDSIDE, PROC_REF(start_spawning))
@@ -42,21 +42,21 @@ SUBSYSTEM_DEF(silo)
 				continue
 			active_xenos ++
 		//The larval spawn is based on the amount of silo, ponderated with a define. Larval follow a f(x) = (x + a)/(1 + a) * something law, which is smoother that f(x) = x * something
-		current_larva_spawn_rate = length(GLOB.xeno_resin_silos_by_hive[hivenumber]) ? SILO_OUTPUT_PONDERATION + length(GLOB.xeno_resin_silos_by_hive[hivenumber]) : 0
+		current_larva_spawn_rate[hivenumber] = length(GLOB.xeno_resin_silos_by_hive[hivenumber]) ? SILO_OUTPUT_PONDERATION + length(GLOB.xeno_resin_silos_by_hive[hivenumber]) : 0
 		//We then are normalising with the number of alive marines, so the balance is roughly the same whether or not we are in high pop
-		current_larva_spawn_rate *= SILO_BASE_OUTPUT_PER_MARINE * active_humans
+		current_larva_spawn_rate[hivenumber] *= SILO_BASE_OUTPUT_PER_MARINE * active_humans
 		//We normalize the larval output for one silo, so the value for silo = 1 is independant of SILO_OUTPUT_PONDERATION
-		current_larva_spawn_rate /=  (1 + SILO_OUTPUT_PONDERATION)
+		current_larva_spawn_rate[hivenumber] /=  (1 + SILO_OUTPUT_PONDERATION)
 		//We are processing wether we hijacked or not (hijacking gives a bonus)
-		current_larva_spawn_rate *= SSmonitor.gamestate == SHIPSIDE ? 3 : 1
-		current_larva_spawn_rate *= SSticker.mode.silo_scaling
+		current_larva_spawn_rate[hivenumber] *= SSmonitor.gamestate == SHIPSIDE ? 3 : 1
+		current_larva_spawn_rate[hivenumber] *= SSticker.mode.silo_scaling
 		//We scale the rate based on the current ratio of humans to xenos
 		var/current_human_to_xeno_ratio = active_humans / max(active_xenos,1)
-		current_larva_spawn_rate *= clamp(current_human_to_xeno_ratio / XENO_MARINE_RATIO , 0.7, 1)
+		current_larva_spawn_rate[hivenumber] *= clamp(current_human_to_xeno_ratio / XENO_MARINE_RATIO , 0.7, 1)
 
-		GLOB.round_statistics.larva_from_silo += current_larva_spawn_rate / xeno_job.job_points_needed
+		GLOB.round_statistics.larva_from_silo += current_larva_spawn_rate[hivenumber] / xeno_job.job_points_needed
 
-		xeno_job.add_job_points(current_larva_spawn_rate)
+		xeno_job.add_job_points(current_larva_spawn_rate[hivenumber])
 
 		var/datum/hive_status/current_hive = GLOB.hive_datums[hivenumber]
 		current_hive.update_tier_limits()
