@@ -319,12 +319,12 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 			T.timeout_timer_id = null
 
 		T.update_icon()
-		addtimer(CALLBACK(T), PROC_REF(post_stop_cleanup), 5 SECONDS) //this is necessary because FUCKING sound loops are unreliable.
+		addtimer(CALLBACK(T, PROC_REF(post_stop_cleanup)), 5 SECONDS) //this is necessary because FUCKING sound loops are unreliable.
 		STOP_PROCESSING(SSobj, T)
 
 	outring_loop.stop(attached_to)
 
-	addtimer(CALLBACK(src), PROC_REF(post_stop_cleanup), 5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(post_stop_cleanup)), 5 SECONDS)
 	STOP_PROCESSING(SSobj, src)
 
 /obj/structure/transmitter/process()
@@ -336,7 +336,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 		hangup_loop.stop(attached_to)
 	if(inbound_call)
 		if(!attached_to)
-			addtimer(CALLBACK(src), PROC_REF(post_stop_cleanup), 5 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(post_stop_cleanup)), 5 SECONDS)
 			STOP_PROCESSING(SSobj, src)
 			return
 
@@ -349,7 +349,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	else if(outbound_call)
 		var/obj/structure/transmitter/T = get_calling_phone()
 		if(!T)
-			addtimer(CALLBACK(src), PROC_REF(post_stop_cleanup), 5 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(post_stop_cleanup)), 5 SECONDS)
 			STOP_PROCESSING(SSobj, src)
 			return
 
@@ -361,7 +361,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 			next_ring = world.time + 3 SECONDS
 
 	else
-		addtimer(CALLBACK(src), PROC_REF(post_stop_cleanup), 5 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(post_stop_cleanup)), 5 SECONDS)
 		STOP_PROCESSING(SSobj, src)
 		return
 
