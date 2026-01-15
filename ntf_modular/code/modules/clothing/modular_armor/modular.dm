@@ -26,6 +26,8 @@
 		/obj/item/armor_module/module/chemsystem,
 		/obj/item/armor_module/module/eshield/som,
 		/obj/item/armor_module/module/eshield/som/overclocked,
+		/obj/item/armor_module/module/eshield/absorbant/energy,
+		/obj/item/armor_module/module/eshield/absorbant/ballistic,
 		/obj/item/armor_module/storage/general,
 		/obj/item/armor_module/storage/ammo_mag,
 		/obj/item/armor_module/storage/engineering,
