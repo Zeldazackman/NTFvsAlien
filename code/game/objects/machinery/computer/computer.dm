@@ -22,6 +22,8 @@
 	var/screen_overlay
 	///The destroyed computer sprite. Defaults based on the icon_state if not specified
 	var/broken_icon
+	///If true has a chance to break from any bullet
+	var/fragile = TRUE
 
 /obj/machinery/computer/Initialize(mapload)
 	. = ..()
@@ -89,6 +91,8 @@
 
 
 /obj/machinery/computer/bullet_act(atom/movable/projectile/proj)
+	if(!fragile)
+		return ..()
 	if(CHECK_BITFIELD(resistance_flags, INDESTRUCTIBLE))
 		visible_message("[proj] ricochets off [src]!")
 		return 0

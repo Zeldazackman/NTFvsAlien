@@ -33,6 +33,7 @@
 	var/message = "error"
 	///UI style used by this computer
 	var/ui_style = "NukeDiskGenerator"
+	fragile = FALSE
 
 /obj/machinery/computer/code_generator/Initialize(mapload)
 	. = ..()
