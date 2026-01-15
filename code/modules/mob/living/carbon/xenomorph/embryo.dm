@@ -30,7 +30,7 @@
 		return
 	if(isxeno(loc))
 		var/mob/living/carbon/xenomorph/xeno_loc = loc
-		if(xeno_loc.xeno_caste.tier == XENO_TIER_MINION || xeno_loc.xeno_caste.caste_type_path == /datum/xeno_caste/larva)
+		if(xeno_loc.xeno_caste.tier == XENO_TIER_MINION || xeno_loc.xeno_caste.caste_type_path == /datum/xeno_caste/larva || xeno_loc.xeno_caste.caste_type_path == /datum/xeno_caste/puppet || xeno_loc.xeno_caste.caste_type_path == /datum/xeno_caste/spiderling)
 			return INITIALIZE_HINT_QDEL //letting these be larva farms makes it too easy to get larva.
 	affected_mob = loc
 	affected_mob.status_flags |= XENO_HOST
