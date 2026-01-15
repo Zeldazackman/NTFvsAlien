@@ -35,6 +35,7 @@
 	RegisterSignal(parent, COMSIG_MOVABLE_Z_CHANGED, PROC_REF(on_z_change))
 
 /datum/component/beacon/UnregisterFromParent()
+	deactivate(parent)
 	UnregisterSignal(parent, list(
 		COMSIG_ITEM_ATTACK_SELF,
 		COMSIG_ATOM_UPDATE_NAME,
