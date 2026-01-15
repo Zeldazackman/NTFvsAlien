@@ -73,15 +73,15 @@
 
 /obj/effect/temp_visual/minimap_pulse
 	icon = null
-	duration = 0.75 SECONDS
+	duration = 7.5 SECONDS
 
 /obj/effect/temp_visual/minimap_pulse/Initialize(mapload, minimap_flag = MINIMAP_FLAG_ALL, range)
 	. = ..()
 	var/pulse_icon
 	if(range > 16)
-		pulse_icon = "motion_long_pulses_noloop"
+		pulse_icon = "motion_long_pulses"
 	else
-		pulse_icon = "motion_short_pulses_noloop"
+		pulse_icon = "motion_short_pulses"
 	SSminimaps.add_marker(src, minimap_flag, image('ntf_modular/icons/UI_icons/cm/map_blips_larger.dmi', null, pulse_icon, MINIMAP_BLIPS_LAYER_HIGH, SOUTH, -28.25, -28.2))
 
 /obj/effect/temp_visual/minimap_blip
