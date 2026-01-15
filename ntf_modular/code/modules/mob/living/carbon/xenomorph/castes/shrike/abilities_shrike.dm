@@ -14,7 +14,7 @@
 	succeed_activate()
 
 	playsound(T, SFX_ALIEN_RESIN_BUILD, 25)
-	new /obj/structure/xeno/acidwell/neuro(T, xeno_owner.hivenumber, owner)
+	new /obj/structure/xeno/acidwell/neuro(T, xeno_owner.get_xeno_hivenumber(), owner)
 
 	to_chat(owner, span_xenonotice("We place a neuro well; it can be filled with more neurotoxin."))
 	GLOB.round_statistics.xeno_acid_wells++
@@ -37,7 +37,7 @@
 	succeed_activate()
 
 	playsound(T, SFX_ALIEN_RESIN_BUILD, 25)
-	new /obj/structure/xeno/acidwell/aphro(T, xeno_owner.hivenumber, owner)
+	new /obj/structure/xeno/acidwell/aphro(T, xeno_owner.get_xeno_hivenumber(), owner)
 
 	to_chat(owner, span_xenonotice("We place an aphro well; it can be filled with more aphrotoxin."))
 	GLOB.round_statistics.xeno_acid_wells++
