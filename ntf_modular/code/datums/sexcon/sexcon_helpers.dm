@@ -128,18 +128,18 @@
 		var/obj/item/alien_embryo/embryo2 = new(victim)
 		embryo2.hivenumber = hivenumber
 		if(overrideflavor == "mouth")
-			embryo2.emerge_target = 1
+			embryo2.emerge_target = HOLE_MOUTH
 			embryo2.emerge_target_flavor = "mouth"
 		else
 			if(!overrideflavor)
 				if(victim.gender==FEMALE)
-					embryo2.emerge_target = 2
+					embryo2.emerge_target = HOLE_VAGINA
 					embryo2.emerge_target_flavor = "pussy"
 				else
-					embryo2.emerge_target = 3
+					embryo2.emerge_target = HOLE_ASS
 					embryo2.emerge_target_flavor = "ass"
 			else
-				embryo2.emerge_target = 4
+				embryo2.emerge_target = HOLE_CUSTOM
 				embryo2.emerge_target_flavor = overrideflavor
 		GLOB.round_statistics.now_pregnant++
 		SSblackbox.record_feedback("tally", "round_statistics", 1, "now_pregnant")
@@ -147,37 +147,24 @@
 		personal_statistics.impregnations++
 	embryo.hivenumber = hivenumber
 	if(overrideflavor == "mouth")
-		embryo.emerge_target = 1
+		embryo.emerge_target = HOLE_MOUTH
 		embryo.emerge_target_flavor = "mouth"
 	else
 		if(!overrideflavor)
 			if(victim.gender==FEMALE)
-				embryo.emerge_target = 2
+				embryo.emerge_target = HOLE_VAGINA
 				embryo.emerge_target_flavor = "pussy"
 			else
-				embryo.emerge_target = 3
+				embryo.emerge_target = HOLE_ASS
 				embryo.emerge_target_flavor = "ass"
 		else
-			embryo.emerge_target = 4
+			embryo.emerge_target = HOLE_CUSTOM
 			embryo.emerge_target_flavor = overrideflavor
 	GLOB.round_statistics.now_pregnant++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "now_pregnant")
 	var/datum/personal_statistics/personal_statistics = GLOB.personal_statistics_list[ckey]
 	personal_statistics.impregnations++
-	if(HAS_TRAIT(victim, TRAIT_HIVE_TARGET))
-		var/psy_points_reward = PSY_DRAIN_REWARD_MIN + ((HIGH_PLAYER_POP - SSmonitor.maximum_connected_players_count) / HIGH_PLAYER_POP * (PSY_DRAIN_REWARD_MAX - PSY_DRAIN_REWARD_MIN))
-		psy_points_reward = clamp(psy_points_reward, PSY_DRAIN_REWARD_MIN, PSY_DRAIN_REWARD_MAX)
-		SEND_GLOBAL_SIGNAL(COMSIG_GLOB_HIVE_TARGET_DRAINED, src, victim)
-		psy_points_reward = psy_points_reward * 5
-		SSpoints.add_strategic_psy_points(hivenumber, psy_points_reward)
-		SSpoints.add_tactical_psy_points(hivenumber, psy_points_reward*0.25)
-		GLOB.round_statistics.strategic_psypoints_from_hive_target_rewards += psy_points_reward
-		GLOB.round_statistics.hive_target_rewards++
-		GLOB.round_statistics.biomass_from_hive_target_rewards += MUTATION_BIOMASS_PER_HIVE_TARGET_REWARD
-		SSpoints.add_biomass_points(hivenumber, MUTATION_BIOMASS_PER_HIVE_TARGET_REWARD)
-		var/datum/job/xeno_job = SSjob.GetJobType(GLOB.hivenumber_to_job_type[hivenumber])
-		xeno_job.add_job_points(1) //can be made a var if need be.
-		hive.update_tier_limits()
+	claim_hive_target_reward(victim)
 
 /mob/living/carbon/xenomorph/proc/xenoimpregify()
 	if(!preggo)

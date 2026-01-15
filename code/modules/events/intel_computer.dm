@@ -47,6 +47,7 @@
 				minor_announce("Intel overharvesting has caused an intel drought.  Intel will be much less common for 15 minutes.", title = "Intel Drought")
 				addtimer(CALLBACK(src, PROC_REF(intel_drought_end)), INTEL_DROUGHT_LENGTH + 1)
 				weight = initial(weight)
+				last_intel_drought_start = world.time
 				return
 
 	switch(length(active_computers))

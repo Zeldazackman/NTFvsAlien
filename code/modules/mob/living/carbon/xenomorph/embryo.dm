@@ -16,7 +16,7 @@
 	var/boost_timer = 0
 	var/hivenumber = XENO_HIVE_NORMAL
 	var/admin = FALSE
-	var/emerge_target = 1
+	var/emerge_target = HOLE_MOUTH
 	var/emerge_target_flavor = null
 	var/mob/living/carbon/xenomorph/larva/new_xeno = null
 	var/psypoint_reward = 0
@@ -30,7 +30,7 @@
 		return
 	if(isxeno(loc))
 		var/mob/living/carbon/xenomorph/xeno_loc = loc
-		if(xeno_loc.xeno_caste.tier == XENO_TIER_MINION || xeno_loc.xeno_caste.caste_type_path == /datum/xeno_caste/larva)
+		if(xeno_loc.xeno_caste.tier == XENO_TIER_MINION || xeno_loc.xeno_caste.caste_type_path == /datum/xeno_caste/larva || xeno_loc.xeno_caste.caste_type_path == /datum/xeno_caste/puppet || xeno_loc.xeno_caste.caste_type_path == /datum/xeno_caste/spiderling)
 			return INITIALIZE_HINT_QDEL //letting these be larva farms makes it too easy to get larva.
 	affected_mob = loc
 	affected_mob.status_flags |= XENO_HOST
@@ -232,7 +232,7 @@
 		return
 
 	to_chat(src, span_danger("We start slithering out of [victim]!"))
-	if(!embryo || embryo.emerge_target == 1)
+	if(!embryo || embryo.emerge_target == HOLE_MOUTH)
 		playsound(victim, 'modular_skyrat/sound/weapons/gagging.ogg', 15, TRUE)
 	else
 		victim.emote_burstscream()

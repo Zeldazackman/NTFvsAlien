@@ -1310,13 +1310,8 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 	GLOB.round_statistics.strategic_psypoints_from_psydrains += psy_points_reward
 	GLOB.round_statistics.psydrains++
 	var/hivenumber = xeno_owner.get_xeno_hivenumber()
-	if(HAS_TRAIT(victim, TRAIT_HIVE_TARGET))
-		SEND_GLOBAL_SIGNAL(COMSIG_GLOB_HIVE_TARGET_DRAINED, xeno_owner, victim)
-		GLOB.round_statistics.strategic_psypoints_from_hive_target_rewards += 4*psy_points_reward
-		psy_points_reward = psy_points_reward * 5
-		GLOB.round_statistics.hive_target_rewards++
-		GLOB.round_statistics.biomass_from_hive_target_rewards += MUTATION_BIOMASS_PER_HIVE_TARGET_REWARD
-		SSpoints.add_biomass_points(hivenumber, MUTATION_BIOMASS_PER_HIVE_TARGET_REWARD)
+	if(xeno_owner.claim_hive_target_reward(victim))
+		return
 	SSpoints.add_strategic_psy_points(hivenumber, psy_points_reward)
 	SSpoints.add_tactical_psy_points(hivenumber, psy_points_reward*0.25)
 	var/datum/job/xeno_job = SSjob.GetJobType(GLOB.hivenumber_to_job_type[hivenumber])
@@ -1798,9 +1793,15 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 /mob/living/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier, stab_description = "swift tail-stab!", disorientamount, can_hit_turf)
 	. = ..()
 	if(pulledby == xeno) //If we're being grappled
-		if(!do_after(xeno, 0.5 SECONDS, IGNORE_HELD_ITEM|IGNORE_USER_LOC_CHANGE, src, BUSY_ICON_DANGER, PROGRESS_GENERIC))
+		if(length(xeno.do_actions))
+			xeno.balloon_alert(xeno, "busy!")
+			return FALSE
+		if(!do_mob(xeno, src, 0.5 SECONDS, BUSY_ICON_DANGER, BUSY_ICON_DANGER, PROGRESS_GENERIC, IGNORE_HELD_ITEM|IGNORE_USER_LOC_CHANGE))
 			to_chat(xeno, span_warning("We need to hold [src] in place longer for a precise stab!"))
-			return
+			return FALSE
+		var/datum/action/ability/activable/xeno/tail_stab/tail_stab_action = xeno.actions_by_path[/datum/action/ability/activable/xeno/tail_stab]
+		if(!tail_stab_action || !tail_stab_action.can_use_ability(src))
+			return FALSE
 		damage *= 1.5
 		disorientamount *= 2
 		penetration *= 2

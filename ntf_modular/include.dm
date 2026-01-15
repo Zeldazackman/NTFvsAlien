@@ -1,5 +1,4 @@
 #include "code\_DEFINES\colors.dm"
-#include "code\_DEFINES\ntf_defines.dm"
 #include "code\_DEFINES\sexcon_defines.dm"
 #include "code\_DEFINES\skills.dm"
 #include "code\_DEFINES\span.dm"
