@@ -130,7 +130,7 @@
 /area/space)
 "fW" = (
 /obj/machinery/light{
-	dir = 8;
+	dir = 8
 	},
 /turf/open/floor/mainship/red{
 	dir = 8
@@ -159,15 +159,14 @@
 /obj/item/tool/minihoe,
 /obj/item/tool/hatchet,
 /obj/item/tool/hatchet,
-/obj/item/clothing/suit/apron/overalls,
-/obj/item/clothing/suit/apron/overalls,
+/obj/item/clothing/suit/storage/apron/overalls,
+/obj/item/clothing/suit/storage/apron/overalls,
 /obj/item/storage/bag/plants,
 /obj/item/storage/bag/plants,
 /obj/structure/closet/secure_closet/hydroponics,
 /turf/open/floor/prison/cleanmarked,
 /area/space)
 "gv" = (
-/obj/structure/table/reinforced,
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced/tinted{
 	dir = 1;
@@ -616,7 +615,7 @@
 /area/space)
 "zu" = (
 /obj/machinery/camera/autoname{
-	dir = 4sssss
+	dir = 4
 	},
 /turf/open/floor/mainship/mono,
 /area/space)

@@ -11,6 +11,7 @@
 	grad_style = pick(GLOB.hair_gradients_list)
 	good_eyesight = pick(list(FALSE, TRUE))
 	citizenship = pick(CITIZENSHIP_CHOICES)
+	blood_type = pick(7;"O-", 38;"O+", 6;"A-", 34;"A+", 2;"B-", 9;"B+", 1;"AB-", 3;"AB+")
 	religion = pick(RELIGION_CHOICES)
 	tts_voice = random_tts_voice()
 	randomize_hair_color("hair")
@@ -131,10 +132,11 @@
 	// Determine what job is marked as 'High' priority, and dress them up as such.
 	var/datum/job/previewJob
 	var/highest_pref = JOBS_PRIORITY_NEVER
-	for(var/job in job_preferences)
-		if(job_preferences[job] > highest_pref)
-			previewJob = SSjob.GetJob(job)
-			highest_pref = job_preferences[job]
+	if(LAZYLEN(SSjob.occupations))
+		for(var/job in job_preferences)
+			if(job_preferences[job] > highest_pref)
+				previewJob = SSjob.GetJob(job)
+				highest_pref = job_preferences[job]
 
 	if(!previewJob)
 		var/mob/living/carbon/human/dummy/mannequin = generate_or_wait_for_human_dummy(DUMMY_HUMAN_SLOT_PREFERENCES)
@@ -211,6 +213,7 @@
 	character.f_style = f_style
 
 	character.citizenship = citizenship
+	character.blood_type = blood_type
 	character.religion = religion
 
 	character.voice = tts_voice
@@ -238,11 +241,24 @@
 	character.update_body()
 	character.update_hair()
 
-
-/datum/preferences/proc/random_character()
+///Create a random character. Uses a specified species if set.
+/datum/preferences/proc/random_character(datum/species/selected)
+	var/datum/species/S
 	gender = pick(MALE, FEMALE)
-	var/speciestype = pick(GLOB.roundstart_species)
-	var/datum/species/S = GLOB.roundstart_species[speciestype]
+	if(!selected)
+		var/speciestype = pick(GLOB.roundstart_species)
+		S = GLOB.roundstart_species[speciestype]
+	else
+		S = GLOB.all_species[selected.name]
+	species = S.name
+	real_name = S.random_name(gender)
+	age = rand(AGE_MIN, AGE_MAX)
+	h_style = pick("Crewcut", "Bald", "Short Hair")
+
+///Create a random character of the specified species
+/datum/preferences/proc/random_character_set_species(datum/species/selected)
+	gender = pick(MALE, FEMALE)
+	var/datum/species/S = GLOB.all_species[selected.name]
 	species = S.name
 	real_name = S.random_name(gender)
 	age = rand(AGE_MIN, AGE_MAX)

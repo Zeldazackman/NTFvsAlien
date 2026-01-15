@@ -70,14 +70,23 @@
 #define MODE_FORCE_CUSTOMSQUAD_UI (1<<16)
 /// Should xenomorphs be allowed to buy mutations (including its structures)?
 #define MODE_MUTATIONS_OBTAINABLE (1<<17)
-#define MODE_BIOMASS_POINTS (1<<18)
-#define MODE_SURVIVAL (1<<19)
-#define MODE_NO_GHOSTS (1<<20)
+///Alamo only, no tad or pods. Sovl.
+#define MODE_ALAMO_ONLY (1<<18)
+#define MODE_BIOMASS_POINTS (1<<19)
+#define MODE_SURVIVAL (1<<20)
+#define MODE_NO_GHOSTS (1<<21)
+#define MODE_SINGLE_USE_NUKE_DISK_GENERATOR (1<<22)
+/// Without this humans will be too clonelossed to birth additional larva.
+#define MODE_FREE_LARVABURST (1<<23)
 
 #define MODE_INFESTATION_X_MAJOR "Xenomorph Major Victory"
 #define MODE_INFESTATION_M_MAJOR "Ninetails Major Victory"
 #define MODE_INFESTATION_X_MINOR "Xenomorph Minor Victory"
 #define MODE_INFESTATION_M_MINOR "Ninetails Minor Victory"
+
+#define MODE_ZOMBIE_Z_MAJOR "Zombie Major Victory"
+#define MODE_ZOMBIE_Z_MINOR "Zombie Minor Victory"
+
 #define MODE_INFESTATION_DRAW_DEATH "DRAW: Mutual Annihilation"
 
 #define MODE_GENERIC_DRAW_NUKE "DRAW: Nuclear Explosion"
@@ -91,6 +100,8 @@
 #define CRASH_EVAC_NONE "CRASH_EVAC_NONE"
 #define CRASH_EVAC_INPROGRESS "CRASH_EVAC_INPROGRESS"
 #define CRASH_EVAC_COMPLETED "CRASH_EVAC_COMPLETED"
+///Initial delay before crash landing
+#define CRASH_DELAY_TIME 10 MINUTES
 
 #define INFESTATION_NUKE_NONE "INFESTATION_NUKE_NONE"
 #define INFESTATION_NUKE_INPROGRESS "INFESTATION_NUKE_INPROGRESS"
@@ -118,6 +129,7 @@
 
 //Nuclear war mode collapse duration
 #define NUCLEAR_WAR_ORPHAN_HIVEMIND 5 MINUTES
+#define NUCLEAR_WAR_SILO_COLLAPSE 5 MINUTES
 
 #define SHUTTLE_HIJACK_LOCK 30 MINUTES
 
@@ -139,22 +151,38 @@
 #define COUNT_IGNORE_HUMAN_SSD (1<<0)
 #define COUNT_IGNORE_XENO_SSD (1<<1)
 #define COUNT_IGNORE_XENO_SPECIAL_AREA (1<<2)
+#define COUNT_CLF_TOWARDS_XENOS (1<<3)
+#define COUNT_GREENOS_TOWARDS_MARINES (1<<4)
+#define COUNT_IGNORE_ALTERNATE_FACTION_MARINES (1<<5)
 
 #define COUNT_IGNORE_ALIVE_SSD (COUNT_IGNORE_HUMAN_SSD|COUNT_IGNORE_XENO_SSD)
 
-#define SILO_PRICE 800
-#define XENO_TURRET_PRICE 100
+#define RESIN_SILO_PRICE 800
+#define EVOLUTION_TOWER_PRICE 300
+#define PSYCHIC_RELAY_PRICE 300
+#define PHEROMONE_TOWER_PRICE 300
+#define SPAWNER_PRICE 400
+#define ACID_POOL_PRICE 200
+#define ACID_JAWS_PRICE 450
+#define XENO_ACID_TURRET_PRICE 100
+#define XENO_RESIN_TURRET_PRICE 50
+#define GARGOYLE_PRICE 25
+#define ANY_PRIMORDIAL_PRICE 600
 
 //How many psy points a hive gets if all generators are corrupted
 #define GENERATOR_PSYCH_POINT_OUTPUT 1
 //How many psy points are gave for each marine psy drained at low pop
-#define PSY_DRAIN_REWARD_MAX 90
+//#define PSY_DRAIN_REWARD_MAX 90
+#define PSY_DRAIN_REWARD_MAX 54  //ntf edit
 //How many psy points are gave for each marine psy drained at high pop
-#define PSY_DRAIN_REWARD_MIN 30
+//#define PSY_DRAIN_REWARD_MIN 30
+#define PSY_DRAIN_REWARD_MIN 18 //ntf edit
 //How many psy points are gave every 5 second by a cocoon at low pop
-#define COCOON_PSY_POINTS_REWARD_MAX 3
+//#define COCOON_PSY_POINTS_REWARD_MAX 3
+#define COCOON_PSY_POINTS_REWARD_MAX 1.8 //ntf edit
 //How many psy points are gave every 5 second by a cocoon at high pop
-#define COCOON_PSY_POINTS_REWARD_MIN 1
+//#define COCOON_PSY_POINTS_REWARD_MIN 1
+#define COCOON_PSY_POINTS_REWARD_MIN 0.6 //ntf edit
 
 //The player pop consider to be very high pop
 #define HIGH_PLAYER_POP 80
@@ -171,8 +199,8 @@
 #define NUCLEAR_WAR_LARVA_POINTS_NEEDED 10
 #define CRASH_LARVA_POINTS_NEEDED 8
 
-#define FREE_XENO_AT_START 8
-#define FREE_XENO_AT_START_CORRUPT 3
+#define FREE_XENO_AT_START 6
+#define FREE_XENO_AT_START_CORRUPT 2
 
 #define MAX_UNBALANCED_RATIO_TWO_HUMAN_FACTIONS 1.1
 
@@ -181,4 +209,4 @@
 
 #define NUCLEAR_WAR_MECH_MINIMUM_POP_REQUIRED 40 // This amount of clients must be connected at gamemode setup to get the first mech pilot slot.
 #define NUCLEAR_WAR_MECH_INTERVAL_PER_SLOT 20 // After meeting NUCLEAR_WAR_MECH_MINIMUM_POP_REQUIRED, a mech pilot slot is open for each set of X clients.
-#define NUCLEAR_WAR_TANK_MINIMUM_POP_REQUIRED 50 // This amount of clients must be connected at gamemode setup to get two assault crewman jobs (and thus tank).
+#define NUCLEAR_WAR_TANK_MINIMUM_POP_REQUIRED 55 // This amount of clients must be connected at gamemode setup to get two assault crewman jobs (and thus tank).

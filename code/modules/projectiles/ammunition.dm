@@ -219,7 +219,7 @@
 /obj/item/ammo_magazine/fire_act(burn_level)
 	if(!current_rounds)
 		return
-	explosion(loc, 0, 0, 0, 1, 1, throw_range = FALSE, tiny = TRUE, explosion_cause="ammo mag cookoff")
+	explosion(loc, 0, 0, 0, 1, 0, throw_range = FALSE, tiny = TRUE, explosion_cause="ammo mag cookoff")
 	qdel(src)
 
 //Helper proc, to allow us to see a percentage of how full the magazine is.
@@ -272,6 +272,27 @@
 	icon_state = "shotgun_flechette"
 	current_rounds = 5
 	default_ammo = /datum/ammo/bullet/shotgun/flechette
+	caliber = CALIBER_12G
+
+/obj/item/ammo_magazine/handful/rubber_pellet
+	name = "handful of shotgun rubber pellet shells (12g)"
+	icon_state = "shotgun_flechette"
+	current_rounds = 5
+	default_ammo = /datum/ammo/bullet/shotgun/flechette/rubber
+	caliber = CALIBER_12G
+
+/obj/item/ammo_magazine/handful/tracker
+	name = "handful of shotgun tracker shells (12g)"
+	icon_state = "shotgun_flechette"
+	current_rounds = 5
+	default_ammo = /datum/ammo/bullet/shotgun/tracker
+	caliber = CALIBER_12G
+
+/obj/item/ammo_magazine/handful/beanbag
+	name = "handful of beanbag slugs (12g)"
+	icon_state = "beanbag_slug"
+	current_rounds = 5
+	default_ammo = /datum/ammo/bullet/shotgun/beanbag
 	caliber = CALIBER_12G
 
 /obj/item/ammo_magazine/handful/incendiary
@@ -505,7 +526,7 @@ Turn() or Shift() as there is virtually no overhead. ~N
 /obj/item/big_ammo_box/fire_act(burn_level)
 	if(!bullet_amount)
 		return
-	explosion(loc, 0, 0, 1, 0, 2, throw_range = FALSE, explosion_cause="ammo box cookoff") //blow it up.
+	explosion(loc, 0, 0, 1, 0, 0, throw_range = FALSE, explosion_cause="ammo box cookoff") //blow it up.
 	qdel(src)
 
 //Deployable shotgun ammo box

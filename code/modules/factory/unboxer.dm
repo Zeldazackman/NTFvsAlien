@@ -9,6 +9,7 @@
 	var/obj/item/factory_part/antag_refill_type = /obj/item/factory_part
 	///By how much we wan to refill the target machine
 	var/refill_amount = 30
+	var/ticks_per_object = 1
 
 /obj/item/factory_refill/Initialize(mapload)
 	. = ..()
@@ -38,6 +39,8 @@
 	var/obj/item/factory_part/production_type = /obj/item/factory_part
 	///Bool for whether the unboxer is producing things
 	var/on = FALSE
+	var/progress = 0
+	var/ticks_per_object = 1
 
 /obj/machinery/unboxer/Initialize(mapload)
 	. = ..()
@@ -46,14 +49,15 @@
 /obj/machinery/unboxer/examine(mob/user, distance, infix, suffix)
 	. = ..()
 	. += "It is currently facing [dir2text(dir)], and is outputting [initial(production_type.name)]. It has [production_amount_left] resources remaining."
-
+	if(production_amount_left && ticks_per_object > 1)
+		. += "The current object is [round(100*progress/ticks_per_object, 0.1)]% processed."
 /obj/machinery/unboxer/wrench_act(mob/living/user, obj/item/I)
 	anchored = !anchored
 	balloon_alert(user, "[anchored ? "" : "un"]anchored")
 
 /obj/machinery/unboxer/screwdriver_act(mob/living/user, obj/item/I)
 	setDir(turn(dir, 90))
-	balloon_alert(user, "Facing [dir2text(dir)]")
+	balloon_alert(user, "facing [dir2text(dir)]")
 
 /obj/machinery/unboxer/update_icon_state()
 	. = ..()
@@ -64,7 +68,7 @@
 
 /obj/machinery/unboxer/attack_hand(mob/living/user)
 	if(!anchored)
-		balloon_alert(user, "Must be anchored!")
+		balloon_alert(user, "must be anchored!")
 		return
 	change_state()
 
@@ -86,8 +90,11 @@
 	if(production_amount_left <= 0)
 		change_state()
 		return
-	new production_type(get_step(src, dir))
-	production_amount_left--
+	progress++
+	if(progress >= ticks_per_object)
+		new production_type(get_step(src, dir))
+		production_amount_left--
+		progress = 0
 
 /obj/machinery/unboxer/attackby(obj/item/I, mob/living/user, def_zone)
 	if(!isfactoryrefill(I) || user.a_intent == INTENT_HARM)
@@ -95,9 +102,10 @@
 	var/obj/item/factory_refill/refill = I
 	if(refill.refill_type != production_type)
 		if(production_amount_left)
-			balloon_alert(user, "Filler incompatible")
+			balloon_alert(user, "filler incompatible!")
 			return
 		production_type = refill.refill_type
+		ticks_per_object = refill.ticks_per_object
 	var/to_refill = min(max_fill_amount - production_amount_left, refill.refill_amount)
 	production_amount_left += to_refill
 	refill.refill_amount -= to_refill
@@ -179,6 +187,8 @@
 	desc = "A box with round metal plates inside. Used to refill Unboxers. These will become 'Pizzas', once finished."
 	refill_type = /obj/item/factory_part/pizza
 	antag_refill_type = /obj/item/factory_part/pizza
+	refill_amount = 5
+	ticks_per_object = 12
 
 /obj/item/factory_refill/plastique_refill
 	name = "box of rounded polymer plates (C4)"

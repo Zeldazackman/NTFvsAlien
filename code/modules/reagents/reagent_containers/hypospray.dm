@@ -82,7 +82,7 @@
 		var/mob/M = A
 		if(!M.can_inject(user, TRUE, user.zone_selected, TRUE))
 			return
-		if(M.faction != user.faction && !M.incapacitated())
+		if(user != M && (M.faction != user.faction || M.a_intent != INTENT_HELP) && !M.incapacitated())
 			user.visible_message(span_notice("[user] attempts to inject [M] with [src]."),
 			span_notice("You attempt to inject [M] with [src]."))
 			if(!do_after(user, SKILL_TASK_VERY_EASY, NONE, A, BUSY_ICON_HOSTILE) || (!in_range(A, user) || !user.Adjacent(A)))
@@ -152,7 +152,7 @@
 	if(!C.blood_type)
 		balloon_alert(user, "Can't locate blood.")
 		return
-	if(C.blood_volume <= BLOOD_VOLUME_SURVIVE)
+	if(C.get_blood_volume() <= BLOOD_VOLUME_SURVIVE)
 		balloon_alert(user, "No blood to draw.")
 		return
 	if(ishuman(C))

@@ -325,6 +325,7 @@
 		job.free_job_positions(1)
 
 	for(var/obj/item/W in src)
+		temporarilyRemoveItemFromInventory(W)
 		W.store_in_cryo()
 
 	for(var/datum/data/record/R in GLOB.datacore.medical)
@@ -342,12 +343,11 @@
 
 	GLOB.real_names_joined -= real_name
 
-	GLOB.key_to_time_of_role_death[key] = world.time
-
 /* NTF EDIT
+	GLOB.key_to_time_of_role_death[key] = world.time
 	ghostize(FALSE) //We want to make sure they are not kicked to lobby.
 */
-	ghostize(FALSE, FALSE, TRUE) //NTF EDIT - We want to make sure they *are* kicked to lobby.
+	ghostize(TRUE, FALSE, TRUE) //NTF EDIT - We want to make sure they *are* kicked to lobby.
 
 	qdel(src)
 
@@ -462,11 +462,6 @@
 		to_chat(initiator, span_warning("[src] is occupied."))
 		return FALSE
 
-/*
-	user.forceMove(src)
-	occupant = user
-	update_icon()
-*/
 	user.despawn()
 	return TRUE
 
@@ -484,11 +479,13 @@
 	occupant = null
 	update_icon()
 
-/obj/machinery/cryopod/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/machinery/cryopod/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage * xeno_attacker.xeno_melee_damage_modifier, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(!occupant)
 		to_chat(xeno_attacker, span_xenowarning("There is nothing of interest in there."))
 		return
 	if(xeno_attacker.status_flags & INCORPOREAL || xeno_attacker.do_actions)
+		return
+	if(xeno_attacker.handcuffed)
 		return
 	visible_message(span_warning("[xeno_attacker] begins to pry the [src]'s cover!"), 3)
 	playsound(src,'sound/effects/metal_creaking.ogg', 25, 1)

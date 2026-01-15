@@ -82,7 +82,7 @@
 
 
 /obj/alien/resin/attack_hand(mob/living/user)
-	balloon_alert(user, "You only scrape at it")
+	balloon_alert(user, "need a weapon!")
 	return TRUE
 
 
@@ -96,7 +96,7 @@
 	plane = FLOOR_PLANE
 	layer = ABOVE_WEEDS_LAYER
 	hit_sound = SFX_ALIEN_RESIN_MOVE
-	var/slow_amt = 8
+	var/slow_amt = 3
 	/// Does this refund build points when destoryed?
 	var/refundable = TRUE
 
@@ -123,8 +123,6 @@
 		var/mob/living/carbon/xenomorph/X = crosser
 		if(!issamexenohive(X))
 			X.next_move_slowdown += slow_amt
-		else
-			X.next_move_slowdown += X.xeno_caste.weeds_speed_mod
 		return
 
 	if(issamexenohive(crosser))
@@ -146,8 +144,10 @@
 
 	victim.next_move_slowdown += slow_amt
 
-/obj/alien/resin/sticky/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/alien/resin/sticky/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage * xeno_attacker.xeno_melee_damage_modifier, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(xeno_attacker.status_flags & INCORPOREAL)
+		return FALSE
+	if(xeno_attacker.handcuffed)
 		return FALSE
 
 	if(!(issamexenohive(xeno_attacker)))
@@ -155,7 +155,7 @@
 
 	if(xeno_attacker.a_intent == INTENT_HARM) //Clear it out on hit; no need to double tap.
 		if(CHECK_BITFIELD(SSticker.mode?.round_type_flags, MODE_ALLOW_XENO_QUICKBUILD) && SSresinshaping.active && refundable)
-			SSresinshaping.quickbuild_points_by_hive[xeno_attacker.hivenumber]++
+			SSresinshaping.quickbuild_points_by_hive[xeno_attacker.get_xeno_hivenumber()]++
 		xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW) //SFX
 		playsound(src, SFX_ALIEN_RESIN_BREAK, 25) //SFX
 		deconstruct(TRUE)
@@ -174,7 +174,7 @@
 	name = "thin sticky resin"
 	desc = "A thin layer of disgusting sticky slime."
 	max_integrity = 6
-	slow_amt = 4
+	slow_amt = 3
 
 	ignore_weed_destruction = FALSE
 	refundable = FALSE
@@ -238,24 +238,26 @@
 	return TRUE
 
 //clicking on resin doors attacks them, or opens them without harm intent
-/obj/structure/mineral_door/resin/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/structure/mineral_door/resin/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage * xeno_attacker.xeno_melee_damage_modifier, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
 	var/turf/cur_loc = xeno_attacker.loc
 	if(!istype(cur_loc))
 		return FALSE //Some basic logic here
+	if(xeno_attacker.handcuffed)
+		return FALSE
 	if(!issamexenohive(xeno_attacker))
 		return ..()
 	if(xeno_attacker.a_intent != INTENT_HARM)
 		try_toggle_state(xeno_attacker)
 		return TRUE
 	if(CHECK_BITFIELD(SSticker.mode?.round_type_flags, MODE_ALLOW_XENO_QUICKBUILD) && SSresinshaping.active)
-		SSresinshaping.quickbuild_points_by_hive[xeno_attacker.hivenumber]++
+		SSresinshaping.quickbuild_points_by_hive[xeno_attacker.get_xeno_hivenumber()]++
 		qdel(src)
 		return TRUE
 
-	src.balloon_alert(xeno_attacker, "Destroying...")
+	src.balloon_alert(xeno_attacker, "destroying...")
 	playsound(src, SFX_ALIEN_RESIN_BREAK, 25)
 	if(do_after(xeno_attacker, 1 SECONDS, IGNORE_HELD_ITEM, src, BUSY_ICON_HOSTILE))
-		src.balloon_alert(xeno_attacker, "Destroyed")
+		src.balloon_alert(xeno_attacker, "destroyed")
 		qdel(src)
 
 /obj/structure/mineral_door/resin/take_damage(damage_amount, damage_type, armor_type, effects, attack_dir, armour_penetration, mob/living/blame_mob)
@@ -322,7 +324,7 @@
 			. = TRUE
 			break
 	if(!.)
-		src.balloon_alert_to_viewers("Collapsed")
+		src.balloon_alert_to_viewers("collapsed")
 		qdel(src)
 
 /obj/structure/mineral_door/resin/thick
@@ -350,8 +352,10 @@
 	name = "[hive.prefix][name]"
 	color = hive.color
 
-/obj/item/resin_jelly/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/item/resin_jelly/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage * xeno_attacker.xeno_melee_damage_modifier, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(xeno_attacker.status_flags & INCORPOREAL)
+		return FALSE
+	if(xeno_attacker.handcuffed)
 		return FALSE
 	return attack_hand(xeno_attacker)
 
@@ -365,7 +369,7 @@
 	if(user.do_actions || !isnull(current_user))
 		return
 	current_user = user
-	user.balloon_alert(user, "Applying...")
+	user.balloon_alert(user, "applying...")
 	if(!do_after(user, RESIN_SELF_TIME, TRUE, user, BUSY_ICON_MEDICAL))
 		current_user = null
 		return
@@ -377,7 +381,7 @@
 	if(!isxeno(user))
 		return TRUE
 	if(!isxeno(M))
-		M.balloon_alert(user, "Cannot apply")
+		M.balloon_alert(user, "that's not a xeno!")
 		return FALSE
 	if(user.do_actions || !isnull(current_user))
 		return FALSE
@@ -385,9 +389,9 @@
 		user.balloon_alert(user, "Wrong hive")
 		return FALSE
 	current_user = M
-	M.balloon_alert(user, "Applying...")
+	M.balloon_alert(user, "applying...")
 	if(M != user)
-		user.balloon_alert(M, "Applying jelly...") //Notify recipient to not move.
+		user.balloon_alert(M, "applying jelly...") //Notify recipient to not move.
 	if(!do_after(user, (M == user ? RESIN_SELF_TIME : RESIN_OTHER_TIME), TRUE, M, BUSY_ICON_MEDICAL))
 		current_user = null
 		return FALSE
@@ -571,7 +575,7 @@
 
 	if(ishuman(triggerer))
 		var/mob/living/carbon/human/victim = triggerer
-		victim.reagents.add_reagent(/datum/reagent/toxin/xeno_neurotoxin, 5)
+		victim.reagents.add_reagent(/datum/reagent/toxin/xeno_neurotoxin, XENO_NEURO_AMOUNT_RECURRING)
 		to_chat(victim, span_userdanger("You are pricked by a spike on the mine!"))
 	qdel(src)
 

@@ -16,6 +16,11 @@ OPERATIONS
 	contains = list(/obj/item/fulton_extraction_pack)
 	cost = 100
 
+/datum/supply_packs/operations/tank_fulton
+	name = "Heavy vehicle Fulton extraction pack"
+	contains = list(/obj/item/fulton_extraction_pack/tank)
+	cost = 400
+
 /datum/supply_packs/operations/autominer
 	name = "Autominer upgrade"
 	contains = list(/obj/item/minerupgrade/automatic)
@@ -48,7 +53,7 @@ OPERATIONS
 
 /datum/supply_packs/operations/xeno_iff_tag
 	name = "Xenomorph IFF tag crate" //Intended for corrupted or friendly rounies as rounds sometimes turn out. Avoid abuse or I'll have to admin-only it, which is no fun!
-	notes = "Contains an IFF tag used to mark a xenomorph as friendly to IFF systems. Warning: Nanotrasen is not responsible for incidents related to attaching this to hostile entities."
+	notes = "Contains an IFF tag used to mark a xenomorph as friendly to IFF systems. Warning: Ninetails is not responsible for incidents related to attaching this to hostile entities."
 	contains = list(/obj/item/xeno_iff_tag)
 	access = ACCESS_MARINE_BRIDGE //Better be safe.
 	cost = 130
@@ -153,14 +158,21 @@ OPERATIONS
 
 /datum/supply_packs/operations/monkeyboxes
 	name = "Monkey Cube Box"
+	notes = "Contains 5 cubes."
 	contains = list(/obj/item/storage/box/monkeycubes)
-	cost = 300
+	cost = 500
+
+/datum/supply_packs/operations/monkeyboxes/single
+	name = "Monkey Cube"
+	notes = "A single cube, without a box."
+	contains = list(/obj/item/reagent_containers/food/snacks/monkeycube)
+	cost = 100
 
 /datum/supply_packs/operations/droppod_mech
 	name = "mech drop pod"
 	contains = list(/obj/structure/droppod/nonmob/mech_pod)
 	containertype = null
-	cost = 200
+	cost = 300
 
 /datum/supply_packs/operations/xeno_iff_tag
 	name = "Xenomorph IFF tag crate" //Intended for corrupted or friendly rounies as rounds sometimes turn out. Avoid abuse or I'll have to admin-only it, which is no fun!

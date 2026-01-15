@@ -4,6 +4,7 @@
 #define GEOTHERMAL_HEAVY_DAMAGE 3
 
 GLOBAL_VAR_INIT(generators_on_ground, 0)
+GLOBAL_VAR_INIT(corrupted_generators, 0)
 
 /obj/machinery/power/geothermal
 	name = "\improper G-11 geothermal generator"
@@ -31,16 +32,16 @@ GLOBAL_VAR_INIT(generators_on_ground, 0)
 
 /obj/machinery/power/geothermal/Initialize(mapload)
 	. = ..()
-	RegisterSignals(SSdcs, list(COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE, COMSIG_GLOB_OPEN_TIMED_SHUTTERS_XENO_HIVEMIND, COMSIG_GLOB_OPEN_SHUTTERS_EARLY, COMSIG_GLOB_TADPOLE_LANDED_OUT_LZ, COMSIG_GLOB_TADPOLE_RAPPEL_DEPLOYED_OUT_LZ), PROC_REF(activate_corruption))
+	RegisterSignal(SSdcs, COMSIG_GLOB_GAMESTATE_GROUNDSIDE, PROC_REF(activate_corruption))
 	owner_marker = new(loc)
-	update_icon()
 	SSminimaps.add_marker(src, MINIMAP_FLAG_ALL, image('ntf_modular/icons/UI_icons/map_blips.dmi', null, "generator", MINIMAP_BLIPS_LAYER))
 	if(is_ground_level(z) && is_corruptible)
 		GLOB.generators_on_ground += 1
-	if(!is_corruptible)
+	else
 		corrupted = 0
 	if(corrupted)
 		corrupt(corrupted)
+	update_icon()
 
 /obj/machinery/power/geothermal/Moved(atom/old_loc, movement_dir, forced, list/old_locs)
 	. = ..()
@@ -53,6 +54,9 @@ GLOBAL_VAR_INIT(generators_on_ground, 0)
 /obj/machinery/power/geothermal/Destroy() //just in case
 	if(is_ground_level(z) && is_corruptible)
 		GLOB.generators_on_ground -= 1
+		if(corrupted == XENO_HIVE_NORMAL)
+			GLOB.corrupted_generators -= 1
+			SSticker.mode.update_silo_death_timer(GLOB.hive_datums[corrupted])
 	. = ..()
 	SSminimaps.remove_marker(src)
 	SSminimaps.remove_marker(owner_marker)
@@ -62,7 +66,8 @@ GLOBAL_VAR_INIT(generators_on_ground, 0)
 	. = ..()
 	if(corrupted)
 		. += "It is covered in writhing tendrils [!isxeno(user) ? "that could be cut away with a welder" : ""]."
-	if(!isxeno(user) && !is_corruptible)
+		. += "It is claimed by the [GLOB.hive_datums[corrupted].name] hive."
+	if(isxeno(user) && !is_corruptible)
 		. += "It is reinforced, making us not able to corrupt it."
 
 /obj/machinery/power/geothermal/should_have_node()
@@ -104,7 +109,7 @@ GLOBAL_VAR_INIT(generators_on_ground, 0)
 	if(corrupted)
 		. += image(icon, src, "overlay_corrupted", layer)
 	else
-		SSminimaps.add_marker(owner_marker, MINIMAP_FLAG_XENO, image('ntf_modular/icons/UI_icons/map_blips.dmi', null, "generator_on", MINIMAP_BLIPS_LAYER+0.1))
+		SSminimaps.add_marker(owner_marker, MINIMAP_FLAG_XENO, image('ntf_modular/icons/UI_icons/map_blips.dmi', null, "generator_on", MINIMAP_BLIPS_LAYER_HIGH))
 
 /obj/machinery/power/geothermal/power_change()
 	return
@@ -128,7 +133,7 @@ GLOBAL_VAR_INIT(generators_on_ground, 0)
 
 /obj/machinery/power/geothermal/proc/activate_corruption(datum/source)
 	SIGNAL_HANDLER
-	UnregisterSignal(SSdcs, list(COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE, COMSIG_GLOB_OPEN_TIMED_SHUTTERS_XENO_HIVEMIND, COMSIG_GLOB_OPEN_SHUTTERS_EARLY, COMSIG_GLOB_TADPOLE_LANDED_OUT_LZ, COMSIG_GLOB_TADPOLE_RAPPEL_DEPLOYED_OUT_LZ))
+	UnregisterSignal(SSdcs, COMSIG_GLOB_GAMESTATE_GROUNDSIDE)
 	corruption_on = TRUE
 	start_processing()
 
@@ -144,6 +149,8 @@ GLOBAL_VAR_INIT(generators_on_ground, 0)
 			//You get points proportional to the % of generators corrupted (for example, if 66% of generators are corrupted the hive gets 0.66 points per second)
 			var/points_generated = GENERATOR_PSYCH_POINT_OUTPUT / GLOB.generators_on_ground
 			SSpoints.add_strategic_psy_points(corrupted, points_generated)
+			GLOB.round_statistics.strategic_psypoints_from_generators += points_generated
+			GLOB.round_statistics.generator_seconds += 2
 			SSpoints.add_tactical_psy_points(corrupted, points_generated*0.25)
 		return
 
@@ -189,22 +196,34 @@ GLOBAL_VAR_INIT(generators_on_ground, 0)
 		return TRUE
 	return FALSE //Nope, all fine
 
-/obj/machinery/power/geothermal/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
-	. = ..()
-	if(corrupted == xeno_attacker.hivenumber) //you have no reason to interact with it if its already corrupted
+/obj/machinery/power/geothermal/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage * xeno_attacker.xeno_melee_damage_modifier, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+	var/hivenumber = xeno_attacker.get_xeno_hivenumber()
+	if(corrupted == hivenumber) //you have no reason to interact with it if its already corrupted
+		to_chat(xeno_attacker, span_xenowarning("This has already been claimed for the glory of the hive."))
 		return
 
-	if(CHECK_BITFIELD(xeno_attacker.xeno_caste.can_flags, CASTE_CAN_CORRUPT_GENERATOR) && is_corruptible)
+	if(xeno_attacker.status_flags & INCORPOREAL) //Ghosts can't attack machines
+		return FALSE
+	if(xeno_attacker.handcuffed)
+		return
+	SEND_SIGNAL(xeno_attacker, COMSIG_XENOMORPH_ATTACK_OBJ, src)
+	if(SEND_SIGNAL(src, COMSIG_OBJ_ATTACK_ALIEN, xeno_attacker, damage_amount) & COMPONENT_NO_ATTACK_ALIEN)
+		return FALSE
+
+	if(is_corruptible && (CHECK_BITFIELD(xeno_attacker.xeno_caste.can_flags, CASTE_CAN_CORRUPT_GENERATOR) || (xeno_attacker.get_hive()?.living_xeno_ruler == xeno_attacker)))
 		to_chat(xeno_attacker, span_notice("You start to corrupt [src]"))
 		if(!do_after(xeno_attacker, 10 SECONDS, NONE, src, BUSY_ICON_HOSTILE))
 			return
-		corrupt(xeno_attacker.hivenumber)
+		if(corrupted == xeno_attacker.get_xeno_hivenumber())
+			return
+		corrupt(hivenumber)
 		to_chat(xeno_attacker, span_notice("You have corrupted [src]"))
-		log_combat(xeno_attacker, src, "corrupted", addition = "for hive [xeno_attacker.hivenumber]")
+		log_combat(xeno_attacker, src, "corrupted", addition = "for hive [hivenumber]")
 		record_generator_sabotages(xeno_attacker)
 		return
 
 	if(buildstate)
+		to_chat(xeno_attacker, span_xenowarning("This is already broken, but a hive ruler could corrupt it."))
 		return
 
 	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
@@ -274,16 +293,23 @@ GLOBAL_VAR_INIT(generators_on_ground, 0)
 		user.balloon_alert(user, "You start carefully burning the resin off.")
 		var/datum/hive_status/hive = GLOB.hive_datums[corrupted]
 		if(istype(hive))
-			hive.xeno_message("Our [name] is being attacked by [user] at [AREACOORD_NO_Z(src)]!", "xenoannounce", 5, FALSE, loc, 'sound/voice/alien/help2.ogg',FALSE , null, /atom/movable/screen/arrow/silo_damaged_arrow)
+			hive.xeno_message("Our [name] is being attacked by [user] at [AREACOORD_NO_Z(src)]!", "xenoannounce", 5, FALSE, loc, 'sound/voice/hiss4.ogg',FALSE , null, /atom/movable/screen/arrow/silo_damaged_arrow)
 
 		if(!I.use_tool(src, user, 20 SECONDS - clamp((user.skills.getRating(SKILL_ENGINEER) - SKILL_ENGINEER_ENGI) * 5, 0, 20), 2, 25, null, BUSY_ICON_BUILD))
 			return FALSE
 
 		log_combat(user, src, "decorrupted", addition = "from hive [corrupted]")
 		if(istype(hive))
-			hive.xeno_message("Our [name] has been stolen by [user] at [AREACOORD_NO_Z(src)]!", "xenoannounce", 5, FALSE, loc, 'sound/voice/alien/help2.ogg',FALSE , null, /atom/movable/screen/arrow/silo_damaged_arrow)
+			hive.xeno_message("Our [name] has been stolen by [user] at [AREACOORD_NO_Z(src)]!", "xenoannounce", 5, FALSE, loc, 'sound/voice/hiss4.ogg',FALSE , null, /atom/movable/screen/arrow/silo_damaged_arrow)
 
 		corrupted = 0
+		color = null
+		name = initial(name)
+
+		if(is_ground_level(z) && hive?.hivenumber == XENO_HIVE_NORMAL)
+			GLOB.corrupted_generators -= 1
+			SSticker.mode?.update_silo_death_timer(hive)
+
 		stop_processing()
 		update_icon()
 	if(buildstate != GEOTHERMAL_HEAVY_DAMAGE) //Already repaired!
@@ -356,8 +382,14 @@ GLOBAL_VAR_INIT(generators_on_ground, 0)
 	return TRUE
 
 /obj/machinery/power/geothermal/proc/corrupt(hivenumber)
+	if(is_ground_level(z) && hivenumber == XENO_HIVE_NORMAL && corrupted != hivenumber)
+		GLOB.corrupted_generators += 1
 	corrupted = hivenumber
+	color = GLOB.hive_datums[hivenumber].color
+	name = initial(name) +" ([GLOB.hive_datums[hivenumber].name] Hive)"
 	is_on = FALSE
+	if(SSticker.mode)
+		SSticker.mode.update_silo_death_timer(GLOB.hive_datums[hivenumber])
 	power_gen_percent = 0
 	cur_tick = 0
 	icon_state = "off"

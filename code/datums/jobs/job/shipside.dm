@@ -219,7 +219,7 @@ You are in charge of logistics and the overwatch system. You are also in line to
 	paygrade = "WO"
 	comm_title = "TO"
 	total_positions = 1
-	access = list(ACCESS_MARINE_BRIDGE, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_PILOT, ACCESS_MARINE_TADPOLE, ACCESS_MARINE_CARGO, ACCESS_MARINE_RO)
+	access = list(ACCESS_MARINE_BRIDGE, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_PILOT, ACCESS_MARINE_TADPOLE, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_CARGO, ACCESS_MARINE_RO)
 	minimal_access = list(ACCESS_MARINE_BRIDGE, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_PILOT, ACCESS_MARINE_TADPOLE, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_CARGO, ACCESS_MARINE_RO, ACCESS_MARINE_MEDBAY)
 	skills_type = /datum/skills/transportofficer
 	display_order = JOB_DISPLAY_ORDER_TRANSPORT_OFFICER
@@ -322,7 +322,7 @@ Try to ensure the Tadpole's survival. In the case of its destruction, you may re
 	. += separator_hr("[span_role_header("<b>[title] Information</b>")]")
 	. += {"Your job is to support opreatives with close air support via the Condor.
 You are expected to use the Condor as the Alamo is able to be ran automatically, though at some points you will be required to take control of the Alamo for the operation's success, though highly unlikely.
-Though you are an officer, your authority is limited to the dropship and the Condor, where you have authority over the enlisted personnel."}
+Though you are an officer, your authority is limited to the dropship and the Condor, where you have authority over the enlisted personnel. You are an Archercorp Personnel."}
 
 
 //Mech pilot
@@ -358,15 +358,15 @@ Though you are an officer, your authority is limited to the dropship and the Con
 	. += separator_hr("[span_role_header("<b>[title] Information</b>")]")
 	. += "You are the operator of a very expensive and valuable Mech, and are trained and expected to use it in the field of combat. You can serve your Division in a variety of roles, so choose carefully."
 
-/* NTF removal
 /datum/job/terragov/command/mech_pilot/on_pre_setup()
 	if(total_positions)
+		return
+	if((!istype(SSticker.mode, /datum/game_mode/infestation/nuclear_war)) && (!istype(SSticker.mode, /datum/game_mode/infestation/sovl_war)))
 		return
 	var/client_count = length(GLOB.clients)
 	if(client_count >= NUCLEAR_WAR_MECH_MINIMUM_POP_REQUIRED)
 		client_count = 1 + FLOOR((client_count - NUCLEAR_WAR_MECH_MINIMUM_POP_REQUIRED) / NUCLEAR_WAR_MECH_INTERVAL_PER_SLOT, 1)
 		add_job_positions(client_count)
-*/
 
 /datum/job/terragov/command/mech_pilot/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
 	. = ..()
@@ -398,7 +398,7 @@ Though you are an officer, your authority is limited to the dropship and the Con
 	total_positions = 0
 	max_positions = 2
 	skills_type = /datum/skills/assault_crewman
-	access = list(ACCESS_MARINE_WO, ACCESS_MARINE_PREP, ACCESS_MARINE_ARMORED, ACCESS_CIVILIAN_PUBLIC, ACCESS_MARINE_PILOT, ACCESS_MARINE_CARGO, ACCESS_MARINE_RO)
+	access = list(ACCESS_MARINE_WO, ACCESS_MARINE_PREP, ACCESS_MARINE_ARMORED, ACCESS_CIVILIAN_PUBLIC, ACCESS_MARINE_PILOT, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_CARGO, ACCESS_MARINE_RO)
 	minimal_access = list(ACCESS_MARINE_PILOT, ACCESS_MARINE_WO, ACCESS_MARINE_PREP, ACCESS_MARINE_ARMORED, ACCESS_CIVILIAN_PUBLIC, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_CARGO)
 	display_order = JOB_DISPLAY_ORDER_MECH_PILOT
 	outfit = /datum/outfit/job/command/assault_crewman
@@ -435,7 +435,7 @@ Though you are an officer, your authority is limited to the dropship and the Con
 /datum/job/terragov/command/assault_crewman/get_spawn_message_information(mob/M)
 	. = ..()
 	. += separator_hr("[span_role_header("<b>[title] Information</b>")]")
-	. += "You are an Assault Crewman. You operate the TGMC's armored assault vehicles along with your partner, and in some cases a \"willing\" loader. Make sure that you work as a team to advance the front!"
+	. += "You are an Assault Crewman from Archercorp. You operate the NTF's armored assault vehicles along with your partner, and in some cases a \"willing\" loader. Make sure that you work as a team to advance the front!"
 
 /datum/job/terragov/command/assault_crewman/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
 	. = ..()
@@ -467,7 +467,7 @@ Though you are an officer, your authority is limited to the dropship and the Con
 	comm_title = "TC"
 	total_positions = 1
 	skills_type = /datum/skills/transport_crewman
-	access = list(ACCESS_MARINE_WO, ACCESS_MARINE_PREP, ACCESS_MARINE_ARMORED, ACCESS_CIVILIAN_PUBLIC, ACCESS_MARINE_PILOT)
+	access = list(ACCESS_MARINE_WO, ACCESS_MARINE_PREP, ACCESS_MARINE_ARMORED, ACCESS_CIVILIAN_PUBLIC, ACCESS_MARINE_PILOT, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_CARGO)
 	minimal_access = list(ACCESS_MARINE_PILOT, ACCESS_MARINE_WO, ACCESS_MARINE_PREP, ACCESS_MARINE_ARMORED, ACCESS_CIVILIAN_PUBLIC, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_CARGO)
 	display_order = JOB_DISPLAY_ORDER_MECH_PILOT
 	outfit = /datum/outfit/job/command/transport_crewman
@@ -490,7 +490,7 @@ Though you are an officer, your authority is limited to the dropship and the Con
 /datum/job/terragov/command/transport_crewman/get_spawn_message_information(mob/M)
 	. = ..()
 	. += separator_hr("[span_role_header("<b>[title] Information</b>")]")
-	. += "You are a Transport Crewman. You operate the TGMC's transport vehciles to ensure that marines and equipment gets to the front in a timely and safe manner."
+	. += "You are a Transport Crewman from TRANSCo. You operate the NTF's transport vehciles to ensure that marines and equipment gets to the front in a timely and safe manner."
 
 /datum/job/terragov/command/transport_crewman/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
 	. = ..()
@@ -588,8 +588,8 @@ You are also next in the chain of command, should the bridge crew fall in the li
 	paygrade = "PO3"
 	total_positions = 5
 	supervisors = "the chief ship engineer and the requisitions officer, Archercorp."
-	access = list(ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_PREP, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_CARGO, ACCESS_CIVILIAN_ENGINEERING)
-	minimal_access = list(ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_PREP, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_CARGO, ACCESS_CIVILIAN_ENGINEERING)
+	access = list(ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_PREP, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_CARGO,  ACCESS_CIVILIAN_ENGINEERING)
+	minimal_access = list(ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_PREP, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_CARGO,  ACCESS_CIVILIAN_ENGINEERING)
 	skills_type = /datum/skills/st
 	display_order = JOB_DISPLAY_ORDER_SHIP_TECH
 	outfit = /datum/outfit/job/engineering/tech
@@ -718,13 +718,14 @@ A happy ship is a well-functioning ship."}
 
 /datum/job/terragov/medical/professor
 	title = CHIEF_MEDICAL_OFFICER
+	shadow_languages = list(/datum/language/xenocommon)
 	req_admin_notify = TRUE
 	comm_title = "CMO"
 	paygrade = "SP"
 	total_positions = 1
 	supervisors = "the acting captain, Novamed."
 	selection_color = "#99FF99"
-	access = list(ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_CMO, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_RESEARCH, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_CHEMISTRY)
+	access = list(ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_CMO, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_RESEARCH, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_CARGO, )
 	minimal_access = list(ACCESS_MARINE_CMO, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_RESEARCH, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_CARGO, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_LOGISTICS)
 	skills_type = /datum/skills/cmo
 	display_order = JOB_DISPLAY_ORDER_CHIEF_MEDICAL_OFFICER
@@ -788,8 +789,8 @@ Make sure that the doctors and nurses are doing their jobs and keeping the marin
 	paygrade = "MS"
 	total_positions = 4
 	supervisors = "the chief medical officer, Novamed."
-	access = list(ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY)
-	minimal_access = list(ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_CARGO, ACCESS_MARINE_DROPSHIP)
+	access = list(ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_CARGO, )
+	minimal_access = list(ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_CARGO, ACCESS_MARINE_DROPSHIP)
 	skills_type = /datum/skills/doctor
 	display_order = JOB_DISPLAY_ORDER_DOCTOR
 	outfit = /datum/outfit/job/medical/medicalofficer
@@ -849,8 +850,8 @@ You are also an expert when it comes to medication and treatment. If you do not 
 	paygrade = "RSRA"
 	total_positions = 2
 	supervisors = "Novamed."
-	access = list(ACCESS_MARINE_MEDBAY, ACCESS_MARINE_RESEARCH, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_ENGINEERING, ACCESS_CIVILIAN_ENGINEERING)
-	minimal_access = list(ACCESS_MARINE_MEDBAY, ACCESS_MARINE_RESEARCH, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_CARGO, ACCESS_MARINE_DROPSHIP)
+	access = list(ACCESS_MARINE_MEDBAY, ACCESS_MARINE_RESEARCH, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_ENGINEERING, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_CARGO)
+	minimal_access = list(ACCESS_MARINE_MEDBAY, ACCESS_MARINE_RESEARCH, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_CARGO,  ACCESS_MARINE_DROPSHIP)
 	skills_type = /datum/skills/researcher
 	display_order = JOB_DISPLAY_ORDER_MEDICAL_RESEARCHER
 	outfit = /datum/outfit/job/medical/researcher
@@ -871,7 +872,7 @@ You are also an expert when it comes to medication and treatment. If you do not 
 		<b>You answer to the</b> Ninetails Corporate Office<br /><br />
 		<b>Unlock Requirement</b>: Starting Role<br /><br />
 		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
-		<b>Duty</b>: Research extraterrestrial life aboard the ship if provided by Ninetails/TerraGov, synthesize chemicals for the benefit of the marines. Find out the cause of why and when. Learn new things for humankind. Act as a secondary medical officer in practice.
+		<b>Duty</b>: Research extraterrestrial life aboard the ship if provided by Ninetails/NTF, synthesize chemicals for the benefit of the marines. Find out the cause of why and when. Learn new things for humankind. Act as a secondary medical officer in practice.
 	"}
 	minimap_icon = "researcher"
 
@@ -952,15 +953,15 @@ It is also recommended that you gear up like a regular marine, or your 'internsh
 		return
 	switch(playtime_mins)
 		if(0 to 600) // starting
-			new_human.wear_id.paygrade = "NT1"
-		if(601 to 1500) // 10hrs
 			new_human.wear_id.paygrade = "NT2"
-		if(1501 to 6000) // 25 hrs
+		if(601 to 1500) // 10hrs
 			new_human.wear_id.paygrade = "NT3"
-		if(6001 to 18000) // 100 hrs
+		if(1501 to 6000) // 25 hrs
 			new_human.wear_id.paygrade = "NT4"
-		if(18001 to INFINITY) // 300 hrs
+		if(6001 to 18000) // 100 hrs
 			new_human.wear_id.paygrade = "NT5"
+		if(18001 to INFINITY) // 300 hrs
+			new_human.wear_id.paygrade = "NT6"
 	new_human.wear_id.update_label()
 
 /datum/job/terragov/civilian/liaison/get_spawn_message_information(mob/M)
@@ -1015,6 +1016,20 @@ Use your office fax machine to communicate with corporate headquarters or to acq
 /datum/job/terragov/silicon/synthetic/return_spawn_type(datum/preferences/prefs)
 	if(prefs?.synthetic_type == "Early Synthetic")
 		return /mob/living/carbon/human/species/early_synthetic
+	if(prefs?.synthetic_type == "Robot")
+		switch(prefs?.robot_type)
+			if("Basic")
+				return /mob/living/carbon/human/species/robot
+			if("Hammerhead")
+				return /mob/living/carbon/human/species/robot/alpharii
+			if("Chilvaris")
+				return /mob/living/carbon/human/species/robot/charlit
+			if("Ratcher")
+				return /mob/living/carbon/human/species/robot/deltad
+			if("Sterling")
+				return /mob/living/carbon/human/species/robot/bravada
+			if("Synskin")
+				return /mob/living/carbon/human/species/robot/synskin
 	return /mob/living/carbon/human/species/synthetic
 
 /datum/job/terragov/silicon/synthetic/return_skills_type(datum/preferences/prefs)

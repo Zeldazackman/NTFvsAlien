@@ -641,6 +641,11 @@
 	dir = 1
 	},
 /area/riptide/outside/southjungle)
+"ayW" = (
+/obj/structure/flora/ausbushes/reedbush,
+/obj/effect/ai_node,
+/turf/open/floor/plating/ground/drought/alt,
+/area/riptide/outside/eastbeach)
 "azh" = (
 /obj/effect/landmark/weed_node,
 /turf/open/ground,
@@ -9330,6 +9335,10 @@
 	},
 /turf/open/ground,
 /area/riptide/outside/volcano)
+"gtL" = (
+/obj/effect/landmark/static_comms/net_two,
+/turf/open/ground,
+/area/riptide/outside/beachlzone)
 "gtN" = (
 /obj/effect/landmark/xeno_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
@@ -9760,6 +9769,13 @@
 	},
 /turf/open/ground,
 /area/riptide/outside/westislands)
+"gLl" = (
+/obj/structure/desertdam/decals/road{
+	dir = 4
+	},
+/obj/effect/ai_node,
+/turf/open/floor/plating/ground/desertdam/asphalt,
+/area/riptide/inside/landingzoneone)
 "gMg" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
@@ -12345,6 +12361,12 @@
 /obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
 /turf/open/shuttle/dropship/floor/alt,
 /area/riptide/caves/tram)
+"iKB" = (
+/obj/effect/ai_node,
+/turf/open/floor/plating/ground/desertdam/asphalt/edge{
+	dir = 4
+	},
+/area/riptide/inside/landingzoneone)
 "iLa" = (
 /obj/structure/table,
 /obj/item/trash/popcorn,
@@ -15683,7 +15705,6 @@
 /turf/open/floor/tile/bar,
 /area/riptide/inside/medical/offices)
 "kVA" = (
-/obj/machinery/telecomms/relay/preset/telecomms,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
 /area/riptide/inside/telecomms)
 "kVD" = (
@@ -15889,9 +15910,7 @@
 /turf/open/floor/iron/herringbone,
 /area/riptide/caves/pmc/rnd)
 "laA" = (
-/obj/machinery/vending/phoronresearch{
-	req_one_access = null
-	},
+/obj/machinery/vending/phoronresearch,
 /turf/open/floor/iron/smooth_large,
 /area/riptide/caves/pmc/toxins)
 "laB" = (
@@ -18908,9 +18927,7 @@
 /area/riptide/inside/engineering/bridge)
 "nhq" = (
 /obj/structure/table/reinforced,
-/obj/machinery/door/window{
-	dir = 4
-	},
+/obj/machinery/door/window,
 /obj/machinery/door/window{
 	dir = 8
 	},
@@ -21132,9 +21149,7 @@
 /area/riptide/outside/northbeach)
 "oFD" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/medevac_beacon{
-	faction = null
-	},
+/obj/item/medevac_beacon,
 /obj/machinery/atmospherics/pipe/manifold/green/hidden{
 	dir = 8
 	},
@@ -27965,6 +27980,7 @@
 /obj/structure/cable,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/ai_node,
 /turf/open/floor/wood/alt_nine,
 /area/riptide/inside/arena)
 "sWp" = (
@@ -29414,6 +29430,10 @@
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/riptide/caves/syndicatemining)
+"tTS" = (
+/obj/effect/ai_node,
+/turf/open/floor/plating/ground/desertdam/asphalt/tile,
+/area/riptide/inside/landingzoneone)
 "tTZ" = (
 /turf/open/floor/plating/ground/dirt_alt/random,
 /area/riptide/caves/north)
@@ -30276,6 +30296,10 @@
 "uBd" = (
 /turf/open/floor,
 /area/riptide/caves/pmc/prison)
+"uBe" = (
+/obj/effect/ai_node,
+/turf/open/floor/plating/ground/desertdam/asphalt,
+/area/riptide/inside/landingzoneone)
 "uBp" = (
 /obj/machinery/atmospherics/components/unary/vent_pump{
 	dir = 4;
@@ -31400,6 +31424,7 @@
 /area/riptide/outside/northbeach)
 "vqM" = (
 /obj/effect/landmark/xeno_resin_door,
+/obj/effect/ai_node,
 /turf/open/shuttle/dropship/floor,
 /area/riptide/caves/tram)
 "vqT" = (
@@ -34746,6 +34771,10 @@
 	dir = 1
 	},
 /area/riptide/caves/north)
+"xGV" = (
+/obj/effect/landmark/static_comms/net_one,
+/turf/open/ground,
+/area/riptide/outside/beachlzone)
 "xHB" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -36279,11 +36308,7 @@ haH
 haH
 uVx
 vwF
-sXP
-sXP
-vwF
-vwF
-sXP
+tTS
 sXP
 vwF
 vwF
@@ -36292,6 +36317,10 @@ sXP
 vwF
 vwF
 sXP
+sXP
+vwF
+vwF
+tTS
 vwF
 vwF
 vwF
@@ -36623,12 +36652,12 @@ uyR
 haH
 haH
 haH
-haH
+uBe
 mRt
 uoX
 uoX
 uoX
-uoX
+gLl
 uoX
 uoX
 uoX
@@ -36637,7 +36666,7 @@ uoX
 uoX
 psL
 ovc
-jhH
+iKB
 jhH
 jhH
 ipB
@@ -38413,7 +38442,7 @@ fsz
 sXP
 avX
 wha
-sXP
+tTS
 sXP
 vuR
 pPG
@@ -38439,7 +38468,7 @@ vTm
 wXG
 iRy
 sXP
-sXP
+tTS
 avX
 eDc
 sXP
@@ -38463,7 +38492,7 @@ rgK
 rgK
 sTP
 xke
-xke
+gtL
 koq
 hoq
 eoT
@@ -38591,7 +38620,7 @@ aDN
 wsj
 dbF
 rhS
-wha
+eDc
 sXP
 sXP
 vuR
@@ -43251,7 +43280,7 @@ rHT
 mvK
 xke
 xke
-xke
+xGV
 xke
 fJs
 hWe
@@ -52391,7 +52420,7 @@ lSn
 bAh
 ptB
 aZZ
-uQM
+hVU
 gVY
 vgU
 vgU
@@ -57431,7 +57460,7 @@ qjz
 knr
 nwL
 evU
-sWT
+ayW
 htE
 htE
 htE

@@ -73,6 +73,14 @@
 			return TRUE
 		if(slot_l_hand_str)
 			return TRUE
+		if(slot_underwear_str)
+			return TRUE
+		if(slot_bra_str)
+			return TRUE
+		if(slot_socks_str)
+			return TRUE
+		if(slot_shirt_str)
+			return TRUE
 	return FALSE //Unsupported slot
 
 /**
@@ -138,7 +146,7 @@
 	switch(action)
 		if("equipLoadout")
 			if(TIMER_COOLDOWN_RUNNING(ui.user, COOLDOWN_LOADOUT_EQUIPPED))
-				ui.user.balloon_alert(ui.user, "The vendor is still reloading")
+				ui.user.balloon_alert(ui.user, "the vendor is still reloading!")
 				return
 			var/datum/loadout_seller/seller = new (loadout_vendor.faction)
 			if(seller.try_to_equip_loadout(src, ui.user))

@@ -85,6 +85,13 @@ SUBSYSTEM_DEF(points)
 ///Add amount of strategic psy points to the selected hive only if the gamemode support psypoints
 /datum/controller/subsystem/points/proc/add_strategic_psy_points(hivenumber, amount)
 	if(!CHECK_BITFIELD(SSticker.mode.round_type_flags, MODE_PSY_POINTS))
+		//convert to amount/190 job points on average, or amount/1520 burrowed larva
+		var/job_points_converted = floor(amount/190)
+		amount -= job_points_converted*190
+		if(prob(amount/1.9))
+			job_points_converted += 1
+		var/datum/job/xenomorph/xeno_job = GLOB.hivenumber_to_job_type[hivenumber]
+		xeno_job.add_job_points(job_points_converted)
 		return
 	xeno_strategic_points_by_hive[hivenumber] += amount
 
@@ -97,8 +104,15 @@ SUBSYSTEM_DEF(points)
 /// Add amount of biomass to the selected hive only if the gamemode support biomass.
 /datum/controller/subsystem/points/proc/add_biomass_points(hivenumber, amount)
 	if(!CHECK_BITFIELD(SSticker.mode.round_type_flags, MODE_BIOMASS_POINTS))
+		//convert to amount/190 job points on average, or amount/1520 burrowed larva
+		var/job_points_converted = floor(amount/190)
+		amount -= job_points_converted*190
+		if(prob(amount/1.9))
+			job_points_converted += 1
+		var/datum/job/xenomorph/xeno_job = GLOB.hivenumber_to_job_type[hivenumber]
+		xeno_job.add_job_points(job_points_converted)
 		return
-	xeno_biomass_points_by_hive[hivenumber] += amount
+	xeno_biomass_points_by_hive[hivenumber] = min(xeno_biomass_points_by_hive[hivenumber] + amount, MUTATION_BIOMASS_MAXIMUM)
 
 /datum/controller/subsystem/points/proc/approve_request(datum/supply_order/O, mob/living/user)
 	var/cost = 0
@@ -205,7 +219,10 @@ SUBSYSTEM_DEF(points)
 		requestlist["[orders[i].id]"] = orders[i]
 	ckey_shopping_cart.Cut()
 
-/datum/controller/subsystem/points/proc/add_supply_points(faction, amount)
+/datum/controller/subsystem/points/proc/add_supply_points(faction, amount, new_faction = FALSE)
+	if(!new_faction && !(faction in supply_points))
+		stack_trace("adding [faction] to supply_points via add_supply_points without new_faction set")
+		message_admins("added new faction \"[faction]\" to supply points list.  This is okay if you meant to do that but might be a bug.  This faction will now be eligible to recive points from supply point increase events.")
 	var/startingsupplypoints = supply_points[faction]
 	if(startingsupplypoints > HUMAN_FACTION_ABSOLUTE_MAX_POINTS)
 		return
@@ -227,7 +244,10 @@ SUBSYSTEM_DEF(points)
 	else
 		supply_points[faction] = simplenewamount1
 
-/datum/controller/subsystem/points/proc/add_dropship_points(faction, amount)
+/datum/controller/subsystem/points/proc/add_dropship_points(faction, amount, new_faction = FALSE)
+	if(!new_faction && !(faction in dropship_points))
+		stack_trace("adding [faction] to dropship_points via add_dropship_points without new_faction set")
+		message_admins("added new faction \"[faction]\" to dropship points list.  This is okay if you meant to do that but might be a bug.")
 	var/startingdropshippoints = dropship_points[faction]
 	if(startingdropshippoints > HUMAN_FACTION_ABSOLUTE_MAX_DROPSHIP_POINTS)
 		return

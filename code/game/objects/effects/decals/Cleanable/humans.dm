@@ -1,4 +1,4 @@
-#define DRYING_TIME 5 * 60*10                        //for 1 unit of depth in puddle (amount var)
+#define DRYING_TIME 5 MINUTES
 
 /obj/effect/decal/cleanable/blood
 	name = "blood"
@@ -13,6 +13,7 @@
 	var/basecolor="#ff3b00" // Color when wet.
 	var/amount = 5
 	var/drying_timer
+	layer = (29 + TOPDOWN_LAYER)
 
 
 /obj/effect/decal/cleanable/blood/Initialize(mapload)
@@ -21,7 +22,7 @@
 		COMSIG_ATOM_ENTERED = PROC_REF(on_cross),
 	)
 	AddElement(/datum/element/connect_loc, connections)
-	update_icon()
+	update_appearance(UPDATE_ICON)
 	if(istype(src, /obj/effect/decal/cleanable/blood/gibs))
 		return
 	if(istype(src, /obj/effect/decal/cleanable/blood/tracks))
@@ -120,11 +121,13 @@
 	random_icon_states = list("mgibbl1", "mgibbl2", "mgibbl3", "mgibbl4", "mgibbl5")
 	alpha = 150
 	amount = 2
+	layer = ABOVE_WEEDS_LAYER
 
 /obj/effect/decal/cleanable/blood/splatter/cum/dry()
 	name = "dried [name]"
 	desc = "Some semen or something, yuck. It seems to have dried."
 	color = adjust_brightness(color, -75)
+	layer = ABOVE_WEEDS_LAYER
 
 /obj/effect/decal/cleanable/blood/splatter/robotcum
 	name = "synthetic cum"
@@ -132,11 +135,13 @@
 	desc = "It's literally oil-y cum."
 	random_icon_states = list("mgibbl1", "mgibbl2", "mgibbl3", "mgibbl4", "mgibbl5")
 	amount = 2
+	layer = ABOVE_WEEDS_LAYER
 
 /obj/effect/decal/cleanable/blood/splatter/robotcum/dry()
 	name = "dried [name]"
 	desc = "It's literally oil-y cum. It seems to have dried."
 	color = adjust_brightness(color, -75)
+	layer = ABOVE_WEEDS_LAYER
 
 /obj/effect/decal/cleanable/blood/splatter/xenocum
 	name = "xeno cum"
@@ -144,11 +149,13 @@
 	desc = "Some acidic xeno semen or something, yuck."
 	random_icon_states = list("mgibbl1", "mgibbl2", "mgibbl3", "mgibbl4", "mgibbl5")
 	amount = 2
+	layer = ABOVE_WEEDS_LAYER
 
 /obj/effect/decal/cleanable/blood/splatter/xenocum/dry()
 	name = "dried [name]"
 	desc = "Some semen or something, yuck. It seems to have dried."
 	color = adjust_brightness(color, -75)
+	layer = ABOVE_WEEDS_LAYER
 
 
 /obj/effect/decal/cleanable/blood/splatter/girlcum
@@ -158,6 +165,7 @@
 	random_icon_states = list("mgibbl1", "mgibbl2", "mgibbl3", "mgibbl4", "mgibbl5")
 	alpha = 100
 	amount = 2
+	layer = ABOVE_WEEDS_LAYER
 
 /obj/effect/decal/cleanable/blood/splatter/girlcum/dry()
 	name = "dried [name]"
@@ -181,13 +189,21 @@
 	name = "tracking fluid"
 	desc = "Tracking fluid from a tracking round."
 	basecolor = "#00FFFF"
-	layer = BELOW_OBJ_LAYER
+	amount = 1
+	layer = ABOVE_WEEDS_LAYER
+
+/obj/effect/decal/cleanable/blood/drip/tracking_fluid/update_overlays()
+	. = ..()
+	if(!amount)
+		return
+	. += emissive_appearance(icon, icon_state, src, reset_transform = FALSE)
 
 /obj/effect/decal/cleanable/blood/drip/tracking_fluid/dry()
 	name = "dried [name]"
 	desc = "Tracking fluid from a tracking round. It appears to have lost its color."
 	color = adjust_brightness(color, -75)
 	amount = 0
+	update_appearance(UPDATE_ICON)
 
 /obj/effect/decal/cleanable/blood/writing
 	icon_state = "tracks"

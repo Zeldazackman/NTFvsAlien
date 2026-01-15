@@ -20,7 +20,7 @@
 
 /mob/living/carbon/proc/resist_restraints(obj/item/restraints/cuffs)
 	if(do_actions)
-		balloon_alert(src, "busy")
+		balloon_alert(src, "busy!")
 		return
 
 	visible_message(span_warning("[src] attempts to remove [cuffs]!"),
@@ -33,3 +33,6 @@
 	span_notice("You successfully remove [cuffs]."))
 
 	dropItemToGround(cuffs) //This will call UnEquip() > update_handcuffed() > UnregisterSignal()
+	if(isxeno(src))
+		var/mob/living/carbon/xenomorph/xeno = src
+		xeno.update_handcuffed_overlay()

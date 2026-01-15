@@ -63,6 +63,15 @@
 		mob.control_object.forceMove(get_step(mob.control_object, direct))
 
 /client/Move(atom/newloc, direction, glide_size_override)
+	var/mob/living/living_mob  // fuck you im doing it, the comment below. ntf edit
+	if(isliving(mob))
+		living_mob = mob
+
+	if(ishuman(living_mob))
+		var/mob/living/carbon/human/human = living_mob
+		if(HAS_TRAIT(human, TRAIT_HAULED))
+			human.handle_haul_resist()
+			return //ntf edit end
 	if(world.time < move_delay) //do not move anything ahead of this check please
 		return FALSE
 	next_move_dir_add = NONE
@@ -110,6 +119,12 @@
 	if(L.pulledby)
 		if(L.incapacitated(TRUE))
 			return
+		else if(isxeno(L))
+			var/mob/living/carbon/xenomorph/xeno = L
+			if(xeno.handcuffed)
+				move_delay = world.time + 1 SECONDS //to reduce the spam
+				to_chat(src, span_warning("You're restrained! You can't move!"))
+				return
 		else if(L.restrained(RESTRAINED_NECKGRAB))
 			move_delay = world.time + 1 SECONDS //to reduce the spam
 			to_chat(src, span_warning("You're restrained! You can't move!"))

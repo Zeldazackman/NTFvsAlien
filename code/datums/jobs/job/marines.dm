@@ -32,8 +32,8 @@ Make your way to the cafeteria for some post-cryosleep chow, and then get equipp
 	title = SQUAD_MARINE
 	paygrade = "E1"
 	comm_title = "Opr"
-	access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_DROPSHIP)
-	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_DROPSHIP)
+	access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_CARGO, ACCESS_MARINE_LOGISTICS)
+	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_CARGO, ACCESS_MARINE_LOGISTICS)
 	display_order = JOB_DISPLAY_ORDER_SQUAD_MARINE
 	outfit = /datum/outfit/job/marine/standard
 	total_positions = -1
@@ -51,7 +51,7 @@ Make your way to the cafeteria for some post-cryosleep chow, and then get equipp
 		<b>You answer to the</b> acting Squad Leader<br /><br />
 		<b>Unlock Requirement</b>: Starting Role<br /><br />
 		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
-		TerraGov’s Squad Operatives make up the bread and butter of Terra's fighting forces. They are fitted with the standard arsenal that the NTC offers, and they can take up a variety of roles, being a sniper, a pyrotechnician, a machinegunner, rifleman and more. They’re often high in numbers and divided into squads, but they’re the lowest ranking individuals, with a low degree of skill, not adapt to engineering or medical roles. Still, they are not limited to the arsenal they can take on the field to deal whatever threat that lurks against Terra.
+		Ninetails' Squad Operatives make up the bread and butter of Ninetails' fighting forces. They are fitted with the standard arsenal that the NTC offers, and they can take up a variety of roles, being a sniper, a pyrotechnician, a machinegunner, rifleman and more. They’re often high in numbers and divided into squads, but they’re the lowest ranking individuals, with a low degree of skill, not adapt to engineering or medical roles. Still, they are not limited to the arsenal they can take on the field to deal whatever threat that lurks against Terra.
 		<br /><br />
 		<b>Duty</b>: Carry out orders made by your acting Squad Leader, deal with any threats that oppose the NTC.
 	"}
@@ -84,13 +84,19 @@ Make your way to the cafeteria for some post-cryosleep chow, and then get equipp
 	. += separator_hr("[span_role_header("<b>[title] Information</b>")]")
 	. += "You are a rank-and-file operative of the NTC, and that is your strength. What you lack alone, you gain standing shoulder to shoulder with the men and women of the Nine Tailed Fox PMC. Ooh-rah!"
 
+/datum/job/terragov/squad/standard/npc
+	multiple_outfits = TRUE
+	outfits = list(
+		/datum/outfit/job/npc/tgmc/standard,
+		/datum/outfit/job/npc/tgmc/standard/shotgunner,
+	)
 //Squad Slut
 /datum/job/terragov/squad/slut
 	title = SQUAD_SLUT
 	paygrade = "E1"
 	comm_title = "Slt"
-	access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_DROPSHIP)
-	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_DROPSHIP)
+	access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_CARGO, ACCESS_MARINE_LOGISTICS)
+	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_CARGO, ACCESS_MARINE_LOGISTICS)
 	display_order = JOB_DISPLAY_ORDER_SQUAD_SLUT
 	outfit = /datum/outfit/job/marine/slut
 	skills_type = /datum/skills/slut
@@ -109,7 +115,7 @@ Make your way to the cafeteria for some post-cryosleep chow, and then get equipp
 		<b>You answer to the</b> acting Squad Leader<br /><br />
 		<b>Unlock Requirement</b>: Starting Role<br /><br />
 		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
-		TerraGov’s Squad Operatives make up the bread and butter of Terra's fighting forces. They are fitted with the standard arsenal that the NTC offers, and they can take up a variety of roles, being a sniper, a pyrotechnician, a machinegunner, rifleman and more. They’re often high in numbers and divided into squads, but they’re the lowest ranking individuals, with a low degree of skill, not adapt to engineering or medical roles. Still, they are not limited to the arsenal they can take on the field to deal whatever threat that lurks against Terra.
+		Ninetails' Squad Operatives make up the bread and butter of Ninetails' fighting forces. They are fitted with the standard arsenal that the NTC offers, and they can take up a variety of roles, being a sniper, a pyrotechnician, a machinegunner, rifleman and more. They’re often high in numbers and divided into squads, but they’re the lowest ranking individuals, with a low degree of skill, not adapt to engineering or medical roles. Still, they are not limited to the arsenal they can take on the field to deal whatever threat that lurks against Terra.
 		<br /><br />
 		<b>Duty</b>: Carry out orders made by your acting Squad Leader, deal with any threats that oppose the NTC.
 	"}
@@ -147,8 +153,8 @@ You can use some non lethal ammunition to 'tactically' do things to people, Spre
 	paygrade = "E3"
 	comm_title = "Eng"
 	total_positions = 4
-	access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_ENGPREP, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_REMOTEBUILD, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_DROPSHIP)
-	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_ENGPREP, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_REMOTEBUILD, ACCESS_MARINE_ENGINEERING)
+	access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_ENGPREP, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_REMOTEBUILD, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_CARGO, ACCESS_MARINE_LOGISTICS)
+	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_ENGPREP, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_REMOTEBUILD, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_CARGO, ACCESS_MARINE_LOGISTICS)
 	skills_type = /datum/skills/combat_engineer
 	display_order = JOB_DISPLAY_ORDER_SUQAD_ENGINEER
 	outfit = /datum/outfit/job/marine/engineer
@@ -197,14 +203,17 @@ You can use some non lethal ammunition to 'tactically' do things to people, Spre
 			new_human.wear_id.paygrade = "E9A" //If you play way too much TGMC. 1000 hours.
 	new_human.wear_id.update_label()
 
+/datum/job/terragov/squad/engineer/npc
+	outfit = /datum/outfit/job/npc/tgmc/squad_engineer
+
 //Squad Corpsman
 /datum/job/terragov/squad/corpsman
 	title = SQUAD_CORPSMAN
 	paygrade = "E3"
 	comm_title = "Med"
 	total_positions = 5
-	access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_MEDPREP, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_DROPSHIP)
-	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_MEDPREP, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_ENGINEERING)
+	access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_MEDPREP, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_CARGO, ACCESS_MARINE_LOGISTICS)
+	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_MEDPREP, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_CARGO, ACCESS_MARINE_LOGISTICS)
 	skills_type = /datum/skills/combat_medic
 	display_order = JOB_DISPLAY_ORDER_SQUAD_CORPSMAN
 	outfit = /datum/outfit/job/marine/corpsman
@@ -253,14 +262,17 @@ You can use some non lethal ammunition to 'tactically' do things to people, Spre
 			new_human.wear_id.paygrade = "E9A" //If you play way too much TGMC. 1000 hours.
 	new_human.wear_id.update_label()
 
+/datum/job/terragov/squad/corpsman/npc
+	outfit = /datum/outfit/job/npc/tgmc/corpsman
+
 //Squad Smartgunner
 /datum/job/terragov/squad/smartgunner
 	title = SQUAD_SMARTGUNNER
 	paygrade = "E3"
 	comm_title = "SGnr"
 	total_positions = 4
-	access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_SMARTPREP, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_DROPSHIP)
-	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_SMARTPREP, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_ENGINEERING)
+	access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_SMARTPREP, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_CARGO, ACCESS_MARINE_LOGISTICS)
+	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_SMARTPREP, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_CARGO, ACCESS_MARINE_LOGISTICS)
 	skills_type = /datum/skills/smartgunner
 	display_order = JOB_DISPLAY_ORDER_SQUAD_SMARTGUNNER
 	outfit = /datum/outfit/job/marine/smartgunner
@@ -307,6 +319,9 @@ You can use some non lethal ammunition to 'tactically' do things to people, Spre
 			new_human.wear_id.paygrade = "E9A" //If you play way too much TGMC. 1000 hours.
 	new_human.wear_id.update_label()
 
+/datum/job/terragov/squad/smartgunner/npc
+	outfit = /datum/outfit/job/npc/tgmc/smartgunner
+
 //Squad Specialist
 /datum/job/terragov/squad/specialist
 	title = SQUAD_SPECIALIST
@@ -314,8 +329,8 @@ You can use some non lethal ammunition to 'tactically' do things to people, Spre
 	paygrade = "E4"
 	comm_title = "Spec"
 	total_positions = 4
-	access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_SPECPREP, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_REMOTEBUILD)
-	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_SPECPREP, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_REMOTEBUILD)
+	access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_SPECPREP, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_REMOTEBUILD, ACCESS_MARINE_CARGO, ACCESS_MARINE_LOGISTICS)
+	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_SPECPREP, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_REMOTEBUILD, ACCESS_MARINE_CARGO, ACCESS_MARINE_LOGISTICS)
 	display_order = JOB_DISPLAY_ORDER_SQUAD_SPECIALIST
 	skills_type = /datum/skills/specialist
 	outfit = /datum/outfit/job/marine/specialist
@@ -360,8 +375,8 @@ You can use some non lethal ammunition to 'tactically' do things to people, Spre
 	comm_title = JOB_COMM_TITLE_SQUAD_LEADER
 	total_positions = 4
 	supervisors = "the acting field commander"
-	access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_LEADER, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_TADPOLE, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_REMOTEBUILD, ACCESS_MARINE_CARGO)
-	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_LEADER, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_TADPOLE, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_REMOTEBUILD, ACCESS_MARINE_CARGO)
+	access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_LEADER, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_TADPOLE, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_REMOTEBUILD, ACCESS_MARINE_CARGO, ACCESS_MARINE_LOGISTICS)
+	minimal_access = list(ACCESS_MARINE_PREP, ACCESS_MARINE_LEADER, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_TADPOLE, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_CIVILIAN_ENGINEERING, ACCESS_MARINE_REMOTEBUILD, ACCESS_MARINE_CARGO, ACCESS_MARINE_LOGISTICS)
 	skills_type = /datum/skills/sl
 	display_order = JOB_DISPLAY_ORDER_SQUAD_LEADER
 	outfit = /datum/outfit/job/marine/leader
@@ -418,6 +433,10 @@ You can use some non lethal ammunition to 'tactically' do things to people, Spre
 		return
 	if(!ismarineleaderjob(new_human.assigned_squad?.squad_leader?.job)) //If there's no proper SL already in the squad, promote to leader
 		new_human.assigned_squad.promote_leader(new_human)
+
+/datum/job/terragov/squad/leader/npc
+	outfit = /datum/outfit/job/npc/tgmc/squad_leader
+
 
 /datum/job/terragov/squad/vatgrown
 	title = SQUAD_MARINE

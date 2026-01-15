@@ -31,11 +31,9 @@
 
 	switch(stat)
 		if(CONSCIOUS)
-			GLOB.alive_xeno_list += src
-			LAZYADD(GLOB.alive_xeno_list_hive[hivenumber], src)
+			GLOB.alive_xeno_list |= src
 		if(UNCONSCIOUS)
-			GLOB.alive_xeno_list += src
-			LAZYADD(GLOB.alive_xeno_list_hive[hivenumber], src)
+			GLOB.alive_xeno_list |= src
 
 	GLOB.xeno_mob_list += src
 	GLOB.round_statistics.total_xenos_created++
@@ -75,12 +73,10 @@
 	hive.update_tier_limits()
 	if(CONFIG_GET(flag/xenos_on_strike))
 		replace_by_ai()
+	/* NTF EDIT - moved to add_to_hive()
 	if(z) //Larva are initiated in null space
-		SSminimaps.remove_marker(src)
-		if(hivenumber == XENO_HIVE_NORMAL || hivenumber != XENO_HIVE_CORRUPTED)
-			SSminimaps.add_marker(src, MINIMAP_FLAG_XENO, image('icons/UI_icons/map_blips.dmi', null, xeno_caste.minimap_icon, MINIMAP_BLIPS_LAYER))
-		if(hivenumber == XENO_HIVE_CORRUPTED)
-			SSminimaps.add_marker(src, MINIMAP_FLAG_MARINE, image('icons/UI_icons/map_blips.dmi', null, xeno_caste.minimap_icon, MINIMAP_BLIPS_LAYER))
+		SSminimaps.add_marker(src, MINIMAP_FLAG_XENO, image('icons/UI_icons/map_blips.dmi', null, xeno_caste.minimap_icon, MINIMAP_BLIPS_LAYER))
+	*/
 	handle_weeds_on_movement()
 
 	AddElement(/datum/element/footstep, footstep_type, mob_size >= MOB_SIZE_BIG ? 0.8 : 0.5)
@@ -115,6 +111,7 @@
 	if(restore_health_and_plasma)
 		// xenos that manage plasma through special means shouldn't gain it for free on aging
 		set_plasma(max(plasma_stored, xeno_caste.plasma_max * xeno_caste.plasma_regen_limit))
+		stun_health_damage = 0
 		health = maxHealth
 	setXenoCasteSpeed(xeno_caste.speed)
 
@@ -124,8 +121,15 @@
 
 ///Will multiply the base max health of this xeno by GLOB.xeno_stat_multiplicator_buff while maintaining current health percent.
 /mob/living/carbon/xenomorph/proc/apply_health_stat_buff()
-	var/new_max_health = max(xeno_caste.max_health * GLOB.xeno_stat_multiplicator_buff, 10)
+	var/new_max_health = max(xeno_caste.max_health * hive.health_mulitiplier, 10)
+	var/new_endurance_health_max = new_max_health * 1.5
+	if(new_endurance_health_max != endurance_health_max)
+		endurance_health = endurance_health * new_endurance_health_max / endurance_health_max
+		endurance_health_max = new_endurance_health_max
+	if(new_max_health == maxHealth)
+		return
 	var/needed_healing = 0
+	var/new_stun_damage = (stun_health_damage * new_max_health)/maxHealth
 
 	if(health < 0) //In crit. Death threshold below 0 doesn't change with stat buff, so we can just apply damage equal to the max health change
 		needed_healing = maxHealth - new_max_health //Positive means our max health is going down, so heal to keep parity
@@ -136,12 +140,14 @@
 		var/current_total_damage = maxHealth - health
 		needed_healing = current_total_damage - new_total_damage
 
-	var/brute_healing = min(getBruteLoss(), needed_healing)
-	adjustBruteLoss(-brute_healing)
-	adjustFireLoss(-(needed_healing - brute_healing))
+	if(needed_healing)
+		var/brute_healing = min(getBruteLoss(), needed_healing)
+		adjustBruteLoss(-brute_healing)
+		adjustFireLoss(-(needed_healing - brute_healing))
 
 	maxHealth = new_max_health
 	updatehealth()
+	set_stun_health(new_stun_damage)
 
 /mob/living/carbon/xenomorph/proc/generate_nicknumber()
 	//We don't have a nicknumber yet, assign one to stick with us
@@ -157,6 +163,8 @@
 //Since Xenos change names like they change shoes, we need somewhere to hammer in all those legos
 //We set their name first, then update their real_name AND their mind name
 /mob/living/carbon/xenomorph/proc/generate_name()
+	if(istype(xeno_caste, /datum/xeno_caste/puppet))
+		return
 	var/playtime_mins = client?.get_exp(xeno_caste.caste_name)
 	var/rank_name
 	var/prefix = "[hive.prefix][xeno_caste.upgrade_name ? "[xeno_caste.upgrade_name] " : ""]"
@@ -179,7 +187,7 @@
 			rank_name = "Prime"
 		else
 			rank_name = "Young"
-	name = prefix + "[rank_name ? "[rank_name] " : ""][xeno_caste.display_name] ([nicknumber])"
+	name = prefix + "[rank_name ? "[rank_name] " : ""][xeno_caste.display_name][src == hive.living_xeno_ruler ? " Regnant" :""] ([nicknumber])"
 
 	//Update linked data so they show up properly
 	real_name = name
@@ -257,6 +265,9 @@
 	. += xeno_caste.caste_desc
 	. += "<span class='notice'>"
 
+	if(handcuffed)
+		. += "\n[span_info("[p_they(TRUE)] is restrained! Use your <b>left</b> hand to <b>help</b> them free.")]"
+
 	if(xeno_desc)
 		. += "\n<span class='info'>[span_collapsible("Flavor Text", "[xeno_desc]")]</span>"
 
@@ -329,6 +340,8 @@
 		return FALSE //The target we're trying to pull must be adjacent and anchored.
 	if(status_flags & INCORPOREAL || AM.status_flags & INCORPOREAL)
 		return FALSE //Incorporeal things can't grab or be grabbed.
+	if(handcuffed)
+		return FALSE
 	if(AM.anchored)
 		return FALSE //We cannot grab anchored items.
 	if(!isliving(AM) && !SSresinshaping.active && AM.drag_windup && !do_after(src, AM.drag_windup, NONE, AM, BUSY_ICON_HOSTILE, BUSY_ICON_HOSTILE, extra_checks = CALLBACK(src, TYPE_PROC_REF(/mob, break_do_after_checks), list("health" = src.health))))
@@ -338,7 +351,7 @@
 		return FALSE //to stop xeno from pulling marines on roller beds.
 	if(ishuman(L))
 		if(L.stat == DEAD && !(SSticker.mode.round_type_flags & MODE_XENO_GRAB_DEAD_ALLOWED)) // Can't drag dead human bodies.
-			to_chat(usr,span_xenowarning("This looks gross, better not touch it."))
+			to_chat(usr,span_xenowarning("We have no reason to do that."))
 			return FALSE
 		if(pulling != L)
 			pull_speed += XENO_DEADHUMAN_DRAG_SLOWDOWN
@@ -352,12 +365,12 @@
 	return ..()
 
 /mob/living/carbon/xenomorph/pull_response(mob/puller)
-	if(stat != CONSCIOUS) // If the Xeno is unconscious, don't fight back against a grab/pull
+	if(incapacitated() || HAS_TRAIT(src, TRAIT_FLOORED) || handcuffed) // If the Xeno is incapacitated, don't fight back against a grab/pull
 		return TRUE
 	if(!ishuman(puller))
 		return TRUE
 	var/mob/living/carbon/human/H = puller
-	if(hivenumber == XENO_HIVE_CORRUPTED && !(xeno_flags & XENO_ALLIES_BUMP)) // we can grab friendly benos
+	if((issamexenohive(H) || (H.faction in hive.allied_factions)) && !(xeno_flags & XENO_ALLIES_BUMP)) // we can grab friendly benos
 		return TRUE
 	H.Paralyze(rand(xeno_caste.tacklemin,xeno_caste.tacklemax) * 20)
 	playsound(H.loc, 'sound/weapons/pierce.ogg', 25, 1)
@@ -365,23 +378,12 @@
 	H.stop_pulling()
 	return FALSE
 
-/mob/living/carbon/xenomorph/resist_grab()
-	if(pulledby.grab_state)
-		if(!isxeno(pulledby))
-			visible_message(span_danger("[src] has broken free of [pulledby]'s grip!"), null, null, 5)
-		else
-			return ..()
-	pulledby.stop_pulling()
-	. = 1
-
-
-
 /mob/living/carbon/xenomorph/prepare_huds()
 	..()
 	//updating all the mob's hud images
 	med_hud_set_health()
 	hud_set_plasma()
-	hud_set_pheromone()
+	update_aura_overlay()
 	//and display them
 	add_to_all_mob_huds()
 
@@ -398,6 +400,8 @@
 	hud_to_add = GLOB.huds[DATA_HUD_MEDICAL_PAIN]
 	hud_to_add.add_hud_to(src)
 	hud_to_add = GLOB.huds[DATA_HUD_XENO_DEBUFF]
+	hud_to_add.add_hud_to(src)
+	hud_to_add = GLOB.huds[DATA_HUD_XENO_HUMAN_SHARED]
 	hud_to_add.add_hud_to(src)
 
 /mob/living/carbon/xenomorph/get_permeability_protection()
@@ -505,11 +509,11 @@
 		return
 	if(resting)
 		if(!COOLDOWN_FINISHED(src, xeno_resting_cooldown))
-			balloon_alert(src, "Cannot get up so soon after resting!")
+			balloon_alert(src, "can't get up so soon!")
 			return
 
 	if(!COOLDOWN_FINISHED(src, xeno_unresting_cooldown))
-		balloon_alert(src, "Cannot rest so soon after getting up!")
+		balloon_alert(src, "can't rest so soon!")
 		return
 	return ..()
 

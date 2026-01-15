@@ -24,10 +24,17 @@
 	)
 	///Any mission behavior flags
 	var/mission_flags = NONE
+
 	///faction that chose the mission
 	var/starting_faction
 	///faction that did not choose the mission
 	var/hostile_faction
+
+	///The faction trying to attack if applicable
+	var/attacking_faction
+	///The faction trying to defend if applicable
+	var/defending_faction
+
 	///current state of the mission
 	var/mission_state = MISSION_STATE_NEW
 	///winning faction of the mission
@@ -35,7 +42,8 @@
 	///specific mission outcome
 	var/outcome
 	///The current gamemode. Var as its referred to often
-	var/datum/game_mode/hvh/campaign/mode
+	var/datum/game_mode/mode
+	///var/datum/game_mode/hvh/campaign/mode NTF EDIT
 	///The victory conditions for this mission for the starting faction, for display purposes
 	var/starting_faction_objective_description = "Loading mission objectives"
 	///The victory conditions for this mission for the hostile faction, for display purposes
@@ -138,11 +146,7 @@
 	if(!istype(mode))
 		CRASH("campaign_mission loaded without campaign game mode")
 
-	starting_faction = initiating_faction
-	for(var/faction in mode.factions) //this is pretty clunky but eh
-		if(faction == starting_faction)
-			continue
-		hostile_faction = faction
+	set_factions(initiating_faction)
 
 	op_name_starting = GLOB.operation_namepool[/datum/operation_namepool].get_random_name()
 	op_name_hostile = GLOB.operation_namepool[/datum/operation_namepool].get_random_name()
@@ -161,6 +165,18 @@
 		return
 	end_mission()
 	return PROCESS_KILL
+
+///Sets the attacking and defending faction. Can be overridden to make the starting faction defenders
+/datum/campaign_mission/proc/set_factions(initiating_faction)
+	SHOULD_CALL_PARENT(TRUE)
+	starting_faction = initiating_faction
+	for(var/faction in mode.factions) //this is pretty clunky but eh
+		if(faction == starting_faction)
+			continue
+		hostile_faction = faction
+
+	attacking_faction = starting_faction
+	defending_faction = hostile_faction
 
 ///Sets up the loot tables for this mission, if required
 /datum/campaign_mission/proc/set_loot_tables()
@@ -336,6 +352,9 @@
 	QDEL_LIST(GLOB.campaign_structures)
 	QDEL_LIST(GLOB.patrol_point_list) //purge all existing links, cutting off the current ground map. Start point links are auto severed, and will reconnect to new points when a new map is loaded and upon use.
 	STOP_PROCESSING(SSslowprocess, src)
+
+	SSweather.remove_eligible(mission_z_level.z_value)
+
 	mission_state = MISSION_STATE_FINISHED
 	apply_outcome()
 	play_outro()

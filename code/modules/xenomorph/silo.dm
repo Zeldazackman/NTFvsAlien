@@ -10,7 +10,8 @@
 	bound_y = -32
 	pixel_x = -32
 	pixel_y = -24
-	max_integrity = 1000
+	max_integrity = 1001
+	integrity_failure = 1
 	resistance_flags = UNACIDABLE | DROPSHIP_IMMUNE | PLASMACUTTER_IMMUNE | XENO_DAMAGEABLE
 	xeno_structure_flags = IGNORE_WEED_REMOVAL|CRITICAL_STRUCTURE|XENO_STRUCT_WARNING_RADIUS|XENO_STRUCT_DAMAGE_ALERT
 	///How many larva points one silo produce in one minute
@@ -42,21 +43,32 @@
 	LAZYADDASSOC(GLOB.xeno_resin_silos_by_hive, hivenumber, src)
 
 	if(!locate(/obj/alien/weeds) in loc)
-		new /obj/alien/weeds/node(loc)
+		var/obj/alien/weeds/node/thenode = new /obj/alien/weeds/node(loc)
+		thenode.hivenumber = hivenumber
 	if(GLOB.hive_datums[hivenumber])
 		RegisterSignals(GLOB.hive_datums[hivenumber], list(COMSIG_HIVE_XENO_MOTHER_PRE_CHECK, COMSIG_HIVE_XENO_MOTHER_CHECK), PROC_REF(is_burrowed_larva_host))
 		if(length(GLOB.xeno_resin_silos_by_hive[hivenumber]) == 1)
 			GLOB.hive_datums[hivenumber].give_larva_to_next_in_queue()
+	SSticker.mode.update_silo_death_timer(GLOB.hive_datums[hivenumber])
 	var/turf/tunnel_turf = get_step(src, NORTH)
 	if(tunnel_turf.can_dig_xeno_tunnel())
 		var/obj/structure/xeno/tunnel/newt = new(tunnel_turf, hivenumber)
 		newt.tunnel_desc = "[AREACOORD_NO_Z(newt)]"
 		newt.name += " [name]"
 
+/obj/structure/xeno/silo/obj_break(damage_flag)
+	if(length(GLOB.xeno_resin_silos_by_hive[hivenumber]) == 1 && !istype(SSticker.mode, /datum/game_mode/infestation/nuclear_war) && !istype(SSticker.mode, /datum/game_mode/infestation/sovl_war))
+		obj_integrity = max_integrity
+		GLOB.hive_datums[hivenumber].trigger_silo_shock(src)
+		return
+	obj_integrity = 0
+	. = ..()
+
 /obj/structure/xeno/silo/obj_destruction(damage_amount, damage_type, damage_flag, mob/living/blame_mob)
 	if(GLOB.hive_datums[hivenumber])
 		UnregisterSignal(GLOB.hive_datums[hivenumber], list(COMSIG_HIVE_XENO_MOTHER_PRE_CHECK, COMSIG_HIVE_XENO_MOTHER_CHECK))
 		GLOB.hive_datums[hivenumber].xeno_message("A resin silo has been destroyed at [AREACOORD_NO_Z(src)]!", "xenoannounce", 5, FALSE, loc, 'sound/voice/alien/help2.ogg',FALSE , null, /atom/movable/screen/arrow/silo_damaged_arrow)
+		INVOKE_NEXT_TICK(SSticker.mode, TYPE_PROC_REF(/datum/game_mode, update_silo_death_timer), GLOB.hive_datums[hivenumber]) // checks all silos next tick after this one is gone
 		notify_ghosts("\ A resin silo has been destroyed at [AREACOORD_NO_Z(src)]!", source = get_turf(src), action = NOTIFY_JUMP)
 		playsound(loc,'sound/effects/alien/egg_burst.ogg', 75)
 	return ..()
@@ -90,6 +102,36 @@
 //Corpse recyclinging and larva force burrow
 //*******************
 /obj/structure/xeno/silo/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/disk/intel_disk))
+		var/obj/item/disk/intel_disk/claimed_disk = I
+		var/ambrosia_amount = floor(claimed_disk.supply_reward * INTEL_AMBROSIA_PER_SUPPLY_POINT)
+		var/psy_point_reward = claimed_disk.supply_reward/2
+		QDEL_NULL(I)
+		if(ambrosia_amount)
+			new /obj/item/stack/req_jelly(loc, ambrosia_amount, hivenumber)
+		GLOB.round_statistics.strategic_psypoints_from_intel += psy_point_reward
+		SSpoints.add_strategic_psy_points(hivenumber, psy_point_reward)
+		SSpoints.add_tactical_psy_points(hivenumber, psy_point_reward*0.5)
+		var/job_point_reward = floor(claimed_disk.supply_reward/60)
+		var/datum/job/xeno_job = SSjob.GetJobType(GLOB.hivenumber_to_job_type[hivenumber])
+		xeno_job.add_job_points(job_point_reward)
+		var/datum/hive_status/hive_status = GLOB.hive_datums[hivenumber]
+		hive_status.update_tier_limits()
+		GLOB.round_statistics.larva_from_cocoon += job_point_reward / xeno_job.job_points_needed
+		to_chat(user, "<span class='notice'>The hive blesses us with ambrosia and psy points for claiming this object.</span>")
+		minor_announce("Classified data disk claimed by the [hive_status.name] hive.  [floor(psy_point_reward)] psy points, [ambrosia_amount] ambrosia, and [round(job_point_reward / xeno_job.job_points_needed, 0.01)] larvae were acquired.  It was [claimed_disk.max_chain ? "part of an intel chain of length [claimed_disk.max_chain]" : "not part of an intel chain"].", title = "Intel Division")
+		for(var/announcement_hivenumber in GLOB.hive_datums)
+			GLOB.hive_datums[announcement_hivenumber].xeno_message(
+				"The [hive_status.name] hive claimed a disk for [floor(psy_point_reward)] psy points, [ambrosia_amount] ambrosia, and [round(job_point_reward / xeno_job.job_points_needed, 0.01)] larvae.  It was [claimed_disk.max_chain ? "part of an intel chain of length [claimed_disk.max_chain]" : "not part of an intel chain"].",
+				size = 3,
+				)
+		if(claimed_disk.max_chain > GLOB.round_statistics.intel_max_chain)
+			GLOB.round_statistics.intel_max_chain = claimed_disk.max_chain
+		if(!("[claimed_disk.max_chain]" in GLOB.round_statistics.intel_chain_sold_by_list))
+			GLOB.round_statistics.intel_chain_sold_by_list["[claimed_disk.max_chain]"] = "the [hive_status.name] hive"
+			GLOB.round_statistics.intel_chain_sold_for_list["[claimed_disk.max_chain]"] = "[floor(psy_point_reward)] psy points, [ambrosia_amount] ambrosia, and [round(job_point_reward / xeno_job.job_points_needed, 0.01)] larvae"
+		return TRUE
+
 	. = ..()
 
 	if(!istype(I, /obj/item/grab))
@@ -124,9 +166,7 @@
 
 		shake(4 SECONDS)
 
-		var/datum/job/xeno_job = SSjob.GetJobType(/datum/job/xenomorph)
-		if(hivenumber == XENO_HIVE_CORRUPTED)
-			xeno_job = SSjob.GetJobType(/datum/job/xenomorph/green)
+		var/datum/job/xeno_job = SSjob.GetJobType(GLOB.hivenumber_to_job_type[hivenumber])
 		xeno_job.add_job_points(4.5) //4.5 corpses per burrowed; 8 points per larva
 
 		log_combat(victim, user, "was consumed by a resin silo")
@@ -163,7 +203,7 @@
 	if(prob(1))
 		playsound(src, shake_sound, 25, TRUE)
 	animate(src, pixel_x = pixel_x + offset, time = 2, loop = -1) //start shaking
-	addtimer(CALLBACK(src, .proc/stop_shake, old_pixel_x), duration)
+	addtimer(CALLBACK(src, PROC_REF(stop_shake), old_pixel_x), duration)
 
 /// Stop the shaking animation
 /obj/structure/xeno/silo/proc/stop_shake(old_px)
@@ -178,10 +218,7 @@
 
 /obj/structure/xeno/silo/update_minimap_icon()
 	SSminimaps.remove_marker(src)
-	if(hivenumber != XENO_HIVE_CORRUPTED)
-		SSminimaps.add_marker(src, MINIMAP_FLAG_XENO, image('icons/UI_icons/map_blips.dmi', null, "silo[threat_warning ? "_warn" : "_passive"]", MINIMAP_LABELS_LAYER))
-	if(hivenumber == XENO_HIVE_CORRUPTED)
-		SSminimaps.add_marker(src, MINIMAP_FLAG_MARINE, image('icons/UI_icons/map_blips.dmi', null, "silo[threat_warning ? "_warn" : "_passive"]", MINIMAP_LABELS_LAYER))
+	SSminimaps.add_marker(src, GLOB.hivenumber_to_minimap_flag[hivenumber], image('icons/UI_icons/map_blips.dmi', null, "silo[threat_warning ? "_warn" : "_passive"]", MINIMAP_LABELS_LAYER))
 
 /obj/structure/xeno/silo/process()
 	//Regenerate if we're at less than max integrity

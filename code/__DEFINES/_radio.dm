@@ -59,7 +59,7 @@
 
 #define RADIO_CHANNEL_COLONIST "Colonist"
 #define RADIO_CHANNEL_PMC "NT PMC"
-#define RADIO_CHANNEL_RETIRED "Terragov Retirees"
+#define RADIO_CHANNEL_RETIRED "NTF Retirees"
 #define RADIO_CHANNEL_USL "USL"
 #define RADIO_CHANNEL_DEATHSQUAD "Deathsquad"
 #define RADIO_CHANNEL_IMPERIAL "Imperial"
@@ -92,7 +92,6 @@
 #define FREQ_VSD 1329
 #define FREQ_PMC 1331
 #define FREQ_RETIRED 1333
-#define FREQ_COLONIST 1335
 #define FREQ_USL 1337
 #define FREQ_DEATHSQUAD 1339
 #define FREQ_IMPERIAL 1341
@@ -102,6 +101,8 @@
 #define FREQ_ECHO 1349
 #define FREQ_ERP 1351
 #define MAX_ERT_FREQ 1351
+
+#define FREQ_COLONIST 1352
 
 #define FREQ_AI 1351
 #define FREQ_COMMAND 1353

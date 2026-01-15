@@ -9,7 +9,6 @@
 	default_ammo_type = /obj/item/ammo_magazine/pistol/ntunity
 	allowed_ammo_types = list(/obj/item/ammo_magazine/pistol/xmdivider, /obj/item/ammo_magazine/pistol/xmdivider/ap, /obj/item/ammo_magazine/pistol/ntunity)
 	force = 8
-	actions_types = null
 	attachable_allowed = list(
 		/obj/item/attachable/bayonet/converted,
 		/obj/item/attachable/flashlight,
@@ -22,16 +21,17 @@
 	attachable_offset = list("muzzle_x" = 32, "muzzle_y" = 20, "rail_x" = 17, "rail_y" = 22, "under_x" = 29, "under_y" = 15, "stock_x" = 10, "stock_y" = 18)
 	burst_amount = 1
 	//gonna adjust for no burst fire.
-	windup_delay = 0.3 SECONDS
-	fire_delay = 0.3 SECONDS
+	windup_delay = 0.2 SECONDS
+	fire_delay = 0.2 SECONDS
 	scatter_unwielded = 4
-	scatter = 1.5
-	damage_mult = 1.2
+	scatter = 1
+	damage_mult = 1.3
 	gun_firemode_list = list(GUN_FIREMODE_SEMIAUTO)
-	recoil = 3
+	recoil = 1
+	recoil_unwielded = 5
 	//no red dot, holo sight instead.
-	accuracy_mult_unwielded = 0.95
-	accuracy_mult = 1.2
+	accuracy_mult_unwielded = 0.8
+	accuracy_mult = 1
 	aim_speed_modifier = 0.50
 	holstered_underlay_icon = 'ntf_modular/icons/obj/items/storage/holster.dmi'
 
@@ -61,3 +61,43 @@
         staggerstun(target_mob, proj, paralyze = 0, stun = 1 SECONDS, stagger = 1 SECONDS, slowdown = 1, knockback = 1)
     else
         staggerstun(target_mob, proj, paralyze = 1 SECONDS, stagger = 1 SECONDS, slowdown = 1, knockback = 1)
+
+/obj/item/ammo_magazine/pistol/g22tranq
+	name = "\improper P-22 Custom tranq magazine (9mm)"
+	caliber = CALIBER_9X19_TRANQUILIZER
+	icon_state = "g22"
+	icon_state_mini = "mag_pistol_normal"
+	max_rounds = 12
+	default_ammo = /datum/ammo/bullet/pistol/tranq
+/obj/item/ammo_magazine/pistol/c99t
+	name = "\improper PK-9 tranq magazine (.22)"
+	default_ammo = /datum/ammo/bullet/pistol/tranq/weak
+	caliber = CALIBER_22LR
+	icon_state = "pk-9_tranq"
+	max_rounds = 8
+	icon_state_mini = "mag_pistol_green"
+
+/datum/ammo/bullet/pistol/tranq
+	name = "tranq bullet"
+	hud_state = "pistol_tranq"
+	armor_type = "bullet"
+	damage = 20
+	penetration = 20
+	damage_type = STAMINA
+	shell_speed = 3.3
+	shrapnel_chance = 0.2
+
+/datum/ammo/bullet/pistol/tranq/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
+	if(iscarbon(target_mob))
+		var/mob/living/carbon/carbon_victim = target_mob
+		carbon_victim.reagents.add_reagent(/datum/reagent/toxin/sleeptoxin, rand(5,8), no_overdose = TRUE)
+
+/datum/ammo/bullet/pistol/tranq/weak
+	name = "weak tranq bullet"
+	damage = 5
+	penetration = 5
+
+/datum/ammo/bullet/pistol/tranq/weak/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
+	if(iscarbon(target_mob))
+		var/mob/living/carbon/carbon_victim = target_mob
+		carbon_victim.reagents.add_reagent(/datum/reagent/toxin/sleeptoxin, 1, no_overdose = TRUE)

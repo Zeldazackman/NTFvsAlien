@@ -9,9 +9,6 @@
 	if((resistance_flags & INDESTRUCTIBLE) || obj_integrity <= 0)
 		return
 
-	if((istype(src, /turf/closed/wall/resin) || istype(src, /obj/structure/mineral_door/resin) || istype(src, /obj/structure/xeno) || istype(src, /obj/alien/weeds)) && issamexenohive(blame_mob))
-		return
-
 	if(armor_type)
 		damage_amount = round(modify_by_armor(damage_amount, armor_type, armour_penetration, null, attack_dir), DAMAGE_PRECISION)
 	if(damage_amount < DAMAGE_PRECISION)
@@ -132,9 +129,11 @@
 			playsound(loc, 'sound/effects/meteorimpact.ogg', 100, 1)
 
 
-/obj/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage * xeno_attacker.xeno_melee_damage_modifier, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
 	// SHOULD_CALL_PARENT(TRUE) // TODO: fix this
 	if(xeno_attacker.status_flags & INCORPOREAL) //Ghosts can't attack machines
+		return FALSE
+	if(xeno_attacker.handcuffed)
 		return FALSE
 	SEND_SIGNAL(xeno_attacker, COMSIG_XENOMORPH_ATTACK_OBJ, src)
 	if(SEND_SIGNAL(src, COMSIG_OBJ_ATTACK_ALIEN, xeno_attacker, damage_amount) & COMPONENT_NO_ATTACK_ALIEN)
@@ -147,7 +146,12 @@
 		span_danger("We slash [src]!"))
 		xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
 		playsound(loc, SFX_ALIEN_CLAW_METAL, 25)
-	attack_generic(xeno_attacker, damage_amount, damage_type, armor_type, effects, armor_penetration)
+	var/mult = 1
+	if(istype(src, /obj/structure/mineral_door/resin))
+		mult = RESIN_DOOR_MULT
+	if(istype(src, /obj/alien/resin/sticky))
+		mult = STICKY_RESIN_MULT
+	attack_generic(xeno_attacker, damage_amount*mult, damage_type, armor_type, effects, armor_penetration)
 	return TRUE
 
 /obj/attack_larva(mob/living/carbon/xenomorph/larva/L)

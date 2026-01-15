@@ -548,8 +548,12 @@
 				msg += "<a href='byond://?src=[text_ref(src)];squadfireteam=1'>\[Assign to a fireteam.\]</a>\n"
 
 	msg += "\n[span_collapsible("Flavor Text", "[flavor_text]")]"
+	if(pose)
+		msg += "\n[span_collapsible("Temporary Flavor Text", "[pose]")]"
 	if(ooc_notes||ooc_notes_likes||ooc_notes_dislikes||ooc_notes_favs||ooc_notes_maybes)
 		msg += "OOC Notes: <a href='?src=\ref[src];ooc_notes=1'>\[View\]</a> - <a href='?src=\ref[src];print_ooc_notes_to_chat=1'>\[Print\]</a>"
+	else if(user == src)
+		msg += "You have not set your OOC Notes yet! <a href='?src=\ref[src];ooc_notes=1'>\[Edit\]</a>"
 	if(profile_pic && (w_uniform || !nsfwprofile_pic)) //should appear when wearing suit and when no nsfw pic but not wearing suit.
 		msg += "<span class='info'><img src=[profile_pic] width=300 height=350/></span>"
 	if(nsfwprofile_pic && !w_uniform)
@@ -571,6 +575,9 @@
 		msg += separator_hr("Xeno Info")
 		if(species.species_flags & IS_SYNTHETIC)
 			msg += "[span_xenowarning("You sense [t_he] [t_is] not organic.")]\n"
+		if(SSticker.mode.round_type_flags & MODE_FREE_LARVABURST)
+			if(getCloneLoss() >= 40) //I guess they remain dormant
+				msg += "<span style='color: red;'>You sense that even though [t_he] [t_is] suitable for carrying larva, they are unable to grow in this host due irrepairable damage!</span>\n"
 		if(status_flags & XENO_HOST)
 			msg += "[t_He] [t_is] impregnated with [embryocount] larva(s) and [t_he] [t_is][reagents.get_reagent_amount(/datum/reagent/consumable/larvajelly) > 0 ? "" : " not"] inoculated with Larval Accelerant.\n"
 			if(reagents.get_reagent_amount(/datum/reagent/medicine/tricordrazine))
@@ -596,7 +603,7 @@
 		if(reagents.get_reagent_amount(/datum/reagent/toxin/xeno_sanguinal))
 			msg += "Sanguinal([reagents.get_reagent_amount(/datum/reagent/toxin/xeno_sanguinal)]u): Causes brute damage and bleeding from the brute damage. Does additional damage types in the presence of other xeno-based toxins. Toxin damage for Neuro, Stamina damage for Hemodile, and Burn damage for Transvitox.\n"
 		if(reagents.get_reagent_amount(/datum/reagent/toxin/xeno_aphrotoxin))
-			msg += "Aphrotoxin([reagents.get_reagent_amount(/datum/reagent/toxin/xeno_aphrotoxin)]u): A strong aphrodisiac and larval growth toxin, will cause legs to go weak and boost larva growth.\n"
+			msg += "Aphrotoxin([reagents.get_reagent_amount(/datum/reagent/toxin/xeno_aphrotoxin)]u): A strong aphrodisiac, will cause legs to go weak and increase arousal.\n"
 		if(embryocount < 1)
 			if(reagents.get_reagent_amount(/datum/reagent/consumable/larvajelly))
 				msg += "Growth toxin: Makes the little ones grow faster while affected, but the host has no little ones inside..\n"

@@ -39,7 +39,7 @@
 		if(0)
 			return ALL_ACCESS
 		if(1)
-			return list(ACCESS_MARINE_CAPTAIN, ACCESS_CEO, ACCESS_MARINE_COMMANDER, ACCESS_MARINE_VANGPREP, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_TADPOLE, ACCESS_MARINE_PILOT, ACCESS_MARINE_MECH, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_ARMORED)//command
+			return list(ACCESS_MARINE_CAPTAIN, ACCESS_NTC_CEO, ACCESS_NM_CEO, ACCESS_MARINE_COMMANDER, ACCESS_MARINE_VANGPREP, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_TADPOLE, ACCESS_MARINE_PILOT, ACCESS_MARINE_MECH, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_ARMORED)//command
 		if(2)
 			return list(ACCESS_MARINE_CE, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_REMOTEBUILD)//engineering and maintenance
 		if(3)
@@ -102,8 +102,10 @@
 			return "FOB Construction Drone"
 		if(ACCESS_MARINE_CAPTAIN)
 			return "Captain's Quarters"
-		if(ACCESS_CEO)
-			return "CEO Office"
+		if(ACCESS_NTC_CEO)
+			return "NTC CEO Office"
+		if(ACCESS_NM_CEO)
+			return "NovaMed CEO Office"
 		if(ACCESS_MARINE_COMMANDER)
 			return "Field Commander's Quarters"
 		if(ACCESS_MARINE_LOGISTICS)
@@ -224,27 +226,29 @@
 		if("CMN")
 			. = size ? "CMN" : "Crewman"
 		if("PMC1")
-			. = size ? "PMC" : "PM Contractor"
+			. = size ? "APC" : "Asset Protection Contractor"
 		if("PMC2")
-			. = size ? "PMSC" : "PM Senior Contractor"
+			. = size ? "APSC" : "Asset Protection Senior Contractor"
 		if("PMC3")
-			. = size ? "PMSC" : "PM Senior Contractor"
+			. = size ? "APSC" : "Asset Protection Senior Contractor"
 		if("PMC4")
-			. = size ? "PMTL" : "PM Team Leader"
+			. = size ? "APTL" : "Asset Protection Team Leader"
 		if("PMCDS")
-			. = size ? "APS" : "Assets Protection Specialist"
+			. = size ? "APS" : "Asset Protection Specialist"
 		if("PMCDSL")
-			. = size ? "APTL" : "Assets Protection Team Leader"
+			. = size ? "APTL" : "Asset Protection Team Leader"
 		if("NT1")
 			. = size ? "CE" : "Corporate Employee"
 		if("NT2")
-			. = size ? "CSVSR" : "Corporate Supervisor"
+			. = size ? "CO" : "Corporate Officer"
 		if("NT3")
 			. = size ? "SNRO" : "Corporate Senior Officer"
 		if("NT4")
 			. = size ? "MNGR" : "Corporate Manager"
 		if("NT5")
-			. = size ? "CO" : "Corporate Chief Officer"
+			. = size ? "CS" : "Corporate Supervisor"
+		if("NT6")
+			. = size ? "CCO" : "Corporate Chief Officer"
 		if("E1")
 			. = size ? "PVT" : "Private"
 		if("E2")
@@ -483,5 +487,15 @@
 			. = size ? "MTH" : "Mothellian Veteran"
 		if("MTH")
 			. = size ? "MTH" : "Mothellian Leader"
+		if("LIA1")
+			. = size ? "OF" : "Officer"
+		if("LIA2")
+			. = size ? "SO" : "Senior Officer"
+		if("LIA3")
+			. = size ? "MNGR" : "Manager"
+		if("LIA4")
+			. = size ? "SV" : "Supervisor"
+		if("LIA5")
+			. = size ? "CO" : "Chief Officer"
 		else
 			. = paygrade //custom paygrade

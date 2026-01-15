@@ -76,7 +76,7 @@
 	var/stamina_loss_adjustment = staminaloss + amount
 	var/health_limit = maxHealth * 2
 	if(stamina_loss_adjustment > health_limit) //If we exceed maxHealth * 2 stamina damage, get hardstunned for 15 seconds, instead of taking oxygen damage.
-		apply_effect(15 SECONDS, EFFECT_PARALYZE)
+		ParalyzeNoChain(15 SECONDS)
 
 	staminaloss = clamp(stamina_loss_adjustment, -max_stamina, health_limit)
 
@@ -97,11 +97,13 @@
 	if(staminaloss < max(health * 1.5,0) || !(COOLDOWN_FINISHED(src, last_stamina_exhaustion))) //If we're on cooldown for stamina exhaustion, don't bother
 		return
 
+	/*
 	if(feedback)
 		visible_message(span_warning("\The [src] slumps to the ground, too weak to continue fighting."),
 			span_warning("You slump to the ground, you're too exhausted to keep going..."))
 
 	ParalyzeNoChain(1 SECONDS) //Short stun
+	*/
 	adjust_stagger(STAMINA_EXHAUSTION_STAGGER_DURATION)
 	add_slowdown(STAMINA_EXHAUSTION_DEBUFF_STACKS)
 	adjust_blurriness(STAMINA_EXHAUSTION_DEBUFF_STACKS)
@@ -174,10 +176,18 @@
 /mob/living/proc/set_Losebreath(amount, forced = FALSE)
 	return
 
+/mob/living/proc/getDrowsyness()
+	return drowsyness
+
+/mob/living/proc/drowsy(amount)
+	if(status_flags & GODMODE)
+		return FALSE
+	setDrowsyness(max(getDrowsyness(), amount))
+
 /mob/living/proc/adjustDrowsyness(amount)
 	if(status_flags & GODMODE)
 		return FALSE
-	setDrowsyness(max(drowsyness + amount, 0))
+	setDrowsyness(max(getDrowsyness() + amount, 0))
 
 /mob/living/proc/setDrowsyness(amount)
 	if(status_flags & GODMODE)
@@ -205,6 +215,13 @@
 		return
 
 	blood_volume = clamp(amount, 0, BLOOD_VOLUME_MAXIMUM)
+
+///returns blood voluem
+/mob/living/proc/get_blood_volume()
+	return blood_volume
+
+/mob/living/proc/get_regular_blood_volume()
+	return initial(src.blood_volume)
 
 
 // heal ONE limb, organ gets randomly selected from damaged ones.
@@ -265,8 +282,8 @@
 
 /mob/living/carbon/xenomorph/on_revive()
 	. = ..()
-	GLOB.alive_xeno_list += src
-	LAZYADD(GLOB.alive_xeno_list_hive[hivenumber], src)
+	GLOB.alive_xeno_list |= src
+	LAZYOR(GLOB.alive_xeno_list_hive[hivenumber], src)
 	GLOB.dead_xeno_list -= src
 
 /mob/living/proc/revive(admin_revive = FALSE)
@@ -284,6 +301,8 @@
 	remove_all_status_effect()
 	ExtinguishMob()
 	fire_stacks = 0
+	if(admin_revive)
+		sexcon?.set_arousal(0)
 
 	// shut down ongoing problems
 	bodytemperature = get_standard_bodytemperature()
@@ -379,6 +398,7 @@
 
 /mob/living/carbon/xenomorph/revive(admin_revive = FALSE)
 	set_plasma(xeno_caste.plasma_max)
+	set_stun_health(0)
 	sunder = 0
 	if(stat == DEAD)
 		hive?.on_xeno_revive(src)
@@ -386,17 +406,13 @@
 
 ///Revive the huamn up to X health points
 /mob/living/carbon/human/proc/revive_to_crit(should_offer_to_ghost = FALSE, should_zombify = FALSE)
-	if((!SSticker.mode.zombie_rebirth) || (!has_working_organs()))
-		on_fire = TRUE
-		fire_stacks = 15
-		update_fire()
-		QDEL_IN(src, 1 MINUTES)
+	if(!species.can_revive_to_crit(src))
 		return
 	if(health > 0)
 		return
 	var/mob/dead/observer/ghost = get_ghost()
 	if(istype(ghost))
-		notify_ghost(ghost, "<font size=3>Your body slowly regenerated. Return to it if you want to be resurrected!</font>", ghost_sound = 'sound/items/defib_success.ogg', enter_text = "Enter", enter_link = "reentercorpse=1", source = src, action = NOTIFY_JUMP)
+		notify_ghost(ghost, "<font size=3>Your body slowly regenerated. Return to it if you want to be resurrected!</font>", ghost_sound = 'sound/effects/gladosmarinerevive.ogg', enter_text = "Enter", enter_link = "reentercorpse=1", source = src, action = NOTIFY_JUMP)
 	do_jitter_animation(1000)
 	ADD_TRAIT(src, TRAIT_IS_RESURRECTING, REVIVE_TO_CRIT_TRAIT)
 	if(should_zombify && (istype(wear_ear, /obj/item/radio/headset/mainship)))
@@ -407,11 +423,7 @@
 
 ///Check if we have a mind, and finish the revive if we do
 /mob/living/carbon/human/proc/finish_revive_to_crit(should_offer_to_ghost = FALSE, should_zombify = FALSE)
-	if(!has_working_organs())
-		on_fire = TRUE
-		fire_stacks = 15
-		update_icon()
-		QDEL_IN(src, 1 MINUTES)
+	if(!species.can_revive_to_crit(src))
 		return
 	do_jitter_animation(1000)
 	if(!client)
@@ -419,18 +431,13 @@
 			offer_mob()
 			addtimer(CALLBACK(src, PROC_REF(finish_revive_to_crit), FALSE, should_zombify), 10 SECONDS)
 			return
-		REMOVE_TRAIT(src, TRAIT_IS_RESURRECTING, REVIVE_TO_CRIT_TRAIT)
-		if(should_zombify || istype(species, /datum/species/zombie))
-			AddComponent(/datum/component/ai_controller, /datum/ai_behavior/xeno/zombie/patrolling, src) //Zombie patrol
-			a_intent = INTENT_HARM
 	if(should_zombify)
-		set_species("Strong zombie")
-		faction = FACTION_ZOMBIE
-		hivenumber = FACTION_ZOMBIE
-	heal_limbs(- health)
+		if(!iszombie(src))
+			set_species("Strong zombie")
+		AddComponent(/datum/component/ai_controller, /datum/ai_behavior/xeno/zombie/patrolling)
+	heal_limbs(-health)
 	set_stat(CONSCIOUS)
 	overlay_fullscreen_timer(0.5 SECONDS, 10, "roundstart1", /atom/movable/screen/fullscreen/black)
 	overlay_fullscreen_timer(2 SECONDS, 20, "roundstart2", /atom/movable/screen/fullscreen/spawning_in)
 	REMOVE_TRAIT(src, TRAIT_IS_RESURRECTING, REVIVE_TO_CRIT_TRAIT)
 	SSmobs.start_processing(src)
-

@@ -1,23 +1,3 @@
-/obj/item/tool/kitchen/knife/shiv
-	name = "glass shiv"
-	icon = 'icons/obj/items/weapons/knives.dmi'
-	icon_state = "shiv"
-	desc = "A makeshift glass shiv."
-	attack_verb = list("shanks", "shivs")
-	hitsound = 'sound/weapons/slash.ogg'
-
-/obj/item/tool/kitchen/knife/shiv/plasma
-	icon_state = "plasmashiv"
-	desc = "A makeshift plasma glass shiv."
-
-/obj/item/tool/kitchen/knife/shiv/titanium
-	icon_state = "titaniumshiv"
-	desc = "A makeshift titanium shiv."
-
-/obj/item/tool/kitchen/knife/shiv/plastitanium
-	icon_state = "plastitaniumshiv"
-	desc = "A makeshift plastitanium glass shiv."
-
 /obj/item/weapon/combat_knife
 	name = "\improper M5 survival knife"
 	icon_state = "combat_knife"
@@ -54,6 +34,7 @@
 /obj/item/weapon/combat_knife/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/scalping)
+	AddElement(/datum/element/shrapnel_removal, 15 SECONDS)
 
 /obj/item/weapon/combat_knife/suicide_act(mob/user)
 	user.visible_message(pick(span_danger("[user] is slitting [user.p_their()] wrists with the [name]! It looks like [user.p_theyre()] trying to commit suicide."), \
@@ -71,6 +52,13 @@
 	throw_speed = 2
 	throw_range = 8
 
+/obj/item/weapon/combat_knife/pmc
+	name = "\improper M2X HF-S self defense blade"
+	icon_state = "pmc_knife"
+	worn_icon_state = "pmc_knife"
+	desc = "A experemental short blade, utilizing high-frequency techology. A small but dangerous weapon, which can cut through even the heaviest of armors. Many mercenaries keep it close, for desperate situations."
+	penetration = 25
+
 /obj/item/weapon/karambit
 	name = "karambit"
 	icon = 'icons/obj/items/weapons/knives.dmi'
@@ -87,6 +75,11 @@
 	attack_speed = 8
 	hitsound = 'sound/weapons/slash.ogg'
 	attack_verb = list("slashes", "stabs", "slices", "tears", "rips", "dices", "cuts", "hooks")
+
+/obj/item/weapon/karambit/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/scalping)
+	AddElement(/datum/element/shrapnel_removal, 15 SECONDS)
 
 /obj/item/weapon/karambit/fade
 	icon_state = "karambit_fade"
@@ -107,9 +100,9 @@
 	singular_name = "knife"
 	atom_flags = CONDUCT|DIRLOCK
 	sharp = IS_SHARP_ITEM_ACCURATE
-	force = 20
+	force = 10
 	w_class = WEIGHT_CLASS_TINY
-	throwforce = 25
+	throwforce = 10
 	throw_speed = 5
 	throw_range = 7
 	hitsound = 'sound/weapons/slash.ogg'
@@ -125,6 +118,12 @@
 	var/mob/living/living_user
 	///Do we change sprite depending on the amount left?
 	var/update_on_throwing = TRUE
+
+/obj/item/stack/throwing_knife/throw_impact(atom/hit_atom, speed, bounce)
+	. = ..()
+	if(isxeno(hit_atom)) //xenos take extra damage
+		var/mob/living/carbon/xenomorph/beno = hit_atom
+		beno.apply_damage(15, BRUTE, BODY_ZONE_CHEST, MELEE)
 
 /obj/item/stack/throwing_knife/Initialize(mapload, new_amount)
 	. = ..()

@@ -303,9 +303,7 @@
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/colony/atmos)
 "alP" = (
-/obj/structure/flora/grass/tallgrass/hideable{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable,
 /obj/effect/landmark/xeno_tunnel_spawn,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/west)
@@ -979,7 +977,6 @@
 /area/lawankaoutpost/outside/central)
 "aNo" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 1
 	},
 /turf/open/ground/grass/weedable,
@@ -1148,9 +1145,7 @@
 /area/lawankaoutpost/colony/mining)
 "aUV" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_scrubber{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber,
 /obj/effect/landmark/weed_node,
 /obj/effect/landmark/campaign_structure/barricade/sandbags/asat,
 /turf/open/floor/tile/white,
@@ -1694,6 +1689,10 @@
 /obj/effect/ai_node,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/colony/hydroponics)
+"buJ" = (
+/obj/effect/ai_node,
+/turf/open/floor/tile/green/full,
+/area/lawankaoutpost/colony/hydroponics)
 "buU" = (
 /obj/effect/landmark/campaign_structure/barricade/sandbags/asat{
 	dir = 8
@@ -1862,7 +1861,6 @@
 /area/lawankaoutpost/caves/nanotrasen_lab)
 "bAr" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 10
 	},
 /turf/open/ground/grass/weedable,
@@ -2129,9 +2127,7 @@
 /area/lawankaoutpost/colony/northdorms)
 "bMl" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_scrubber{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber,
 /turf/open/floor,
 /area/lawankaoutpost/colony/biologics)
 "bMm" = (
@@ -2252,7 +2248,6 @@
 /area/lawankaoutpost/colony/marshalls)
 "bTh" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 9
 	},
 /turf/open/ground/grass/weedable,
@@ -2496,7 +2491,6 @@
 /area/lawankaoutpost/colony/medbay)
 "cbT" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 6
 	},
 /turf/open/ground/grass/weedable,
@@ -2652,7 +2646,6 @@
 /area/lawankaoutpost/colony/hydroponics)
 "cib" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 1
 	},
 /turf/open/ground/grass/weedable,
@@ -3040,9 +3033,7 @@
 	},
 /area/lawankaoutpost/colony/atmos)
 "czm" = (
-/obj/structure/flora/grass/tallgrass/hideable{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/central)
 "cAt" = (
@@ -3056,9 +3047,7 @@
 /turf/open/floor/tile/green/whitegreenfull,
 /area/lawankaoutpost/colony/chapel)
 "cBi" = (
-/obj/structure/table/reinforced/flipped{
-	dir = 2
-	},
+/obj/structure/table/reinforced/flipped,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/outside/central)
 "cBz" = (
@@ -3147,9 +3136,7 @@
 /turf/open/floor,
 /area/lawankaoutpost/colony/landingzonetwo)
 "cDJ" = (
-/obj/structure/flora/grass/tallgrass/hideable{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/northwest)
 "cDN" = (
@@ -3247,9 +3234,7 @@
 /turf/open/floor/plating,
 /area/shuttle/drop2/lz2)
 "cGJ" = (
-/obj/structure/flora/grass/tallgrass/hideable{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable,
 /obj/effect/landmark/weed_node,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/east)
@@ -3454,9 +3439,7 @@
 	},
 /area/lawankaoutpost/colony/biologics)
 "cSf" = (
-/obj/structure/flora/grass/tallgrass/hideable{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/north)
 "cSN" = (
@@ -3665,9 +3648,7 @@
 /turf/open/floor/wood,
 /area/lawankaoutpost/colony/cabin)
 "dau" = (
-/obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/northwest)
 "daw" = (
@@ -4263,9 +4244,7 @@
 	},
 /area/lawankaoutpost/colony/cargo)
 "dBI" = (
-/obj/structure/flora/grass/tallgrass/hideable{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/southeast)
 "dBK" = (
@@ -4470,7 +4449,6 @@
 /area/lawankaoutpost/caves/nanotrasen_lab)
 "dKR" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 10
 	},
 /obj/effect/ai_node,
@@ -5295,6 +5273,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 9
 	},
+/obj/effect/ai_node,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/outside/southeast)
 "eur" = (
@@ -5464,9 +5443,7 @@
 /turf/open/floor,
 /area/lawankaoutpost/colony/northdorms)
 "eAs" = (
-/turf/open/floor/tile/purple/whitepurplecorner{
-	dir = 2
-	},
+/turf/open/floor/tile/purple/whitepurplecorner,
 /area/lawankaoutpost/colony/medbay)
 "eAy" = (
 /turf/open/floor,
@@ -5783,7 +5760,6 @@
 /area/lawankaoutpost/colony/biologics)
 "ePq" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 8
 	},
 /turf/open/ground/grass/weedable,
@@ -6031,7 +6007,6 @@
 /area/lawankaoutpost/outside/southeast)
 "eYb" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 1
 	},
 /turf/open/ground/grass/weedable,
@@ -6065,9 +6040,7 @@
 /turf/open/floor/tile/red/full,
 /area/lawankaoutpost/colony/operations_hall)
 "eZQ" = (
-/obj/structure/flora/grass/tallgrass/hideable{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable,
 /obj/effect/landmark/weed_node,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/north)
@@ -6092,7 +6065,6 @@
 /area/lawankaoutpost/caves/nanotrasen_lab)
 "fby" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 10
 	},
 /turf/open/ground/grass/weedable,
@@ -6117,9 +6089,7 @@
 /turf/open/floor,
 /area/lawankaoutpost/colony/biologics)
 "fcW" = (
-/obj/structure/flora/grass/tallgrass/hideable{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable,
 /obj/effect/landmark/weed_node,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/central)
@@ -6199,7 +6169,6 @@
 /area/lawankaoutpost/outside/northwest)
 "fhC" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 8
 	},
 /turf/open/ground/grass/weedable,
@@ -6440,7 +6409,6 @@
 /area/lawankaoutpost/colony/southdorms)
 "frG" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 10
 	},
 /turf/open/ground/grass/weedable,
@@ -6492,7 +6460,6 @@
 /area/lawankaoutpost/colony/hydroponics)
 "fsR" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 1
 	},
 /turf/open/ground/grass/weedable,
@@ -6633,9 +6600,7 @@
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/colony/mining)
 "fyy" = (
-/obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/northeast)
 "fyB" = (
@@ -6812,7 +6777,6 @@
 /area/lawankaoutpost/caves/west/garbledradio)
 "fEE" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 5
 	},
 /obj/effect/landmark/weed_node,
@@ -6856,11 +6820,9 @@
 /turf/open/floor/tile/green/greentaupe,
 /area/lawankaoutpost/colony/chapel)
 "fGt" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber{
-	dir = 2
-	},
-/turf/open/floor/freezer,
-/area/lawankaoutpost/colony/northdorms)
+/obj/effect/landmark/static_comms/net_one,
+/turf/open/floor/tile/purple/taupepurple/corner,
+/area/lawankaoutpost/colony/biologics)
 "fGC" = (
 /turf/open/floor/freezer,
 /area/lawankaoutpost/colony/operations_kitchen)
@@ -7025,9 +6987,7 @@
 /area/lawankaoutpost/colony/biologics)
 "fLw" = (
 /obj/effect/landmark/xeno_tunnel_spawn,
-/obj/structure/flora/grass/tallgrass/hideable{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/southwest)
 "fLZ" = (
@@ -7770,9 +7730,7 @@
 /turf/open/floor/wood,
 /area/lawankaoutpost/colony/chapel)
 "gnF" = (
-/obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner,
 /obj/effect/landmark/weed_node,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/northwest)
@@ -7944,7 +7902,6 @@
 /area/lawankaoutpost/outside/northwest)
 "guO" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 9
 	},
 /turf/open/ground/grass/weedable,
@@ -8342,9 +8299,7 @@
 	},
 /area/lawankaoutpost/caves/nanotrasen_lab)
 "gOu" = (
-/obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/north)
 "gOA" = (
@@ -8726,7 +8681,6 @@
 /area/lawankaoutpost/colony/recdorms)
 "hiF" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 10
 	},
 /turf/open/ground/grass/weedable,
@@ -8974,7 +8928,6 @@
 "hxp" = (
 /obj/effect/landmark/weed_node,
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 8
 	},
 /turf/open/ground/grass/weedable,
@@ -9227,7 +9180,6 @@
 /area/lawankaoutpost/colony/medbay)
 "hLH" = (
 /obj/machinery/door/airlock/mainship/medical/glass/free_access{
-	dir = 4;
 	name = "\improper Bar"
 	},
 /obj/structure/cable,
@@ -10162,7 +10114,6 @@
 /area/lawankaoutpost/caves/nanotrasen_lab)
 "izd" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 8
 	},
 /obj/effect/landmark/weed_node,
@@ -10346,7 +10297,6 @@
 /area/lawankaoutpost/caves/nanotrasen_lab)
 "iGa" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 1
 	},
 /turf/open/ground/grass/weedable,
@@ -10475,9 +10425,7 @@
 	},
 /area/lawankaoutpost/colony/robotics)
 "iMt" = (
-/obj/structure/flora/grass/tallgrass/hideable{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable,
 /obj/effect/ai_node,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/north)
@@ -10651,7 +10599,6 @@
 /area/lawankaoutpost/colony/mining)
 "iVD" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 5
 	},
 /turf/open/ground/grass/weedable,
@@ -11291,9 +11238,7 @@
 /turf/open/floor/tile/dark,
 /area/lawankaoutpost/caves/nanotrasen_lab)
 "jsA" = (
-/obj/structure/flora/grass/tallgrass/hideable{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable,
 /obj/effect/landmark/weed_node,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/southwest)
@@ -11493,7 +11438,6 @@
 /area/lawankaoutpost/outside/central)
 "jCH" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 5
 	},
 /turf/open/ground/grass/weedable,
@@ -12359,7 +12303,6 @@
 /area/lawankaoutpost/colony/biologics)
 "krv" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 9
 	},
 /turf/open/ground/grass/weedable,
@@ -12726,7 +12669,6 @@
 /area/shuttle/drop2/lz2)
 "kHz" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 6
 	},
 /obj/effect/landmark/weed_node,
@@ -12765,7 +12707,6 @@
 /area/lawankaoutpost/colony/marshalls)
 "kIa" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 8
 	},
 /turf/open/ground/grass/weedable,
@@ -12934,6 +12875,7 @@
 /area/lawankaoutpost/colony/medbay)
 "kPC" = (
 /obj/structure/flora/jungle/planttop1,
+/obj/effect/landmark/static_comms/net_two,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/southeast)
 "kPF" = (
@@ -12957,7 +12899,6 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/outside/east)
 "kRe" = (
-/obj/machinery/telecomms/relay/preset/telecomms,
 /turf/closed/mineral/smooth/indestructible,
 /area/lv624/lazarus/console)
 "kRj" = (
@@ -13289,14 +13230,12 @@
 /area/lawankaoutpost/colony/operations_hall)
 "lej" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 8
 	},
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/central)
 "lev" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 10
 	},
 /turf/open/ground/grass/weedable,
@@ -13848,9 +13787,7 @@
 /turf/open/floor/tile/dark/red2/corner,
 /area/lawankaoutpost/colony/marshalls)
 "lAy" = (
-/obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/central)
 "lAz" = (
@@ -14417,7 +14354,6 @@
 /area/lawankaoutpost/caves/nanotrasen_lab)
 "lWU" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 5
 	},
 /turf/open/ground/grass/weedable,
@@ -14583,9 +14519,7 @@
 /area/lawankaoutpost/outside/north)
 "mfE" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_scrubber{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber,
 /turf/open/floor/tile/purple/taupepurple/corner,
 /area/lawankaoutpost/colony/biologics)
 "mfS" = (
@@ -14767,7 +14701,6 @@
 /area/lawankaoutpost/colony/bar)
 "mpX" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 9
 	},
 /turf/open/ground/grass/weedable,
@@ -14813,9 +14746,7 @@
 /turf/open/floor/tile/white,
 /area/lawankaoutpost/colony/medbay)
 "mrf" = (
-/obj/structure/flora/grass/tallgrass/hideable{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable,
 /obj/effect/ai_node,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/central)
@@ -14907,7 +14838,6 @@
 /area/lawankaoutpost/outside/central)
 "muQ" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 9
 	},
 /obj/effect/landmark/weed_node,
@@ -15150,9 +15080,7 @@
 	},
 /area/lawankaoutpost/colony/northdorms)
 "mCJ" = (
-/obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/southwest)
 "mCO" = (
@@ -15502,9 +15430,7 @@
 	},
 /area/lawankaoutpost/colony/engineering)
 "mUZ" = (
-/obj/structure/flora/grass/tallgrass/hideable{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable,
 /obj/effect/landmark/weed_node,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/northeast)
@@ -16814,7 +16740,6 @@
 /area/lawankaoutpost/colony/operations_hall)
 "nTQ" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 4
 	},
 /turf/open/ground/grass/weedable,
@@ -17093,9 +17018,7 @@
 /turf/open/floor/wood,
 /area/lawankaoutpost/colony/chapel)
 "ofO" = (
-/obj/structure/flora/grass/tallgrass/hideable{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable,
 /obj/effect/landmark/weed_node,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/west)
@@ -17234,7 +17157,6 @@
 /area/lawankaoutpost/outside/northeast)
 "omb" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 8
 	},
 /turf/open/ground/grass/weedable,
@@ -17331,7 +17253,6 @@
 /area/lawankaoutpost/colony/biologics)
 "onR" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 4
 	},
 /turf/open/ground/grass/weedable,
@@ -18183,7 +18104,6 @@
 /area/lawankaoutpost/colony/southdorms)
 "oWE" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 10
 	},
 /turf/open/ground/grass/weedable,
@@ -18332,7 +18252,6 @@
 /area/lawankaoutpost/colony/medbay)
 "pdU" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 1
 	},
 /obj/effect/landmark/weed_node,
@@ -18651,9 +18570,7 @@
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/colony/engineering)
 "ppd" = (
-/obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/southeast)
 "ppP" = (
@@ -19096,7 +19013,6 @@
 /area/lawankaoutpost/colony/southdorms)
 "pFa" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 9
 	},
 /obj/effect/landmark/weed_node,
@@ -19248,7 +19164,6 @@
 /area/lawankaoutpost/colony/landingzoneone)
 "pLu" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 8
 	},
 /turf/open/ground/grass/weedable,
@@ -19570,7 +19485,6 @@
 /area/lawankaoutpost/outside/central)
 "qbg" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 1
 	},
 /turf/open/ground/grass/weedable,
@@ -20112,7 +20026,6 @@
 /area/lv624/lazarus/console)
 "qyn" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 4
 	},
 /turf/open/ground/grass/weedable,
@@ -20157,7 +20070,6 @@
 /area/lawankaoutpost/colony/mining)
 "qAu" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 9
 	},
 /turf/open/ground/grass/weedable,
@@ -20299,7 +20211,6 @@
 /area/lawankaoutpost/colony/biologics)
 "qJq" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 9
 	},
 /obj/effect/landmark/weed_node,
@@ -20702,7 +20613,6 @@
 /area/lawankaoutpost/caves/nanotrasen_lab)
 "qZP" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 6
 	},
 /obj/structure/flora/ausbushes/fullgrass,
@@ -20715,9 +20625,7 @@
 /turf/open/floor,
 /area/lawankaoutpost/colony/landingzoneone)
 "rae" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber,
 /obj/effect/ai_node,
 /turf/open/floor/tile/green/greentaupe{
 	dir = 5
@@ -21252,7 +21160,6 @@
 /area/lawankaoutpost/colony/chapel)
 "rtH" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 5
 	},
 /turf/open/ground/grass/weedable,
@@ -21460,7 +21367,6 @@
 /area/lawankaoutpost/colony/medbay)
 "rBJ" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 5
 	},
 /turf/open/ground/grass/weedable,
@@ -21803,9 +21709,7 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/west)
 "rSk" = (
-/obj/structure/flora/grass/tallgrass/hideable{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/west)
 "rSo" = (
@@ -21865,9 +21769,7 @@
 /turf/open/floor/cult,
 /area/lawankaoutpost/caves/southwest)
 "rUt" = (
-/obj/structure/flora/grass/tallgrass/hideable{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/east)
 "rUM" = (
@@ -22776,7 +22678,6 @@
 	},
 /area/lawankaoutpost/colony/medbay)
 "sGo" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/excavation_site_spawner,
 /turf/open/floor/tile/purple/taupepurple/corner,
 /area/lawankaoutpost/colony/biologics)
@@ -22890,9 +22791,7 @@
 /turf/open/floor/tile/dark,
 /area/lawankaoutpost/colony/operations_storage)
 "sLI" = (
-/obj/structure/flora/grass/tallgrass/hideable{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/northeast)
 "sLX" = (
@@ -23295,7 +23194,6 @@
 /area/lawankaoutpost/colony/hydroponics)
 "tbS" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 5
 	},
 /obj/effect/landmark/weed_node,
@@ -23457,7 +23355,6 @@
 /area/lawankaoutpost/colony/engineering)
 "tir" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 4
 	},
 /turf/open/ground/grass/weedable,
@@ -23703,9 +23600,7 @@
 	},
 /area/lawankaoutpost/colony/hydroponics)
 "tqI" = (
-/obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner,
 /obj/effect/landmark/weed_node,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/north)
@@ -23931,7 +23826,6 @@
 /area/lawankaoutpost/caves/nanotrasen_lab)
 "tzV" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 6
 	},
 /obj/effect/ai_node,
@@ -23993,7 +23887,6 @@
 /area/lawankaoutpost/colony/engineering)
 "tDp" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 10
 	},
 /obj/effect/landmark/weed_node,
@@ -24108,7 +24001,6 @@
 /area/lawankaoutpost/colony/engineering)
 "tJa" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 6
 	},
 /turf/open/ground/grass/weedable,
@@ -24313,7 +24205,6 @@
 /area/lawankaoutpost/colony/cargo)
 "tQR" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 5
 	},
 /turf/open/ground/grass/weedable,
@@ -24378,16 +24269,13 @@
 	},
 /area/lawankaoutpost/colony/marshalls)
 "tTm" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber,
 /turf/open/floor/tile/darkgreen/darkgreen2{
 	dir = 9
 	},
 /area/lawankaoutpost/caves/nanotrasen_lab)
 "tTo" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 9
 	},
 /turf/open/ground/grass/weedable,
@@ -24756,7 +24644,6 @@
 /area/lawankaoutpost/colony/marshalls)
 "unb" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 5
 	},
 /turf/open/ground/grass/weedable,
@@ -24849,7 +24736,6 @@
 /area/lawankaoutpost/colony/engineering)
 "upX" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 4
 	},
 /turf/open/ground/grass/weedable,
@@ -24871,7 +24757,6 @@
 /area/lawankaoutpost/outside/central)
 "urx" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 1
 	},
 /turf/open/ground/grass/weedable,
@@ -25118,9 +25003,7 @@
 /turf/open/floor/tile/white,
 /area/lawankaoutpost/colony/operations_hall)
 "uBn" = (
-/obj/structure/flora/grass/tallgrass/hideable{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable,
 /obj/effect/ai_node,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/west)
@@ -25153,7 +25036,6 @@
 /area/lawankaoutpost/colony/operations_storage)
 "uCT" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 6
 	},
 /turf/open/ground/grass/weedable,
@@ -25496,7 +25378,6 @@
 /area/lawankaoutpost/colony/biologics)
 "uRn" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 10
 	},
 /obj/effect/landmark/weed_node,
@@ -25531,7 +25412,6 @@
 /area/lawankaoutpost/colony/operations_hall)
 "uSs" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 8
 	},
 /turf/open/ground/grass/weedable,
@@ -25606,9 +25486,7 @@
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/lawankaoutpost/outside/south)
 "uVv" = (
-/obj/structure/flora/grass/tallgrass/hideable{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable,
 /obj/effect/landmark/weed_node,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/northwest)
@@ -25759,9 +25637,7 @@
 /turf/open/floor/freezer,
 /area/lawankaoutpost/colony/southdorms)
 "vcN" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber,
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/colony/operations_administration)
 "vcT" = (
@@ -25780,7 +25656,6 @@
 /area/lawankaoutpost/colony/recdorms)
 "vee" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 1
 	},
 /turf/open/ground/grass/weedable,
@@ -27532,6 +27407,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 6
 	},
+/obj/effect/ai_node,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/outside/southeast)
 "wwK" = (
@@ -27584,7 +27460,6 @@
 /area/lawankaoutpost/outside/east)
 "wya" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 9
 	},
 /turf/open/ground/grass/weedable,
@@ -28201,7 +28076,6 @@
 /area/lawankaoutpost/colony/northdorms)
 "xaS" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 9
 	},
 /turf/open/ground/grass/weedable,
@@ -28975,7 +28849,6 @@
 /area/lawankaoutpost/colony/operations_kitchen)
 "xFy" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 6
 	},
 /turf/open/ground/grass/weedable,
@@ -29233,7 +29106,6 @@
 /area/lawankaoutpost/colony/operations_meeting)
 "xPy" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 6
 	},
 /turf/open/ground/grass/weedable,
@@ -29389,7 +29261,6 @@
 /area/lawankaoutpost/colony/chapel)
 "xVQ" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 4
 	},
 /obj/effect/ai_node,
@@ -29544,9 +29415,7 @@
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/west)
 "ybE" = (
-/obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54"
-	},
+/obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner,
 /obj/effect/ai_node,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/west)
@@ -29635,7 +29504,6 @@
 /area/lawankaoutpost/colony/southdorms)
 "yev" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 6
 	},
 /obj/effect/landmark/weed_node,
@@ -29724,7 +29592,6 @@
 /area/lawankaoutpost/colony/operations_kitchen)
 "yjW" = (
 /obj/structure/flora/grass/tallgrass/hideable/tallgrasscorner{
-	color = "#7a8c54";
 	dir = 10
 	},
 /turf/open/ground/grass/weedable,
@@ -57712,7 +57579,7 @@ fTV
 dkO
 eSx
 dkO
-dkO
+bUA
 dkO
 aMU
 dkO
@@ -57760,7 +57627,7 @@ wIV
 gtK
 rfn
 gtK
-mCO
+buJ
 rkw
 rCJ
 wIV
@@ -63243,7 +63110,7 @@ mLL
 mLL
 bPQ
 xAh
-mLL
+fGt
 bIi
 kIr
 bPQ
@@ -63460,8 +63327,8 @@ mLL
 xZc
 mfE
 nCz
+xZc
 sGo
-mLL
 nGs
 mLL
 jlV
@@ -74352,7 +74219,7 @@ fmD
 pTn
 pTn
 pTn
-fGt
+aDs
 wFL
 pTn
 pTn
@@ -76644,7 +76511,7 @@ wEk
 wEk
 hYh
 wEk
-wEk
+hYh
 wEk
 wEk
 wEk

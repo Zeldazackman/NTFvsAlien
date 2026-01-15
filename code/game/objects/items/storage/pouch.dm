@@ -386,11 +386,15 @@
 	fill_number = 3
 
 /obj/item/storage/pouch/magazine/large/pmc_sniper
-	fill_type = /obj/item/ammo_magazine/sniper/elite
+	fill_type = /obj/item/ammo_magazine/railgun/pmc
 	fill_number = 3
 
 /obj/item/storage/pouch/magazine/large/pmc_rifle
 	fill_type = /obj/item/ammo_magazine/rifle/ap
+	fill_number = 3
+
+/obj/item/storage/pouch/magazine/large/pmc_raval
+	fill_type = /obj/item/ammo_magazine/smg/val
 	fill_number = 3
 
 /obj/item/storage/pouch/magazine/drum
@@ -450,7 +454,7 @@
 	new /obj/item/explosive/grenade/smokebomb/antigas(src)
 
 /obj/item/storage/pouch/explosive/upp
-	fill_type = /obj/item/explosive/grenade/upp
+	fill_type = /obj/item/explosive/grenade/bullet/upp
 	fill_number = 4
 
 /obj/item/storage/pouch/explosive/som
@@ -807,6 +811,7 @@
 	storage_datum.set_holdable(can_hold_list = list(
 		/obj/item/paper,
 		/obj/item/clipboard,
+		/obj/item/paper_map,
 	))
 
 /obj/item/storage/pouch/field_pouch
@@ -819,7 +824,6 @@
 	storage_datum.storage_slots = 5
 	storage_datum.max_w_class = WEIGHT_CLASS_NORMAL
 	storage_datum.sprite_slots = 4
-	storage_datum.draw_mode = TRUE
 	storage_datum.set_holdable(can_hold_list = list(
 		/obj/item/attachable/motiondetector,
 		/obj/item/radio,
@@ -840,6 +844,7 @@
 		/obj/item/toy/deck,
 		/obj/item/paper,
 		/obj/item/clipboard,
+		/obj/item/paper_map,
 	))
 
 /obj/item/storage/pouch/field_pouch/full/PopulateContents()

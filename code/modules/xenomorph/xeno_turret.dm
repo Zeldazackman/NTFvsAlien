@@ -35,10 +35,7 @@
 ///Change minimap icon if its firing or not firing
 /obj/structure/xeno/xeno_turret/update_minimap_icon()
 	SSminimaps.remove_marker(src)
-	if(hivenumber != XENO_HIVE_CORRUPTED)
-		SSminimaps.add_marker(src, MINIMAP_FLAG_XENO, image('icons/UI_icons/map_blips.dmi', null, "xeno_turret[firing ? "_firing" : "_passive"]", MINIMAP_BLIPS_LAYER))
-	if(hivenumber == XENO_HIVE_CORRUPTED)
-		SSminimaps.add_marker(src, MINIMAP_FLAG_MARINE, image('icons/UI_icons/map_blips.dmi', null, "xeno_turret[firing ? "_firing" : "_passive"]", MINIMAP_BLIPS_LAYER))
+	SSminimaps.add_marker(src, GLOB.hivenumber_to_minimap_flag[hivenumber], image('icons/UI_icons/map_blips.dmi', null, "xeno_turret[firing ? "_firing" : "_passive"]", MINIMAP_BLIPS_LAYER))
 
 /obj/structure/xeno/xeno_turret/Initialize(mapload, _hivenumber)
 	. = ..()
@@ -168,6 +165,8 @@
 			var/mob/living/nearby_living_hostile = nearby_hostile
 			if(nearby_living_hostile.stat == DEAD)
 				continue
+			if(nearby_living_hostile.status_flags & INCORPOREAL)
+				continue
 		if(HAS_TRAIT(nearby_hostile, TRAIT_TURRET_HIDDEN))
 			continue
 		buffer_distance = get_dist(nearby_hostile, src)
@@ -269,3 +268,12 @@
 	light_initial_color = LIGHT_COLOR_BROWN
 	ammo = /datum/ammo/xeno/hugger
 	firerate = 5 SECONDS
+
+/obj/structure/xeno/xeno_turret/hugger_turret/Initialize(mapload, _hivenumber, datum/ammo/xeno/hugger/hugger_ammo)
+	if(istype(hugger_ammo))
+		var/huggername = initial((hugger_ammo.hugger_type).name)
+		name = "[huggername] turret"
+		desc = "A menacing looking construct of resin, it seems to be alive. It fires [huggername]s against intruders."
+	. = ..()
+	if(istype(hugger_ammo, /datum/ammo))
+		ammo = hugger_ammo

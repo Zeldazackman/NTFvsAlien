@@ -74,6 +74,7 @@ GLOBAL_LIST_INIT(campaign_mission_pool, list(
 		/datum/campaign_mission/destroy_mission/supply_raid/som = 15,
 		/datum/campaign_mission/capture_mission/asat = 12,
 		/datum/campaign_mission/raiding_base/som = 6,
+		/datum/campaign_mission/destroy_mission/airbase/som = 12,
 	),
 ))
 
@@ -144,6 +145,8 @@ GLOBAL_LIST_INIT(campaign_mission_pool, list(
 		individual_stat_list[new_member.ckey].apply_perks()
 	else
 		get_player_stats(new_member)
+	if(!iscampaigngamemode(SSticker.mode))
+		return
 	var/datum/action/campaign_loadout/loadouts = new
 	loadouts.give_action(new_member)
 	if(!(new_member.job.job_cost))
@@ -370,9 +373,13 @@ GLOBAL_LIST_INIT(campaign_mission_pool, list(
 
 /datum/faction_stats/ui_static_data(mob/living/user)
 	. = ..()
+
+	var/datum/game_mode/current_mode = SSticker.mode
+/*NTF REMOVAL
 	var/datum/game_mode/hvh/campaign/current_mode = SSticker.mode
 	if(!istype(current_mode))
 		CRASH("campaign_mission loaded without campaign game mode")
+*/
 
 	var/list/data = list()
 	var/ui_theme
@@ -481,9 +488,12 @@ GLOBAL_LIST_INIT(campaign_mission_pool, list(
 	if(.)
 		return
 
+	var/datum/game_mode/current_mode = SSticker.mode
+/*NTF REMOVAL
 	var/datum/game_mode/hvh/campaign/current_mode = SSticker.mode
 	if(!istype(current_mode))
 		CRASH("campaign_mission loaded without campaign game mode")
+*/
 
 	var/mob/living/user = usr
 	if(!istype(user))

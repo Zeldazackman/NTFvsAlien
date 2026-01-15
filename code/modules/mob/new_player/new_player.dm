@@ -520,12 +520,16 @@
 		to_chat(src, span_warning("You died too recently to be able to take a new mob."))
 		return
 
-
-	var/list/mob/living/free_ssd_mobs = GLOB.offered_mob_list
+	var/list/mob/living/free_ssd_mobs = list()
+	var/list/mob/living/mobs_to_check = GLOB.ssd_living_mobs
+	mobs_to_check += GLOB.offered_mob_list
 	if(GLOB.ssd_posses_allowed)
-		for(var/mob/living/ssd_mob AS in GLOB.ssd_living_mobs)
-			if(is_centcom_level(ssd_mob.z) || ishuman(ssd_mob) || ssd_mob.afk_status == MOB_RECENTLY_DISCONNECTED)
+		for(var/mob/living/ssd_mob AS in mobs_to_check)
+			if(is_centcom_level(ssd_mob.z) || ssd_mob.afk_status == MOB_RECENTLY_DISCONNECTED)
 				continue
+			if(ishuman(ssd_mob))
+				if(length(ssd_mob.ckey_history) && !(key in ssd_mob.ckey_history)) //can only take your own human characters' control unless they are empty mobs from the get go.
+					continue
 			free_ssd_mobs += ssd_mob
 
 	if(!length(free_ssd_mobs))
@@ -546,7 +550,6 @@
 		if(ssd_xeno.tier != XENO_TIER_MINION && XENODEATHTIME_CHECK(src))
 			XENODEATHTIME_MESSAGE(src)
 			return
-
 	if(HAS_TRAIT(new_mob, TRAIT_POSSESSING))
 		to_chat(src, span_warning("That mob is currently possessing a different mob."))
 		return FALSE
@@ -564,6 +567,7 @@
 		return
 
 	if(new_mob in GLOB.offered_mob_list)
+		close_spawn_windows()
 		new_mob.take_over(src)
 		return
 
@@ -577,9 +581,10 @@
 		return
 	message_admins(span_adminnotice("[src.key] took control of [new_mob.name] as [new_mob.p_they()] was ssd."))
 	log_admin("[src.key] took control of [new_mob.name] as [new_mob.p_they()] was ssd.")
+	close_spawn_windows()
 	new_mob.transfer_mob(src)
 	var/mob/living/carbon/human/H = new_mob
 	var/datum/job/j = H.job
 	var/datum/outfit/job/o = j.outfit
-	H.on_transformation()
+	//H.on_transformation()
 	o.handle_id(H)

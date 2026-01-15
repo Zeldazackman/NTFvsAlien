@@ -43,8 +43,8 @@
 			damage += base_damage * 2
 			grabbed_mob.visible_message(span_danger("<big>[user] crushes [grabbed_mob] against [src]!</big>"))
 			log_combat(user, grabbed_mob, "crushed", "", "against [src]")
-	grabbed_mob.apply_damage(damage, blocked = MELEE, updating_health = TRUE)
-	apply_damage(damage, blocked = MELEE, updating_health = TRUE)
+	grabbed_mob.apply_damage(damage, blocked = MELEE, updating_health = TRUE, attacker = user)
+	apply_damage(damage, blocked = MELEE, updating_health = TRUE, attacker = user)
 	playsound(src, 'sound/weapons/heavyhit.ogg', 40)
 	return TRUE
 
@@ -184,6 +184,7 @@
 		fire_stacks = min(0, fire_stacks)//So we dry ourselves back to default, nonflammable.
 	if(!on_fire)
 		return 1
+	SEND_SIGNAL(src, COMSIG_LIVING_HANDLE_FIRE)
 	if(fire_stacks > 0)
 		adjust_fire_stacks(-1) //the fire is consumed slowly
 
@@ -209,6 +210,8 @@
 	if(status_flags & (INCORPOREAL|GODMODE))
 		return FALSE
 	if(pass_flags & PASS_FIRE)
+		return FALSE
+	if(stat == DEAD)
 		return FALSE
 	if(soft_armor.getRating(FIRE) >= 100)
 		to_chat(src, span_warning("You are untouched by the flames."))
@@ -250,7 +253,7 @@
 /mob/living/effect_smoke(obj/effect/particle_effect/smoke/S)
 	. = ..()
 	if(!.)
-		if(CHECK_BITFIELD(S.smoke_traits, SMOKE_CAMO))
+		if((S.smoke_traits & SMOKE_CAMO) && !(S.smoke_traits & SMOKE_XENO))
 			smokecloak_off()
 		return
 	if(status_flags & GODMODE)
@@ -287,18 +290,18 @@
 		S.reagents?.reaction(src, TOUCH, S.fraction)
 	return bio_protection
 
-/mob/living/proc/check_shields(attack_type, damage, damage_type = "melee", silent, penetration = 0)
+/mob/living/proc/check_shields(attack_type, damage, damage_type = "melee", silent, penetration = 0, shield_flags = NONE)
 	if(!damage)
 		stack_trace("check_shields called without a damage value")
 		return 0
 	. = damage
 	var/list/affecting_shields = list()
-	SEND_SIGNAL(src, COMSIG_LIVING_SHIELDCALL, affecting_shields, damage_type)
+	SEND_SIGNAL(src, COMSIG_LIVING_SHIELDCALL, affecting_shields, damage_type, shield_flags)
 	if(length(affecting_shields) > 1)
 		sortTim(affecting_shields, GLOBAL_PROC_REF(cmp_numeric_dsc), associative = TRUE)
 	for(var/shield in affecting_shields)
 		var/datum/callback/shield_check = shield
-		. = shield_check.Invoke(attack_type, ., damage_type, silent, penetration)
+		. = shield_check.Invoke(attack_type, ., damage_type, silent, penetration, shield_flags)
 		if(!.)
 			break
 

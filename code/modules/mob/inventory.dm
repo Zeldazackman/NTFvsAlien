@@ -49,7 +49,8 @@
 	if(status_flags & INCORPOREAL) // INCORPOREAL things don't have hands
 		return FALSE
 	if(lying_angle)
-		return FALSE
+		if(!HAS_TRAIT(src, TRAIT_HAULED))
+			return
 	if(!istype(W))
 		return FALSE
 	if(!l_hand)
@@ -76,7 +77,8 @@
 	if(status_flags & INCORPOREAL) // INCORPOREAL things don't have hands
 		return FALSE
 	if(lying_angle)
-		return FALSE
+		if(!HAS_TRAIT(src, TRAIT_HAULED))
+			return
 	if(!istype(W))
 		return FALSE
 	if(!r_hand)
@@ -260,11 +262,12 @@
 /mob/proc/dropItemToGround(obj/item/I, force = FALSE)
 	if(!I)
 		return
-	SEND_SIGNAL(src, COMSIG_MOB_DROPPING_ITEM, I)
 	. = UnEquip(I, force, drop_location())
-	if(.)
-		I.pixel_x = initial(I.pixel_x) + rand(-6,6)
-		I.pixel_y = initial(I.pixel_y) + rand(-6,6)
+	if(!.)
+		return
+	SEND_SIGNAL(src, COMSIG_MOB_DROPPING_ITEM, I)
+	I.pixel_x = initial(I.pixel_x) + rand(-6,6)
+	I.pixel_y = initial(I.pixel_y) + rand(-6,6)
 
 /**
  * For when the item will be immediately placed in a loc other than the ground.

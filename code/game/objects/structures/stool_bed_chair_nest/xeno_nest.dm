@@ -16,6 +16,7 @@
 	layer = BELOW_OPEN_DOOR_LAYER
 	var/buckleoverlaydir = SOUTH
 	var/unbuckletime = 6 SECONDS
+	var/resist_time = NEST_RESIST_TIME
 
 /obj/structure/bed/nest/ai_should_stay_buckled(mob/living/carbon/npc)
 	return TRUE
@@ -33,17 +34,21 @@
 		user_buckle_mob(M, user)
 
 
-/obj/structure/bed/nest/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/structure/bed/nest/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage * xeno_attacker.xeno_melee_damage_modifier, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(xeno_attacker.a_intent != INTENT_HARM)
 		return attack_hand(xeno_attacker)
 	return ..()
 
-/obj/structure/bed/nest/user_buckle_mob(mob/living/buckling_mob, mob/living/user, check_loc = TRUE, silent)
+/obj/structure/bed/nest/user_buckle_mob(mob/living/buckling_mob, mob/living/user, check_loc = TRUE, silent, skip)
+	if(skip)
+		return ..()
 	if(user.incapacitated() || !in_range(user, src) || buckling_mob.buckled)
 		return FALSE
+/*
 	if(!isxeno(user))
 		to_chat(user, span_warning("Gross! You're not touching that stuff."))
 		return FALSE
+*/
 	if(LAZYLEN(buckled_mobs))
 		to_chat(user, span_warning("There's already someone in [src]."))
 		return FALSE
@@ -67,7 +72,8 @@
 		to_chat(user, span_warning("[buckling_mob] is not something we can capture."))
 		return FALSE
 
-	buckling_mob.visible_message(span_xenonotice("[user] secretes a thick, vile resin, securing [buckling_mob] into [src]!"),
+	log_combat(user, buckling_mob, "nested", src)
+	buckling_mob.visible_message(span_xenonotice("[user] applies a thick, vile resin, securing [buckling_mob] into [src]!"),
 		span_xenonotice("[user] drenches you in a foul-smelling resin, trapping you in [src]!"),
 		span_notice("You hear squelching."))
 	playsound(loc, SFX_ALIEN_RESIN_MOVE, 50)
@@ -99,7 +105,7 @@
 		to_chat(buckled_mob, span_warning("You're currently unable to try that."))
 		return FALSE
 	buckled_mob.visible_message(span_warning("\The [buckled_mob] struggles to break free of \the [src]."), span_warning("You struggle to break free from \the [src]."), span_notice("You hear squelching."))
-	if(!do_after(buckled_mob, NEST_RESIST_TIME, FALSE, buckled_mob, BUSY_ICON_DANGER))
+	if(!do_after(buckled_mob, resist_time, FALSE, buckled_mob, BUSY_ICON_DANGER))
 		return FALSE
 	buckled_mob.visible_message(span_danger("\The [buckled_mob] breaks free from \the [src]!"),
 		span_danger("You pull yourself free from \the [src]!"),
@@ -147,8 +153,8 @@
 	smoothing_groups = list(SMOOTH_GROUP_XENO_STRUCTURES)
 
 /obj/structure/bed/nest/wall/user_buckle_mob(mob/living/buckling_mob, mob/user, check_loc = TRUE, silent)
-	buckleoverlaydir = get_dir(src.loc, user.loc)
-	src.dir = buckleoverlaydir
+	buckleoverlaydir = get_dir(loc, user.loc)
+	dir = buckleoverlaydir
 	face_atom(user)
 	buckling_mob.face_atom(user)
 	. = ..()
@@ -156,12 +162,20 @@
 		return
 	walldir_update(buckling_mob)
 	buckling_mob.set_lying_angle(0)
-	update_overlays()
+	START_PROCESSING(SSslowprocess, src)
+
+/obj/structure/bed/nest/wall/process()
+	. = ..()
+	for(var/mob/living/mobussy in buckled_mobs) //larvas making em shake and lose their pixel shift which sucks
+		mobussy.jitteriness = 0
+		walldir_update(mobussy)
 
 /obj/structure/bed/nest/wall/update_overlays()
 	. = ..()
+	/* this shit dont work right with pixel placement and obstruct vision
 	if(LAZYLEN(buckled_mobs))
-		. += image("icon_state" = "nestwall_overlay", "layer" = 6, "dir" = buckleoverlaydir, pixel_x = buckling_x, pixel_y = buckling_y)
+		add_overlay(image(icon, "nestwall_overlay", layer = 6, buckleoverlaydir, buckling_x, buckling_y))
+	*/
 
 /obj/structure/bed/nest/wall/proc/walldir_update(mob/buckling_mob)
 	switch(buckleoverlaydir)
@@ -193,15 +207,17 @@
 			layer = 3
 	buckling_mob.pixel_y = buckling_y
 	buckling_mob.pixel_x = buckling_x
+	//update_overlays()
 
 /obj/structure/bed/nest/wall/user_unbuckle_mob(mob/living/buckled_mob)
 	. = ..()
-	src.buckling_x = 0
-	src.buckling_y = 0
-	src.layer = 3
-	buckled_mob.pixel_x = 0
-	buckled_mob.pixel_y = 0
-
+	buckling_x = initial(buckling_x)
+	buckling_y = initial(buckling_y)
+	layer = 3
+	buckled_mob.pixel_x = initial(buckled_mob.pixel_x)
+	buckled_mob.pixel_y = initial(buckled_mob.pixel_y)
+	//cut_overlays()
+	STOP_PROCESSING(SSslowprocess, src)
 
 #undef NEST_RESIST_TIME
 #undef NEST_UNBUCKLED_COOLDOWN

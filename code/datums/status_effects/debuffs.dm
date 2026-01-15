@@ -154,8 +154,8 @@
 		healing += BASE_HEAL_RATE
 	if(locate(/obj/item/bedsheet) in owner.loc)
 		healing += BASE_HEAL_RATE
-		if((locate(/obj/item/toy/plush) in owner.loc)) // plushie bonus in bed with a blanket
-			healing += 0.75 * BASE_HEAL_RATE // plushie bonus in bed with a blanket
+	if((locate(/obj/item/toy/plush) in owner.loc)) // plushie bonus in bed
+		healing += BASE_HEAL_RATE
 	if(health_ratio > -0.5)
 		owner.adjustBruteLoss(healing)
 		owner.adjustFireLoss(healing)
@@ -416,10 +416,10 @@
 	. = ..()
 	if(!.)
 		return
-	ADD_TRAIT(owner, TRAIT_MUTED, TRAIT_STATUS_EFFECT(id))
+	ADD_TRAIT(owner, TRAIT_MUTE, TRAIT_STATUS_EFFECT(id))
 
 /datum/status_effect/mute/on_remove()
-	REMOVE_TRAIT(owner, TRAIT_MUTED, TRAIT_STATUS_EFFECT(id))
+	REMOVE_TRAIT(owner, TRAIT_MUTE, TRAIT_STATUS_EFFECT(id))
 	return ..()
 
 /datum/status_effect/spacefreeze
@@ -523,7 +523,7 @@
 	xenomorph_to_heal = expected_xenomorph_to_heal
 	healing_per_stack = expected_healing_per_stack
 	RegisterSignal(debuff_owner, COMSIG_LIVING_DO_RESIST, PROC_REF(call_resist_debuff))
-	debuff_owner.balloon_alert(debuff_owner, "Intoxicated")
+	debuff_owner.balloon_alert(debuff_owner, "intoxicated!")
 	playsound(debuff_owner.loc, "sound/bullets/acid_impact1.ogg", 30)
 	particle_holder = new(debuff_owner, /particles/toxic_slash)
 	particle_holder.particles.spawning = 1 + round(stacks / 2)
@@ -568,12 +568,11 @@
 	if(length(debuff_owner.do_actions))
 		return
 	if(!do_after(debuff_owner, 5 SECONDS, TRUE, debuff_owner, BUSY_ICON_GENERIC))
-		debuff_owner?.balloon_alert(debuff_owner, "Interrupted")
+		debuff_owner?.balloon_alert(debuff_owner, "Interrupted!")
 		return
 	if(QDELETED(src))
 		return
 	playsound(debuff_owner, 'sound/effects/slosh.ogg', 30)
-	debuff_owner.balloon_alert(debuff_owner, "Succeeded")
 	stacks -= SENTINEL_INTOXICATED_RESIST_REDUCTION
 	if(stacks > 0)
 		resist_debuff() // We repeat ourselves as long as the debuff persists.
@@ -613,7 +612,7 @@
 	visual_fire.icon_state = "melting_low_stacks"
 	debuff_owner = new_owner
 	debuff_owner.vis_contents += visual_fire
-	debuff_owner.balloon_alert(debuff_owner, "Melting fire")
+	debuff_owner.balloon_alert(debuff_owner, "melting fire!")
 	playsound(debuff_owner.loc, "sound/bullets/acid_impact1.ogg", 30)
 	RegisterSignal(debuff_owner, COMSIG_LIVING_DO_RESIST, PROC_REF(call_resist_debuff))
 	set_creator(new_creator)
@@ -776,6 +775,8 @@
 /datum/status_effect/stacking/melting/can_gain_stacks()
 	if(owner.status_flags & GODMODE || owner.stat == DEAD)
 		return FALSE
+	if(owner.has_status_effect(STATUS_EFFECT_RESIN_JELLY_COATING))
+		return
 	return ..()
 
 /datum/status_effect/stacking/melting/on_creation(mob/living/new_owner, stacks_to_apply)
@@ -787,7 +788,7 @@
 
 	. = ..()
 	debuff_owner = new_owner
-	debuff_owner.balloon_alert(debuff_owner, "Melting!")
+	debuff_owner.balloon_alert(debuff_owner, "melting!")
 	playsound(debuff_owner.loc, "sound/bullets/acid_impact1.ogg", 30)
 	particle_holder = new(debuff_owner, /particles/melting_status)
 	particle_holder.particles.spawning = 1 + round(stacks / 2)
@@ -997,11 +998,20 @@
 // ***************************************
 /datum/status_effect/nohealthregen
 	id = "nohealthregen"
+	alert_type = /atom/movable/screen/alert/status_effect/nohealthregen
 	status_type = STATUS_EFFECT_REPLACE
+
+/atom/movable/screen/alert/status_effect/nohealthregen
+	name = "Health Regeneration Stopped"
+	desc = "Your health regeneration was temporarily lost because of enemy xeno toxin!"
 
 /datum/status_effect/nohealthregen/on_creation(mob/living/new_owner, set_duration)
 	if(isxeno(new_owner))
-		owner = new_owner
+		var/mob/living/carbon/xenomorph/xeno = new_owner
+		if(xeno.no_health_regen_grace_period)
+			qdel(src)
+			return
+		owner = xeno
 		duration = set_duration
 		return ..()
 	else

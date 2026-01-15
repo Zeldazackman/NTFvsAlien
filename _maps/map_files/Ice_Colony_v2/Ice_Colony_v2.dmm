@@ -15958,7 +15958,7 @@
 /area/ice_colony/underground/responsehangar)
 "bRg" = (
 /obj/structure/closet/secure_closet/security_empty{
-	name = "PMC Equipment Locker"
+	name = "AC Equipment Locker"
 	},
 /obj/item/clothing/mask/gas/pmc/damaged,
 /turf/open/floor/tile/dark/red2{
@@ -15967,14 +15967,14 @@
 /area/ice_colony/underground/responsehangar)
 "bRh" = (
 /obj/structure/closet/secure_closet/security_empty{
-	name = "PMC Equipment Locker"
+	name = "AC Equipment Locker"
 	},
 /obj/item/clothing/mask/gas/pmc/damaged,
 /turf/open/floor/tile/dark/red2,
 /area/ice_colony/underground/responsehangar)
 "bRi" = (
 /obj/structure/closet/secure_closet/security_empty{
-	name = "PMC Equipment Locker"
+	name = "AC Equipment Locker"
 	},
 /turf/open/floor/tile/dark/red2{
 	dir = 6
@@ -18693,6 +18693,7 @@
 "dOU" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/manifold4w/green/hidden,
+/obj/effect/landmark/static_comms/net_one,
 /turf/open/floor/tile/darkgreen/darkgreen2/corner{
 	dir = 4
 	},
@@ -25570,6 +25571,7 @@
 /area/ice_colony/exterior/surface/valley/west)
 "npZ" = (
 /obj/effect/decal/cleanable/blood/gibs,
+/obj/effect/landmark/static_comms/net_two,
 /turf/open/floor/tile/dark2,
 /area/ice_colony/surface/dorms)
 "nqu" = (
@@ -27506,6 +27508,11 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/ice_colony/underground/security/hallway)
+"pWh" = (
+/obj/effect/landmark/weed_node,
+/obj/effect/ai_node,
+/turf/open/floor/plating,
+/area/ice_colony/exterior/underground/caves/ice_se)
 "pWo" = (
 /obj/structure/rack,
 /obj/effect/spawner/random/engineering/wood,
@@ -28316,10 +28323,6 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/tile/dark2,
 /area/ice_colony/surface/hangar/checkpoint)
-"rcI" = (
-/obj/machinery/telecomms/relay/preset/telecomms,
-/turf/closed/mineral/smooth/darkfrostwall/indestructible,
-/area/storage/testroom)
 "rda" = (
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/wood,
@@ -67609,11 +67612,11 @@ nWj
 uSg
 bTp
 vZw
-vZw
+pWh
 bTp
 bTp
 nWj
-trX
+sWT
 nWj
 uSg
 qFy
@@ -68877,7 +68880,7 @@ lfF
 biy
 uSg
 uSg
-trX
+sWT
 nWj
 trX
 tro
@@ -76161,7 +76164,7 @@ aaa
 aaa
 aaa
 cLf
-rcI
+cLf
 cLf
 aaa
 aaa

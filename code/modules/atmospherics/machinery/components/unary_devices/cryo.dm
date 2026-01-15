@@ -11,8 +11,8 @@
 	pipe_flags = PIPING_ONE_PER_TURF|PIPING_DEFAULT_LAYER_ONLY
 	interaction_flags = INTERACT_MACHINE_TGUI
 	can_see_pipes = FALSE
-	light_range = 2
-	light_power = 0.5
+	light_range = 3
+	light_power = 0.6
 	light_color = LIGHT_COLOR_EMISSIVE_GREEN
 
 	var/autoeject = FALSE
@@ -44,7 +44,7 @@
 	initialize_directions = dir
 	beaker = new /obj/item/reagent_containers/glass/beaker/cryomix
 	radio = new(src)
-	update_icon()
+	update_appearance(UPDATE_ICON)
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/proc/process_occupant()
 	if(!occupant)
@@ -58,6 +58,13 @@
 	occupant.Sleeping(20 SECONDS)
 
 	//You'll heal slowly just from being in an active pod, but chemicals speed it up.
+	if(HAS_TRAIT(occupant, TRAIT_SKILLS_EXTRACTED) && occupant.can_restore_skills)
+		occupant.set_skills(occupant.skills.modifyAllRatings(1))
+		REMOVE_TRAIT(occupant, TRAIT_SKILLS_EXTRACTED, TRAIT_GENERIC)
+		occupant.can_restore_skills = FALSE
+	if(HAS_TRAIT(occupant, TRAIT_SKILLS_IMPRINTED) && occupant.can_restore_skills)
+		REMOVE_TRAIT(occupant, TRAIT_SKILLS_IMPRINTED, TRAIT_GENERIC)
+		occupant.can_restore_skills = FALSE
 	if(occupant.getOxyLoss())
 		occupant.adjustOxyLoss(-1)
 	if (occupant.getToxLoss())
@@ -414,11 +421,13 @@
 /obj/machinery/atmospherics/components/unary/cryo_cell/can_crawl_through()
 	return // can't ventcrawl in or out of cryo.
 
-/obj/machinery/atmospherics/components/unary/cryo_cell/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+/obj/machinery/atmospherics/components/unary/cryo_cell/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage * xeno_attacker.xeno_melee_damage_modifier, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(!occupant)
 		to_chat(xeno_attacker, span_xenowarning("There is nothing of interest in there."))
 		return
 	if(xeno_attacker.status_flags & INCORPOREAL || xeno_attacker.do_actions)
+		return
+	if(xeno_attacker.handcuffed)
 		return
 	visible_message(span_warning("[xeno_attacker] begins to pry the [src]'s cover!"), 3)
 	playsound(src,'sound/effects/metal_creaking.ogg', 25, 1)

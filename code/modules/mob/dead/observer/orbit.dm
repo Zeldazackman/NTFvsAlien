@@ -25,14 +25,15 @@
 		if("orbit")
 			var/ref = params["ref"]
 			var/atom/movable/poi = locate(ref) in GLOB.mob_list
+			if (poi == null)
+				. = TRUE
+				return
 			if(poi.faction != FACTION_NEUTRAL && !(check_other_rights(owner.client, R_ADMIN, FALSE)))
 				if(owner.faction != poi.faction && !GLOB.observer_freedom)
 					to_chat(owner, span_warning("Can't teleport to other factions."))
 					return
-			if (poi == null)
-				. = TRUE
+			if(!(owner.ManualFollow(poi)))
 				return
-			owner.ManualFollow(poi)
 			owner.reset_perspective(null)
 			if(auto_observe)
 				owner.do_observe(poi)
@@ -125,16 +126,16 @@
 			var/datum/job/job = human.job
 			serialized["nickname"] = human.real_name
 
+			if(human.assigned_squad) //you can't be in a squad without a correct job
+				serialized["icon"] = lowertext(human.assigned_squad.name) + "_" + job.minimap_icon
+				serialized["job"] = human.assigned_squad.name + " " + job.title
+			else if(job)
+				serialized["icon"] = job.minimap_icon
+				serialized["job"] = job.title
+
 			if(ismarinejob(human.job))
-				if(human.assigned_squad)
-					serialized["icon"] = lowertext(human.assigned_squad.name) + "_" + job.minimap_icon
-					serialized["job"] = human.assigned_squad.name + " " + job.title
 				marines += list(serialized)
 				continue
-
-			serialized["icon"] = job.minimap_icon
-			serialized["job"] = job.title
-
 			if(issommarinejob(human.job))
 				som += list(serialized)
 				continue

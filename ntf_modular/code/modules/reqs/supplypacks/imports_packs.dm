@@ -18,40 +18,65 @@
 	contains = list(/obj/item/mortal_shell/smoke/neuro, /obj/item/mortal_shell/smoke/neuro)
 	cost = 15
 
+/datum/supply_packs/explosives/mortar_ammo_razor
+	name = "T-50S mortar razorburn shell (x2)"
+	contains = list(/obj/item/mortal_shell/razorburn, /obj/item/mortal_shell/razorburn)
+	cost = 20
+
+/datum/supply_packs/explosives/mortar_ammo_metal
+	name = "T-50S mortar metal foam shell (x2)"
+	contains = list(/obj/item/mortal_shell/metalfoam, /obj/item/mortal_shell/metalfoam)
+	cost = 20
+
+/datum/supply_packs/explosives/mlrs_rockets_neuro
+	name = "TA-40L Neurotoxin MLRS Rocket Pack (x16)"
+	contains = list(/obj/item/storage/box/mlrs_rockets/neuro)
+	cost = 100
+
+/datum/supply_packs/explosives/mlrs_rockets_aphro
+	name = "TA-40L Aphrotoxin MLRS Rocket Pack (x16)"
+	contains = list(/obj/item/storage/box/mlrs_rockets/aphro)
+	cost = 100
+
+/datum/supply_packs/explosives/mlrs_rockets_sleep
+	name = "TA-40L Knock-Out MLRS Rocket Pack (x16)"
+	contains = list(/obj/item/storage/box/mlrs_rockets/sleep)
+	cost = 100
+
 /datum/supply_packs/imports/halterex
-	name = "NT Halter extended mag crate (x4)"
-	contains = list(/obj/item/ammo_magazine/rifle/nt_halter/extended, /obj/item/ammo_magazine/rifle/nt_halter/extended, /obj/item/ammo_magazine/rifle/nt_halter/extended, /obj/item/ammo_magazine/rifle/nt_halter/extended)
+	name = "NT Halter extended mag (x1)"
+	contains = list(/obj/item/ammo_magazine/rifle/nt_halter/extended)
 	cost = 5
 
 /datum/supply_packs/imports/halterdrum
-	name = "NT Halter drum mag crate (x4)"
-	contains = list(/obj/item/ammo_magazine/rifle/nt_halter/drum, /obj/item/ammo_magazine/rifle/nt_halter/drum, /obj/item/ammo_magazine/rifle/nt_halter/drum, /obj/item/ammo_magazine/rifle/nt_halter/drum)
+	name = "NT Halter drum mag (x1)"
+	contains = list(/obj/item/ammo_magazine/rifle/nt_halter/drum)
 	cost = 15
 
 /datum/supply_packs/imports/halterexlaser
-	name = "NT Halter extended laser mag crate (x4)"
-	contains = list(/obj/item/ammo_magazine/rifle/nt_halter/laser/extended, /obj/item/ammo_magazine/rifle/nt_halter/laser/extended, /obj/item/ammo_magazine/rifle/nt_halter/laser/extended, /obj/item/ammo_magazine/rifle/nt_halter/laser/extended)
-	cost = 10
+	name = "NT Halter extended laser mag (x1)"
+	contains = list(/obj/item/ammo_magazine/rifle/nt_halter/laser/extended)
+	cost = 5
 
 /datum/supply_packs/imports/halterdrumlaser
-	name = "NT Halter drum laser mag crate (x4)"
-	contains = list(/obj/item/ammo_magazine/rifle/nt_halter/laser/drum, /obj/item/ammo_magazine/rifle/nt_halter/laser/drum, /obj/item/ammo_magazine/rifle/nt_halter/laser/drum, /obj/item/ammo_magazine/rifle/nt_halter/laser/drum)
-	cost = 20
+	name = "NT Halter drum laser mag (x1)"
+	contains = list(/obj/item/ammo_magazine/rifle/nt_halter/laser/drum)
+	cost = 15
 
 /datum/supply_packs/imports/haltercharged
-	name = "NT Halter charged mag crate (x2)"
-	contains = list(/obj/item/ammo_magazine/rifle/nt_halter/charged, /obj/item/ammo_magazine/rifle/nt_halter/charged)
-	cost = 200
+	name = "NT Halter charged mag (x1)"
+	contains = list(/obj/item/ammo_magazine/rifle/nt_halter/charged)
+	cost = 30
 
 /datum/supply_packs/imports/haltersmart
-	name = "NT Halter smart mag crate (x2)"
-	contains = list(/obj/item/ammo_magazine/rifle/nt_halter/smart, /obj/item/ammo_magazine/rifle/nt_halter/smart)
-	cost = 50
+	name = "NT Halter smart mag (x1)"
+	contains = list(/obj/item/ammo_magazine/rifle/nt_halter/smart)
+	cost = 5 //its pretty ass and small cap anyway.
 
 /datum/supply_packs/imports/halterfoxfire
-	name = "NT Halter foxfire mag crate (x2)"
-	contains = list(/obj/item/ammo_magazine/rifle/nt_halter/foxfire, /obj/item/ammo_magazine/rifle/nt_halter/foxfire)
-	cost = 50
+	name = "NT Halter foxfire mag (x1)"
+	contains = list(/obj/item/ammo_magazine/rifle/nt_halter/foxfire)
+	cost = 20
 
 /datum/supply_packs/imports/antienergyshield
 	name = "NTC Anti Energy Shield"
@@ -75,45 +100,119 @@
 	)
 	cost = 150
 
-/* save until we got faction specific req
+/datum/supply_packs/explosives/explosives_mines_at
+	name = "anti tank mines"
+	notes = "Contains 5 Anti Tank mines"
+	contains = list(/obj/item/storage/box/explosive_mines/antitank)
+	cost = 350
+
+/datum/supply_packs/clothing/dispenser/medical
+	name = "Automedical Dispenser"
+	contains = list(/obj/item/storage/backpack/dispenser/medic)
+	cost = 400
+
+/datum/supply_packs/engineering/stasispod
+	name = "Standard Stasis Pod"
+	contains = list(/obj/structure/bed/chair/stasis)
+	cost = 25
+
+/datum/supply_packs/engineering/stasispod/dark
+	name = "Dark Stasis Pod"
+	contains = list(/obj/structure/bed/chair/stasis/dark)
+	cost = 25
+
+/datum/supply_packs/engineering/stasispod/pilot
+	name = "Pilot Stasis Pod"
+	contains = list(/obj/structure/bed/chair/stasis/pilot)
+	cost = 25
+
+/datum/supply_packs/engineering/stasispod/captain
+	name = "Command Stasis Pod"
+	contains = list(/obj/structure/bed/chair/stasis/captain)
+	cost = 25
+
+/datum/supply_packs/engineering/stasispod/sec
+	name = "Security Stasis Pod"
+	contains = list(/obj/structure/bed/chair/stasis/sec)
+	cost = 25
+
+/datum/supply_packs/engineering/stasispod/med
+	name = "Medical Stasis Pod"
+	contains = list(/obj/structure/bed/chair/stasis/med)
+	cost = 25
+
+/datum/supply_packs/engineering/stasispod/explo
+	name = "Explorer Stasis Pod"
+	contains = list(/obj/structure/bed/chair/stasis/explo)
+	cost = 25
+
+/datum/supply_packs/engineering/stasispod/engi
+	name = "Engineering Stasis Pod"
+	contains = list(/obj/structure/bed/chair/stasis/engi)
+	cost = 25
+
+/datum/supply_packs/engineering/stasispod/indus
+	name = "Industrial Stasis Pod"
+	contains = list(/obj/structure/bed/chair/stasis/indust)
+	cost = 25
+
+/datum/supply_packs/engineering/stasispod/red
+	name = "Red Stasis Pod"
+	contains = list(/obj/structure/bed/chair/stasis/red)
+	cost = 25
+
+
+//faction specific things below here.
 /datum/supply_packs/imports/unity
 	name = "NT105 Unity Revolver"
 	contains = list(/obj/item/weapon/gun/pistol/xmdivider/ntc)
+	faction_lock = list(FACTION_TERRAGOV)
 	cost = 100
 
 /datum/supply_packs/imports/divider
 	name = "CC/104 Divider Revolver"
 	contains = list(/obj/item/weapon/gun/pistol/xmdivider)
+	faction_lock = list(FACTION_VSD)
 	cost = 100
 
-/datum/supply_packs/imports/divider
+/datum/supply_packs/imports/divider_ammo_incendiary
 	name = "CC/104 Divider Revolver incendiary Ammo"
 	contains = list(/obj/item/ammo_magazine/pistol/xmdivider)
+	faction_lock = list(FACTION_VSD)
 	cost = 3
 
-/datum/supply_packs/imports/divider
+/datum/supply_packs/imports/divider_ammo_ap
 	name = "CC/104 Divider Revolver Armor Piercing Ammo"
 	contains = list(/obj/item/ammo_magazine/pistol/xmdivider/ap)
+	faction_lock = list(FACTION_VSD)
 	cost = 3
 
 /datum/supply_packs/imports/g22_tranq
 	name = "P-22 Custom Tranq Pistol"
 	contains = list(/obj/item/weapon/gun/pistol/g22/tranq)
+	faction_lock = list(FACTION_TERRAGOV)
 	cost = 200
 
 /datum/supply_packs/imports/g22_tranq_ammo
 	name = "P-22 Custom Pistol Tranq Magazine"
 	contains = list(/obj/item/ammo_magazine/pistol/g22tranq)
+	faction_lock = list(FACTION_TERRAGOV)
 	cost = 3
 
 /datum/supply_packs/imports/moonbeam
 	name = "NTC 'Moonbeam' tranq sniper rifle"
-	contains = list(/obj/item/weapon/gun/rifle/chambered/nonlethal)
+	contains = list(/obj/item/weapon/gun/rifle/chambered/nonlethal/fitted)
+	faction_lock = list(FACTION_TERRAGOV)
 	cost = 400
 
-/datum/supply_packs/imports/g22_tranq_ammo
-	name = "P-22 Custom Pistol Tranq Magazine"
+/datum/supply_packs/imports/moonbeam_ammo
+	name = "Moonbeam Tranq Magazine"
 	contains = list(/obj/item/ammo_magazine/rifle/chamberedrifle/tranq)
+	faction_lock = list(FACTION_TERRAGOV)
 	cost = 5
 
-*/
+/datum/supply_packs/medical/carpotoxin
+	name = "Carpotoxin Bottle"
+	contains = list(/obj/item/reagent_containers/glass/bottle/carpotoxin)
+	faction_lock = list(FACTION_TERRAGOV) //novamed
+	cost = 400

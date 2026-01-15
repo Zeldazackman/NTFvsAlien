@@ -10,7 +10,8 @@
 		"Sterling Combat Robot" = 'icons/mob/species/robot/glasses_bravada.dmi',
 		"Chilvaris Combat Robot" = 'icons/mob/species/robot/glasses_charlit.dmi',
 		"Hammerhead Combat Robot" = 'icons/mob/species/robot/glasses_alpharii.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/glasses_deltad.dmi')
+		"Ratcher Combat Robot" = 'icons/mob/species/robot/glasses_deltad.dmi',
+		"Synskin Combat Robot" = 'icons/mob/species/robot/glasses.dmi')
 	icon_state = "night"
 	worn_icon_state = "glasses"
 	lighting_cutoff = LIGHTING_CUTOFF_MEDIUM
@@ -69,6 +70,26 @@
 	actions_types = list(/datum/action/item_action/toggle)
 	vision_flags = SEE_TURFS
 
+/obj/item/clothing/glasses/night/m56_goggles/activate(mob/user)
+	. = ..()
+	if(!user)
+		return
+	if(active)
+		SEND_SIGNAL(user, COMSIG_KTLD_ACTIVATED, src)
+		RegisterSignal(user, COMSIG_ITEM_ZOOM, PROC_REF(activate))
+	else
+		UnregisterSignal(user, COMSIG_ITEM_ZOOM)
+
+/obj/item/clothing/glasses/night/m56_goggles/equipped(mob/user, slot)
+	. = ..()
+	if(!active)
+		return
+	RegisterSignal(user, COMSIG_ITEM_ZOOM, PROC_REF(activate))
+
+/obj/item/clothing/glasses/night/m56_goggles/unequipped(mob/unequipper, slot)
+	. = ..()
+	UnregisterSignal(unequipper, COMSIG_ITEM_ZOOM)
+
 /obj/item/clothing/glasses/night/sunglasses
 	name = "\improper KTLD sunglasses"
 	desc = "A pair of designer sunglasses. This pair has been fitted with a KTLD head mounted sight."
@@ -95,7 +116,8 @@
 		"Sterling Combat Robot" = 'icons/mob/species/robot/glasses_bravada.dmi',
 		"Chilvaris Combat Robot" = 'icons/mob/species/robot/glasses_charlit.dmi',
 		"Hammerhead Combat Robot" = 'icons/mob/species/robot/glasses_alpharii.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/glasses_deltad.dmi')
+		"Ratcher Combat Robot" = 'icons/mob/species/robot/glasses_deltad.dmi',
+		"Synskin Combat Robot" = 'icons/mob/species/robot/glasses.dmi')
 	equip_slot_flags = ITEM_SLOT_EYES
 	goggles = TRUE
 
