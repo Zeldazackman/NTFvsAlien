@@ -102,7 +102,7 @@
 
 /obj/item/attachable/motiondetector/equipped(mob/user, slot)
 	. = ..()
-	if(!ishandslot(slot) && slot != (SLOT_BELT|SLOT_S_STORE|SLOT_R_STORE|SLOT_L_STORE))
+	if(!ishandslot(slot) && slot != SLOT_BELT && slot != SLOT_S_STORE && slot != SLOT_R_STORE && slot != SLOT_L_STORE)
 		clean_operator()
 
 /obj/item/attachable/motiondetector/removed_from_inventory(mob/user)

@@ -1373,11 +1373,13 @@
 		/obj/item/attachable/stock/sgstock,
 		/obj/item/attachable/sgbarrel,
 		/obj/item/attachable/shoulder_mount,
+		/obj/item/attachable/motiondetector/advanced,
+		/obj/item/attachable/motiondetector/advanced/pocket,
 	)
 
 	gun_features_flags = GUN_AMMO_COUNTER|GUN_WIELDED_FIRING_ONLY|GUN_IFF|GUN_SMOKE_PARTICLES
 	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC)
-	starting_attachment_types = list(/obj/item/attachable/stock/sgstock, /obj/item/attachable/sgbarrel)
+	starting_attachment_types = list(/obj/item/attachable/stock/sgstock, /obj/item/attachable/sgbarrel, /obj/item/attachable/motiondetector/advanced)
 	gun_skill_category = SKILL_SMARTGUN //Uses SG skill for the penalties.
 	attachable_offset = list("muzzle_x" = 42, "muzzle_y" = 17,"rail_x" = 15, "rail_y" = 21, "under_x" = 24, "under_y" = 14, "stock_x" = 12, "stock_y" = 13)
 	fire_delay = 0.2 SECONDS
@@ -1391,13 +1393,13 @@
 	placed_overlay_iconstate = "smartgun"
 
 /obj/item/weapon/gun/rifle/standard_smartmachinegun/pmc
-	starting_attachment_types = list(/obj/item/attachable/stock/sgstock, /obj/item/attachable/sgbarrel, /obj/item/attachable/motiondetector, /obj/item/attachable/lasersight)
+	starting_attachment_types = list(/obj/item/attachable/stock/sgstock, /obj/item/attachable/sgbarrel, /obj/item/attachable/motiondetector/advanced, /obj/item/attachable/lasersight)
 
 /obj/item/weapon/gun/rifle/standard_smartmachinegun/deathsquad
 	starting_attachment_types = list(/obj/item/attachable/stock/sgstock, /obj/item/attachable/sgbarrel, /obj/item/attachable/magnetic_harness, /obj/item/attachable/lasersight)
 
 /obj/item/weapon/gun/rifle/standard_smartmachinegun/patrol
-	starting_attachment_types = list(/obj/item/attachable/stock/sgstock, /obj/item/attachable/sgbarrel, /obj/item/attachable/motiondetector, /obj/item/attachable/lasersight)
+	starting_attachment_types = list(/obj/item/attachable/stock/sgstock, /obj/item/attachable/sgbarrel, /obj/item/attachable/motiondetector/advanced, /obj/item/attachable/lasersight)
 
 /obj/item/weapon/gun/rifle/standard_smartmachinegun/basic
 	starting_attachment_types = list(/obj/item/attachable/stock/sgstock, /obj/item/attachable/sgbarrel, /obj/item/attachable/magnetic_harness, /obj/item/attachable/flashlight/under)
@@ -1436,13 +1438,15 @@
 		/obj/item/attachable/motiondetector,
 		/obj/item/attachable/buildasentry,
 		/obj/item/attachable/shoulder_mount,
+		/obj/item/attachable/motiondetector/advanced,
+		/obj/item/attachable/motiondetector/advanced/pocket,
 	)
 
 	gun_features_flags = GUN_AMMO_COUNTER|GUN_WIELDED_FIRING_ONLY|GUN_IFF|GUN_SMOKE_PARTICLES
 	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC)
 	gun_skill_category = SKILL_SMARTGUN //Uses SG skill for the penalties.
 	attachable_offset = list("muzzle_x" = 12, "muzzle_y" = 22, "rail_x" = 15, "rail_y" = 22, "under_x" = 28, "under_y" = 16, "stock_x" = 12, "stock_y" = 14)
-	starting_attachment_types = list(/obj/item/weapon/gun/rifle/standard_spottingrifle, /obj/item/attachable/stock/strstock)
+	starting_attachment_types = list(/obj/item/weapon/gun/rifle/standard_spottingrifle, /obj/item/attachable/stock/strstock, /obj/item/attachable/motiondetector/advanced)
 
 	fire_delay = 0.5 SECONDS
 	burst_amount = 0
@@ -1455,7 +1459,7 @@
 	placed_overlay_iconstate = "smartgun"
 
 /obj/item/weapon/gun/rifle/standard_smarttargetrifle/motion
-	starting_attachment_types = list(/obj/item/weapon/gun/rifle/standard_spottingrifle, /obj/item/attachable/stock/strstock, /obj/item/attachable/motiondetector)
+	starting_attachment_types = list(/obj/item/weapon/gun/rifle/standard_spottingrifle, /obj/item/attachable/stock/strstock, /obj/item/attachable/motiondetector/advanced)
 
 /obj/item/weapon/gun/rifle/standard_spottingrifle
 	name = "SG-153 spotting rifle"

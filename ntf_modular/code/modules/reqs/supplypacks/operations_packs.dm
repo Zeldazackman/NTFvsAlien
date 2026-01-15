@@ -39,3 +39,27 @@
 	name = "fulton extraction beacon"
 	contains = list(/obj/structure/fulton_extraction_point)
 	cost = 200
+
+/datum/supply_packs/operations/motion_tracker/advanced
+	name = "AC-2 tactical motion tracker"
+	contains = list(/obj/item/attachable/motiondetector/advanced)
+	cost = 500
+	faction_lock = list(FACTION_TERRAGOV) //archercorp
+
+/datum/supply_packs/operations/motion_tracker/advanced/pocket
+	name = "AC-2M pocket tactical motion tracker"
+	contains = list(/obj/item/attachable/motiondetector/advanced/pocket)
+	cost = 300
+	//no lock, its sold.
+
+/datum/supply_packs/operations/motion_tracker/advanced/covert
+	name = "NTAC covert motion tracker"
+	contains = list(/obj/item/attachable/motiondetector/advanced/covert)
+	cost = 700
+	faction_lock = list(FACTION_TERRAGOV)
+
+/datum/supply_packs/operations/motion_tracker/advanced/pocket/covert
+	name = "NTACM covert pocket motion tracker"
+	contains = list(/obj/item/attachable/motiondetector/advanced/pocket/covert)
+	cost = 500
+	faction_lock = list(FACTION_TERRAGOV)
