@@ -12,7 +12,7 @@
 	equip_slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_SUITSTORE
 	w_class = WEIGHT_CLASS_NORMAL
 	wield_delay_mod = 0.2 SECONDS
-	pixel_shift_y = 0
+	pixel_shift_y = 20
 	var/ping_count = 0
 	var/ping_overlay
 	var/quiet = FALSE
