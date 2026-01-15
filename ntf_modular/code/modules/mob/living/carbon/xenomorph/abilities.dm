@@ -703,7 +703,7 @@
 			to_chat(owner, span_xenodanger("Our target must be closer!"))
 		return FALSE
 
-	if(!check_path(owner, A, PASS_LOW_STRUCTURE|PASS_MOB|PASS_THROW|PASS_PROJECTILE|PASS_WALKOVER|PASS_TANK))
+	if(get_turf(A) != check_path(owner, A, PASS_LOW_STRUCTURE|PASS_MOB|PASS_THROW|PASS_PROJECTILE|PASS_WALKOVER|PASS_TANK))
 		if(!silent)
 			to_chat(owner, span_xenodanger("Path to target blocked!"))
 		return FALSE
@@ -1021,10 +1021,6 @@
 		return FALSE
 	if(!(get_dist(owner,A) <= range))
 		return FALSE
-
-	if(!check_path(owner, A, PASS_LOW_STRUCTURE|PASS_MOB|PASS_THROW|PASS_PROJECTILE|PASS_WALKOVER|PASS_TANK))
-		return FALSE
-
 	if(!can_use_ability(A, override_flags = ABILITY_IGNORE_SELECTED_ABILITY))
 		return FALSE
 	if(A.get_xeno_hivenumber() == owner.get_xeno_hivenumber())
