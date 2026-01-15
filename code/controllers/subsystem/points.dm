@@ -85,13 +85,10 @@ SUBSYSTEM_DEF(points)
 ///Add amount of strategic psy points to the selected hive only if the gamemode support psypoints
 /datum/controller/subsystem/points/proc/add_strategic_psy_points(hivenumber, amount)
 	if(!CHECK_BITFIELD(SSticker.mode.round_type_flags, MODE_PSY_POINTS))
-		//convert to amount/190 job points on average, or amount/1520 burrowed larva
-		var/job_points_converted = floor(amount/190)
-		amount -= job_points_converted*190
-		if(prob(amount/1.9))
-			job_points_converted += 1
-		var/datum/job/xenomorph/xeno_job = GLOB.hivenumber_to_job_type[hivenumber]
-		xeno_job.add_job_points(job_points_converted)
+		//convert to amount/190 job points, or amount/1520 burrowed larva.
+		//Fractional job points are already used in some places so this should be fine
+		var/datum/job/xenomorph/xeno_job = SSjob.GetJobType(GLOB.hivenumber_to_job_type[hivenumber])
+		xeno_job.add_job_points(amount/190)
 		return
 	xeno_strategic_points_by_hive[hivenumber] += amount
 
@@ -104,13 +101,10 @@ SUBSYSTEM_DEF(points)
 /// Add amount of biomass to the selected hive only if the gamemode support biomass.
 /datum/controller/subsystem/points/proc/add_biomass_points(hivenumber, amount)
 	if(!CHECK_BITFIELD(SSticker.mode.round_type_flags, MODE_BIOMASS_POINTS))
-		//convert to amount/190 job points on average, or amount/1520 burrowed larva
-		var/job_points_converted = floor(amount/190)
-		amount -= job_points_converted*190
-		if(prob(amount/1.9))
-			job_points_converted += 1
-		var/datum/job/xenomorph/xeno_job = GLOB.hivenumber_to_job_type[hivenumber]
-		xeno_job.add_job_points(job_points_converted)
+		//convert to amount/190 job points, or amount/1520 burrowed larva.
+		//Fractional job points are already used in some places so this should be fine
+		var/datum/job/xenomorph/xeno_job = SSjob.GetJobType(GLOB.hivenumber_to_job_type[hivenumber])
+		xeno_job.add_job_points(amount/190)
 		return
 	xeno_biomass_points_by_hive[hivenumber] = min(xeno_biomass_points_by_hive[hivenumber] + amount, MUTATION_BIOMASS_MAXIMUM)
 
