@@ -99,7 +99,7 @@
 
 	var/datum/job/xenomorph/xeno_job = SSjob.GetJobType(GLOB.hivenumber_to_job_type[hivenumber])
 	.["hive_larva_current"] = xeno_job.job_points
-	.["hive_larva_rate"] = SSsilo.current_larva_spawn_rate[hivenumber]
+	.["hive_larva_rate"] = SSsilo.current_larva_spawn_rate[hivenumber] || 0
 	.["hive_larva_burrowed"] = xeno_job.total_positions - xeno_job.current_positions
 	.["hive_larva_debt"] = xeno_job.free_xeno_at_start
 
