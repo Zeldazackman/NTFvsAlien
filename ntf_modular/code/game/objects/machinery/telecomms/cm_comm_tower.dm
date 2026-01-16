@@ -1,5 +1,5 @@
 /// The time when xenos can start taking over comm towers
-#define XENO_COMM_ACQUISITION_TIME (1 MINUTES)
+#define XENO_COMM_ACQUISITION_TIME (55 MINUTES)
 /// The time until you can re-corrupt a comms relay after the last pylon was destroyed
 #define XENO_PYLON_DESTRUCTION_DELAY (5 MINUTES)
 
