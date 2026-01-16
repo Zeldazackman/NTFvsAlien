@@ -432,7 +432,7 @@
 		addtimer(CALLBACK(src, PROC_REF(handle_xeno_acquisition), weeded_turf), (COOLDOWN_TIMELEFT(src, corruption_delay)), TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_NO_HASH_WAIT)
 		return
 
-	attached_pylon = new /obj/structure/xeno/recovery_pylon(loc, theweed.get_xeno_hivenumber())
+	attached_pylon = new /obj/structure/xeno/recovery_pylon(loc, theweed.get_xeno_hivenumber(), 2)
 	new /obj/alien/weeds/node/resting(loc, theweed.get_xeno_hivenumber())
 
 	RegisterSignal(attached_pylon, COMSIG_PREQDELETED, PROC_REF(uncorrupt))
