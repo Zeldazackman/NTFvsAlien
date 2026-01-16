@@ -84,7 +84,7 @@
 
 /obj/item/clothing/head/head_sack/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/clothing_tint, TINT_BLIND)
+	AddComponent(/datum/component/clothing_tint, tint_value)
 
 /obj/item/clothing/head/head_sack/light
 	name = "light head sack"
