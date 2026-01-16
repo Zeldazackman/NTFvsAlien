@@ -178,6 +178,8 @@
 		to_chat(user, span_warning("\The [src.name] needs repairs to be turned back on!"))
 		return
 	toggled = !toggled
+	if(user)
+		user.visible_message("[user] turns [src] [toggled  ? "on" : "off"].", "You turn [src] [toggled  ? "on" : "off"].")
 	update_state()
 
 /obj/machinery/telecomms/relay/preset/tower/update_icon_state()
@@ -316,6 +318,7 @@
 
 /obj/machinery/telecomms/relay/preset/tower/mapcomms/examine(mob/user)
 	. = ..()
+	. += span_notice("It is currently [toggled ? "on" : "off"].")
 	if(isxeno(user) && !COOLDOWN_FINISHED(src, corruption_delay))
 		. += span_xenonotice("Corruption cooldown: [(COOLDOWN_TIMELEFT(src, corruption_delay) / (1 SECONDS))] seconds.")
 
