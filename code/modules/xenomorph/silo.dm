@@ -164,7 +164,7 @@
 
 		victim.despawn() //basically gore cryo
 
-		shake(4 SECONDS)
+		shake(duration = 4 SECONDS)
 
 		var/datum/job/xeno_job = SSjob.GetJobType(GLOB.hivenumber_to_job_type[hivenumber])
 		xeno_job.add_job_points(4.5) //4.5 corpses per burrowed; 8 points per larva
@@ -190,7 +190,7 @@
 
 			larba.ghostize(FALSE, FALSE, TRUE)
 			larba.burrow()
-			shake(4 SECONDS)
+			shake(duration = 4 SECONDS)
 
 /// Make the silo shake
 /obj/structure/xeno/silo/proc/shake(duration)

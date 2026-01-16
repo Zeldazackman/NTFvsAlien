@@ -17,6 +17,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	var/obj/structure/transmitter/outbound_call
 	var/obj/structure/transmitter/inbound_call
 	var/pickup_sound = "rtb_handset"
+	var/putdown_sound = "rtb_handset"
 
 	var/next_ring = 0
 
@@ -41,6 +42,8 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	var/datum/looping_sound/telephone/ring/outring_loop
 	var/call_sound = 'ntf_modular/sound/machines/telephone/fnaf3_phonecall.ogg'
 	var/call_sound_length = 2 SECONDS
+	//since antenna module etc does no apply for close enough.
+	var/bypass_tgui_range = FALSE
 
 /datum/looping_sound/telephone/ring
 	start_sound = 'ntf_modular/sound/machines/telephone/dial.ogg'
@@ -147,8 +150,9 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 /obj/structure/transmitter/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
-	if(.)
-		return
+	if(!bypass_tgui_range)
+		if(.)
+			return
 
 	if(TRANSMITTER_UNAVAILABLE(src))
 		return
@@ -276,7 +280,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "PhoneMenu", phone_id)
-		ui.open()
+		ui.open(bypass_tgui_range)
 
 /obj/structure/transmitter/proc/set_tether_holder(atom/A)
 	tether_holder = A
@@ -378,7 +382,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	if(ismob(attached_to.loc))
 		var/mob/M = attached_to.loc
 		M.drop_held_item(attached_to)
-		playsound(get_turf(M), pickup_sound, 100, FALSE, 7)
+		playsound(get_turf(M), putdown_sound, 100, FALSE, 7)
 
 	attached_to.forceMove(src)
 	reset_call()
@@ -605,6 +609,9 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 /obj/item/phone/functional/dropped(mob/user)
 	. = ..()
 	set_raised(FALSE, user)
+	if(isitem(attached_to.loc)) //anything like antenna module helmets etc non structure transmitters
+		if(attached_to != loc)
+			attached_to.recall_phone()
 
 /obj/item/phone/functional/on_enter_storage(obj/item/storage/S)
 	. = ..()

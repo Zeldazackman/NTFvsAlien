@@ -1,5 +1,5 @@
 /// The time when xenos can start taking over comm towers
-#define XENO_COMM_ACQUISITION_TIME (55 MINUTES)
+#define XENO_COMM_ACQUISITION_TIME (1 MINUTES)
 /// The time until you can re-corrupt a comms relay after the last pylon was destroyed
 #define XENO_PYLON_DESTRUCTION_DELAY (5 MINUTES)
 
@@ -40,6 +40,10 @@
 /obj/item/circuitboard/machine/telecomms/relay/tower/faction/kz
 	name = "\improper TC-4T Telecommunications KZ Circuit Board"
 	build_path = /obj/machinery/telecomms/relay/preset/tower/faction/kz
+
+/obj/item/storage/box/crate/loot/telecomm_tower_pack
+	name = "\improper Portable Factional Relay Pack"
+	desc = "A large case containing incredibly intricate, hard to replace equipment, everything needed to build your own telecommunications relay. Due to being designed for ease of building and portability, it lacks the power of usual relays found in colonies, therefore <b>it needs to be built outdoors.</b> Drag this sprite into you to open it up!\nNOTE: You cannot put items back inside this case."
 
 /obj/item/storage/box/crate/loot/telecomm_tower_pack/Initialize(mapload)
 	. = ..()
@@ -99,11 +103,9 @@
 /obj/machinery/telecomms/relay/preset/tower/Destroy()
 	GLOB.all_static_telecomms_towers -= src
 	//spill your shit cause those are not replacable.
-	for(var/obj/item/i in contents)
-		i.forceMove(loc)
-		i.throw_at(get_open_turf_in_dir(loc, pick(CARDINAL_ALL_DIRS)), pick(2,4))
-	new /obj/item/stack/sheet/metal(loc)
-	empulse(loc, 4,6,8,10)
+	deconstruct()
+	if(obj_integrity < 100) //so not on deconstruct if not damaged
+		empulse(loc, 4,6,8,10)
 	. = ..()
 
 // doesn't need power, instead uses health
@@ -239,8 +241,20 @@
 	freq_listening =  NTC_SIDED_FREQS
 	var/faction_shorthand = "NTC"
 
+/obj/machinery/telecomms/relay/preset/tower/faction/screwdriver_act(mob/living/user, obj/item/I)
+	. = ..()
+	deconstruct(TRUE)
+
+/obj/machinery/telecomms/relay/preset/tower/faction/on_construction()
+	var/area/thearea = get_area(src)
+	if(thearea.ceiling > CEILING_NONE)
+		balloon_alert_to_viewers("Needs no ceiling over!", vision_distance = 5)
+		visible_message(span_warning("[src] can not be built under a roof, it's not strong enough."))
+		deconstruct(TRUE)
+	. = ..()
+
 /obj/machinery/telecomms/relay/preset/tower/faction/som
-	freq_listening = list(FREQ_SOM, FREQ_COMMAND_SOM, FREQ_MEDICAL_SOM, FREQ_ENGINEERING_SOM, FREQ_ZULU, FREQ_YANKEE, FREQ_XRAY, FREQ_WHISKEY)
+	freq_listening = SOM_FREQS
 	faction_shorthand = "SOM"
 
 /obj/machinery/telecomms/relay/preset/tower/faction/kz

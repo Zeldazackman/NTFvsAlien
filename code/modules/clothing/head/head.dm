@@ -14,6 +14,13 @@
 	attachments_allowed = list(/obj/item/armor_module/armor/badge)
 	armor_features_flags = ARMOR_NO_DECAP
 	var/anti_hug = 0
+	attachments_by_slot = list(
+		ATTACHMENT_SLOT_STORAGE,
+	)
+	attachments_allowed = list(
+		/obj/item/armor_module/storage/helmet,
+	)
+	starting_attachments = list(/obj/item/armor_module/storage/helmet)
 
 /obj/item/clothing/head/update_clothing_icon()
 	if (ismob(loc))

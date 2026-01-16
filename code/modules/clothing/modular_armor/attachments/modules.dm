@@ -808,7 +808,7 @@
 
 /obj/item/armor_module/module/antenna
 	name = "\improper HM-9 antenna helmet module"
-	desc = "Designed for mounting on a modular helmet. This module is able to shield against the interference of caves, allowing for normal messaging in shallow caves, and only minor interference when deep. Made by TransCO."
+	desc = "Designed for mounting on a modular helmet. This module is able to shield against the interference of caves, allowing for normal messaging in shallow caves, and only minor interference when deep. Made by TransCO. RCLICK to toggle beacon/phone mode."
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "antenna_head"
 	worn_icon_state = "antenna_head_a"
@@ -839,15 +839,6 @@
 	if(comms_setup != COMMS_SETUP)
 		return
 	inplace_interference[1] = max(0, inplace_interference[1] - 1)
-
-/obj/item/armor_module/module/antenna/activate(mob/living/user)
-	if(comms_setup == COMMS_SETTING)
-		to_chat(user, span_notice("Your Antenna module is still in the process of starting up!"))
-		return
-	if(comms_setup == COMMS_SETUP)
-		var/turf/location = get_turf(user)
-		user.show_message(span_notice("The [src] beeps and states, \"Uplink data: LONGITUDE [location.x]. LATITUDE [location.y]. Area ID: [get_area(src)]\""), EMOTE_TYPE_AUDIBLE, span_notice("The [src] vibrates but you can not hear it!"))
-		return
 
 ///Begins the startup sequence.
 /obj/item/armor_module/module/antenna/proc/start_sync(mob/living/user)
