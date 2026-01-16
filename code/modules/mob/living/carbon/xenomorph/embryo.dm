@@ -16,8 +16,7 @@
 	var/boost_timer = 0
 	var/hivenumber = XENO_HIVE_NORMAL
 	var/admin = FALSE
-	var/emerge_target = HOLE_MOUTH
-	var/emerge_target_flavor = null
+	var/target_hole = HOLE_MOUTH
 	var/mob/living/carbon/xenomorph/larva/new_xeno = null
 	var/psypoint_reward = 0
 	var/biomass_reward = 0
@@ -111,7 +110,7 @@
 		return FALSE
 
 	if(ishuman(affected_mob) && (SSticker.mode.round_type_flags & MODE_FREE_LARVABURST))
-		if(affected_mob.getCloneLoss() >= 40) //I guess they remain dormant
+		if(affected_mob.getCloneLoss() >= 30) //I guess they remain dormant
 			return FALSE
 
 	hive_target_bonus = hive_target_bonus || HAS_TRAIT(affected_mob, TRAIT_HIVE_TARGET)
@@ -232,13 +231,13 @@
 		return
 
 	to_chat(src, span_danger("We start slithering out of [victim]!"))
-	if(!embryo || embryo.emerge_target == HOLE_MOUTH)
+	if(!embryo || embryo.target_hole == HOLE_MOUTH)
 		playsound(victim, 'modular_skyrat/sound/weapons/gagging.ogg', 15, TRUE)
 	else
 		victim.emote_burstscream()
 	victim.Paralyze(15 SECONDS)
 	victim.visible_message("<span class='danger'>\The [victim] starts shaking uncontrollably!</span>", \
-								"<span class='danger'>You feel something wiggling in your [embryo?.emerge_target_flavor]!</span>")
+								"<span class='danger'>You feel something wiggling in your [embryo?.target_hole]!</span>")
 	victim.jitter(150)
 
 	burst_timer = addtimer(CALLBACK(src, PROC_REF(burst), victim, embryo), 3 SECONDS, TIMER_STOPPABLE)
@@ -256,7 +255,7 @@
 	else
 		forceMove(get_turf(victim)) //moved to the turf directly so we don't get stuck inside a cryopod or another mob container.
 	playsound(src, pick('sound/voice/alien/chestburst.ogg','sound/voice/alien/chestburst2.ogg'), 10)
-	victim.visible_message("<span class='danger'>The Larva forces its way out of [victim]'s [embryo?.emerge_target_flavor]!</span>")
+	victim.visible_message("<span class='danger'>The Larva forces its way out of [victim]'s [embryo?.target_hole]!</span>")
 	GLOB.round_statistics.total_larva_burst++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "total_larva_burst")
 	if(istype(embryo))
@@ -298,8 +297,8 @@
 		victim.take_overall_damage(140, BRUTE, MELEE)
 		victim.take_overall_damage(20, BURN, MELEE)
 	if(ishuman(victim) && !(SSticker.mode.round_type_flags & MODE_FREE_LARVABURST))
-		if(victim.getCloneLoss() < 40)
-			victim.take_overall_damage(60, CLONE, NONE)
+		if(victim.getCloneLoss() < 30)
+			victim.take_overall_damage(45, CLONE, NONE)
 			victim.visible_message(span_warning("[victim]'s body and genitals are too devastated from this to perform another larva burst without treatment."))
 
 	if(((locate(/obj/structure/bed/nest) in loc) || loc_weeds_type) && !mind)
