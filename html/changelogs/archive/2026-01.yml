@@ -40,3 +40,7 @@
   - balance: All nonlethals no longer drain both plasma and stun bar, only some target
       both.
   - balance: Stun bar regeneration penalty was removed when low on health/plasma.
+2026-01-16:
+  Lefunny:
+  - balance: Dragon speed from 0.1 to 0.3
+  - balance: Dragon slowdown during firebreath reduced from 8 to 2

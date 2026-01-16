@@ -1,5 +1,0 @@
-author: "Lefunny"
-delete-after: True
-changes:
-  - balance: "Dragon speed from 0.1 to 0.3"
-  - balance: "Dragon slowdown during firebreath reduced from 8 to 2"
