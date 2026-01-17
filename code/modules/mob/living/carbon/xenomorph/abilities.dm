@@ -737,9 +737,11 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 
 
 /datum/action/ability/activable/xeno/spray_acid/on_cooldown_finish()
+	. = ..()
+	if(!owner)
+		return
 	playsound(owner.loc, 'sound/voice/alien/drool1.ogg', 50, 1)
 	to_chat(owner, span_xenodanger("We feel our acid glands refill. We can spray acid again."))
-	return ..()
 
 /datum/action/ability/activable/xeno/xeno_spit
 	name = "Xeno Spit"
