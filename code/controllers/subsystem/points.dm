@@ -85,11 +85,11 @@ SUBSYSTEM_DEF(points)
 ///Add amount of strategic psy points to the selected hive only if the gamemode support psypoints
 /datum/controller/subsystem/points/proc/add_strategic_psy_points(hivenumber, amount)
 	if(!CHECK_BITFIELD(SSticker.mode.round_type_flags, MODE_PSY_POINTS))
-		//convert to amount/190 job points, or amount/1520 burrowed larva.
+		//convert to amount/300 job points, or amount/2400 burrowed larva.
 		//Fractional job points are already used in some places so this should be fine
 		var/datum/job/xenomorph/xeno_job = SSjob.GetJobType(GLOB.hivenumber_to_job_type[hivenumber])
-		xeno_job.add_job_points(amount/190)
-		GLOB.round_statistics.larva_from_converted_psypoints += amount/(190*xeno_job.job_points_needed)
+		xeno_job.add_job_points(amount/300)
+		GLOB.round_statistics.larva_from_converted_psypoints += amount/(300*xeno_job.job_points_needed)
 		return
 	xeno_strategic_points_by_hive[hivenumber] += amount
 
