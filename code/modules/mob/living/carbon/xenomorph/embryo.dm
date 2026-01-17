@@ -21,6 +21,7 @@
 	var/psypoint_reward = 0
 	var/biomass_reward = 0
 	var/hive_target_bonus = FALSE
+	var/first_reward_claimed = FALSE
 
 
 /obj/item/alien_embryo/Initialize(mapload)
@@ -137,6 +138,9 @@
 
 	psypoint_reward += current_psypoint_reward * 2
 	biomass_reward += current_psypoint_reward * 2
+	if(!first_reward_claimed)
+		first_reward_claimed = TRUE
+		GLOB.round_statistics.total_embryos_rewarding++
 
 	if(stage <= 4)
 		counter += 2.5 //Free burst time in ~7/8 min.
@@ -259,8 +263,8 @@
 	GLOB.round_statistics.total_larva_burst++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "total_larva_burst")
 	if(istype(embryo))
-		GLOB.round_statistics.strategic_psypoints_from_embryos += embryo.psypoint_reward
-		GLOB.round_statistics.biomass_from_embryos += embryo.biomass_reward
+		GLOB.round_statistics.strategic_psypoints_from_births += embryo.psypoint_reward
+		GLOB.round_statistics.biomass_from_births += embryo.biomass_reward
 		if(embryo.hive_target_bonus)
 			GLOB.round_statistics.strategic_psypoints_from_hive_target_rewards += embryo.psypoint_reward
 			GLOB.round_statistics.biomass_from_hive_target_rewards += embryo.biomass_reward
