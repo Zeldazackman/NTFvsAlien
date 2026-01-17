@@ -155,6 +155,7 @@
 
 /obj/item/weapon/energy/sword/ntc
 	name = "NTC Energy blade"
+	icon = 'ntf_modular/icons/obj/items/weapons/energy.dmi'
 	icon_state = "sword"
 	desc = "A NTC energy sword, it should cut through anything."
 	force_activated = 50
