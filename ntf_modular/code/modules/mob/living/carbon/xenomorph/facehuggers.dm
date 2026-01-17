@@ -41,7 +41,10 @@
 		wearer.visible_message(span_lovebold("[src] roughly slams it's [cock_flavor] into [wearer]'s [target_hole], a round bulge visibly sliding throug as it inserts an egg into [wearer]!"),
 		span_lovebold("[src] roughly thrusts it's [cock_flavor] into your [target_hole], a round bulge visibly sliding through as it inserts an egg into you!"),
 		span_notice("You hear squelching."))
-		implant_embryo(wearer, target_hole, 1, force_xenohive = hivenumber)
+		if(source && issamexenohive(source))
+			implant_embryo(wearer, target_hole, 1, source = source)
+		else
+			implant_embryo(wearer, target_hole, 1, force_xenohive = hivenumber)
 	else
 		wearer.visible_message(span_lovebold("[src]'s [cock_flavor] cums thick globs of acidic cum into [wearer]'s [target_hole]!"),
 		span_lovebold("[src]'s [cock_flavor] pumps thick globs of acidic cum into your [target_hole]!"),
