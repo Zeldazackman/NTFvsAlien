@@ -567,6 +567,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	worn_icon_state = "radiopack"
 	///Var for the window pop-up
 	var/datum/supply_ui/requests/supply_interface
+	storage_type = /datum/storage/backpack/no_delay
 
 /obj/item/storage/backpack/marine/radiopack/equipped(mob/user, slot)
 	. = ..()
