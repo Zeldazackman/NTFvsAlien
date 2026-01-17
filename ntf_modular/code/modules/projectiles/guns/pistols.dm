@@ -100,7 +100,7 @@
 /datum/ammo/bullet/pistol/tranq/weak/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
 	if(iscarbon(target_mob))
 		var/mob/living/carbon/carbon_victim = target_mob
-		carbon_victim.reagents.add_reagent(/datum/reagent/toxin/sleeptoxin, 1, no_overdose = TRUE)
+		carbon_victim.reagents.add_reagent(/datum/reagent/toxin/sleeptoxin, rand(3,5), no_overdose = TRUE)
 
 /obj/item/weapon/gun/pistol/g22/tranq
 	name = "\improper P-22 custom pistol"
