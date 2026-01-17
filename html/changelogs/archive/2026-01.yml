@@ -44,3 +44,17 @@
   Lefunny:
   - balance: Dragon speed from 0.1 to 0.3
   - balance: Dragon slowdown during firebreath reduced from 8 to 2
+2026-01-17:
+  Lumipharon:
+  - imageadd: improved welder sprites
+  - rscadd: Added NPC beacons, admin use only for now
+  - code_imp: Added a NPC controller component to slave NPCs to a given atom
+  Neocloudy:
+  - refactor: Subsystem initialization order has been refactored.
+  OrbisAnima:
+  - rscadd: Adds automatic color changing cat ears and tails to the clothing vendors
+      under the 'other' tab.
+  mudzbe:
+  - bugfix: Adjusts crash map AI nodes, so that zombies path to nuke discs better
+  - bugfix: Weeds always spawn in xeno valhalla
+  - qol: Add marine quickbuild to crash gamemodes
