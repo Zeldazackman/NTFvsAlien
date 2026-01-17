@@ -4,7 +4,9 @@
 	var/strategic_psypoints_from_psydrains = 0
 	var/strategic_psypoints_from_hive_target_rewards = 0
 	var/strategic_psypoints_from_embryos = 0
+	var/strategic_psypoints_from_births = 0
 	var/strategic_psypoints_from_intel = 0
+	var/total_embryos_rewarding = 0
 	var/larva_from_intel = 0
 	var/larva_from_converted_psypoints = 0
 	var/larva_from_converted_biomass = 0
@@ -14,6 +16,7 @@
 	var/biomass_from_psydrains = 0
 	var/biomass_from_hive_target_rewards = 0
 	var/biomass_from_embryos = 0
+	var/biomass_from_births = 0
 	var/cocoons = 0
 	var/psydrains = 0
 	var/hive_target_rewards = 0
