@@ -23,6 +23,14 @@
 	///the radio plugged into this pod
 	var/obj/item/radio/radio
 
+//keep facing south unless north
+/obj/structure/bed/chair/stasis/setDir(newdir)
+	if(dir == EAST)
+		setDir(SOUTH)
+	if(dir == WEST)
+		setDir(SOUTH)
+	return
+
 /obj/structure/bed/chair/stasis/dark
 	icon_state = "dark_cycler"
 

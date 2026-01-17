@@ -204,15 +204,6 @@
 /datum/greyscale_config/xenonaut/pilot
 	prefix = "pilot_"
 
-/datum/greyscale_config/xenonaut/bulletproof
-	prefix = "bulletproof_"
-
-/datum/greyscale_config/xenonaut/ablative
-	prefix = "ablative_"
-
-/datum/greyscale_config/xenonaut/bikini
-	prefix = "bikini_"
-
 /datum/greyscale_config/xenonaut/helm
 	json_config = 'code/datums/greyscale/json_configs/xenonaut_helm.json'
 	prefix = ""

@@ -12,6 +12,18 @@
 	soft_armor = list(MELEE = 35, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 40, BIO = 40, FIRE = 50, ACID = 40)
 	shows_bottom_genital = TRUE
 
+/datum/greyscale_config/xenonaut/bulletproof
+	icon_file = 'ntf_modular/icons/mob/modular/xenonauten.dmi'
+	prefix = "bulletproof_"
+
+/datum/greyscale_config/xenonaut/ablative
+	icon_file = 'ntf_modular/icons/mob/modular/xenonauten.dmi'
+	prefix = "ablative_"
+
+/datum/greyscale_config/xenonaut/bikini
+	icon_file = 'ntf_modular/icons/mob/modular/xenonauten.dmi'
+	prefix = "bikini_"
+
 /obj/item/clothing/suit/modular/xenonauten/light/bikini/som
 	name = "\improper SOM M-69 Bikini-pattern light armor"
 	desc = "An unusal armor made by the " + FACTION_SOM + ", apparently based on an NTC design. Extra-light bikini armor with modular attachments made to work in many enviroments. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
@@ -120,3 +132,22 @@
 	name = "\improper NTC ablative bikini armor"
 	desc = "A lightweight set of armor that excels in protecting the wearer against laser and energy attacks thanks to it's reflective plating, how does it work? don't ask."
 	greyscale_config = /datum/greyscale_config/xenonaut/bikini
+
+/obj/item/armor_module/module
+	var/invisible_toggle = FALSE
+
+/obj/item/armor_module/module/examine(mob/user)
+	. = ..()
+	. += span_notice("This can be toggled invisible using RCLICK, it's currently [invisible_toggle ? "invisible" : "visible"].")
+
+/obj/item/armor_module/module/RightClick(mob/user)
+	. = ..()
+	invisible_toggle = !invisible_toggle
+	if(invisible_toggle)
+		balloon_alert(user, "Invisible")
+		worn_icon_state = ""
+		variants_by_parent_type = list(/obj/item = "")
+	else
+		balloon_alert(user, "Visible")
+		worn_icon_state = initial(worn_icon_state)
+		variants_by_parent_type = initial(variants_by_parent_type)
