@@ -634,6 +634,10 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 		parts += "[GLOB.round_statistics.larva_from_siloing_body] larvas came from siloing bodies."
 	if(GLOB.round_statistics.larva_from_intel)
 		parts += "[GLOB.round_statistics.larva_from_intel] larvas came from intel disk rewards."
+	if(GLOB.round_statistics.larva_from_converted_psypoints)
+		parts += "[GLOB.round_statistics.larva_from_converted_psypoints] larvas came from converted psy points."
+	if(GLOB.round_statistics.larva_from_converted_biomass)
+		parts += "[GLOB.round_statistics.larva_from_converted_biomass] larvas came from converted biomass."
 	if(GLOB.round_statistics.points_from_ambrosia)
 		parts += "[GLOB.round_statistics.points_from_ambrosia] requisitions points gained from ambrosia."
 	if(GLOB.round_statistics.points_from_intel)

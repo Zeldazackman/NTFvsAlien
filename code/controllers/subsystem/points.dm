@@ -89,6 +89,7 @@ SUBSYSTEM_DEF(points)
 		//Fractional job points are already used in some places so this should be fine
 		var/datum/job/xenomorph/xeno_job = SSjob.GetJobType(GLOB.hivenumber_to_job_type[hivenumber])
 		xeno_job.add_job_points(amount/190)
+		GLOB.round_statistics.larva_from_converted_psypoints += amount/(190*xeno_job.job_points_needed)
 		return
 	xeno_strategic_points_by_hive[hivenumber] += amount
 
@@ -105,6 +106,7 @@ SUBSYSTEM_DEF(points)
 		//Fractional job points are already used in some places so this should be fine
 		var/datum/job/xenomorph/xeno_job = SSjob.GetJobType(GLOB.hivenumber_to_job_type[hivenumber])
 		xeno_job.add_job_points(amount/190)
+		GLOB.round_statistics.larva_from_converted_biomass += amount/(190*xeno_job.job_points_needed)
 		return
 	xeno_biomass_points_by_hive[hivenumber] = min(xeno_biomass_points_by_hive[hivenumber] + amount, MUTATION_BIOMASS_MAXIMUM)
 

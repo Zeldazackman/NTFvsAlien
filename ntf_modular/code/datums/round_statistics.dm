@@ -6,6 +6,8 @@
 	var/strategic_psypoints_from_embryos = 0
 	var/strategic_psypoints_from_intel = 0
 	var/larva_from_intel = 0
+	var/larva_from_converted_psypoints = 0
+	var/larva_from_converted_biomass = 0
 	var/generator_seconds = 0
 	var/biomass_from_cocoons = 0
 	var/biomass_from_psydrains = 0
