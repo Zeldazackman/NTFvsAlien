@@ -55,6 +55,7 @@
 	. = ..()
 	if(!.)
 		return
+	owner.drop_all_held_items()
 	ADD_TRAIT(owner, TRAIT_INCAPACITATED, TRAIT_STATUS_EFFECT(id))
 	ADD_TRAIT(owner, TRAIT_FLOORED, TRAIT_STATUS_EFFECT(id))
 
@@ -85,6 +86,7 @@
 	. = ..()
 	if(!.)
 		return
+	owner.drop_all_held_items()
 	ADD_TRAIT(owner, TRAIT_INCAPACITATED, TRAIT_STATUS_EFFECT(id))
 	ADD_TRAIT(owner, TRAIT_IMMOBILE, TRAIT_STATUS_EFFECT(id))
 	ADD_TRAIT(owner, TRAIT_FLOORED, TRAIT_STATUS_EFFECT(id))

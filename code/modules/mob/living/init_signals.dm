@@ -23,6 +23,7 @@
 	SIGNAL_HANDLER
 	if(stat < UNCONSCIOUS)
 		set_stat(UNCONSCIOUS)
+	drop_all_held_items()
 	last_unconscious = world.time
 
 ///Called when TRAIT_KNOCKEDOUT is removed from the mob.
@@ -48,6 +49,7 @@
 /mob/living/proc/on_fakedeath_trait_gain(datum/source)
 	SIGNAL_HANDLER
 	ADD_TRAIT(src, TRAIT_FLOORED, TRAIT_FAKEDEATH)
+	drop_all_held_items()
 
 ///Called when TRAIT_FAKEDEATH is removed from the mob.
 /mob/living/proc/on_fakedeath_trait_loss(datum/source)
