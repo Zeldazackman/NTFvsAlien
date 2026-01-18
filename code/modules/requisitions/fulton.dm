@@ -293,18 +293,21 @@
 
 	if(linked_extraction_point)
 		sleep(8 SECONDS) //Wait for the fulton animation to finish
-		movable_target.forceMove(get_turf(linked_extraction_point))
+		var/turf/droploc = get_turf(linked_extraction_point)
+		if(!droploc)
+			if(isliving(movable_target))
+				REMOVE_TRAIT(movable_target, TRAIT_IMMOBILE, type)
+			return
+		movable_target.forceMove(droploc)
 		if(ishuman(movable_target))
 			var/mob/living/carbon/human/movable_target_human = movable_target
 			movable_target_human.ImmobilizeNoChain(4 SECONDS)
-		var/turf/droploc = get_turf(linked_extraction_point)
 		playsound(droploc, 'sound/items/fultext_deploy.ogg', 30, TRUE)
 		var/image/fulton_image = image('icons/obj/items/fulton_balloon.dmi', src, "fulton_balloon")
-		movable_target.forceMove(droploc)
 		movable_target.pixel_z = 400
 		movable_target.add_overlay(list(fulton_image))
 		animate(movable_target, time = 4 SECONDS, pixel_z = 0, easing=SINE_EASING|EASE_OUT, flags = ANIMATION_PARALLEL)
-		addtimer(CALLBACK(src, TYPE_PROC_REF(/turf, ceiling_debris)), 2.5 SECONDS)
+		addtimer(CALLBACK(droploc, TYPE_PROC_REF(/turf, ceiling_debris)), 2.5 SECONDS)
 		addtimer(CALLBACK(src, PROC_REF(clean_fultondrop), movable_target, list(fulton_image)), 4 SECONDS)
 		if(isliving(movable_target))
 			REMOVE_TRAIT(movable_target, TRAIT_IMMOBILE, type)
