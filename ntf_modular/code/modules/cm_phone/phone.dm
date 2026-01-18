@@ -84,16 +84,12 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	busy_loop = new(list(attached_to))
 	hangup_loop = new(list(attached_to))
 
-	if(!get_turf(src))
-		return
-
 	GLOB.transmitters += src
 
-/obj/structure/transmitter/New(loc, ...)
+/obj/structure/transmitter/LateInitialize()
 	. = ..()
 	//sometimes those are not added to list properly it appears, apparently when dispensed from vendors etc.
-	var/obj/structure/transmitter/transfem = locate() in GLOB.transmitters
-	if(!transfem)
+	if(!(src in GLOB.transmitters))
 		GLOB.transmitters += src
 
 /obj/structure/transmitter/update_icon()
