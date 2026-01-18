@@ -158,7 +158,9 @@
 	health = clamp(health, 0, initial(health))
 
 	if(health <= 0)
-		toggled = FALSE // requires flipping on again once repaired
+		if(toggled)
+			toggled = FALSE // requires flipping on again once repaired
+			empulse(loc, 2,4,6,8)
 	if(health < initial(health))
 		desc = "[initial(desc)] [span_warning(" It is damaged and needs a welder for repairs!")]"
 	else
