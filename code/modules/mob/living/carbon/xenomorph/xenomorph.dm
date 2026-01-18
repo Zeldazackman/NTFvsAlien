@@ -4,7 +4,13 @@
 //Just about ALL the procs are tied to the parent, not to the children
 //This is so they can be easily transferred between them without copypasta
 
-/mob/living/carbon/xenomorph/Initialize(mapload, do_not_set_as_ruler)
+/mob/living/carbon/xenomorph/Initialize(mapload, do_not_set_as_ruler, _hivenumber)
+	if(_hivenumber)
+		hivenumber = _hivenumber
+	else
+		if(is_centcom_level(z) && hivenumber == XENO_HIVE_NORMAL)
+			hivenumber = XENO_HIVE_ADMEME //so admins can safely spawn xenos in Thunderdome for tests.
+
 	if(mob_size == MOB_SIZE_BIG)
 		move_resist = MOVE_FORCE_EXTREMELY_STRONG
 		move_force = MOVE_FORCE_EXTREMELY_STRONG
@@ -22,9 +28,6 @@
 
 	create_reagents(1000)
 	gender = NEUTER
-
-	if(is_centcom_level(z) && hivenumber == XENO_HIVE_NORMAL)
-		hivenumber = XENO_HIVE_ADMEME //so admins can safely spawn xenos in Thunderdome for tests.
 
 	set_initial_hivenumber(prevent_ruler=do_not_set_as_ruler)
 	voice = "Woman (Journalist)" // TODO when we get tagging make this pick female only
