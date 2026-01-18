@@ -923,7 +923,6 @@ below 100 is not dizzy
 	SEND_SIGNAL(src, COMSIG_LIVING_SET_LYING_ANGLE)
 	if(lying_angle)
 		density = FALSE
-		drop_all_held_items()
 		if(layer == initial(layer)) //to avoid things like hiding larvas.
 			layer = LYING_MOB_LAYER //so mob lying always appear behind standing mobs
 	else

@@ -40,7 +40,7 @@
 	max_spread = 8
 
 /obj/machinery/deployable/mortar/howitzer/AltRightClick(mob/living/user)
-	if(!Adjacent(user) || user.lying_angle || user.incapacitated() || !ishuman(user))
+	if(!Adjacent(user) || user.incapacitated() || !ishuman(user))
 		return
 
 	if(!anchored)

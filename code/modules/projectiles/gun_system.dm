@@ -1742,7 +1742,7 @@
 
 ///Checks if the gun can be fired
 /obj/item/weapon/gun/proc/able_to_fire(mob/user)
-	if(!user || user.incapacitated()  || user.lying_angle || !isturf(user.loc))
+	if(!user || user.incapacitated() || !isturf(user.loc))
 		return
 	if(rounds - rounds_per_shot < 0 && rounds)
 		to_chat(user, span_warning("There's not enough rounds left to fire."))

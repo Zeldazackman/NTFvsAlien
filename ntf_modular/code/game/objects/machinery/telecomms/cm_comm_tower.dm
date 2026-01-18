@@ -298,7 +298,7 @@
 
 /obj/machinery/telecomms/relay/preset/tower/mapcomms
 	name = "TC-3T static telecommunications tower"
-	desc = "A static heavy-duty TC-3T telecommunications tower. Used to set up subspace communications lines between planetary and extra-planetary locations. Will need to have extra communication frequencies programmed into it by multitool."
+	desc = "A static heavy-duty TC-3T telecommunications tower. Used to set up subspace communications lines between planetary and extra-planetary locations. Will cause a devastating EMP burst once destroyed. Will need to have extra communication frequencies programmed into it by multitool."
 	use_power = NO_POWER_USE
 	idle_power_usage = 500
 	icon = 'ntf_modular/icons/obj/structures/machinery/comm_tower3.dmi'

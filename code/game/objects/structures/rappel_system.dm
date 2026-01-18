@@ -144,10 +144,10 @@
 	var/passed_skillcheck = TRUE
 	if(user.skills.getRating(SKILL_COMBAT) < SKILL_COMBAT_DEFAULT)
 		rope.balloon_alert(user, "you fumble around figuring out how to use the rappel system...")
-		if(!do_after(user, 3 SECONDS, NONE, rope, BUSY_ICON_UNSKILLED) && !user.lying_angle && !user.anchored && rappel_state >= RAPPEL_STATE_USABLE && rappel_condition == RAPPEL_CONDITION_GOOD)
+		if(!do_after(user, 3 SECONDS, NONE, rope, BUSY_ICON_UNSKILLED) && !user.anchored && rappel_state >= RAPPEL_STATE_USABLE && rappel_condition == RAPPEL_CONDITION_GOOD)
 			passed_skillcheck = FALSE
 
-	if(passed_skillcheck && do_after(user, 4 SECONDS, NONE, rope, BUSY_ICON_GENERIC) && !user.lying_angle && !user.anchored && rappel_state >= RAPPEL_STATE_USABLE && rappel_condition == RAPPEL_CONDITION_GOOD)
+	if(passed_skillcheck && do_after(user, 4 SECONDS, NONE, rope, BUSY_ICON_GENERIC) && !user.anchored && rappel_state >= RAPPEL_STATE_USABLE && rappel_condition == RAPPEL_CONDITION_GOOD)
 		playsound(target_turf, 'sound/effects/rappel.ogg', 50, TRUE)
 		playsound(src, 'sound/effects/rappel.ogg', 50, TRUE)
 		user.forceMove(target_turf)
@@ -390,10 +390,10 @@
 	user.balloon_alert(user, "clipping...")
 
 	if(user.skills.getRating(SKILL_COMBAT) < SKILL_COMBAT_DEFAULT)
-		if(!do_after(user, 3 SECONDS, NONE, src, BUSY_ICON_UNSKILLED) || user.lying_angle || user.anchored)
+		if(!do_after(user, 3 SECONDS, NONE, src, BUSY_ICON_UNSKILLED) || user.anchored)
 			return
 
-	if(!do_after(user, 8 SECONDS * (1 + length(user.buckled_mobs)), NONE, src, BUSY_ICON_GENERIC) || user.lying_angle || user.anchored)
+	if(!do_after(user, 8 SECONDS * (1 + length(user.buckled_mobs)), NONE, src, BUSY_ICON_GENERIC) || user.anchored)
 		return
 	user.forceMove(get_turf(parent_system))
 

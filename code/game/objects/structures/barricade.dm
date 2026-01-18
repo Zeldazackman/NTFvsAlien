@@ -1137,7 +1137,7 @@
 	if(!ishuman(usr))
 		return
 	var/mob/living/carbon/human/user = usr
-	if(over_object != user || !in_range(src, user) || user.incapacitated() || user.lying_angle)
+	if(over_object != user || !in_range(src, user) || user.incapacitated())
 		return
 	disassemble(user)
 

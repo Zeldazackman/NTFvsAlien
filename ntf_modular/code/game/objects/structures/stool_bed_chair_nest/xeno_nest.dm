@@ -205,7 +205,7 @@
 				//could maybe make it silo the corpse here instead
 			else
 				COOLDOWN_START(src, tentacle_cooldown, 30 SECONDS)
-				src.visible_message(span_xenonotice("[src] starts using its tentacles to spin a cocoon around [target]!"))
+				visible_message(span_xenonotice("[src] starts using its tentacles to spin a cocoon around [target]!"))
 				ASYNC
 
 					/*
@@ -223,14 +223,14 @@
 						if(target.stat != DEAD)
 							ok = FALSE
 						if(!ok)
-							src.visible_message(span_xenonotice("[src] stops making a cocoon."))
+							visible_message(span_xenonotice("[src] stops making a cocoon."))
 							qdel(busyicon)
 							return
 					*/
 					if(!do_mob(target, src, 30 SECONDS, null, BUSY_ICON_DANGER, PROGRESS_GENERIC, IGNORE_HAND | IGNORE_HELD_ITEM | IGNORE_DO_AFTER_COEFFICIENT | IGNORE_INCAPACITATION)  || HAS_TRAIT(target, TRAIT_PSY_DRAINED) || (target.stat != DEAD))
-						src.visible_message(span_xenonotice("[src] stops making a cocoon."))
+						visible_message(span_xenonotice("[src] stops making a cocoon."))
 						return
-					src.visible_message(span_xenonotice("[src] finishes using its tentacles to spin a cocoon around [target]!"))
+					visible_message(span_xenonotice("[src] finishes using its tentacles to spin a cocoon around [target]!"))
 					//qdel(busyicon)
 					target.med_hud_set_status()
 					ADD_TRAIT(target, TRAIT_PSY_DRAINED, TRAIT_PSY_DRAINED)

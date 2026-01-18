@@ -5,9 +5,6 @@
 		return melee_attack_chain_alternate(user, target, params)
 	if(tool_behaviour && tool_attack_chain(user, target))
 		return
-	if(user.lying_angle)
-		user.balloon_alert(user, "can't while prone!")
-		return
 	// Return TRUE in attackby() to prevent afterattack() effects (when safely moving items for example)
 	var/resolved = target.attackby(src, user, params)
 	if(QDELETED(target) || QDELETED(src))
