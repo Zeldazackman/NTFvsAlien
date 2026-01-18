@@ -566,6 +566,8 @@
 		owner_xeno.AdjustImmobilized(KNOCKDOWN_DURATION)
 		ADD_TRAIT(owner_xeno, TRAIT_HANDS_BLOCKED, src)
 		target.AdjustKnockdown(KNOCKDOWN_DURATION)
+		target.Paralyze(KNOCKDOWN_DURATION)
+		target.Stun(KNOCKDOWN_DURATION + 2 SECONDS)
 
 		if(do_after(owner_xeno, KNOCKDOWN_DURATION, FALSE, target, ignore_turf_checks = FALSE))
 			owner_xeno.gain_plasma(plasma_gain_on_hit)

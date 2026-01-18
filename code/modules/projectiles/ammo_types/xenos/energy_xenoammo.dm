@@ -139,3 +139,4 @@
 	if(ishuman(target_mob))
 		var/mob/living/carbon/human/living_human = target_mob
 		living_human.Knockdown(0.3 SECONDS)
+		living_human.Stagger(2.3 SECONDS)

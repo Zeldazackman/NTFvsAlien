@@ -485,7 +485,7 @@
 	var/mob/living/carbon/target_carbon = target_mob
 	if(target_carbon.issamexenohive(proj.firer))
 		return
-	staggerstun(target_mob, proj, max_range, 0, knockdown_duration, stagger_duration, slowdown_stacks, knockback)
+	staggerstun(target_mob, proj, max_range, 0, knockdown_duration, max(stagger_duration, knockdown_duration + 2 SECONDS), slowdown_stacks, knockback)
 	target_carbon.apply_status_effect(STATUS_EFFECT_SHATTER, shatter_duration)
 
 ///Vehicle damage dealt, for the globadiers primo, Acid Rocket
