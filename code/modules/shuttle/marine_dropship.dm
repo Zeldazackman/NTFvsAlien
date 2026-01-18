@@ -451,6 +451,7 @@
 	port_direction = 1
 	dir = 2
 	railing_gear_name = "cargobay"
+	movement_force = null
 
 /obj/machinery/computer/shuttle/shuttle_control/elevator
 	name = "Elevator Control Console"
@@ -477,6 +478,7 @@
 	port_direction = 1
 	dir = 2
 	railing_gear_name = "ntc"
+	movement_force = null
 
 
 // queen calldown

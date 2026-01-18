@@ -41,6 +41,22 @@
 	icon_state = "covertpocket"
 	quiet = TRUE
 
+/obj/item/attachable/motiondetector/clean_operator(datum/source, obj/item/weapon/gun/gun, forced = FALSE)
+	SIGNAL_HANDLER
+	if(!forced && operator && (operator.l_hand == src || operator.r_hand == src || operator.l_hand == loc || operator.r_hand == loc))
+		return
+	if(operator.belt == src || operator.r_store == src || operator.l_store == src || operator.s_store == src)
+		return
+	STOP_PROCESSING(SSobj, src)
+	clean_blips()
+	if(operator)
+		if(!QDELETED(operator))
+			RegisterSignal(operator, COMSIG_GUN_USER_SET, PROC_REF(start_processing_again))
+		UnregisterSignal(operator, list(COMSIG_QDELETING, COMSIG_GUN_USER_UNSET))
+		UnregisterSignal(src, list(COMSIG_ITEM_EQUIPPED_TO_SLOT, COMSIG_ITEM_REMOVED_INVENTORY))
+		operator = null
+	update_icon()
+
 /obj/item/attachable/motiondetector/advanced/process()
 	if(!operator?.client || operator.stat != CONSCIOUS)
 		clean_operator()
@@ -92,7 +108,7 @@
 
 /obj/effect/temp_visual/minimap_pulse
 	icon = null
-	duration = 1 SECONDS
+	duration = 0.9 SECONDS
 
 /obj/effect/temp_visual/minimap_pulse/Initialize(mapload, minimap_flag = MINIMAP_FLAG_ALL, range)
 	. = ..()

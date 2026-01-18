@@ -391,8 +391,8 @@
 	))
 
 /datum/storage/internal/marinehelmet
-	max_storage_space = 3
-	storage_slots = 2
+	max_storage_space = 6
+	storage_slots = 4
 	max_w_class = WEIGHT_CLASS_TINY
 
 /datum/storage/internal/marinehelmet/New(atom/parent)

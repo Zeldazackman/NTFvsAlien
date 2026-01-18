@@ -10,15 +10,29 @@
 	w_class = WEIGHT_CLASS_SMALL
 	soft_armor = list(MELEE = 50, BULLET = 70, LASER = 70, ENERGY = 60, BOMB = 55, BIO = 55, FIRE = 55, ACID = 60)
 	blood_sprite_state = "helmetblood"
-	attachments_by_slot = list(ATTACHMENT_SLOT_BADGE)
-	attachments_allowed = list(/obj/item/armor_module/armor/badge)
 	armor_features_flags = ARMOR_NO_DECAP
 	var/anti_hug = 0
 	attachments_by_slot = list(
+		ATTACHMENT_SLOT_VISOR,
 		ATTACHMENT_SLOT_STORAGE,
+		ATTACHMENT_SLOT_HEAD_MODULE,
+		ATTACHMENT_SLOT_BADGE,
 	)
 	attachments_allowed = list(
+		/obj/item/armor_module/module/tyr_head,
+		/obj/item/armor_module/module/fire_proof_helmet,
+		/obj/item/armor_module/module/hod_head,
+		/obj/item/armor_module/module/mimir_environment_protection/mimir_helmet,
+		/obj/item/armor_module/module/mimir_environment_protection/mimir_helmet/mark1,
+		/obj/item/armor_module/module/welding,
+		/obj/item/armor_module/module/welding/superior,
+		/obj/item/armor_module/module/binoculars,
+		/obj/item/armor_module/module/binoculars/artemis_mark_two,
+		/obj/item/armor_module/module/artemis,
+		/obj/item/armor_module/module/antenna,
+		/obj/item/armor_module/module/night_vision,
 		/obj/item/armor_module/storage/helmet,
+		/obj/item/armor_module/armor/badge,
 	)
 	starting_attachments = list(/obj/item/armor_module/storage/helmet)
 
@@ -159,19 +173,20 @@
 	flipped_cap = !flipped_cap
 	if(flipped_cap)
 		to_chat(usr, "You spin the hat backwards! You look like a tool.")
-		icon_state = base_cap_icon + "_b"
+		icon_state = initial(icon_state) + "_b"
 	else
 		to_chat(usr, "You spin the hat back forwards. That's better.")
-		icon_state = base_cap_icon
+		icon_state = initial(icon_state)
 
 	update_clothing_icon()
 
 
 /obj/item/clothing/head/tgmccap/ro
 	name = "\improper NTC officer cap"
-	desc = "A hat usually worn by officers in the NTC. While it has limited combat functionality, some prefer to wear it instead of the standard issue helmet."
+	desc = "A hat usually worn by officers in the NTC. While it has limited combat functionality, some prefer to wear it instead of the standard issue helmet. It has a built in signal booster plus antenna module both at once."
 	icon_state = "rocap"
 	soft_armor = list(MELEE = 50, BULLET = 70, LASER = 70, ENERGY = 60, BOMB = 55, BIO = 55, FIRE = 55, ACID = 60)
+	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/module/antenna)
 
 /obj/item/clothing/head/tgmccap/ro/equipped(mob/user, slot)
 	. = ..()
@@ -188,7 +203,7 @@
 
 /obj/item/clothing/head/tgmccap/ro/navy
 	name = "\improper NTC navy officer cap"
-	desc = "A hat usually worn by officers in the NTC. This time in a nice shade of navy blue."
+	desc = "A hat usually worn by officers in the NTC. This time in a nice shade of navy blue. It has a built in signal booster plus antenna module both at once."
 	icon_state = "navycap"
 	soft_armor = list(MELEE = 50, BULLET = 70, LASER = 70, ENERGY = 60, BOMB = 55, BIO = 55, FIRE = 55, ACID = 60)
 
