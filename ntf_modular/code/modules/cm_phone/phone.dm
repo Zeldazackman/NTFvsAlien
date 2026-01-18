@@ -89,6 +89,13 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 	GLOB.transmitters += src
 
+/obj/structure/transmitter/New(loc, ...)
+	. = ..()
+	//sometimes those are not added to list properly it appears, apparently when dispensed from vendors etc.
+	var/obj/structure/transmitter/transfem = locate() in GLOB.transmitters
+	if(!transfem)
+		GLOB.transmitters += src
+
 /obj/structure/transmitter/update_icon()
 	. = ..()
 	SEND_SIGNAL(src, "COMSIG_TRANSMITTER_UPDATE_ICON")
