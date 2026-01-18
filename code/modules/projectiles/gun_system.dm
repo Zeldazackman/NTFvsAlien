@@ -1760,7 +1760,9 @@
 		to_chat(user, span_warning("Your armor does not allow you to use this firearm!"))
 		return FALSE
 	if(HAS_TRAIT(src, TRAIT_GUN_SAFETY))
+		balloon_alert(user, "Safety is on!")
 		to_chat(user, span_warning("The safety is on!"))
+		playsound(user, dry_fire_sound, 25, 1, 5)
 		return FALSE
 	if(CHECK_BITFIELD(gun_features_flags, GUN_WIELDED_FIRING_ONLY)) //If we're not holding the weapon with both hands when we should.
 		if(!master_gun && !CHECK_BITFIELD(item_flags, WIELDED))
