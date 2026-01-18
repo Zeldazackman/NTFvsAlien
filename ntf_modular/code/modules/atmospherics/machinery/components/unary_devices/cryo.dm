@@ -5,7 +5,8 @@
 	desc = "Latest to hypersleep tech that runs on a mini nuclear battery, \
 	could be used by ones who fear closed spaces or kinky people, can be dragged unlike regular cryos, \
 	items are not removed and the person is still 'interactable' and may wake up later unlike traditional hypersleep pods. \
-	Using ALT+CLICK will anchor/unanchor the pod for easier transport."
+	Using ALT+CLICK will anchor/unanchor the pod for easier transport. \
+	<b>Using this in a publicly accessible area tend to mean you are open for SSD business.</b> Thankfully it <b>logs</b> those intereactions for you."
 	anchored = FALSE
 	buckle_flags = CAN_BUCKLE
 	drag_delay = 1 //Pulling something on wheels is easy
@@ -25,11 +26,11 @@
 
 //keep facing south unless north
 /obj/structure/bed/chair/stasis/setDir(newdir)
-	if(dir == EAST)
+	if(newdir == EAST)
 		setDir(SOUTH)
-	if(dir == WEST)
+	if(newdir == WEST)
 		setDir(SOUTH)
-	return
+	. = ..()
 
 /obj/structure/bed/chair/stasis/dark
 	icon_state = "dark_cycler"
@@ -154,6 +155,119 @@
 	balloon_alert_to_viewers("Hisses as it starts the stasis process...")
 	to_chat(buckling_mob, span_notice("You feel yourself slipping into a dreamy stasis state... You can use the context menu to return to lobby."))
 	playsound(loc, 'sound/machines/hiss.ogg', 25, 1)
+	start_sex_recording()
+
+/obj/structure/bed/chair/stasis
+	var/list/sex_records = list()
+
+/obj/structure/bed/chair/stasis/proc/start_sex_recording()
+	RegisterSignal(occupant, COMSIG_STARTED_SEX_UPON, PROC_REF(record_sex_started))
+	RegisterSignal(occupant, COMSIG_RECEIVED_SEX, PROC_REF(record_sex))
+	RegisterSignal(occupant, COMSIG_CAME_INTO, PROC_REF(record_sex_came_into))
+	RegisterSignal(occupant, COMSIG_CAME_INTO_BY, PROC_REF(record_sex_came_into_by))
+	RegisterSignal(occupant, COMSIG_CAME_ONTO, PROC_REF(record_sex_came_onto))
+	RegisterSignal(occupant, COMSIG_CAME_ONTO_BY, PROC_REF(record_sex_came_onto_by))
+
+/obj/structure/bed/chair/stasis/proc/record_sex_started(datum/source, mob/living/carbon/blame_mob)
+	SIGNAL_HANDLER
+	if(!iscarbon(source))
+		return
+	var/mob/living/carbon/csauce = source
+	var/name_to_use = blame_mob.real_name
+	var/datum/sex_action/action = SEX_ACTION(blame_mob.sexcon.current_action)
+	if(ishuman(blame_mob))
+		var/mob/living/carbon/human/bmob = blame_mob
+		if(bmob.wear_id)
+			name_to_use = bmob.wear_id.name
+		else
+			name_to_use = "Unidentified [bmob.gender]"
+	sex_records += list("<br><br>[name_to_use] started to [action.name] ([csauce.real_name]).<br>")
+
+/obj/structure/bed/chair/stasis/proc/record_sex_came_into(datum/source, mob/living/carbon/blame_mob)
+	SIGNAL_HANDLER
+	if(!iscarbon(source))
+		return
+	var/mob/living/carbon/csauce = source
+	var/name_to_use = blame_mob.real_name
+	var/datum/sex_action/action = SEX_ACTION(blame_mob.sexcon.current_action)
+	if(ishuman(blame_mob))
+		var/mob/living/carbon/human/bmob = blame_mob
+		if(bmob.wear_id)
+			name_to_use = bmob.wear_id.name
+		else
+			name_to_use = "Unidentified [bmob.gender]"
+	sex_records += list("[name_to_use] came inside [csauce.real_name] while they [action.name].<br>")
+
+/obj/structure/bed/chair/stasis/proc/record_sex_came_into_by(datum/source, mob/living/carbon/blame_mob)
+	SIGNAL_HANDLER
+	if(!iscarbon(source))
+		return
+	var/mob/living/carbon/csauce = source
+	var/name_to_use = blame_mob.real_name
+	var/datum/sex_action/action = SEX_ACTION(blame_mob.sexcon.current_action)
+	if(ishuman(blame_mob))
+		var/mob/living/carbon/human/bmob = blame_mob
+		if(bmob.wear_id)
+			name_to_use = bmob.wear_id.name
+		else
+			name_to_use = "Unidentified [bmob.gender]"
+	sex_records += list("[csauce.real_name] was made to cum into [name_to_use] while they [action.name].<br>")
+
+/obj/structure/bed/chair/stasis/proc/record_sex_came_onto(datum/source, mob/living/carbon/blame_mob)
+	SIGNAL_HANDLER
+	if(!iscarbon(source))
+		return
+	var/mob/living/carbon/csauce = source
+	var/name_to_use = blame_mob.real_name
+	var/datum/sex_action/action = SEX_ACTION(blame_mob.sexcon.current_action)
+	if(ishuman(blame_mob))
+		var/mob/living/carbon/human/bmob = blame_mob
+		if(bmob.wear_id)
+			name_to_use = bmob.wear_id.name
+		else
+			name_to_use = "Unidentified [bmob.gender]"
+	sex_records += list("[name_to_use] came onto [csauce.real_name] while they [action.name].<br>")
+
+/obj/structure/bed/chair/stasis/proc/record_sex_came_onto_by(datum/source, mob/living/carbon/blame_mob)
+	SIGNAL_HANDLER
+	if(!iscarbon(source))
+		return
+	var/mob/living/carbon/csauce = source
+	var/name_to_use = blame_mob.real_name
+	var/datum/sex_action/action = SEX_ACTION(blame_mob.sexcon.current_action)
+	if(ishuman(blame_mob))
+		var/mob/living/carbon/human/bmob = blame_mob
+		if(bmob.wear_id)
+			name_to_use = bmob.wear_id.name
+		else
+			name_to_use = "Unidentified [bmob.gender]"
+	sex_records += list("[csauce.real_name] was made to cum onto [name_to_use] while they [action.name].<br>")
+
+/obj/structure/bed/chair/stasis/proc/record_sex(datum/source, mob/living/carbon/blame_mob)
+	SIGNAL_HANDLER
+	if(!iscarbon(source))
+		return
+	var/mob/living/carbon/csauce = source
+	var/name_to_use = blame_mob.real_name
+	var/datum/sex_action/action = SEX_ACTION(blame_mob.sexcon.current_action)
+	if(ishuman(blame_mob))
+		var/mob/living/carbon/human/bmob = blame_mob
+		if(bmob.wear_id)
+			name_to_use = bmob.wear_id.name
+		else
+			name_to_use = "Unidentified [bmob.gender]"
+	if(prob(15)) //shitty spam reduction
+		sex_records += list("[name_to_use] continued to [action.name]... ([csauce.real_name])<br>")
+
+/obj/structure/bed/chair/stasis/proc/report_sex_results(mob/sexed)
+	if(length(sex_records))
+		to_chat(sexed, span_green("[src] reports you have been successfully fucked during your hypersleep! This message will display once then will be deleted."))
+		to_chat(sexed, span_notice("-----SSD SEX RECORDING START---"))
+		for(var/index in 1 to length(sex_records))
+			to_chat(sexed, span_notice("[sex_records[index]]"))
+		to_chat(sexed, span_notice("-----SSD SEX RECORDING END---"))
+		sex_records = list()
+	UnregisterSignal(sexed, list(COMSIG_STARTED_SEX_UPON,COMSIG_CAME_INTO,COMSIG_CAME_INTO_BY,COMSIG_CAME_ONTO,COMSIG_CAME_ONTO_BY))
 
 /obj/structure/bed/chair/stasis/verb/enter_cryo()
 	set name = "Start Hypersleep"
@@ -185,6 +299,7 @@
 		to_chat(usr, span_warning("There is no occupant in [src]."))
 		return
 	playsound(loc, 'sound/machines/hiss.ogg', 25, 1)
+	UnregisterSignal(occupant, list(COMSIG_STARTED_SEX_UPON,COMSIG_RECEIVED_SEX,COMSIG_CAME_INTO,COMSIG_CAME_INTO_BY,COMSIG_CAME_ONTO,COMSIG_CAME_ONTO_BY))
 	occupant.despawn()
 	occupant = null
 	update_icon()
@@ -236,6 +351,7 @@
 		var/atom/movable/A = I
 		A.forceMove(loc)
 
+	report_sex_results(occupant)
 	occupant.remove_filter("stasis_filter")
 	REMOVE_TRAIT(occupant, TRAIT_STASIS, type)
 	occupant = null

@@ -88,7 +88,8 @@
 	use_power = NO_POWER_USE
 	idle_power_usage = 0
 	netspeed = 40
-	resistance_flags = UNACIDABLE|XENO_DAMAGEABLE|CAN_BE_HIT|PORTAL_IMMUNE|BANISH_IMMUNE|DROPSHIP_IMMUNE
+	resistance_flags = INDESTRUCTIBLE
+	var/destructible = TRUE
 	var/health = 450 //we use this seperate var so shit dont delete I guess.
 	freq_listening = NTC_SIDED_FREQS
 	destroy_sound = 'sound/effects/metal_crash.ogg'
@@ -111,10 +112,6 @@
 
 /obj/machinery/telecomms/relay/preset/tower/Destroy()
 	GLOB.all_static_telecomms_towers -= src
-	//spill your shit cause those are not replacable.
-	deconstruct()
-	if(obj_integrity < 100) //so not on deconstruct if not damaged
-		empulse(loc, 4,6,8,10)
 	. = ..()
 
 // doesn't need power, instead uses health
@@ -166,6 +163,9 @@
 		desc = "[initial(desc)] [span_warning(" It is damaged and needs a welder for repairs!")]"
 	else
 		desc = initial(desc)
+
+	//spill your shit cause those are not replacable.
+	deconstruct()
 	update_state()
 
 // In any case that might warrant reevaluating working state
@@ -307,6 +307,7 @@
 	health = 1000
 	bound_height = 64
 	bound_width = 64
+	atom_flags = NODECONSTRUCT
 	freq_listening = NTC_SIDED_FREQS
 	var/obj/structure/xeno/recovery_pylon/attached_pylon
 	var/toggle_cooldown = 0
