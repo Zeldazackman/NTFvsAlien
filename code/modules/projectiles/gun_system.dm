@@ -1748,7 +1748,7 @@
 		var/obj/item/attachable/foldable/bipod/bipussy
 		for(var/key in attachments_by_slot)
 			var/obj/item/attachment = attachments_by_slot[key]
-			if(!istype(attachment, attachment_type))
+			if(!istype(attachment, /obj/item/attachable/foldable/bipod))
 				continue
 			bipussy = attachment
 		if(bipussy)
