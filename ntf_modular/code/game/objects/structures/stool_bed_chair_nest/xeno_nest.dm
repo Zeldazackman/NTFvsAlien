@@ -308,3 +308,158 @@
 	resist_time = 15 SECONDS
 	capture_time = 10 SECONDS
 	cooldown_time = 6 SECONDS
+
+//wall nest
+/turf/closed/wall/attackby(obj/item/attacking_item, mob/living/user)
+	if(isxeno(user) && istype(attacking_item, /obj/item/grab))
+		var/obj/item/grab/attacker_grab = attacking_item
+		var/mob/living/carbon/xenomorph/user_as_xenomorph = user
+		user_as_xenomorph.do_nesting_host(attacker_grab.grabbed_thing, src)
+
+/obj/alien/weeds/weedwall/attackby(obj/item/attacking_item, mob/living/user, params)
+	. = ..()
+	if(isxeno(user) && istype(attacking_item, /obj/item/grab))
+		var/obj/item/grab/attacking_grab = attacking_item
+		var/mob/living/carbon/xenomorph/user_as_xenomorph = user
+		user_as_xenomorph.do_nesting_host(attacking_grab.grabbed_thing, src)
+
+/turf/closed/wall/resin/attackby(obj/item/attacking_item, mob/living/user, params)
+	if(isxeno(user) && istype(attacking_item, /obj/item/grab))
+		var/obj/item/grab/attacking_grab = attacking_item
+		var/mob/living/carbon/xenomorph/user_as_xenomorph = user
+		user_as_xenomorph.do_nesting_host(attacking_grab.grabbed_thing, src)
+		return
+	. = ..()
+
+/mob/living/carbon/xenomorph/proc/do_nesting_host(mob/current_mob, nest_structural_base)
+	var/list/xeno_hands = list(get_active_held_item(), get_inactive_held_item())
+
+	if(!ishuman(current_mob))
+		to_chat(src, span_xenonotice("This is not a host."))
+		return
+
+	if(current_mob.stat == DEAD)
+		to_chat(src, span_xenonotice("This host is dead."))
+		return
+
+	var/mob/living/carbon/human/host_to_nest = current_mob
+
+	var/found_grab = FALSE
+	for(var/i in 1 to length(xeno_hands))
+		if(istype(xeno_hands[i], /obj/item/grab))
+			found_grab = TRUE
+			break
+
+	if(!found_grab)
+		to_chat(src, span_xenonotice("To nest the host here, a sure grip is needed to lift them up onto it!"))
+		return
+
+	var/turf/supplier_turf = get_turf(nest_structural_base)
+	if(!istype(nest_structural_base, /turf/closed/wall/resin))
+		var/obj/alien/weeds/weedwall/supplier_weeds = locate(/obj/alien/weeds/weedwall) in supplier_turf
+		if(!supplier_weeds)
+			to_chat(src, span_xenowarning("There are no weeds here! Nesting hosts requires hive weeds."))
+			return
+
+	var/area/curarea = get_area(loc)
+	if(curarea.ceiling < CEILING_UNDERGROUND)
+		to_chat(src, span_xenowarning("The weeds here are not strong enough for nesting hosts, caves would be better."))
+		return
+
+	if(!supplier_turf.density)
+		var/obj/structure/window/framed/framed_window = locate(/obj/structure/window/framed/) in supplier_turf
+		if(!framed_window)
+			to_chat(src, span_xenowarning("Hosts need a vertical surface to be nested upon!"))
+			return
+
+	var/dir_to_nest = get_dir(host_to_nest, nest_structural_base)
+
+	if(!host_to_nest.Adjacent(supplier_turf))
+		to_chat(src, span_xenonotice("The host must be directly next to the wall its being nested on!"))
+		return
+
+	if(!locate(dir_to_nest) in GLOB.cardinals)
+		to_chat(src, span_xenonotice("The host must be directly next to the wall its being nested on!"))
+		return
+
+	for(var/obj/structure/bed/nest/wall/preexisting_nest in get_turf(host_to_nest))
+		if(preexisting_nest.dir == dir_to_nest)
+			if(preexisting_nest.buckled_mobs.len)
+				to_chat(src, span_xenonotice("There is already a host nested here!"))
+				return
+			else
+				qdel(preexisting_nest) //weird
+
+	visible_message(span_warning("[src] pins [host_to_nest] into [src], preparing the securing resin."),
+	span_warning("[src] pins [host_to_nest] into [src], preparing the securing resin."))
+	if(!do_mob(src, host_to_nest, 4 SECONDS, BUSY_ICON_HOSTILE))
+		return FALSE
+
+	var/obj/structure/bed/nest/wall/applicable_nest = new(get_turf(host_to_nest))
+	applicable_nest.dir = turn(dir_to_nest, 180)
+	if(!applicable_nest.buckle_mob(host_to_nest, src))
+		qdel(applicable_nest)
+
+/obj/structure/bed/nest/wall
+	name = "wall alien nest"
+	desc = "It's a wall of thick, sticky resin as a nest."
+	icon = 'ntf_modular/icons/Xeno/Effects.dmi'
+	icon_state = "nestwall"
+	buckle_lying = 0
+	var/mutable_appearance/resin_stuff_overlay
+	resist_time = WALL_NEST_RESIST_TIME
+	var/list/buckle_x
+	var/list/buckle_y
+	var/buckled_mob_density
+
+/obj/structure/bed/nest/wall/Initialize(mapload)
+	. = ..()
+	buckle_x = list("[SOUTH]" = 0, "[NORTH]" = 0, "[WEST]" = 18, "[EAST]" = -17)
+	buckle_y = list("[SOUTH]" = 27, "[NORTH]" = -19, "[WEST]" = 3, "[EAST]" = 3)
+
+/obj/structure/bed/nest/wall/user_buckle_mob(mob/living/buckling_mob, mob/user, check_loc = TRUE, silent)
+
+
+/obj/structure/bed/nest/wall/buckle_mob(mob/living/buckling_mob, force, check_loc, lying_buckle, hands_needed, target_hands_needed, silent)
+	. = ..()
+	walldir_update(buckling_mob)
+
+/obj/structure/bed/nest/wall/update_overlays()
+	. = ..()
+	if(LAZYLEN(buckled_mobs))
+		resin_stuff_overlay = image(icon, icon_state = "nestwall_overlay", layer = 6, dir = dir)
+		add_overlay(resin_stuff_overlay)
+	else
+		cut_overlay(resin_stuff_overlay)
+
+/obj/structure/bed/nest/wall/proc/walldir_update(mob/living/buckling_mob)
+	buckling_mob.set_lying_angle(0)
+	buckled_mob_density = buckling_mob.density
+	buckling_mob.density = FALSE
+	buckling_x = buckle_x["[dir]"]
+	buckling_y = buckle_y["[dir]"]
+	buckling_mob.pixel_x = buckle_x["[dir]"]
+	buckling_mob.pixel_y = buckle_y["[dir]"]
+	pixel_y = buckle_y["[dir]"]
+	pixel_x = buckle_x["[dir]"]
+	if(dir == SOUTH)
+		buckling_mob.layer = ABOVE_NORMAL_TURF_LAYER
+		if(ishuman(buckling_mob))
+			var/mob/living/carbon/human/current_human = buckling_mob
+			for(var/obj/item/limb/buckling_mobs_limb in current_human.limbs)
+				buckling_mobs_limb.layer = BELOW_CLOSED_TURF_LAYER
+	update_overlays()
+
+/obj/structure/bed/nest/wall/unbuckle_mob(mob/living/buckled_mob, force = FALSE, can_fall = TRUE)
+	. = ..()
+	buckled_mob.pixel_y = initial(buckled_mob.pixel_y)
+	buckled_mob.pixel_x = initial(buckled_mob.pixel_x)
+	buckled_mob.density = buckled_mob_density
+	if(dir == SOUTH)
+		buckled_mob.layer = initial(buckled_mob.layer)
+		if(!ishuman(buckled_mob))
+			var/mob/living/carbon/human/current_human = buckled_mob
+			for(var/obj/item/limb/current_mobs_limb in current_human.limbs)
+				current_mobs_limb.layer =  initial(current_mobs_limb.layer)
+	update_overlays()
+	qdel(src)

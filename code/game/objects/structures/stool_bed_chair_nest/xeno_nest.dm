@@ -1,4 +1,5 @@
-#define NEST_RESIST_TIME 120 SECONDS
+#define NEST_RESIST_TIME 60 SECONDS
+#define WALL_NEST_RESIST_TIME 180 SECONDS
 #define NEST_UNBUCKLED_COOLDOWN 5 SECONDS
 
 ///Alium nests. Essentially beds with an unbuckle delay that only aliums can buckle mobs to.
@@ -140,92 +141,6 @@
 
 /obj/structure/bed/nest/fire_act(burn_level)
 	take_damage(burn_level * 2, BURN, FIRE)
-
-/obj/structure/bed/nest/wall
-	name = "wall alien nest"
-	desc = "It's a wall of thick, sticky resin as a nest."
-	icon = 'ntf_modular/icons/Xeno/Effects.dmi'
-	icon_state = "nestwall"
-	allow_pass_flags = null
-	buckle_lying = 0
-	buckling_x = 0
-	buckling_y = 0
-	density = TRUE
-	smoothing_groups = list(SMOOTH_GROUP_XENO_STRUCTURES)
-	var/mutable_appearance/resin_stuff_overlay
-
-/obj/structure/bed/nest/wall/user_buckle_mob(mob/living/buckling_mob, mob/user, check_loc = TRUE, silent)
-	setDir(get_cardinal_dir(src, user))
-	var/turf/theturf = get_step(src,dir)
-	if(isclosedturf(theturf))
-		setDir(get_cardinal_dir(pick(get_adjacent_open_turfs(src))))
-	else
-		setDir(theturf)
-	user.face_atom(src)
-	buckling_mob.forceMove(loc)
-	buckling_mob.setDir(dir)
-	. = ..()
-	if(!.)
-		return
-	walldir_update(buckling_mob)
-	buckling_mob.set_lying_angle(0)
-	START_PROCESSING(SSslowprocess, src)
-
-/obj/structure/bed/nest/wall/process()
-	. = ..()
-	for(var/mob/living/mobussy in buckled_mobs) //larvas making em shake and lose their pixel shift which sucks
-		mobussy.jitteriness = 0
-		walldir_update(mobussy)
-
-/obj/structure/bed/nest/wall/update_overlays()
-	. = ..()
-	if(LAZYLEN(buckled_mobs))
-		resin_stuff_overlay = image(icon, icon_state = "nestwall_overlay", layer = 6, dir = get_cardinal_dir(src), pixel_x = buckling_x, pixel_y = buckling_y)
-		add_overlay(resin_stuff_overlay)
-	else
-		cut_overlay(resin_stuff_overlay)
-
-/obj/structure/bed/nest/wall/proc/walldir_update(mob/buckling_mob)
-	cut_overlay(resin_stuff_overlay)
-	switch(dir)
-		if(EAST)
-			buckling_mob.dir = 4
-			buckling_y = 0
-			buckling_x = 12
-			layer = 3
-		if(WEST)
-			buckling_mob.dir = 8
-			buckling_y = 0
-			buckling_x = -12
-			layer = 3
-		if(NORTH)
-			dir = 1
-			buckling_mob.dir = 1
-			buckling_y = 12
-			buckling_x = 0
-			layer = 5
-		if(SOUTH)
-			dir = 2
-			buckling_mob.dir = 2
-			buckling_y = -6
-			buckling_x = 0
-			layer = 3
-	buckling_mob.pixel_y = buckling_y
-	buckling_mob.pixel_x = buckling_x
-	update_overlays()
-
-/obj/structure/bed/nest/wall/user_unbuckle_mob(mob/living/buckled_mob)
-	. = ..()
-	if(!.)
-		return
-	buckling_x = initial(buckling_x)
-	buckling_y = initial(buckling_y)
-	layer = 3
-	buckled_mob.pixel_x = initial(buckled_mob.pixel_x)
-	buckled_mob.pixel_y = initial(buckled_mob.pixel_y)
-	update_overlays()
-	STOP_PROCESSING(SSslowprocess, src)
-	buckled_mob.forceMove(get_step(buckled_mob, buckled_mob.dir))
 
 #undef NEST_RESIST_TIME
 #undef NEST_UNBUCKLED_COOLDOWN
