@@ -14,7 +14,6 @@
 	resistance_flags = UNACIDABLE|XENO_DAMAGEABLE
 	max_integrity = 100
 	layer = BELOW_OPEN_DOOR_LAYER
-	var/buckleoverlaydir = SOUTH
 	var/unbuckletime = 6 SECONDS
 	var/resist_time = NEST_RESIST_TIME
 
@@ -30,7 +29,8 @@
 			return
 		var/mob/M = G.grabbed_thing
 		to_chat(user, span_notice("You place [M] on [src]."))
-		M.forceMove(loc)
+		if(!density)
+			M.forceMove(loc)
 		user_buckle_mob(M, user)
 
 
@@ -135,7 +135,8 @@
 /obj/structure/bed/nest/update_overlays()
 	. = ..()
 	if(LAZYLEN(buckled_mobs))
-		. += image("icon_state" = "nest_overlay", "layer" = LYING_MOB_LAYER + 0.1)
+		if(!istype(src, /obj/structure/bed/nest/wall))
+			. += image("icon_state" = "nest_overlay", "layer" = LYING_MOB_LAYER + 0.1)
 
 /obj/structure/bed/nest/fire_act(burn_level)
 	take_damage(burn_level * 2, BURN, FIRE)
@@ -154,12 +155,16 @@
 	var/mutable_appearance/resin_stuff_overlay
 
 /obj/structure/bed/nest/wall/user_buckle_mob(mob/living/buckling_mob, mob/user, check_loc = TRUE, silent)
-	buckleoverlaydir = get_dir(loc, user.loc)
-	dir = buckleoverlaydir
-	face_atom(user)
-	buckling_mob.face_atom(user)
-	. = ..()
+	setDir(get_cardinal_dir(loc, user.loc))
+	var/turf/theturf = get_step(src,dir)
+	if(isclosedturf(theturf))
+		setDir(get_cardinal_dir(pick(get_adjacent_open_turfs(src))))
+	else
+		setDir(theturf)
+	user.face_atom(src)
 	buckling_mob.forceMove(loc)
+	buckling_mob.setDir(dir)
+	. = ..()
 	if(!.)
 		return
 	walldir_update(buckling_mob)
@@ -175,34 +180,31 @@
 /obj/structure/bed/nest/wall/update_overlays()
 	. = ..()
 	if(LAZYLEN(buckled_mobs))
-		resin_stuff_overlay = image(icon, "nestwall_overlay", layer = 6, buckleoverlaydir, buckling_x, buckling_y)
+		resin_stuff_overlay = image(icon, icon_state = "nestwall_overlay", layer = 6, dir = get_cardinal_dir(src), pixel_x = buckling_x, pixel_y = buckling_y)
 		add_overlay(resin_stuff_overlay)
 	else
-		cut_overlays()
+		cut_overlay(resin_stuff_overlay)
 
 /obj/structure/bed/nest/wall/proc/walldir_update(mob/buckling_mob)
-	switch(buckleoverlaydir)
-		if(4,3,5)
-			buckleoverlaydir = 4
-			dir = 4
+	cut_overlay(resin_stuff_overlay)
+	switch(dir)
+		if(EAST)
 			buckling_mob.dir = 4
 			buckling_y = 0
 			buckling_x = 12
 			layer = 3
-		if(8,9,7)
-			buckleoverlaydir = 8
-			dir = 8
+		if(WEST)
 			buckling_mob.dir = 8
 			buckling_y = 0
 			buckling_x = -12
 			layer = 3
-		if(1)
+		if(NORTH)
 			dir = 1
 			buckling_mob.dir = 1
 			buckling_y = 12
 			buckling_x = 0
 			layer = 5
-		if(2)
+		if(SOUTH)
 			dir = 2
 			buckling_mob.dir = 2
 			buckling_y = -6
@@ -213,7 +215,8 @@
 	update_overlays()
 
 /obj/structure/bed/nest/wall/user_unbuckle_mob(mob/living/buckled_mob)
-	. = ..()
+	if(!.)
+		return
 	buckling_x = initial(buckling_x)
 	buckling_y = initial(buckling_y)
 	layer = 3
@@ -221,6 +224,7 @@
 	buckled_mob.pixel_y = initial(buckled_mob.pixel_y)
 	update_overlays()
 	STOP_PROCESSING(SSslowprocess, src)
+	buckled_mob.forceMove(get_step(buckled_mob, buckled_mob.dir))
 
 #undef NEST_RESIST_TIME
 #undef NEST_UNBUCKLED_COOLDOWN

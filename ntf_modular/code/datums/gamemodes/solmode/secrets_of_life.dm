@@ -151,14 +151,16 @@
 			/datum/xeno_caste/king = 12,
 			/datum/xeno_caste/dragon = 12,
 		)
+		/*
 		for(var/mob/living/carbon/xenomorph/xeno in GLOB.xeno_mob_list)
-			var/min_xenos = evo_requirements[xeno.xeno_caste]
+			var/min_xenos = evo_requirements[xeno.xeno_caste.type]
 			var/datum/hive_status/xenohive = xeno.get_hive()
 			if(min_xenos && (xenohive.total_xenos_for_evolving() < min_xenos))
 				xeno.balloon_alert(xeno, "The hive can not support the [min_xenos] xenos needed to keep this caste!")
 				var/datum/xeno_caste/new_caste = GLOB.xeno_caste_datums[xeno.xeno_caste.deevolves_to][XENO_UPGRADE_BASETYPE]
 				xeno.do_evolve(new_caste, TRUE) //sorry beno you are fucked.
 				xeno.evolution_stored = xeno.xeno_caste.evolution_threshold //free evolution
+		*/
 		for(var/obj/item/teleporter_kit/indestructible/teles in GLOB.indestructible_teleporters)
 			teles.resistance_flags = XENO_DAMAGEABLE
 		respawn_time = 10 MINUTES //we have cloning here and small pop so its not 30 minutes.
