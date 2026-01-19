@@ -1351,7 +1351,7 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 	if(!.)
 		return FALSE
 	var/mob/living/carbon/xenomorph/X = owner
-	if(can_implant_embryo(A))
+	if(!can_implant_embryo(A))
 		to_chat(owner, span_warning("This host is already full of young ones."))
 		return FALSE
 	if(owner.do_actions) //can't use if busy
