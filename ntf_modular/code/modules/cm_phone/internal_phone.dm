@@ -297,6 +297,9 @@ GLOBAL_LIST_EMPTY(radio_packs)
 
 /obj/item/armor_module/module/antenna/forceMove(atom/dest)
 	. = ..()
+	if(!parent)
+		internal_transmitter.set_tether_holder(src)
+		return
 	if(isturf(dest))
 		internal_transmitter.set_tether_holder(parent)
 	else
