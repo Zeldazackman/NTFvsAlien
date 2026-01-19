@@ -277,6 +277,7 @@
 		living_target.resistance_flags |= RESTRAINED_NECKGRAB
 		living_target.drop_all_held_items()
 		living_target.Paralyze(0.1 SECONDS)
+		living_target.Stagger(2.1 SECONDS)
 		living_target.balloon_alert(xeno_owner, "Grabbed [living_target]")
 
 	xeno_owner.swap_hand()

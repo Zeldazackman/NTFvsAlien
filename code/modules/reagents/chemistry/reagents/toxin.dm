@@ -504,7 +504,7 @@
 	*/
 	L.set_timed_status_effect(2 SECONDS, /datum/status_effect/speech/stutter, only_if_higher = TRUE)
 
-	if(L.incapacitated(TRUE) || HAS_TRAIT(L, TRAIT_FLOORED)) //includes paralyzed, nested, resting
+	if(L.incapacitated()) //includes paralyzed or nested but not resting
 		custom_metabolism = initial(custom_metabolism) * (1 + (volume/20)) //double speed at 20 units, triple at 40 units, quadruple at 60, etc
 	else
 		custom_metabolism = initial(custom_metabolism)

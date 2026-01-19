@@ -245,7 +245,7 @@
 		return
 
 	var/staggerslow_stacks = 2
-	var/paralyzesecs = 1 SECONDS
+	var/paralyzesecs = sneak_attack_stun_duration
 	var/flavour
 
 	if(stealth_flags & WALK_ONLY_AP && owner.m_intent == MOVE_INTENT_RUN && ( owner.last_move_intent > (world.time - HUNTER_SNEAK_ATTACK_RUN_DELAY) ) ) //Allows us to slash while running... but only if we've been stationary for awhile
@@ -270,8 +270,11 @@
 	target.add_slowdown(staggerslow_stacks)
 	if(blinding_stacks)
 		target.blind_eyes(blinding_stacks)
-	if(sneak_attack_stun_duration)
-		target.ParalyzeNoChain(sneak_attack_stun_duration)
+	if(paralyzesecs)
+		if(!target.incapacitated())
+			target.Stun(paralyzesecs + (2 SECONDS))
+		target.ParalyzeNoChain(paralyzesecs)
+
 	GLOB.round_statistics.hunter_cloak_victims++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "hunter_cloak_victims")
 
