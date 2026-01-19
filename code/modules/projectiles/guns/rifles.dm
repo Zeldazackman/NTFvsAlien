@@ -1440,6 +1440,7 @@
 		/obj/item/attachable/shoulder_mount,
 		/obj/item/attachable/motiondetector/advanced,
 		/obj/item/attachable/motiondetector/advanced/pocket,
+		/obj/item/attachable/foldable/bipod,
 	)
 
 	gun_features_flags = GUN_AMMO_COUNTER|GUN_WIELDED_FIRING_ONLY|GUN_IFF|GUN_SMOKE_PARTICLES
@@ -1496,7 +1497,7 @@
 
 /obj/item/weapon/gun/rifle/pmc_smartrifle
 	name = "\improper SG-25 smart rifle"
-	desc = "The SG-25 is a Ninetails's experimental model of smart gun system, mounted on the rifle frame of TGMC standard issue AR-12. Requires special training and it cannot turn off IFF. It uses 10x26mm ammunition."
+	desc = "The SG-25 is a Ninetails's experimental model of smart gun system, mounted on the rifle frame of NTC standard issue AR-12. Requires special training and it cannot turn off IFF. It uses 10x26mm ammunition."
 	icon = 'icons/obj/items/guns/rifles64.dmi'
 	icon_state = "sg25"
 	worn_icon_state = "sg25"
@@ -1537,6 +1538,7 @@
 		/obj/item/attachable/motiondetector,
 		/obj/item/weapon/gun/rifle/pepperball/pepperball_mini,
 		/obj/item/weapon/gun/flamer/hydro_cannon,
+		/obj/item/attachable/foldable/bipod,
 	)
 
 	gun_features_flags = GUN_AMMO_COUNTER|GUN_WIELDED_FIRING_ONLY|GUN_IFF|GUN_SMOKE_PARTICLES
@@ -3471,6 +3473,7 @@
 		/obj/item/attachable/bayonet/converted,
 		/obj/item/attachable/bayonet,
 		/obj/item/attachable/bayonet/som,
+		/obj/item/attachable/foldable/bipod,
 	)
 
 	gun_features_flags = GUN_AMMO_COUNTER|GUN_WIELDED_FIRING_ONLY|GUN_IFF|GUN_SMOKE_PARTICLES

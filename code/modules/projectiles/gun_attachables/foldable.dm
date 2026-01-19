@@ -139,7 +139,7 @@
 
 /obj/item/attachable/foldable/bipod
 	name = "bipod"
-	desc = "A simple set of telescopic poles to keep a weapon stabilized during firing. \nGreatly increases accuracy and reduces recoil and scatter when properly placed, but also increases weapon size."
+	desc = "A simple set of telescopic poles to keep a weapon stabilized during firing. \nGreatly increases accuracy and reduces recoil and scatter when properly placed, and allows prone firing for heavy weapons but also increases weapon size."
 	icon = 'icons/obj/items/guns/attachments/underbarrel.dmi'
 	icon_state = "bipod"
 	slot = ATTACHMENT_SLOT_UNDER
@@ -156,6 +156,12 @@
 		if(user)
 			balloon_alert(user, "Unwielded")
 		return
+	if(!user.lying_angle)
+		var/obj/structure/barricade/cade = locate() in loc.contents
+		if(!cade)
+			balloon_alert(user, "Must lay or be at a barricade")
+			to_chat(user, span_warning("You can't deploy a bipod without laying or being at a barricade."))
+			return
 
 	. = ..()
 
