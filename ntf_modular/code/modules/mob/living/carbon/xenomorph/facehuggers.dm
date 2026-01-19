@@ -423,7 +423,7 @@
 /obj/item/clothing/mask/facehugger/latching/chemical/medical/on_reagent_change()
 	if(reagents.has_reagent(/datum/reagent/hypervene))
 		Shake(duration = 3 SECONDS)
-		visible_message(span_green("[src] shakes violently and spurts all of his balls' contents onto the floor, though it looks painful,", vision_distance = 2))
+		visible_message(span_green("[src] shakes violently and spurts all of his balls' contents onto the floor, though it looks painful,"), vision_distance = 2)
 		playsound(loc, 'sound/voice/alien/facehugger_dies.ogg', 25, 1)
 		playsound(loc, 'sound/items/hypospray.ogg', 50, 1)
 		producing_reagent = null
@@ -432,7 +432,7 @@
 	if(!producing_reagent)
 		Shake(duration = 1 SECONDS)
 		producing_reagent = reagents.reagent_list[1] //take first thing when injected with anything
-		visible_message(span_green("[src] shakes briefly and the glow on his balls change <span style='color: [producing_reagent.color]'>color</span> afterwards.", vision_distance = 2))
+		visible_message(span_green("[src] shakes briefly and the glow on his balls change <span style='color: [producing_reagent.color]'>color</span> afterwards."), vision_distance = 2)
 
 
 /obj/item/clothing/mask/facehugger/latching/chemical/medical/special_effect()
