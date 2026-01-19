@@ -155,7 +155,7 @@
 	var/mutable_appearance/resin_stuff_overlay
 
 /obj/structure/bed/nest/wall/user_buckle_mob(mob/living/buckling_mob, mob/user, check_loc = TRUE, silent)
-	setDir(get_cardinal_dir(loc, user.loc))
+	setDir(get_cardinal_dir(src, user))
 	var/turf/theturf = get_step(src,dir)
 	if(isclosedturf(theturf))
 		setDir(get_cardinal_dir(pick(get_adjacent_open_turfs(src))))
@@ -215,6 +215,7 @@
 	update_overlays()
 
 /obj/structure/bed/nest/wall/user_unbuckle_mob(mob/living/buckled_mob)
+	. = ..()
 	if(!.)
 		return
 	buckling_x = initial(buckling_x)
