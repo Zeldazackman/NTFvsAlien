@@ -127,7 +127,6 @@
 	var/mob/living/living_target = source
 	INVOKE_ASYNC(living_target, TYPE_PROC_REF(/mob, emote), "scream")
 	living_target.Knockdown(WARRIOR_DISPLACE_KNOCKDOWN)
-	living_target.Stagger(WARRIOR_DISPLACE_KNOCKDOWN + 2 SECONDS)
 	new /obj/effect/temp_visual/warrior/impact(get_turf(living_target), get_dir(living_target, xeno_owner))
 	// mob/living/turf_collision() does speed * 5 damage on impact with a turf, and we don't want to go overboard, so we deduce that here.
 	var/thrown_damage = (xeno_owner.xeno_caste.melee_damage * xeno_owner.xeno_melee_damage_modifier) * WARRIOR_IMPACT_DAMAGE_MULTIPLIER
@@ -139,7 +138,6 @@
 		INVOKE_ASYNC(hit_living, TYPE_PROC_REF(/mob, emote), "scream")
 		hit_living.apply_damage(thrown_damage, BRUTE, blocked = MELEE, attacker = owner)
 		hit_living.Knockdown(WARRIOR_DISPLACE_KNOCKDOWN)
-		hit_living.Stagger(WARRIOR_DISPLACE_KNOCKDOWN + 2 SECONDS)
 		step_away(hit_living, living_target, 1, 1)
 	if(isobj(hit_atom))
 		var/obj/hit_object = hit_atom
@@ -157,7 +155,6 @@
 	UnregisterSignal(source, list(COMSIG_MOVABLE_POST_THROW, COMSIG_MOVABLE_IMPACT))
 	var/mob/living/living_target = source
 	living_target.Knockdown(0.5 SECONDS)
-	living_target.Stagger(2.5 SECONDS)
 	living_target.remove_pass_flags(PASS_XENO, THROW_TRAIT)
 
 /obj/effect/temp_visual/warrior/impact
