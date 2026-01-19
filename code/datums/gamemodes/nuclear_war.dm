@@ -45,6 +45,8 @@
 		/datum/xeno_caste/dragon = 12,
 	)
 
+	max_larva_preg_at_once = 1
+
 ///Timer used to track the countdown to hive collapse due to lack of silos or corrupted generators
 	var/siloless_hive_timer
 

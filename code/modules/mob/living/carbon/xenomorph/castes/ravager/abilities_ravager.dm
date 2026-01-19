@@ -100,6 +100,9 @@
 ///Cleans up after charge is finished
 /datum/action/ability/activable/xeno/charge/proc/charge_complete()
 	SIGNAL_HANDLER
+	var/mob/living/victim = locate() in xeno_owner.loc.contents
+	if(victim)
+		mob_hit(xeno_owner, victim)
 	UnregisterSignal(owner, list(COMSIG_XENO_OBJ_THROW_HIT, COMSIG_MOVABLE_POST_THROW, COMSIG_XENOMORPH_LEAP_BUMP))
 	xeno_owner.xeno_flags &= ~XENO_LEAPING
 

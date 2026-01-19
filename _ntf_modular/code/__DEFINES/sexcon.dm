@@ -1,5 +1,8 @@
 #define SEX_ACTION(sex_action_type) GLOB.sex_actions[sex_action_type]
 
+#define MAX_LARVA_PREGNANCIES GLOB.max_larva_count_per_mob
+#define MAX_LARVA_PREGNANCIES_SOL 3
+
 #define MAX_AROUSAL 225
 #define PASSIVE_EJAC_THRESHOLD 208
 #define ACTIVE_EJAC_THRESHOLD 200

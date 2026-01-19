@@ -5,9 +5,9 @@
 	color = "#dadada"
 	custom_metabolism = REAGENTS_METABOLISM
 	reagent_ui_priority =  REAGENT_UI_MUNDANE
-	brute_heal = 0.5
-	burn_heal = 0.5
-	blood_gain = 0.2
+	brute_heal = 1
+	burn_heal = 1
+	blood_gain = 0.4
 
 /datum/reagent/toxin/acid/xeno_cum
 	name = "Acidic Semen"
@@ -22,20 +22,20 @@
 	nutriment_factor = 2
 	color = "#9bd19a"
 	reagent_ui_priority =  REAGENT_UI_MUNDANE
-	brute_heal = 0.5
-	burn_heal = 0.5
+	brute_heal = 1.2
+	burn_heal = 1.2
 	blood_gain = 0.4
 
 /datum/reagent/consumable/nutriment/cum/xeno/resin
 	name = "Xenomorphic Resin"
 	description = "Strange xenomorph ejaculate thet numbs the victim, slowing them and also it's extremely hard to clean from orifices due how sticky it is."
-	nutriment_factor = 4
+	nutriment_factor = 1
 	color = "#360242"
 	custom_metabolism = REAGENTS_METABOLISM * 0.5
-	reagent_ui_priority =  REAGENT_UI_TOXINS
-	brute_heal = 0.7
-	burn_heal = 0.7
-	blood_gain = 0.1
+	reagent_ui_priority =  REAGENT_UI_MUNDANE
+	brute_heal = 1.4
+	burn_heal = 1.4
+	blood_gain = 0.2
 
 /datum/reagent/consumable/nutriment/cum/xeno/resin/on_mob_life(mob/living/L, metabolism)
 	L.reagent_pain_modifier += PAIN_REDUCTION_VERY_HEAVY
@@ -53,7 +53,7 @@
 	name = "Female Lubricant"
 	description = "Pussyjuice, less potent than cum for some reason but still somehow is imbued with magic, used in reproduction aid, fun and sexual healing."
 	nutriment_factor = 1
-	brute_heal = 0.25
-	burn_heal = 0.25
-	blood_gain = 0.4
+	brute_heal = 0.75
+	burn_heal = 0.75
+	blood_gain = 0.7
 	color = "#dadada63"

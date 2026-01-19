@@ -95,6 +95,7 @@ GLOBAL_VAR(common_report) //Contains common part of roundend report
 	var/roundstart_players = 0
 	///dnr time in ticks for this mode.
 	var/custom_dnr_time
+	var/max_larva_preg_at_once
 
 /datum/game_mode/New()
 	initialize_emergency_calls()
@@ -145,6 +146,11 @@ GLOBAL_VAR(common_report) //Contains common part of roundend report
 
 	for(var/faction in human_factions)
 		stat_list[faction] = new /datum/faction_stats(faction)
+
+	if(max_larva_preg_at_once)
+		GLOB.max_larva_count_per_mob = max_larva_preg_at_once
+	else
+		GLOB.max_larva_count_per_mob = MAX_LARVA_PREGNANCIES
 
 	return TRUE
 

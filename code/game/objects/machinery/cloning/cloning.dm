@@ -116,7 +116,7 @@ These act as a respawn mechanic growning a body and offering it up to ghosts.
 	/// Amount of biomass required to start growing and the amount of reagents that gets removed on successful grow
 	var/biomass_required = 40
 	/// The amount of times it takes for the clone to pop out
-	var/grow_timer = 15 MINUTES
+	var/grow_timer = 10 MINUTES
 
 
 /obj/machinery/cloning/vats/Initialize(mapload)

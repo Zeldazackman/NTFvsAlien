@@ -151,6 +151,7 @@
 	buckling_y = 0
 	density = TRUE
 	smoothing_groups = list(SMOOTH_GROUP_XENO_STRUCTURES)
+	var/mutable_appearance/resin_stuff_overlay
 
 /obj/structure/bed/nest/wall/user_buckle_mob(mob/living/buckling_mob, mob/user, check_loc = TRUE, silent)
 	buckleoverlaydir = get_dir(loc, user.loc)
@@ -158,6 +159,7 @@
 	face_atom(user)
 	buckling_mob.face_atom(user)
 	. = ..()
+	buckling_mob.forceMove(loc)
 	if(!.)
 		return
 	walldir_update(buckling_mob)
@@ -172,10 +174,11 @@
 
 /obj/structure/bed/nest/wall/update_overlays()
 	. = ..()
-	/* this shit dont work right with pixel placement and obstruct vision
 	if(LAZYLEN(buckled_mobs))
-		add_overlay(image(icon, "nestwall_overlay", layer = 6, buckleoverlaydir, buckling_x, buckling_y))
-	*/
+		resin_stuff_overlay = image(icon, "nestwall_overlay", layer = 6, buckleoverlaydir, buckling_x, buckling_y)
+		add_overlay(resin_stuff_overlay)
+	else
+		cut_overlays()
 
 /obj/structure/bed/nest/wall/proc/walldir_update(mob/buckling_mob)
 	switch(buckleoverlaydir)
@@ -207,7 +210,7 @@
 			layer = 3
 	buckling_mob.pixel_y = buckling_y
 	buckling_mob.pixel_x = buckling_x
-	//update_overlays()
+	update_overlays()
 
 /obj/structure/bed/nest/wall/user_unbuckle_mob(mob/living/buckled_mob)
 	. = ..()
@@ -216,7 +219,7 @@
 	layer = 3
 	buckled_mob.pixel_x = initial(buckled_mob.pixel_x)
 	buckled_mob.pixel_y = initial(buckled_mob.pixel_y)
-	//cut_overlays()
+	update_overlays()
 	STOP_PROCESSING(SSslowprocess, src)
 
 #undef NEST_RESIST_TIME

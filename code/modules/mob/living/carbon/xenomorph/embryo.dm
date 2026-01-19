@@ -110,7 +110,7 @@
 	if(affected_mob.stat == DEAD) //No more corpsefucking for infinite larva, thanks
 		return FALSE
 
-	if(ishuman(affected_mob) && (SSticker.mode.round_type_flags & MODE_FREE_LARVABURST))
+	if(ishuman(affected_mob) && !(SSticker.mode.round_type_flags & MODE_FREE_LARVABURST))
 		if(affected_mob.getCloneLoss() >= 30) //I guess they remain dormant
 			return FALSE
 

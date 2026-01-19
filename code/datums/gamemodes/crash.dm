@@ -47,6 +47,7 @@
 	///Last time larva balance was checked
 	var/last_larva_check
 	bioscan_interval = 0
+	max_larva_preg_at_once = 1
 
 	evo_requirements = list(
 		/datum/xeno_caste/dragon = 18,
