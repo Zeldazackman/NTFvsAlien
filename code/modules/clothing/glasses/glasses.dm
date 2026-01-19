@@ -339,7 +339,7 @@
 /obj/item/clothing/glasses/sunglasses/blindfold/light
 	name = "light blindfold"
 	desc = "Covers the eyes, preventing sight vaguely. (allows seeing emotes but lets more sight.)"
-	tint_value = TINT_5
+	tint_value = TINT_6
 
 /obj/item/clothing/glasses/sunglasses/prescription
 	name = "prescription sunglasses"
