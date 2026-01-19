@@ -186,7 +186,7 @@
 	desc = "A hat usually worn by officers in the NTC. While it has limited combat functionality, some prefer to wear it instead of the standard issue helmet. It has a built in signal booster plus antenna module both at once."
 	icon_state = "rocap"
 	soft_armor = list(MELEE = 50, BULLET = 70, LASER = 70, ENERGY = 60, BOMB = 55, BIO = 55, FIRE = 55, ACID = 60)
-	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/module/antenna)
+	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/module/antenna/integrated)
 
 /obj/item/clothing/head/tgmccap/ro/equipped(mob/user, slot)
 	. = ..()

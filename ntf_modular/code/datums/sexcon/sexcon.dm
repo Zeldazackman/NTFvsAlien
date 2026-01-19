@@ -208,9 +208,9 @@
 	else
 		playsound(target, 'ntf_modular/sound/misc/mat/endin.ogg', 50, TRUE, 7, ignore_walls = FALSE)
 	if(user.gender == MALE)
-		filled?.reagents?.add_reagent(/datum/reagent/consumable/nutriment/cum, 5)
+		filled?.reagents?.add_reagent(/datum/reagent/consumable/nutriment/cum, 10)
 	else
-		filled?.reagents?.add_reagent(/datum/reagent/consumable/nutriment/cum/girl, 5)
+		filled?.reagents?.add_reagent(/datum/reagent/consumable/nutriment/cum/girl, 10)
 	handle_ejaculation_drain(filled)
 	if(!oral)
 		after_intimate_climax()

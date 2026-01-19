@@ -76,7 +76,7 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 	///NTF addition - chosen hole to use by hugger, just flavor for now
 	var/target_hole = HOLE_MOUTH
 	var/face_tint = TINT_BLIND
-	var/can_self_remove = FALSE
+	var/can_self_remove = TRUE
 
 /obj/item/clothing/mask/facehugger/Initialize(mapload)
 	. = ..()
@@ -677,7 +677,6 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 		return
 	if(slot == SLOT_WEAR_MASK && target_hole != HOLE_MOUTH) //ensure in case of something fucking up or manual wearing
 		target_hole = HOLE_MOUTH
-	playsound(src, 'sound/effects/alien_plapping.ogg', 5)
 	if(target_hole == HOLE_MOUTH)
 		if(!issamexenohive(user))
 			user.ParalyzeNoChain(10 SECONDS)
@@ -690,9 +689,11 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 			user.emote("scream")
 			user.ParalyzeNoChain(4 SECONDS)
 			user.apply_damage(100, STAMINA)
+			strip_delay *= 2
 	attached = TRUE
 	go_idle(FALSE, TRUE)
 	if(!sterile)
+		playsound(src, 'sound/effects/alien_plapping.ogg', 5)
 		addtimer(CALLBACK(src, PROC_REF(try_impregnate), user), IMPREGNATION_TIME)
 
 /// Try to put an embryo into the target mob

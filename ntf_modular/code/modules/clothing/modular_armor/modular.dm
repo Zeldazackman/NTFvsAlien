@@ -132,22 +132,3 @@
 	name = "\improper NTC ablative bikini armor"
 	desc = "A lightweight set of armor that excels in protecting the wearer against laser and energy attacks thanks to it's reflective plating, how does it work? don't ask."
 	greyscale_config = /datum/greyscale_config/xenonaut/bikini
-
-/obj/item/armor_module/module
-	var/invisible_toggle = FALSE
-
-/obj/item/armor_module/module/examine(mob/user)
-	. = ..()
-	. += span_notice("This can be toggled invisible using RCLICK, it's currently [invisible_toggle ? "invisible" : "visible"].")
-
-/obj/item/armor_module/module/RightClick(mob/user)
-	. = ..()
-	invisible_toggle = !invisible_toggle
-	if(invisible_toggle)
-		balloon_alert(user, "Invisible")
-		worn_icon_state = ""
-		variants_by_parent_type = list(/obj/item = "")
-	else
-		balloon_alert(user, "Visible")
-		worn_icon_state = initial(worn_icon_state)
-		variants_by_parent_type = initial(variants_by_parent_type)

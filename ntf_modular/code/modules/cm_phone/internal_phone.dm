@@ -280,6 +280,7 @@ GLOBAL_LIST_EMPTY(radio_packs)
 	internal_transmitter.attached_to.can_be_raised = FALSE
 	internal_transmitter.bypass_tgui_range = TRUE
 	RegisterSignal(internal_transmitter, "COMSIG_TRANSMITTER_UPDATE_ICON", PROC_REF(check_for_ringing))
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
 	GLOB.radio_packs += src
 
 /obj/item/armor_module/module/antenna/proc/update_button(mode)
@@ -295,8 +296,10 @@ GLOBAL_LIST_EMPTY(radio_packs)
 	SIGNAL_HANDLER
 	parent.Shake(duration = 5 SECONDS)
 
-/obj/item/armor_module/module/antenna/forceMove(atom/dest)
-	. = ..()
+/obj/item/armor_module/module/antenna/proc/on_move(atom/dest)
+	SIGNAL_HANDLER
+	if(!internal_transmitter)
+		return
 	if(!parent)
 		internal_transmitter.set_tether_holder(src)
 		return

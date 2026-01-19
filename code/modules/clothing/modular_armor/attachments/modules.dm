@@ -808,7 +808,7 @@
 
 /obj/item/armor_module/module/antenna
 	name = "\improper HM-9 antenna helmet module"
-	desc = "Designed for mounting on a modular helmet. This module is able to shield against the interference of caves, allowing for normal messaging in shallow caves, and only minor interference when deep. Made by TransCO. RCLICK to toggle beacon/phone mode."
+	desc = "Designed for mounting on a modular helmet. This module is able to shield against the interference of caves, allowing for normal messaging in shallow caves, and only minor interference when deep. Made by TransCO."
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "antenna_head"
 	worn_icon_state = "antenna_head_a"

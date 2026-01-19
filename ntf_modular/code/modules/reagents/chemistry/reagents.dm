@@ -1,9 +1,10 @@
 /datum/reagent/consumable/nutriment/cum
 	name = "Humanoid Sperm"
 	description = "Cum, somehow is supposedly imbued with sexual magic, used in reproduction, fun and sexual healing."
-	nutriment_factor = 2
+	nutriment_factor = 1
 	color = "#dadada"
-	reagent_ui_priority =  REAGENT_UI_MUNDANE // nutriment is more important than other food chems
+	custom_metabolism = REAGENTS_METABOLISM
+	reagent_ui_priority =  REAGENT_UI_MUNDANE
 	brute_heal = 0.5
 	burn_heal = 0.5
 	blood_gain = 0.2
@@ -17,12 +18,12 @@
 
 /datum/reagent/consumable/nutriment/cum/xeno
 	name = "Xenomorphic Sperm"
-	description = "Xeno cum, not directly harmful when not ejected alongside acid like most xenomorphs do, it is otherwise better than human cum in most ways."
-	nutriment_factor = 4
+	description = "Xeno cum, not directly harmful when not ejected alongside acid like most xenomorphs do."
+	nutriment_factor = 2
 	color = "#9bd19a"
-	reagent_ui_priority =  REAGENT_UI_MUNDANE // nutriment is more important than other food chems
-	brute_heal = 0.7
-	burn_heal = 0.7
+	reagent_ui_priority =  REAGENT_UI_MUNDANE
+	brute_heal = 0.5
+	burn_heal = 0.5
 	blood_gain = 0.4
 
 /datum/reagent/consumable/nutriment/cum/xeno/resin
@@ -30,8 +31,8 @@
 	description = "Strange xenomorph ejaculate thet numbs the victim, slowing them and also it's extremely hard to clean from orifices due how sticky it is."
 	nutriment_factor = 4
 	color = "#360242"
-	custom_metabolism = REAGENTS_METABOLISM
-	reagent_ui_priority =  REAGENT_UI_TOXINS // nutriment is more important than other food chems
+	custom_metabolism = REAGENTS_METABOLISM * 0.5
+	reagent_ui_priority =  REAGENT_UI_TOXINS
 	brute_heal = 0.7
 	burn_heal = 0.7
 	blood_gain = 0.1
@@ -54,5 +55,5 @@
 	nutriment_factor = 1
 	brute_heal = 0.25
 	burn_heal = 0.25
-	blood_gain = 0.3
+	blood_gain = 0.4
 	color = "#dadada63"
