@@ -80,6 +80,7 @@
 	icon_state = "blackbag"
 	worn_icon_state = "blackbag"
 	eye_protection = 2
+	inv_hide_flags = HIDETOPHAIR|HIDEEARS|HIDEEYES|HIDEFACE
 	var/tint_value = TINT_BLIND
 
 /obj/item/clothing/head/head_sack/Initialize(mapload)
@@ -89,7 +90,7 @@
 /obj/item/clothing/head/head_sack/light
 	name = "light head sack"
 	desc = "Epic kidnapping equipment, Covers the head, preventing sight... Mostly. (allows seeing emotes but lets more sight.)"
-	tint_value = TINT_5
+	tint_value = TINT_6
 
 /obj/item/clothing/head/kitty
 	name = "kitty ears"

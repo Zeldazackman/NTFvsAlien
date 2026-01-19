@@ -264,7 +264,7 @@
 			/obj/item/restraints/handcuffs/cable = -1,
 			/obj/item/restraints/handcuffs/zip = -1,
 			/obj/item/clothing/head/head_sack = -1,
-			/obj/item/clothing/head/head_sack/light = 1,
+			/obj/item/clothing/head/head_sack/light = -1,
 			/obj/item/clothing/glasses/sunglasses/blindfold = -1,
 			/obj/item/clothing/glasses/sunglasses/blindfold/light = -1,
 			/obj/item/flashlight/combat = -1,
