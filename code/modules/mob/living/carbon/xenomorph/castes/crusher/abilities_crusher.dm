@@ -57,15 +57,12 @@
 		if(distance == 0)
 			to_chat(nearby_living, span_userdanger("You are stomped on by [xeno_owner]!"))
 			shake_camera(nearby_living, 3, 3)
-			var/paralyze_time = distance_bonus_allowed ? CRUSHER_STOMP_PARALYZE_LONG : CRUSHER_STOMP_PARALYZE
-			nearby_living.Paralyze(paralyze_time)
-			nearby_living.Stagger(paralyze_time + (2 SECONDS))
+			nearby_living.Paralyze(distance_bonus_allowed ? CRUSHER_STOMP_PARALYZE_LONG : CRUSHER_STOMP_PARALYZE)
 		else
 			step_away(nearby_living, xeno_owner, 1) // Knock away if they're adjacent.
 			to_chat(nearby_living, span_userdanger("You reel from the shockwave of [xeno_owner]'s stomp!"))
 			shake_camera(nearby_living, 2, 2)
 			nearby_living.Paralyze(CRUSHER_STOMP_PARALYZE)
-			nearby_living.Stagger(CRUSHER_STOMP_PARALYZE + 2 SECONDS)
 
 /datum/action/ability/activable/xeno/stomp/ai_should_start_consider()
 	return TRUE

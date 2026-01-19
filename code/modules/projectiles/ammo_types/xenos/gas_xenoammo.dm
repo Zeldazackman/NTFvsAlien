@@ -80,7 +80,6 @@
 	var/mob/living/carbon/human/human_victim = target_mob
 
 	human_victim.Paralyze(hit_paralyze_time)
-	human_victim.Stun(hit_paralyze_time + (2 SECONDS))
 	human_victim.blur_eyes(hit_eye_blur)
 	human_victim.adjustDrowsyness(hit_drowsyness)
 

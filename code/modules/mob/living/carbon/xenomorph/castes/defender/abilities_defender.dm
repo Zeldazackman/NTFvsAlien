@@ -66,7 +66,6 @@
 			H.adjust_stagger(stagger_duration)
 		if(paralyze_duration)
 			H.Paralyze(paralyze_duration)
-			H.Stun(paralyze_duration + 2 SECONDS)
 		GLOB.round_statistics.defender_tail_sweep_hits++
 		SSblackbox.record_feedback("tally", "round_statistics", 1, "defender_tail_sweep_hits")
 		shake_camera(H, 2, 1)
@@ -162,7 +161,6 @@
 	carbon_victim.throw_at(get_turf(target_turf), charge_range, 5, src)
 	if(paralyze_duration)
 		carbon_victim.Paralyze(paralyze_duration)
-		carbon_victim.Stun(paralyze_duration + (2 SECONDS))
 	GLOB.round_statistics.defender_charge_victims++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "defender_charge_victims")
 
@@ -538,7 +536,6 @@
 		slapped.apply_damage(damage, BRUTE, affecting, MELEE, attacker = owner)
 		slapped.apply_damage(damage, STAMINA, updating_health = TRUE, attacker = owner)
 		slapped.Paralyze(0.3 SECONDS)
-		slapped.Stun(2.3 SECONDS)
 		shake_camera(slapped, 2, 1)
 
 		to_chat(slapped, span_xenowarning("We are struck by \the [xeno_owner]'s flying tail!"))

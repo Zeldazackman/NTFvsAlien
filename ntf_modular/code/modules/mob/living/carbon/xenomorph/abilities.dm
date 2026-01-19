@@ -938,8 +938,6 @@
 		damage *= 1.5
 		disorientamount *= 2
 		penetration *= 2
-		if(!incapacitated())
-			Stun(2.5 SECONDS)
 		ParalyzeNoChain(0.5 SECONDS)
 		xeno.stop_pulling()
 		stab_description = "devastating tail-jab!"

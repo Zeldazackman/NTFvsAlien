@@ -106,7 +106,6 @@
 				X.visible_message("<span class='danger'>[X] holds [src] down!</span>",
 				"<span class='danger'>We hold [src] down!</span>", null, 5)
 				AdjustParalyzed(2 SECONDS)
-				Stun(4 SECONDS)
 		else
 			if(pulling)
 				X.visible_message("<span class='danger'>[X] has broken [src]'s grip on [pulling]!</span>",

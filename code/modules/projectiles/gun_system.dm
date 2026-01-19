@@ -1743,10 +1743,11 @@
 ///Checks if the gun can be fired
 /obj/item/weapon/gun/proc/able_to_fire(mob/user)
 	if(!user || user.incapacitated() || !isturf(user.loc))
-		if(gun_skill_category != SKILL_PISTOLS || gun_skill_category != SKILL_SMGS)
-			balloon_alert(user, "Can't use this while laying!")
-			to_chat(user, span_warning("You can't aim this on your back!"))
-			return FALSE
+		return FALSE
+	if(user.lying_angle || gun_skill_category != SKILL_PISTOLS || gun_skill_category != SKILL_SMGS)
+		balloon_alert(user, "Can't use this while laying!")
+		to_chat(user, span_warning("You can't aim this on your back!"))
+		return
 	if(rounds - rounds_per_shot < 0 && rounds)
 		to_chat(user, span_warning("There's not enough rounds left to fire."))
 		return FALSE
