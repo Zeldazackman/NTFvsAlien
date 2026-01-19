@@ -117,7 +117,7 @@
 			user.forceMove(loc)
 
 /mob/living/carbon/xenomorph/proc/claim_hive_target_reward(mob/living/carbon/human/target)
-	if(!HAS_TRAIT(target, TRAIT_HIVE_TARGET) || !istype(target))
+	if(!istype(target) || !HAS_TRAIT(target, TRAIT_HIVE_TARGET))
 		return
 	var/psy_points_reward = PSY_DRAIN_REWARD_MIN + ((HIGH_PLAYER_POP - SSmonitor.maximum_connected_players_count) / HIGH_PLAYER_POP * (PSY_DRAIN_REWARD_MAX - PSY_DRAIN_REWARD_MIN))
 	psy_points_reward = clamp(psy_points_reward, PSY_DRAIN_REWARD_MIN, PSY_DRAIN_REWARD_MAX)
@@ -133,6 +133,8 @@
 	xeno_job.add_job_points(5) //can be made a var if need be.
 	GLOB.round_statistics.larva_from_hive_target_rewards += 5/xeno_job.job_points_needed
 	hive.update_tier_limits()
+	for(var/obj/item/alien_embryo/embryo in target)
+		embryo.hive_target_bonus = TRUE
 	return TRUE
 
 /mob/living/carbon/xenomorrph/relaymove()

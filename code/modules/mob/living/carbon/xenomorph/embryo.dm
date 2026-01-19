@@ -132,9 +132,16 @@
 
 	GLOB.round_statistics.strategic_psypoints_from_embryos += current_psypoint_reward
 	GLOB.round_statistics.biomass_from_embryos += current_biomass_reward
-	SSpoints.add_strategic_psy_points(hivenumber, current_psypoint_reward)
-	SSpoints.add_tactical_psy_points(hivenumber, current_psypoint_reward*0.25)
-	SSpoints.add_biomass_points(hivenumber, current_biomass_reward)
+	if(hive_target_bonus)
+		GLOB.round_statistics.strategic_psypoints_from_hive_target_rewards += current_psypoint_reward
+		GLOB.round_statistics.biomass_from_hive_target_rewards += current_biomass_reward
+		SSpoints.add_strategic_psy_points(hivenumber, current_psypoint_reward*2)
+		SSpoints.add_tactical_psy_points(hivenumber, current_psypoint_reward*0.5)
+		SSpoints.add_biomass_points(hivenumber, current_biomass_reward*2)
+	else
+		SSpoints.add_strategic_psy_points(hivenumber, current_psypoint_reward)
+		SSpoints.add_tactical_psy_points(hivenumber, current_psypoint_reward*0.25)
+		SSpoints.add_biomass_points(hivenumber, current_biomass_reward)
 
 	psypoint_reward += current_psypoint_reward * 2
 	biomass_reward += current_psypoint_reward * 2
