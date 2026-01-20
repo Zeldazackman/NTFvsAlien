@@ -8,7 +8,7 @@
 	travelling_time = 4 SECONDS
 	heavy_explosion_range = 0
 	light_explosion_range = 2
-	cas_effect = /obj/effect/overlay/blinking_laser/tfoot
+	cas_effect = /obj/effect/overlay/blinking_laser/Satrapine
 	crosshair = 'ntf_modular/icons/UI_icons/cas_crosshairs/rocket_satrapine.dmi'
 
 /obj/structure/ship_ammo/cas/minirocket/satrapine/detonate_on(turf/impact, attackdir = NORTH)
@@ -33,7 +33,7 @@
 	travelling_time = 4 SECONDS
 	heavy_explosion_range = 0
 	light_explosion_range = 2
-	cas_effect = /obj/effect/overlay/blinking_laser/tfoot
+	cas_effect = /obj/effect/overlay/blinking_laser/KnockOut
 	crosshair = 'ntf_modular/icons/UI_icons/cas_crosshairs/rocket_KnockOut.dmi'
 
 /obj/structure/ship_ammo/cas/minirocket/KnockOut/detonate_on(turf/impact, attackdir = NORTH)
