@@ -328,7 +328,7 @@
 //harmless corrupted special pet huggers
 /obj/item/clothing/mask/facehugger/latching/friendly
 	name = "Jamal"
-	desc = "It has some sort of weird pulsating gigantic (for his size) alien cock with bountiful massive balls and a strong boney tail. This one seems to not have acid cum and does not expire. Friend shaped? doubt."
+	desc = "It has some sort of weird pulsating gigantic (for his size) alien cock with bountiful massive balls and a strong boney tail. This one seems to be modified to not have acidic-enough cum to hurt anyone and does not expire in a short time unlike usual huggers. Friend shaped? doubt."
 	filter_color = COLOR_RED_LIGHT
 	hivenumber = XENO_HIVE_CORRUPTED
 	harmless = TRUE
