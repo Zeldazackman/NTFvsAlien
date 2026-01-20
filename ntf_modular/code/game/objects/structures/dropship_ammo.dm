@@ -14,13 +14,15 @@
 /obj/structure/ship_ammo/cas/minirocket/satrapine/detonate_on(turf/impact, attackdir = NORTH)
 	impact.ceiling_debris_check(2)
 	var/datum/effect_system/smoke_spread/satrapine/S = new
-	S.set_up(2, impact, 9)
-	S.start()
 	for(var/obj/machinery/deployable/mounted/sentry/ads_system/ads in range(GLOB.ads_intercept_range,impact))
 		if(!COOLDOWN_FINISHED(ads, intercept_cooldown))
 			continue
 		if(ads.try_intercept(impact, src, 0.5, 5))
+			S.set_up(0, impact, 1)
+			S.start()
 			return
+	S.set_up(2, impact, 9)
+	S.start()
 	explosion(impact, devastating_explosion_range, heavy_explosion_range, light_explosion_range, throw_range = 0, explosion_cause=src)
 
 /obj/structure/ship_ammo/cas/minirocket/KnockOut
@@ -39,11 +41,13 @@
 /obj/structure/ship_ammo/cas/minirocket/KnockOut/detonate_on(turf/impact, attackdir = NORTH)
 	impact.ceiling_debris_check(2)
 	var/datum/effect_system/smoke_spread/sleepy/S = new
-	S.set_up(2, impact, 9)
-	S.start()
 	for(var/obj/machinery/deployable/mounted/sentry/ads_system/ads in range(GLOB.ads_intercept_range,impact))
 		if(!COOLDOWN_FINISHED(ads, intercept_cooldown))
 			continue
 		if(ads.try_intercept(impact, src, 0.5, 5))
+			S.set_up(0, impact, 1)
+			S.start()
 			return
+	S.set_up(2, impact, 9)
+	S.start()
 	explosion(impact, devastating_explosion_range, heavy_explosion_range, light_explosion_range, throw_range = 0, explosion_cause=src)
