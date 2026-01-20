@@ -322,9 +322,12 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 
 	var/mob/living/carbon/chosen_target
 
-	for(var/mob/living/carbon/M in view(4, src))
+	for(var/mob/living/carbon/M in hearers(4, src))
 		// Using euclidean distance means it will prioritize cardinal directions, which are less likely to miss due to wall jank.
 		if(chosen_target && (get_dist_manhattan(src, M) > get_dist_manhattan(src, chosen_target)))
+			continue
+
+		if(combat_hugger && HAS_TRAIT(M, XENO_HOST) && M.is_buckled())
 			continue
 
 		if(!M.can_be_facehugged(src))

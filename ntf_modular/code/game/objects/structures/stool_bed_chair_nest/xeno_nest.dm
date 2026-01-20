@@ -427,7 +427,7 @@
 /obj/structure/bed/nest/wall/update_overlays()
 	. = ..()
 	if(LAZYLEN(buckled_mobs))
-		resin_stuff_overlay = image(icon, icon_state = "nestwall_overlay", layer = 6, dir = dir)
+		resin_stuff_overlay = image(icon, icon_state = "nestwall_overlay", layer = layer, dir = dir)
 		add_overlay(resin_stuff_overlay)
 	else
 		cut_overlay(resin_stuff_overlay)
@@ -442,12 +442,9 @@
 	buckling_mob.pixel_y = buckle_y["[dir]"]
 	pixel_y = buckle_y["[dir]"]
 	pixel_x = buckle_x["[dir]"]
-	if(dir == SOUTH)
-		buckling_mob.layer = ABOVE_NORMAL_TURF_LAYER
-		if(ishuman(buckling_mob))
-			var/mob/living/carbon/human/current_human = buckling_mob
-			for(var/obj/item/limb/buckling_mobs_limb in current_human.limbs)
-				buckling_mobs_limb.layer = BELOW_CLOSED_TURF_LAYER
+	if(dir == NORTH)
+		layer = 5
+		buckling_mob.layer = 5
 	update_overlays()
 
 /obj/structure/bed/nest/wall/unbuckle_mob(mob/living/buckled_mob, force = FALSE, can_fall = TRUE)
@@ -455,11 +452,6 @@
 	buckled_mob.pixel_y = initial(buckled_mob.pixel_y)
 	buckled_mob.pixel_x = initial(buckled_mob.pixel_x)
 	buckled_mob.density = buckled_mob_density
-	if(dir == SOUTH)
-		buckled_mob.layer = initial(buckled_mob.layer)
-		if(!ishuman(buckled_mob))
-			var/mob/living/carbon/human/current_human = buckled_mob
-			for(var/obj/item/limb/current_mobs_limb in current_human.limbs)
-				current_mobs_limb.layer =  initial(current_mobs_limb.layer)
+	buckled_mob.layer = initial(buckled_mob.layer)
 	update_overlays()
 	qdel(src)
