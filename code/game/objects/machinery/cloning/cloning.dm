@@ -77,11 +77,13 @@ These act as a respawn mechanic growning a body and offering it up to ghosts.
 		visible_message("[icon2html(src, viewers(src))] <span><b>[src]</b> beeps as its boots up and connects to \the [linked_machine].</span>")
 		return TRUE
 
-	if(linked_machine.occupant && linked_machine.timerid)
+	if(linked_machine.timerid)
 		visible_message("[icon2html(src, viewers(src))] <span><b>[src]</b> beeps in error, 'Already processing clone'.</span>")
 		return TRUE
-	else if(linked_machine.occupant)
+
+	if(linked_machine.occupant)
 		linked_machine.eject_user()
+		return TRUE
 
 	if(!linked_machine.beaker || linked_machine.beaker.reagents.total_volume < linked_machine.biomass_required)
 		visible_message("[icon2html(src, viewers(src))] <span><b>[src]</b> beeps in error, 'Not enough biomass'.</span>")
@@ -114,7 +116,7 @@ These act as a respawn mechanic growning a body and offering it up to ghosts.
 	/// Amount of biomass required to start growing and the amount of reagents that gets removed on successful grow
 	var/biomass_required = 40
 	/// The amount of times it takes for the clone to pop out
-	var/grow_timer = 15 MINUTES
+	var/grow_timer = 10 MINUTES
 
 
 /obj/machinery/cloning/vats/Initialize(mapload)
@@ -223,10 +225,10 @@ These act as a respawn mechanic growning a body and offering it up to ghosts.
 	if(!beaker)
 		icon_state = "cell_0"
 		return
-	if(occupant && timerid)
+	if(occupant || timerid)
 		icon_state = "cell_growing"
 		return
-	else if(occupant)
+	else if(occupant && !timerid)
 		icon_state = "cell_grown"
 		return
 	var/amount = clamp(round(beaker.reagents.total_volume / biomass_required, 0.25) * 100, 0, 100)
@@ -260,6 +262,7 @@ These act as a respawn mechanic growning a body and offering it up to ghosts.
 	var/datum/job/job_instance = SSjob.GetJobType(/datum/job/terragov/squad/vatgrown)
 	occupant.apply_assigned_role_to_spawn(job_instance)
 	occupant.set_species("Early Vat-Grown Human")
+	occupant.randomize_appearance()
 	occupant.fully_replace_character_name(occupant.real_name, occupant.species.random_name(occupant.gender))
 	occupant.disabilities |= (BLIND & DEAF)
 	occupant.set_blindness(10) // Temp fix until blindness is fixed.

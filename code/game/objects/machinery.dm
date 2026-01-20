@@ -94,6 +94,8 @@
 				var/obj/item/I = i
 				I.forceMove(loc)
 			component_parts.Cut()
+			var/obj/item/stack/cable_coil/A = new /obj/item/stack/cable_coil(loc)
+			A.amount = 5
 	return ..()
 
 
@@ -103,8 +105,8 @@
 	M.setAnchored(anchored)
 	if(!disassembled)
 		M.take_damage(M.max_integrity * 0.5) //the frame is already half broken
-	M.state = 2
-	M.icon_state = "box_1"
+	M.state = 0
+	M.icon_state = "box_0"
 
 
 /obj/machinery/setAnchored(anchorvalue)

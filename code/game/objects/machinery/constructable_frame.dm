@@ -162,6 +162,7 @@
 					mcircuit.forceMove(new_machine)
 					mcircuit = null
 					new_machine.RefreshParts()
+					new_machine.on_construction()
 					qdel(src)
 			else if(istype(P, /obj/item))
 				if(huser.skills.getRating(SKILL_CONSTRUCTION) < required_skill)

@@ -17,6 +17,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	var/obj/structure/transmitter/outbound_call
 	var/obj/structure/transmitter/inbound_call
 	var/pickup_sound = "rtb_handset"
+	var/putdown_sound = "rtb_handset"
 
 	var/next_ring = 0
 
@@ -41,6 +42,8 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	var/datum/looping_sound/telephone/ring/outring_loop
 	var/call_sound = 'ntf_modular/sound/machines/telephone/fnaf3_phonecall.ogg'
 	var/call_sound_length = 2 SECONDS
+	//since antenna module etc does no apply for close enough.
+	var/bypass_tgui_range = FALSE
 
 /datum/looping_sound/telephone/ring
 	start_sound = 'ntf_modular/sound/machines/telephone/dial.ogg'
@@ -81,10 +84,13 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	busy_loop = new(list(attached_to))
 	hangup_loop = new(list(attached_to))
 
-	if(!get_turf(src))
-		return
-
 	GLOB.transmitters += src
+
+/obj/structure/transmitter/LateInitialize()
+	. = ..()
+	//sometimes those are not added to list properly it appears, apparently when dispensed from vendors etc.
+	if(!(src in GLOB.transmitters))
+		GLOB.transmitters += src
 
 /obj/structure/transmitter/update_icon()
 	. = ..()
@@ -147,8 +153,9 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 /obj/structure/transmitter/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
-	if(.)
-		return
+	if(!bypass_tgui_range)
+		if(.)
+			return
 
 	if(TRANSMITTER_UNAVAILABLE(src))
 		return
@@ -276,7 +283,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "PhoneMenu", phone_id)
-		ui.open()
+		ui.open(bypass_tgui_range)
 
 /obj/structure/transmitter/proc/set_tether_holder(atom/A)
 	tether_holder = A
@@ -319,12 +326,12 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 			T.timeout_timer_id = null
 
 		T.update_icon()
-		addtimer(CALLBACK(T), PROC_REF(post_stop_cleanup), 5 SECONDS) //this is necessary because FUCKING sound loops are unreliable.
+		addtimer(CALLBACK(T, PROC_REF(post_stop_cleanup)), 5 SECONDS) //this is necessary because FUCKING sound loops are unreliable.
 		STOP_PROCESSING(SSobj, T)
 
 	outring_loop.stop(attached_to)
 
-	addtimer(CALLBACK(src), PROC_REF(post_stop_cleanup), 5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(post_stop_cleanup)), 5 SECONDS)
 	STOP_PROCESSING(SSobj, src)
 
 /obj/structure/transmitter/process()
@@ -336,7 +343,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 		hangup_loop.stop(attached_to)
 	if(inbound_call)
 		if(!attached_to)
-			addtimer(CALLBACK(src), PROC_REF(post_stop_cleanup), 5 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(post_stop_cleanup)), 5 SECONDS)
 			STOP_PROCESSING(SSobj, src)
 			return
 
@@ -349,7 +356,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	else if(outbound_call)
 		var/obj/structure/transmitter/T = get_calling_phone()
 		if(!T)
-			addtimer(CALLBACK(src), PROC_REF(post_stop_cleanup), 5 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(post_stop_cleanup)), 5 SECONDS)
 			STOP_PROCESSING(SSobj, src)
 			return
 
@@ -361,7 +368,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 			next_ring = world.time + 3 SECONDS
 
 	else
-		addtimer(CALLBACK(src), PROC_REF(post_stop_cleanup), 5 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(post_stop_cleanup)), 5 SECONDS)
 		STOP_PROCESSING(SSobj, src)
 		return
 
@@ -369,7 +376,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 /obj/structure/transmitter/proc/post_stop_cleanup()
 	if(!timeout_timer_id)
 		outring_loop.stop(attached_to)
-	if(attached_to.loc == attached_to.attached_to)
+	if(attached_to && (attached_to.loc == attached_to.attached_to))
 		outring_loop.stop(attached_to)
 		busy_loop.stop(attached_to)
 		hangup_loop.stop(attached_to)
@@ -378,7 +385,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	if(ismob(attached_to.loc))
 		var/mob/M = attached_to.loc
 		M.drop_held_item(attached_to)
-		playsound(get_turf(M), pickup_sound, 100, FALSE, 7)
+		playsound(get_turf(M), putdown_sound, 100, FALSE, 7)
 
 	attached_to.forceMove(src)
 	reset_call()
@@ -480,7 +487,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	if(radio_freq || get_dist(src, speaker) > 0)
 		return FALSE
 
-	if((message_mode == MODE_WHISPER || message_mode == MODE_WHISPER_CRIT) && (!raised || !ismob(loc)))
+	if((message_mode == MODE_WHISPER || message_mode == MODE_WHISPER_CRIT) && ((can_be_raised && !raised) || !ismob(loc)))
 		raw_message = stars(raw_message)
 
 	attached_to.handle_speak(speaker, raw_message)
@@ -498,7 +505,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 		return
 	var/mob/M = loc
 
-	if(!raised)
+	if(can_be_raised && !raised)
 		//to_chat(M, span_lightpurple("[icon2html(src, M)] You hear muffled, unintelligible speech through \the [src] in your hand."))
 		message = stars(message)
 	to_chat(M, span_lightpurple("[icon2html(src, M)] [T.phone_id]: \"[message]\"")) //i didnt include name cause I guess it makes sense not to.
@@ -605,6 +612,9 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 /obj/item/phone/functional/dropped(mob/user)
 	. = ..()
 	set_raised(FALSE, user)
+	if(isitem(attached_to.loc)) //anything like antenna module helmets etc non structure transmitters
+		if(attached_to != loc)
+			attached_to.recall_phone()
 
 /obj/item/phone/functional/on_enter_storage(obj/item/storage/S)
 	. = ..()

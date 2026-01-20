@@ -67,7 +67,7 @@
 		return FALSE
 	user.visible_message(span_notice("[user] starts attaching [src] to [spirited_away]."),\
 	span_notice("You start attaching the pack to [spirited_away]..."), null, 5)
-	if(!do_after(user, 5 SECONDS, TRUE, spirited_away))
+	if(!do_after(user, 5 SECONDS, NONE, spirited_away, BUSY_ICON_HOSTILE, BUSY_ICON_DANGER))
 		return FALSE
 	if(!isturf(spirited_away.loc))
 		balloon_alert(user, "Must extract on the ground")
@@ -278,8 +278,8 @@
 	if(care_about_anchored && movable_target.anchored)
 		balloon_alert(user, "Cannot extract anchored")
 		return FALSE
-	if(do_after_time && (user.do_actions || !do_after(user, do_after_time, TRUE, target, BUSY_ICON_HOSTILE, BUSY_ICON_DANGER, PROG_BAR_GENERIC)))
-		return
+	if(!do_after(user, do_after_time, NONE, target, BUSY_ICON_HOSTILE, BUSY_ICON_DANGER))
+		return FALSE
 	if(require_living_to_be_dead && isliving(target))
 		var/mob/living/living_target = target
 		if(living_target.stat == DEAD)
@@ -293,18 +293,21 @@
 
 	if(linked_extraction_point)
 		sleep(8 SECONDS) //Wait for the fulton animation to finish
-		movable_target.forceMove(get_turf(linked_extraction_point))
+		var/turf/droploc = get_turf(linked_extraction_point)
+		if(!droploc)
+			if(isliving(movable_target))
+				REMOVE_TRAIT(movable_target, TRAIT_IMMOBILE, type)
+			return
+		movable_target.forceMove(droploc)
 		if(ishuman(movable_target))
 			var/mob/living/carbon/human/movable_target_human = movable_target
 			movable_target_human.ImmobilizeNoChain(4 SECONDS)
-		var/turf/droploc = get_turf(linked_extraction_point)
 		playsound(droploc, 'sound/items/fultext_deploy.ogg', 30, TRUE)
 		var/image/fulton_image = image('icons/obj/items/fulton_balloon.dmi', src, "fulton_balloon")
-		movable_target.forceMove(droploc)
 		movable_target.pixel_z = 400
 		movable_target.add_overlay(list(fulton_image))
 		animate(movable_target, time = 4 SECONDS, pixel_z = 0, easing=SINE_EASING|EASE_OUT, flags = ANIMATION_PARALLEL)
-		addtimer(CALLBACK(src, TYPE_PROC_REF(/turf, ceiling_debris)), 2.5 SECONDS)
+		addtimer(CALLBACK(droploc, TYPE_PROC_REF(/turf, ceiling_debris)), 2.5 SECONDS)
 		addtimer(CALLBACK(src, PROC_REF(clean_fultondrop), movable_target, list(fulton_image)), 4 SECONDS)
 		if(isliving(movable_target))
 			REMOVE_TRAIT(movable_target, TRAIT_IMMOBILE, type)

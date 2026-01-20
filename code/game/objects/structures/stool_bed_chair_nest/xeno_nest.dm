@@ -1,4 +1,5 @@
-#define NEST_RESIST_TIME 120 SECONDS
+#define NEST_RESIST_TIME 60 SECONDS
+#define WALL_NEST_RESIST_TIME 180 SECONDS
 #define NEST_UNBUCKLED_COOLDOWN 5 SECONDS
 
 ///Alium nests. Essentially beds with an unbuckle delay that only aliums can buckle mobs to.
@@ -14,7 +15,6 @@
 	resistance_flags = UNACIDABLE|XENO_DAMAGEABLE
 	max_integrity = 100
 	layer = BELOW_OPEN_DOOR_LAYER
-	var/buckleoverlaydir = SOUTH
 	var/unbuckletime = 6 SECONDS
 	var/resist_time = NEST_RESIST_TIME
 
@@ -30,7 +30,8 @@
 			return
 		var/mob/M = G.grabbed_thing
 		to_chat(user, span_notice("You place [M] on [src]."))
-		M.forceMove(loc)
+		if(!density)
+			M.forceMove(loc)
 		user_buckle_mob(M, user)
 
 
@@ -135,89 +136,11 @@
 /obj/structure/bed/nest/update_overlays()
 	. = ..()
 	if(LAZYLEN(buckled_mobs))
-		. += image("icon_state" = "nest_overlay", "layer" = LYING_MOB_LAYER + 0.1)
+		if(!istype(src, /obj/structure/bed/nest/wall))
+			. += image("icon_state" = "nest_overlay", "layer" = LYING_MOB_LAYER + 0.1)
 
 /obj/structure/bed/nest/fire_act(burn_level)
 	take_damage(burn_level * 2, BURN, FIRE)
-
-/obj/structure/bed/nest/wall
-	name = "wall alien nest"
-	desc = "It's a wall of thick, sticky resin as a nest."
-	icon = 'ntf_modular/icons/Xeno/Effects.dmi'
-	icon_state = "nestwall"
-	allow_pass_flags = null
-	buckle_lying = 0
-	buckling_x = 0
-	buckling_y = 0
-	density = TRUE
-	smoothing_groups = list(SMOOTH_GROUP_XENO_STRUCTURES)
-
-/obj/structure/bed/nest/wall/user_buckle_mob(mob/living/buckling_mob, mob/user, check_loc = TRUE, silent)
-	buckleoverlaydir = get_dir(loc, user.loc)
-	dir = buckleoverlaydir
-	face_atom(user)
-	buckling_mob.face_atom(user)
-	. = ..()
-	if(!.)
-		return
-	walldir_update(buckling_mob)
-	buckling_mob.set_lying_angle(0)
-	START_PROCESSING(SSslowprocess, src)
-
-/obj/structure/bed/nest/wall/process()
-	. = ..()
-	for(var/mob/living/mobussy in buckled_mobs) //larvas making em shake and lose their pixel shift which sucks
-		mobussy.jitteriness = 0
-		walldir_update(mobussy)
-
-/obj/structure/bed/nest/wall/update_overlays()
-	. = ..()
-	/* this shit dont work right with pixel placement and obstruct vision
-	if(LAZYLEN(buckled_mobs))
-		add_overlay(image(icon, "nestwall_overlay", layer = 6, buckleoverlaydir, buckling_x, buckling_y))
-	*/
-
-/obj/structure/bed/nest/wall/proc/walldir_update(mob/buckling_mob)
-	switch(buckleoverlaydir)
-		if(4,3,5)
-			buckleoverlaydir = 4
-			dir = 4
-			buckling_mob.dir = 4
-			buckling_y = 0
-			buckling_x = 12
-			layer = 3
-		if(8,9,7)
-			buckleoverlaydir = 8
-			dir = 8
-			buckling_mob.dir = 8
-			buckling_y = 0
-			buckling_x = -12
-			layer = 3
-		if(1)
-			dir = 1
-			buckling_mob.dir = 1
-			buckling_y = 12
-			buckling_x = 0
-			layer = 5
-		if(2)
-			dir = 2
-			buckling_mob.dir = 2
-			buckling_y = -6
-			buckling_x = 0
-			layer = 3
-	buckling_mob.pixel_y = buckling_y
-	buckling_mob.pixel_x = buckling_x
-	//update_overlays()
-
-/obj/structure/bed/nest/wall/user_unbuckle_mob(mob/living/buckled_mob)
-	. = ..()
-	buckling_x = initial(buckling_x)
-	buckling_y = initial(buckling_y)
-	layer = 3
-	buckled_mob.pixel_x = initial(buckled_mob.pixel_x)
-	buckled_mob.pixel_y = initial(buckled_mob.pixel_y)
-	//cut_overlays()
-	STOP_PROCESSING(SSslowprocess, src)
 
 #undef NEST_RESIST_TIME
 #undef NEST_UNBUCKLED_COOLDOWN

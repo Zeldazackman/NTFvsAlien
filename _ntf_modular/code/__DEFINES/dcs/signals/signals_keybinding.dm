@@ -12,6 +12,7 @@
 #define COMSIG_KB_CLIENT_XOOC_MULTILINE_DOWN "keybinding_client_xooc_multiline_down"
 #define COMSIG_KB_CLIENT_MOOC_MULTILINE_DOWN "keybinding_client_mooc_multiline_down"
 #define COMSIG_KB_CLIENT_LOOC_MULTILINE_DOWN "keybinding_client_looc_multiline_down"
+#define COMSIG_KB_MOB_PIXELSHIFT "keybinding_mob_pixelshift"
 #define COMSIG_XENOABILITY_PLACE_STEW_POD "xenoability_place_stew_pod"
 #define COMSIG_XENOABILITY_CREATE_EDIBLE_JELLY "xenoability_create_edible_jelly"
 #define COMSIG_XENOABILITY_TOGGLE_PHASEOUT "xenoability_toggle_phaseout"

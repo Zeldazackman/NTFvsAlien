@@ -461,7 +461,7 @@ GLOBAL_LIST_INIT(organ_rel_size, list(
 /mob/living/carbon/human/proc/do_unique_action()
 	SIGNAL_HANDLER
 	. = COMSIG_KB_ACTIVATED //The return value must be a flag compatible with the signals triggering this.
-	if(incapacitated() || lying_angle)
+	if(incapacitated())
 		return
 
 	var/obj/item/active_item = get_active_held_item()

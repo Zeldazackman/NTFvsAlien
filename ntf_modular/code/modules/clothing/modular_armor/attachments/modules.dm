@@ -121,3 +121,32 @@ warning: overcharging too much will result in an explosion, accumulated energy d
 	shield_color_full = COLOR_LIGHT_ORANGE
 	shield_color_overmax_full = COLOR_VERY_SOFT_YELLOW
 	shield_color_overmax_full_danger = COLOR_BRIGHT_ORANGE
+
+//module invisibility
+/obj/item/armor_module/module
+	var/invisible_toggle = FALSE
+
+/obj/item/armor_module/module/examine(mob/user)
+	. = ..()
+	. += span_notice("This can be toggled invisible using RCLICK, it's currently [invisible_toggle ? "invisible" : "visible"].")
+
+/obj/item/armor_module/module/RightClick(mob/user)
+	. = ..()
+	invisible_toggle = !invisible_toggle
+	if(invisible_toggle)
+		balloon_alert(user, "Invisible")
+		worn_icon_state = ""
+		variants_by_parent_type = list(/obj/item = "")
+	else
+		balloon_alert(user, "Visible")
+		worn_icon_state = initial(worn_icon_state)
+		variants_by_parent_type = initial(variants_by_parent_type)
+
+/obj/item/armor_module/module/Initialize(mapload)
+	if(invisible_toggle)
+		worn_icon_state = ""
+		variants_by_parent_type = list(/obj/item = "")
+	. = ..()
+
+/obj/item/armor_module/module/antenna/integrated
+	invisible_toggle = TRUE

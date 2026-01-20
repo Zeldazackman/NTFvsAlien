@@ -70,7 +70,7 @@
 //black bag
 /obj/item/clothing/head/head_sack
 	name = "head sack"
-	desc = "Legendary kidnapping equipment, Covers the eyes, preventing sight."
+	desc = "Legendary kidnapping equipment, Covers the head, preventing sight."
 	icon = 'ntf_modular/icons/obj/clothing/headwear/head.dmi'
 	worn_icon_list = list(
 		slot_head_str = 'ntf_modular/icons/mob/clothing/headwear/head.dmi',
@@ -80,7 +80,31 @@
 	icon_state = "blackbag"
 	worn_icon_state = "blackbag"
 	eye_protection = 2
+	inv_hide_flags = HIDETOPHAIR|HIDEEARS|HIDEEYES|HIDEFACE
+	var/tint_value = TINT_BLIND
 
 /obj/item/clothing/head/head_sack/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/clothing_tint, TINT_BLIND)
+	AddComponent(/datum/component/clothing_tint, tint_value)
+
+/obj/item/clothing/head/head_sack/light
+	name = "light head sack"
+	desc = "Epic kidnapping equipment, Covers the head, preventing sight... Mostly. (allows seeing emotes but lets more sight.)"
+	tint_value = TINT_6
+
+/obj/item/clothing/head/kitty
+	name = "kitty ears"
+	desc = "A pair of kitty ears. Meow!"
+	icon_state = "kitty"
+	color = "#999999"
+	icon = 'ntf_modular/icons/obj/clothing/headwear/head.dmi'
+	worn_icon_list = list(
+		slot_head_str = 'ntf_modular/icons/mob/clothing/headwear/head.dmi',
+		slot_l_hand_str = 'icons/mob/inhands/items/items_left.dmi',
+		slot_r_hand_str = 'icons/mob/inhands/items/items_right.dmi',
+	)
+
+/obj/item/clothing/head/kitty/equipped(mob/living/carbon/human/user, slot)
+	. = ..()
+	if(slot == SLOT_HEAD && ishuman(user))
+		color = rgb(user.r_hair, user.g_hair, user.b_hair)

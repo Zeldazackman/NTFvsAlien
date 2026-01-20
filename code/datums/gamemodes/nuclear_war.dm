@@ -2,7 +2,7 @@
 	name = "Nuclear War"
 	config_tag = "Nuclear War"
 	silo_scaling = 2
-	round_type_flags = MODE_INFESTATION|MODE_LATE_OPENING_SHUTTER_TIMER|MODE_XENO_RULER|MODE_PSY_POINTS|MODE_PSY_POINTS_ADVANCED|MODE_HIJACK_POSSIBLE|MODE_SILO_RESPAWN|MODE_SILOS_SPAWN_MINIONS|MODE_ALLOW_XENO_QUICKBUILD|MODE_FORCE_CUSTOMSQUAD_UI|MODE_MUTATIONS_OBTAINABLE|MODE_BIOMASS_POINTS
+	round_type_flags = MODE_INFESTATION|MODE_LATE_OPENING_SHUTTER_TIMER|MODE_XENO_RULER|MODE_PSY_POINTS|MODE_PSY_POINTS_ADVANCED|MODE_HIJACK_POSSIBLE|MODE_SILO_RESPAWN|MODE_SILOS_SPAWN_MINIONS|MODE_ALLOW_XENO_QUICKBUILD|MODE_FORCE_CUSTOMSQUAD_UI|MODE_MUTATIONS_OBTAINABLE
 	xeno_abilities_flags = ABILITY_NUCLEARWAR
 	time_between_round = 48 HOURS
 	valid_job_types = list(
@@ -25,14 +25,16 @@
 		/datum/job/terragov/silicon/ai = 1,
 		/datum/job/terragov/squad/engineer = 1,
 		/datum/job/terragov/squad/corpsman = 1,
+		/datum/job/terragov/squad/specialist = 1,
 		/datum/job/terragov/squad/smartgunner = 1,
 		/datum/job/terragov/squad/leader = 1,
 		/datum/job/terragov/squad/standard = -1,
 		/datum/job/terragov/squad/slut = -1,
-		/datum/job/xenomorph = FREE_XENO_AT_START,
+		/datum/job/xenomorph = 2,
 		/datum/job/xenomorph/queen = 1
 	)
 	job_points_needed_by_job_type = list(
+		/datum/job/terragov/squad/specialist = 20,
 		/datum/job/terragov/squad/smartgunner = 20,
 		/datum/job/terragov/squad/corpsman = 5,
 		/datum/job/terragov/squad/engineer = 5,
@@ -42,8 +44,10 @@
 	evo_requirements = list(
 		/datum/xeno_caste/queen = 8,
 		/datum/xeno_caste/king = 12,
-		/datum/xeno_caste/dragon = 12,
+		/datum/xeno_caste/dragon = 18,
 	)
+
+	max_larva_preg_at_once = 1
 
 ///Timer used to track the countdown to hive collapse due to lack of silos or corrupted generators
 	var/siloless_hive_timer
@@ -51,9 +55,13 @@
 /datum/game_mode/infestation/nuclear_war/post_setup()
 	var/client_count = length(GLOB.clients)
 	if(client_count >= NUCLEAR_WAR_MECH_MINIMUM_POP_REQUIRED)
-		evo_requirements[/datum/xeno_caste/queen] -= 2
+		evo_requirements[/datum/xeno_caste/queen] -= 1
+		evo_requirements[/datum/xeno_caste/king] -= 1
+		evo_requirements[/datum/xeno_caste/dragon] -= 1
 	if(client_count >= NUCLEAR_WAR_TANK_MINIMUM_POP_REQUIRED)
-		evo_requirements[/datum/xeno_caste/queen] -= 2
+		evo_requirements[/datum/xeno_caste/queen] -= 1
+		evo_requirements[/datum/xeno_caste/king] -= 1
+		evo_requirements[/datum/xeno_caste/dragon] -= 1
 
 	. = ..()
 

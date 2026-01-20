@@ -93,7 +93,7 @@
 
 
 /obj/machinery/deployable/mortar/mlrs/AltRightClick(mob/living/user)
-	if(!Adjacent(user) || user.lying_angle || user.incapacitated() || !ishuman(user))
+	if(!Adjacent(user) || user.incapacitated() || !ishuman(user))
 		return
 
 	if(!anchored)

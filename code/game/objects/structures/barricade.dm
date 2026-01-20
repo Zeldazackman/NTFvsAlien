@@ -392,8 +392,8 @@
 #define CADE_UPGRADE_REQUIRED_SHEETS 1
 
 //cade armor defines
-#define CADE_UPGRADE_BOMB 80
-#define CADE_UPGRADE_MELEE list(melee = 30, bullet = 80, laser = 80, energy = 80)
+#define CADE_UPGRADE_BOMB list(melee = 40, bomb = 40) //plus tanks 20% of crusher charges pre melee armor reduction
+#define CADE_UPGRADE_MELEE list(melee = 30, bullet = 60, laser = 60, energy = 60, bomb = 20)
 #define CADE_UPGRADE_ACID 75
 
 /obj/structure/barricade/solid
@@ -402,7 +402,7 @@
 	icon = 'icons/obj/structures/barricades/metal.dmi'
 	icon_state = "metal_0"
 	max_integrity = 250
-	soft_armor = list(MELEE = 0, BULLET = 30, LASER = 30, ENERGY = 30, BOMB = 0, BIO = 100, FIRE = 80, ACID = 40)
+	soft_armor = list(MELEE = 0, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 0, BIO = 100, FIRE = 80, ACID = 40, BOMB = 40)
 	coverage = 128
 	stack_type = /obj/item/stack/sheet/metal
 	stack_amount = BUILD_COST_METAL_CADE
@@ -519,9 +519,9 @@
 
 	switch(choice)
 		if(CADE_TYPE_BOMB)
-			soft_armor = soft_armor.modifyRating(BOMB = CADE_UPGRADE_BOMB)
+			soft_armor = soft_armor.modifyRating(MELEE = CADE_UPGRADE_BOMB["melee"], BOMB = CADE_UPGRADE_BOMB["bomb"])
 		if(CADE_TYPE_MELEE)
-			soft_armor = soft_armor.modifyRating(MELEE = CADE_UPGRADE_MELEE["melee"], BULLET = CADE_UPGRADE_MELEE["bullet"], LASER = CADE_UPGRADE_MELEE["laser"], ENERGY = CADE_UPGRADE_MELEE["energy"])
+			soft_armor = soft_armor.modifyRating(MELEE = CADE_UPGRADE_MELEE["melee"], BULLET = CADE_UPGRADE_MELEE["bullet"], LASER = CADE_UPGRADE_MELEE["laser"], ENERGY = CADE_UPGRADE_MELEE["energy"], BOMB = CADE_UPGRADE_MELEE["bomb"])
 		if(CADE_TYPE_ACID)
 			soft_armor = soft_armor.modifyRating(ACID = CADE_UPGRADE_ACID)
 			resistance_flags |= UNACIDABLE
@@ -1137,7 +1137,7 @@
 	if(!ishuman(usr))
 		return
 	var/mob/living/carbon/human/user = usr
-	if(over_object != user || !in_range(src, user) || user.incapacitated() || user.lying_angle)
+	if(over_object != user || !in_range(src, user) || user.incapacitated())
 		return
 	disassemble(user)
 

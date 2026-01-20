@@ -68,7 +68,6 @@
 		/obj/alien/resin/sticky,
 		/obj/structure/mineral_door/resin/thick,
 		/obj/structure/bed/nest,
-		/obj/structure/bed/nest/wall,
 		/obj/structure/xeno/lighttower,
 		/turf/closed/wall/resin/regenerating/special/bulletproof,
 		/turf/closed/wall/resin/regenerating/special/fireproof,

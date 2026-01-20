@@ -136,8 +136,10 @@
 /datum/sex_controller/proc/cum_onto(mob/living/blame_mob)
 	if(istype(blame_mob))
 		log_combat(blame_mob, user, "caused an ejaculation from")
+		SEND_SIGNAL(user, COMSIG_CAME_ONTO, blame_mob)
 	else
-		log_combat(user, blame_mob, "was made to ejaculate by")
+		log_combat(user, target, "was made to ejaculate by")
+		SEND_SIGNAL(user, COMSIG_CAME_ONTO_BY, target)
 	playsound(target, 'ntf_modular/sound/misc/mat/endout.ogg', 50, TRUE, 7, ignore_walls = FALSE)
 	if(!isrobot(usr))
 		if(usr.gender == MALE)
@@ -195,15 +197,20 @@
 /datum/sex_controller/proc/cum_into(oral = FALSE, mob/filled)
 	if(istype(filled))
 		log_combat(filled, user, "caused an ejaculation from")
+		SEND_SIGNAL(user, COMSIG_CAME_INTO, filled)
 	else
-		log_combat(user, filled, "was made to ejaculate by")
+		log_combat(user, target, "was made to ejaculate by")
+		SEND_SIGNAL(user, COMSIG_CAME_INTO_BY, target)
 	if(!filled)
 		filled = target
 	if(oral)
 		playsound(target, pick(list('ntf_modular/sound/misc/mat/mouthend (1).ogg','ntf_modular/sound/misc/mat/mouthend (2).ogg')), 100, FALSE, 7, ignore_walls = FALSE)
 	else
 		playsound(target, 'ntf_modular/sound/misc/mat/endin.ogg', 50, TRUE, 7, ignore_walls = FALSE)
-	filled?.reagents?.add_reagent(/datum/reagent/medicine/saline_glucose, 5)
+	if(user.gender == MALE)
+		filled?.reagents?.add_reagent(/datum/reagent/consumable/nutriment/cum, 10)
+	else
+		filled?.reagents?.add_reagent(/datum/reagent/consumable/nutriment/cum/girl, 10)
 	handle_ejaculation_drain(filled)
 	if(!oral)
 		after_intimate_climax()
@@ -321,6 +328,7 @@
 	pain_amt *= get_force_pain_multiplier(applied_force)
 	pain_amt *= get_speed_pain_multiplier(applied_speed)
 
+	SEND_SIGNAL(user, COMSIG_RECEIVED_SEX, blame_mob)
 	if(healing_amount)
 		//go go gadget sex healing.. magic?
 		if(blame_mob != user && istype(blame_mob) && blame_mob.sexcon)
@@ -620,6 +628,7 @@
 	var/datum/sex_action/action = SEX_ACTION(current_action)
 	if(iscarbon(target) && iscarbon(user))
 		log_combat(user, target, "Started sex action: [action.name]")
+		SEND_SIGNAL(target, COMSIG_STARTED_SEX_UPON, user)
 	INVOKE_ASYNC(src, PROC_REF(sex_action_loop))
 
 /datum/sex_controller/proc/sex_action_loop()

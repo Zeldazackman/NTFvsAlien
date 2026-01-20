@@ -727,8 +727,6 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 #define CARRIER_HUGGER_THROW_SPEED 2
 #define CARRIER_HUGGER_THROW_DISTANCE 7
 #define CARRIER_SLASH_HUGGER_DAMAGE 25
-///how many can be beared at once
-#define MAX_LARVA_PREGNANCIES GLOB.max_larva_count_per_mob
 //Defiler defines
 #define DEFILER_GAS_CHANNEL_TIME 0.5 SECONDS
 #define DEFILER_GAS_DELAY 1 SECONDS

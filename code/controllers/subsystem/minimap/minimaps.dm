@@ -17,9 +17,12 @@
  */
 SUBSYSTEM_DEF(minimaps)
 	name = "Minimaps"
-	init_order = INIT_ORDER_MINIMAPS
+	dependencies = list(
+		/datum/controller/subsystem/mapping,
+		/datum/controller/subsystem/modularmapping,
+	)
 	priority = FIRE_PRIORITY_MINIMAPS
-	wait = 10
+	wait = 5
 	runlevels = RUNLEVEL_GAME | RUNLEVEL_POSTGAME
 	///Minimap hud display datums sorted by zlevel
 	var/list/datum/hud_displays/minimaps_by_z = list()
@@ -211,6 +214,8 @@ SUBSYSTEM_DEF(minimaps)
 
 /image/blip
 	var/atom/movable/target
+	var/image_offset_x = 0
+	var/image_offset_y = 0
 
 /**
  * Adds an atom we want to track with blips to the subsystem
@@ -219,13 +224,15 @@ SUBSYSTEM_DEF(minimaps)
  * * hud_flags: tracked HUDs we want this atom to be displayed on
  * * marker: image or mutable_appearance we want to be using on the map
  */
-/datum/controller/subsystem/minimaps/proc/add_marker(atom/target, hud_flags = NONE, image/_blip)
+/datum/controller/subsystem/minimaps/proc/add_marker(atom/target, hud_flags = NONE, image/_blip, offset_x, offset_y)
 	if(!isatom(target) || !hud_flags || !_blip)
 		CRASH("Invalid marker added to subsystem")
 
 	var/image/blip/blip = new()
 	blip.appearance = _blip.appearance
 	blip.target = target
+	blip.image_offset_x = _blip.pixel_x
+	blip.image_offset_y = _blip.pixel_y
 
 	if(!initialized || !(minimaps_by_z["[target.z]"])) //the minimap doesn't exist yet, z level was probably loaded after init
 		for(var/datum/callback/callback AS in earlyadds["[target.z]"])
@@ -237,9 +244,8 @@ SUBSYSTEM_DEF(minimaps)
 
 	var/turf/target_turf = get_turf(target)
 
-	blip.pixel_x = MINIMAP_PIXEL_FROM_WORLD(target_turf.x) + minimaps_by_z["[target_turf.z]"].x_offset
-	blip.pixel_y = MINIMAP_PIXEL_FROM_WORLD(target_turf.y) + minimaps_by_z["[target_turf.z]"].y_offset
-
+	blip.pixel_x = MINIMAP_PIXEL_FROM_WORLD(target_turf.x) + minimaps_by_z["[target_turf.z]"].x_offset + blip.image_offset_x
+	blip.pixel_y = MINIMAP_PIXEL_FROM_WORLD(target_turf.y) + minimaps_by_z["[target_turf.z]"].y_offset + blip.image_offset_y
 	images_by_source[target] = blip
 	for(var/flag in bitfield2list(hud_flags))
 		minimaps_by_z["[target_turf.z]"].images_assoc["[flag]"][target] = blip
@@ -314,8 +320,8 @@ SUBSYSTEM_DEF(minimaps)
 		target.override_minimap_tracking(movable_loc)
 		movable_loc = movable_loc.loc
 
-	pixel_x = MINIMAP_PIXEL_FROM_WORLD(movable_loc.x) + SSminimaps.minimaps_by_z["[movable_loc.z]"].x_offset
-	pixel_y = MINIMAP_PIXEL_FROM_WORLD(movable_loc.y) + SSminimaps.minimaps_by_z["[movable_loc.z]"].y_offset
+	pixel_x = MINIMAP_PIXEL_FROM_WORLD(movable_loc.x) + SSminimaps.minimaps_by_z["[movable_loc.z]"].x_offset + image_offset_x
+	pixel_y = MINIMAP_PIXEL_FROM_WORLD(movable_loc.y) + SSminimaps.minimaps_by_z["[movable_loc.z]"].y_offset + image_offset_y
 
 ///Used to handle minimap tracking inside other movables
 /atom/movable/proc/override_minimap_tracking(atom/movable/loc)

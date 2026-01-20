@@ -662,7 +662,7 @@
 	if(machine_stat & (BROKEN|NOPOWER))
 		return
 
-	if(user.stat || user.restrained() || user.lying_angle)
+	if(user.stat || user.restrained())
 		return
 
 	if(get_dist(user, src) > 1 || get_dist(src, A) > 1)

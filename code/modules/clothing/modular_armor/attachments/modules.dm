@@ -840,15 +840,6 @@
 		return
 	inplace_interference[1] = max(0, inplace_interference[1] - 1)
 
-/obj/item/armor_module/module/antenna/activate(mob/living/user)
-	if(comms_setup == COMMS_SETTING)
-		to_chat(user, span_notice("Your Antenna module is still in the process of starting up!"))
-		return
-	if(comms_setup == COMMS_SETUP)
-		var/turf/location = get_turf(user)
-		user.show_message(span_notice("The [src] beeps and states, \"Uplink data: LONGITUDE [location.x]. LATITUDE [location.y]. Area ID: [get_area(src)]\""), EMOTE_TYPE_AUDIBLE, span_notice("The [src] vibrates but you can not hear it!"))
-		return
-
 ///Begins the startup sequence.
 /obj/item/armor_module/module/antenna/proc/start_sync(mob/living/user)
 	if(comms_setup != COMMS_OFF) //Guh?

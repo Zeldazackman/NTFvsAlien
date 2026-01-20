@@ -9791,6 +9791,14 @@
 /obj/machinery/photocopier,
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/engineering/upper_engineering)
+"lef" = (
+/obj/machinery/telecomms/relay/preset/tower/mapcomms,
+/turf/open/floor/plating,
+/area/lv624/ground/caves{
+	ceiling = 2;
+	name = "HQ Tunnels";
+	always_unpowered = 0
+	})
 "lfk" = (
 /obj/structure/noticeboard,
 /turf/closed/wall/mainship,
@@ -16533,6 +16541,14 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/hallways/starboard_hallway{
 	name = "HQ Central Hallways"
+	})
+"sPX" = (
+/obj/machinery/telecomms/relay/preset/tower/mapcomms,
+/turf/open/floor/grass,
+/area/lv624/ground/caves{
+	ceiling = 2;
+	name = "HQ Tunnels";
+	always_unpowered = 0
 	})
 "sQr" = (
 /obj/machinery/door/poddoor/railing{
@@ -30343,7 +30359,7 @@ qjQ
 qjQ
 qjQ
 qjQ
-qjQ
+sPX
 qjQ
 qjQ
 vlV
@@ -36393,7 +36409,7 @@ hKj
 sey
 eYe
 bVK
-qcU
+lef
 mdS
 sey
 mcR

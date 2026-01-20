@@ -80,7 +80,7 @@ SUBSYSTEM_DEF(weeds)
 		return
 	var/obj/alien/weeds/weed_to_spawn = node.weed_type
 	var/swapped = FALSE
-	if(iswallturf(T))
+	if(isclosedturf(T)) //ntf change from iswallturf(T)
 		weed_to_spawn = /obj/alien/weeds/weedwall
 	for (var/obj/O in T)
 		if(istype(O, /obj/structure/window/framed))

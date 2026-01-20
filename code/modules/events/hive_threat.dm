@@ -4,7 +4,7 @@
 	typepath = /datum/round_event/hive_threat
 	weight = 36
 
-	gamemode_blacklist = list("Crash", "Combat Patrol", "Sensor Capture", "Campaign", "Zombie Crash")
+	gamemode_blacklist = list("Combat Patrol", "Sensor Capture", "Campaign", "Zombie Crash")
 
 	///The human target for the next instance of this event
 	var/mob/living/carbon/human/hive_target

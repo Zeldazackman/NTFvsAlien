@@ -63,7 +63,6 @@
 	full_name = "Create Edible Jelly"
 	description = ""
 	keybind_signal = COMSIG_XENOABILITY_CREATE_EDIBLE_JELLY
-	hotkey_keys = list("L")
 
 /datum/keybinding/xeno/displacement
 	name = "displacement"

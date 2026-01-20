@@ -723,12 +723,12 @@ So if we are on the 32th absolute pixel coordinate we are on tile 1, but if we a
 		if (uncrossing)
 			return FALSE //you don't hit the cade from behind.
 	if(proj.ammo.ammo_behavior_flags & AMMO_BETTER_COVER_RNG || proj.iff_signal) //sniper and IFF rounds are better at getting past cover
-		hit_chance *= 0.8
+		hit_chance *= 0.9
 	///50% better protection when shooting from outside accurate range.
 	if(proj.distance_travelled > proj.ammo.accurate_range)
 		hit_chance *= 1.5
 ///Accuracy over 100 increases the chance of squeezing the bullet past the structure's uncovered areas.
-	hit_chance = min(hit_chance , hit_chance + 100 - proj.accuracy)
+	hit_chance = hit_chance + (min(0, (100 - proj.accuracy))/2)
 	return prob(hit_chance)
 
 /obj/do_projectile_hit(atom/movable/projectile/proj)
@@ -784,7 +784,8 @@ So if we are on the 32th absolute pixel coordinate we are on tile 1, but if we a
 	if(proj.firer == src)
 		return FALSE
 	if(lying_angle && src != proj.original_target)
-		return FALSE
+		if((GLOB.faction_to_iff[proj.firer.faction] & get_iff_signal()) || incapacitated())
+			return FALSE
 	if((proj.ammo.ammo_behavior_flags & AMMO_XENO) && (isnestedhost(src) || stat == DEAD))
 		return FALSE
 	if(pass_flags & PASS_PROJECTILE) //he's beginning to believe

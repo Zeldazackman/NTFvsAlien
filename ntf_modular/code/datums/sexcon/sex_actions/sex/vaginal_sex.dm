@@ -34,7 +34,6 @@
 			X.impregify(target, "pussy")
 		if(isxeno(target) && ishuman(user))
 			var/mob/living/carbon/xenomorph/X = target
-			var/hivenumber = X.get_xeno_hivenumber()
 			if(X.xenoimpregify())
 				X.claim_hive_target_reward(user)
 

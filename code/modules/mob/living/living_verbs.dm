@@ -14,9 +14,11 @@
 			return FALSE
 		set_resting(TRUE, FALSE)
 		return
+	/*
 	if(do_actions)
 		balloon_alert(src, "Busy!")
 		return
+		*/
 	get_up()
 
 ///Handles getting up, doing a basic check before relaying it to the actual proc that does it

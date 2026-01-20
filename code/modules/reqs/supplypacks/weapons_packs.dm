@@ -639,28 +639,3 @@ WEAPONS
 	name = "TX13 smart machinepistol ammo"
 	contains = list(/obj/item/ammo_magazine/pistol/standard_pistol/smart_pistol)
 	cost = 10
-
-/datum/supply_packs/weapons/moonbeam_ammo
-	name = "Moonbeam NL sniper rifle tranq magazine"
-	contains = list(/obj/item/ammo_magazine/rifle/chamberedrifle/tranq)
-	cost = 30
-
-/datum/supply_packs/weapons/moonbeam_ammo_bluescreen
-	name = "Moonbeam NL sniper rifle bluescreen magazine"
-	contains = list(/obj/item/ammo_magazine/rifle/chamberedrifle/bluescreen)
-	cost = 60
-
-/datum/supply_packs/weapons/dragoon
-	name = "Dragoon Mk1 Rapid Engagement Rifle"
-	contains = list(/obj/item/weapon/gun/rifle/dragoon)
-	cost = 650
-
-/datum/supply_packs/weapons/dragoon_ammo
-	name = "Dragoon Mk1 RER stripper clip"
-	contains = list(/obj/item/ammo_magazine/rifle/boltclip/dragoon)
-	cost = 20
-
-/datum/supply_packs/weapons/dragoon_ammo_pox
-	name = "Dragoon Mk1 RER poxomelanin rounds stripper clip"
-	contains = list(/obj/item/ammo_magazine/rifle/boltclip/dragoon/pox)
-	cost = 100

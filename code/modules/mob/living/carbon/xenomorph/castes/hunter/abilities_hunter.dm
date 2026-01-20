@@ -449,6 +449,9 @@
 
 /datum/action/ability/activable/xeno/pounce/proc/pounce_complete()
 	SIGNAL_HANDLER
+	var/mob/living/victim = locate() in xeno_owner.loc.contents
+	if(victim)
+		mob_hit(xeno_owner, victim)
 	UnregisterSignal(owner, list(COMSIG_MOVABLE_MOVED, COMSIG_XENO_OBJ_THROW_HIT, COMSIG_XENOMORPH_LEAP_BUMP, COMSIG_MOVABLE_POST_THROW))
 	SEND_SIGNAL(owner, COMSIG_XENOMORPH_POUNCE_END)
 	xeno_owner.xeno_flags &= ~XENO_LEAPING

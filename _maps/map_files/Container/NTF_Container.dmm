@@ -465,6 +465,9 @@
 	},
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/lower_medical)
+"aDJ" = (
+/turf/open/floor/step_trigger/supply_fall/row_one/three,
+/area/mainship/squads/req)
 "aEk" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -1071,6 +1074,9 @@
 	},
 /turf/open/floor/urban/wood,
 /area/mainship/groundhq/ntf/engineering/ce_room)
+"biO" = (
+/turf/open/floor/step_trigger/supply_fall/row_one,
+/area/mainship/squads/req)
 "biW" = (
 /turf/open/floor/mainship/sterile/corner,
 /area/mainship/medical/surgery_hallway)
@@ -1469,9 +1475,7 @@
 	},
 /area/mainship/living/cafeteria)
 "byw" = (
-/obj/structure/xeno/silo{
-	hivenumber = "corrupted_hive"
-	},
+/obj/effect/landmark/corrupted_xeno_silo_spawn,
 /turf/open/floor/mainship/mono,
 /area/mainship/hull/port_hull)
 "byy" = (
@@ -1514,6 +1518,9 @@
 	dir = 1
 	},
 /area/mainship/engineering/lower_engineering)
+"bBt" = (
+/turf/open/floor/step_trigger/supply_fall/row_five/five,
+/area/mainship/squads/req)
 "bBS" = (
 /turf/open/floor/mainship/silver{
 	dir = 4
@@ -1970,6 +1977,9 @@
 	},
 /turf/open/floor/plating,
 /area/mainship/hallways/hangar)
+"bWA" = (
+/turf/open/floor/step_trigger/supply_fall/row_four,
+/area/mainship/squads/req)
 "bWM" = (
 /obj/machinery/light/mainship{
 	dir = 1
@@ -3172,7 +3182,7 @@
 /turf/open/floor/mainship/floor,
 /area/mainship/hull/port_hull)
 "deC" = (
-/turf/open/floor/mainship/empty,
+/turf/open/floor/step_trigger/supply_fall/row_two/five,
 /area/mainship/squads/req)
 "deT" = (
 /obj/structure/disposalpipe/segment,
@@ -4213,6 +4223,9 @@
 	dir = 10
 	},
 /area/mainship/shipboard/brig_cells)
+"ech" = (
+/turf/open/floor/step_trigger/supply_fall/row_three/two,
+/area/mainship/squads/req)
 "ecE" = (
 /obj/effect/turf_decal/warning_stripes/thick/corner,
 /obj/machinery/landinglight/tadpole{
@@ -4482,6 +4495,9 @@
 /obj/item/storage/belt/shotgun,
 /turf/open/floor/mainship/red/full,
 /area/mainship/shipboard/brig)
+"erT" = (
+/turf/open/floor/step_trigger/supply_fall/row_four/four,
+/area/mainship/squads/req)
 "esI" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -4928,6 +4944,7 @@
 "eHR" = (
 /obj/structure/table/mainship/nometal,
 /obj/item/tool/hand_labeler,
+/obj/item/clothing/mask/facehugger/latching/chemical/medical,
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/chemistry)
 "eHX" = (
@@ -4937,6 +4954,10 @@
 	},
 /obj/machinery/light/mainship{
 	dir = 1
+	},
+/obj/structure/ladder/id_linked{
+	id = "reqladder0";
+	height = 1
 	},
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/req)
@@ -4970,6 +4991,9 @@
 	dir = 8
 	},
 /area/mainship/command/cic)
+"eJe" = (
+/turf/open/floor/step_trigger/supply_fall/row_two,
+/area/mainship/squads/req)
 "eJs" = (
 /obj/machinery/cic_maptable/drawable/big,
 /turf/open/floor/plating/mainship,
@@ -8786,6 +8810,9 @@
 	},
 /turf/open/floor/mainship/floor,
 /area/mainship/command/corporateliaison)
+"iwm" = (
+/turf/open/floor/step_trigger/supply_fall/row_one/five,
+/area/mainship/squads/req)
 "iwv" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible,
 /turf/closed/wall/mainship/outer/canterbury,
@@ -11991,6 +12018,11 @@
 	dir = 8
 	},
 /area/mainship/command/cic)
+"ltN" = (
+/obj/structure/table/black,
+/obj/item/clothing/mask/facehugger/latching/friendly,
+/turf/open/floor/mainship/floor,
+/area/mainship/living/cafeteria)
 "ltQ" = (
 /obj/structure/closet/emcloset,
 /obj/machinery/light/mainship,
@@ -12798,6 +12830,9 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/port_umbilical)
+"mbs" = (
+/turf/open/floor/step_trigger/supply_fall/row_two/two,
+/area/mainship/squads/req)
 "mbE" = (
 /obj/structure/table/mainship/nometal,
 /obj/item/storage/box/pillbottles{
@@ -13523,6 +13558,9 @@
 /obj/machinery/holopad,
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/chemistry)
+"mOO" = (
+/turf/open/floor/step_trigger/supply_fall/row_two/four,
+/area/mainship/squads/req)
 "mOQ" = (
 /obj/effect/spawner/random/misc/structure/supplycrate,
 /turf/open/floor/mainship/cargo,
@@ -13753,12 +13791,18 @@
 "mXI" = (
 /turf/closed/wall/mainship,
 /area/mainship/shipboard/brig)
+"mXN" = (
+/turf/open/floor/step_trigger/supply_fall/row_five,
+/area/mainship/squads/req)
 "mYI" = (
 /obj/structure/bed/chair/sofa/left{
 	dir = 1
 	},
 /turf/open/floor/wood,
 /area/mainship/hull/starboard_hull)
+"mYX" = (
+/turf/open/floor/step_trigger/supply_fall/row_three/four,
+/area/mainship/squads/req)
 "mZb" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 9
@@ -13867,6 +13911,9 @@
 /obj/structure/cable,
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/port_umbilical)
+"ncY" = (
+/turf/open/floor/step_trigger/supply_fall/row_four/five,
+/area/mainship/squads/req)
 "ndC" = (
 /turf/open/floor/mainship/tcomms,
 /area/mainship/shipboard/port_point_defense)
@@ -14142,7 +14189,7 @@
 /area/maintenance/disposal)
 "nry" = (
 /obj/docking_port/stationary/supply,
-/turf/open/floor/mainship/empty,
+/turf/open/floor/step_trigger/supply_fall/row_three/three,
 /area/mainship/squads/req)
 "nrP" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -15561,6 +15608,9 @@
 	},
 /turf/open/floor/mainship/stripesquare,
 /area/mainship/shipboard/port_point_defense)
+"oKD" = (
+/turf/open/floor/step_trigger/supply_fall/row_four/three,
+/area/mainship/squads/req)
 "oLt" = (
 /obj/effect/turf_decal/warning_stripes/thin,
 /turf/open/floor/mainship/floor,
@@ -16200,6 +16250,9 @@
 	dir = 1
 	},
 /area/mainship/command/self_destruct)
+"psu" = (
+/turf/open/floor/step_trigger/supply_fall/row_one/two,
+/area/mainship/squads/req)
 "psy" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 8
@@ -17462,6 +17515,9 @@
 /obj/structure/flora/pottedplant/twentytwo,
 /turf/open/floor/mainship/floor,
 /area/mainship/hallways/bow_hallway)
+"qNt" = (
+/turf/open/floor/step_trigger/supply_fall/row_four/two,
+/area/mainship/squads/req)
 "qOa" = (
 /obj/machinery/camera/autoname/mainship{
 	dir = 1
@@ -18209,6 +18265,9 @@
 /obj/structure/largecrate/guns,
 /turf/open/floor/mainship/floor,
 /area/mainship/hull/starboard_hull)
+"rxM" = (
+/turf/open/floor/step_trigger/supply_fall/row_three/five,
+/area/mainship/squads/req)
 "rxT" = (
 /obj/machinery/suit_storage_unit/carbon_unit,
 /obj/machinery/light/mainship{
@@ -18246,6 +18305,9 @@
 	dir = 8
 	},
 /area/mainship/medical/medical_science)
+"rzJ" = (
+/turf/open/floor/step_trigger/supply_fall/row_five/two,
+/area/mainship/squads/req)
 "rzV" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /mob/living/simple_animal/catslug/newt,
@@ -18488,6 +18550,9 @@
 /obj/structure/cable,
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/req)
+"rMe" = (
+/turf/open/floor/step_trigger/supply_fall/row_two/three,
+/area/mainship/squads/req)
 "rMD" = (
 /obj/item/toy/beach_ball{
 	pixel_x = -10;
@@ -18725,6 +18790,9 @@
 	},
 /turf/open/floor/mainship/floor,
 /area/mainship/living/starboard_emb)
+"rVZ" = (
+/turf/open/floor/step_trigger/supply_fall/row_five/three,
+/area/mainship/squads/req)
 "rWn" = (
 /obj/effect/turf_decal/warning_stripes/thick{
 	dir = 10
@@ -19200,6 +19268,9 @@
 /obj/effect/urban/decal/dirt,
 /turf/open/floor/mainship/floor,
 /area/mainship/shipboard/brig)
+"spP" = (
+/turf/open/floor/step_trigger/supply_fall/row_one/four,
+/area/mainship/squads/req)
 "spS" = (
 /obj/effect/urban/decal/dirt,
 /obj/machinery/bot/roomba,
@@ -21993,6 +22064,9 @@
 	dir = 1
 	},
 /area/mainship/shipboard/brig)
+"uWy" = (
+/turf/open/floor/step_trigger/supply_fall/row_three,
+/area/mainship/squads/req)
 "uWF" = (
 /obj/effect/turf_decal/warning_stripes/thick{
 	dir = 1
@@ -24196,6 +24270,9 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/port_hull)
+"wYW" = (
+/turf/open/floor/step_trigger/supply_fall/row_five/four,
+/area/mainship/squads/req)
 "wZj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -52959,7 +53036,7 @@ ags
 cJL
 nSW
 pnd
-rys
+ltN
 aQt
 jpV
 mHp
@@ -60819,11 +60896,11 @@ rEd
 uUK
 ics
 bbi
-deC
-deC
-deC
-deC
-deC
+mXN
+bWA
+uWy
+eJe
+biO
 uSR
 ics
 uUK
@@ -61021,11 +61098,11 @@ rEd
 eMD
 ics
 bbi
-deC
-deC
-deC
-deC
-deC
+rzJ
+qNt
+ech
+mbs
+psu
 uSR
 ics
 lAv
@@ -61223,11 +61300,11 @@ rEd
 uUK
 ics
 eHX
-deC
-deC
+rVZ
+oKD
 nry
-deC
-deC
+rMe
+aDJ
 klZ
 ics
 uUK
@@ -61425,11 +61502,11 @@ rEd
 uUK
 ics
 bbi
-deC
-deC
-deC
-deC
-deC
+wYW
+erT
+mYX
+mOO
+spP
 uSR
 ics
 uUK
@@ -61627,11 +61704,11 @@ uxo
 uxo
 ics
 bbi
+bBt
+ncY
+rxM
 deC
-deC
-deC
-deC
-deC
+iwm
 uSR
 ics
 uxo

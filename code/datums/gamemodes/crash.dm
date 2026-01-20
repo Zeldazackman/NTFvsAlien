@@ -1,7 +1,7 @@
 /datum/game_mode/infestation/crash
 	name = "Crash"
 	config_tag = "Crash"
-	round_type_flags = MODE_INFESTATION|MODE_XENO_SPAWN_PROTECT|MODE_DISALLOW_RAILGUN|MODE_XENO_GRAB_DEAD_ALLOWED
+	round_type_flags = MODE_INFESTATION|MODE_XENO_SPAWN_PROTECT|MODE_DISALLOW_RAILGUN|MODE_ALLOW_MARINE_QUICKBUILD
 	xeno_abilities_flags = ABILITY_CRASH
 	valid_job_types = list(
 		/datum/job/terragov/squad/standard = -1,
@@ -12,7 +12,7 @@
 		/datum/job/terragov/medical/professor = 1,
 		/datum/job/terragov/silicon/synthetic = 1,
 		/datum/job/terragov/command/fieldcommander = 1,
-		/datum/job/xenomorph = FREE_XENO_AT_START
+		/datum/job/xenomorph = 2
 	)
 	job_points_needed_by_job_type = list(
 		/datum/job/terragov/squad/smartgunner = 20,
@@ -30,6 +30,7 @@
 	restricted_castes = list(/datum/xeno_caste/wraith, /datum/xeno_caste/hivemind)
 	*/
 	time_between_round = 32 HOURS
+	silo_scaling = 0.3
 
 	// Round end conditions
 	var/shuttle_landed = FALSE
@@ -46,6 +47,7 @@
 	///Last time larva balance was checked
 	var/last_larva_check
 	bioscan_interval = 0
+	max_larva_preg_at_once = 1
 
 	evo_requirements = list(
 		/datum/xeno_caste/dragon = 18,

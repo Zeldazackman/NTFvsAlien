@@ -41,6 +41,10 @@
 	name = "\improper TC-4T Telecommunications KZ Circuit Board"
 	build_path = /obj/machinery/telecomms/relay/preset/tower/faction/kz
 
+/obj/item/storage/box/crate/loot/telecomm_tower_pack
+	name = "\improper Portable Factional Relay Pack"
+	desc = "A large case containing incredibly intricate, hard to replace equipment, everything needed to build your own telecommunications relay. Due to being designed for ease of building and portability, it lacks the power of usual relays found in colonies, therefore <b>it needs to be built outdoors.</b> Drag this sprite into you to open it up!\nNOTE: You cannot put items back inside this case."
+
 /obj/item/storage/box/crate/loot/telecomm_tower_pack/Initialize(mapload)
 	. = ..()
 	new /obj/item/stack/cable_coil/twentyfive(src)
@@ -84,7 +88,8 @@
 	use_power = NO_POWER_USE
 	idle_power_usage = 0
 	netspeed = 40
-	resistance_flags = UNACIDABLE|XENO_DAMAGEABLE|CAN_BE_HIT|PORTAL_IMMUNE|BANISH_IMMUNE|DROPSHIP_IMMUNE
+	resistance_flags = INDESTRUCTIBLE
+	var/destructible = TRUE
 	var/health = 450 //we use this seperate var so shit dont delete I guess.
 	freq_listening = NTC_SIDED_FREQS
 	destroy_sound = 'sound/effects/metal_crash.ogg'
@@ -92,18 +97,21 @@
 /obj/machinery/telecomms/relay/preset/tower/Initialize()
 	GLOB.all_static_telecomms_towers += src
 	. = ..()
-	if(z)
-		SSminimaps.add_marker(src, MINIMAP_FLAG_ALL, image('icons/UI_icons/map_blips.dmi', null, "supply"))
+	update_minimap_marker()
 	START_PROCESSING(SSslowprocess, src)
+
+/obj/machinery/telecomms/relay/preset/tower/proc/update_minimap_marker()
+	if(!z)
+		return
+	var/miniflag
+	if(faction)
+		miniflag = GLOB.faction_to_minimap_flag[faction]
+	if(!miniflag)
+		miniflag = MINIMAP_FLAG_ALL
+	SSminimaps.add_marker(src, miniflag, image('ntf_modular/icons/UI_icons/map_blips.dmi', null, "telecomm_[toggled ? "on" : "off"]"))
 
 /obj/machinery/telecomms/relay/preset/tower/Destroy()
 	GLOB.all_static_telecomms_towers -= src
-	//spill your shit cause those are not replacable.
-	for(var/obj/item/i in contents)
-		i.forceMove(loc)
-		i.throw_at(get_open_turf_in_dir(loc, pick(CARDINAL_ALL_DIRS)), pick(2,4))
-	new /obj/item/stack/sheet/metal(loc)
-	empulse(loc, 4,6,8,10)
 	. = ..()
 
 // doesn't need power, instead uses health
@@ -150,12 +158,18 @@
 	health = clamp(health, 0, initial(health))
 
 	if(health <= 0)
-		toggled = FALSE // requires flipping on again once repaired
+		if(toggled)
+			toggled = FALSE // requires flipping on again once repaired
+			empulse(loc, 2,4,6,8)
 	if(health < initial(health))
 		desc = "[initial(desc)] [span_warning(" It is damaged and needs a welder for repairs!")]"
 	else
 		desc = initial(desc)
+
 	update_state()
+	if(!(atom_flags & NODECONSTRUCT))
+		//spill your shit cause those are not replacable.
+		deconstruct()
 
 // In any case that might warrant reevaluating working state
 /obj/machinery/telecomms/relay/preset/tower/proc/update_state()
@@ -176,6 +190,9 @@
 		to_chat(user, span_warning("\The [src.name] needs repairs to be turned back on!"))
 		return
 	toggled = !toggled
+	if(user)
+		user.visible_message("[user] turns [src] [toggled  ? "on" : "off"].", "You turn [src] [toggled  ? "on" : "off"].")
+	update_minimap_marker()
 	update_state()
 
 /obj/machinery/telecomms/relay/preset/tower/update_icon_state()
@@ -239,8 +256,20 @@
 	freq_listening =  NTC_SIDED_FREQS
 	var/faction_shorthand = "NTC"
 
+/obj/machinery/telecomms/relay/preset/tower/faction/screwdriver_act(mob/living/user, obj/item/I)
+	. = ..()
+	deconstruct(TRUE)
+
+/obj/machinery/telecomms/relay/preset/tower/faction/on_construction()
+	var/area/thearea = get_area(src)
+	if(thearea.ceiling > CEILING_NONE)
+		balloon_alert_to_viewers("Needs no ceiling over!", vision_distance = 5)
+		visible_message(span_warning("[src] can not be built under a roof, it's not strong enough."))
+		deconstruct(TRUE)
+	. = ..()
+
 /obj/machinery/telecomms/relay/preset/tower/faction/som
-	freq_listening = list(FREQ_SOM, FREQ_COMMAND_SOM, FREQ_MEDICAL_SOM, FREQ_ENGINEERING_SOM, FREQ_ZULU, FREQ_YANKEE, FREQ_XRAY, FREQ_WHISKEY)
+	freq_listening = SOM_FREQS
 	faction_shorthand = "SOM"
 
 /obj/machinery/telecomms/relay/preset/tower/faction/kz
@@ -270,9 +299,9 @@
 
 /obj/machinery/telecomms/relay/preset/tower/mapcomms
 	name = "TC-3T static telecommunications tower"
-	desc = "A static heavy-duty TC-3T telecommunications tower. Used to set up subspace communications lines between planetary and extra-planetary locations. Will need to have extra communication frequencies programmed into it by multitool."
+	desc = "A static heavy-duty TC-3T telecommunications tower. Used to set up subspace communications lines between planetary and extra-planetary locations. Will cause a devastating EMP burst once destroyed. Will need to have extra communication frequencies programmed into it by multitool."
 	use_power = NO_POWER_USE
-	idle_power_usage = 10000
+	idle_power_usage = 500
 	icon = 'ntf_modular/icons/obj/structures/machinery/comm_tower3.dmi'
 	icon_state = "static1"
 	id = "TC-3T relay"
@@ -281,6 +310,7 @@
 	health = 1000
 	bound_height = 64
 	bound_width = 64
+	atom_flags = NODECONSTRUCT
 	freq_listening = NTC_SIDED_FREQS
 	var/obj/structure/xeno/recovery_pylon/attached_pylon
 	var/toggle_cooldown = 0
@@ -297,11 +327,9 @@
 	/// Holds the delay for when a cluster can recorrupt the comms tower after a pylon has been destroyed
 	COOLDOWN_DECLARE(corruption_delay)
 
-/obj/machinery/telecomms/relay/preset/tower/mapcomms/Initialize()
-	. = ..()
-
 /obj/machinery/telecomms/relay/preset/tower/mapcomms/examine(mob/user)
 	. = ..()
+	. += span_notice("It is currently [toggled ? "on" : "off"].")
 	if(isxeno(user) && !COOLDOWN_FINISHED(src, corruption_delay))
 		. += span_xenonotice("Corruption cooldown: [(COOLDOWN_TIMELEFT(src, corruption_delay) / (1 SECONDS))] seconds.")
 
@@ -415,7 +443,7 @@
 		addtimer(CALLBACK(src, PROC_REF(handle_xeno_acquisition), weeded_turf), (COOLDOWN_TIMELEFT(src, corruption_delay)), TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_NO_HASH_WAIT)
 		return
 
-	attached_pylon = new /obj/structure/xeno/recovery_pylon(loc, theweed.get_xeno_hivenumber())
+	attached_pylon = new /obj/structure/xeno/recovery_pylon(loc, theweed.get_xeno_hivenumber(), 2)
 	new /obj/alien/weeds/node/resting(loc, theweed.get_xeno_hivenumber())
 
 	RegisterSignal(attached_pylon, COMSIG_PREQDELETED, PROC_REF(uncorrupt))

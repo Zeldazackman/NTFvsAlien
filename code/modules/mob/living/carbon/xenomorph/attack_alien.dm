@@ -77,8 +77,8 @@
 		X.do_attack_animation(src, ATTACK_EFFECT_GRAB)
 		return FALSE
 
-	 //Disarm attacks are stronger if human has no stamina buffer left because the xeno still got to take
-	 //it down to 200 staminaloss + 50 buffer if at full stam, but they never are because exertion of other means.
+	//Disarm attacks are stronger if human has no stamina buffer left because the xeno still got to take
+	//it down to 200 staminaloss + 50 buffer if at full stam, but they never are because exertion of other means.
 	if(staminaloss > 0)
 		damage *= 2
 	else //if human is energetic yet they will endure.

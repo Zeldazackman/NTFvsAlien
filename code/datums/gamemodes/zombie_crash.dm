@@ -1,7 +1,7 @@
 /datum/game_mode/infestation/crash/zombie
 	name = "Zombie Crash"
 	config_tag = "Zombie Crash"
-	round_type_flags = NONE
+	round_type_flags = MODE_ALLOW_MARINE_QUICKBUILD
 	xeno_abilities_flags = ABILITY_CRASH
 	required_players = 1
 	valid_job_types = list(
@@ -20,6 +20,7 @@
 		/datum/job/terragov/squad/engineer = 5,
 	)
 	blacklist_ground_maps = list(MAP_BIG_RED, MAP_DELTA_STATION, MAP_LV_624, MAP_WHISKEY_OUTPOST, MAP_OSCAR_OUTPOST, MAP_FORT_PHOBOS, MAP_CHIGUSA, MAP_LAVA_OUTPOST, MAP_CORSAT, MAP_KUTJEVO_REFINERY, MAP_BLUESUMMERS)
+	time_between_round = 1 HOURS
 
 /datum/game_mode/infestation/crash/zombie/can_start(bypass_checks = FALSE)
 	if((!(config_tag in SSmapping.configs[GROUND_MAP].gamemodes) || (SSmapping.configs[GROUND_MAP].map_name in blacklist_ground_maps)) && !bypass_checks)

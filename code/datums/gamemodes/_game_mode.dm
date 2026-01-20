@@ -95,6 +95,7 @@ GLOBAL_VAR(common_report) //Contains common part of roundend report
 	var/roundstart_players = 0
 	///dnr time in ticks for this mode.
 	var/custom_dnr_time
+	var/max_larva_preg_at_once
 
 /datum/game_mode/New()
 	initialize_emergency_calls()
@@ -146,6 +147,11 @@ GLOBAL_VAR(common_report) //Contains common part of roundend report
 	for(var/faction in human_factions)
 		stat_list[faction] = new /datum/faction_stats(faction)
 
+	if(max_larva_preg_at_once)
+		GLOB.max_larva_count_per_mob = max_larva_preg_at_once
+	else
+		GLOB.max_larva_count_per_mob = MAX_LARVA_PREGNANCIES
+
 	return TRUE
 
 /datum/game_mode/proc/setup()
@@ -184,9 +190,12 @@ GLOBAL_VAR(common_report) //Contains common part of roundend report
 		var/datum/db_query/query_round_game_mode = SSdbcore.NewQuery("UPDATE [format_table_name("round")] SET [sql] WHERE id = :roundid", list("roundid" = GLOB.round_id))
 		query_round_game_mode.Execute()
 		qdel(query_round_game_mode)
-	if(round_type_flags & MODE_XENO_SPAWN_PROTECT)
-		var/datum/job/xenomorph/xeno_job = SSjob.GetJobType(GLOB.hivenumber_to_job_type[XENO_HIVE_NORMAL])
-		xeno_job.free_xeno_at_start = 0
+	for(var/hivenumber in GLOB.hive_datums)
+		var/datum/job/xenomorph/xeno_job = SSjob.GetJobType(GLOB.hivenumber_to_job_type[hivenumber])
+		if((hivenumber == XENO_HIVE_NORMAL) && (round_type_flags & MODE_XENO_SPAWN_PROTECT))
+			xeno_job.free_xeno_at_start = 0
+			continue
+		xeno_job.free_xeno_at_start = xeno_job.total_positions
 
 	addtimer(CALLBACK(src, PROC_REF(give_wages)), 20 MINUTES)
 
@@ -461,8 +470,10 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 		parts += "The average generator was held by xenos for [DisplayTimeText(avg_gen_time)], or [100 * avg_gen_time / GLOB.round_statistics.round_length]% of the round."
 	if(GLOB.round_statistics.strategic_psypoints_from_hive_target_rewards)
 		parts += "[GLOB.round_statistics.strategic_psypoints_from_hive_target_rewards] strategic psy points were obtained from [GLOB.round_statistics.hive_target_rewards] hive target rewards, for an average of [GLOB.round_statistics.strategic_psypoints_from_hive_target_rewards/GLOB.round_statistics.hive_target_rewards] points per hive target reward claimed."
-	if(GLOB.round_statistics.strategic_psypoints_from_embryos)
-		parts += "[GLOB.round_statistics.strategic_psypoints_from_embryos] strategic psy points were obtained from [GLOB.round_statistics.total_larva_burst] embryos, for an average of [GLOB.round_statistics.strategic_psypoints_from_embryos/GLOB.round_statistics.total_larva_burst] points per larva born."
+	if(GLOB.round_statistics.total_embryos_rewarding)
+		parts += "[GLOB.round_statistics.strategic_psypoints_from_embryos] strategic psy points were obtained from [GLOB.round_statistics.total_embryos_rewarding] embryos, for an average of [GLOB.round_statistics.strategic_psypoints_from_embryos/GLOB.round_statistics.total_embryos_rewarding] points per embryo."
+	if(GLOB.round_statistics.total_larva_burst)
+		parts += "[GLOB.round_statistics.strategic_psypoints_from_births] strategic psy points were obtained from [GLOB.round_statistics.total_larva_burst] larva births, for an average of [GLOB.round_statistics.strategic_psypoints_from_births/GLOB.round_statistics.total_larva_burst] points per larva born."
 	if(GLOB.round_statistics.strategic_psypoints_from_cocoons)
 		parts += "[GLOB.round_statistics.strategic_psypoints_from_cocoons] strategic psy points were obtained from [GLOB.round_statistics.cocoons] cocoons, for an average of [GLOB.round_statistics.strategic_psypoints_from_cocoons/GLOB.round_statistics.cocoons] points per cocoon."
 	if(GLOB.round_statistics.strategic_psypoints_from_psydrains)
@@ -471,8 +482,10 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 		parts += "[GLOB.round_statistics.strategic_psypoints_from_intel] strategic psy points were obtained from intel disks."
 	if(GLOB.round_statistics.biomass_from_hive_target_rewards)
 		parts += "[GLOB.round_statistics.biomass_from_hive_target_rewards] biomass was obtained from [GLOB.round_statistics.hive_target_rewards] hive target rewards, for an average of [GLOB.round_statistics.biomass_from_hive_target_rewards/GLOB.round_statistics.hive_target_rewards] points per hive target reward claimed."
-	if(GLOB.round_statistics.biomass_from_embryos)
-		parts += "[GLOB.round_statistics.biomass_from_embryos] biomass was obtained from [GLOB.round_statistics.total_larva_burst] embryos, for an average of [GLOB.round_statistics.biomass_from_embryos/GLOB.round_statistics.total_larva_burst] points per larva born."
+	if(GLOB.round_statistics.total_embryos_rewarding)
+		parts += "[GLOB.round_statistics.biomass_from_embryos] biomass was obtained from [GLOB.round_statistics.total_embryos_rewarding] embryos, for an average of [GLOB.round_statistics.biomass_from_embryos/GLOB.round_statistics.total_embryos_rewarding] points per embryo."
+	if(GLOB.round_statistics.total_larva_burst)
+		parts += "[GLOB.round_statistics.biomass_from_births] biomass was obtained from [GLOB.round_statistics.total_larva_burst] larva births, for an average of [GLOB.round_statistics.biomass_from_births/GLOB.round_statistics.total_larva_burst] points per larva born."
 	if(GLOB.round_statistics.biomass_from_cocoons)
 		parts += "[GLOB.round_statistics.biomass_from_cocoons] biomass was obtained from [GLOB.round_statistics.cocoons] cocoons, for an average of [GLOB.round_statistics.biomass_from_cocoons/GLOB.round_statistics.cocoons] points per cocoon."
 	if(GLOB.round_statistics.biomass_from_psydrains)
@@ -631,6 +644,12 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 		parts += "[GLOB.round_statistics.larva_from_siloing_body] larvas came from siloing bodies."
 	if(GLOB.round_statistics.larva_from_intel)
 		parts += "[GLOB.round_statistics.larva_from_intel] larvas came from intel disk rewards."
+	if(GLOB.round_statistics.larva_from_converted_psypoints)
+		parts += "[GLOB.round_statistics.larva_from_converted_psypoints] larvas came from converted psy points."
+	if(GLOB.round_statistics.larva_from_converted_biomass)
+		parts += "[GLOB.round_statistics.larva_from_converted_biomass] larvas came from converted biomass."
+	if(GLOB.round_statistics.larva_from_hive_target_rewards)
+		parts += "[GLOB.round_statistics.larva_from_hive_target_rewards] larvas came from hive target rewards."
 	if(GLOB.round_statistics.points_from_ambrosia)
 		parts += "[GLOB.round_statistics.points_from_ambrosia] requisitions points gained from ambrosia."
 	if(GLOB.round_statistics.points_from_intel)

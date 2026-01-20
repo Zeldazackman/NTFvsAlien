@@ -57,6 +57,8 @@ Stepping directly on the mine will also blow it up
 /// Any emp effects mines will trigger their explosion
 /obj/item/explosive/mine/emp_act()
 	. = ..()
+	if(!armed)
+		return
 	INVOKE_ASYNC(src, PROC_REF(trigger_explosion))
 
 /// Flamer fire will cause mines to trigger their explosion
