@@ -1,45 +1,28 @@
-/datum/action/ability/xeno_action/place_acidwell/neuro
-	name = "Place neuro well"
-	action_icon_state = "place_trap"
-	action_icon = 'icons/Xeno/actions/construction.dmi' //would be neat to have a separate icon.  Should go in 'ntf_modular/icons/Xeno/actions/construction.dmi' if created.
-	desc = "Place a neurotoxin well that can put out fires and deter intruders with gas."
-	ability_cost = 400
-	cooldown_duration = 2 MINUTES //would be neat to make this share a cooldown with acid wells
-	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_PLACE_ACID_WELL, //would be neat to have a separate keybinding
-	)
+/datum/action/ability/xeno_action/place_acidwell
+	action_icon_state = "5"
+	action_icon = 'icons/Xeno/acid_well.dmi'
+	var/obj/structure/xeno/acidwell/well_type = /obj/structure/xeno/acidwell
 
-/datum/action/ability/xeno_action/place_acidwell/neuro/action_activate()
-	var/turf/T = get_turf(owner)
-	succeed_activate()
 
-	playsound(T, SFX_ALIEN_RESIN_BUILD, 25)
-	new /obj/structure/xeno/acidwell/neuro(T, xeno_owner.get_xeno_hivenumber(), owner)
+GLOBAL_LIST_INIT(acid_well_type_images_list, list(
+	/obj/structure/xeno/acidwell = image('icons/Xeno/acid_well.dmi', icon_state = "5"),
+	/obj/structure/xeno/acidwell/neuro = image('ntf_modular/icons/Xeno/neuro_well.dmi', icon_state = "5"),
+	/obj/structure/xeno/acidwell/aphro = image('ntf_modular/icons/Xeno/aphro_well.dmi', icon_state = "5"),
+))
 
-	to_chat(owner, span_xenonotice("We place a neuro well; it can be filled with more neurotoxin."))
-	GLOB.round_statistics.xeno_acid_wells++
-	SSblackbox.record_feedback("tally", "round_statistics", 1, "xeno_acid_wells")
-	owner.record_traps_created()
+/datum/action/ability/xeno_action/place_acidwell/alternate_action_activate()
+	ASYNC
+		var/choice = show_radial_menu(usr, usr?.client?.eye, GLOB.acid_well_type_images_list)
+		if(choice)
+			well_type = choice
+		update_button_icon()
 
-/datum/action/ability/xeno_action/place_acidwell/aphro
-	name = "Place aphro well"
-	action_icon_state = "place_trap"
-	action_icon = 'icons/Xeno/actions/construction.dmi' //would be neat to have a separate icon.  Should go in 'ntf_modular/icons/Xeno/actions/construction.dmi' if created.
-	desc = "Place an aphrotoxin well that can put out fires and distract intruders with gas."
-	ability_cost = 400
-	cooldown_duration = 2 MINUTES //would be neat to make this share a cooldown with acid wells
-	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_PLACE_ACID_WELL, //would be neat to have a separate keybinding
-	)
-
-/datum/action/ability/xeno_action/place_acidwell/aphro/action_activate()
-	var/turf/T = get_turf(owner)
-	succeed_activate()
-
-	playsound(T, SFX_ALIEN_RESIN_BUILD, 25)
-	new /obj/structure/xeno/acidwell/aphro(T, xeno_owner.get_xeno_hivenumber(), owner)
-
-	to_chat(owner, span_xenonotice("We place an aphro well; it can be filled with more aphrotoxin."))
-	GLOB.round_statistics.xeno_acid_wells++
-	SSblackbox.record_feedback("tally", "round_statistics", 1, "xeno_acid_wells")
-	owner.record_traps_created()
+/datum/action/ability/xeno_action/place_acidwell/update_button_icon()
+	if(!button)
+		return
+	if(QDELETED(owner))
+		return FALSE
+	action_icon = initial(well_type.icon)
+	name = "Place [initial(well_type.name)]"
+	desc = initial(well_type.action_desc)
+	. = ..()

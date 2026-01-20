@@ -1,3 +1,7 @@
+/obj/structure/xeno/acidwell
+	var/content_name = "acid"
+	var/action_desc = "Place an acid well that can put out fires and burn intruders with gas."
+
 /obj/structure/xeno/acidwell/neuro
 	name = "neuro well"
 	desc = "A neurotoxin well. It stores neurotoxin to put out fires and deter intruders."
@@ -5,6 +9,8 @@
 	lightcolor = COLOR_TOXIN_XENO_NEUROTOXIN
 	icon = 'ntf_modular/icons/Xeno/neuro_well.dmi'
 	icon_state = "well"
+	content_name = "neurotoxin"
+	action_desc = "Place a neurotoxin well that can put out fires and deter intruders with gas."
 
 /obj/structure/xeno/acidwell/neuro/punish_stepper(mob/living/stepper)
 	stepper.next_move_slowdown += charges * 2 //Acid spray has slow down so this should too; scales with charges, Min 2 slowdown, Max 10
@@ -20,8 +26,10 @@
 	desc = "An aphrotoxin well. It stores aphrotoxin to put out fires and distact intruders."
 	smoketype = /datum/effect_system/smoke_spread/xeno/aphrotoxin/opaque
 	lightcolor = COLOR_TOXIN_APHROTOXIN
-	icon = 'ntf_modular/iicons/Xeno/aphro_well.dmi'
+	icon = 'ntf_modular/icons/Xeno/aphro_well.dmi'
 	icon_state = "well"
+	content_name = "aphrotoxin"
+	action_desc = "Place an aphrotoxin well that can put out fires and distract intruders with gas."
 
 /obj/structure/xeno/acidwell/aphro/punish_stepper(mob/living/stepper)
 	stepper.next_move_slowdown += charges * 2 //Acid spray has slow down so this should too; scales with charges, Min 2 slowdown, Max 10
