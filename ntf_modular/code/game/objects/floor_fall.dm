@@ -77,6 +77,7 @@
 			A.alpha = 0
 			animate(A, time = 5, alpha = initial(A.alpha), easing = LINEAR_EASING|EASE_OUT)
 			animate(A, time = 10, pixel_y = initial(A.pixel_y), easing = BOUNCE_EASING)
+			sleep(5)
 			if(isliving(A))
 				var/mob/living/aliving = A
 				aliving.take_overall_damage(300, BRUTE, MELEE, updating_health = TRUE) //maybe survivable
