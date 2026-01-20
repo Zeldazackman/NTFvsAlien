@@ -3629,6 +3629,10 @@
 	},
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
+"eJi" = (
+/obj/machinery/light/red,
+/turf/open/floor/mainship/empty,
+/area/mainship/squads/req)
 "eKo" = (
 /obj/structure/table,
 /obj/item/clothing/tie/medal/gold,
@@ -5144,6 +5148,12 @@
 	},
 /turf/open/floor/tile/dark/gray,
 /area/centcom/valhalla)
+"gNF" = (
+/obj/machinery/light/red{
+	dir = 1
+	},
+/turf/open/floor/mainship/empty,
+/area/mainship/squads/req)
 "gNY" = (
 /obj/structure/largecrate/random/case/small,
 /turf/open/floor/mainship/cargo,
@@ -20528,11 +20538,11 @@ xrI
 pKb
 qtv
 pKb
+gNF
 mWE
 mWE
 mWE
-mWE
-mWE
+eJi
 pKb
 xrI
 oDh
