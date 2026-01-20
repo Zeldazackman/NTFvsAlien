@@ -352,6 +352,7 @@
 	special_effect_delay = 30 SECONDS
 	amount_injected = 15
 	harmless = TRUE
+	resistance_flags = UNACIDABLE //acid injection
 	leap_range = 2 //carrying all that balls must be hard
 	var/datum/reagent/producing_reagent = null
 
