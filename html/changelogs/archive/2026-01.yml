@@ -58,3 +58,7 @@
   - bugfix: Adjusts crash map AI nodes, so that zombies path to nuke discs better
   - bugfix: Weeds always spawn in xeno valhalla
   - qol: Add marine quickbuild to crash gamemodes
+2026-01-20:
+  Lefunny:
+  - rscadd: Satrapine minirocket pack.
+  - rscadd: KnockOut minirocket pack.
