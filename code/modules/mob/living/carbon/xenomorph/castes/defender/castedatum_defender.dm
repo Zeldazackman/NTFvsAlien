@@ -38,9 +38,9 @@
 	minimap_icon = "defender"
 
 	// *** Defender Abilities *** //
-	crest_defense_armor = 30
+	crest_defense_armor = 40
 	crest_defense_slowdown = 0.8
-	fortify_armor = 50
+	fortify_armor = 60
 
 	actions = list(
 		/datum/action/ability/xeno_action/xeno_resting,
