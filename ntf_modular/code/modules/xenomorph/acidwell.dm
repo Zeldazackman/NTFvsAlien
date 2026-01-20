@@ -3,7 +3,7 @@
 	desc = "A neurotoxin well. It stores neurotoxin to put out fires and deter intruders."
 	smoketype = /datum/effect_system/smoke_spread/xeno/neuro
 	lightcolor = COLOR_TOXIN_XENO_NEUROTOXIN
-	icon = 'icons/Xeno/acid_well.dmi' // would be neat to have a separate icon, if created should go in 'ntf_modular/icons/Xeno/acid_well.dmi'
+	icon = 'ntf_modular/icons/Xeno/neuro_well.dmi'
 	icon_state = "well"
 
 /obj/structure/xeno/acidwell/neuro/punish_stepper(mob/living/stepper)
@@ -20,7 +20,7 @@
 	desc = "An aphrotoxin well. It stores aphrotoxin to put out fires and distact intruders."
 	smoketype = /datum/effect_system/smoke_spread/xeno/aphrotoxin/opaque
 	lightcolor = COLOR_TOXIN_APHROTOXIN
-	icon = 'icons/Xeno/acid_well.dmi' // would be neat to have a separate icon, if created should go in 'ntf_modular/icons/Xeno/acid_well.dmi'
+	icon = 'ntf_modular/iicons/Xeno/aphro_well.dmi'
 	icon_state = "well"
 
 /obj/structure/xeno/acidwell/aphro/punish_stepper(mob/living/stepper)
