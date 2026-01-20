@@ -1,5 +1,4 @@
 GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
-		/mob/living,
 		/obj/item/disk/nuclear,
 		/obj/item/radio/beacon,
 		/obj/vehicle,
@@ -22,6 +21,14 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 /obj/docking_port/stationary/supply
 	id = "supply_home"
 	roundstart_template = /datum/map_template/shuttle/supply
+	width = 5
+	dwidth = 2
+	dheight = 2
+	height = 5
+
+/obj/docking_port/stationary/supply/ntc_pad
+	id = "ntc_pad"
+	roundstart_template = null
 	width = 5
 	dwidth = 2
 	dheight = 2
@@ -79,6 +86,10 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	/// Id of the home docking port
 	var/home_id = "supply_home"
 	railing_gear_name = "supply"
+	var/cargo_pad
+
+/obj/docking_port/mobile/supply/ntc
+	cargo_pad = "ntc_pad"
 
 /obj/docking_port/mobile/supply/Destroy(force)
 	for(var/i in railings)
@@ -482,7 +493,10 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 					playsound(supply_shuttle.return_center_turf(), 'sound/machines/buzz-two.ogg', 50, 0)
 				else
 					playsound(supply_shuttle.return_center_turf(), 'sound/machines/hydraulic.ogg', 50, 0)
-					SSshuttle.moveShuttleToTransit(shuttle_id, TRUE)
+					if(supply_shuttle.cargo_pad)
+						SSshuttle.moveShuttle(shuttle_id, supply_shuttle.cargo_pad, TRUE)
+					else
+						SSshuttle.moveShuttleToTransit(shuttle_id, TRUE)
 					addtimer(CALLBACK(supply_shuttle, TYPE_PROC_REF(/obj/docking_port/mobile/supply, sell), WEAKREF(ui.user)), 4 SECONDS)
 			else
 				var/obj/docking_port/D = SSshuttle.getDock(home_id)

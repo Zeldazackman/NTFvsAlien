@@ -2,7 +2,7 @@
 /obj/item/clothing/mask/facehugger/latching
 	name = "evolved larval facehugger"
 	desc = "It has some sort of weird pulsating gigantic (for it's size) alien cock with bountiful massive balls and a strong boney tail."
-	face_tint = TINT_6
+	face_tint = TINT_5 //we want those to let more sight since they are persistent if not removed
 	var/filter_color
 	var/datum/reagent/injected_chemical_type
 	var/amount_injected = 5

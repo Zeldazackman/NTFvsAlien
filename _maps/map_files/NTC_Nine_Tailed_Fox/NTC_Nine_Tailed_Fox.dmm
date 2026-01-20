@@ -197,6 +197,9 @@
 /obj/machinery/telecomms/hub/preset,
 /turf/open/floor/mainship/tcomms,
 /area/mainship/command/telecomms)
+"aiw" = (
+/turf/open/floor/step_trigger/supply_fall/row_four,
+/area/mainship/squads/req)
 "aiE" = (
 /obj/machinery/computer/body_scanconsole,
 /turf/open/floor/mainship/sterile/dark,
@@ -1324,6 +1327,9 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/lower_hull)
+"bcX" = (
+/turf/open/floor/step_trigger/supply_fall/row_two/four,
+/area/mainship/squads/req)
 "bds" = (
 /obj/machinery/atm,
 /turf/closed/wall/mainship,
@@ -3690,6 +3696,9 @@
 /obj/structure/cable,
 /turf/open/floor/mainship/mono,
 /area/mainship/living/port_garden)
+"cWV" = (
+/turf/open/floor/step_trigger/supply_fall/row_four/two,
+/area/mainship/squads/req)
 "cXi" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 1
@@ -3974,6 +3983,9 @@
 	},
 /turf/open/floor/wood,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
+"diW" = (
+/turf/open/floor/step_trigger/supply_fall/row_one/four,
+/area/mainship/squads/req)
 "djg" = (
 /obj/machinery/bot/roomba,
 /turf/open/floor/mainship/black{
@@ -5847,7 +5859,6 @@
 	dir = 2;
 	id = "supply_elevator_railing"
 	},
-/obj/machinery/computer/ordercomp,
 /turf/open/floor/mainship/cargo/arrow{
 	dir = 1
 	},
@@ -6289,7 +6300,7 @@
 /turf/open/floor/mainship/red/full,
 /area/mainship/groundhq/ntf/crimsonveil)
 "fqs" = (
-/turf/open/floor/mainship/empty,
+/turf/open/floor/step_trigger/supply_fall/row_two/five,
 /area/mainship/squads/req)
 "fqL" = (
 /obj/structure/bed/chair/wood/wings{
@@ -8297,6 +8308,9 @@
 	},
 /turf/open/floor/plating,
 /area/mainship/squads/req)
+"gTJ" = (
+/turf/open/floor/step_trigger/supply_fall/row_one,
+/area/mainship/squads/req)
 "gTW" = (
 /turf/open/floor/carpet,
 /area/sulaco/command{
@@ -8739,6 +8753,9 @@
 	outside = 0;
 	name = "CEO Office"
 	})
+"hjS" = (
+/turf/open/floor/step_trigger/supply_fall/row_one/two,
+/area/mainship/squads/req)
 "hkj" = (
 /obj/structure/bed/chair/sofa/right{
 	dir = 8
@@ -8903,6 +8920,9 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/mainship/sterile/side,
 /area/mainship/medical/operating_room_four)
+"hrH" = (
+/turf/open/floor/step_trigger/supply_fall/row_three/five,
+/area/mainship/squads/req)
 "hrY" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/grass,
@@ -13843,6 +13863,9 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/hallways/gardens)
+"lol" = (
+/turf/open/floor/step_trigger/supply_fall/row_four/three,
+/area/mainship/squads/req)
 "loz" = (
 /obj/structure/window/framed/mainship,
 /turf/open/floor/plating,
@@ -15944,6 +15967,9 @@
 /obj/structure/cable,
 /turf/open/floor/mainship/mono,
 /area/mainship/command/telecomms)
+"mZJ" = (
+/turf/open/floor/step_trigger/supply_fall/row_one/three,
+/area/mainship/squads/req)
 "mZZ" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -16015,6 +16041,9 @@
 /obj/machinery/marine_selector/gear/leader,
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
+"nec" = (
+/turf/open/floor/step_trigger/supply_fall/row_two,
+/area/mainship/squads/req)
 "neE" = (
 /obj/structure/window/framed/mainship/hull,
 /obj/machinery/door/poddoor/mainship/ai/exterior{
@@ -16753,6 +16782,9 @@
 /obj/structure/closet/basketball,
 /turf/open/floor/mainship,
 /area/mainship/living/basketball)
+"nPo" = (
+/turf/open/floor/step_trigger/supply_fall/row_five/two,
+/area/mainship/squads/req)
 "nPy" = (
 /obj/machinery/light/small,
 /turf/open/floor/plating/plating_catwalk,
@@ -18073,6 +18105,9 @@
 	dir = 4
 	},
 /area/mainship/command/self_destruct)
+"oOw" = (
+/turf/open/floor/step_trigger/supply_fall/row_five/three,
+/area/mainship/squads/req)
 "oOz" = (
 /obj/machinery/light/mainship/small{
 	dir = 1
@@ -18223,7 +18258,7 @@
 /area/mainship/hallways/dorm3)
 "oUt" = (
 /obj/docking_port/stationary/supply,
-/turf/open/floor/mainship/empty,
+/turf/open/floor/step_trigger/supply_fall/row_three/three,
 /area/mainship/squads/req)
 "oWk" = (
 /obj/effect/turf_decal/warning_stripes/thick{
@@ -19045,6 +19080,9 @@
 /area/mainship/hallways/aft_hallway{
 	name = "Ship Floor 3 Hallways"
 	})
+"pPb" = (
+/turf/open/floor/step_trigger/supply_fall/row_four/four,
+/area/mainship/squads/req)
 "pPn" = (
 /turf/closed/wall/mainship,
 /area/mainship/groundhq/ntf/hallways/gardens)
@@ -19274,6 +19312,9 @@
 /turf/open/floor/mainship/green{
 	dir = 8
 	},
+/area/mainship/squads/req)
+"pXs" = (
+/turf/open/floor/step_trigger/supply_fall/row_five/four,
 /area/mainship/squads/req)
 "pXz" = (
 /obj/machinery/marine_selector/clothes/medic,
@@ -20222,6 +20263,9 @@
 /obj/machinery/door/firedoor/mainship,
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
+"qHi" = (
+/turf/open/floor/step_trigger/supply_fall/row_three/four,
+/area/mainship/squads/req)
 "qHl" = (
 /obj/structure/bed/chair/nometal,
 /turf/open/floor/mainship/floor,
@@ -22666,6 +22710,9 @@
 	dir = 4
 	},
 /area/mainship/ntf/fcroom)
+"sOB" = (
+/turf/open/floor/step_trigger/supply_fall/row_two/three,
+/area/mainship/squads/req)
 "sPj" = (
 /obj/structure/bed/chair/comfy{
 	dir = 4
@@ -23116,6 +23163,9 @@
 /area/mainship/hallways/bow_hallway{
 	name = "Ship Floor 1 Hallways"
 	})
+"thg" = (
+/turf/open/floor/step_trigger/supply_fall/row_four/five,
+/area/mainship/squads/req)
 "thH" = (
 /obj/item/weapon/gun/sentry/big_sentry/premade{
 	dir = 1
@@ -24209,6 +24259,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/lower_hull)
+"uem" = (
+/obj/structure/cable,
+/obj/machinery/computer/supplycomp,
+/turf/open/floor/mainship/mono,
+/area/mainship/squads/req)
 "ueo" = (
 /obj/structure/table/mainship/nometal,
 /obj/item/tool/wrench,
@@ -25277,6 +25332,16 @@
 /area/mainship/shipboard/port_missiles{
 	name = "Shipside Corpsec Office"
 	})
+"uZE" = (
+/obj/structure/cable,
+/obj/structure/ladder/id_linked{
+	id = "reqladder1";
+	height = 1
+	},
+/turf/open/floor/mainship/mono,
+/area/outpost/cargo{
+	outside = 1
+	})
 "uZJ" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 4
@@ -26227,6 +26292,9 @@
 /obj/item/reagent_containers/food/snacks/grown/poppy,
 /turf/open/floor/mainship/mono,
 /area/mainship/living/port_garden)
+"vOH" = (
+/turf/open/floor/step_trigger/supply_fall/row_five/five,
+/area/mainship/squads/req)
 "vOP" = (
 /obj/structure/ship_ammo/cas/minirocket/illumination,
 /turf/open/floor/plating,
@@ -26360,6 +26428,9 @@
 	dir = 1
 	},
 /area/mainship/living/chapel)
+"vXZ" = (
+/turf/open/floor/step_trigger/supply_fall/row_two/two,
+/area/mainship/squads/req)
 "vYS" = (
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/upper_medical{
@@ -27621,6 +27692,9 @@
 /obj/item/toy/deck/kotahi,
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/hangar)
+"wWO" = (
+/turf/open/floor/step_trigger/supply_fall/row_three,
+/area/mainship/squads/req)
 "wWW" = (
 /obj/structure/bed/bunkbed,
 /obj/effect/landmark/start/job/squadspecialist,
@@ -28050,8 +28124,9 @@
 	})
 "xmr" = (
 /obj/structure/cable,
-/turf/open/space/basic,
-/area/space)
+/obj/machinery/computer/ordercomp,
+/turf/open/floor/mainship/mono,
+/area/mainship/squads/req)
 "xmz" = (
 /obj/structure/table/mainship,
 /obj/structure/paper_bin,
@@ -28251,6 +28326,9 @@
 	dir = 8
 	},
 /area/mainship/squads/general)
+"xwg" = (
+/turf/open/floor/step_trigger/supply_fall/row_five,
+/area/mainship/squads/req)
 "xwi" = (
 /obj/machinery/door/airlock/mainship/security{
 	name = "\improper Interrogation Room";
@@ -28999,6 +29077,9 @@
 /obj/effect/landmark/start/latejoin,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/living/cryo_cells)
+"ybq" = (
+/turf/open/floor/step_trigger/supply_fall/row_one/five,
+/area/mainship/squads/req)
 "ybJ" = (
 /obj/effect/soundplayer,
 /turf/closed/wall/mainship,
@@ -29126,6 +29207,9 @@
 /area/mainship/medical/surgery_hallway{
 	name = "Research"
 	})
+"yhI" = (
+/turf/open/floor/step_trigger/supply_fall/row_three/two,
+/area/mainship/squads/req)
 "yhO" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/mainship,
@@ -35732,7 +35816,7 @@ kyS
 aya
 mFm
 aya
-qbv
+xmr
 uAb
 fen
 fen
@@ -35853,11 +35937,11 @@ uXo
 aya
 vgl
 vAL
-fqs
-fqs
-fqs
-fqs
-fqs
+xwg
+aiw
+wWO
+nec
+gTJ
 wPZ
 bko
 rso
@@ -35972,11 +36056,11 @@ mFm
 aya
 qbv
 vAL
-fqs
-fqs
-fqs
-fqs
-fqs
+nPo
+cWV
+yhI
+vXZ
+hjS
 ltJ
 jCB
 qEd
@@ -36089,13 +36173,13 @@ kyS
 aya
 mFm
 aya
-qbv
+uZE
 eYU
-fqs
-fqs
+oOw
+lol
 oUt
-fqs
-fqs
+sOB
+mZJ
 fNo
 duO
 urx
@@ -36210,11 +36294,11 @@ mFm
 aya
 qbv
 vAL
-fqs
-fqs
-fqs
-fqs
-fqs
+pXs
+pPb
+qHi
+bcX
+diW
 dbh
 jCB
 eTR
@@ -36329,11 +36413,11 @@ uXo
 aya
 qbv
 vAL
+vOH
+thg
+hrH
 fqs
-fqs
-fqs
-fqs
-fqs
+ybq
 ltJ
 wMn
 dIJ
@@ -36446,7 +36530,7 @@ kyS
 aya
 mFm
 aya
-qbv
+uem
 syO
 eIU
 iAB
@@ -52661,7 +52745,7 @@ nwr
 nwr
 nwr
 nwr
-xmr
+nwr
 nwr
 nwr
 nwr
@@ -52780,7 +52864,7 @@ xak
 xak
 xak
 xak
-ofB
+xak
 xak
 xak
 xak
