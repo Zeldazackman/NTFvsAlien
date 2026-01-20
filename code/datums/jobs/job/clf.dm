@@ -9,6 +9,7 @@
 	minimap_icon = "CLF1"
 	jobworth = list(
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
+		/datum/job/terragov/squad/specialist = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/squad/corpsman = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/squad/engineer = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
@@ -66,6 +67,7 @@ Your primary goal is to serve the hive, and ultimate goal is to liberate the col
 	minimal_access = ALL_CLF_ACCESS
 	jobworth = list(
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_MEDIUM,
+		/datum/job/terragov/squad/specialist = SMARTIE_POINTS_MEDIUM,
 		/datum/job/terragov/squad/corpsman = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/squad/engineer = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
@@ -89,6 +91,7 @@ Your primary goal is to serve the hive, and ultimate goal is to liberate the col
 	)
 	jobworth = list(
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_HIGH,
+		/datum/job/terragov/squad/specialist = SMARTIE_POINTS_HIGH,
 		/datum/job/terragov/squad/corpsman = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/squad/engineer = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
@@ -116,6 +119,7 @@ Your primary goal is to serve the hive, and ultimate goal is to liberate the col
 	supervisors = "the xenomorphs"
 	jobworth = list(
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_HIGH,
+		/datum/job/terragov/squad/specialist = SMARTIE_POINTS_HIGH,
 		/datum/job/terragov/squad/corpsman = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/squad/engineer = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
@@ -155,6 +159,7 @@ Your primary goal is to serve the hive, and ultimate goal is to liberate the col
 	jobworth = list(
 		/datum/job/xenomorph = LARVA_POINTS_SHIPSIDE_STRONG,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
+		/datum/job/terragov/squad/specialist = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
 	html_description = {"
@@ -167,6 +172,7 @@ Your primary goal is to serve the hive, and ultimate goal is to liberate the col
 	minimap_icon = "synth"
 	jobworth = list(
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_HIGH,
+		/datum/job/terragov/squad/specialist = SMARTIE_POINTS_HIGH,
 		/datum/job/terragov/squad/corpsman = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/squad/engineer = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
@@ -237,6 +243,7 @@ In addition, being a Synthetic gives you knowledge in every field and specializa
 	multiple_outfits = FALSE
 	jobworth = list(
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_MEDIUM,
+		/datum/job/terragov/squad/specialist = SMARTIE_POINTS_MEDIUM,
 		/datum/job/terragov/squad/corpsman = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/squad/engineer = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,

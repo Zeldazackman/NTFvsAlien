@@ -25,14 +25,16 @@
 		/datum/job/terragov/silicon/ai = 1,
 		/datum/job/terragov/squad/engineer = 1,
 		/datum/job/terragov/squad/corpsman = 1,
+		/datum/job/terragov/squad/specialist = 1,
 		/datum/job/terragov/squad/smartgunner = 1,
 		/datum/job/terragov/squad/leader = 1,
 		/datum/job/terragov/squad/standard = -1,
 		/datum/job/terragov/squad/slut = -1,
-		/datum/job/xenomorph = FREE_XENO_AT_START,
+		/datum/job/xenomorph = 2,
 		/datum/job/xenomorph/queen = 1
 	)
 	job_points_needed_by_job_type = list(
+		/datum/job/terragov/squad/specialist = 20,
 		/datum/job/terragov/squad/smartgunner = 20,
 		/datum/job/terragov/squad/corpsman = 5,
 		/datum/job/terragov/squad/engineer = 5,
@@ -42,7 +44,7 @@
 	evo_requirements = list(
 		/datum/xeno_caste/queen = 8,
 		/datum/xeno_caste/king = 12,
-		/datum/xeno_caste/dragon = 12,
+		/datum/xeno_caste/dragon = 18,
 	)
 
 	max_larva_preg_at_once = 1
