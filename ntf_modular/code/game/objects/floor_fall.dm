@@ -86,7 +86,10 @@
 					for(var/mob/living/carbon/human/human AS in GLOB.alive_human_list)
 						if((human.faction == aliving.faction) || (GLOB.faction_to_iff[human.faction] & GLOB.faction_to_iff[aliving.faction]))
 							to_chat(human, span_danger("(N-UI) Req Alert: '[aliving]' seems to have fallen down the requisitons elevator shaft, Mind the elevator and recover them swiftly."))
-			playsound(A.loc, SFX_SLAM, 75, FALSE)
+				if(isrobot(A))
+					playsound(A.loc, 'ntf_modular/sound/misc/metal_rod_fall_meme.ogg', 75, FALSE)
+				else
+					playsound(A.loc, SFX_SLAM, 75, FALSE)
 
 //cause the supply elevator fucking replaces the floors i cant map value them it seem, starting from bottom left
 
