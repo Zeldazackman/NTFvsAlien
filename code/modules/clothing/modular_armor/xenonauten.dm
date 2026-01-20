@@ -284,7 +284,7 @@
 /obj/item/clothing/suit/storage/marine/ballistic
 	name = "\improper Crasher multi-threat ballistic armor"
 	desc = "A reused design of a old body armor system from the 21st century."
-	soft_armor = list(MELEE = 40, BULLET = 50, LASER = 50, ENERGY = 25, BOMB = 30, BIO = 5, FIRE = 25, ACID = 30)
+	soft_armor = list(MELEE = 40, BULLET = 65, LASER = 60, ENERGY = 40, BOMB = 45, BIO = 45, FIRE = 45, ACID = 45)
 	slowdown = 0.25
 	armor_protection_flags = CHEST|GROIN|ARMS|LEGS|FEET|HANDS
 	icon = 'icons/mob/clothing/suits/marine_armor.dmi'
@@ -334,7 +334,7 @@
 	icon_state = "vsd_vest"
 	worn_icon_state = "vsd_vest"
 	slowdown = SLOWDOWN_ARMOR_LIGHT
-	soft_armor = list(MELEE = 35, BULLET = 50, LASER = 20, ENERGY = 15, BOMB = 30, BIO = 10, FIRE = 25, ACID = 30)
+	soft_armor = list(MELEE = 35, BULLET = 65, LASER = 45, ENERGY = 40, BOMB = 40, BIO = 45, FIRE = 45, ACID = 45)
 	item_map_variant_flags = NONE
 	armor_features_flags = NONE
 
@@ -357,14 +357,16 @@
 	desc = "Kaizoku Corporation's uncommon use body armor, used usually by engineers. Protects the user from most bullet calibers."
 	icon_state = "vsd_marmor"
 	worn_icon_state = "vsd_marmor"
-	soft_armor = list(MELEE = 40, BULLET = 70, LASER = 20, ENERGY = 15, BOMB = 40, BIO = 10, FIRE = 25, ACID = 30)
+	slowdown = SLOWDOWN_ARMOR_MEDIUM
+	soft_armor = list(MELEE = 45, BULLET = 75, LASER = 55, ENERGY = 45, BOMB = 45, BIO = 50, FIRE = 45, ACID = 55)
 
 /obj/item/clothing/suit/storage/marine/vsd_two/harmor
 	name = "Crasher multi-threat heavy-set ballistic armor"
 	desc = "The Kaizoku Corporation's leader set of armor, rarely given to the grunts. Protects the user from most bullet calibers."
 	icon_state = "vsd_harmor"
 	worn_icon_state = "vsd_harmor"
-	soft_armor = list(MELEE = 45, BULLET = 75, LASER = 20, ENERGY = 15, BOMB = 45, BIO = 10, FIRE = 25, ACID = 30)
+	slowdown = SLOWDOWN_ARMOR_HEAVY
+	soft_armor = list(MELEE = 50, BULLET = 80, LASER = 55, ENERGY = 45, BOMB = 50, BIO = 55, FIRE = 55, ACID = 60)
 
 /obj/item/clothing/suit/storage/marine/usl_squad
 	name = "UL5 personal armor"
