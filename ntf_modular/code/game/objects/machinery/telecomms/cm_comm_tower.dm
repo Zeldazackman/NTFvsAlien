@@ -166,9 +166,10 @@
 	else
 		desc = initial(desc)
 
-	//spill your shit cause those are not replacable.
-	deconstruct()
 	update_state()
+	if(!(atom_flags & NODECONSTRUCT))
+		//spill your shit cause those are not replacable.
+		deconstruct()
 
 // In any case that might warrant reevaluating working state
 /obj/machinery/telecomms/relay/preset/tower/proc/update_state()
@@ -325,9 +326,6 @@
 
 	/// Holds the delay for when a cluster can recorrupt the comms tower after a pylon has been destroyed
 	COOLDOWN_DECLARE(corruption_delay)
-
-/obj/machinery/telecomms/relay/preset/tower/mapcomms/Initialize()
-	. = ..()
 
 /obj/machinery/telecomms/relay/preset/tower/mapcomms/examine(mob/user)
 	. = ..()

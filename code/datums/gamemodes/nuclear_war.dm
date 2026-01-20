@@ -55,9 +55,13 @@
 /datum/game_mode/infestation/nuclear_war/post_setup()
 	var/client_count = length(GLOB.clients)
 	if(client_count >= NUCLEAR_WAR_MECH_MINIMUM_POP_REQUIRED)
-		evo_requirements[/datum/xeno_caste/queen] -= 2
+		evo_requirements[/datum/xeno_caste/queen] -= 1
+		evo_requirements[/datum/xeno_caste/king] -= 1
+		evo_requirements[/datum/xeno_caste/dragon] -= 1
 	if(client_count >= NUCLEAR_WAR_TANK_MINIMUM_POP_REQUIRED)
-		evo_requirements[/datum/xeno_caste/queen] -= 2
+		evo_requirements[/datum/xeno_caste/queen] -= 1
+		evo_requirements[/datum/xeno_caste/king] -= 1
+		evo_requirements[/datum/xeno_caste/dragon] -= 1
 
 	. = ..()
 
