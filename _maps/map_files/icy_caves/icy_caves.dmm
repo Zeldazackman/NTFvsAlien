@@ -1186,9 +1186,14 @@
 /turf/open/floor/plating,
 /area/icy_caves/outpost/refinery)
 "fz" = (
-/obj/effect/landmark/static_comms/net_two,
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 4
+	},
+/obj/structure/cable,
+/obj/item/storage/box/gloves,
+/obj/structure/table,
 /turf/open/floor/tile/dark,
-/area/icy_caves/outpost/LZ2)
+/area/icy_caves/outpost/research)
 "fA" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -2646,8 +2651,6 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/structure/table,
-/obj/item/storage/box/gloves,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/research)
 "nX" = (
@@ -2769,7 +2772,8 @@
 	},
 /area/icy_caves/caves/alienstuff)
 "oF" = (
-/obj/effect/landmark/weed_node,
+/obj/item/storage/fancy/vials,
+/obj/structure/table,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/research)
 "oG" = (
@@ -4124,8 +4128,7 @@
 /area/icy_caves/caves/chapel)
 "uC" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/structure/table,
-/obj/item/reagent_containers/glass/beaker/vial,
+/obj/effect/landmark/static_comms/net_two,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/research)
 "uD" = (
@@ -5508,12 +5511,8 @@
 /turf/open/floor/plating/ground/snow/layer2,
 /area/icy_caves/outpost/outside)
 "AX" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 4
-	},
-/obj/structure/cable,
+/obj/item/reagent_containers/glass/beaker/vial,
 /obj/structure/table,
-/obj/item/mass_spectrometer/adv,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/research)
 "AY" = (
@@ -9653,11 +9652,6 @@
 	dir = 4
 	},
 /area/icy_caves/caves/weapon_vault)
-"Vi" = (
-/obj/structure/table,
-/obj/item/storage/fancy/vials,
-/turf/open/floor/tile/dark,
-/area/icy_caves/outpost/research)
 "Vj" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /turf/open/floor/tile/purple/whitepurplefull,
@@ -9803,6 +9797,8 @@
 	},
 /obj/structure/cable,
 /obj/effect/ai_node,
+/obj/structure/table,
+/obj/item/mass_spectrometer/adv,
 /turf/open/floor/tile/dark,
 /area/icy_caves/outpost/research)
 "VP" = (
@@ -26446,8 +26442,8 @@ Za
 po
 yn
 Ob
-nH
-qm
+fz
+AX
 qG
 ra
 tH
@@ -26602,8 +26598,8 @@ XO
 Mh
 lN
 qJ
-AX
-Vi
+nH
+qm
 TX
 yw
 tH
@@ -30647,7 +30643,7 @@ Kt
 yk
 IT
 IT
-fz
+IT
 nl
 Wm
 oP

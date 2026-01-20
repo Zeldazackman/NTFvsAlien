@@ -18765,8 +18765,8 @@
 /area/fiorina/station/park)
 "kny" = (
 /obj/effect/landmark/static_comms/net_two,
-/turf/open/floor/prison/blue{
-	dir = 1
+/turf/open/floor/prison/plate{
+	dir = 10
 	},
 /area/fiorina/station/flight_deck)
 "knJ" = (
@@ -91303,7 +91303,7 @@ eZx
 eZx
 eZx
 nWh
-klO
+xNe
 dYT
 pwg
 ujx
@@ -91516,7 +91516,7 @@ eZx
 eZx
 jcR
 mjc
-ltp
+kny
 ltp
 ltp
 ltp
@@ -93016,7 +93016,7 @@ qmN
 qmN
 yjX
 nUE
-kny
+oIG
 kHc
 nYV
 eBJ

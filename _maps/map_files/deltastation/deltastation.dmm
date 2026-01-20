@@ -72660,7 +72660,7 @@
 /area/deltastation/medical/medbay)
 "oSz" = (
 /obj/effect/turf_decal/tile/transparent/neutral/fourcorners,
-/obj/effect/landmark/static_comms/net_two,
+/obj/effect/landmark/static_comms/net_one,
 /turf/open/floor/iron,
 /area/deltastation/hallway/secondary/exit/departure_lounge)
 "oSK" = (
@@ -111405,10 +111405,6 @@
 /obj/structure/window/framed/colony/reinforced/hull,
 /turf/open/floor/plating,
 /area/deltastation/maintenance/department/science/xenobiology)
-"wBi" = (
-/obj/effect/landmark/weed_node,
-/turf/open/floor/plating/ground/mars/random/cave,
-/area/deltastation/medical/virology)
 "wBm" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/random/engineering/plasteel,
@@ -117292,6 +117288,7 @@
 /area/deltastation/maintenance/solars/starboard/aft)
 "xJE" = (
 /obj/structure/cable,
+/obj/effect/landmark/static_comms/net_two,
 /turf/open/floor/plating,
 /area/deltastation/medical/virology)
 "xJH" = (
@@ -119370,10 +119367,6 @@
 	},
 /turf/open/floor/iron,
 /area/deltastation/security/checkpoint/escape)
-"ydF" = (
-/obj/effect/landmark/static_comms/net_one,
-/turf/open/floor/plating/ground/mars/random/cave,
-/area/deltastation/asteroidcaves/southlz)
 "ydG" = (
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/deltastation/hallway/secondary/exit)
@@ -156143,7 +156136,7 @@ lBe
 bLw
 mgf
 iUB
-wBi
+nGE
 nGE
 vNR
 vNR
@@ -156401,7 +156394,7 @@ dKE
 ekk
 uyZ
 xJE
-wBi
+nGE
 vNR
 vNR
 vNR
@@ -156656,7 +156649,7 @@ nPx
 qIL
 shg
 sRG
-wBi
+nGE
 nGE
 nGE
 vNR
@@ -167447,7 +167440,7 @@ vES
 lnZ
 hSn
 hSn
-ydF
+hSn
 hSn
 hSn
 hSn

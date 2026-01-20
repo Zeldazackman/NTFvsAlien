@@ -1709,7 +1709,6 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/reagent_dispensers/fueltank/barrel,
 /turf/open/floor/tile/dark/brown2,
 /area/outpost/cargo/engineering)
 "ir" = (
@@ -4460,10 +4459,6 @@
 	dir = 1
 	},
 /area/outpost/hallway/east)
-"uR" = (
-/obj/effect/landmark/static_comms/net_two,
-/turf/open/floor/plating/ground/mars/random/cave,
-/area/outpost/caves/south)
 "uS" = (
 /obj/machinery/atmospherics/pipe/manifold/green/hidden{
 	dir = 8
@@ -7921,6 +7916,7 @@
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 4
 	},
+/obj/structure/reagent_dispensers/fueltank/barrel,
 /turf/open/floor/tile/dark2,
 /area/outpost/cargo/engineering)
 "Lv" = (
@@ -7951,6 +7947,7 @@
 /turf/open/floor/tile/dark,
 /area/outpost/science)
 "Lz" = (
+/obj/structure/reagent_dispensers/fueltank/barrel,
 /turf/open/floor/tile/dark/brown2{
 	dir = 9
 	},
@@ -8113,8 +8110,8 @@
 /area/outpost/medbay/storage)
 "Mk" = (
 /obj/effect/landmark/static_comms/net_one,
-/turf/open/floor/plating/ground/mars/random/sand,
-/area/outpost/yard/central)
+/turf/open/floor/tile/dark,
+/area/outpost/arrivals)
 "Mm" = (
 /turf/open/floor/plating/ground/mars/dirttosand{
 	dir = 6
@@ -9903,8 +9900,10 @@
 	},
 /area/outpost/science)
 "Up" = (
-/obj/structure/reagent_dispensers/fueltank/barrel,
-/turf/open/floor/tile/dark/brown2,
+/obj/effect/landmark/static_comms/net_two,
+/turf/open/floor/tile/dark/brown2{
+	dir = 9
+	},
 /area/outpost/cargo/engineering)
 "Uq" = (
 /turf/open/floor/plating/ground/mars/cavetodirt{
@@ -15955,7 +15954,7 @@ Og
 VC
 Vt
 Vt
-Vt
+Mk
 Vt
 OH
 Vt
@@ -18606,7 +18605,7 @@ EA
 PW
 EA
 EA
-Mk
+EA
 EA
 Xl
 yW
@@ -25094,7 +25093,7 @@ hK
 hK
 hK
 hK
-uR
+hK
 hK
 hK
 hK
@@ -26944,7 +26943,7 @@ ys
 iI
 Zm
 dD
-nV
+Ta
 uX
 ys
 ys
@@ -27339,8 +27338,8 @@ cG
 ys
 PA
 Cf
+lg
 Up
-Lz
 Cf
 ys
 Ya
@@ -27472,7 +27471,7 @@ ys
 Mw
 rQ
 iq
-Ta
+nV
 Gi
 ys
 ys

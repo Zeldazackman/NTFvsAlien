@@ -746,8 +746,6 @@
 /turf/open/floor/rcircuit/off,
 /area/bigredv2/outside/marshal_office)
 "aiZ" = (
-/obj/machinery/computer/security,
-/obj/structure/table,
 /turf/open/floor/rcircuit,
 /area/bigredv2/outside/marshal_office)
 "aja" = (
@@ -8849,11 +8847,6 @@
 /obj/effect/ai_node,
 /turf/open/floor,
 /area/bigredv2/outside/engineering)
-"eMf" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/weed_node,
-/turf/open/floor/tile/dark,
-/area/bigredv2/outside/marshal_office)
 "eNF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -12910,10 +12903,6 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor,
 /area/bigredv2/outside/marshal_office)
-"nEz" = (
-/obj/effect/landmark/weed_node,
-/turf/open/floor/plating/ground/mars/random/sand,
-/area/bigredv2/outside/virology)
 "nEK" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/tile/darkgreen/darkgreen2/corner{
@@ -15164,7 +15153,6 @@
 /turf/open/floor/freezer,
 /area/bigredv2/outside/virology)
 "sJh" = (
-/obj/structure/closet/l3closet/security,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -16100,10 +16088,6 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/mars/dirttosand/autosmooth,
 /area/bigredv2/outside/virology)
-"uON" = (
-/obj/effect/landmark/weed_node,
-/turf/open/floor/plating/ground/mars/random/dirt,
-/area/bigredv2/outside/virology)
 "uPO" = (
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/darkgreen/darkgreen2/corner{
@@ -17021,10 +17005,11 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/northeast)
 "wNy" = (
-/obj/effect/landmark/weed_node,
 /obj/effect/landmark/static_comms/net_one,
-/turf/open/floor/plating/ground/mars/random/sand,
-/area/bigredv2/outside/nw)
+/turf/open/floor/tile/vault{
+	dir = 8
+	},
+/area/bigredv2/outside/marshal_office)
 "wOh" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
@@ -23270,7 +23255,7 @@ aaa
 ddm
 vUc
 vUc
-uON
+vUc
 vUc
 aMz
 aNf
@@ -23918,11 +23903,11 @@ aaa
 aaa
 aaa
 aaa
-ddm
+foH
 riz
 dYn
 hbe
-nEz
+aFv
 aMz
 nBq
 aNi
@@ -24354,7 +24339,7 @@ aaa
 aaa
 foH
 vUc
-uOJ
+riz
 aFv
 aFv
 aMz
@@ -31698,7 +31683,7 @@ acp
 mxa
 mxa
 mxa
-wNy
+soH
 gkk
 ama
 qUm
@@ -35597,7 +35582,7 @@ gzM
 gzM
 acp
 pUl
-nQj
+wNy
 pUl
 nQj
 acp
@@ -36248,7 +36233,7 @@ gzM
 gzM
 acp
 pXI
-eMf
+uHi
 nwk
 tII
 acp

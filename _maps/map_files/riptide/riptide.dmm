@@ -8181,6 +8181,9 @@
 /obj/structure/flora/drought/tall_cactus,
 /turf/open/floor/plating/ground/dirt,
 /area/riptide/outside/volcano)
+"fHh" = (
+/turf/open/ground/grass/weedable,
+/area/riptide/inside/lighttower)
 "fHi" = (
 /obj/structure/rock/basalt/pile/alt3,
 /turf/open/ground/grass/weedable,
@@ -9336,9 +9339,8 @@
 /turf/open/ground,
 /area/riptide/outside/volcano)
 "gtL" = (
-/obj/effect/landmark/static_comms/net_two,
-/turf/open/ground,
-/area/riptide/outside/beachlzone)
+/turf/open/ground/grass/weedable,
+/area/riptide/inside/chapel)
 "gtN" = (
 /obj/effect/landmark/xeno_resin_door,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
@@ -19942,6 +19944,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/dark/small,
 /area/riptide/caves/pmc/rnd)
+"nOW" = (
+/obj/effect/landmark/static_comms/net_one,
+/turf/open/ground/grass/weedable,
+/area/riptide/inside/lighttower)
 "nPc" = (
 /obj/structure/barricade/wooden{
 	dir = 8
@@ -27988,6 +27994,11 @@
 	dir = 4
 	},
 /area/riptide/outside/westislands)
+"sWx" = (
+/obj/effect/landmark/static_comms/net_two,
+/obj/structure/cable,
+/turf/open/ground/grass/weedable,
+/area/riptide/inside/chapel)
 "sWA" = (
 /obj/machinery/vending/cigarette,
 /turf/open/floor,
@@ -34772,9 +34783,9 @@
 	},
 /area/riptide/caves/north)
 "xGV" = (
-/obj/effect/landmark/static_comms/net_one,
-/turf/open/ground,
-/area/riptide/outside/beachlzone)
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/ground/grass/weedable,
+/area/riptide/inside/chapel)
 "xHB" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -38492,7 +38503,7 @@ rgK
 rgK
 sTP
 xke
-gtL
+xke
 koq
 hoq
 eoT
@@ -39660,8 +39671,8 @@ heA
 pdT
 soJ
 iBx
-uOQ
-uOQ
+fHh
+nOW
 iNR
 qeS
 uOQ
@@ -39839,8 +39850,8 @@ xHB
 pdT
 soJ
 iMN
-qeS
-qeS
+fHh
+fHh
 bLI
 ren
 teY
@@ -42605,7 +42616,7 @@ vjY
 wJu
 hTm
 aod
-lNh
+gsG
 wtT
 eWo
 bmf
@@ -42783,8 +42794,8 @@ bmY
 dHY
 ooZ
 kQG
-swI
-swI
+gtL
+sWx
 swI
 lNh
 wtT
@@ -42962,8 +42973,8 @@ jnX
 acS
 bfA
 iwj
-swI
-nxp
+gtL
+xGV
 swI
 swI
 swI
@@ -43280,7 +43291,7 @@ rHT
 mvK
 xke
 xke
-xGV
+xke
 xke
 fJs
 hWe

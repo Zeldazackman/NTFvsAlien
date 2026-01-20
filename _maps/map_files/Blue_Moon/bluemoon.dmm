@@ -2091,10 +2091,7 @@
 /turf/open/floor,
 /area/bluemoon/outside/building/marshal)
 "cuV" = (
-/obj/structure/table,
-/obj/item/clothing/suit/armor/riot,
-/obj/item/clothing/suit/armor/riot,
-/obj/item/clothing/mask/gas,
+/obj/structure/closet/l3closet/security,
 /turf/open/floor/tile/dark,
 /area/bluemoon/outside/building/marshal)
 "cvd" = (
@@ -4479,7 +4476,6 @@
 	},
 /area/bluemoon/outside/building/med)
 "fij" = (
-/obj/structure/closet/secure_closet/marshal,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -9542,6 +9538,9 @@
 /obj/structure/table,
 /obj/item/clothing/suit/armor/riot,
 /obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/suit/armor/riot,
+/obj/item/clothing/suit/armor/riot,
 /turf/open/floor/tile/dark,
 /area/bluemoon/outside/building/marshal)
 "kNv" = (
@@ -11041,6 +11040,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 9
 	},
+/obj/structure/closet/secure_closet/marshal,
 /turf/open/floor/tile/dark,
 /area/bluemoon/outside/building/marshal)
 "mwJ" = (
@@ -17346,6 +17346,7 @@
 /area/bluemoon/outside/building/engi)
 "uiD" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
+/obj/structure/closet/secure_closet/marshal,
 /turf/open/floor/tile/dark,
 /area/bluemoon/outside/building/marshal)
 "ujf" = (
@@ -17681,7 +17682,6 @@
 	},
 /area/bluemoon/outside/building/lz)
 "uBC" = (
-/obj/structure/closet/secure_closet/marshal,
 /turf/open/floor/tile/vault{
 	dir = 8
 	},
@@ -19142,10 +19142,6 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/tile/dark,
 /area/bluemoon/caves/facility/eta)
-"whf" = (
-/obj/effect/landmark/static_comms/net_two,
-/turf/open/floor/plating/ground/snow/layer0,
-/area/bluemoon/outside/c)
 "whu" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/tile/dark,
@@ -19767,6 +19763,7 @@
 /area/bluemoon/outside/building/dorms/plant)
 "wTt" = (
 /obj/effect/ai_node,
+/obj/effect/landmark/static_comms/net_two,
 /turf/open/floor/tile/dark,
 /area/bluemoon/outside/building/marshal)
 "wTu" = (
@@ -30136,7 +30133,7 @@ iUv
 htr
 fij
 wTt
-cuV
+kWV
 kNr
 hfA
 uHq
@@ -30288,7 +30285,7 @@ uiD
 uiD
 mwo
 poJ
-hZA
+uBC
 htr
 dLi
 dLi
@@ -30428,14 +30425,14 @@ iUv
 vnx
 iUv
 htr
-doH
-xtW
-wzI
-qWq
-eFE
-iDJ
-iDJ
-hZA
+kWV
+kWV
+kWV
+kWV
+kWV
+kWV
+kWV
+cuV
 htr
 bZl
 bZl
@@ -30575,14 +30572,14 @@ uJX
 iUv
 iUv
 htr
-htr
-htr
-htr
-htr
-htr
-htr
-htr
-htr
+doH
+xtW
+wzI
+qWq
+eFE
+iDJ
+iDJ
+hZA
 htr
 eQz
 eQz
@@ -30721,15 +30718,15 @@ uJX
 uJX
 iUv
 iUv
-iUv
-iUv
-iUv
-iUv
-iUv
-iUv
-iUv
-iUv
-iUv
+htr
+htr
+htr
+htr
+htr
+htr
+htr
+htr
+htr
 wrH
 wqx
 mLX
@@ -31786,7 +31783,7 @@ rHv
 mmH
 ggR
 mmH
-whf
+mmH
 vPH
 vPH
 vPH

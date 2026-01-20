@@ -16545,6 +16545,7 @@
 /area/ice_colony/surface/hangar/checkpoint)
 "bVo" = (
 /obj/machinery/atmospherics/pipe/manifold4w/green/hidden,
+/obj/effect/landmark/static_comms/net_two,
 /turf/open/floor/tile/dark2,
 /area/ice_colony/surface/hangar/checkpoint)
 "bVs" = (
@@ -17891,6 +17892,10 @@
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone/lz2,
 /turf/closed/wall/r_wall,
 /area/ice_colony/surface/hangar/beta)
+"cKt" = (
+/obj/effect/landmark/static_comms/net_one,
+/turf/open/floor/tile/dark2,
+/area/ice_colony/surface/dorms)
 "cLf" = (
 /turf/closed/mineral/smooth/darkfrostwall/indestructible,
 /area/storage/testroom)
@@ -18693,7 +18698,6 @@
 "dOU" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/manifold4w/green/hidden,
-/obj/effect/landmark/static_comms/net_one,
 /turf/open/floor/tile/darkgreen/darkgreen2/corner{
 	dir = 4
 	},
@@ -25571,7 +25575,6 @@
 /area/ice_colony/exterior/surface/valley/west)
 "npZ" = (
 /obj/effect/decal/cleanable/blood/gibs,
-/obj/effect/landmark/static_comms/net_two,
 /turf/open/floor/tile/dark2,
 /area/ice_colony/surface/dorms)
 "nqu" = (
@@ -54148,7 +54151,7 @@ iyB
 wkf
 arD
 apZ
-apZ
+cKt
 npZ
 qIB
 rIj

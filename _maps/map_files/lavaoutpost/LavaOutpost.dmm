@@ -201,10 +201,9 @@
 /turf/closed/mineral/smooth/basalt,
 /area/lavaland/engie/engine)
 "cb" = (
-/obj/effect/landmark/weed_node,
 /obj/effect/landmark/static_comms/net_two,
-/turf/open/lavaland/basalt,
-/area/lavaland/cave/west)
+/turf/open/floor/tile/dark2,
+/area/lavaland/engie/refine)
 "cc" = (
 /obj/structure/bed,
 /turf/open/floor/tile/dark,
@@ -444,10 +443,6 @@
 	},
 /turf/open/floor/tile/white,
 /area/lavaland/medical)
-"fD" = (
-/obj/effect/landmark/static_comms/net_one,
-/turf/open/floor/plating/asteroidfloor,
-/area/lavaland/cave/northeast)
 "fE" = (
 /obj/structure/closet/secure_closet/engineering_welding,
 /turf/open/floor/tile/dark2,
@@ -4273,7 +4268,7 @@
 /turf/closed/wall,
 /area/storage/testroom)
 "RO" = (
-/obj/effect/landmark/weed_node,
+/obj/effect/landmark/static_comms/net_one,
 /turf/open/floor/plating,
 /area/lavaland/medical)
 "RP" = (
@@ -18810,7 +18805,7 @@ ZN
 ZN
 ZN
 ZN
-cb
+BD
 ZN
 BD
 ZN
@@ -22657,8 +22652,8 @@ al
 al
 ZW
 EY
-Fi
 FM
+cb
 GJ
 HG
 Ih
@@ -22914,12 +22909,12 @@ al
 al
 ZW
 EY
-Fm
-el
+FM
+FM
 GL
 FM
 Il
-FM
+Fi
 el
 GJ
 EY
@@ -23434,7 +23429,7 @@ FM
 FM
 Iq
 HM
-FM
+Fm
 IM
 EY
 ZW
@@ -44992,7 +44987,7 @@ Dc
 TW
 TW
 TW
-fD
+TW
 TW
 Dc
 TW

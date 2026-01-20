@@ -22871,9 +22871,9 @@
 /turf/open/floor/tile/yellow/patch,
 /area/gelida/indoors/a_block/corpo)
 "pEA" = (
-/obj/effect/landmark/static_comms/net_one,
-/turf/open/floor/plating/ground/snow/layer0,
-/area/gelida/outdoors/colony_streets/south_west_street)
+/obj/effect/landmark/static_comms/net_two,
+/turf/open/floor/plating/ground/mars/random,
+/area/gelida/indoors/b_block/bridge)
 "pEB" = (
 /obj/effect/ai_node,
 /turf/open/floor/prison/whitepurple/full{
@@ -33332,7 +33332,7 @@
 	},
 /area/gelida/landing_zone_2)
 "wVC" = (
-/obj/effect/landmark/static_comms/net_two,
+/obj/effect/landmark/static_comms/net_one,
 /turf/open/floor/mainship/black/full,
 /area/gelida/indoors/c_block/mining)
 "wVF" = (
@@ -47126,7 +47126,7 @@ tqi
 tqi
 tqi
 rMs
-pEA
+tqi
 tqi
 tqi
 tqi
@@ -51161,7 +51161,7 @@ mTs
 lEm
 lHD
 ybV
-ybV
+pEA
 jGE
 hNU
 piP

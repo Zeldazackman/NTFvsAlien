@@ -86,7 +86,7 @@
 	autolinkers = list("relay")
 	layer = FLY_LAYER
 	use_power = NO_POWER_USE
-	idle_power_usage = 0
+	idle_power_usage = 50
 	netspeed = 40
 	resistance_flags = INDESTRUCTIBLE
 	var/destructible = TRUE
@@ -99,6 +99,7 @@
 	. = ..()
 	update_minimap_marker()
 	START_PROCESSING(SSslowprocess, src)
+	power_change()
 
 /obj/machinery/telecomms/relay/preset/tower/proc/update_minimap_marker()
 	if(!z)
@@ -300,7 +301,6 @@
 /obj/machinery/telecomms/relay/preset/tower/mapcomms
 	name = "TC-3T static telecommunications tower"
 	desc = "A static heavy-duty TC-3T telecommunications tower. Used to set up subspace communications lines between planetary and extra-planetary locations. Will cause a devastating EMP burst once destroyed. Will need to have extra communication frequencies programmed into it by multitool."
-	use_power = NO_POWER_USE
 	idle_power_usage = 500
 	icon = 'ntf_modular/icons/obj/structures/machinery/comm_tower3.dmi'
 	icon_state = "static1"

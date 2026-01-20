@@ -6217,8 +6217,8 @@
 /area/kutjevo/exterior/colony_South)
 "gAu" = (
 /obj/effect/landmark/static_comms/net_two,
-/turf/open/floor/plating/ground/mars/random/sand,
-/area/kutjevo/exterior/runoff_dunes)
+/turf/open/floor/kutjevo/catwalk,
+/area/kutjevo/interior/complex/med/operating)
 "gBa" = (
 /obj/effect/spawner/random/misc/structure/barrel,
 /turf/open/floor/plating/ground/mars/dirttosand/autosmooth,
@@ -14097,6 +14097,7 @@
 /area/kutjevo/interior/complex/med)
 "oON" = (
 /obj/effect/landmark/sensor_tower,
+/obj/effect/landmark/static_comms/net_one,
 /turf/open/floor/kutjevo/plate,
 /area/kutjevo/exterior/telecomm/lz2_south)
 "oOO" = (
@@ -15985,10 +15986,6 @@
 	},
 /turf/open/floor/plating/kutjevo,
 /area/kutjevo/exterior/colony_central)
-"qLa" = (
-/obj/effect/landmark/static_comms/net_one,
-/turf/open/floor/plating/ground/mars/dirttosand/autosmooth,
-/area/kutjevo/exterior/Northwest_Colony)
 "qLl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
@@ -34464,7 +34461,7 @@ tIo
 cTz
 clc
 onM
-gAu
+cTz
 cTz
 hii
 hii
@@ -37200,7 +37197,7 @@ kuB
 sVF
 lLU
 soL
-qLa
+soL
 cUF
 sVF
 mar
@@ -40388,7 +40385,7 @@ aqC
 bQq
 kTb
 mAH
-cMv
+gAu
 rhK
 dyB
 ylh

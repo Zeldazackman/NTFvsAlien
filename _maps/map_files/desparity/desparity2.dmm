@@ -3927,6 +3927,7 @@
 /area/lv624/lazarus/security)
 "sw" = (
 /obj/item/toy/beach_ball/basketball,
+/obj/effect/landmark/static_comms/net_two,
 /turf/open/floor/tile/white,
 /area/lv624/lazarus/fitness)
 "sx" = (
@@ -5261,10 +5262,6 @@
 	dir = 9
 	},
 /area/lv624/lazarus/sleep_male)
-"zg" = (
-/obj/effect/landmark/static_comms/net_two,
-/turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/jungle10)
 "zi" = (
 /obj/item/shard,
 /turf/open/ground/grass/weedable,
@@ -6503,8 +6500,8 @@
 /area/lv624/lazarus/research/caves)
 "Fd" = (
 /obj/effect/landmark/static_comms/net_one,
-/turf/open/ground/grass/weedable,
-/area/lv624/ground/jungle9)
+/turf/open/floor/tile/dark,
+/area/lv624/lazarus/engineering)
 "Fe" = (
 /obj/structure/table,
 /obj/item/trash/barcaridine,
@@ -12774,7 +12771,7 @@ mu
 mu
 mu
 wM
-zg
+wM
 wM
 wM
 LX
@@ -15248,7 +15245,7 @@ ua
 ua
 zj
 qf
-qf
+Fd
 qf
 zj
 vW
@@ -17488,7 +17485,7 @@ tq
 Ha
 qE
 Zp
-Fd
+Zp
 EH
 EH
 EH

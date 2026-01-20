@@ -9797,6 +9797,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 10
 	},
+/obj/machinery/telecomms/relay/preset/tower/mapcomms,
 /turf/open/floor/mainship,
 /area/mainship/hallways/hangar2)
 "nvR" = (

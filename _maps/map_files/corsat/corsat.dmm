@@ -43852,8 +43852,8 @@
 /area/corsat/gamma/medbay)
 "tkK" = (
 /obj/effect/landmark/static_comms/net_one,
-/turf/open/floor/plating/ground/dirt,
-/area/corsat/dropzone/landingzonethree)
+/turf/open/floor/grayscale/round/black,
+/area/corsat/sigma/cargo)
 "tkZ" = (
 /obj/effect/turf_decal/tile/corsatstraight/green{
 	dir = 4
@@ -103968,7 +103968,7 @@ bxd
 bxd
 dNf
 dNf
-tkK
+dNf
 dne
 dNf
 dNf
@@ -109723,7 +109723,7 @@ uik
 dTU
 uik
 dTU
-dTU
+tkK
 dTU
 bNa
 fii

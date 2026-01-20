@@ -12852,6 +12852,7 @@
 "kNj" = (
 /obj/effect/decal/cleanable/blood,
 /obj/structure/cable,
+/obj/effect/landmark/static_comms/net_two,
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/colony/marshalls)
 "kNU" = (
@@ -12875,7 +12876,6 @@
 /area/lawankaoutpost/colony/medbay)
 "kPC" = (
 /obj/structure/flora/jungle/planttop1,
-/obj/effect/landmark/static_comms/net_two,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/southeast)
 "kPF" = (

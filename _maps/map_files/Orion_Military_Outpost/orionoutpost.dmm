@@ -747,10 +747,8 @@
 /turf/open/ground/grass/weedable/patch/grassyellow,
 /area/orion_outpost/ground/outpostnw)
 "dV" = (
-/obj/structure/prop/brokenvendor/surplusarmor,
-/turf/open/floor/mainship/green{
-	dir = 5
-	},
+/obj/effect/landmark/static_comms/net_one,
+/turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/prep)
 "dW" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -3468,7 +3466,6 @@
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/tadpolepad)
 "qU" = (
-/obj/effect/landmark/weed_node,
 /turf/open/floor/mainship/green{
 	dir = 5
 	},
@@ -5167,10 +5164,6 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/engineering)
-"zf" = (
-/obj/effect/landmark/static_comms/net_one,
-/turf/open/floor/plating/ground/mars/random/cave/darker,
-/area/orion_outpost/ground/outpostsw)
 "zh" = (
 /turf/open/floor/plating/icefloor/warnplate{
 	dir = 5
@@ -5784,6 +5777,7 @@
 	},
 /area/orion_outpost/ground/outpostw)
 "Cg" = (
+/obj/structure/prop/mainship/telecomms/bus,
 /turf/open/floor/mainship/black{
 	dir = 8
 	},
@@ -6428,9 +6422,11 @@
 /turf/closed/wall/mainship/gray,
 /area/orion_outpost/surface/building/brig)
 "Fp" = (
-/obj/effect/landmark/static_comms/net_two,
-/turf/open/floor/plating/ground/mars/random/cave/darker,
-/area/orion_outpost/ground/outpostnw)
+/obj/structure/prop/brokenvendor/surplusarmor,
+/turf/open/floor/mainship/green{
+	dir = 1
+	},
+/area/orion_outpost/surface/building/prep)
 "Fq" = (
 /obj/structure/flora/grass/tallgrass/tallgrasscorner,
 /turf/open/floor/plating/ground/mars/random/cave/darker,
@@ -8086,13 +8082,8 @@
 	},
 /area/orion_outpost/surface/building/prep)
 "Np" = (
-/obj/structure/prop/mainship/telecomms/bus,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/mainship/black{
-	dir = 1
-	},
+/obj/effect/landmark/static_comms/net_two,
+/turf/open/floor/mainship/mono,
 /area/orion_outpost/surface/building/atc)
 "Nq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -9989,7 +9980,7 @@
 "Wx" = (
 /obj/structure/prop/brokenvendor/surplusclothes,
 /turf/open/floor/mainship/green{
-	dir = 4
+	dir = 6
 	},
 /area/orion_outpost/surface/building/prep)
 "Wy" = (
@@ -14846,7 +14837,7 @@ eW
 WO
 rp
 Kq
-lx
+xj
 wr
 wr
 Em
@@ -14978,8 +14969,8 @@ ko
 QE
 sV
 Kq
+Eq
 Np
-wr
 wr
 Em
 Kq
@@ -15110,7 +15101,7 @@ mh
 lW
 lW
 Kq
-xj
+lx
 so
 wr
 wr
@@ -16021,7 +16012,7 @@ wq
 Ef
 rE
 lW
-Fp
+lW
 lW
 jJ
 mh
@@ -17565,7 +17556,7 @@ Sn
 ve
 ve
 LR
-vh
+Fp
 bS
 kK
 UL
@@ -17680,7 +17671,7 @@ hZ
 il
 XU
 ve
-zf
+ve
 JW
 ve
 ve
@@ -17696,9 +17687,9 @@ oP
 Sn
 ve
 ve
-LR
+QB
 vh
-kK
+dV
 dt
 QB
 Xg
@@ -17829,9 +17820,9 @@ Sn
 ve
 ve
 QB
-dV
+qU
+If
 Wx
-Wt
 QB
 Xg
 kK

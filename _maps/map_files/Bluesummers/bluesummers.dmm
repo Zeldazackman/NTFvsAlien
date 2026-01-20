@@ -6503,8 +6503,10 @@
 /area/bluesummers/inside/engineering/plant/control)
 "fGE" = (
 /obj/effect/landmark/static_comms/net_one,
-/turf/open/floor/plating/ground/drought,
-/area/bluesummers/outside/south)
+/turf/open/floor/mainship/green/corner{
+	dir = 1
+	},
+/area/bluesummers/inside/luxury)
 "fGH" = (
 /obj/structure/table/wood/fancy,
 /obj/item/storage/fancy/candle_box,
@@ -9857,8 +9859,8 @@
 /area/bluesummers/caves/mining/drill)
 "iBR" = (
 /obj/effect/landmark/static_comms/net_two,
-/turf/open/floor/plating/ground/drought,
-/area/bluesummers/outside/south)
+/turf/open/floor/plating,
+/area/bluesummers/inside/garage)
 "iBT" = (
 /obj/structure/table/mainship,
 /obj/item/paper{
@@ -41101,7 +41103,7 @@ tmP
 atq
 apm
 tmP
-iBR
+tmP
 tmP
 rOc
 rOc
@@ -41800,7 +41802,7 @@ lSo
 jbJ
 jbJ
 sAe
-wlC
+fGE
 uTJ
 nwy
 rWh
@@ -51088,7 +51090,7 @@ sip
 atq
 tmP
 tmP
-fGE
+tmP
 joK
 apm
 eKn
@@ -58764,7 +58766,7 @@ aPB
 hbE
 eGx
 amj
-hbE
+iBR
 hbE
 hbE
 xrg

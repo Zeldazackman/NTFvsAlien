@@ -14978,10 +14978,6 @@
 /obj/machinery/mining/brace,
 /turf/open/floor/mainship/cargo,
 /area/magmoor/cargo/processing/south)
-"ksR" = (
-/obj/effect/landmark/static_comms/net_one,
-/turf/open/floor/plating/ground/mars/random/dirt,
-/area/magmoor/compound/south)
 "ksX" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6
@@ -24456,10 +24452,6 @@
 	},
 /turf/open/floor/tile/white,
 /area/magmoor/civilian/pool)
-"rgI" = (
-/obj/effect/landmark/static_comms/net_two,
-/turf/open/floor/plating/ground/mars/random/dirt,
-/area/magmoor/compound/east)
 "rgK" = (
 /obj/machinery/light{
 	dir = 4
@@ -25679,6 +25671,7 @@
 /area/magmoor/compound/southwest)
 "sbF" = (
 /obj/item/trash/eat,
+/obj/effect/landmark/static_comms/net_two,
 /turf/open/floor/plating/ground/concrete,
 /area/magmoor/civilian/jani)
 "sbG" = (
@@ -30626,6 +30619,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6
 	},
+/obj/effect/landmark/static_comms/net_one,
 /turf/open/floor/mainship/ntlogo,
 /area/magmoor/civilian/arrival)
 "vzw" = (
@@ -54376,7 +54370,7 @@ eTo
 ngM
 eTo
 eTo
-ksR
+eTo
 eTo
 tvj
 sEo
@@ -62514,7 +62508,7 @@ vqD
 vWA
 cOx
 cOx
-rgI
+cOx
 cVH
 vqD
 xsB

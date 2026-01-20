@@ -1020,9 +1020,6 @@
 /turf/open/floor/tile/dark,
 /area/lv624/lazarus/research/caves)
 "fq" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump{
 	dir = 4
 	},
@@ -3571,6 +3568,7 @@
 /area/lv624/lazarus/security)
 "sw" = (
 /obj/item/toy/beach_ball/basketball,
+/obj/effect/landmark/static_comms/net_two,
 /turf/open/floor/tile/white,
 /area/lv624/lazarus/fitness)
 "sx" = (
@@ -3597,9 +3595,6 @@
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/lv624/ground/jungle7)
 "sC" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/machinery/light{
 	dir = 8
 	},
@@ -4864,10 +4859,6 @@
 	dir = 9
 	},
 /area/lv624/lazarus/sleep_male)
-"zg" = (
-/obj/effect/landmark/static_comms/net_one,
-/turf/open/ground/grass/weedable,
-/area/lv624/ground/jungle9)
 "zi" = (
 /obj/structure/window_frame/wood,
 /obj/item/shard,
@@ -5173,10 +5164,6 @@
 /obj/effect/turf_decal/warning_stripes/thick,
 /turf/open/floor,
 /area/lv624/lazarus/spaceport)
-"Ay" = (
-/obj/effect/landmark/static_comms/net_two,
-/turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/jungle10)
 "Az" = (
 /obj/effect/landmark/zombie_spawner,
 /turf/open/floor/plating/ground/dirt,
@@ -5427,9 +5414,6 @@
 /turf/open/floor/marking/bot,
 /area/lv624/lazarus/quartstorage/outdoors)
 "BP" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /turf/open/floor/tile/red/redtaupe{
 	dir = 9
 	},
@@ -7340,6 +7324,7 @@
 /obj/machinery/atmospherics/pipe/manifold/green/hidden{
 	dir = 1
 	},
+/obj/effect/landmark/static_comms/net_one,
 /turf/open/floor,
 /area/lv624/lazarus/security)
 "LM" = (
@@ -11785,7 +11770,7 @@ mu
 mu
 mu
 wM
-Ay
+wM
 wM
 wM
 wM
@@ -15550,7 +15535,7 @@ GQ
 ft
 gc
 QQ
-yZ
+uT
 jO
 bH
 uT
@@ -16284,7 +16269,7 @@ tq
 Ha
 qE
 Zp
-zg
+Zp
 EH
 EH
 EH

@@ -7879,9 +7879,7 @@
 /turf/open/floor/bcircuit/off,
 /area/lv624/lazarus/sandtemple)
 "hxk" = (
-/obj/structure/table,
-/obj/item/ashtray/glass,
-/obj/item/tool/crowbar,
+/obj/effect/landmark/static_comms/net_two,
 /turf/open/floor/tile/brown{
 	dir = 9
 	},
@@ -11241,10 +11239,6 @@
 	dir = 5
 	},
 /turf/open/floor/plating/ground/dirt,
-/area/lv624/ground/jungle9)
-"lhN" = (
-/obj/effect/landmark/static_comms/net_two,
-/turf/open/ground/grass,
 /area/lv624/ground/jungle9)
 "lhQ" = (
 /obj/structure/flora/jungle/vines,
@@ -19625,6 +19619,8 @@
 "uVl" = (
 /obj/structure/table,
 /obj/item/tool/multitool,
+/obj/item/tool/crowbar,
+/obj/item/ashtray/glass,
 /turf/open/floor/tile/brown{
 	dir = 9
 	},
@@ -42201,7 +42197,7 @@ mOs
 mOs
 xRH
 aES
-lhN
+aES
 aES
 mOs
 mOs
@@ -45313,8 +45309,8 @@ wNs
 vfk
 iJa
 hmu
-hxk
 pir
+hxk
 pir
 rBH
 pir
@@ -45495,8 +45491,8 @@ cIl
 vfk
 aES
 hmu
-giS
-giS
+pir
+pir
 pir
 pir
 pir

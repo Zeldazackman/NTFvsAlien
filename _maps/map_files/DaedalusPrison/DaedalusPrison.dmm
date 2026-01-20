@@ -3410,9 +3410,9 @@
 /turf/open/floor/prison/sterilewhite,
 /area/daedalusprison/inside/medical/chemistry)
 "cRu" = (
-/obj/effect/landmark/static_comms/net_two,
-/turf/open/floor/plating/ground/snow/layer2,
-/area/daedalusprison/outside/southeast)
+/obj/effect/spawner/random/misc/structure/supplycrate,
+/turf/open/floor/tile/dark2,
+/area/daedalusprison/inside/colonyauxstorage)
 "cRx" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/plating,
@@ -4562,9 +4562,10 @@
 /turf/open/floor/prison/bright_clean/two,
 /area/daedalusprison/inside/gym)
 "dNJ" = (
+/obj/effect/turf_decal/warning_stripes/box,
 /obj/effect/landmark/static_comms/net_one,
-/turf/open/floor/plating/ground/snow/layer2,
-/area/daedalusprison/outside/southeast)
+/turf/open/floor/tile/dark2,
+/area/daedalusprison/inside/colonyauxstorage)
 "dNP" = (
 /obj/machinery/space_heater,
 /obj/machinery/light{
@@ -9496,6 +9497,11 @@
 	dir = 1
 	},
 /area/daedalusprison/inside/security/office)
+"hVK" = (
+/obj/effect/decal/cleanable/blood,
+/obj/effect/landmark/static_comms/net_two,
+/turf/open/floor/tile/dark2,
+/area/daedalusprison/inside/seccheckpoint)
 "hVR" = (
 /obj/structure/window/framed/prison/cell,
 /turf/open/floor/prison,
@@ -13961,6 +13967,10 @@
 /obj/effect/ai_node,
 /turf/open/floor/prison/plate,
 /area/daedalusprison/inside/easternhalls)
+"lsT" = (
+/obj/effect/spawner/random/misc/structure/crate,
+/turf/open/floor/tile/dark2,
+/area/daedalusprison/inside/colonyauxstorage)
 "ltc" = (
 /turf/open/floor/prison/green{
 	dir = 8
@@ -21235,6 +21245,11 @@
 /obj/item/tool/soap,
 /turf/open/floor/prison/darkpurple,
 /area/daedalusprison/inside/janitorial)
+"rlx" = (
+/turf/open/floor/tile/dark/red2{
+	dir = 1
+	},
+/area/daedalusprison/inside/seccheckpoint)
 "rlC" = (
 /obj/item/stack/rods,
 /turf/open/floor/prison/red/corner{
@@ -25324,6 +25339,11 @@
 /obj/item/ammo_casing,
 /turf/open/floor/prison/darkred,
 /area/daedalusprison/inside/centralhalls)
+"uvU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/misc/structure/crate,
+/turf/open/floor/tile/dark2,
+/area/daedalusprison/inside/colonyauxstorage)
 "uvW" = (
 /obj/effect/landmark/corpsespawner/prison_security,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
@@ -62959,7 +62979,7 @@ liI
 liI
 ewq
 ewq
-cRu
+ewq
 ewq
 ewq
 liI
@@ -65290,9 +65310,9 @@ iMU
 pEW
 tyv
 wDO
-iMU
-vjG
-pEW
+lsT
+tyv
+dNJ
 tyv
 vjG
 iMU
@@ -65503,9 +65523,9 @@ vjG
 tyv
 qGK
 tPp
-pEW
-vjG
 tyv
+tyv
+pEW
 pEW
 rpe
 xzh
@@ -65714,8 +65734,8 @@ rpe
 iMU
 iMU
 iMU
-wHB
-iMU
+uvU
+cRu
 iMU
 iMU
 cfo
@@ -67818,8 +67838,8 @@ mta
 dsw
 bEJ
 caI
-rff
-uTK
+rlx
+hVK
 fPW
 sNH
 sRa
@@ -68030,7 +68050,7 @@ wJq
 oty
 qpC
 qtj
-rff
+rlx
 seb
 seb
 pMG
@@ -70997,7 +71017,7 @@ sLx
 sLx
 sLx
 ewq
-dNJ
+ewq
 ewq
 ewq
 wmt
