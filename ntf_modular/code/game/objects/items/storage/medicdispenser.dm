@@ -28,13 +28,6 @@
 	if(!user.Adjacent(src))
 		return
 
-	if((atom_flags & ON_BORDER))
-		if(user_turf != destination_turf && user_turf != get_step(destination_turf, dir))
-			to_chat(user, span_warning("You need to be up against [src] to leap over."))
-			return
-		if(user_turf == destination_turf)
-			destination_turf = get_step(destination_turf, dir) //we're moving from the objects turf to the one its facing
-
 	if(destination_turf.density)
 		return
 
@@ -45,7 +38,7 @@
 	if(user.do_actions || !can_climb(user))
 		return
 
-	user.visible_message(span_warning("[user] starts [atom_flags & ON_BORDER ? "leaping over" : "climbing onto"] \the [src]!"))
+	user.visible_message(span_warning("[user] starts to adjust \the [src] for sex-boosted mode and climb on it..."))
 
 	ADD_TRAIT(user, TRAIT_IS_CLIMBING, REF(src))
 	if(!do_after(user, 2 SECONDS, IGNORE_HELD_ITEM, src, BUSY_ICON_GENERIC))
@@ -85,7 +78,7 @@
 	if(COOLDOWN_FINISHED(src, sex_boost_cd))
 		for(var/mob/living/person in affecting_list)
 			affecting_list[person] = beam(person, "plasmabeam", maxdistance = 3, time = 1.5 SECONDS)
-		do_healing(2,0.25,0.25) //additive with being carried usually since it runs independently from process
+		do_healing(2) //additive with being carried usually since it runs independently from process
 		COOLDOWN_START(src, sex_boost_cd, 1 SECONDS)
 
 /obj/machinery/deployable/dispenser/medic/post_unbuckle_mob(mob/living/buckled_mob)
@@ -102,12 +95,13 @@
 /obj/machinery/deployable/dispenser/medic/process()
 	do_healing()
 
-/obj/machinery/deployable/dispenser/medic/proc/do_healing(healing_rate = 2, misc_healing = 0.25, internal_healing = 0)
+//it should go from 4 base to 6 mounted, and 8 when fucked while mounted, all values scale same way.
+/obj/machinery/deployable/dispenser/medic/proc/do_healing(healing_rate = 4, misc_healing = 0.25, internal_healing = 0.2)
 	if(climbed_mob)
 		if(climbed_mob in loc)
-			healing_rate *= 2
-			misc_healing *= 2
-			internal_healing += 0.25
+			healing_rate *= 1.5
+			misc_healing *= 1.5
+			internal_healing *= 1.5
 			do_thrust_animate(src, climbed_mob)
 			do_thrust_animate(climbed_mob,src) //carries them up with the machine
 			for(var/mob/living/person in affecting_list)
