@@ -5,6 +5,9 @@
 #define BOILER_GLOB_CORROSIVE "corrosive_glob"
 #define BOILER_GLOB_CORROSIVE_LANCE "corrosive_glob_lance"
 #define BOILER_GLOB_CORROSIVE_FAST "corrosive_glob_fast"
+#define BOILER_GLOB_APHRO "aphro_glob"
+#define BOILER_GLOB_APHRO_LANCE "aphro_glob_lance"
+#define BOILER_GLOB_APHRO_FAST "aphro_glob_fast"
 #define BOILER_GLOB_OZELOMELYN "ozelomelyn_glob"
 #define BOILER_GLOB_HEMODILE "hemodile_glob"
 #define BOILER_GLOB_SANGUINAL "sanguinal_glob"
@@ -17,6 +20,9 @@ GLOBAL_LIST_INIT(boiler_glob_list, list(
 	BOILER_GLOB_CORROSIVE = /datum/ammo/xeno/boiler_gas/corrosive,
 	BOILER_GLOB_CORROSIVE_LANCE = /datum/ammo/xeno/boiler_gas/corrosive/lance,
 	BOILER_GLOB_CORROSIVE_FAST = /datum/ammo/xeno/boiler_gas/corrosive/fast,
+	BOILER_GLOB_APHRO = /datum/ammo/xeno/boiler_gas/aphro,
+	BOILER_GLOB_APHRO_LANCE = /datum/ammo/xeno/boiler_gas/aphro/lance,
+	BOILER_GLOB_APHRO_FAST = /datum/ammo/xeno/boiler_gas/aphro/fast,
 	BOILER_GLOB_OZELOMELYN = /datum/ammo/xeno/boiler_gas/ozelomelyn,
 	BOILER_GLOB_HEMODILE = /datum/ammo/xeno/boiler_gas/hemodile,
 	BOILER_GLOB_SANGUINAL = /datum/ammo/xeno/boiler_gas/sanguinal
@@ -30,6 +36,9 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	BOILER_GLOB_CORROSIVE = image('icons/Xeno/actions/boiler.dmi', icon_state = BOILER_GLOB_CORROSIVE),
 	BOILER_GLOB_CORROSIVE_LANCE = image('icons/Xeno/actions/boiler.dmi', icon_state = BOILER_GLOB_CORROSIVE_LANCE),
 	BOILER_GLOB_CORROSIVE_FAST = image('icons/Xeno/actions/boiler.dmi', icon_state = BOILER_GLOB_CORROSIVE_FAST),
+	BOILER_GLOB_APHRO = image('ntf_modular/icons/Xeno/actions/boiler.dmi', icon_state = BOILER_GLOB_APHRO),
+	BOILER_GLOB_APHRO_LANCE = image('ntf_modular/icons/Xeno/actions/boiler.dmi', icon_state = BOILER_GLOB_APHRO_LANCE),
+	BOILER_GLOB_APHRO_FAST = image('ntf_modular/icons/Xeno/actions/boiler.dmi', icon_state = BOILER_GLOB_APHRO_FAST),
 	BOILER_GLOB_OZELOMELYN = image('icons/Xeno/actions/boiler.dmi', icon_state = BOILER_GLOB_OZELOMELYN),
 	BOILER_GLOB_HEMODILE = image('icons/Xeno/actions/boiler.dmi', icon_state = BOILER_GLOB_HEMODILE),
 	BOILER_GLOB_SANGUINAL = image('icons/Xeno/actions/boiler.dmi', icon_state = BOILER_GLOB_SANGUINAL),
@@ -95,7 +104,8 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	/// A list of ammo that can be selected.
 	var/list/datum/ammo/xeno/boiler_gas/selectable_glob_typepaths = list(
 		/datum/ammo/xeno/boiler_gas,
-		/datum/ammo/xeno/boiler_gas/corrosive
+		/datum/ammo/xeno/boiler_gas/corrosive,
+		/datum/ammo/xeno/boiler_gas/aphro,
 	)
 	/// Should the default two glob typepaths be replaced with a faster verison?
 	var/fast_gas = FALSE
@@ -173,9 +183,11 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	if(!fast_gas)
 		selectable_glob_typepaths += /datum/ammo/xeno/boiler_gas
 		selectable_glob_typepaths += /datum/ammo/xeno/boiler_gas/corrosive
+		selectable_glob_typepaths += /datum/ammo/xeno/boiler_gas/aphro
 	else
 		selectable_glob_typepaths += /datum/ammo/xeno/boiler_gas/fast
 		selectable_glob_typepaths += /datum/ammo/xeno/boiler_gas/corrosive/fast
+		selectable_glob_typepaths += /datum/ammo/xeno/boiler_gas/aphro/fast
 	if(unique_gas)
 		selectable_glob_typepaths += /datum/ammo/xeno/boiler_gas/ozelomelyn
 		selectable_glob_typepaths += /datum/ammo/xeno/boiler_gas/hemodile
@@ -183,6 +195,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	if(xeno_owner.upgrade == XENO_UPGRADE_PRIMO)
 		selectable_glob_typepaths += /datum/ammo/xeno/boiler_gas/lance
 		selectable_glob_typepaths += /datum/ammo/xeno/boiler_gas/corrosive/lance
+		selectable_glob_typepaths += /datum/ammo/xeno/boiler_gas/aphro/lance
 	var/found_pos = selectable_glob_typepaths.Find(xeno_owner.ammo?.type)
 	if(!found_pos)
 		xeno_owner.ammo = GLOB.ammo_list[selectable_glob_typepaths[1]]
@@ -248,6 +261,10 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 			unique_glob = FALSE
 			xeno_owner.neurotoxin_ammo++
 			xeno_owner.balloon_alert(xeno_owner, "neurotoxin globule prepared")
+		if(/datum/ammo/xeno/boiler_gas/aphro, /datum/ammo/xeno/boiler_gas/aphro/lance, /datum/ammo/xeno/boiler_gas/aphro/fast)
+			unique_glob = FALSE
+			xeno_owner.aphro_ammo++
+			xeno_owner.balloon_alert(xeno_owner, "aphrotoxin globule prepared")
 	if(unique_glob)
 		if(xeno_owner.corrosive_ammo > xeno_owner.neurotoxin_ammo)
 			xeno_owner.neurotoxin_ammo++
@@ -299,7 +316,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 
 /datum/action/ability/activable/xeno/bombard/get_cooldown()
 	var/cooldown = cooldown_duration - ((xeno_owner.neurotoxin_ammo + xeno_owner.corrosive_ammo) * BOILER_BOMBARD_COOLDOWN_REDUCTION)
-	if(istype(xeno_owner.ammo, /datum/ammo/xeno/boiler_gas/fast) || istype(xeno_owner.ammo, /datum/ammo/xeno/boiler_gas/corrosive/fast))
+	if(istype(xeno_owner.ammo, /datum/ammo/xeno/boiler_gas/fast) || istype(xeno_owner.ammo, /datum/ammo/xeno/boiler_gas/corrosive/fast) || istype(xeno_owner.ammo, /datum/ammo/xeno/boiler_gas/aphro/fast))
 		cooldown *= fast_cooldown_multiplier
 	return cooldown
 
@@ -357,7 +374,13 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 				if(!silent)
 					xeno_owner.balloon_alert(xeno_owner, "no neurotoxin globules!")
 				return FALSE
-	var/total_globs = xeno_owner.corrosive_ammo + xeno_owner.neurotoxin_ammo
+		if(/datum/ammo/xeno/boiler_gas/aphro, /datum/ammo/xeno/boiler_gas/aphro/lance, /datum/ammo/xeno/boiler_gas/aphro/fast)
+			unique_glob = FALSE
+			if(xeno_owner.aphro_ammo <= 0)
+				if(!silent)
+					xeno_owner.balloon_alert(xeno_owner, "no aphrotoxin globules!")
+				return FALSE
+	var/total_globs = xeno_owner.corrosive_ammo + xeno_owner.neurotoxin_ammo + xeno_owner.aphro_ammo
 	if(unique_glob && special_glob_required > total_globs)
 		if(!silent)
 			xeno_owner.balloon_alert(xeno_owner, "not enough globules!")
@@ -406,12 +429,23 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 			GLOB.round_statistics.boiler_neuro_smokes++
 			SSblackbox.record_feedback("tally", "round_statistics", 1, "boiler_neuro_smokes")
 			xeno_owner.neurotoxin_ammo--
+		if(/datum/ammo/xeno/boiler_gas/aphro, /datum/ammo/xeno/boiler_gas/aphro/lance, /datum/ammo/xeno/boiler_gas/aphro/fast)
+			unique_glob = FALSE
+			GLOB.round_statistics.boiler_aphro_smokes++
+			SSblackbox.record_feedback("tally", "round_statistics", 1, "boiler_aphro_smokes")
+			xeno_owner.aphro_ammo--
 	if(unique_glob)
 		var/remaining_globs_to_remove = special_glob_required
 		while(remaining_globs_to_remove > 0)
 			remaining_globs_to_remove--
 			if(xeno_owner.neurotoxin_ammo > xeno_owner.corrosive_ammo)
+				if(xeno_owner.aphro_ammo > xeno_owner.neurotoxin_ammo)
+					xeno_owner.aphro_ammo--
+					continue
 				xeno_owner.neurotoxin_ammo--
+				continue
+			if(xeno_owner.aphro_ammo > xeno_owner.corrosive_ammo)
+				xeno_owner.aphro_ammo--
 				continue
 			xeno_owner.corrosive_ammo--
 	owner.record_war_crime()
@@ -474,6 +508,8 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 
 	if(istype(xeno_owner.ammo, /datum/ammo/xeno/boiler_gas/corrosive))
 		emitted_gas = new /datum/effect_system/smoke_spread/xeno/acid/opaque(xeno_owner)
+	else if(istype(xeno_owner.ammo, /datum/ammo/xeno/boiler_gas/aphro))
+		emitted_gas = new /datum/effect_system/smoke_spread/xeno/aphrotoxin/opaque(xeno_owner)
 	else
 		emitted_gas = new /datum/effect_system/smoke_spread/xeno/neuro(xeno_owner)
 

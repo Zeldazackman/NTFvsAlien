@@ -100,7 +100,7 @@
 	// Primordial Upgrade: Corrosive Lance and Neurotoxin Lance are now selectable spit types in Toggle Bombard Type, one of Boiler's abilities.
 
 	// *** Ranged Attack *** //
-	spit_types = list(/datum/ammo/xeno/boiler_gas, /datum/ammo/xeno/boiler_gas/lance, /datum/ammo/xeno/boiler_gas/corrosive, /datum/ammo/xeno/boiler_gas/corrosive/lance)
+	spit_types = list(/datum/ammo/xeno/boiler_gas, /datum/ammo/xeno/boiler_gas/lance, /datum/ammo/xeno/boiler_gas/corrosive, /datum/ammo/xeno/boiler_gas/corrosive/lance, /datum/ammo/xeno/boiler_gas/aphro, /datum/ammo/xeno/boiler_gas/aphro/lance)
 
 	actions = list(
 		/datum/action/ability/xeno_action/xeno_resting,
