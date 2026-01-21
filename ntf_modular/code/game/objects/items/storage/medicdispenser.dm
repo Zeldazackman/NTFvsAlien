@@ -85,7 +85,7 @@
 	if(COOLDOWN_FINISHED(src, sex_boost_cd))
 		for(var/mob/living/person in affecting_list)
 			affecting_list[person] = beam(person, "plasmabeam", maxdistance = 3, time = 1.5 SECONDS)
-		do_healing(2,0.25,0.25) //additive with being carried usually, runs very rapidly usually so its less numbers
+		do_healing(2,0.25,0.25) //additive with being carried usually since it runs independently from process
 		COOLDOWN_START(src, sex_boost_cd, 1 SECONDS)
 
 /obj/machinery/deployable/dispenser/medic/post_unbuckle_mob(mob/living/buckled_mob)
