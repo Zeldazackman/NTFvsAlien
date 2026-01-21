@@ -19450,7 +19450,7 @@
 /turf/open/floor/plating/mainship,
 /area/mainship/command/cic)
 "szt" = (
-/obj/machinery/gibber,
+/obj/machinery/gibber/apc,
 /turf/open/floor/mainship/floor,
 /area/mainship/medical/morgue)
 "szN" = (
@@ -20476,6 +20476,10 @@
 /obj/structure/cable,
 /turf/open/floor/mainship/mono,
 /area/mainship/engineering/port_atmos)
+"txj" = (
+/obj/item/reagent_containers/spray/cleaner,
+/turf/open/floor/mainship/floor,
+/area/mainship/medical/morgue)
 "txm" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
@@ -55437,7 +55441,7 @@ uef
 wUY
 vqw
 szt
-xfm
+txj
 xfm
 xfm
 xfm

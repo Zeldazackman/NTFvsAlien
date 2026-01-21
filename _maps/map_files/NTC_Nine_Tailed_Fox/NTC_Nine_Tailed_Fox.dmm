@@ -12745,6 +12745,12 @@
 /area/mainship/hallways/bow_hallway{
 	name = "Ship Floor 1 Hallways"
 	})
+"kyV" = (
+/obj/item/reagent_containers/spray/cleaner,
+/turf/open/floor/mainship/mono,
+/area/mainship/medical/surgery_hallway{
+	name = "Research"
+	})
 "kzk" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -24340,7 +24346,7 @@
 /turf/open/floor/wood,
 /area/mainship/hallways/dorm3)
 "uax" = (
-/obj/machinery/gibber,
+/obj/machinery/gibber/apc,
 /turf/open/floor/mainship/mono,
 /area/mainship/medical/surgery_hallway{
 	name = "Research"
@@ -38351,7 +38357,7 @@ wgw
 ouw
 qFC
 aDF
-tCP
+kyV
 uax
 xHV
 mkz
