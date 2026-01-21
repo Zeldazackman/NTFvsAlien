@@ -529,7 +529,7 @@
 			to_chat(owner, span_warning("We can only shape on weeds. We must find some resin before we start building!"))
 		return FALSE
 
-	if(!T.check_alien_construction(owner, silent, /obj/structure/xeno/acidwell))
+	if(!T.check_alien_construction(owner, silent, well_type))
 		return FALSE
 
 	if(!T.check_disallow_alien_fortification(owner, silent))
@@ -540,9 +540,9 @@
 	succeed_activate()
 
 	playsound(T, SFX_ALIEN_RESIN_BUILD, 25)
-	new /obj/structure/xeno/acidwell(T, xeno_owner.get_xeno_hivenumber(), owner)
+	var/obj/structure/xeno/acidwell/new_well = new well_type(T, xeno_owner.get_xeno_hivenumber(), owner)
 
-	to_chat(owner, span_xenonotice("We place an acid well; it can be filled with more acid."))
+	to_chat(owner, span_xenonotice("We place \an [new_well]; it can be filled with more [new_well.content_name]."))
 	GLOB.round_statistics.xeno_acid_wells++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "xeno_acid_wells")
 	owner.record_traps_created()
