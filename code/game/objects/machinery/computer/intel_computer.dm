@@ -15,6 +15,7 @@
 	integrity_failure = 250
 	resistance_flags = DROPSHIP_IMMUNE|XENO_DAMAGEABLE|PORTAL_IMMUNE|BANISH_IMMUNE|PLASMACUTTER_IMMUNE|CRUSHER_IMMUNE
 	interaction_flags = INTERACT_MACHINE_TGUI
+	atom_flags = NODECONSTRUCT
 
 	///Whether this computer is activated by the event yet
 	var/active = FALSE
@@ -90,7 +91,7 @@
 	STOP_PROCESSING(SSmachines, src)
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_INTEL_DISK_PRINTED, src, new_disk)
 
-/obj/machinery/computer/intel_computer/Destroy()
+/obj/machinery/computer/intel_computer/Destroy(force)
 	if(!force)
 		set_disabled()
 		return QDEL_HINT_LETMELIVE

@@ -28,6 +28,7 @@
 	max_integrity = 1500
 	integrity_failure = 250
 	resistance_flags = DROPSHIP_IMMUNE|XENO_DAMAGEABLE|PORTAL_IMMUNE|BANISH_IMMUNE|PLASMACUTTER_IMMUNE|CRUSHER_IMMUNE
+	atom_flags = NODECONSTRUCT
 
 
 /obj/machinery/computer/code_generator/nuke/Initialize(mapload)
