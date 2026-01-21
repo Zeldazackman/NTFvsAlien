@@ -29,7 +29,6 @@
 	target.sexcon.handle_passive_ejaculation(user)
 
 /datum/sex_action/force_thighjob/on_finish(mob/living/carbon/user, mob/living/carbon/target)
-	..()
 	user.visible_message(span_warning("[user] stops jerking [target] off with [user.p_their()] thighs..."))
 
 /datum/sex_action/force_thighjob/is_finished(mob/living/carbon/user, mob/living/carbon/target)

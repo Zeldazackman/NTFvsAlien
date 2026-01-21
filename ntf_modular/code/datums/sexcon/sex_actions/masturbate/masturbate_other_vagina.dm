@@ -27,7 +27,6 @@
 	target.sexcon.handle_passive_ejaculation(user)
 
 /datum/sex_action/masturbate_other_vagina/on_finish(mob/living/carbon/user, mob/living/carbon/target)
-	..()
 	user.visible_message(span_warning("[user] stops stroking [target]'s clit."))
 
 

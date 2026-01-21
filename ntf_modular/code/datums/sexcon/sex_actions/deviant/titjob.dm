@@ -24,5 +24,4 @@
 	user.sexcon.handle_passive_ejaculation(target)
 
 /datum/sex_action/titjob/on_finish(mob/living/carbon/user, mob/living/carbon/target)
-	..()
 	user.visible_message(span_warning("[user] pulls [user.p_their()] cock out from inbetween [target]'s tits."))

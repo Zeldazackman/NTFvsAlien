@@ -32,7 +32,6 @@
 			target.adjustFireLoss(5, TRUE)
 
 /datum/sex_action/masturbate_penis_over/on_finish(mob/living/carbon/user, mob/living/carbon/target)
-	..()
 	user.visible_message(span_warning("[user] stops jerking off."))
 
 /datum/sex_action/masturbate_penis_over/is_finished(mob/living/carbon/human/user, mob/living/carbon/human/target)

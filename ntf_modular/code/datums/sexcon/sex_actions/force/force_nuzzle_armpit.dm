@@ -28,7 +28,6 @@
 	target.sexcon.handle_passive_ejaculation(user)
 
 /datum/sex_action/force_armpit_nuzzle/on_finish(mob/living/carbon/user, mob/living/carbon/target)
-	..()
 	user.visible_message(span_warning("[user] pulls [target]'s head away from [user.p_their()] armpit."))
 
 /datum/sex_action/force_armpit_nuzzle/is_finished(mob/living/carbon/human/user, mob/living/carbon/human/target)

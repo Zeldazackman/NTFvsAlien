@@ -38,6 +38,7 @@
 	target.sexcon.handle_passive_ejaculation(user)
 
 /datum/sex_action/nipple_sex/on_finish(mob/living/carbon/user, mob/living/carbon/target)
+	playsound(src, pick(list('ntf_modular/sound/misc/cork_pop.ogg','ntf_modular/sound/misc/cork_pop (2).ogg')), 75, TRUE, 7, ignore_walls = FALSE)
 	user.visible_message(span_warning("[user] pulls [user.p_their()] cock out of [target]'s nipple."))
 
 /datum/sex_action/nipple_sex/is_finished(mob/living/carbon/user, mob/living/carbon/target)

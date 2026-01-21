@@ -26,7 +26,6 @@
 	target.sexcon.handle_passive_ejaculation(user)
 
 /datum/sex_action/rub_body/on_finish(mob/living/carbon/user, mob/living/carbon/target)
-	..()
 	user.visible_message(span_warning("[user] stops rubbing [target]'s body ..."))
 
 /datum/sex_action/rub_body/is_finished(mob/living/carbon/human/user, mob/living/carbon/human/target)

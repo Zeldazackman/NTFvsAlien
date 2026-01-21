@@ -23,5 +23,4 @@
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] nuzzles [target]'s armpit..."))
 
 /datum/sex_action/armpit_nuzzle/on_finish(mob/living/carbon/user, mob/living/carbon/target)
-	..()
 	user.visible_message(span_warning("[user] stops nuzzling [target]'s armpit..."))
