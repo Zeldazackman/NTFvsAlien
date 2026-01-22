@@ -620,6 +620,8 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 		parts += "[GLOB.round_statistics.boiler_acid_smokes] number of times Boilers spat out a glob of acid."
 	if(GLOB.round_statistics.boiler_neuro_smokes)
 		parts += "[GLOB.round_statistics.boiler_neuro_smokes] number of times Boilers spat out a glob of neurotoxin."
+	if(GLOB.round_statistics.boiler_aphro_smokes)
+		parts += "[GLOB.round_statistics.boiler_aphro_smokes] number of times Boilers spat out a glob of aphrotoxin."
 	if(GLOB.round_statistics.psy_crushes)
 		parts += "[GLOB.round_statistics.psy_crushes] number of times Warlocks used psychic crush."
 	if(GLOB.round_statistics.psy_blasts)
