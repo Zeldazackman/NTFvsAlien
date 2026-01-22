@@ -30,7 +30,7 @@
 #define RESIN_DOOR "resin door"
 #define RESIN_NEST "resin nest"
 #define RESIN_MEMBRANE "resin membrane"
-#define WALL_RESIN_NEST "wall resin nest"
+//#define WALL_RESIN_NEST "wall resin nest"
 #define LIGHT_TOWER "light tower"
 #define ADVANCED_RESIN_NEST "tentacle breeding nest"
 
@@ -172,12 +172,11 @@ GLOBAL_LIST_INIT(resin_images_list, list(
 		STICKY_RESIN = image('icons/Xeno/actions/construction.dmi', icon_state = STICKY_RESIN),
 		RESIN_DOOR = image('icons/Xeno/actions/construction.dmi', icon_state = RESIN_DOOR),
 		RESIN_NEST = image('ntf_modular/icons/Xeno/construction.dmi', icon_state = RESIN_NEST),
-		WALL_RESIN_NEST = image('ntf_modular/icons/Xeno/construction.dmi', icon_state = WALL_RESIN_NEST),
 		RESIN_LIGHTTOWER = image('ntf_modular/icons/Xeno/construction.dmi', icon_state = LIGHT_TOWER),
+		ADVANCED_RESIN_NEST = image('ntf_modular/icons/Xeno/construction.dmi', icon_state = RESIN_NEST),
 		BULLETPROOF_WALL = image('icons/Xeno/actions/construction.dmi', icon_state = BULLETPROOF_WALL),
 		FIREPROOF_WALL = image('icons/Xeno/actions/construction.dmi', icon_state = FIREPROOF_WALL),
 		HARDY_WALL = image('icons/Xeno/actions/construction.dmi', icon_state = HARDY_WALL),
-		ADVANCED_RESIN_NEST = image('ntf_modular/icons/Xeno/construction.dmi', icon_state = RESIN_NEST),
 		))
 
 GLOBAL_LIST_INIT(spawnable_minion_list, list(
