@@ -301,8 +301,8 @@
 	description = "Saline-Glucose can be used to restore blood in a pinch."
 	color = COLOR_REAGENT_SALINE_GLUCOSE
 	custom_metabolism = REAGENTS_METABOLISM * 2
-	overdose_threshold = REAGENTS_OVERDOSE
-	overdose_crit_threshold = REAGENTS_OVERDOSE_CRITICAL
+	overdose_threshold = REAGENTS_OVERDOSE * 2
+	overdose_crit_threshold = REAGENTS_OVERDOSE_CRITICAL * 2
 	taste_description = "salty water"
 
 /datum/reagent/medicine/saline_glucose/on_mob_life(mob/living/L, metabolism)
