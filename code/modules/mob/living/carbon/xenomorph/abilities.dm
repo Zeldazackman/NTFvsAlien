@@ -305,7 +305,9 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 	if(!xeno_owner) //only on removal
 		return
 	var/atom/A = xeno_owner.selected_resin
-	action_icon_state = initial(A.name)
+	var/image/selected_image = GLOB.resin_images_list[initial(A.name)]
+	action_icon_state = selected_image.icon_state
+	action_icon = selected_image.icon
 	if(SSmonitor.gamestate == SHUTTERS_CLOSED && CHECK_BITFIELD(SSticker.mode?.round_type_flags, MODE_ALLOW_XENO_QUICKBUILD) && SSresinshaping.active)
 		button.cut_overlay(visual_references[VREF_MUTABLE_BUILDING_COUNTER])
 		var/mutable_appearance/number = visual_references[VREF_MUTABLE_BUILDING_COUNTER]
