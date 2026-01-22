@@ -80,7 +80,7 @@
 			sleep(5)
 			if(isliving(A))
 				var/mob/living/aliving = A
-				aliving.take_overall_damage(300, BRUTE, MELEE, updating_health = TRUE) //maybe survivable
+				aliving.take_overall_damage(250, BRUTE, MELEE, updating_health = TRUE) //maybe survivable
 				aliving.ParalyzeNoChain(15 SECONDS)
 				if(ishuman(aliving) && aliving.faction)
 					for(var/mob/living/carbon/human/human AS in GLOB.alive_human_list)

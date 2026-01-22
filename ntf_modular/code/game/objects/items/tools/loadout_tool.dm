@@ -5,11 +5,31 @@
 	icon_state = "pda_white"
 	var/screen_overlay = "pda_on"
 	active = FALSE
+	light_range = 1
+	light_power = 2
+	light_color = COLOR_BLUE
+
+/obj/item/radio/loadout_tool/Initialize(mapload)
+	. = ..()
+	GLOB.nightfall_toggleable_lights += src
+
+/obj/item/radio/loadout_tool/Destroy()
+	GLOB.nightfall_toggleable_lights -= src
+	return ..()
+
+/obj/item/flashlight/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage * xeno_attacker.xeno_melee_damage_modifier, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
+	if(turn_light(xeno_attacker, FALSE) != CHECKS_PASSED)
+		return
+	playsound(loc, SFX_ALIEN_CLAW_METAL, 25, 1)
+	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
+	to_chat(xeno_attacker, span_warning("We disable the metal thing's lights.") )
 
 /obj/item/radio/loadout_tool/RightClick(mob/user)
-	if(user.l_hand != src || user.r_hand != src) //only rclickable in hand
+	if(user.l_hand != src && user.r_hand != src) //only rclickable in hand
 		return
 	active = !active
+	turn_light(user, active)
+	set_light_on(active)
 	playsound(loc, 'sound/machines/terminal_button01.ogg', 50, TRUE)
 	update_appearance(UPDATE_OVERLAYS)
 
