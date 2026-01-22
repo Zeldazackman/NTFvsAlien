@@ -57,7 +57,7 @@
 	desc = "A pack of laser guided mini rockets loaded with synthesized concentrated razorburn foam dispersal agents. Moving this will require some sort of lifter."
 	icon_state = "minirocket_razorburn"
 	icon = 'ntf_modular/icons/obj/structures/prop/mainship.dmi'
-	point_cost = 250
+	point_cost = 350
 	devastating_explosion_range = 0
 	travelling_time = 4 SECONDS
 	heavy_explosion_range = 0
@@ -99,7 +99,7 @@
 	desc = "A pack of laser guided mini rockets loaded with synthesized concentrated metal foam dispersal agents. Moving this will require some sort of lifter."
 	icon_state = "minirocket_metal_foam"
 	icon = 'ntf_modular/icons/obj/structures/prop/mainship.dmi'
-	point_cost = 250
+	point_cost = 350
 	devastating_explosion_range = 0
 	travelling_time = 4 SECONDS
 	heavy_explosion_range = 0
