@@ -17,3 +17,4 @@
 	var/mob/living/carbon/xenomorph/devouring_mob
 	// Haul resist cooldown
 	var/next_haul_resist
+	speaking_noise = 'ntf_modular/sound/voice/talk.ogg'

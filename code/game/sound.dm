@@ -484,5 +484,7 @@ A good representation is: 'byond applies a volume reduction to the sound every X
 			soundin = list('ntf_modular/sound/vo/female/gen/se/sexlight (1).ogg','ntf_modular/sound/vo/female/gen/se/sexlight (2).ogg','ntf_modular/sound/vo/female/gen/se/sexlight (3).ogg','ntf_modular/sound/vo/female/gen/se/sexlight (4).ogg','ntf_modular/sound/vo/female/gen/se/sexlight (5).ogg','ntf_modular/sound/vo/female/gen/se/sexlight (6).ogg','ntf_modular/sound/vo/female/gen/se/sexlight (7).ogg')
 		if(SFX_FEMALE_SEXYMOANHVY)
 			soundin = list('ntf_modular/sound/vo/female/gen/se/sex (1).ogg','ntf_modular/sound/vo/female/gen/se/sex (2).ogg','ntf_modular/sound/vo/female/gen/se/sex (3).ogg','ntf_modular/sound/vo/female/gen/se/sex (4).ogg','ntf_modular/sound/vo/female/gen/se/sex (5).ogg','ntf_modular/sound/vo/female/gen/se/sex (6).ogg','ntf_modular/sound/vo/female/gen/se/sex (7).ogg','ntf_modular/sound/vo/female/gen/se/sex (8).ogg')
+		if(SFX_LARVA_TALK)
+			soundin = pick('ntf_modular/sound/voice/alien/larva_talk1.ogg','ntf_modular/sound/voice/alien/larva_talk2.ogg','ntf_modular/sound/voice/alien/larva_talk3.ogg','ntf_modular/sound/voice/alien/larva_talk4.ogg')
 
 	return soundin

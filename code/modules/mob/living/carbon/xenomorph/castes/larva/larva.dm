@@ -20,6 +20,7 @@
 	)
 
 	base_icon_state = "Larva"
+	speaking_noise = SFX_LARVA_TALK
 
 /mob/living/carbon/xenomorph/larva/Initialize(mapload)
 	. = ..()

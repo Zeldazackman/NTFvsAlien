@@ -7,6 +7,8 @@
 	active = FALSE
 
 /obj/item/radio/loadout_tool/RightClick(mob/user)
+	if(user.l_hand != src || user.r_hand != src) //only rclickable in hand
+		return
 	active = !active
 	playsound(loc, 'sound/machines/terminal_button01.ogg', 50, TRUE)
 	update_appearance(UPDATE_OVERLAYS)
