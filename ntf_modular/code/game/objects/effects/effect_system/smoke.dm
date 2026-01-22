@@ -11,3 +11,12 @@
 
 /datum/effect_system/smoke_spread/xeno/aphrotoxin/opaque
 	smoke_type = /obj/effect/particle_effect/smoke/xeno/aphrotoxin/opaque
+
+/obj/effect/particle_effect/smoke/debris
+	alpha = 50
+	smoke_traits = SMOKE_COUGH
+	opacity = FALSE
+	lifetime = 1
+
+/datum/effect_system/smoke_spread/debris
+	smoke_type = /obj/effect/particle_effect/smoke/debris
