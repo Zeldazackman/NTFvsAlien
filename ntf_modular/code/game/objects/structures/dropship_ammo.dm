@@ -63,7 +63,7 @@
 	heavy_explosion_range = 0
 	light_explosion_range = 2
 	cas_effect = /obj/effect/overlay/blinking_laser/razorburn
-	//crosshair = 'ntf_modular/icons/UI_icons/cas_crosshairs/rocket_razorburn.dmi'
+	crosshair = 'ntf_modular/icons/UI_icons/cas_crosshairs/rocket_razorburn.dmi'
 	var/obj/item/reagent_containers/glass/beaker/large/B1
 	var/obj/item/reagent_containers/glass/beaker/large/B2
 	var/B1_chems = list(/datum/reagent/toxin/nanites = 10)
@@ -105,6 +105,6 @@
 	heavy_explosion_range = 0
 	light_explosion_range = 2
 	cas_effect = /obj/effect/overlay/blinking_laser/metal_foam
-	//crosshair = 'ntf_modular/icons/UI_icons/cas_crosshairs/rocket_metal_foam.dmi'
+	crosshair = 'ntf_modular/icons/UI_icons/cas_crosshairs/rocket_metal_foam.dmi'
 	B1_chems = list(/datum/reagent/aluminum = 5)
 	B2_chems = list(/datum/reagent/foaming_agent = 5, /datum/reagent/toxin/acid/polyacid = 1)
