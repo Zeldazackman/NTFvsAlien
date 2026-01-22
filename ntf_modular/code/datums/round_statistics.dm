@@ -28,3 +28,4 @@
 	var/intel_max_chain = 0
 	var/intel_chain_sold_for_list = list()
 	var/intel_chain_sold_by_list = list()
+	var/boiler_aphro_smokes = 0

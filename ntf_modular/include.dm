@@ -170,6 +170,7 @@
 #include "code\modules\mob\ooc_notes.dm"
 #include "code\modules\pixel_shift\code\pixel_shift.dm"
 #include "code\modules\power\lighting.dm"
+#include "code\modules\projectiles\ammo_types\xenos\gas_xenoammo.dm"
 #include "code\modules\projectiles\guns\energy.dm"
 #include "code\modules\projectiles\guns\gun_system.dm"
 #include "code\modules\projectiles\guns\pistols.dm"
