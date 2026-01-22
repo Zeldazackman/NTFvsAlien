@@ -155,7 +155,9 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 
 /datum/action/ability/xeno_action/toggle_bomb/update_button_icon()
 	var/datum/ammo/xeno/boiler_gas/boiler_glob = xeno_owner.ammo	//Should be safe as this always selects a ammo.
-	action_icon_state = boiler_glob.icon_key
+	var/image/action_image = GLOB.boiler_glob_image_list[initial(boiler_glob.icon_key)]
+	action_icon_state = action_image.icon_state
+	action_icon = action_image.icon
 	return ..()
 
 /// Opens a radial menu to select a glob in and sets current ammo to the selected result.
@@ -232,6 +234,12 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	corrosiveglob_maptext.pixel_y = 8
 	corrosiveglob_maptext.maptext = MAPTEXT("<font color=green>[xeno_owner.corrosive_ammo]")
 
+	var/mutable_appearance/aphroglob_maptext = mutable_appearance(icon = null, icon_state = null, layer = ACTION_LAYER_MAPTEXT)
+	visual_references[VREF_MUTABLE_APHROGLOB_COUNTER] = aphroglob_maptext
+	aphroglob_maptext.pixel_x = 25
+	aphroglob_maptext.pixel_y = 20
+	aphroglob_maptext.maptext = MAPTEXT("<font color=magenta>[xeno_owner.aphro_ammo]")
+
 /datum/action/ability/xeno_action/create_boiler_bomb/can_use_action(silent, override_flags, selecting)
 	. = ..()
 	if(!.)
@@ -288,6 +296,11 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	var/mutable_appearance/neuroglobnumber = visual_references[VREF_MUTABLE_NEUROGLOB_COUNTER]
 	neuroglobnumber.maptext = MAPTEXT("<font color=yellow>[xeno_owner.neurotoxin_ammo]")
 	button.add_overlay(visual_references[VREF_MUTABLE_NEUROGLOB_COUNTER])
+
+	button.cut_overlay(visual_references[VREF_MUTABLE_APHROGLOB_COUNTER])
+	var/mutable_appearance/aphroglobnumber = visual_references[VREF_MUTABLE_APHROGLOB_COUNTER]
+	aphroglobnumber.maptext = MAPTEXT("<font color=magenta>[xeno_owner.aphro_ammo]")
+	button.add_overlay(visual_references[VREF_MUTABLE_APHROGLOB_COUNTER])
 	return ..()
 
 // ***************************************
@@ -315,7 +328,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	var/bonus_max_range = 0
 
 /datum/action/ability/activable/xeno/bombard/get_cooldown()
-	var/cooldown = cooldown_duration - ((xeno_owner.neurotoxin_ammo + xeno_owner.corrosive_ammo) * BOILER_BOMBARD_COOLDOWN_REDUCTION)
+	var/cooldown = cooldown_duration - ((xeno_owner.neurotoxin_ammo + xeno_owner.corrosive_ammo + xeno_owner.aphro_ammo) * BOILER_BOMBARD_COOLDOWN_REDUCTION)
 	if(istype(xeno_owner.ammo, /datum/ammo/xeno/boiler_gas/fast) || istype(xeno_owner.ammo, /datum/ammo/xeno/boiler_gas/corrosive/fast) || istype(xeno_owner.ammo, /datum/ammo/xeno/boiler_gas/aphro/fast))
 		cooldown *= fast_cooldown_multiplier
 	return cooldown
@@ -327,7 +340,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	return ..()
 
 /datum/action/ability/activable/xeno/bombard/on_selection()
-	var/current_ammo = xeno_owner.corrosive_ammo + xeno_owner.neurotoxin_ammo
+	var/current_ammo = xeno_owner.corrosive_ammo + xeno_owner.neurotoxin_ammo + xeno_owner.aphro_ammo
 	if(current_ammo <= 0)
 		to_chat(xeno_owner, span_notice("We have nothing prepared to fire."))
 		return FALSE
