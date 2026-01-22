@@ -9,10 +9,10 @@
 		/obj/structure/mineral_door/resin/thick,
 		/obj/structure/bed/nest,
 		/obj/structure/xeno/lighttower,
+		/obj/structure/bed/nest/advanced,
 		/turf/closed/wall/resin/regenerating/special/bulletproof,
 		/turf/closed/wall/resin/regenerating/special/fireproof,
 		/turf/closed/wall/resin/regenerating/special/hardy,
-		/obj/structure/bed/nest/advanced,
 	)
 
 // ***************************************
