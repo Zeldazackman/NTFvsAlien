@@ -305,7 +305,7 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 	if(!xeno_owner) //only on removal
 		return
 	var/atom/A = xeno_owner.selected_resin
-	var/image/selected_image = GLOB.resin_images_list[initial(A.name)]
+	var/image/selected_image = GLOB.resin_images_list[GLOB.xeno_resin_keys[A]]
 	action_icon_state = selected_image.icon_state
 	action_icon = selected_image.icon
 	if(SSmonitor.gamestate == SHUTTERS_CLOSED && CHECK_BITFIELD(SSticker.mode?.round_type_flags, MODE_ALLOW_XENO_QUICKBUILD) && SSresinshaping.active)

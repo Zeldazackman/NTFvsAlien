@@ -1026,3 +1026,20 @@
 	if(A.get_xeno_hivenumber() == owner.get_xeno_hivenumber())
 		return FALSE
 	return TRUE
+
+GLOBAL_LIST_INIT(xeno_resin_keys, list(
+		/turf/closed/wall/resin/regenerating = RESIN_WALL,
+		/turf/closed/wall/resin/regenerating/thick = RESIN_WALL,
+		/turf/closed/wall/resin/membrane = RESIN_MEMBRANE,
+		/turf/closed/wall/resin/membrane/thick = RESIN_MEMBRANE,
+		/turf/closed/wall/resin/regenerating/special/bulletproof = BULLETPROOF_WALL,
+		/turf/closed/wall/resin/regenerating/special/fireproof = FIREPROOF_WALL,
+		/turf/closed/wall/resin/regenerating/special/hardy = HARDY_WALL,
+		/obj/alien/resin/sticky = STICKY_RESIN,
+		/obj/structure/mineral_door/resin = RESIN_DOOR,
+		/obj/structure/mineral_door/resin/thick = RESIN_DOOR,
+		/obj/structure/bed/nest = RESIN_NEST,
+		/obj/structure/xeno/lighttower = LIGHT_TOWER,
+		/obj/structure/bed/nest/advanced = ADVANCED_RESIN_NEST,
+		/obj/structure/bed/nest/advanced/special = ADVANCED_RESIN_NEST,
+	))
