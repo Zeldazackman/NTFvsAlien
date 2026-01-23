@@ -305,7 +305,7 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 	if(!xeno_owner) //only on removal
 		return
 	var/atom/A = xeno_owner.selected_resin
-	var/image/selected_image = GLOB.resin_images_list[initial(A.name)]
+	var/image/selected_image = GLOB.resin_images_list[GLOB.xeno_resin_keys[A]]
 	if(selected_image)
 		action_icon_state = selected_image.icon_state
 		action_icon = selected_image.icon
