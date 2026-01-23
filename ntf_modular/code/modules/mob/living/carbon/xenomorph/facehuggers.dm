@@ -287,11 +287,14 @@
 //lets change eggs to have a new state of maturity
 
 /datum/action/ability/xeno_action/lay_egg/advanced
-	name = "Lay Egg (Queen)"
+	name = "Lay Egg (Latching)"
 	desc = "Create an egg that will grow a larval hugger after a short delay. Empty eggs can have huggers inserted into them. Right click to toggle laying alternate latching variant."
 	action_icon_state = "lay_egg_adv_off"
-	use_selected_hugger = TRUE
 	can_use_adv_huggers = TRUE
+
+/datum/action/ability/xeno_action/lay_egg/advanced/queen
+	name = "Lay Egg (Queen)"
+	desc = "Create an egg that will grow a larval hugger after a short delay. Empty eggs can have huggers inserted into them. Right click to toggle laying alternate latching variant."
 
 /datum/action/ability/xeno_action/lay_egg
 	var/use_advanced_huggers = FALSE
@@ -322,7 +325,7 @@
 
 
 /datum/action/ability/xeno_action/lay_egg/proc/advanced_plant_egg(turf/current_turf, mob/living/carbon/xenomorph/xeno, mob/living/carbon/xenomorph/user)
-	var/the_hugger = /obj/item/clothing/mask/facehugger/latching
+	var/the_hugger = hugger_to_use
 	if(use_selected_hugger && xeno.selected_hugger_type)
 		the_hugger = hugger_to_latching[xeno_owner.selected_hugger_type]
 	new /obj/alien/egg/hugger(current_turf, xeno.get_xeno_hivenumber(), the_hugger, hand_attach_time_multiplier)
@@ -365,7 +368,7 @@
 		. += span_notice("His balls <span style='color: [producing_reagent.color]'><b>glow</b></span> with a <span style='color: [producing_reagent.color]'>faint hue</span>.")
 	else
 		. += span_notice("His balls are sad and empty... Waiting something to be injected to replicate it.</span>")
-	if(world.time + 3 MINUTES < last_came)
+	if((last_came + 3 MINUTES) > world.time)
 		. += span_notice("He looks happy, easy to tell due to his cock throbbing, likely boosting chemical production.</span>")
 	if(!reagents.total_volume)
 		. += span_notice("\The [src]'s balls are empty!")
@@ -385,17 +388,17 @@
 /obj/item/clothing/mask/facehugger/latching/chemical/medical/process()
 	if(stat == DEAD)
 		return PROCESS_KILL
-	if(producing_reagent && reagents.total_volume < reagents.maximum_volume && prob(20))
-		var/produced_amount = rand(1,2)
+	if(producing_reagent && reagents.total_volume < reagents.maximum_volume && prob(25))
+		var/produced_amount = rand(2,4)
 		visible_message(span_notice("[src]'s balls churn as it produces some more reagents..."), vision_distance = 1)
 		playsound(get_turf(src), 'sound/effects/bubbles.ogg', 10, TRUE, 1)
-		if(world.time + 3 MINUTES < last_came) //sex boost
+		if((last_came + 3 MINUTES) > world.time) //sex boost
 			produced_amount *= 3
 		if(reagents.has_reagent(/datum/reagent/toxin/acid))
 			Shake(duration = 0.5 SECONDS)
 			produced_amount += round(max(1,reagents.get_reagent_amount(/datum/reagent/toxin/acid)))
 			reagents.remove_all_type(/datum/reagent/toxin/acid)
-		reagents.add_reagent(producing_reagent, produced_amount)
+		reagents.add_reagent(producing_reagent.type, produced_amount)
 	. = ..()
 
 /obj/item/clothing/mask/facehugger/latching/chemical/medical/sex_process()
