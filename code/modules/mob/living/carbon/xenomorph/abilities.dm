@@ -306,8 +306,9 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 		return
 	var/atom/A = xeno_owner.selected_resin
 	var/image/selected_image = GLOB.resin_images_list[GLOB.xeno_resin_keys[A]]
-	action_icon_state = selected_image.icon_state
-	action_icon = selected_image.icon
+	if(selected_image)
+		action_icon_state = selected_image.icon_state
+		action_icon = selected_image.icon
 	if(SSmonitor.gamestate == SHUTTERS_CLOSED && CHECK_BITFIELD(SSticker.mode?.round_type_flags, MODE_ALLOW_XENO_QUICKBUILD) && SSresinshaping.active)
 		button.cut_overlay(visual_references[VREF_MUTABLE_BUILDING_COUNTER])
 		var/mutable_appearance/number = visual_references[VREF_MUTABLE_BUILDING_COUNTER]
@@ -1091,6 +1092,9 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 	var/use_selected_hugger = FALSE
 	/// The amount to multiply the created hugger's hand attach time by.
 	var/hand_attach_time_multiplier = 1
+	//dont give advanced version of lay eggs with use_selected_hugger to ones without hugger selection, like carrier has it so they can have it.
+	///static hugger to use if we cant select huggers, for advanced version
+	var/hugger_to_use = /obj/item/clothing/mask/facehugger/latching
 
 /datum/action/ability/xeno_action/lay_egg/action_activate(mob/living/carbon/xenomorph/user)
 	var/mob/living/carbon/xenomorph/xeno = owner

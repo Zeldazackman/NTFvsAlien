@@ -326,7 +326,7 @@
 				do_stop_momentum()
 				return COMPONENT_MOVABLE_PREBUMP_STOPPED
 		var/obj/structure/barricade/solid/barricade = crushed
-		if(barricade.barricade_upgrade_type == CADE_TYPE_BOMB)
+		if(barricade && barricade.barricade_upgrade_type && barricade.barricade_upgrade_type == CADE_TYPE_BOMB)
 			obj_damage_mult = 0.8
 		crushed_obj.take_damage(precrush * obj_damage_mult, BRUTE, MELEE)
 		if(QDELETED(crushed_obj))
