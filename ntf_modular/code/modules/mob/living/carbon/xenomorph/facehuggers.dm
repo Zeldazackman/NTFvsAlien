@@ -362,7 +362,7 @@
 /obj/item/clothing/mask/facehugger/latching/chemical/medical/examine(mob/user)
 	. = ..()
 	if(producing_reagent)
-		. += span_notice("His balls <span style='color: [producing_reagent.color]'><b>glow</b></span> with a <span style='color: [producing_reagent.color]'>faint hue</span>.")
+		. += span_notice("His balls <span style='color: [initial(producing_reagent.color)]'><b>glow</b></span> with a <span style='color: [initial(producing_reagent.color)]'>faint hue</span>.")
 	else
 		. += span_notice("His balls are sad and empty... Waiting something to be injected to replicate it.</span>")
 	if(world.time + 3 MINUTES < last_came)
@@ -434,14 +434,14 @@
 		return
 	if(!producing_reagent)
 		Shake(duration = 1 SECONDS)
-		producing_reagent = reagents.reagent_list[1] //take first thing when injected with anything
-		visible_message(span_green("[src] shakes briefly and the glow on his balls change <span style='color: [producing_reagent.color]'>color</span> afterwards."), vision_distance = 2)
+		producing_reagent = reagents.reagent_list[1].type //take first thing when injected with anything
+		visible_message(span_green("[src] shakes briefly and the glow on his balls change <span style='color: [initial(producing_reagent.color)]'>color</span> afterwards."), vision_distance = 2)
 
 
 /obj/item/clothing/mask/facehugger/latching/chemical/medical/special_effect()
 	wearer.reagents.add_reagent(/datum/reagent/consumable/nutriment/cum/xeno, 5)
 	wearer.visible_message(span_loveextreme("[src] slams it's [cock_flavor] ballsdeep into [wearer]'s [target_hole] and it's balls start to throb strongly, pumping thick globs of something inside!"),span_loveextreme("[src] slams it's [cock_flavor] ballsdeep into your [target_hole] and it's balls start to throb strongly, pumping thick globs of something inside!"))
-	wearer.visible_message(span_lovebold("[producing_reagent.name] gas explodes out of [wearer]'s [target_hole], around [src]'s [cock_flavor]!"),span_lovebold("[producing_reagent.name] gas explodes out of your [target_hole], around [src]'s [cock_flavor]!"))
+	wearer.visible_message(span_lovebold("[initial(producing_reagent.name)] gas explodes out of [wearer]'s [target_hole], around [src]'s [cock_flavor]!"),span_lovebold("[initial(producing_reagent.name)] gas explodes out of your [target_hole], around [src]'s [cock_flavor]!"))
 	var/datum/effect_system/smoke_spread/chem/smoke = new(get_turf(wearer))
 	reagents.trans_to(smoke.chemholder, amount_injected/2)
 	smoke.set_up(smoke.chemholder.reagents, 1, get_turf(wearer), 2)
