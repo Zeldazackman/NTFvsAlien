@@ -368,7 +368,7 @@
 		. += span_notice("His balls <span style='color: [producing_reagent.color]'><b>glow</b></span> with a <span style='color: [producing_reagent.color]'>faint hue</span>.")
 	else
 		. += span_notice("His balls are sad and empty... Waiting something to be injected to replicate it.</span>")
-	if((last_came + 3 MINUTES) > world.time)
+	if(last_came && (last_came + 3 MINUTES) > world.time)
 		. += span_notice("He looks happy, easy to tell due to his cock throbbing, likely boosting chemical production.</span>")
 	if(!reagents.total_volume)
 		. += span_notice("\The [src]'s balls are empty!")
@@ -384,15 +384,16 @@
 /obj/item/clothing/mask/facehugger/latching/chemical/medical/Initialize(mapload, ...)
 	. = ..()
 	create_reagents(60, INJECTABLE|DRAWABLE)
+	START_PROCESSING(SSobj, src) //normally huggers start processing on equip but this dont
 
 /obj/item/clothing/mask/facehugger/latching/chemical/medical/process()
 	if(stat == DEAD)
 		return PROCESS_KILL
 	if(producing_reagent && reagents.total_volume < reagents.maximum_volume && prob(25))
-		var/produced_amount = rand(2,4)
+		var/produced_amount = rand(1,2)
 		visible_message(span_notice("[src]'s balls churn as it produces some more reagents..."), vision_distance = 1)
 		playsound(get_turf(src), 'sound/effects/bubbles.ogg', 10, TRUE, 1)
-		if((last_came + 3 MINUTES) > world.time) //sex boost
+		if(last_came && (last_came + 3 MINUTES) > world.time) //sex boost
 			produced_amount *= 3
 		if(reagents.has_reagent(/datum/reagent/toxin/acid))
 			Shake(duration = 0.5 SECONDS)
