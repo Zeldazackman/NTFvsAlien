@@ -704,9 +704,10 @@
 		return FALSE
 
 	if(get_turf(A) != check_path(owner, A, PASS_LOW_STRUCTURE|PASS_MOB|PASS_THROW|PASS_PROJECTILE|PASS_WALKOVER|PASS_TANK))
-		if(!silent)
-			to_chat(owner, span_xenodanger("Path to target blocked!"))
-		return FALSE
+		if(!A.pixel_y && !A.pixel_x) //exclude shit that are usually in the walls by being pixel shifted
+			if(!silent)
+				to_chat(owner, span_xenodanger("Path to target blocked!"))
+			return FALSE
 
 	if(A.resistance_flags & (INDESTRUCTIBLE|CRUSHER_IMMUNE)) //no bolting down indestructible airlocks.
 		if(!silent)
@@ -784,8 +785,6 @@
 	return TRUE
 
 /obj/machinery/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier, stab_description = "swift tail-stab!", disorientamount, can_hit_turf) //Break open the machine
-	if(!(resistance_flags & XENO_DAMAGEABLE))
-		return FALSE
 	if(line_of_sight(xeno, src, 1))
 		xeno.face_atom(src) //Face the target if adjacent so you dont look dumb.
 	else
@@ -817,8 +816,6 @@
 	return TRUE
 
 /obj/machinery/computer/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier, stab_description = "swift tail-stab!", disorientamount, can_hit_turf) //Break open the machine
-	if(!(resistance_flags & XENO_DAMAGEABLE))
-		return FALSE
 	durability-- //extra durability damage
 	attack_alien(xeno)
 	return ..()
@@ -831,8 +828,6 @@
 
 /obj/machinery/camera/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier, stab_description = "swift tail-stab!", disorientamount, can_hit_turf)
 	. = ..()
-	if(!(resistance_flags & XENO_DAMAGEABLE))
-		return FALSE
 	var/datum/effect_system/spark_spread/sparks = new //Avoid the slash text, go direct to sparks
 	sparks.set_up(2, 0, src)
 	sparks.attach(src)
@@ -843,8 +838,6 @@
 
 /obj/machinery/power/apc/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier,  stab_description = "swift tail-stab!", disorientamount, can_hit_turf)
 	. = ..()
-	if(!(resistance_flags & XENO_DAMAGEABLE))
-		return FALSE
 	var/allcut = wires.is_all_cut()
 	if(beenhit >= pick(3, 4)) //wow it is actually be a challenge to kill apcs from afar with a tail, compared to woyer.
 		if(!CHECK_BITFIELD(machine_stat, PANEL_OPEN))
@@ -872,8 +865,6 @@
 
 /obj/machinery/vending/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier,  stab_description = "swift tail-stab!", disorientamount, can_hit_turf)
 	. = ..()
-	if(!(resistance_flags & XENO_DAMAGEABLE))
-		return FALSE
 	if(tipped_level < 2) //Knock it down if it isn't
 		xeno.visible_message(span_danger("\The [xeno] pulls \the [src] down while retracting it's tail!"), \
 			span_danger("You pull \the [src] down with your tail!"), null, 5)

@@ -316,13 +316,16 @@
 		var/obj/item/grab/attacker_grab = attacking_item
 		var/mob/living/carbon/xenomorph/user_as_xenomorph = user
 		user_as_xenomorph.do_nesting_host(attacker_grab.grabbed_thing, src)
+		return
+	. = ..()
 
 /obj/alien/weeds/weedwall/attackby(obj/item/attacking_item, mob/living/user, params)
-	. = ..()
 	if(isxeno(user) && istype(attacking_item, /obj/item/grab))
 		var/obj/item/grab/attacking_grab = attacking_item
 		var/mob/living/carbon/xenomorph/user_as_xenomorph = user
 		user_as_xenomorph.do_nesting_host(attacking_grab.grabbed_thing, src)
+		return
+	. = ..()
 
 /turf/closed/wall/resin/attackby(obj/item/attacking_item, mob/living/user, params)
 	if(isxeno(user) && istype(attacking_item, /obj/item/grab))
@@ -407,6 +410,7 @@
 	icon = 'ntf_modular/icons/Xeno/Effects.dmi'
 	icon_state = "nestwall"
 	buckle_lying = 0
+	layer = ABOVE_MOB_LAYER
 	var/mutable_appearance/resin_stuff_overlay
 	resist_time = WALL_NEST_RESIST_TIME
 	var/list/buckle_x
@@ -444,8 +448,8 @@
 	pixel_y = buckle_y["[dir]"]
 	pixel_x = buckle_x["[dir]"]
 	if(dir == NORTH)
-		layer = 5
-		buckling_mob.layer = 5
+		layer = 2.054
+		buckling_mob.layer = BELOW_CLOSED_TURF_LAYER
 	update_overlays()
 
 /obj/structure/bed/nest/wall/unbuckle_mob(mob/living/buckled_mob, force = FALSE, can_fall = TRUE)
