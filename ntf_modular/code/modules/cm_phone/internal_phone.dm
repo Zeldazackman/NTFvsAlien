@@ -339,12 +339,10 @@ GLOBAL_LIST_EMPTY(radio_packs)
 	if(!parent)
 		internal_transmitter.set_tether_holder(src)
 		return
-	/*Does not compile - no dest variable
-	if(isturf(dest))
+	if(isturf(loc))
 		internal_transmitter.set_tether_holder(parent)
 	else
 		internal_transmitter.set_tether_holder(parent.loc)
-	*/
 	internal_transmitter.attack_hand(user)
 
 #undef COMMS_OFF
