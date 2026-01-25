@@ -641,7 +641,9 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 	if(GLOB.round_statistics.larva_from_cocoon)
 		parts += "[GLOB.round_statistics.larva_from_cocoon] larvas came from cocoons."
 	if(GLOB.round_statistics.larva_from_marine_spawning)
-		parts += "[GLOB.round_statistics.larva_from_marine_spawning] larvas came from marine spawning."
+		parts += "[GLOB.round_statistics.larva_from_marine_spawning] larvas came from marines spawning."
+	if(GLOB.round_statistics.larva_debt_from_marines_cryoing)
+		parts += "[GLOB.round_statistics.larva_debt_from_marines_cryoing] larva debt came from marines cryoing."
 	if(GLOB.round_statistics.larva_from_siloing_body)
 		parts += "[GLOB.round_statistics.larva_from_siloing_body] larvas came from siloing bodies."
 	if(GLOB.round_statistics.larva_from_intel)
