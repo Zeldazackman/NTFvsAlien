@@ -1164,4 +1164,5 @@ Note that amputating the affected organ does in fact remove the infection from t
 	if(!.)
 		return
 	if(!(owner.species.species_flags & DETACHABLE_HEAD) && vital)
+		log_game("Marking [logdetails(owner)] as undefibbable because it lost its head and it needs that.")
 		owner.set_undefibbable()

@@ -304,6 +304,7 @@
 		if(prob(66)) //1/3 chance
 			var/mob/living/carbon/human/monkey = victim
 			monkey.death()
+			log_game("Marking [logdetails(monkey)] as undefibbable because it is giving birth as a monkey.")
 			monkey.set_undefibbable()
 		victim.take_overall_damage(140, BRUTE, MELEE)
 		victim.take_overall_damage(20, BURN, MELEE)
