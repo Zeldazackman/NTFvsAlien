@@ -1149,6 +1149,7 @@
 		user.apply_damage(200, OXY)
 		if(ishuman(user) && user == M)
 			var/mob/living/carbon/human/HM = user
+			log_game("Marking [logdetails(HM)] as undefibbable because they blew their own brains out.")
 			HM.set_undefibbable(TRUE) //can't be defibbed back from self inflicted gunshot to head
 		user.death()
 

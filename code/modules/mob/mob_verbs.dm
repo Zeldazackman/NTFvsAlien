@@ -110,6 +110,7 @@
 	if(isobserver(ghost))
 		humancorpse = ghost.can_reenter_corpse?.resolve()
 	if(ishuman(humancorpse) && humancorpse.mind == mind)
+		log_game("Marking [logdetails(humancorpse)] as undefibbable because it[isobserver(ghost) ? "'s ghost, [logdetails(ghost)]," : ""] is using the Respawn verb.")
 		humancorpse.set_undefibbable()
 	to_chat(usr, span_notice("You can respawn now, enjoy your new life!<br><b>Make sure to play a different character, and please roleplay correctly.</b>"))
 	GLOB.round_statistics.total_human_respawns++

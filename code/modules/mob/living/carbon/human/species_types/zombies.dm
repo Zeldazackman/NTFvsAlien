@@ -45,6 +45,7 @@
 		limb.vital = FALSE
 		break
 
+	log_game("Marking [logdetails(H)] as undefibbable because they are rising as a zombie.")
 	H.set_undefibbable()
 	H.faction = faction
 	H.transfer_to_hive(hivenumber)
