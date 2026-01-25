@@ -252,7 +252,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 		if(!silent)
 			xeno_owner.balloon_alert(xeno_owner, "globule not selected!")
 		return FALSE
-	var/current_ammo = xeno_owner.corrosive_ammo + xeno_owner.neurotoxin_ammo
+	var/current_ammo = xeno_owner.corrosive_ammo + xeno_owner.neurotoxin_ammo + xeno_owner.aphro_ammo
 	if(current_ammo >= xeno_owner.xeno_caste.max_ammo)
 		if(!silent)
 			xeno_owner.balloon_alert(xeno_owner, "globule storage full!")

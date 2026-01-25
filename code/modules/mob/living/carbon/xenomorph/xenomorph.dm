@@ -618,7 +618,7 @@
 
 /// Updates the xenomorph's light based on their stored corrosive and neurotoxin ammo. The range, power, and color scales accordingly. More corrosive ammo = more green color; more neurotoxin ammo = more yellow color.
 /mob/living/carbon/xenomorph/proc/update_ammo_glow()
-	var/current_ammo = corrosive_ammo + neurotoxin_ammo
+	var/current_ammo = corrosive_ammo + neurotoxin_ammo + aphro_ammo
 	var/ammo_glow = BOILER_LUMINOSITY_AMMO * current_ammo
 	var/glow = CEILING(BOILER_LUMINOSITY_BASE + ammo_glow, 1)
 	var/color = BOILER_LUMINOSITY_BASE_COLOR
