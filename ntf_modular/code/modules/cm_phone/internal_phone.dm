@@ -245,8 +245,10 @@ GLOBAL_LIST_EMPTY(radio_packs)
 	SIGNAL_HANDLER
 	if(slot == SLOT_HEAD)
 		autoset_phone_id(equipper)
+		RegisterSignal(equipper, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
 	else
 		autoset_phone_id(null) // Disable phone when dropped
+		UnregisterSignal(equipper, COMSIG_MOVABLE_MOVED)
 
 /obj/item/armor_module/module/antenna/proc/on_attackby(datum/source, obj/item/scout_phone, mob/living/user)
 	SIGNAL_HANDLER
@@ -280,7 +282,6 @@ GLOBAL_LIST_EMPTY(radio_packs)
 	internal_transmitter.attached_to.can_be_raised = FALSE
 	internal_transmitter.bypass_tgui_range = TRUE
 	RegisterSignal(internal_transmitter, "COMSIG_TRANSMITTER_UPDATE_ICON", PROC_REF(check_for_ringing))
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
 	GLOB.radio_packs += src
 
 /obj/item/armor_module/module/antenna/proc/update_button(mode)
@@ -335,6 +336,13 @@ GLOBAL_LIST_EMPTY(radio_packs)
 	internal_transmitter.enabled = TRUE
 
 /obj/item/armor_module/module/antenna/proc/use_phone(mob/user)
+	if(!parent)
+		internal_transmitter.set_tether_holder(src)
+		return
+	if(isturf(dest))
+		internal_transmitter.set_tether_holder(parent)
+	else
+		internal_transmitter.set_tether_holder(parent.loc)
 	internal_transmitter.attack_hand(user)
 
 #undef COMMS_OFF
