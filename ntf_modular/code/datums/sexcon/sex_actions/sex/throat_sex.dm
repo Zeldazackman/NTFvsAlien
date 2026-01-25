@@ -30,7 +30,7 @@
 		user.sexcon.cum_into(oral = TRUE)
 		if(isxeno(user))
 			var/mob/living/carbon/xenomorph/X = user
-			X.impregify(target, "mouth")
+			X.impregify(target, HOLE_MOUTH)
 
 	if(user.sexcon.considered_limp())
 		user.sexcon.perform_sex_action(target, 0, 2, FALSE)

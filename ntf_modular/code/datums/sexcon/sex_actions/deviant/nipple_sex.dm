@@ -28,7 +28,7 @@
 		user.sexcon.cum_into()
 		if(isxeno(user))
 			var/mob/living/carbon/xenomorph/X = user
-			X.impregify(target, "nipple")
+			X.impregify(target, HOLE_NIPPLE)
 
 
 	if(user.sexcon.considered_limp())

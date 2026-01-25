@@ -31,7 +31,7 @@
 		user.sexcon.cum_into()
 		if(isxeno(user))
 			var/mob/living/carbon/xenomorph/X = user
-			X.impregify(target, "pussy")
+			X.impregify(target, HOLE_VAGINA)
 		if(isxeno(target) && ishuman(user))
 			var/mob/living/carbon/xenomorph/X = target
 			if(X.xenoimpregify())

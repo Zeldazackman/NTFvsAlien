@@ -42,7 +42,7 @@
 		target.sexcon.cum_into(FALSE, user)
 		if(isxeno(target))
 			var/mob/living/carbon/xenomorph/X = target
-			X.impregify(user, "ass")
+			X.impregify(user, HOLE_ASS)
 
 /datum/sex_action/anal_ride_sex/on_finish(mob/living/carbon/user, mob/living/carbon/target)
 	playsound(src, pick(list('ntf_modular/sound/misc/cork_pop.ogg','ntf_modular/sound/misc/cork_pop (2).ogg')), 75, TRUE, 7, ignore_walls = FALSE)

@@ -30,7 +30,7 @@
 		target.sexcon.cum_into(FALSE, user)
 		if(isxeno(target))
 			var/mob/living/carbon/xenomorph/X = target
-			X.impregify(user, "nipple")
+			X.impregify(user, HOLE_NIPPLE)
 
 	if(user.sexcon.considered_limp())
 		user.sexcon.perform_sex_action(target, 1.2, 3, FALSE)

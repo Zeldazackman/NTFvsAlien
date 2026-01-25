@@ -1392,7 +1392,7 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 		owner.visible_message(span_warning("[X] fucks [victim]!"), span_warning("We fuck [victim]!"), span_warning("You hear slapping."), 5, victim)
 		if(victim.stat == CONSCIOUS)
 			to_chat(victim, span_warning("[X] fucks you!"))
-		X.impregify(victim, damagemult = 3)
+		X.impregify(victim, HOLE_VAGINA, damagemult = 3)
 		log_combat(X, victim, "impregnated", addition="with their impregnate ability")
 		add_cooldown()
 		succeed_activate()

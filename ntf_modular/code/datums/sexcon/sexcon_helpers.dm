@@ -99,7 +99,7 @@
 	new /obj/effect/decal/cleanable/blood/splatter/cum(turfu)
 
 //adds larva to a host.
-/mob/living/carbon/xenomorph/proc/impregify(mob/living/carbon/victim, overrideflavor, maxlarvas = MAX_LARVA_PREGNANCIES, damaging = TRUE, damagemult = 1, damageloc = BODY_ZONE_PRECISE_GROIN)
+/mob/living/carbon/xenomorph/proc/impregify(mob/living/carbon/victim, hole_target = HOLE_VAGINA, maxlarvas = MAX_LARVA_PREGNANCIES, damaging = TRUE, damagemult = 1, damageloc = BODY_ZONE_PRECISE_GROIN)
 	if(!istype(victim))
 		return
 	victim.reagents.remove_reagent(/datum/reagent/toxin/xeno_aphrotoxin, 10)
@@ -120,12 +120,12 @@
 		return
 	if(victim.stat == DEAD)
 		to_chat(src, span_warning("We impregnate \the [victim] with a dormant larva."))
-	implant_embryo(victim, HOLE_VAGINA, source = src)
+	implant_embryo(victim, hole_target, source = src)
 	if(prob(5))
 		to_chat(src, span_warning("We sense we impregnated \the [victim] with TWINS!."))
-		implant_embryo(victim, HOLE_VAGINA, 2, source = src)
+		implant_embryo(victim, hole_target, 2, source = src)
 	else
-		implant_embryo(victim, HOLE_VAGINA, source = src)
+		implant_embryo(victim, hole_target, source = src)
 
 /mob/living/carbon/xenomorph/proc/xenoimpregify()
 	if(!preggo)

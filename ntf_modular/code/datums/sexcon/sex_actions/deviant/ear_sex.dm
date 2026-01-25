@@ -27,7 +27,7 @@
 		user.sexcon.cum_into()
 		if(isxeno(user))
 			var/mob/living/carbon/xenomorph/X = user
-			X.impregify(target, "ear")
+			X.impregify(target, HOLE_EAR)
 
 	var/datum/sex_controller/sc = user.sexcon
 

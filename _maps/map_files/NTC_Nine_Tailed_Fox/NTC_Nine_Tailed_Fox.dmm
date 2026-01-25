@@ -4282,8 +4282,6 @@
 	pixel_x = 1;
 	pixel_y = -3
 	},
-/obj/item/storage/box/crate/loot/telecomm_tower_pack/ntc,
-/obj/item/storage/backpack/marine/radiopack,
 /turf/open/floor/mainship/mono,
 /area/mainship/command/telecomms)
 "dAZ" = (
@@ -8185,6 +8183,7 @@
 	phone_id = "Reactors";
 	pixel_y = 6
 	},
+/obj/item/storage/box/crate/loot/telecomm_tower_pack/ntc,
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/engineering/engine_core)
 "gNf" = (
@@ -29039,6 +29038,7 @@
 	})
 "xQf" = (
 /obj/item/storage/backpack/dispenser,
+/obj/item/storage/backpack/marine/radiopack,
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/engineering/engine_core)
 "xQk" = (

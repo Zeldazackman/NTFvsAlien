@@ -30,7 +30,7 @@
 		user.sexcon.cum_into()
 		if(isxeno(user))
 			var/mob/living/carbon/xenomorph/X = user
-			X.impregify(target, "ass")
+			X.impregify(target, HOLE_ASS)
 
 	if(user.sexcon.considered_limp())
 		user.sexcon.perform_sex_action(target, 1.2, 4, FALSE)
