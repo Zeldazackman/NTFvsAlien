@@ -1106,6 +1106,7 @@ to_chat will check for valid clients itself already so no need to double check f
 	new_xeno.playsound_local(new_xeno, 'sound/effects/alien/new_larva.ogg')
 	to_chat(new_xeno, span_xenoannounce("We are a xenomorph larva awakened from slumber!"))
 	if(!larva_already_reserved)
+		log_game("Occupying 1 [xeno_job.title] slot due to it being assigned to [xeno_candidate.ckey] via do_spawn_larva.")
 		xeno_job.occupy_job_positions(1)
 	return new_xeno
 
@@ -1170,8 +1171,10 @@ to_chat will check for valid clients itself already so no need to double check f
 	var/list/possible_silos = list()
 	SEND_SIGNAL(src, COMSIG_HIVE_XENO_MOTHER_PRE_CHECK, possible_mothers, possible_silos)
 	if(stored_larva > 0 && !LAZYLEN(candidates) && !XENODEATHTIME_CHECK(waiter.mob) && (length(possible_mothers) || length(possible_silos) || (SSticker.mode?.round_type_flags & MODE_SILO_RESPAWN && SSmonitor.gamestate == SHUTTERS_CLOSED)))
+		log_game("Occupying 1 [xeno_job.title] slot because we are attempting to assign it to [waiter.ckey], who joined the larva queue with burrowed available.")
 		xeno_job.occupy_job_positions(1)
 		if(!attempt_to_spawn_larva(waiter, TRUE))
+			log_game("Freeing 1 [xeno_job.title] slot because we failed to assign it to [waiter.ckey], who joined the larva queue with burrowed available.")
 			xeno_job.free_job_positions(1)
 			return FALSE
 		return TRUE
@@ -1213,6 +1216,7 @@ to_chat will check for valid clients itself already so no need to double check f
 	if(slot_occupied < 1)
 		return
 	var/slot_really_taken = 0
+	log_game("Occupying [slot_occupied] [xeno_job.title] slots because we are attempting to assign them to the next people in the larva queue.")
 	if(!xeno_job.occupy_job_positions(slot_occupied))
 		return
 	var/client/client_in_queue
@@ -1240,6 +1244,7 @@ to_chat will check for valid clients itself already so no need to double check f
 			slot_really_taken++
 
 	if(slot_occupied - slot_really_taken > 0)
+		log_game("Freeing [slot_occupied - slot_really_taken] [xeno_job.title] slots because we failed to assign them to the next people in the larva queue.")
 		xeno_job.free_job_positions(slot_occupied - slot_really_taken)
 	for(var/i in 1 to LAZYLEN(candidates))
 		client_in_queue = LAZYACCESS(candidates, i)

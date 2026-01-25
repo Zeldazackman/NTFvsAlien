@@ -1546,6 +1546,7 @@ Status: [status ? status : "Unknown"] | Damage: [health ? health : "None"]
 		if(J.current_positions >= J.total_positions)
 			to_chat(usr, span_warning("Filling would cause an overflow. Please add more slots first."))
 			return
+		log_game("Occupying 1 [J.title] slot due to [usr.ckey] commanding this via the admin job panel.")
 		J.occupy_job_positions(1)
 
 		SSadmin_verbs.dynamic_invoke_verb(usr, /datum/admin_verb/job_slots)
@@ -1564,6 +1565,7 @@ Status: [status ? status : "Unknown"] | Damage: [health ? health : "None"]
 		if(J.current_positions <= 0)
 			to_chat(usr, span_warning("Cannot free more job slots."))
 			return
+		log_game("Freeing 1 [J.title] slot due to [usr.ckey] commanding this via the admin job panel.")
 		J.free_job_positions(1)
 
 		SSadmin_verbs.dynamic_invoke_verb(usr, /datum/admin_verb/job_slots)

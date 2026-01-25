@@ -322,6 +322,7 @@
 /mob/living/proc/despawn()
 	//Handle job slot/tater cleanup.
 	if(job in SSjob.active_joinable_occupations)
+		log_game("Freeing 1 [job.title] slot due to [logdetails(src)] being cryoed.")
 		job.free_job_positions(1)
 
 	for(var/obj/item/W in src)
