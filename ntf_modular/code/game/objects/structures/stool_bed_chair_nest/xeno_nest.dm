@@ -450,10 +450,26 @@
 	if(dir == NORTH)
 		layer = 2.054
 		buckling_mob.layer = BELOW_CLOSED_TURF_LAYER
+		if(ishuman(buckling_mob))
+			var/mob/living/carbon/human/hmob = buckling_mob
+			for(var/datum/limb/limbz in hmob.limbs)
+				if(istype(limbz, /datum/limb/head))
+					continue
+				limbz.invisible = TRUE
+			hmob.remove_overlay(BODYPARTS_LAYER)
+			hmob.update_body(TRUE, TRUE)
 	update_overlays()
 
 /obj/structure/bed/nest/wall/unbuckle_mob(mob/living/buckled_mob, force = FALSE, can_fall = TRUE)
 	. = ..()
+	if(ishuman(buckled_mob))
+		var/mob/living/carbon/human/hmob = buckled_mob
+		for(var/datum/limb/limbz in hmob.limbs)
+			if(istype(limbz, /datum/limb/head))
+				continue
+			limbz.invisible = initial(limbz.invisible)
+		hmob.remove_overlay(BODYPARTS_LAYER)
+		hmob.update_body(TRUE, TRUE)
 	buckled_mob.pixel_y = initial(buckled_mob.pixel_y)
 	buckled_mob.pixel_x = initial(buckled_mob.pixel_x)
 	buckled_mob.density = buckled_mob_density

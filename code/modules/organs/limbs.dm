@@ -72,6 +72,8 @@
 	COOLDOWN_DECLARE(next_infection_message)
 	///What % of the body does this limb cover. Make sure that the sum is always 100.
 	var/cover_index = 0
+	//ntf addition
+	var/invisible = FALSE
 
 
 /datum/limb/New(datum/limb/P, mob/mob_owner)
@@ -886,6 +888,8 @@ Note that amputating the affected organ does in fact remove the infection from t
 	return brute_dam || burn_dam
 
 /datum/limb/proc/get_icon(icon/race_icon, gender="")
+	if(invisible)
+		return icon(race_icon, "")
 	if(limb_status & LIMB_ROBOT && !(owner.species.species_flags & LIMB_ROBOT)) //if race set the flag then we just let the race handle this
 		return icon('icons/mob/human_races/robotic.dmi', "[icon_name][gender ? "_[gender]" : ""]")
 
