@@ -89,6 +89,7 @@
 #include "code\game\objects\items.dm"
 #include "code\game\objects\items\devices\motion_detector.dm"
 #include "code\game\objects\items\loot_box.dm"
+#include "code\game\objects\items\misc_things.dm"
 #include "code\game\objects\items\plantable_flags.dm"
 #include "code\game\objects\items\radio\ntc_listener.dm"
 #include "code\game\objects\items\skillsoft.dm"
