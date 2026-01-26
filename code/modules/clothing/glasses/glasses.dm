@@ -462,7 +462,7 @@
 	///The battery inside
 	var/obj/item/cell/night_vision_battery/battery
 	///How much energy this module needs when activated
-	var/active_energy_cost = 4	//Little over 4 minutes of use
+	var/active_energy_cost = 0.5
 	///Looping sound to play
 	var/datum/looping_sound/active_sound = /datum/looping_sound/scan_pulse
 	///How loud the looping sound should be
@@ -579,7 +579,7 @@
 	icon_state = "night_vision_mounted"
 	tint = COLOR_BLUE
 	vision_flags = NONE
-	active_energy_cost = 2	//A little over 7 minutes of use
+	active_energy_cost = 0.2
 	looping_sound_volume = 50
 
 /obj/item/clothing/glasses/night_vision/mounted/Initialize(mapload)
