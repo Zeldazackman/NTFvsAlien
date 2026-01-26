@@ -1,6 +1,0 @@
-author: "Colfer1"
-delete-after: True
-changes:
-  - rscadd: "Adds the laser weapon bundle, including 2 of every standard laser weapon and backpack"
-  - balance: "Reduces the laser sniper's penetration from 30 to 20 on its standard mode"
-  - balance: "Gives laser pack/backpack self charging abilities, so theres a point to using them over recharger cells"
