@@ -47,7 +47,6 @@
 		/obj/item/attachable/flashlight,
 		/obj/item/attachable/magnetic_harness,
 		/obj/item/attachable/flashlight/under,
-		/obj/item/attachable/motiondetector,
 		/obj/item/weapon/gun/pistol/plasma_pistol,
 		/obj/item/weapon/gun/flamer/mini_flamer,
 		/obj/item/weapon/gun/rifle/pepperball/pepperball_mini,

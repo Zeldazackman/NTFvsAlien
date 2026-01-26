@@ -126,6 +126,10 @@
 	if(A.stat == DEAD)
 		to_chat(owner, span_warning("Why would we sully our loins mating with the dead? Get a lesser being to do it for us..."))
 		return FALSE
+	if(implanted_embryos >= (MAX_LARVA_PREGNANCIES*2))
+		if(A.status_flags & GODMODE)
+			to_chat(owner, span_warning("We can't do any more of that while they are in this state."))
+			return FALSE
 	if(X.on_fire)
 		if(!silent)
 			to_chat(X, span_warning("We feel as if exposing our genitals while on fire is a bad idea..."))
@@ -185,7 +189,7 @@
 			if(implanted_embryos >= (MAX_LARVA_PREGNANCIES*2))
 				for(var/D in damagetypes)
 					A.apply_damage((damageperlarva/damagescaledivisor)*implanted_embryos, D, BODY_ZONE_PRECISE_GROIN, updating_health = TRUE) //It'll get worse!
-					A.apply_damage(1, CLONE, BODY_ZONE_PRECISE_GROIN, updating_health = TRUE) //REALLY ripping that womb
+				A.apply_damage(3, CLONE, BODY_ZONE_PRECISE_GROIN, updating_health = TRUE) //REALLY ripping that womb
 	if(prob(chancebunch)) //Queen has a higher chance to lay in batches.
 		implant_embryo(A, victimhole, 2, source = X)
 		to_chat(owner, span_danger("You lay multiple larva at once!"))

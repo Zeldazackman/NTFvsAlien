@@ -67,12 +67,14 @@
 	var/list/obj/effect/blip/blips_list = list()
 
 /obj/item/attachable/motiondetector/Destroy()
-	clean_operator(forced = TRUE)
+	operator = null
+	clean_operator()
 	return ..()
 
 /obj/item/attachable/motiondetector/activate(mob/user, turn_off)
 	if(operator)
-		clean_operator(forced = TRUE)
+		operator = null
+		clean_operator()
 		return TRUE
 	operator = user
 	RegisterSignals(operator, list(COMSIG_QDELETING, COMSIG_GUN_USER_UNSET), PROC_REF(clean_operator))
@@ -105,14 +107,15 @@
 	if(!ishandslot(slot) && slot != SLOT_BELT && slot != SLOT_S_STORE && slot != SLOT_R_STORE && slot != SLOT_L_STORE)
 		clean_operator()
 
-/obj/item/attachable/motiondetector/removed_from_inventory(mob/user)
+/obj/item/attachable/motiondetector/on_enter_storage(obj/item/storage/S)
 	. = ..()
-	clean_operator(forced = TRUE) //Exploit prevention. If you are putting the tac sensor into a storage in your hand (Like holding a satchel), hand == loc will return
+	operator = null //forces clean
+	clean_operator()
 
 /// Signal handler to clean out user vars
-/obj/item/attachable/motiondetector/proc/clean_operator(datum/source, obj/item/weapon/gun/gun, forced = FALSE)
+/obj/item/attachable/motiondetector/proc/clean_operator(datum/source, obj/item/weapon/gun/gun)
 	SIGNAL_HANDLER
-	if(!forced && operator && (operator.l_hand == src || operator.r_hand == src || operator.l_hand == loc || operator.r_hand == loc))
+	if(operator && (operator.l_hand == src || operator.r_hand == src || operator.l_hand == loc || operator.r_hand == loc))
 		return
 	STOP_PROCESSING(SSobj, src)
 	clean_blips()

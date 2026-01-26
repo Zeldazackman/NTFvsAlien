@@ -321,8 +321,7 @@
 
 	pickup(user)
 	if(!user.put_in_active_hand(src))
-		user.dropItemToGround(src)
-		dropped(user)
+		return
 
 
 /obj/item/update_icon_state()

@@ -17,6 +17,16 @@
 	var/ping_overlay
 	var/quiet = FALSE
 
+/obj/item/attachable/motiondetector/advanced/sg
+	name = "AC-4 integrated motion tracker"
+	desc = "A smartgun-integrated motion sensor made by archercorp. It takes no slot that matters on a gun."
+	slot = ATTACHMENT_SLOT_STOCK
+	attach_features_flags = NONE //unremovable
+	icon = 'ntf_modular/icons/obj/items/cm_items.dmi'
+	icon_state = "detector"
+	worn_icon_state = ""
+	worn_icon_list = list()
+
 /obj/item/attachable/motiondetector/advanced/pocket
 	name = "AC-2M pocket tactical motion tracker"
 	desc = "A smaller version of the AC-2 which can go into the smartpistol but also would fit in a pocket but is lesser in range similiar to standard motion trackers but it still transmits into the faction map. This one is usually found in hands of solos."
@@ -42,7 +52,7 @@
 	quiet = TRUE
 
 /obj/item/attachable/motiondetector/advanced/clean_operator(datum/source, obj/item/weapon/gun/gun, forced = FALSE)
-	if(!forced && operator && (operator.belt == src || operator.r_store == src || operator.l_store == src || operator.s_store == src))
+	if(operator && (operator.belt == src || operator.belt == loc || operator.r_store == src || operator.r_store == loc || operator.l_store == src || operator.l_store == loc || operator.s_store == src || operator.s_store == loc))
 		return
 	..()
 
