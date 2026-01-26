@@ -196,7 +196,7 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 		return ..() // Dead or sterile (lamarr) can be picked.
 	else if(can_self_remove && attached)
 		if(!user.do_actions && do_after(user, strip_delay, NONE, src, BUSY_ICON_FRIENDLY))
-			playsound(src, pick(list('ntf_modular/sound/misc/cork_pop.ogg','ntf_modular/sound/misc/cork_pop (2).ogg')), 20, TRUE, 7, ignore_walls = FALSE)
+			playsound(src, pick(list('ntf_modular/sound/misc/cork_pop.ogg','ntf_modular/sound/misc/cork_pop (2).ogg')), 75, TRUE, 7, ignore_walls = FALSE)
 			return ..()
 	else if(stat == CONSCIOUS && user.can_be_facehugged(src, provoked = TRUE)) // If you try to take a healthy one it will try to hug or attack you.
 		user.visible_message(span_warning("[src] skitters up [user]'s arm as [user.p_they()] try to grab it!"), \

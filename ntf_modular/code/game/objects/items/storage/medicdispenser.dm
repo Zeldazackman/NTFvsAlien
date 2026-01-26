@@ -90,7 +90,7 @@
 	if(!isnull(climbed_mob))
 		climbed_mob = null
 		visible_message(span_warning("[src]'s 'mana-uplink' pops out and retracts into itself."))
-		playsound(src, pick(list('ntf_modular/sound/misc/cork_pop.ogg','ntf_modular/sound/misc/cork_pop (2).ogg')), 20, TRUE, 7, ignore_walls = FALSE)
+		playsound(src, pick(list('ntf_modular/sound/misc/cork_pop.ogg','ntf_modular/sound/misc/cork_pop (2).ogg')), 75, TRUE, 7, ignore_walls = FALSE)
 
 /obj/machinery/deployable/dispenser/medic/process()
 	do_healing()

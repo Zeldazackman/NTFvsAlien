@@ -49,7 +49,7 @@
 
 /obj/structure/bed/nest/advanced/post_unbuckle_mob(mob/living/buckled_mob)
 	. = ..()
-	playsound(src, pick(list('ntf_modular/sound/misc/cork_pop.ogg','ntf_modular/sound/misc/cork_pop (2).ogg')), 20, TRUE, 7, ignore_walls = FALSE)
+	playsound(src, pick(list('ntf_modular/sound/misc/cork_pop.ogg','ntf_modular/sound/misc/cork_pop (2).ogg')), 75, TRUE, 7, ignore_walls = FALSE)
 	if(istype(src, /obj/structure/bed/nest/advanced/special))
 		try_suit_up(buckled_mob)
 	settings_locked = FALSE

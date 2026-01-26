@@ -4,7 +4,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	name = "telephone receiver"
 	icon = 'ntf_modular/icons/obj/structures/phone.dmi'
 	icon_state = "wall_phone"
-	desc = "It is a wall mounted telephone. The fine text reads: To log your details with the mainframe please insert your keycard into the slot below. Unfortunately the slot is jammed. You can still use the phone, however."
+	desc = "It is a wall mounted telephone. Concept older than the old world technology, redesigned for today."
 
 	var/phone_category = "Uncategorised"
 	var/phone_color = "white"
@@ -670,7 +670,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 /obj/structure/transmitter/desk
 	name = "wired telephone"
 	icon_state = "desk_phone"
-	desc = "There is always ol' reliable."
+	desc = "It has a holographic number pad and everything."
 
 /obj/structure/transmitter/desk/no_dnd
 	do_not_disturb = PHONE_DND_FORBIDDEN
@@ -689,7 +689,6 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 /obj/structure/transmitter/colony_net/desk
 	name = "wired telephone"
 	icon_state = "desk_phone"
-	desc = "It has a holographic number pad and everything."
 
 /obj/structure/transmitter/som_net
 	color = COLOR_ORANGE
@@ -700,8 +699,6 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	name = "wired telephone"
 	icon_state = "desk_phone"
 
-	desc = "The finger plate is a little stiff."
-
 /obj/structure/transmitter/clf_net
 	color = COLOR_PURPLE
 	networks_receive = list(FACTION_CLF)
@@ -710,7 +707,6 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 /obj/structure/transmitter/clf_net/desk
 	name = "wired telephone"
 	icon_state = "desk_phone"
-	desc = "The finger plate is a little stiff."
 
 /obj/structure/transmitter/kz_net
 	color = COLOR_YELLOW
@@ -720,7 +716,6 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 /obj/structure/transmitter/kz_net/desk
 	name = "wired telephone"
 	icon_state = "desk_phone"
-	desc = "The finger plate is a little stiff."
 
 /obj/structure/transmitter/cm_net
 	color = COLOR_MODERATE_BLUE
@@ -730,4 +725,3 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 /obj/structure/transmitter/cm_net/desk
 	name = "wired telephone"
 	icon_state = "desk_phone"
-	desc = "The finger plate is a little stiff."
