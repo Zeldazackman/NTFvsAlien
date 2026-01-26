@@ -99,6 +99,9 @@
 	. = ..()
 	update_minimap_marker()
 	START_PROCESSING(SSslowprocess, src)
+
+/obj/machinery/telecomms/relay/preset/tower/LateInitialize()
+	. = ..()
 	power_change()
 
 /obj/machinery/telecomms/relay/preset/tower/proc/update_minimap_marker()
@@ -405,7 +408,7 @@
 	. = ..()
 
 /obj/machinery/telecomms/relay/preset/tower/mapcomms/power_change()
-	..()
+	. = ..()
 	if((machine_stat & NOPOWER))
 		if(on)
 			toggle_state()
