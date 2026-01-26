@@ -186,6 +186,23 @@
 	desc = "A hat usually worn by officers in the NTC. While it has limited combat functionality, some prefer to wear it instead of the standard issue helmet. It has a built in signal booster plus antenna module both at once."
 	icon_state = "rocap"
 	soft_armor = list(MELEE = 50, BULLET = 70, LASER = 70, ENERGY = 60, BOMB = 55, BIO = 55, FIRE = 55, ACID = 60)
+	attachments_allowed = list(
+		/obj/item/armor_module/module/tyr_head,
+		/obj/item/armor_module/module/fire_proof_helmet,
+		/obj/item/armor_module/module/hod_head,
+		/obj/item/armor_module/module/mimir_environment_protection/mimir_helmet,
+		/obj/item/armor_module/module/mimir_environment_protection/mimir_helmet/mark1,
+		/obj/item/armor_module/module/welding,
+		/obj/item/armor_module/module/welding/superior,
+		/obj/item/armor_module/module/binoculars,
+		/obj/item/armor_module/module/binoculars/artemis_mark_two,
+		/obj/item/armor_module/module/artemis,
+		/obj/item/armor_module/module/antenna,
+		/obj/item/armor_module/module/night_vision,
+		/obj/item/armor_module/storage/helmet,
+		/obj/item/armor_module/armor/badge,
+		/obj/item/armor_module/module/antenna/integrated,
+	)
 	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/module/antenna/integrated)
 
 /obj/item/clothing/head/tgmccap/ro/equipped(mob/user, slot)
