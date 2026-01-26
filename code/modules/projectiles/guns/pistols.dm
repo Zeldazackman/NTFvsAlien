@@ -963,10 +963,10 @@ It is a modified Beretta 93R, and can fire three round burst or single fire. Whe
 		/obj/item/attachable/magnetic_harness,
 		/obj/item/attachable/flashlight,
 		/obj/item/attachable/gyro,
-		/obj/item/attachable/motiondetector/advanced/pocket,
+		/obj/item/attachable/motiondetector/advanced/sg,
 	)
 
-	starting_attachment_types = list(/obj/item/attachable/motiondetector/advanced/pocket)
+	starting_attachment_types = list(/obj/item/attachable/motiondetector/advanced/sg)
 
 	gun_features_flags = GUN_AMMO_COUNTER|GUN_IFF|GUN_SMOKE_PARTICLES
 	actions_types = list() // Inherits aimmode, but has IFF so..
@@ -987,4 +987,5 @@ It is a modified Beretta 93R, and can fire three round burst or single fire. Whe
 /obj/item/weapon/gun/pistol/smart_pistol/pmc
 	starting_attachment_types = list(
 		/obj/item/attachable/reddot,
+		/obj/item/attachable/motiondetector/advanced/sg,
 	)

@@ -1537,6 +1537,8 @@
 		/obj/item/attachable/motiondetector/advanced/sg,
 	)
 
+	starting_attachment_types = list(/obj/item/attachable/motiondetector/advanced/sg)
+
 	gun_features_flags = GUN_AMMO_COUNTER|GUN_WIELDED_FIRING_ONLY|GUN_IFF|GUN_SMOKE_PARTICLES
 	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC)
 	gun_skill_category = SKILL_SMARTGUN //Uses SG skill for the penalties.
@@ -3465,13 +3467,14 @@
 		/obj/item/attachable/magnetic_harness,
 		/obj/item/attachable/scope/mini,
 		/obj/item/attachable/flashlight/under,
-		/obj/item/attachable/motiondetector,
+		/obj/item/attachable/motiondetector/advanced/sg,
 		/obj/item/attachable/bayonet/converted,
 		/obj/item/attachable/bayonet,
 		/obj/item/attachable/bayonet/som,
 		/obj/item/attachable/foldable/bipod,
 	)
 
+	starting_attachment_types = list(/obj/item/attachable/motiondetector/advanced/sg)
 	gun_features_flags = GUN_AMMO_COUNTER|GUN_WIELDED_FIRING_ONLY|GUN_IFF|GUN_SMOKE_PARTICLES
 	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC)
 	gun_skill_category = SKILL_SMARTGUN //Uses SG skill for the penalties.
@@ -3489,7 +3492,7 @@
 
 /obj/item/weapon/gun/rifle/pmc_gpmg/gunner
 
-	starting_attachment_types = list(/obj/item/attachable/motiondetector, /obj/item/attachable/lasersight,)
+	starting_attachment_types = list(/obj/item/attachable/motiondetector/advanced/sg, /obj/item/attachable/lasersight)
 
 //-------------------------------------------------------
 //PR-416 PMC rifle

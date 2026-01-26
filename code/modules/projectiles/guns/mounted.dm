@@ -54,10 +54,12 @@
 
 	attachable_allowed = list(
 		/obj/item/attachable/scope/unremovable/hsg_102,
+		/obj/item/attachable/motiondetector/advanced/sg,
 	)
 
 	starting_attachment_types = list(
 		/obj/item/attachable/scope/unremovable/hsg_102,
+		/obj/item/attachable/motiondetector/advanced/sg,
 	)
 
 	allowed_ammo_types = list(
@@ -788,11 +790,13 @@
 	attachable_allowed = list(
 		/obj/item/attachable/at45barrel,
 		/obj/item/attachable/stock/at45stock,
+		/obj/item/attachable/motiondetector/advanced/sg,
 	)
 
 	starting_attachment_types = list(
 		/obj/item/attachable/at45barrel,
 		/obj/item/attachable/stock/at45stock,
+		/obj/item/attachable/motiondetector/advanced/sg,
 	)
 	attachable_offset = list("muzzle_x" = 56, "muzzle_y" = 16,"rail_x" = 18, "rail_y" = 24, "under_x" = 28, "under_y" = 13, "stock_x" = -11, "stock_y" = 0)
 
