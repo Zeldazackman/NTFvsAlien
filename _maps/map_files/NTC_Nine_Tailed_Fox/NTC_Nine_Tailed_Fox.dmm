@@ -7709,7 +7709,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/turf/open/floor/mech_bay_recharge_floor,
+/turf/open/floor/plating,
 /area/mainship/living/tankerbunks)
 "gqt" = (
 /obj/docking_port/stationary/marine_dropship/hangar/one,
@@ -8689,9 +8689,10 @@
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
 "hdP" = (
-/obj/structure/bed/bunkbed,
 /obj/effect/landmark/start/job/mechpilot,
 /obj/effect/landmark/start/job/mechpilot,
+/obj/structure/bed,
+/obj/item/bedsheet/captain,
 /turf/open/floor/wood,
 /area/mainship/living/tankerbunks)
 "heq" = (
@@ -9236,9 +9237,6 @@
 /area/mainship/medical/lower_medical)
 "hJe" = (
 /obj/effect/decal/cleanable/blood/gibs/robot/limb,
-/obj/machinery/computer/mech_builder{
-	dir = 8
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
@@ -10423,9 +10421,10 @@
 	name = "Shipside Medbay"
 	})
 "iGg" = (
-/obj/structure/table/wood,
-/obj/item/paper,
-/obj/item/tool/pen,
+/obj/machinery/light/mainship{
+	dir = 8
+	},
+/obj/structure/bed/chair/office/dark,
 /turf/open/floor/wood,
 /area/mainship/living/tankerbunks)
 "iGq" = (
@@ -21375,6 +21374,8 @@
 "rCo" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/random/misc/table_lighting,
+/obj/item/paper,
+/obj/item/tool/pen,
 /turf/open/floor/wood,
 /area/mainship/living/tankerbunks)
 "rCZ" = (
@@ -25303,9 +25304,7 @@
 	name = "Ship Floor 2 Hallways"
 	})
 "uRM" = (
-/obj/machinery/light/mainship{
-	dir = 1
-	},
+/obj/machinery/cryopod/right,
 /turf/open/floor/wood,
 /area/mainship/living/tankerbunks)
 "uRZ" = (
@@ -45606,7 +45605,7 @@ aYD
 aYD
 aYD
 sIF
-tYK
+uRM
 iGg
 rCo
 sIF
@@ -45725,7 +45724,7 @@ nkv
 nkv
 nkv
 sIF
-uRM
+tYK
 gSb
 hdP
 sIF

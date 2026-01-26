@@ -689,7 +689,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 /obj/structure/transmitter/colony_net/desk
 	name = "wired telephone"
 	icon_state = "desk_phone"
-	desc = "The finger plate is a little stiff."
+	desc = "It has a holographic number pad and everything."
 
 /obj/structure/transmitter/som_net
 	color = COLOR_ORANGE
