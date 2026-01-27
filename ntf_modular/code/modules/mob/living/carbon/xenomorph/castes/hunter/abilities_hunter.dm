@@ -8,7 +8,7 @@
 	name = "Lunge"
 	action_icon = 'icons/Xeno/actions/hunter.dmi'
 	action_icon_state = "assassin_lunge"
-	desc = "Swiftly lunge at your destination, if on a target, attack them."
+	desc = "Swiftly lunge at your destination, if on a target, attack them. Does not paralyze or sneak attack unless with a mutation."
 	ability_cost = 10
 	cooldown_duration = 6 SECONDS
 	keybinding_signals = list(
@@ -23,6 +23,8 @@
 	xeno_owner.UnarmedAttack(living_target)
 	step_away(living_target, xeno_owner, 1, 3)
 	xeno_owner.face_atom(living_target)
+	GLOB.round_statistics.runner_pounce_victims++
+	SSblackbox.record_feedback("tally", "round_statistics", 1, "runner_pounce_victims")
 
 #define ASSASSIN_SNEAK_SLASH_ARMOR_PEN 30
 
@@ -71,9 +73,6 @@
 
 ///Duration for the mark.
 #define DEATH_MARK_TIMEOUT 15 SECONDS
-///Charge-up duration of the mark where you need to stay still for it to apply.
-#define DEATH_MARK_CHARGEUP 1 SECONDS
-
 // ***************************************
 // *********** Death Mark
 // ***************************************
@@ -101,8 +100,6 @@
 /datum/action/ability/activable/xeno/hunter_mark/assassin/use_ability(atom/A)
 	. = ..()
 	var/mob/living/carbon/xenomorph/X = owner
-	if(!do_after(X, DEATH_MARK_CHARGEUP, IGNORE_HAND|IGNORE_HELD_ITEM, A, BUSY_ICON_HOSTILE, NONE, PROGRESS_GENERIC, IGNORE_TARGET_LOC_CHANGE))
-		return
 
 	RegisterSignal(marked_target, COMSIG_QDELETING, PROC_REF(unset_target)) //For var clean up
 
