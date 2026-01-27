@@ -163,11 +163,11 @@
 		if(leader_current_aura)
 			leader_current_aura.suppressed = TRUE
 
-	var/new_frenzy_aura = (received_auras[AURA_XENO_FRENZY] || 0) * hive.aura_multiplier
+	var/new_frenzy_aura = (received_auras[AURA_XENO_FRENZY] || 0) * hive.aura_multiplier * xeno_caste.phero_efficency_mult
 	if(frenzy_aura != new_frenzy_aura)
 		set_frenzy_aura(new_frenzy_aura)
 
-	var/new_warding_aura = (received_auras[AURA_XENO_WARDING] || 0) * hive.aura_multiplier
+	var/new_warding_aura = (received_auras[AURA_XENO_WARDING] || 0) * hive.aura_multiplier * xeno_caste.phero_efficency_mult
 	if(warding_aura != new_warding_aura)
 		if(warding_aura) //If either the new or old warding is 0, we can skip adjusting armor for it.
 			soft_armor = soft_armor.modifyAllRatings(-warding_aura * 2.5)
@@ -175,7 +175,7 @@
 		if(warding_aura)
 			soft_armor = soft_armor.modifyAllRatings(warding_aura * 2.5)
 
-	recovery_aura = (received_auras[AURA_XENO_RECOVERY] || 0) * hive.aura_multiplier
+	recovery_aura = (received_auras[AURA_XENO_RECOVERY] || 0) * hive.aura_multiplier * xeno_caste.phero_efficency_mult
 
 	update_aura_overlay()
 	..()

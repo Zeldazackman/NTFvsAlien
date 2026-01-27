@@ -160,6 +160,7 @@
 #include "code\modules\mob\living\carbon\xenomorph\facehuggers.dm"
 #include "code\modules\mob\living\carbon\xenomorph\hive_datum.dm"
 #include "code\modules\mob\living\carbon\xenomorph\hive_upgrades.dm"
+#include "code\modules\mob\living\carbon\xenomorph\mutations.dm"
 #include "code\modules\mob\living\carbon\xenomorph\xeno_defines.dm"
 #include "code\modules\mob\living\carbon\xenomorph\xenomorph.dm"
 #include "code\modules\mob\living\carbon\xenomorph\xenoprocs.dm"

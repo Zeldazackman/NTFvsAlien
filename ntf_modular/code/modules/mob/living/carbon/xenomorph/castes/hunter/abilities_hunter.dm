@@ -8,7 +8,7 @@
 	name = "Lunge"
 	action_icon = 'icons/Xeno/actions/hunter.dmi'
 	action_icon_state = "assassin_lunge"
-	desc = "Swiftly lunge at your destination, if on a target, attack them. Does not paralyze or sneak attack unless with a mutation."
+	desc = "Swiftly lunge at your destination, if on a target, attack them. This breaks invisibility and may deliver a sneak attack."
 	ability_cost = 10
 	cooldown_duration = 6 SECONDS
 	keybinding_signals = list(
@@ -85,8 +85,10 @@
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_HUNTER_MARK,
 	)
-	cooldown_duration = 30 SECONDS
+	cooldown_duration = HUNTER_SILENCE_COOLDOWN
 	require_los = FALSE
+	var/death_mark_multiplier = 1
+	var/death_mark_damage_multiplier = 2
 
 /datum/action/ability/activable/xeno/hunter_mark/assassin/can_use_ability(atom/A, silent = FALSE, override_flags)
 	var/mob/living/carbon/xenomorph/X = owner
@@ -103,8 +105,9 @@
 
 	RegisterSignal(marked_target, COMSIG_QDELETING, PROC_REF(unset_target)) //For var clean up
 
-	to_chat(X, span_xenodanger("We will be able to maintain the mark for [DEATH_MARK_TIMEOUT / 10] seconds."))
-	addtimer(CALLBACK(src, PROC_REF(unset_target)), DEATH_MARK_TIMEOUT)
+	var/the_duration = DEATH_MARK_TIMEOUT * death_mark_multiplier
+	to_chat(X, span_xenodanger("We will be able to maintain the mark for [the_duration / 10] seconds."))
+	addtimer(CALLBACK(src, PROC_REF(unset_target)), the_duration)
 
 	playsound(marked_target, 'sound/effects/alien/new_larva.ogg', 50, 0, 1)
 	to_chat(marked_target, span_danger("You feel uneasy."))

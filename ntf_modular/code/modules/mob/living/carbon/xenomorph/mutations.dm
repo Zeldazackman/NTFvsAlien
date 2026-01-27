@@ -1,0 +1,76 @@
+/datum/mutation_upgrade/shell/lone_lurker
+	name = "Lone Lurker"
+	desc = "You will gain the ability to regenerate health, sunder and plasma off weeds but your benefit from pheromones is reduced to 0.5x/0.7x/0.9x."
+	/// For the first structure, what will our phero effectiveness reduction be
+	var/multiplier_initial = 0.5
+	/// For each structure
+	var/multiplier_per_structure = 0.2
+
+/datum/mutation_upgrade/shell/lone_lurker/get_desc_for_alert(new_amount)
+	if(!new_amount)
+		return ..()
+	return "You will gain the ability to regenerate health, sunder and plasma off weeds but your benefit from pheromones is reduced to [1 + get_multiplier(new_amount)]x"
+
+/datum/mutation_upgrade/shell/lone_lurker/on_mutation_enabled()
+	. = ..()
+	xenomorph_owner.xeno_caste.phero_efficency_mult += get_multiplier(0)
+	xenomorph_owner.xeno_caste.caste_flags = CASTE_EVOLUTION_ALLOWED|CASTE_MUTATIONS_ALLOWED|CASTE_INNATE_PLASMA_REGEN
+	xenomorph_owner.xeno_caste.can_flags |= CASTE_CAN_HEAL_WITHOUT_QUEEN
+	xenomorph_owner.xeno_caste.caste_traits = list(TRAIT_CAN_VENTCRAWL, TRAIT_INNATE_HEALING)
+
+/datum/mutation_upgrade/shell/lone_lurker/on_mutation_disabled()
+	. = ..()
+	xenomorph_owner.xeno_caste.phero_efficency_mult -= get_multiplier(0)
+	xenomorph_owner.xeno_caste.caste_flags = initial(xenomorph_owner.xeno_caste.caste_flags)
+	xenomorph_owner.xeno_caste.can_flags = initial(xenomorph_owner.xeno_caste.can_flags)
+	xenomorph_owner.xeno_caste.caste_traits = initial(xenomorph_owner.xeno_caste.caste_traits)
+
+/datum/mutation_upgrade/shell/lone_lurker/on_structure_update(previous_amount, new_amount)
+	. = ..()
+	xenomorph_owner.xeno_caste.phero_efficency_mult += get_multiplier(new_amount - previous_amount, FALSE)
+
+/datum/mutation_upgrade/shell/lone_lurker/proc/get_multiplier(structure_count, include_initial = TRUE)
+	return (include_initial ? multiplier_initial : 0) + (multiplier_per_structure * structure_count)
+
+//*********************//
+//         Veil        //
+//*********************//
+/datum/mutation_upgrade/veil/death_trail
+	name = "Death Trail"
+	desc = "The duration of your Death Mark and bonus sneak attack damage of it is increased by 2.5/2.75/3x"
+	/// For the first structure, what will the multiplier become for duration and damage
+	var/multiplier_initial = 2.5
+	/// For each structure, the multiplier to add to Silence's effectiveness against the Hunter's Mark target.
+	var/multiplier_per_structure = 0.25
+
+/datum/mutation_upgrade/veil/death_trail/get_desc_for_alert(new_amount)
+	if(!new_amount)
+		return ..()
+	return "he duration of your Death Mark and bonus sneak attack damage of it is increased by [2.5 + get_multiplier(new_amount)]x"
+
+/datum/mutation_upgrade/veil/death_trail/on_mutation_enabled()
+	. = ..()
+	var/datum/action/ability/activable/xeno/hunter_mark/assassin/dm_ability = xenomorph_owner.actions_by_path[/datum/action/ability/activable/xeno/hunter_mark/assassin]
+	if(!dm_ability)
+		return
+	dm_ability.death_mark_multiplier += get_multiplier(0)
+	dm_ability.death_mark_damage_multiplier += get_multiplier(0)
+
+/datum/mutation_upgrade/veil/death_trail/on_mutation_disabled()
+	. = ..()
+	var/datum/action/ability/activable/xeno/hunter_mark/assassin/dm_ability = xenomorph_owner.actions_by_path[/datum/action/ability/activable/xeno/hunter_mark/assassin]
+	if(!dm_ability)
+		return
+	dm_ability.death_mark_multiplier -= get_multiplier(0)
+	dm_ability.death_mark_damage_multiplier -= get_multiplier(0)
+
+/datum/mutation_upgrade/veil/death_trail/on_structure_update(previous_amount, new_amount)
+	. = ..()
+	var/datum/action/ability/activable/xeno/hunter_mark/assassin/dm_ability = xenomorph_owner.actions_by_path[/datum/action/ability/activable/xeno/hunter_mark/assassin]
+	if(!dm_ability)
+		return
+	dm_ability.death_mark_multiplier += get_multiplier(new_amount - previous_amount, FALSE)
+	dm_ability.death_mark_damage_multiplier += get_multiplier(new_amount - previous_amount, FALSE)
+
+/datum/mutation_upgrade/veil/death_trail/proc/get_multiplier(structure_count, include_initial = TRUE)
+	return (include_initial ? multiplier_initial : 0) + (multiplier_per_structure * structure_count)

@@ -78,6 +78,7 @@
 		/datum/mutation_upgrade/shell/fleeting_mirage,
 		/datum/mutation_upgrade/shell/splitting_mirage,
 		/datum/mutation_upgrade/shell/cloaking_mirage,
+		/datum/mutation_upgrade/shell/lone_lurker,
 		/datum/mutation_upgrade/spur/debilitating_strike,
 		/datum/mutation_upgrade/spur/ambush,
 		/datum/mutation_upgrade/spur/maul,

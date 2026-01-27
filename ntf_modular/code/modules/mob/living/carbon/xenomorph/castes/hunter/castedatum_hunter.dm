@@ -43,6 +43,17 @@
 		/datum/action/ability/xeno_action/xenohide,
 	)
 
+	mutations = list(
+		/datum/mutation_upgrade/shell/fleeting_mirage,
+		/datum/mutation_upgrade/shell/splitting_mirage,
+		/datum/mutation_upgrade/shell/cloaking_mirage,
+		/datum/mutation_upgrade/shell/lone_lurker,
+		/datum/mutation_upgrade/spur/debilitating_strike,
+		/datum/mutation_upgrade/veil/death_trail,
+		/datum/mutation_upgrade/veil/mirage_flood,
+		/datum/mutation_upgrade/veil/faceblind
+	)
+
 /datum/xeno_caste/hunter/assassin/primordial
 	upgrade_name = "Primordial"
 	upgrade = XENO_UPGRADE_PRIMO

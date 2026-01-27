@@ -55,7 +55,7 @@
 			if(stealth_skill.can_sneak_attack)
 				var/datum/action/ability/activable/xeno/hunter_mark/assassin/mark = X.actions_by_path[/datum/action/ability/activable/xeno/hunter_mark/assassin]
 				if(mark?.marked_target == src) //assassin death mark
-					damage *= 2
+					damage *= mark.death_mark_damage_multiplier
 
 	var/armor_pen = X.xeno_caste.melee_ap
 
@@ -208,7 +208,7 @@
 			if(stealth_skill.can_sneak_attack)
 				var/datum/action/ability/activable/xeno/hunter_mark/assassin/mark = X.actions_by_path[/datum/action/ability/activable/xeno/hunter_mark/assassin]
 				if(mark?.marked_target == src) //assassin death mark
-					damage *= 2
+					damage *= mark.death_mark_damage_multiplier
 
 	var/armor_pen = X.xeno_caste.melee_ap
 
