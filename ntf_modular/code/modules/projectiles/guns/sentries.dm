@@ -23,7 +23,7 @@
 	starting_attachment_types = list()
 	attachable_allowed = list()
 	turret_range = 11 //shit accuracy anyway
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_NORMAL
 	faction = FACTION_TERRAGOV
 
 	soft_armor = list(MELEE = 0, BULLET = 30, LASER = 30, ENERGY = 30, BOMB = 30, BIO = 100, FIRE = 100, ACID = 30)
