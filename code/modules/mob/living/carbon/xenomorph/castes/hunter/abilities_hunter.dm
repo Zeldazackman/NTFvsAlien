@@ -441,7 +441,7 @@
 	playsound(get_turf(living_target), 'sound/voice/alien/pounce.ogg', 25, TRUE)
 	xeno_owner.Immobilize(self_immobilize_duration)
 	xeno_owner.forceMove(get_turf(living_target))
-	living_target.Knockdown(stun_duration)
+	living_target.Paralyze(stun_duration)
 	if(attack_on_pounce)
 		living_target.attack_alien_harm(xeno_owner)
 	GLOB.round_statistics.runner_pounce_victims++

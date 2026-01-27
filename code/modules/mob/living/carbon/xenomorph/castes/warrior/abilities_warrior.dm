@@ -155,6 +155,7 @@
 	UnregisterSignal(source, list(COMSIG_MOVABLE_POST_THROW, COMSIG_MOVABLE_IMPACT))
 	var/mob/living/living_target = source
 	living_target.Knockdown(0.5 SECONDS)
+	living_target.Immobilize(0.5 SECONDS)
 	living_target.remove_pass_flags(PASS_XENO, THROW_TRAIT)
 
 /obj/effect/temp_visual/warrior/impact

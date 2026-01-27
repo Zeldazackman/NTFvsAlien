@@ -565,7 +565,7 @@
 	if(plasma_mod >= HIGN_THRESHOLD)
 		owner_xeno.AdjustImmobilized(KNOCKDOWN_DURATION)
 		ADD_TRAIT(owner_xeno, TRAIT_HANDS_BLOCKED, src)
-		target.AdjustKnockdown(KNOCKDOWN_DURATION)
+		target.AdjustParalyzed(KNOCKDOWN_DURATION)
 
 		if(do_after(owner_xeno, KNOCKDOWN_DURATION, FALSE, target, ignore_turf_checks = FALSE))
 			owner_xeno.gain_plasma(plasma_gain_on_hit)

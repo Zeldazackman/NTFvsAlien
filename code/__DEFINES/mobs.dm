@@ -80,7 +80,7 @@ GLOBAL_VAR_INIT(max_larva_count_per_mob, 3) //Added for adminbus reasons
 	Germs and infections
 */
 
-#define GERM_LEVEL_AMBIENT 110		//maximum germ level you can reach by standing still
+#define GERM_LEVEL_AMBIENT 100		//maximum germ level you can reach by standing still
 #define GERM_LEVEL_MOVE_CAP 200		//maximum germ level you can reach by running around
 
 #define INFECTION_LEVEL_ONE 100
