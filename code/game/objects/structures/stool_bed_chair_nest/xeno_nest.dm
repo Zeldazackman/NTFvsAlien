@@ -13,7 +13,7 @@
 	buckling_x = 0
 	buildstacktype = null //can't be disassembled and doesn't drop anything when destroyed
 	resistance_flags = UNACIDABLE|XENO_DAMAGEABLE
-	max_integrity = 100
+	max_integrity = 50
 	layer = BELOW_OPEN_DOOR_LAYER
 	var/unbuckletime = 6 SECONDS
 	var/resist_time = NEST_RESIST_TIME

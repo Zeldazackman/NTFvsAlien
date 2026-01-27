@@ -2,13 +2,14 @@
 	name = "tentacle breeding nest"
 	icon = 'icons/Xeno/Effects.dmi'
 	desc = "A trap nest, It's a gruesome pile of thick, sticky resin-covered tentacles shaped like a nest. It will quickly capture who stay on it and cum acid and larva inside if given opportunity. It is rather easy to escape from."
+	layer = BELOW_OBJ_LAYER
 	var/hivenumber = XENO_HIVE_NORMAL
 	var/target_hole = HOLE_MOUTH
 	var/settings_locked = FALSE
 	var/list/mob/living/carbon/human/grabbing = null
 	COOLDOWN_DECLARE(tentacle_cooldown)
 	resist_time = 4 SECONDS //gotta be able to resist quick in case this is used in combat, with the quick capture power, you WILL die so fast.
-	var/capture_time = 2 SECONDS
+	var/capture_time = 1 SECONDS
 	var/cooldown_time = 5 SECONDS
 
 /obj/structure/bed/nest/advanced/Initialize(mapload, _hivenumber)
@@ -27,14 +28,14 @@
 
 /obj/structure/bed/nest/advanced/proc/mature()
 	var/datum/hive_status/hive = GLOB.hive_datums[hivenumber]
-	Shake(duration = 3 SECONDS)
+	Shake(duration = 2 SECONDS)
 	name = "mature [hive.prefix][name]"
 	visible_message(span_notice("[src] shudders as its tentacles thicken and harden, becoming more effective at capturing prey!"))
 	resist_time *= 2
 	capture_time *= 0.5
 	cooldown_time *= 0.5
-	max_integrity += 150
-	obj_integrity += 150
+	max_integrity *= 2
+	obj_integrity *= 2
 
 /obj/structure/bed/nest/advanced/examine(mob/user)
 	. = ..()
@@ -193,6 +194,8 @@
 
 /obj/structure/bed/nest/advanced/process()
 	. = ..()
+	if(obj_integrity < max_integrity)
+		obj_integrity += min(obj_integrity+4, max_integrity)
 	if(!LAZYLEN(buckled_mobs))
 		if(!COOLDOWN_FINISHED(src, tentacle_cooldown))
 			return
@@ -338,6 +341,7 @@
 
 /mob/living/carbon/xenomorph/proc/do_nesting_host(mob/current_mob, nest_structural_base)
 	var/list/xeno_hands = list(get_active_held_item(), get_inactive_held_item())
+	var/nesting_time = 2 SECONDS
 
 	if(!ishuman(current_mob))
 		to_chat(src, span_xenonotice("This is not a host."))
@@ -367,8 +371,9 @@
 			return
 
 	var/area/curarea = get_area(loc)
-	if(curarea.ceiling < CEILING_UNDERGROUND)
-		to_chat(src, span_xenowarning("The weeds here are not strong enough for nesting hosts, caves would be better."))
+	if(curarea.ceiling < CEILING_UNDERGROUND || isdropshiparea(curarea) || (get_xeno_hivenumber() == XENO_HIVE_CORRUPTED && (is_mainship_level(z) || curarea.area_flags & MARINE_BASE)))
+		to_chat(src, span_xenowarning("The weeds here are not strong enough for nesting hosts easily, caves would be better."))
+		nesting_time *= 3
 		return
 
 	if(!supplier_turf.density)

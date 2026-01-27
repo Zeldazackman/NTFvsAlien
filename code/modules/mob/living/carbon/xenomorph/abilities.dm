@@ -245,6 +245,7 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 		/obj/structure/bed/nest,
 		/obj/structure/xeno/lighttower,
 		/obj/structure/bed/nest/advanced,
+		/obj/structure/bed/nest/advanced/special,
 		/turf/closed/wall/resin/regenerating/special/bulletproof,
 		/turf/closed/wall/resin/regenerating/special/fireproof,
 		/turf/closed/wall/resin/regenerating/special/hardy,

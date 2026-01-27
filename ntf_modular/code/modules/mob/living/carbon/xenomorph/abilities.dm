@@ -580,7 +580,7 @@
 	ADD_TRAIT(victim, TRAIT_STASIS, TRAIT_STASIS)
 	victim.forceMove(owner_xeno)
 	owner_xeno.eaten_mob = victim
-	if(xeno_owner.eaten_mob?.mob_size)
+	if(xeno_owner.eaten_mob?.mob_size && !ismonkey(xeno_owner.eaten_mob) && !isxenolarva(xeno_owner.eaten_mob))
 		xeno_owner.add_movespeed_modifier("devourer", TRUE, 0, NONE, TRUE, xeno_owner.eaten_mob.mob_size)
 	if(ishuman(victim))
 		var/obj/item/radio/headset/mainship/headset = victim.wear_ear
@@ -613,8 +613,8 @@
 		playsound(xeno_owner.loc, 'sound/weapons/thudswoosh.ogg', 25, 1, 7)
 
 		xeno_owner.eaten_mob = target
-		if(xeno_owner.eaten_mob?.mob_size)
-			xeno_owner.add_movespeed_modifier("hauler", TRUE, 0, NONE, TRUE, xeno_owner.eaten_mob.mob_size)
+		if(xeno_owner.eaten_mob?.mob_size && !ismonkey(xeno_owner.eaten_mob) && !isxenolarva(xeno_owner.eaten_mob))
+			xeno_owner.add_movespeed_modifier("hauler", TRUE, 0, NONE, TRUE, xeno_owner.eaten_mob.mob_size/2)
 		xeno_owner.eaten_mob.forceMove(xeno_owner.loc, get_dir(target.loc, xeno_owner.loc))
 		xeno_owner.eaten_mob.handle_haul(xeno_owner)
 		RegisterSignal(xeno_owner.eaten_mob, COMSIG_MOB_DEATH, PROC_REF(release_dead_haul))

@@ -306,6 +306,7 @@
 			monkey.death()
 			log_game("Marking [logdetails(monkey)] as undefibbable because it is giving birth as a monkey.")
 			monkey.set_undefibbable()
+
 		victim.take_overall_damage(140, BRUTE, MELEE)
 		victim.take_overall_damage(20, BURN, MELEE)
 	if(ishuman(victim) && !(SSticker.mode.round_type_flags & MODE_FREE_LARVABURST))
