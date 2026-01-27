@@ -784,7 +784,7 @@ So if we are on the 32th absolute pixel coordinate we are on tile 1, but if we a
 	if(proj.firer == src)
 		return FALSE
 	if(lying_angle && src != proj.original_target)
-		if(proj.firer.faction)
+		if(proj.firer?.faction)
 			if((GLOB.faction_to_iff[proj.firer.faction] & get_iff_signal()) || incapacitated())
 				return FALSE
 		else //normal behavior if no faction on proj
