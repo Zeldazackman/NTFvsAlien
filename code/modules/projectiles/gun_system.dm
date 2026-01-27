@@ -1851,6 +1851,7 @@
 		var/mob/living/living_firer = firer
 		if(living_firer.IsStaggered())
 			projectile_to_fire.damage *= STAGGER_DAMAGE_MULTIPLIER
+			projectile_to_fire.accuracy *= STAGGER_ACCURACY_MULTIPLIER
 
 ///Sets the projectile accuracy and scatter
 /obj/item/weapon/gun/proc/setup_bullet_accuracy()

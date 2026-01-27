@@ -251,3 +251,6 @@
 #define CAVE_FULL_INTERFERENCE 2 //! Prevents incoming and outgoing messages.
 
 #define ANTENNA_SYNCING_TIME 10 SECONDS //! Time needed to initially configure an antenna module after equipping.
+
+//NTF ADDITIONS
+#define STAGGER_ACCURACY_MULTIPLIER 0.5
