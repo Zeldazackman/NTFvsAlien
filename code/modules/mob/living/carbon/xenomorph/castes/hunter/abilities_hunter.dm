@@ -404,7 +404,8 @@
 	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(movement_fx))
 	RegisterSignal(owner, COMSIG_XENO_OBJ_THROW_HIT, PROC_REF(object_hit))
 	RegisterSignal(owner, COMSIG_XENOMORPH_LEAP_BUMP, PROC_REF(mob_hit))
-	RegisterSignal(owner, COMSIG_MOVABLE_POST_THROW, PROC_REF(pounce_complete))
+	// RegisterSignal(owner, COMSIG_MOVABLE_POST_THROW, PROC_REF(pounce_complete))
+	RegisterSignal(owner, COMSIG_MOVABLE_POST_THROW, PROC_REF(laying_check))
 	SEND_SIGNAL(owner, COMSIG_XENOMORPH_POUNCE)
 	xeno_owner.xeno_flags |= XENO_LEAPING
 	xeno_owner.add_pass_flags(leap_pass_flags, type)
@@ -453,9 +454,10 @@
 	var/mob/living/victim = locate() in xeno_owner.loc.contents
 	if(victim && victim.lying_angle)
 		mob_hit(xeno_owner, victim)
+	else
+		pounce_complete()
 
 /datum/action/ability/activable/xeno/pounce/proc/pounce_complete()
-	laying_check()
 	UnregisterSignal(owner, list(COMSIG_MOVABLE_MOVED, COMSIG_XENO_OBJ_THROW_HIT, COMSIG_XENOMORPH_LEAP_BUMP, COMSIG_MOVABLE_POST_THROW))
 	SEND_SIGNAL(owner, COMSIG_XENOMORPH_POUNCE_END)
 	xeno_owner.xeno_flags &= ~XENO_LEAPING
