@@ -400,11 +400,11 @@
 		return
 	if(!user.sexcon || !sexcon)
 		return
-	if(user != src)
+	if(dropping != src)
 		user.sexcon.set_target(src)
-		user.face_atom(src)
-		face_atom(user)
 		if(user.a_intent != INTENT_HELP && !user.sexcon.current_action)
+			user.face_atom(src)
+			face_atom(user)
 			var/action
 			if(gender == MALE)
 				if(user.gender == MALE)

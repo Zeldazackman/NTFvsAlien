@@ -177,7 +177,7 @@
 #define ENERGY_OVERCHARGE_FIRE_DELAY 10
 
 //Define stagger damage multipliers
-#define STAGGER_DAMAGE_MULTIPLIER 0.5 //-50% damage dealt by the staggered target after all other mods.
+#define STAGGER_DAMAGE_MULTIPLIER 1 //-50% damage dealt by the staggered target after all other mods. (ntf edit to 1 than 0.5 to make it not effective.)
 
 //Define smoke effects
 #define SMOKE_COUGH (1<<0)
