@@ -294,11 +294,12 @@ These act as a respawn mechanic growning a body and offering it up to ghosts.
 You remember nothing of your past life.
 
 You are weak, best rest up and get your strength before fighting.</span>"})
-	occupant.vomit()
 	occupant.set_resting(TRUE)
 	linked_console.radio.talk_into(src, "<b>New clone: [occupant] has been grown in [src] at: [get_area(src)].</b>", RADIO_CHANNEL_MEDICAL)
 	linked_console.radio.talk_into(src, "<b>New clone: [occupant] has been grown in [src] at: [get_area(src)]. Please move the fresh clone to a squad using the squad distribution console.</b>", RADIO_CHANNEL_COMMAND)
 	occupant = null
+	deltimer(timerid)
+	timerid = null
 	update_icon()
 
 /obj/machinery/cloning/vats/apc

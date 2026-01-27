@@ -153,6 +153,8 @@
 	return FALSE
 
 /proc/implant_embryo(mob/living/victim, target_hole, times = 1, mob/living/carbon/xenomorph/source, force_xenohive)
+	if(isxeno(victim) && !(SSticker.mode.round_type_flags & MODE_FREE_LARVABURST)) //no inf larva farm
+		return
 	if(!target_hole)
 		target_hole = pick(HOLE_LIST)
 	for(var/index in 1 to times)

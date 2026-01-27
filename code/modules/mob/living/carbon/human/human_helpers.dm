@@ -391,3 +391,80 @@
 		inactive_hand.attack_hand(src)
 		return
 	inactive_hand.attackby(active_hand, src)
+
+/mob/living/carbon/human/MouseDrop_T(atom/dropping, mob/user)
+	. = ..()
+	if(dropping != usr)
+		return
+	if(!isliving(dropping))
+		return
+	if(!user.sexcon || !sexcon)
+		return
+	if(user != src)
+		user.sexcon.set_target(src)
+		user.face_atom(src)
+		face_atom(user)
+		if(user.a_intent != INTENT_HELP && !user.sexcon.current_action)
+			var/action
+			if(gender == MALE)
+				if(user.gender == MALE)
+					if(isxeno(user))
+						action = pick(/datum/sex_action/anal_sex, /datum/sex_action/tailpegging_anal, /datum/sex_action/throat_sex)
+					else
+						action = pick(/datum/sex_action/anal_sex, /datum/sex_action/force_blowjob, /datum/sex_action/throat_sex)
+				else if(user.gender == FEMALE)
+					action = pick(/datum/sex_action/vaginal_ride_sex, /datum/sex_action/anal_ride_sex, /datum/sex_action/throat_sex)
+			else if(gender == FEMALE)
+				if(user.gender == MALE)
+					action = pick(/datum/sex_action/vaginal_sex, /datum/sex_action/anal_sex, /datum/sex_action/blowjob)
+				else if(user.gender == FEMALE)
+					if(isxeno(user))
+						action = pick(/datum/sex_action/scissoring, /datum/sex_action/tailpegging_vaginal, /datum/sex_action/tailpegging_anal, /datum/sex_action/cunnilingus)
+					else
+						action = pick(/datum/sex_action/scissoring, /datum/sex_action/facesitting, /datum/sex_action/cunnilingus)
+			user.sexcon.speed = SEX_SPEED_HIGH
+			if(user.a_intent == INTENT_GRAB) //in place of help cuz that opens regular sexcon
+				balloon_alert_to_viewers("QK heal sex")
+				user.start_pulling(src)
+				user.sexcon.drain_style = SEX_DRAIN_STYLE_HEAL_TARGET
+				user.sexcon.force = SEX_FORCE_LOW
+				user.sexcon.try_start_action(action)
+			if(user.a_intent == INTENT_HARM)
+				balloon_alert_to_viewers("QK health-drain sex")
+				user.sexcon.drain_style = SEX_DRAIN_STYLE_DRAIN_BLOOD_FAST
+				user.sexcon.force = SEX_FORCE_MAX
+				user.sexcon.try_start_action(action)
+			if(user.a_intent == INTENT_DISARM)
+				balloon_alert_to_viewers("QK stam-drain sex")
+				user.start_pulling(src)
+				user.sexcon.drain_style = SEX_DRAIN_STYLE_DRAIN_STAMINA
+				user.sexcon.force = SEX_FORCE_MID
+				user.sexcon.try_start_action(action)
+			if(isliving(user))
+				var/mob/living/luser = user
+				if(lying_angle)
+					AdjustParalyzed(2 SECONDS)
+					user.forceMove(loc)
+					user.sexcon.speed = SEX_SPEED_EXTREME
+				else
+					AdjustImmobilized(1 SECONDS)
+			return
+	erptime(user, src)
+
+/mob/living/carbon/human/proc/start_quick_fuck(mob/target, sexforce = SEX_FORCE_MID)
+	if(!istype(target))
+		return
+	var/action
+	if(gender == MALE)
+		if(target.gender == MALE)
+			action = pick(/datum/sex_action/anal_sex, /datum/sex_action/tailpegging_anal, /datum/sex_action/throat_sex)
+		else if(target.gender == FEMALE)
+			action = pick(/datum/sex_action/vaginal_ride_sex, /datum/sex_action/anal_ride_sex, /datum/sex_action/throat_sex)
+	else if(gender == FEMALE)
+		if(target.gender == MALE)
+			action = pick(/datum/sex_action/vaginal_sex, /datum/sex_action/anal_sex, /datum/sex_action/blowjob)
+		else if(target.gender == FEMALE)
+			action = pick(/datum/sex_action/scissoring, /datum/sex_action/tailpegging_vaginal, /datum/sex_action/tailpegging_anal, /datum/sex_action/force_cunnilingus)
+	sexcon.force = SEX_FORCE_MAX
+	sexcon.set_target(target)
+	sexcon.try_start_action(action)

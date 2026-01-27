@@ -6296,6 +6296,11 @@
 /area/outpost/cargo{
 	outside = 1
 	})
+"fop" = (
+/obj/structure/cable,
+/obj/vehicle/ridden/powerloader,
+/turf/open/floor/mainship/mono,
+/area/mainship/squads/req)
 "foH" = (
 /obj/structure/largecrate/random/barrel/red,
 /turf/open/floor/mainship/cargo,
@@ -24417,7 +24422,6 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/engineering/port_atmos)
 "ueP" = (
-/obj/vehicle/ridden/powerloader,
 /turf/open/floor/mainship/cargo,
 /area/mainship/squads/req)
 "ufx" = (
@@ -37562,7 +37566,7 @@ brX
 brX
 brX
 uuz
-ecl
+fop
 fXH
 pKW
 vZa

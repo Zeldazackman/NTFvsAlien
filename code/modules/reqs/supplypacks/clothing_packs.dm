@@ -79,7 +79,7 @@ CLOTHING
 /datum/supply_packs/clothing/night_vision_batteries
 	name = "Double pack of night vision batteries"
 	contains = list(/obj/item/cell/night_vision_battery, /obj/item/cell/night_vision_battery)
-	cost = 50
+	cost = 150
 
 /datum/supply_packs/clothing/saddle
 	name = "Runner Saddle"

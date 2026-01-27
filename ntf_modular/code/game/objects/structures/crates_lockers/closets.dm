@@ -92,3 +92,19 @@
 	else
 		playsound(cockcage.loc, 'sound/machines/buzz-two.ogg', 25, 1)
 	qdel(src)
+
+/obj/structure/closet/secure_closet/xeno_cage/MouseDrop(atom/over, src_location, over_location, src_control, over_control, params)
+	. = ..()
+	if(!Adjacent(usr))
+		return
+	if(!ishuman(usr))
+		return
+	if(length(contents))
+		return FALSE
+	if(ishuman(usr))
+		visible_message("[usr] begins to pack [src] up!")
+		if(do_after(usr, 2 SECONDS, TRUE, src, BUSY_ICON_FRIENDLY))
+			var/mob/living/carbon/human/huser = usr
+			var/thenade = new /obj/item/explosive/grenade/cagenade(loc)
+			huser.put_in_any_hand_if_possible(thenade)
+			qdel(src)

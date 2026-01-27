@@ -861,13 +861,13 @@
 
 /obj/item/armor_module/module/night_vision
 	name = "\improper BE-35 night vision kit"
-	desc = "Installation kit for the BE-35 night vision system. Slightly impedes movement."
+	desc = "Installation kit for the BE-35 night vision system."
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "night_vision"
 	attach_features_flags = ATTACH_REMOVABLE|ATTACH_NO_HANDS
 	slot = ATTACHMENT_SLOT_HEAD_MODULE
 	prefered_slot = SLOT_HEAD
-	slowdown = 0.1
+	slowdown = 0
 	///The goggles this module deploys
 	var/obj/item/clothing/glasses/night_vision/mounted/attached_goggles
 

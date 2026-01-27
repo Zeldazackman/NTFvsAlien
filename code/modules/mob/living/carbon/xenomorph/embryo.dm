@@ -310,7 +310,7 @@
 		victim.take_overall_damage(20, BURN, MELEE)
 	if(ishuman(victim) && !(SSticker.mode.round_type_flags & MODE_FREE_LARVABURST))
 		if(victim.getCloneLoss() < 30)
-			victim.take_overall_damage(45, CLONE, NONE)
+			victim.adjustCloneLoss(45)
 			victim.visible_message(span_warning("[victim]'s body and genitals are too devastated from this to perform another larva burst without treatment."))
 
 	if(((locate(/obj/structure/bed/nest) in loc) || loc_weeds_type) && !mind)

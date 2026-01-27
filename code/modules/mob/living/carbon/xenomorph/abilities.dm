@@ -1401,7 +1401,7 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 		X.face_atom(A)
 		X.do_jitter_animation()
 		A.do_jitter_animation()
-		to_chat(X, span_warning("We will cum in 7 seconds! Do not walk away until it is done. Though this has no purpose but fun as Xenomorph cant bear larvas."))
+		to_chat(X, span_warning("We will cum in 7 seconds! Do not walk away until it is done."))
 		playsound(X, 'sound/effects/alien_plapping.ogg', 40, channel = channel)
 		if(!do_after(X, 7 SECONDS, FALSE, victim, BUSY_ICON_DANGER, extra_checks = CALLBACK(X, TYPE_PROC_REF(/mob, break_do_after_checks), list("health" = X.health))))
 			to_chat(X, span_warning("We stop fucking \the [victim]. They probably were loose anyways."))
@@ -1411,6 +1411,7 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 		if(victim.stat == CONSCIOUS)
 			to_chat(victim, span_warning("[X] fucks you!"))
 			victim.emote("moan")
+		implant_embryo(victim, HOLE_VAGINA, 1, X)
 		succeed_activate()
 /////////////////////////////////
 // Cocoon
