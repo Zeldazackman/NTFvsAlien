@@ -260,7 +260,7 @@
 	desc = "Designed for mounting on modular armor. This older model provides minor resistance to acid, biological, and radiological attacks. Pairing this with a Mimir helmet module and mask will make the user impervious to xeno gas clouds. Made by ArcherCorp."
 	icon_state = "mod_biohazard"
 	worn_icon_state = "mod_biohazard_a"
-	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 15, FIRE = 0, ACID = 15)
+	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 25, FIRE = 0, ACID = 20)
 	slowdown = 0
 
 //SOM version
@@ -270,6 +270,7 @@
 	icon_state = "mithridatius"
 	worn_icon_state = "mithridatius_a"
 	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 25, FIRE = 0, ACID = 20)
+	slowdown = 0.2
 
 /obj/item/armor_module/module/mimir_environment_protection/mimir_helmet
 	name = "\improper Mimir Mk.2 environmental resistance system helmet module"
@@ -286,25 +287,13 @@
 	desc = "Designed for mounting on modular armor. This older model provides minor resistance to acid, as well as biological, and radiological threats. Pairing this with a Mimir helmet module and mask will make the user highly resistant to gas attacks, but will not provide immunity. Will impact mobility."
 	icon_state = "mod_biohazard"
 	worn_icon_state = "mod_biohazard_a"
-	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 15, FIRE = 0, ACID = 15)
+	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 25, FIRE = 0, ACID = 20)
 	slowdown = 0.2
 
 /obj/item/armor_module/module/mimir_environment_protection/mimir_helmet/mark1 //gas protection
 	name = "\improper Mimir Mk.1 environmental resistance system helmet module"
 	desc = "Designed for mounting on a modular helmet. This older model provides minor resistance to acid, as well as biological, and radiological threats. Pairing this with a Mimir helmet module and mask will make the user highly resistant to gas attacks, but will not provide immunity. Will impact mobility."
 	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 15, FIRE = 0, ACID = 15)
-
-//Explosive defense armor
-/obj/item/armor_module/module/hlin_explosive_armor
-	name = "Hlin Explosive Compensation Module"
-	desc = "Designed for mounting on modular armor. Uses a complex set of armor plating and compensation to lessen the effect of explosions. Made by ArcherCorp."
-//SOM version
-/obj/item/armor_module/module/mimir_environment_protection/som
-	name = "\improper Mithridatius hostile environment protection system"
-	desc = "Designed for mounting on modular SOM armor. This module appears to be designed to protect the user from the effects of radiological attacks, although it also provides improved resistance against other environmental threats such as acids and gasses. Pairing this with a Mithridatius helmet module and mask will make the user impervious to gas clouds. Will impact mobility."
-	icon_state = "mithridatius"
-	worn_icon_state = "mithridatius_a"
-	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 25, FIRE = 0, ACID = 20)
 
 /*
 	Explosive defense armor

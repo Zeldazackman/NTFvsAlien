@@ -425,7 +425,8 @@
 			user.sexcon.speed = SEX_SPEED_HIGH
 			if(user.a_intent == INTENT_GRAB) //in place of help cuz that opens regular sexcon
 				balloon_alert_to_viewers("QK heal sex")
-				user.start_pulling(src)
+				if(!buckled)
+					user.start_pulling(src)
 				user.sexcon.drain_style = SEX_DRAIN_STYLE_HEAL_TARGET
 				user.sexcon.force = SEX_FORCE_LOW
 				user.sexcon.try_start_action(action)
@@ -436,7 +437,8 @@
 				user.sexcon.try_start_action(action)
 			if(user.a_intent == INTENT_DISARM)
 				balloon_alert_to_viewers("QK stam-drain sex")
-				user.start_pulling(src)
+				if(!buckled)
+					user.start_pulling(src)
 				user.sexcon.drain_style = SEX_DRAIN_STYLE_DRAIN_STAMINA
 				user.sexcon.force = SEX_FORCE_MID
 				user.sexcon.try_start_action(action)

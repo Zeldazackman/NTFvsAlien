@@ -436,7 +436,7 @@
 	greyscale_config = /datum/greyscale_config/armor_mk1
 	greyscale_colors = ARMOR_PALETTE_BLACK
 
-	armor_protection_flags = HEAD
+	armor_protection_flags = HEAD|FACE|EYES
 	armor_features_flags = ARMOR_NO_DECAP
 	inventory_flags = BLOCKSHARPOBJ
 	inv_hide_flags = HIDEEARS|HIDE_EXCESS_HAIR
