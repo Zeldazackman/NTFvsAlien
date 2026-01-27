@@ -443,7 +443,6 @@
 				user.sexcon.force = SEX_FORCE_MID
 				user.sexcon.try_start_action(action)
 			if(isliving(user))
-				var/mob/living/luser = user
 				if(lying_angle)
 					AdjustParalyzed(2 SECONDS)
 					user.forceMove(loc)
