@@ -120,7 +120,6 @@
 		return
 	if(victim.stat == DEAD)
 		to_chat(src, span_warning("We impregnate \the [victim] with a dormant larva."))
-	implant_embryo(victim, hole_target, source = src)
 	if(prob(5))
 		to_chat(src, span_warning("We sense we impregnated \the [victim] with TWINS!."))
 		implant_embryo(victim, hole_target, 2, source = src)
@@ -152,13 +151,13 @@
 		return TRUE
 	return FALSE
 
-/proc/implant_embryo(mob/living/victim, target_hole, times = 1, mob/living/carbon/xenomorph/source, force_xenohive)
+/proc/implant_embryo(mob/living/victim, target_hole, times = 1, mob/living/carbon/xenomorph/source, force_xenohive, override_limit = MAX_LARVA_PREGNANCIES)
 	if(isxeno(victim) && !(SSticker.mode.round_type_flags & MODE_FREE_LARVABURST)) //no inf larva farm
 		return
 	if(!target_hole)
 		target_hole = pick(HOLE_LIST)
 	for(var/index in 1 to times)
-		if(can_implant_embryo(victim))
+		if(can_implant_embryo(victim, override_limit))
 			var/obj/item/alien_embryo/embryo = new(victim)
 			if(source)
 				embryo.hivenumber = source.get_xeno_hivenumber()

@@ -57,7 +57,8 @@
 
 /obj/structure/bed/nest/advanced/proc/on_cross(datum/source, atom/movable/A, oldloc, oldlocs)
 	SIGNAL_HANDLER
-	try_to_grab(A)
+	if(!HAS_TRAIT(A, TRAIT_HAULED))
+		try_to_grab(A)
 
 /obj/structure/bed/nest/advanced/proc/try_to_grab(mob/living/carbon/human/target)
 	if(!COOLDOWN_FINISHED(src, tentacle_cooldown))

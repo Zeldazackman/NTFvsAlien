@@ -191,13 +191,13 @@
 					A.apply_damage((damageperlarva/damagescaledivisor)*implanted_embryos, D, BODY_ZONE_PRECISE_GROIN, updating_health = TRUE) //It'll get worse!
 				A.apply_damage(3, CLONE, BODY_ZONE_PRECISE_GROIN, updating_health = TRUE) //REALLY ripping that womb
 	if(prob(chancebunch)) //Queen has a higher chance to lay in batches.
-		implant_embryo(A, victimhole, 2, source = X)
+		implant_embryo(A, victimhole, 2, source = X, override_limit = MAX_LARVA_PREGNANCIES*2)
 		to_chat(owner, span_danger("You lay multiple larva at once!"))
 		to_chat(A, span_danger("You feel multiple larva being inserted at once!"))
 		if(ismonkey(A))
 			A.apply_damage(larvalbunch*10, CLONE, BODY_ZONE_PRECISE_GROIN, updating_health = TRUE)
 	else
-		implant_embryo(A, victimhole, source = X)
+		implant_embryo(A, victimhole, source = X, override_limit = MAX_LARVA_PREGNANCIES*2)
 	if(A.stat == DEAD)
 		owner.visible_message(span_danger("[X] causes [A]'s belly to blow up in a gorey mess!"), span_danger("We make [A]'s belly explode into a gorey mess!"), span_warning("You hear a gorey explosion."), 5, A)
 		for(var/obj/item/alien_embryo/implanted in A.contents)
