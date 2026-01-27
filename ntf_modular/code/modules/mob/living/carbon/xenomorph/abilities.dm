@@ -802,6 +802,9 @@
 	playsound(src, pick('sound/effects/bang.ogg','sound/effects/metal_crash.ogg','sound/effects/meteorimpact.ogg'), 25, 1)
 	Shake(duration = 0.5 SECONDS)
 
+	if(!istype(src, /obj/machinery/light))
+		attack_alien(xeno, damage * structure_damage_multiplier, BRUTE)
+
 	if(!istype(src, /obj/machinery/power/apc))
 		if(!CHECK_BITFIELD(machine_stat, PANEL_OPEN))
 			ENABLE_BITFIELD(machine_stat, PANEL_OPEN)

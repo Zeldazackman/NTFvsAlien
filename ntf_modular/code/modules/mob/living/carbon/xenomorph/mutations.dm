@@ -1,6 +1,6 @@
 /datum/mutation_upgrade/shell/lone_lurker
 	name = "Lone Lurker"
-	desc = "You will gain the ability to regenerate health, sunder and plasma off weeds but your benefit from pheromones is reduced to 0.5x/0.7x/0.9x."
+	desc = "You will gain the ability to regenerate health, sunder and plasma off weeds as if on weeds but your benefit from pheromones is reduced to 0.5x/0.7x/0.9x."
 	/// For the first structure, what will our phero effectiveness reduction be
 	var/multiplier_initial = 0.5
 	/// For each structure
@@ -9,7 +9,7 @@
 /datum/mutation_upgrade/shell/lone_lurker/get_desc_for_alert(new_amount)
 	if(!new_amount)
 		return ..()
-	return "You will gain the ability to regenerate health, sunder and plasma off weeds but your benefit from pheromones is reduced to [1 + get_multiplier(new_amount)]x"
+	return "You will gain the ability to regenerate health, sunder and plasma off weeds as if on weeds but your benefit from pheromones is reduced to [1 + get_multiplier(new_amount)]x"
 
 /datum/mutation_upgrade/shell/lone_lurker/on_mutation_enabled()
 	. = ..()
