@@ -215,13 +215,18 @@
 	var/datum/job/xeno_job = SSjob.GetJobType(/datum/job/xenomorph)
 	// Spawn more xenos to help maintain the ratio.
 	var/xenomorphs_below_ratio = get_jobpoint_difference() / xeno_job.job_points_needed
+	log_game("Crash autobalance estimates [xenomorphs_below_ratio] extra xenos needed for balance.")
 	if(xenomorphs_below_ratio >= 1)
+		log_game("Adding 1 Xenomorph larva due to low xenos per marine on crash.")
+		GLOB.round_statistics.larva_from_crash_autobalance++
 		xeno_job.add_job_positions(1)
 		xeno_hive.update_tier_limits()
 		return
 	// Make sure there is at least two xenos regardless of ratio.
 	var/total_xenos = xeno_hive.get_total_xeno_number() + (xeno_job.total_positions - xeno_job.current_positions)
 	if(total_xenos < 2)
+		log_game("Adding 1 Xenomorph larva due to low xeno pop on crash.")
+		GLOB.round_statistics.larva_from_crash_autobalance++
 		xeno_job.add_job_positions(1)
 		xeno_hive.update_tier_limits()
 
@@ -264,3 +269,9 @@
 		var/jobpoint_difference = get_jobpoint_difference() + amount
 		adjusted_jobworth_list[index] = clamp(jobpoint_difference, 0, amount)
 	return adjusted_jobworth_list
+
+/datum/game_mode/infestation/crash/get_status_tab_items(datum/dcs, mob/source, list/items)
+	..()
+	if(/datum/job/xenomorph in valid_job_types)
+		var/datum/job/xeno_job = SSjob.GetJobType(/datum/job/xenomorph)
+		items += "Autobalance estimated larva needed to add for balance: [get_jobpoint_difference()/xeno_job.job_points_needed]"
