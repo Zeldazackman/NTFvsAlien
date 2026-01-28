@@ -48,6 +48,8 @@
 		/datum/mutation_upgrade/shell/splitting_mirage,
 		/datum/mutation_upgrade/shell/cloaking_mirage,
 		/datum/mutation_upgrade/shell/lone_lurker,
+		/datum/mutation_upgrade/spur/ambush/assassin,
+		/datum/mutation_upgrade/spur/maul/assassin,
 		/datum/mutation_upgrade/spur/debilitating_strike,
 		/datum/mutation_upgrade/veil/death_trail,
 		/datum/mutation_upgrade/veil/mirage_flood,

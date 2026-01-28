@@ -158,6 +158,11 @@
 			to_chat(user, "<span class='notice'>[victim] has no useful biomass for us.</span>")
 			return
 
+		if(HAS_TRAIT(victim, TRAIT_MAPSPAWNED))
+			to_chat(user, "<span class='notice'>[victim] is too decayed to be of too much use.</span>")
+			points_worth *= 0.5
+			return
+
 		visible_message("[user] starts putting [victim] into [src].", 3)
 
 		if(!do_after(user, 20, FALSE, victim, BUSY_ICON_DANGER) || QDELETED(src))
@@ -165,6 +170,11 @@
 
 		if(ismonkey(victim))
 			points_worth *= 0.5
+
+		for(var/mob/living/carbon/xenomorph/larva/grownlarva in victim.contents)
+			visible_message("A [grownlarva] bursts out of [victim] and into [src]!.", 3)
+			grownlarva.forceMove(loc)
+			grownlarva.burrow()
 
 		victim.despawn() //basically gore cryo
 

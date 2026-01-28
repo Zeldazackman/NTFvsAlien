@@ -74,7 +74,7 @@
 		if(!COOLDOWN_FINISHED(ads, intercept_cooldown))
 			continue
 		var/datum/hive_status/hive = GLOB.hive_datums[ads.get_xeno_hivenumber()]
-		if(istype(hive) && (faction in hive.allied_factions))
+		if(istype(hive) && (ads.faction in hive.allied_factions))
 			continue
 		if(ads.try_intercept(loc, src, rand(0.3, 0.5), 5))
 			to_chat(src, span_xenodanger("We are shot by the talls' defenses!"))

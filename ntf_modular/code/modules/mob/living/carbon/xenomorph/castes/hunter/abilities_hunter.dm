@@ -36,13 +36,13 @@
 	name = "Phase Out"
 	action_icon_state = "hunter_invisibility"
 	action_icon = 'icons/Xeno/actions/hunter.dmi'
-	desc = "Become fully invisible for 6 seconds, or until damaged. Attacking does not break invisibility."
+	desc = "Become fully invisible for 10 seconds, or until damaged. Attacking does not break invisibility."
 	ability_cost = 10
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_TOGGLE_PHASEOUT,
 	)
 	cooldown_duration = 6 SECONDS
-	var/stealth_duration = 6 SECONDS
+	stealth_duration = 10 SECONDS
 	disable_on_signals = list(
 		COMSIG_LIVING_IGNITED,
 		COMSIG_LIVING_ADD_VENTCRAWL,

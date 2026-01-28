@@ -59,6 +59,8 @@
 	var/bonus_maximum_stealth_ap = 0
 	/// How much does a successful sneak attack blind for?
 	var/blinding_stacks = 0
+	///stealth duration for siblings, ntf addition
+	var/stealth_duration = -1
 
 /datum/action/ability/xeno_action/stealth/New(Target)
 	. = ..()

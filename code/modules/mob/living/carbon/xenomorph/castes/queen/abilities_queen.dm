@@ -175,7 +175,7 @@
 		A.emote("scream")
 		A.apply_damage((damageperlarva/damagescaledivisor)*implanted_embryos, BRUTE, BODY_ZONE_PRECISE_GROIN, updating_health = TRUE) //Too many larvae!
 		A.apply_damage(1*implanted_embryos, CLONE, BODY_ZONE_PRECISE_GROIN, updating_health = TRUE) //ripping that womb
-		if(ismonkey(A))
+		if(ismonkey(A) || HAS_TRAIT(A, TRAIT_FRAIL_LARVABURSTS))
 			A.apply_damage(50, BRUTE, BODY_ZONE_PRECISE_GROIN, updating_health = TRUE) //They CERTAINLY aren't fitting in a monkey.
 			A.apply_damage(10*implanted_embryos, CLONE, BODY_ZONE_PRECISE_GROIN, updating_health = TRUE)
 			if(prob(50))
@@ -194,7 +194,7 @@
 		implant_embryo(A, victimhole, 2, source = X, override_limit = MAX_LARVA_PREGNANCIES*2)
 		to_chat(owner, span_danger("You lay multiple larva at once!"))
 		to_chat(A, span_danger("You feel multiple larva being inserted at once!"))
-		if(ismonkey(A))
+		if(ismonkey(A) || HAS_TRAIT(A, TRAIT_FRAIL_LARVABURSTS))
 			A.apply_damage(larvalbunch*10, CLONE, BODY_ZONE_PRECISE_GROIN, updating_health = TRUE)
 	else
 		implant_embryo(A, victimhole, source = X, override_limit = MAX_LARVA_PREGNANCIES*2)

@@ -109,6 +109,8 @@
 	if(gib)
 		victim.gib()
 	victim = null
+	obj_integrity = 1
+	max_integrity = 1
 	STOP_PROCESSING(SSslowprocess, src)
 
 /obj/structure/cocoon/attacked_by(obj/item/I, mob/living/user, def_zone)

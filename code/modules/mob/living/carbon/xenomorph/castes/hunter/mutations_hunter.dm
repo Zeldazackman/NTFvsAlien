@@ -222,6 +222,8 @@
 	if(!stealth_ability)
 		return
 	stealth_ability.movement_cost_multiplier += 2 // 100% -> 300%
+	if(stealth_ability.stealth_duration != -1)
+		stealth_ability.stealth_duration -= 3
 	stealth_ability.bonus_maximum_stealth_ap += get_ap(0)
 
 /datum/mutation_upgrade/spur/ambush/on_mutation_disabled()
@@ -230,6 +232,8 @@
 	if(!stealth_ability)
 		return
 	stealth_ability.movement_cost_multiplier -= 2 // 300% -> 100%
+	if(stealth_ability.stealth_duration != -1)
+		stealth_ability.stealth_duration += 3
 	stealth_ability.bonus_maximum_stealth_ap -= get_ap(0)
 
 /datum/mutation_upgrade/spur/ambush/on_structure_update(previous_amount, new_amount)

@@ -113,7 +113,7 @@
 			impregdamagetodeal *= damagemult
 		victim.apply_damage(aciddamagetodeal, BURN, damageloc, updating_health = TRUE)
 		victim.apply_damage(impregdamagetodeal, BRUTE, damageloc, updating_health = TRUE)
-		if(ismonkey(victim))
+		if(ismonkey(victim) || HAS_TRAIT(victim, TRAIT_FRAIL_LARVABURSTS))
 			victim.apply_damage(impregdamagetodeal, BRUTE, damageloc, updating_health = TRUE)
 	if(!can_implant_embryo(victim))
 		to_chat(src, span_warning("We came but this host is already full of young ones."))

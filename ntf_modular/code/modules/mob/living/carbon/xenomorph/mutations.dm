@@ -32,6 +32,25 @@
 /datum/mutation_upgrade/shell/lone_lurker/proc/get_multiplier(structure_count, include_initial = TRUE)
 	return (include_initial ? multiplier_initial : 0) + (multiplier_per_structure * structure_count)
 
+
+//*********************//
+//         Spur        //
+//*********************//
+
+//mostly reflavor
+/datum/mutation_upgrade/spur/ambush/assassin
+	name = "Execution"
+	desc = "Phase Out's duration is decreased by 3 seconds. Your next sneak attack has an additional 15/22.5/30 AP."
+
+/datum/mutation_upgrade/spur/ambush/assassin/get_desc_for_alert(new_amount)
+	if(!new_amount)
+		return ..()
+	return  "Phase Out's duration is decreased by 3 seconds. Your next sneak attack has an additional [get_ap(new_amount)] AP."
+
+/datum/mutation_upgrade/spur/maul/assassin
+	name = "Leaper"
+	desc = "Lunge's cooldown is set to 60/50/40% of its original value."
+
 //*********************//
 //         Veil        //
 //*********************//
