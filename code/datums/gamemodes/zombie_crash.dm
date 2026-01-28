@@ -1,7 +1,7 @@
 /datum/game_mode/infestation/crash/zombie
 	name = "Zombie Crash"
 	config_tag = "Zombie Crash"
-	round_type_flags = MODE_ALLOW_MARINE_QUICKBUILD
+	round_type_flags = MODE_ALLOW_MARINE_QUICKBUILD|MODE_XENO_GRAB_DEAD_ALLOWED|MODE_FREE_LARVABURST|MODE_INFESTATION|MODE_PSY_POINTS|MODE_SILO_RESPAWN|MODE_MUTATIONS_OBTAINABLE
 	xeno_abilities_flags = ABILITY_CRASH
 	required_players = 1
 	valid_job_types = list(
@@ -9,18 +9,24 @@
 		/datum/job/terragov/squad/engineer = 3,
 		/datum/job/terragov/squad/corpsman = 1,
 		/datum/job/terragov/squad/smartgunner = 1,
+		/datum/job/terragov/squad/specialist = 1,
 		/datum/job/terragov/squad/leader = 1,
 		/datum/job/terragov/medical/professor = 1,
 		/datum/job/terragov/silicon/synthetic = 1,
 		/datum/job/terragov/command/fieldcommander = 1,
+		/datum/job/xenomorph = 3,
+		/datum/job/xenomorph/queen = 1,
 	)
 	job_points_needed_by_job_type = list(
 		/datum/job/terragov/squad/smartgunner = 20,
+		/datum/job/terragov/squad/specialist = 20,
 		/datum/job/terragov/squad/corpsman = 5,
 		/datum/job/terragov/squad/engineer = 5,
+		/datum/job/xenomorph = CRASH_LARVA_POINTS_NEEDED,
 	)
 	blacklist_ground_maps = list(MAP_COLONY1, MAP_BIG_RED, MAP_DELTA_STATION, MAP_LV_624, MAP_LV_624BASES, MAP_WHISKEY_OUTPOST, MAP_OSCAR_OUTPOST, MAP_FORT_PHOBOS, MAP_CHIGUSA, MAP_LAVA_OUTPOST, MAP_CORSAT, MAP_KUTJEVO_REFINERY, MAP_BLUESUMMERS)
 	time_between_round = 1 HOURS
+	xenorespawn_time = 3 MINUTES
 
 /datum/game_mode/infestation/crash/zombie/can_start(bypass_checks = FALSE)
 	if((!(config_tag in SSmapping.configs[GROUND_MAP].gamemodes) || (SSmapping.configs[GROUND_MAP].map_name in blacklist_ground_maps)) && !bypass_checks)
