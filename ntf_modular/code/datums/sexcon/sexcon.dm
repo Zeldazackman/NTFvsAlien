@@ -644,7 +644,7 @@
 			if(current_action)
 				stop_current_action()
 			return
-		if(!do_after(user, (action.do_time / get_speed_multiplier()), IGNORE_HAND|IGNORE_HELD_ITEM, target, ignore_turf_checks = IGNORE_LOC_CHANGE|IGNORE_USER_LOC_CHANGE|IGNORE_TARGET_LOC_CHANGE))
+		if(!do_mob(user, target, (action.do_time / get_speed_multiplier()), null, null, ignore_flags = IGNORE_HAND|IGNORE_HELD_ITEM|IGNORE_LOC_CHANGE|IGNORE_USER_LOC_CHANGE|IGNORE_TARGET_LOC_CHANGE))
 			break
 		if(current_action == null || performed_action_type != current_action)
 			break
