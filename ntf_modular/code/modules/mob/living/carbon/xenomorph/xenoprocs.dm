@@ -32,16 +32,31 @@
 	set category = "Alien"
 
 	update_xeno_gender(src, TRUE)
+	var/gender_swap_cooldown
 
 /mob/living/carbon/xenomorph/proc/update_xeno_gender(mob/living/carbon/xenomorph/user = src, swapping = FALSE)
 	remove_overlay(GENITAL_LAYER)
 	if(QDELETED(user)||QDELETED(src))
 		return
 	var/xgen = user?.client?.prefs?.xenogender
-	if(swapping) //flips to next in selection
-		xgen += 1
-	if(xgen >= 5) //revert to start if over max.
-		xgen = 1
+	if(swapping)
+		if(!TIMER_COOLDOWN_FINISHED(src, gender_swap_cooldown))
+			to_chat(src, span_xenonotice("You need to wait [DisplayTimeText(COOLDOWN_TIMELEFT(src, gender_swap_cooldown)] more.")))
+			return
+		var/gchoice = tgui_input_list(src, "Select a new role to take.", "Gender Selection", list(
+			"neuter" = 1,
+			"female" = 2,
+			"male" = 3,
+			"futa" = 4,
+			"cancel" = 5,
+		), "cancel")
+		if(xgen == gchoice)
+			return
+		if(gchoice = 5)
+			return
+		xgen = gchoice
+		if(!(SSticker.mode.round_type_flags & MODE_FREE_LARVABURST))
+			TIMER_COOLDOWN_START(src, gender_swap_cooldown, 5 MINUTES)
 	//updates the overlays
 	user.client?.prefs?.xenogender = xgen
 	genital_overlay.layer = layer + 0.3

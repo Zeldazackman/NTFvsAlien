@@ -8,6 +8,8 @@
 	if(user == target)
 		return FALSE
 
+	if(target.gender != MALE && !target.sexcon.can_use_penis())
+		return FALSE
 
 	return TRUE
 
@@ -15,6 +17,8 @@
 	if(user == target)
 		return FALSE
 
+	if(target.gender != MALE && !target.sexcon.can_use_penis())
+		return FALSE
 
 	return TRUE
 

@@ -249,6 +249,10 @@
 	else
 		log_combat(user, blame_mob, "was milked into a container ([logdetails(C)]) by")
 	user.visible_message(span_lovebold("[user] lactates into [C]!"))
+	if(ishuman(user) || ismonkey(user)) //this makes me unhappy, need proper genitals and organs for this shit...
+		C.reagents.add_reagent(/datum/reagent/consumable/milk, 5)
+	else if(isxeno(user))
+		C.reagents.add_reagent(/datum/reagent/consumable/milk/xeno, 5)
 	handle_ejaculation_drain(blame_mob)
 	playsound(user, 'ntf_modular/sound/misc/mat/endout.ogg', 50, TRUE, 7, ignore_walls = FALSE)
 	after_ejaculation()
@@ -480,7 +484,18 @@
 	milk_container(milker.get_active_held_item(), milker)
 
 /datum/sex_controller/proc/can_use_penis()
-	return TRUE
+	if(!user.client)
+		return TRUE //return true for clientless shit anyway
+	if(user.client?.prefs?.genitalia_cock)
+		return TRUE
+	return FALSE
+
+/datum/sex_controller/proc/can_use_breasts()
+	if(!user.client)
+		return TRUE //return true for clientless shit anyway
+	if(user.client?.prefs?.genitalia_boobs)
+		return TRUE
+	return FALSE
 
 /datum/sex_controller/proc/considered_limp()
 	if(arousal >= AROUSAL_HARD_ON_THRESHOLD)
@@ -512,7 +527,7 @@
 	var/speed_name = get_speed_string()
 	var/drain_style_name = get_drain_style_string()
 	var/manual_arousal_name = get_manual_arousal_string()
-	if(user.gender != MALE)
+	if(user.gender != MALE && !user.sexcon.can_use_penis())
 		dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a></center>"
 	else
 		dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a> ~|~ <a href='?src=[REF(src)];task=manual_arousal_down'>\<</a> [manual_arousal_name] <a href='?src=[REF(src)];task=manual_arousal_up'>\></a></center>"

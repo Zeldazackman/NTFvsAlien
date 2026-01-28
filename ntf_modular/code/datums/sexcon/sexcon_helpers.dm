@@ -127,17 +127,23 @@
 		implant_embryo(victim, hole_target, source = src)
 
 /mob/living/carbon/xenomorph/proc/xenoimpregify()
-	if(!preggo)
+	if(!preggo && ((SSticker.mode.round_type_flags & MODE_FREE_LARVABURST) || (xenogender == 2 || xenogender == 4)))
 		to_chat(src, span_alien("We feel a new larva forming within us."))
 		addtimer(CALLBACK(src, PROC_REF(xenobirth)), 5 MINUTES)
+		Shake(3 SECONDS)
 		preggo = TRUE
 		return TRUE
+	return FALSE
 
 /mob/living/carbon/xenomorph/proc/xenobirth()
 	preggo = FALSE
 	GLOB.round_statistics.total_larva_burst++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "total_larva_burst")
 	playsound(src, pick('sound/voice/alien/chestburst.ogg','sound/voice/alien/chestburst2.ogg'), 10, FALSE, 7, ignore_walls = FALSE)
+	visible_message(span_warning("[src] starts to shake and drop to the floor."), span_warning("We are unable to move as a larva is coming out of us!"), span_warning("You hear a thud."), 5)
+	Shake(8 SECONDS)
+	AdjustParalyzed(15 SECONDS)
+	sleep(15 SECONDS)
 	visible_message(span_warning("A larva drops out of [src]'s cunt and burrows away!"), span_warning("a larva drops out of our cunt and burrows away."), span_warning("You hear a splatter."), 5)
 	var/datum/job/xeno_job = SSjob.GetJobType(GLOB.hivenumber_to_job_type[hivenumber])
 	xeno_job.add_job_points(1) //can be made a var if need be.

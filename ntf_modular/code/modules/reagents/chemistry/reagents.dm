@@ -16,6 +16,13 @@
 	toxpwr = 0.5
 	meltprob = 0
 
+/datum/reagent/consumable/milk/xeno
+	name = "Xenomorphic Milk"
+	description = "An opaque greenish liquid produced by the mammary glands of xenomorphs."
+	color = "#c4e2c4"
+	taste_description = "fizzy milk"
+	reagent_ui_priority =  REAGENT_UI_MUNDANE
+
 /datum/reagent/consumable/nutriment/cum/xeno
 	name = "Xenomorphic Sperm"
 	description = "Xeno cum, not directly harmful when not ejected alongside acid like most xenomorphs do."

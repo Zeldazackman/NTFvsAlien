@@ -457,12 +457,12 @@
 		return
 	var/action
 	if(gender == MALE)
-		if(target.gender == MALE)
+		if(target.gender == MALE || target.sexcon.can_use_penis())
 			action = pick(/datum/sex_action/anal_sex, /datum/sex_action/tailpegging_anal, /datum/sex_action/throat_sex)
 		else if(target.gender == FEMALE)
 			action = pick(/datum/sex_action/vaginal_ride_sex, /datum/sex_action/anal_ride_sex, /datum/sex_action/throat_sex)
 	else if(gender == FEMALE)
-		if(target.gender == MALE)
+		if(target.gender == MALE || target.sexcon.can_use_penis())
 			action = pick(/datum/sex_action/vaginal_sex, /datum/sex_action/anal_sex, /datum/sex_action/blowjob)
 		else if(target.gender == FEMALE)
 			action = pick(/datum/sex_action/scissoring, /datum/sex_action/tailpegging_vaginal, /datum/sex_action/tailpegging_anal, /datum/sex_action/force_cunnilingus)

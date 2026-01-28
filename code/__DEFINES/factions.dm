@@ -125,9 +125,9 @@ GLOBAL_LIST_INIT(faction_to_iff, list(
 ///Acronyms for each faction, or the shortest name possible
 GLOBAL_LIST_INIT(faction_to_acronym, list(
 	FACTION_NEUTRAL = "Neutral",
-	FACTION_TERRAGOV = "TGMC",
+	FACTION_TERRAGOV = "NTC",
 	FACTION_SPECFORCE = "SRF",
-	FACTION_NANOTRASEN = "PMC",
+	FACTION_NANOTRASEN = "ACAP",
 	FACTION_FREELANCERS = "FRE",
 	FACTION_CLF = "CLF",
 	FACTION_DEATHSQUAD = "Deathsquad",
@@ -138,6 +138,7 @@ GLOBAL_LIST_INIT(faction_to_acronym, list(
 	FACTION_ICC = "CM",
 	FACTION_USL = "USL",
 	FACTION_PIRATE = "Pirates",
+	FACTION_VSD = "KZ",
 ))
 
 ///general comms by faction where applicable

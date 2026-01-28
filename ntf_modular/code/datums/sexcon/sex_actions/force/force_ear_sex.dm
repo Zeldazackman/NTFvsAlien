@@ -7,6 +7,8 @@
 	if(user == target)
 		return FALSE
 
+	if(target.gender != MALE && !target.sexcon.can_use_penis())
+		return FALSE
 	return TRUE
 
 /datum/sex_action/force_ear_sex/can_perform(mob/living/carbon/user, mob/living/carbon/target)
@@ -14,6 +16,8 @@
 		return FALSE
 
 
+	if(target.gender != MALE && !target.sexcon.can_use_penis())
+		return FALSE
 	return TRUE
 
 /datum/sex_action/force_ear_sex/on_start(mob/living/carbon/user, mob/living/carbon/target)

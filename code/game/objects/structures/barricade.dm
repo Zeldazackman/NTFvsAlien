@@ -86,13 +86,12 @@
 	if(xeno_attacker.handcuffed)
 		return FALSE
 	var/datum/hive_status/elhive = xeno_attacker.get_hive()
-	if(!(faction in elhive.allied_factions))
-		if(is_wired)
-			balloon_alert(xeno_attacker, "barbed wire slicing into you!")
-			xeno_attacker.apply_damage(15, blocked = MELEE , sharp = TRUE, updating_health = TRUE)
-	else
+	if((faction in elhive.allied_factions) && xeno_attacker.a_intent != INTENT_HARM)
 		attack_hand(xeno_attacker)
 		return
+	if(is_wired)
+		balloon_alert(xeno_attacker, "barbed wire slicing into you!")
+		xeno_attacker.apply_damage(15, blocked = MELEE , sharp = TRUE, updating_health = TRUE)
 	return ..()
 
 /obj/structure/barricade/attackby(obj/item/I, mob/user, params)
