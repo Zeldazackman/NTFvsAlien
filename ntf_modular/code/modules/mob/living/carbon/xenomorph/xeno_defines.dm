@@ -4,6 +4,5 @@
 	speaking_noise = SFX_ALIEN_TALK
 	/// Stored aphrotoxin globs created from Boiler's Create Bomb.
 	var/aphro_ammo = 0
-
-/datum/xeno_caste
 	var/phero_efficency_mult = 1
+	var/weedless_regen = FALSE
