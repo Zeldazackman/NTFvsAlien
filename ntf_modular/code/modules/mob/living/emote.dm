@@ -67,7 +67,8 @@
 	var/image/surrendering = image('icons/mob/effects/talk.dmi', user, icon_state = "surrendering")
 	user.add_emote_overlay(surrendering, 90 SECONDS) // Xenos got para resist, dont change this
 
-/datum/emote/living/carbon/xenomorph/xurrender/proc/surrender_end(mob/user)
+/datum/emote/living/carbon/xenomorph/xurrender/proc/surrender_end(mob/living/user)
+	user.ExtinguishMob()
 	user.status_flags &= ~GODMODE
 	REMOVE_TRAIT(user, TRAIT_SURRENDERING, "surrender")
 
@@ -112,7 +113,8 @@
 	var/image/submitting = image('icons/mob/effects/talk.dmi', user, icon_state = "submit")
 	user.add_emote_overlay(submitting, 90 SECONDS) //Xenos need to be stunned for longer, dont change this
 
-/datum/emote/living/carbon/xenomorph/xubmit/proc/surrender_end(mob/user)
+/datum/emote/living/carbon/xenomorph/xubmit/proc/surrender_end(mob/living/user)
+	user.ExtinguishMob()
 	user.status_flags &= ~GODMODE
 	REMOVE_TRAIT(user, TRAIT_SURRENDERING, "surrender")
 
@@ -147,7 +149,8 @@
 		ADD_TRAIT(L, TRAIT_SURRENDERING, "surrender")
 		addtimer(CALLBACK(src, PROC_REF(surrender_end), user), 90 SECONDS, TIMER_STOPPABLE)
 
-/datum/emote/living/carbon/human/surrender/proc/surrender_end(mob/user)
+/datum/emote/living/carbon/human/surrender/proc/surrender_end(mob/living/user)
+	user.ExtinguishMob()
 	user.status_flags &= ~GODMODE
 	REMOVE_TRAIT(user, TRAIT_SURRENDERING, "surrender")
 
@@ -190,7 +193,8 @@
 		ADD_TRAIT(L, TRAIT_SURRENDERING, "surrender")
 		addtimer(CALLBACK(src, PROC_REF(surrender_end), user), 90 SECONDS, TIMER_STOPPABLE)
 
-/datum/emote/living/carbon/human/submit/proc/surrender_end(mob/user)
+/datum/emote/living/carbon/human/submit/proc/surrender_end(mob/living/user)
+	user.ExtinguishMob()
 	user.status_flags &= ~GODMODE
 	REMOVE_TRAIT(user, TRAIT_SURRENDERING, "surrender")
 
