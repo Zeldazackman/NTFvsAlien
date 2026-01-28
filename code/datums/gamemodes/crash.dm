@@ -46,6 +46,8 @@
 	var/larva_check_interval = 2 MINUTES
 	///Last time larva balance was checked
 	var/last_larva_check
+	var/last_larva_calculation_result = 0
+	var/last_larva_calculation_time = 0
 	bioscan_interval = 0
 	max_larva_preg_at_once = 1
 
@@ -232,10 +234,14 @@
 
 /// Gets the difference of job points between humans and xenos. Negative means too many xenos. Positive means too many humans.
 /datum/game_mode/infestation/crash/proc/get_jobpoint_difference()
+	if(world.time < last_larva_calculation_time + 1 SECONDS)
+		return last_larva_calculation_result
 	var/datum/hive_status/normal/xeno_hive = GLOB.hive_datums[XENO_HIVE_NORMAL]
 	var/datum/job/xeno_job = SSjob.GetJobType(/datum/job/xenomorph)
 	var/total_xenos = xeno_hive.get_total_xeno_number() + (xeno_job.total_positions - xeno_job.current_positions)
-	return get_total_joblarvaworth() - (total_xenos * xeno_job.job_points_needed)
+	last_larva_calculation_result = get_total_joblarvaworth() - (total_xenos * xeno_job.job_points_needed)
+	. = last_larva_calculation_result
+	last_larva_calculation_time = world.time
 
 /datum/game_mode/infestation/crash/get_total_joblarvaworth(list/z_levels, count_flags = COUNT_IGNORE_HUMAN_SSD)
 	. = 0
