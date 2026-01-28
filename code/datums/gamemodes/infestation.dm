@@ -359,7 +359,7 @@
 
 /datum/game_mode/infestation/proc/on_nuclear_defuse(obj/machinery/nuclearbomb/bomb, mob/defuser)
 	SIGNAL_HANDLER
-	priority_announce("WARNING. WARNING. Planetary Nuke deactivated. WARNING. WARNING. Self destruct failed. WARNING. WARNING.", "Planetary Warhead Disengaged", type = ANNOUNCEMENT_PRIORITY)
+	priority_announce("WARNING. WARNING. Planetary Antimatter Bomb deactivated. WARNING. WARNING. Self destruct failed. WARNING. WARNING.", "Planetary Warhead Disengaged", type = ANNOUNCEMENT_PRIORITY)
 
 /datum/game_mode/infestation/proc/on_nuclear_explosion(datum/source, z_level)
 	SIGNAL_HANDLER
@@ -370,12 +370,12 @@
 	SIGNAL_HANDLER
 	var/datum/hive_status/normal/HS = GLOB.hive_datums[XENO_HIVE_NORMAL]
 	var/area_name = get_area_name(nuke)
-	HS.xeno_message("An overwhelming wave of dread ripples throughout the hive... A nuke has been activated[area_name ? " in [area_name]":""]!")
+	HS.xeno_message("An overwhelming wave of dread ripples throughout the hive... An antimatter bomb has been activated[area_name ? " in [area_name]":""]!")
 	HS.set_all_xeno_trackers(nuke)
 
 /datum/game_mode/infestation/proc/play_cinematic(z_level)
 	GLOB.enter_allowed = FALSE
-	priority_announce("DANGER. DANGER. Planetary Nuke Activated. DANGER. DANGER. Self destruct in progress. DANGER. DANGER.", "Planetary Warhead Detonation Confirmed", type = ANNOUNCEMENT_PRIORITY)
+	priority_announce("DANGER. DANGER. Planetary Antimatter Bomb Activated. DANGER. DANGER. Self destruct in progress. DANGER. DANGER.", "Planetary Warhead Detonation Confirmed", type = ANNOUNCEMENT_PRIORITY)
 	var/sound/S = sound(pick('sound/theme/nuclear_detonation1.ogg','sound/theme/nuclear_detonation2.ogg'), channel = CHANNEL_CINEMATIC)
 	SEND_SOUND(world, S)
 

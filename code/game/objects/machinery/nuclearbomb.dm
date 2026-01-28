@@ -6,7 +6,7 @@
 #define NUKE_STAGE_BOLTS_REMOVED 5
 
 /obj/machinery/nuclearbomb
-	name = "nuclear fission explosive"
+	name = "antimatter bomb"
 	desc = "You probably shouldn't stick around to see if this is armed."
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "nuclearbomb0"

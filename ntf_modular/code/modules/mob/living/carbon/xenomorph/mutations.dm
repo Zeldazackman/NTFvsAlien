@@ -60,7 +60,7 @@
 /datum/mutation_upgrade/veil/death_trail/get_desc_for_alert(new_amount)
 	if(!new_amount)
 		return ..()
-	return "he duration of your Death Mark increases by [[get_duration_multiplier(new_amount)]] and bonus sneak attack damage of it is increased to [get_multiplier(new_amount)]x"
+	return "he duration of your Death Mark increases by [get_duration_multiplier(new_amount)] and bonus sneak attack damage of it is increased to [get_multiplier(new_amount)]x"
 
 /datum/mutation_upgrade/veil/death_trail/on_mutation_enabled()
 	. = ..()
