@@ -710,6 +710,9 @@
 	if(get_dist(owner,A) > 1 && get_turf(A) != check_path(owner, A, PASS_LOW_STRUCTURE|PASS_MOB|PASS_THROW|PASS_PROJECTILE|PASS_WALKOVER|PASS_TANK))
 		if(!A.pixel_y && !A.pixel_x) //exclude shit that are usually in the walls by being pixel shifted
 			if(!silent)
+				if(isstructure(A))
+					to_chat(owner, span_xenodanger("We will need to get closer to deliver a proper blow to this!"))
+					return FALSE
 				to_chat(owner, span_xenodanger("Path to target blocked!"))
 			return FALSE
 
@@ -805,6 +808,7 @@
 	if(status == LIGHT_BROKEN)
 		return FALSE
 	broken()
+	return TRUE
 
 /obj/machinery/camera/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier, stab_description = "swift tail-stab!", disorientamount, can_hit_turf)
 	. = ..()
@@ -815,6 +819,7 @@
 
 	deactivate()
 	visible_message(span_danger("\The [src]'s wires snap apart in a rain of sparks!")) //Smash it
+	return TRUE
 
 /obj/machinery/power/apc/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier,  stab_description = "swift tail-stab!", disorientamount, can_hit_turf)
 	attack_generic(xeno, damage * structure_damage_multiplier, BRUTE, MELEE, FALSE, penetration)
@@ -847,6 +852,7 @@
 		beenhit += structure_damage_multiplier
 	xeno.changeNext_move(CLICK_CD_MELEE)
 	update_icon()
+	return TRUE
 
 /obj/machinery/vending/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier,  stab_description = "swift tail-stab!", disorientamount, can_hit_turf)
 	. = ..()
@@ -854,6 +860,7 @@
 		xeno.visible_message(span_danger("\The [xeno] pulls \the [src] down while retracting it's tail!"), \
 			span_danger("You pull \the [src] down with your tail!"), null, 5)
 		tip_over()
+	return TRUE
 
 /obj/structure/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier,  stab_description = "devastating tail-jab!", disorientamount, can_hit_turf) //Smash structures
 	if(!(resistance_flags & XENO_DAMAGEABLE))
@@ -865,6 +872,7 @@
 	playsound(src, "alien_tail_swipe", 50, TRUE)
 	playsound(src, pick('sound/effects/bang.ogg','sound/effects/metal_crash.ogg','sound/effects/meteorimpact.ogg'), 25, 1)
 	Shake(duration = 0.5 SECONDS)
+	return TRUE
 
 /obj/vehicle/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier, stab_description = "devastating tail-jab!", disorientamount, can_hit_turf)
 	attack_generic(xeno, damage * structure_damage_multiplier, BRUTE, "", FALSE)
@@ -966,6 +974,7 @@
 		personal_statistics.tail_stabs++
 		GLOB.round_statistics.tail_stabs++
 		SSblackbox.record_feedback("tally", "round_statistics", 1, "tail_stabs")
+	return TRUE
 
 /datum/action/ability/activable/xeno/tail_stab/ai_should_start_consider()
 	return TRUE
