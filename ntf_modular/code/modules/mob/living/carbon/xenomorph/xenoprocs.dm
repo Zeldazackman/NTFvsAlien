@@ -41,7 +41,7 @@
 	var/xgen = user?.client?.prefs?.xenogender
 	if(swapping)
 		if(!TIMER_COOLDOWN_FINISHED(src, gender_swap_cooldown))
-			to_chat(src, span_xenonotice("You need to wait [DisplayTimeText(COOLDOWN_TIMELEFT(src, gender_swap_cooldown)] more.")))
+			to_chat(src, span_xenonotice("You need to wait [DisplayTimeText(COOLDOWN_TIMELEFT(src, gender_swap_cooldown))] more."))
 			return
 		var/gchoice = tgui_input_list(src, "Select a new role to take.", "Gender Selection", list(
 			"neuter" = 1,

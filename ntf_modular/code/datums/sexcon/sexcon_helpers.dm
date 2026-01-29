@@ -127,7 +127,10 @@
 		implant_embryo(victim, hole_target, source = src)
 
 /mob/living/carbon/xenomorph/proc/xenoimpregify()
-	if(!preggo && ((SSticker.mode.round_type_flags & MODE_FREE_LARVABURST) || (xenogender == 2 || xenogender == 4)))
+	if(!preggo && ((SSticker.mode.round_type_flags & MODE_FREE_LARVABURST) || (xenogender == 2)))
+		if((SSticker.mode.round_type_flags & MODE_FREE_LARVABURST) && xenogender == 4) //futa
+			to_chat(src, span_alien("We can't bear larvas during war times, our mixed physiology makes it difficult."))
+			return FALSE
 		to_chat(src, span_alien("We feel a new larva forming within us."))
 		addtimer(CALLBACK(src, PROC_REF(xenobirth)), 5 MINUTES)
 		Shake(3 SECONDS)

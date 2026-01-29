@@ -1730,8 +1730,24 @@
 		to_chat(usr, span_warning("[src] is unresponsive."))
 		return FALSE
 
-	if(!length(GLOB.active_nuke_list))
-		to_chat(usr, span_danger("You must activate the nuke first."))
+	var/num_humans
+	for(var/mob/living/carbon/human/H in GLOB.alive_human_list)
+		if(!istype(H)) // Small fix?
+			continue
+		if(H.faction == FACTION_ZOMBIE)
+			continue
+		if(!H.client || H.afk_status == MOB_DISCONNECTED)
+			continue
+		if(isspaceturf(H.loc))
+			continue
+		if(H.incapacitated())
+			continue
+		if((H.status_flags & XENO_HOST) && H.buckled) //nested
+			continue
+		num_humans++
+
+	if(num_humans < length(GLOB.dead_human_list))
+		to_chat(usr, span_danger("Majority of the force is still active, you are not authorized to retreat."))
 		return FALSE
 
 	log_admin("[key_name(usr)] is launching the canterbury[!length(GLOB.active_nuke_list)? " early" : ""].")
