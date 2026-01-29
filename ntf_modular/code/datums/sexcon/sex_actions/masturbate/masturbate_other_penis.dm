@@ -7,7 +7,7 @@
 	if(user == target)
 		return FALSE
 	if(isxeno(target))
-		var/mob/living/carbon/xenomorph/targetxeno
+		var/mob/living/carbon/xenomorph/targetxeno = target
 		if(targetxeno.client?.prefs?.xenogender < 3)
 			return FALSE
 	else
@@ -20,7 +20,7 @@
 		return FALSE
 
 	if(isxeno(target))
-		var/mob/living/carbon/xenomorph/targetxeno
+		var/mob/living/carbon/xenomorph/targetxeno = target
 		if(targetxeno.client?.prefs?.xenogender < 3)
 			return FALSE
 	else

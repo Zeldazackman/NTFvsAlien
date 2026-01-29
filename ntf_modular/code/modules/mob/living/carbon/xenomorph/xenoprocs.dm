@@ -43,42 +43,42 @@
 			to_chat(src, span_xenonotice("You need to wait [DisplayTimeText(COOLDOWN_TIMELEFT(src, gender_swap_cooldown))] more."))
 			return
 		var/gchoice = tgui_input_list(src, "Select a new role to take.", "Gender Selection", list(
-			"neuter" = 1,
-			"female" = 2,
-			"male" = 3,
-			"futa" = 4,
-			"cancel" = 5,
+			NEUTER,
+			FEMALE,
+			MALE,
+			"Futa",
+			"cancel",
 		), "cancel")
 		if(xgen == gchoice)
 			return
-		if(gchoice == 5)
+		if(gchoice == "cancel")
 			return
 		xgen = gchoice
 		if(!(SSticker.mode.round_type_flags & MODE_FREE_LARVABURST))
 			TIMER_COOLDOWN_START(src, gender_swap_cooldown, 5 MINUTES)
-	//updates the overlays
 	user.client?.prefs?.xenogender = xgen
 	genital_overlay.layer = layer + 0.3
 	genital_overlay.vis_flags |= VIS_HIDE
 	genital_overlay.icon = src.icon
 	genital_overlay.icon_state = "none"
+	//updates the overlays
 	switch(xgen)
-		if(1) //blank
+		if(NEUTER) //blank
 			genital_overlay.icon_state = null
 			gender=NEUTER
 			if(swapping)
 				user.balloon_alert(user, "None")
-		if(2)
+		if(FEMALE)
 			genital_overlay.icon_state = "[icon_state]_female"
 			gender=FEMALE
 			if(swapping)
 				user.balloon_alert(user, "Female")
-		if(3)
+		if(MALE)
 			genital_overlay.icon_state = "[icon_state]_male"
 			gender=MALE
 			if(swapping)
 				user.balloon_alert(user, "Male")
-		if(4)
+		if("Futa")
 			genital_overlay.icon_state = "[icon_state]_futa"
 			gender=FEMALE
 			if(swapping)

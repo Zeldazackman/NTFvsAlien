@@ -155,6 +155,12 @@
 	if(!isxeno(user))
 		to_chat(user, span_warning("You don't know how to use this."))
 		return FALSE
+	if(!SSticker.mode.round_type_flags & MODE_FREE_LARVABURST)
+		if(ishuman(patient))
+			var/mob/living/carbon/human/homan = patient
+			var/threshold = 0.8 * GLOB.time_before_dnr
+			if(homan.dead_ticks <= threshold)
+				to_chat(user, span_xenowarning("This one hasn't gone cold enough yet. Try again in [threshold - homan.dead_ticks]"))
 	jellyrevive(patient,user)
 
 /obj/item/stack/req_jelly/proc/jellyrevive(mob/living/carbon/human/patient, mob/living/carbon/user)
