@@ -92,7 +92,7 @@
 		to_chat(owner, span_warning("There's a pod here already!"))
 		return fail_activate()
 
-	if(!existing_weed.issamexenohive(xeno_owner))
+	if(existing_weed && !existing_weed.issamexenohive(xeno_owner))
 		owner.visible_message(span_xenonotice("\The [owner] starts to place an invasive node..."), \
 			span_xenonotice("We prepare to place an invasive node!"), null, 5)
 		if(!do_after(src, 2 SECONDS, IGNORE_HELD_ITEM, A, BUSY_ICON_BUILD))
