@@ -156,7 +156,7 @@
 		switch(blame_mob.sexcon.drain_style)
 			if(SEX_DRAIN_STYLE_HEAL_TARGET)
 				user.heal_overall_damage(rand(15, 30)+(20*blame_mob.skills.sex), rand(15, 30)+(20*blame_mob.skills.sex), TRUE, TRUE)
-				if(!isxeno(blame_mob) || SSticker.mode.round_type_flags & MODE_FREE_LARVABURST)
+				if(!isxeno(blame_mob) || SSticker.mode.round_type_flags & MODE_CHILL_RULES)
 					user.adjustCloneLoss(-(rand(5,10)+(5*blame_mob.skills.sex)))
 			if(SEX_DRAIN_STYLE_DRAIN_STAMINA)
 				if((!(user.mind)) || (user.client?.prefs.harmful_sex_flags & HARMFUL_SEX_STAMINA_DRAIN))

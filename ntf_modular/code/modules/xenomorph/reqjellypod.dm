@@ -155,7 +155,7 @@
 	if(!isxeno(user))
 		to_chat(user, span_warning("You don't know how to use this."))
 		return FALSE
-	if(!(SSticker.mode.round_type_flags & MODE_FREE_LARVABURST))
+	if(!(SSticker.mode.round_type_flags & MODE_CHILL_RULES))
 		if(ishuman(patient))
 			var/mob/living/carbon/human/homan = patient
 			var/threshold = 0.8 * GLOB.time_before_dnr

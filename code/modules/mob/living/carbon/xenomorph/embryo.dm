@@ -110,7 +110,7 @@
 	if(affected_mob.stat == DEAD) //No more corpsefucking for infinite larva, thanks
 		return FALSE
 
-	if(ishuman(affected_mob) && !(SSticker.mode.round_type_flags & MODE_FREE_LARVABURST))
+	if(ishuman(affected_mob) && !(SSticker.mode.round_type_flags & MODE_CHILL_RULES))
 		if(affected_mob.getCloneLoss() >= 30) //I guess they remain dormant
 			return FALSE
 
@@ -309,7 +309,7 @@
 
 		victim.take_overall_damage(140, BRUTE, MELEE)
 		victim.take_overall_damage(20, BURN, MELEE)
-	if(ishuman(victim) && !(SSticker.mode.round_type_flags & MODE_FREE_LARVABURST))
+	if(ishuman(victim) && !(SSticker.mode.round_type_flags & MODE_CHILL_RULES))
 		if(victim.getCloneLoss() < 30)
 			victim.adjustCloneLoss(45)
 			victim.visible_message(span_warning("[victim]'s body and genitals are too devastated from this to perform another larva burst without treatment."))

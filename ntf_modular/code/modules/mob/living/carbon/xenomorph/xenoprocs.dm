@@ -55,7 +55,7 @@
 			return
 		do_jitter_animation()
 		xgen = gchoice
-		if(!(SSticker.mode.round_type_flags & MODE_FREE_LARVABURST))
+		if(!(SSticker.mode.round_type_flags & MODE_CHILL_RULES))
 			TIMER_COOLDOWN_START(src, gender_swap_cooldown, 5 MINUTES)
 	switch(xgen) //convert string to number
 		if(NEUTER)
