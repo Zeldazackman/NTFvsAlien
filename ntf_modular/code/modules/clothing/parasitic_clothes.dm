@@ -59,8 +59,13 @@
 	slowdown = 0.1
 	actions_types = list(/datum/action/item_action)
 	equip_slot_flags = ITEM_SLOT_BACK
+	dir = NORTH
 	var/evolve_timer
 	COOLDOWN_DECLARE(egg_cooldown_timer)
+
+/obj/item/clothing/resin_sack/setDir(newdir)
+	. = ..()
+	dir = NORTH
 
 //special egglay
 

@@ -143,10 +143,13 @@
 /mob/living/carbon/xenomorph/proc/claim_hive_target_reward(mob/living/carbon/human/target)
 	if(!istype(target) || !HAS_TRAIT(target, TRAIT_HIVE_TARGET))
 		return
+	var/rewardness = 4
+	if(HAS_TRAIT_FROM(target, TRAIT_HIVE_TARGET, SUPERSOLDIER_TRAIT))
+		rewardness = 0.5 //ass self given target, weaponized sex?
 	var/psy_points_reward = PSY_DRAIN_REWARD_MIN + ((HIGH_PLAYER_POP - SSmonitor.maximum_connected_players_count) / HIGH_PLAYER_POP * (PSY_DRAIN_REWARD_MAX - PSY_DRAIN_REWARD_MIN))
 	psy_points_reward = clamp(psy_points_reward, PSY_DRAIN_REWARD_MIN, PSY_DRAIN_REWARD_MAX)
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_HIVE_TARGET_DRAINED, src, target)
-	psy_points_reward = psy_points_reward * 5
+	psy_points_reward = psy_points_reward * rewardness
 	SSpoints.add_strategic_psy_points(hivenumber, psy_points_reward)
 	SSpoints.add_tactical_psy_points(hivenumber, psy_points_reward*0.25)
 	GLOB.round_statistics.strategic_psypoints_from_hive_target_rewards += psy_points_reward
@@ -154,8 +157,8 @@
 	GLOB.round_statistics.biomass_from_hive_target_rewards += MUTATION_BIOMASS_PER_HIVE_TARGET_REWARD
 	SSpoints.add_biomass_points(hivenumber, MUTATION_BIOMASS_PER_HIVE_TARGET_REWARD)
 	var/datum/job/xeno_job = SSjob.GetJobType(GLOB.hivenumber_to_job_type[hivenumber])
-	xeno_job.add_job_points(5) //can be made a var if need be.
-	GLOB.round_statistics.larva_from_hive_target_rewards += 5/xeno_job.job_points_needed
+	xeno_job.add_job_points(rewardness)
+	GLOB.round_statistics.larva_from_hive_target_rewards += rewardness/xeno_job.job_points_needed
 	hive.update_tier_limits()
 	for(var/obj/item/alien_embryo/embryo in target)
 		embryo.hive_target_bonus = TRUE

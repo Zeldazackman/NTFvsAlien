@@ -84,6 +84,7 @@
 		target.visible_message(span_danger("Tentacles suddenly grab [target]'s legs and secure [target.p_them()] into [src]!"),
 		span_userdanger("Tentacles suddenly grab your legs and secure you into [src]!"),
 		span_notice("You hear squelching."))
+		COOLDOWN_START(src, tentacle_cooldown, cooldown_time)
 		return
 	COOLDOWN_START(src, tentacle_cooldown, cooldown_time)
 	target.visible_message(span_danger("Tentacles start grabbing at [target]'s legs to try to secure [target.p_them()] into [src]!"),
@@ -288,7 +289,10 @@
 		return
 	if(!victim)
 		return
-	if(istype(victim.back, /obj/item/clothing/resin_sack))
+	var/obj/item/clothing/resin_sack/existing_pack = victim.get_item_by_slot(SLOT_BACK)
+	if(existing_pack)
+		return
+	if(victim.stat == DEAD)
 		return
 	if(victim.back)
 		victim.dropItemToGround(victim.back)
