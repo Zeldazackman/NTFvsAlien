@@ -293,8 +293,7 @@
 		return
 	if(!victim)
 		return
-	var/obj/item/clothing/resin_sack/existing_pack = victim.get_item_by_slot(SLOT_BACK)
-	if(existing_pack)
+	if(istype(victim.get_item_by_slot(SLOT_BACK), /obj/item/clothing/resin_sack))
 		return
 	if(victim.stat == DEAD)
 		return
