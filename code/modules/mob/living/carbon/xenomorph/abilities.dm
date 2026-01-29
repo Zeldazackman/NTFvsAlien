@@ -95,7 +95,7 @@
 	if(existing_weed && !existing_weed.issamexenohive(xeno_owner))
 		owner.visible_message(span_xenonotice("\The [owner] starts to place an invasive node..."), \
 			span_xenonotice("We prepare to place an invasive node!"), null, 5)
-		if(!do_after(src, 2 SECONDS, IGNORE_HELD_ITEM, A, BUSY_ICON_BUILD))
+		if(!do_after(owner, 2 SECONDS, IGNORE_HELD_ITEM, A, BUSY_ICON_BUILD))
 			return fail_activate()
 
 	owner.visible_message(span_xenonotice("\The [owner] regurgitates a pulsating node and plants it on the ground!"), \
