@@ -31,7 +31,8 @@
 		proximity_monitor = new(src, XENO_STRUCTURE_DETECTION_RANGE)
 	var/datum/hive_status/hive = GLOB.hive_datums[hivenumber]
 	name = "[hive.prefix][name]"
-	color = hive.color
+	if(hive.color)
+		color = gradient(COLOR_BLACK, hive.color, 0.5)
 
 /obj/structure/xeno/Destroy()
 	//prox_warning_turfs = null

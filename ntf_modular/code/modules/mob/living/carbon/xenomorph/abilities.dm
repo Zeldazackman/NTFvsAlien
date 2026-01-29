@@ -718,17 +718,26 @@
 				to_chat(owner, span_xenodanger("Path to target blocked!"))
 			return FALSE
 
-	if(A.resistance_flags & (INDESTRUCTIBLE|CRUSHER_IMMUNE) && !(A.resistance_flags & TAIL_STABABLE)) //no bolting down indestructible airlocks.
-		if(!silent)
-			to_chat(owner, span_xenodanger("We cannot damage this target!"))
-		return FALSE
-
 	if(xeno.blunt_stab)
 		owner.do_attack_animation(A, ATTACK_EFFECT_SMASH)
 	else if(xeno.fiery_stab)
 		owner.do_attack_animation(A, ATTACK_EFFECT_LASERSWORD)
 	else
 		owner.do_attack_animation(A, ATTACK_EFFECT_REDSTAB)
+
+	if(A.resistance_flags & (INDESTRUCTIBLE|CRUSHER_IMMUNE) && !(A.resistance_flags & TAIL_STABABLE)) //no bolting down indestructible airlocks.
+		if(!silent)
+			to_chat(owner, span_xenodanger("We cannot damage this target!"))
+			add_cooldown(1 SECONDS)
+			playsound(owner, "alien_tail_swipe", 50, TRUE)
+		return FALSE
+
+	if(isstructure(A) || ismachinery(A))
+		if(!(A.resistance_flags & XENO_DAMAGEABLE) && !(A.resistance_flags & TAIL_STABABLE))
+			to_chat(xeno, span_xenodanger("We cannot damage this target!"))
+			add_cooldown(1 SECONDS)
+			playsound(owner, "alien_tail_swipe", 50, TRUE)
+			return FALSE
 
 	if(isxeno(A) && A.issamexenohive(owner))
 		if(!silent)
@@ -865,9 +874,6 @@
 	return TRUE
 
 /obj/structure/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier,  stab_description = "devastating tail-jab!", disorientamount, can_hit_turf) //Smash structures
-	if(!(resistance_flags & XENO_DAMAGEABLE))
-		to_chat(xeno, span_xenodanger("We cannot damage this target!"))
-		return FALSE
 	take_damage(damage * structure_damage_multiplier, BRUTE, MELEE, TRUE, get_dir(src, xeno), penetration, xeno)
 	xeno.visible_message(span_xenodanger("\The [xeno] stab [src] with a [stab_description]"), \
 		span_xenodanger("We stab [src] with a [stab_description]"), visible_message_flags = COMBAT_MESSAGE)

@@ -21,7 +21,7 @@
 	var/datum/hive_status/hive = GLOB.hive_datums[hivenumber]
 	name = "[hive.prefix][name]"
 	if(hive.color)
-		color = hive.color
+		color = gradient(COLOR_BLACK, hive.color, 0.5)
 	START_PROCESSING(SSslowprocess, src)
 	var/static/list/listen_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_cross),

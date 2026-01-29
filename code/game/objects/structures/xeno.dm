@@ -24,7 +24,7 @@
 	var/datum/hive_status/hive = GLOB.hive_datums[hivenumber]
 	name = "[hive.prefix][name]"
 	if(hive.color)
-		color = gradient(COLOR_BLACK, hive.color, 75)
+		color = gradient(COLOR_BLACK, hive.color, 0.5)
 	if(!ignore_weed_destruction)
 		RegisterSignal(loc, COMSIG_TURF_WEED_REMOVED, PROC_REF(weed_removed))
 
@@ -33,7 +33,7 @@
 	var/datum/hive_status/hive = GLOB.hive_datums[hivenumber]
 	if(istype(hive))
 		if(hive.color)
-			color = gradient(COLOR_BLACK, hive.color, 75)
+			color = gradient(COLOR_BLACK, hive.color, 0.5)
 
 /// Destroy the alien effect when the weed it was on is destroyed
 /obj/alien/proc/weed_removed()
@@ -219,7 +219,7 @@
 	var/datum/hive_status/hive = GLOB.hive_datums[hivenumber]
 	name = "[hive.prefix][name]"
 	if(hive.color)
-		color = gradient(COLOR_BLACK, hive.color, 75)
+		color = gradient(COLOR_BLACK, hive.color, 0.5)
 	if(!locate(/obj/alien/weeds) in loc)
 		new /obj/alien/weeds(loc)
 
