@@ -197,7 +197,7 @@
 	var/mob/living/carbon/xenomorph/spiderling/x = mob_parent
 	if(QDELETED(x))
 		return
-	var/list/mob/living/carbon/human/possible_victims = list()
+	var/list/mob/living/possible_victims = list()
 	for(var/mob/living/victim in get_nearest_target(x, SPIDERLING_RAGE_RANGE))
 		if(victim.stat == DEAD)
 			continue

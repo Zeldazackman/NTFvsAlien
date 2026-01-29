@@ -39,7 +39,7 @@
 		return
 	var/xgen = user?.client?.prefs?.xenogender
 	if(swapping)
-		if(!TIMER_COOLDOWN_FINISHED(src, gender_swap_cooldown))
+		if(!COOLDOWN_FINISHED(src, gender_swap_cooldown))
 			to_chat(src, span_xenonotice("You need to wait [DisplayTimeText(COOLDOWN_TIMELEFT(src, gender_swap_cooldown))] more."))
 			return
 		var/gchoice = tgui_input_list(src, "Select a new role to take.", "Gender Selection", list(
@@ -56,7 +56,7 @@
 		do_jitter_animation()
 		xgen = gchoice
 		if(!(SSticker.mode.round_type_flags & MODE_CHILL_RULES))
-			TIMER_COOLDOWN_START(src, gender_swap_cooldown, 5 MINUTES)
+			COOLDOWN_START(src, gender_swap_cooldown, 5 MINUTES)
 	switch(xgen) //convert string to number
 		if(NEUTER)
 			xgen = 1

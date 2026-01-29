@@ -83,12 +83,20 @@
 		return fail_activate()
 
 	var/obj/alien/weeds/existing_weed = locate() in T
+	/*
 	if(existing_weed && (!existing_weed.issamexenohive(xeno_owner)))
 		to_chat(owner, span_warning("You cannot build on another hive's weeds!"))
 		return fail_activate()
-	if(existing_weed && existing_weed.type == weed_type)
+	*/
+	if(existing_weed && existing_weed.type == weed_type && existing_weed.issamexenohive(xeno_owner))
 		to_chat(owner, span_warning("There's a pod here already!"))
 		return fail_activate()
+
+	if(!existing_weed.issamexenohive(xeno_owner))
+		owner.visible_message(span_xenonotice("\The [owner] starts to place an invasive node..."), \
+			span_xenonotice("We prepare to place an invasive node!"), null, 5)
+		if(!do_after(src, 2 SECONDS, IGNORE_HELD_ITEM, A, BUSY_ICON_BUILD))
+			return fail_activate()
 
 	owner.visible_message(span_xenonotice("\The [owner] regurgitates a pulsating node and plants it on the ground!"), \
 		span_xenonotice("We regurgitate a pulsating node and plant it on the ground!"), null, 5)

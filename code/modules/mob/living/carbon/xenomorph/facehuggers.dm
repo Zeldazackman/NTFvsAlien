@@ -93,7 +93,8 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 	var/datum/hive_status/hive = GLOB.hive_datums[hivenumber]
 	name = "[hive.prefix][name]"
 	if(hive.color)
-		add_filter("hive_color", 10, outline_filter(2, hive.color))
+		color = hive.color
+		add_filter("hive_color", 10, outline_filter(1, hive.color))
 
 	if(input_source)
 		facehugger_register_source(input_source)
