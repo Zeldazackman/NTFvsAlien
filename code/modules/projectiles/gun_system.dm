@@ -1852,7 +1852,6 @@
 		if(living_firer.IsStaggered())
 			projectile_to_fire.damage *= STAGGER_DAMAGE_MULTIPLIER
 			projectile_to_fire.accuracy *= STAGGER_ACCURACY_MULTIPLIER
-			projectile_to_fire.ammo.accurate_range_min += 1 //could make it less accurate in melee for xenos
 
 ///Sets the projectile accuracy and scatter
 /obj/item/weapon/gun/proc/setup_bullet_accuracy()
