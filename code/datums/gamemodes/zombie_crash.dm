@@ -2,7 +2,7 @@
 	name = "Zombie Crash"
 	config_tag = "Zombie Crash"
 	round_type_flags = MODE_ALLOW_MARINE_QUICKBUILD|MODE_XENO_GRAB_DEAD_ALLOWED|MODE_FREE_LARVABURST|MODE_INFESTATION|MODE_PSY_POINTS|MODE_SILO_RESPAWN|MODE_MUTATIONS_OBTAINABLE
-	xeno_abilities_flags = ABILITY_CRASH
+	xeno_abilities_flags = ABILITY_ALL_GAMEMODE //Non pvp
 	required_players = 1
 	valid_job_types = list(
 		/datum/job/terragov/squad/standard = -1,

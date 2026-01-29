@@ -53,36 +53,46 @@
 			return
 		if(gchoice == "cancel")
 			return
+		Shake(2 SECONDS)
 		xgen = gchoice
 		if(!(SSticker.mode.round_type_flags & MODE_FREE_LARVABURST))
 			TIMER_COOLDOWN_START(src, gender_swap_cooldown, 5 MINUTES)
-	user.client?.prefs?.xenogender = xgen
+	switch(xgen) //convert string to number
+		if(NEUTER)
+			xgen = 1
+		if(FEMALE)
+			xgen = 2
+		if(MALE)
+			xgen = 3
+		if("Futa")
+			xgen = 4
 	genital_overlay.layer = layer + 0.3
 	genital_overlay.vis_flags |= VIS_HIDE
 	genital_overlay.icon = src.icon
 	genital_overlay.icon_state = "none"
 	//updates the overlays
 	switch(xgen)
-		if(NEUTER) //blank
+		if(1) //blank
 			genital_overlay.icon_state = null
 			gender=NEUTER
 			if(swapping)
 				user.balloon_alert(user, "None")
-		if(FEMALE)
+		if(2)
 			genital_overlay.icon_state = "[icon_state]_female"
 			gender=FEMALE
 			if(swapping)
 				user.balloon_alert(user, "Female")
-		if(MALE)
+		if(3)
 			genital_overlay.icon_state = "[icon_state]_male"
 			gender=MALE
 			if(swapping)
 				user.balloon_alert(user, "Male")
-		if("Futa")
+		if(4)
 			genital_overlay.icon_state = "[icon_state]_futa"
 			gender=FEMALE
 			if(swapping)
 				user.balloon_alert(user, "Futa")
+	user.client?.prefs?.xenogender = xgen
 
 	if(xeno_caste.caste_flags & CASTE_HAS_WOUND_MASK) //ig if u cant see wounds u shouldnt see tiddies too maybe for things like being ethereal
 		apply_overlay(GENITAL_LAYER)
