@@ -554,13 +554,14 @@
 	if(isxenogorger(owner_xeno)) //gorgers balling
 		devour_delay = GORGER_DEVOUR_DELAY
 	if((HAS_TRAIT(victim, TRAIT_UNDEFIBBABLE) || !victim.client || victim.lying_angle || victim.incapacitated()) && !isxeno(victim))
-		devour_delay -= 1 SECONDS
+		devour_delay -= 1.25 SECONDS
 	if(haul_mode) //easier to do
-		devour_delay -= 1 SECONDS
-	if(haul_mode && devour_delay)
-		if(!do_after(owner_xeno, devour_delay, FALSE, victim, BUSY_ICON_DANGER, extra_checks = CALLBACK(owner, TYPE_PROC_REF(/mob, break_do_after_checks), list("health" = owner_xeno.health))))
-			to_chat(owner, span_warning("We stop trying to pick up \the [victim]."))
-			return
+		devour_delay -= 1.25 SECONDS
+	if(haul_mode)
+		if(devour_delay > 0)
+			if(!do_after(owner_xeno, devour_delay, FALSE, victim, BUSY_ICON_DANGER, extra_checks = CALLBACK(owner, TYPE_PROC_REF(/mob, break_do_after_checks), list("health" = owner_xeno.health))))
+				to_chat(owner, span_warning("We stop trying to pick up \the [victim]."))
+				return
 		haul(target)
 		add_cooldown()
 		return

@@ -160,7 +160,8 @@
 			var/mob/living/carbon/human/homan = patient
 			var/threshold = 0.8 * GLOB.time_before_dnr
 			if(homan.dead_ticks <= threshold)
-				to_chat(user, span_xenowarning("This one hasn't gone cold enough yet. Try again in [threshold - homan.dead_ticks]"))
+				to_chat(user, span_xenowarning("This one hasn't gone cold enough yet. Try again in [threshold - homan.dead_ticks] seconds."))
+				return
 	jellyrevive(patient,user)
 
 /obj/item/stack/req_jelly/proc/jellyrevive(mob/living/carbon/human/patient, mob/living/carbon/user)
