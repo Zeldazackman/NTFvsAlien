@@ -88,7 +88,7 @@
 	use_power = NO_POWER_USE
 	idle_power_usage = 50
 	netspeed = 40
-	resistance_flags = INDESTRUCTIBLE
+	resistance_flags = INDESTRUCTIBLE|TAIL_STABABLE
 	var/destructible = TRUE
 	var/health = 450 //we use this seperate var so shit dont delete I guess.
 	freq_listening = NTC_SIDED_FREQS
@@ -131,6 +131,7 @@
 	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
 	playsound(loc, SFX_ALIEN_CLAW_METAL, 25)
 	update_health(damage_amount)
+	return TRUE
 
 /obj/machinery/telecomms/relay/preset/tower/tail_stab_act(mob/living/carbon/xenomorph/xeno, damage, target_zone, penetration, structure_damage_multiplier, stab_description, disorientamount, can_hit_turf)
 	if(!xeno.blunt_stab)

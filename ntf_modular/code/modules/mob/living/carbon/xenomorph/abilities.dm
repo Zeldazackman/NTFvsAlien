@@ -681,7 +681,9 @@
 		/obj/alien/weeds/resting,
 		/obj/alien/weeds/sticky,
 		/obj/alien/weeds/node/resting,
-		/obj/alien/weeds/node/sticky
+		/obj/alien/weeds/node/sticky,
+		/obj/alien/weeds/weedwall,
+		/obj/structure/bed/nest/wall,
 		)
 
 /datum/action/ability/activable/xeno/tail_stab/on_cooldown_finish()
@@ -716,7 +718,7 @@
 				to_chat(owner, span_xenodanger("Path to target blocked!"))
 			return FALSE
 
-	if(A.resistance_flags & (INDESTRUCTIBLE|CRUSHER_IMMUNE)) //no bolting down indestructible airlocks.
+	if(A.resistance_flags & (INDESTRUCTIBLE|CRUSHER_IMMUNE) && !(A.resistance_flags & TAIL_STABABLE)) //no bolting down indestructible airlocks.
 		if(!silent)
 			to_chat(owner, span_xenodanger("We cannot damage this target!"))
 		return FALSE
