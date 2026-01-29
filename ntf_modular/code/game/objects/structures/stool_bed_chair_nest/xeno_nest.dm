@@ -8,9 +8,11 @@
 	var/settings_locked = FALSE
 	var/list/mob/living/carbon/human/grabbing = null
 	COOLDOWN_DECLARE(tentacle_cooldown)
+	COOLDOWN_DECLARE(cum_cooldown)
 	resist_time = 4 SECONDS //gotta be able to resist quick in case this is used in combat, with the quick capture power, you WILL die so fast.
 	var/capture_time = 1 SECONDS
 	var/cooldown_time = 5 SECONDS
+	var/cum_time = 29.9 SECONDS
 
 /obj/structure/bed/nest/advanced/Initialize(mapload, _hivenumber)
 	. = ..()
@@ -85,8 +87,10 @@
 		span_userdanger("Tentacles suddenly grab your legs and secure you into [src]!"),
 		span_notice("You hear squelching."))
 		COOLDOWN_START(src, tentacle_cooldown, cooldown_time)
+		COOLDOWN_START(src, cum_cooldown, cum_time)
 		return
 	COOLDOWN_START(src, tentacle_cooldown, cooldown_time)
+	COOLDOWN_START(src, cum_cooldown, cum_time)
 	target.visible_message(span_danger("Tentacles start grabbing at [target]'s legs to try to secure [target.p_them()] into [src]!"),
 		span_userdanger("Tentacles suddenly grab your legs to try to secure you into [src]!"),
 		span_notice("You hear squelching."))
@@ -251,19 +255,19 @@
 		return
 	do_thrust_animate(victim, src)
 	do_thrust_animate(src, victim)
-	if(COOLDOWN_FINISHED(src, tentacle_cooldown))
-		COOLDOWN_START(src, tentacle_cooldown, cooldown_time)
+	if(COOLDOWN_FINISHED(src, cum_cooldown))
+		COOLDOWN_START(src, cum_cooldown, cum_time)
 		if(!(victim.status_flags & XENO_HOST))
 			victim.visible_message(span_xenonotice("[src] roughly thrusts a tentacle into [victim]'s [target_hole], a round bulge visibly sliding through it as it inserts an egg into [victim]!"),
 			span_xenonotice("[src] roughly thrusts a tentacle into your [target_hole], a round bulge visibly sliding through it as it inserts an egg into you!"),
-			span_notice("You hear squelching."))
-			playsound(victim, 'ntf_modular/sound/misc/mat/endin.ogg', 50, TRUE, 7, ignore_walls = FALSE)
+			span_notice("You hear squelching."), 1)
+			playsound(victim, 'ntf_modular/sound/misc/mat/endin.ogg', 50, TRUE, 5, ignore_walls = FALSE)
 			implant_embryo(victim, target_hole, force_xenohive = hivenumber)
 		else
 			victim.visible_message(span_love("[src]'s tentacle pumps globs of sizzling acidic cum into [victim]'s [target_hole]!"),
 			span_love("[src] tentacle pumps globs of sizzling acidic cum into your [target_hole]!"),
-			span_love("You hear spurting."))
-			playsound(victim, 'ntf_modular/sound/misc/mat/endin.ogg', 50, TRUE, 7, ignore_walls = FALSE)
+			span_love("You hear spurting."), 1)
+			playsound(victim, 'ntf_modular/sound/misc/mat/endin.ogg', 50, TRUE, 5, ignore_walls = FALSE)
 		if(istype(src, /obj/structure/bed/nest/advanced/special))
 			//same medicines as larval growth sting, but no larva jelly
 			if(victim.reagents.get_reagent_amount(/datum/reagent/medicine/tricordrazine) < 5)
@@ -279,7 +283,7 @@
 	else
 		victim.visible_message(span_love("[src] roughly thrusts a tentacle into [victim]'s [target_hole]!"),
 		span_love("[src] roughly thrusts a tentacle into your [target_hole]!"),
-		span_love("You hear squelching."))
+		span_love("You hear squelching."), 1)
 		playsound(victim, 'ntf_modular/sound/misc/mat/segso.ogg', 50, TRUE, 5, ignore_walls = FALSE)
 		victim.adjustStaminaLoss(5)
 		victim.sexcon.adjust_arousal(5)
