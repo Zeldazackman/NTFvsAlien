@@ -32,7 +32,6 @@
 	set category = "Alien"
 
 	update_xeno_gender(src, TRUE)
-	var/gender_swap_cooldown
 
 /mob/living/carbon/xenomorph/proc/update_xeno_gender(mob/living/carbon/xenomorph/user = src, swapping = FALSE)
 	remove_overlay(GENITAL_LAYER)
@@ -52,7 +51,7 @@
 		), "cancel")
 		if(xgen == gchoice)
 			return
-		if(gchoice = 5)
+		if(gchoice == 5)
 			return
 		xgen = gchoice
 		if(!(SSticker.mode.round_type_flags & MODE_FREE_LARVABURST))
