@@ -141,14 +141,14 @@
 /mob/living/carbon/xenomorph/proc/xenobirth()
 	balloon_alert(src, "About to birth!!!")
 	emote("needhelp")
-	Shake(8 SECONDS)
+	do_jitter_animation(1000, 8 SECONDS)
 	sleep(10 SECONDS)
 	preggo = FALSE
 	GLOB.round_statistics.total_larva_burst++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "total_larva_burst")
 	playsound(src, pick('sound/voice/alien/chestburst.ogg','sound/voice/alien/chestburst2.ogg'), 10, FALSE, 7, ignore_walls = FALSE)
 	visible_message(span_warning("[src] starts to shake and drop to the floor."), span_warning("We are unable to move as a larva is coming out of us!"), span_warning("You hear a thud."), 5)
-	Shake(8 SECONDS)
+	do_jitter_animation(1000, 8 SECONDS)
 	AdjustParalyzed(10 SECONDS)
 	sleep(10 SECONDS)
 	visible_message(span_warning("A larva drops out of [src]'s cunt and burrows away!"), span_warning("a larva drops out of our cunt and burrows away."), span_warning("You hear a splatter."), 5)

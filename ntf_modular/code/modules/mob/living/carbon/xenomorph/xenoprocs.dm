@@ -53,7 +53,7 @@
 			return
 		if(gchoice == "cancel")
 			return
-		Shake(2 SECONDS)
+		do_jitter_animation(1000, 3 SECONDS)
 		xgen = gchoice
 		if(!(SSticker.mode.round_type_flags & MODE_FREE_LARVABURST))
 			TIMER_COOLDOWN_START(src, gender_swap_cooldown, 5 MINUTES)
