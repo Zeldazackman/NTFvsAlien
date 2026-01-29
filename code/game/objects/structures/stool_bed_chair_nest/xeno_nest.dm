@@ -13,6 +13,7 @@
 	buckling_x = 0
 	buildstacktype = null //can't be disassembled and doesn't drop anything when destroyed
 	resistance_flags = UNACIDABLE|XENO_DAMAGEABLE
+	obj_flags = parent_type::obj_flags|PROJ_IGNORE_DENSITY
 	max_integrity = 50
 	layer = BELOW_OPEN_DOOR_LAYER
 	var/unbuckletime = 6 SECONDS

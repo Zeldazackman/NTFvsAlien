@@ -21,7 +21,7 @@
 	var/datum/hive_status/hive = GLOB.hive_datums[hivenumber]
 	name = "[hive.prefix][name]"
 	if(hive.color)
-		color = gradient(COLOR_BLACK, hive.color, 0.5)
+		color = hive.color //they are dark asf already so we wont gradient it.
 	START_PROCESSING(SSslowprocess, src)
 	var/static/list/listen_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_cross),
@@ -321,6 +321,7 @@
 	resist_time = 15 SECONDS
 	capture_time = 10 SECONDS
 	cooldown_time = 6 SECONDS
+	max_integrity = 80
 
 //wall nest
 /turf/closed/wall/attackby(obj/item/attacking_item, mob/living/user)
