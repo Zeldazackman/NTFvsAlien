@@ -18,7 +18,7 @@
 		ooc_notes_maybes = client.prefs.metadata_maybes
 		ooc_notes_favs = client.prefs.metadata_favs
 		ooc_notes_style = client.prefs.metadata_ooc_style
-	update_xeno_gender()
+	INVOKE_ASYNC(src, PROC_REF(update_xeno_gender))
 
 	hud_update_rank()
 	generate_name()
