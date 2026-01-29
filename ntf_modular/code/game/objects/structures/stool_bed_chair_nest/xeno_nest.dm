@@ -306,12 +306,12 @@
 	victim.equip_to_slot(gooberpack, SLOT_BACK)
 	victim.visible_message(span_warning("[src] attaches to [victim] as a resin sack!"),
 			span_warning("[src] attaches to you as a resin sack!"),
-			span_notice("You hear rustling."))
+			span_notice("You hear rustling."), 3)
 	if(victim.reagents.get_reagent_amount(/datum/reagent/toxin/acid/xeno_cum) >= 1)
 		victim.reagents.remove_all_type(/datum/reagent/toxin/acid/xeno_cum, 100)
 		victim.visible_message(span_green("Remaining acidic cum spills out from [victim]'s holes!"),
 				span_green("Remaining acidic cum spills out of your holes!"),
-				span_notice("You hear splashing."))
+				span_notice("You hear splashing."), 3)
 	qdel(src)
 
 /obj/structure/bed/nest/advanced/special
