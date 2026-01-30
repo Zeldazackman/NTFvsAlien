@@ -392,7 +392,7 @@
 		return
 	inactive_hand.attackby(active_hand, src)
 
-/mob/living/carbon/human/MouseDrop_T(atom/dropping, mob/user)
+/mob/living/MouseDrop_T(atom/dropping, mob/user)
 	. = ..()
 	if(dropping != usr)
 		return
@@ -405,11 +405,11 @@
 		if(user.a_intent != INTENT_HELP && !user.sexcon.current_action)
 			user.face_atom(src)
 			face_atom(user)
-			var/action
+			var/action = /datum/sex_action/tonguebath // neuter things ig
 			if(gender == MALE)
 				if(user.gender == MALE)
 					if(isxeno(user))
-						action = pick(/datum/sex_action/anal_sex, /datum/sex_action/tailpegging_anal, /datum/sex_action/throat_sex)
+						action = pick(/datum/sex_action/anal_sex, /datum/sex_action/tailpegging_anal, /datum/sex_action/throat_sex, /datum/sex_action/frotting) //funny frot
 					else
 						action = pick(/datum/sex_action/anal_sex, /datum/sex_action/force_blowjob, /datum/sex_action/throat_sex)
 				else if(user.gender == FEMALE)
