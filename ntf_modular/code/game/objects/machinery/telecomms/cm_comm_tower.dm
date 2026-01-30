@@ -389,7 +389,7 @@
 			if(!do_after(user, 10, IGNORE_HAND|IGNORE_HELD_ITEM, BUSY_ICON_BUILD))
 				return
 			if(user.faction in GLOB.faction_to_radio)
-				switch(faction)
+				switch(user.faction)
 					if(FACTION_TERRAGOV,FACTION_NANOTRASEN,FACTION_ICC)
 						freq_listening -=  NTC_SIDED_FREQS
 						freq_listening +=  NTC_SIDED_FREQS
