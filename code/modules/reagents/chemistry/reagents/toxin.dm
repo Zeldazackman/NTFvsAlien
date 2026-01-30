@@ -761,7 +761,7 @@
 	if(clothesundoed != 1)
 		if(debuff_ownerhuman.w_uniform)
 			debuff_ownerhuman.visible_message(span_warning("[debuff_ownerhuman] begins to undo [t_his] clothes and expose [t_his] [debuff_ownerhuman.gender==MALE ? "cock" : "pussy"]!"), span_warning("You begin to undo your clothes and expose your [debuff_ownerhuman.gender==MALE ? "cock" : "pussy"]."), span_warning("You hear ruffling."), 5)
-			if(!do_after(debuff_owner, 5 SECONDS, TRUE, debuff_owner, BUSY_ICON_CLOCK))
+			if(!do_after(debuff_owner, 2 SECONDS, TRUE, debuff_owner, BUSY_ICON_CLOCK))
 				debuff_owner?.balloon_alert(debuff_owner, "Interrupted")
 				return
 	clothesundoed = 1
@@ -781,8 +781,8 @@
 	debuff_owner.adjustStaminaLoss(75)
 
 	playsound(usr.loc, "sound/effects/splat.ogg", 30)
-	debuff_owner.reagents.remove_reagent(/datum/reagent/toxin/xeno_aphrotoxin, 10)
-	debuff_owner.reagents.remove_reagent(/datum/reagent/consumable/larvajelly, 3)
+	debuff_owner.reagents.remove_reagent(/datum/reagent/toxin/xeno_aphrotoxin, 15)
+	debuff_owner.reagents.remove_reagent(/datum/reagent/consumable/larvajelly, 6)
 	debuff_owner.sexcon.ejaculate(debuff_owner)
 	if(debuff_owner.getStaminaLoss() > 120)
 		if(prob(5))
