@@ -47,6 +47,7 @@
 		/datum/mutation_upgrade/shell/fleeting_mirage,
 		/datum/mutation_upgrade/shell/splitting_mirage,
 		/datum/mutation_upgrade/shell/cloaking_mirage,
+		/datum/mutation_upgrade/shell/lights_out,
 		/datum/mutation_upgrade/shell/lone_lurker,
 		/datum/mutation_upgrade/spur/ambush/assassin,
 		/datum/mutation_upgrade/spur/maul/assassin,

@@ -1,3 +1,6 @@
+//*********************//
+//        Shell        //
+//*********************//
 /datum/mutation_upgrade/shell/lone_lurker
 	name = "Lone Lurker"
 	desc = "You will gain the ability to regenerate health, sunder and plasma off weeds as if on weeds but your benefit from pheromones is reduced to 0.5x/0.7x/0.9x."
@@ -27,6 +30,42 @@
 
 /datum/mutation_upgrade/shell/lone_lurker/proc/get_multiplier(structure_count, include_initial = TRUE)
 	return (include_initial ? multiplier_initial : 0) + (multiplier_per_structure * structure_count)
+
+/datum/mutation_upgrade/shell/lights_out
+	name = "Lights Out"
+	desc = "Your Death Mark causes lights within 3/4/5 tiles of your target to shut down for 1/3 of it's duration."
+	var/multiplier_per_structure = 1
+
+/datum/mutation_upgrade/shell/lights_out/get_desc_for_alert(new_amount)
+	if(!new_amount)
+		return ..()
+	return "Your Death Mark causes lights within [2 + get_multiplier(new_amount)] tiles of your target to shut down for 1/3 of it's duration."
+
+/datum/mutation_upgrade/shell/lights_out/on_mutation_enabled()
+	. = ..()
+	var/datum/action/ability/activable/xeno/hunter_mark/assassin/dm_ability = xenomorph_owner.actions_by_path[/datum/action/ability/activable/xeno/hunter_mark/assassin]
+	if(!dm_ability)
+		return
+	dm_ability.turn_off_lights = TRUE
+	dm_ability.light_off_range += get_multiplier(0)
+
+/datum/mutation_upgrade/shell/lights_out/on_mutation_disabled()
+	. = ..()
+	var/datum/action/ability/activable/xeno/hunter_mark/assassin/dm_ability = xenomorph_owner.actions_by_path[/datum/action/ability/activable/xeno/hunter_mark/assassin]
+	if(!dm_ability)
+		return
+	dm_ability.turn_off_lights = FALSE
+	dm_ability.light_off_range -= get_multiplier(0)
+
+/datum/mutation_upgrade/shell/lights_out/on_structure_update(previous_amount, new_amount)
+	. = ..()
+	var/datum/action/ability/activable/xeno/hunter_mark/assassin/dm_ability = xenomorph_owner.actions_by_path[/datum/action/ability/activable/xeno/hunter_mark/assassin]
+	if(!dm_ability)
+		return
+	dm_ability.light_off_range += get_multiplier(new_amount - previous_amount)
+
+/datum/mutation_upgrade/shell/lights_out/proc/get_multiplier(structure_count)
+	return multiplier_per_structure * structure_count
 
 
 //*********************//
