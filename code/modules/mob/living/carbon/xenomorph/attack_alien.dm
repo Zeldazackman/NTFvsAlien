@@ -320,6 +320,21 @@
 			disable_lights(sparks = TRUE)
 			to_chat(X, span_warning("We disable whatever annoying lights the dead creature possesses."))
 		else
+			var/implanted_larvas
+			for(var/mob/living/carbon/xenomorph/larva/implanted in contents)
+				implanted_larvas++
+			if(implanted_larvas)
+				for(var/i in 1 to implanted_larvas)
+					X.visible_message(span_danger("[X] begins to dig out a larva from [src]!"), span_danger("We begin to dig out a grown larva from [src]."), span_warning("You hear flesh cut open."), 5)
+					if(do_mob(X, src, 3 SECONDS, BUSY_ICON_HOSTILE))
+						X.do_attack_animation(src, ATTACK_EFFECT_CLAW)
+						do_jitter_animation(1500, 2 SECONDS)
+						apply_damage(X.xeno_caste.melee_damage * X.xeno_melee_damage_modifier, BRUTE, 0, MELEE, TRUE, TRUE, TRUE, X.xeno_caste.melee_ap, X)
+						X.visible_message(span_danger("[X] digs out a larva from [src]!"), span_danger("We dig out a larva from [src]."), span_warning("You hear flesh cut open."), 5)
+						for(var/mob/living/carbon/xenomorph/larva/implanted in contents)
+							implanted.forceMove(loc)
+							implanted.burrow()
+							break
 			to_chat(X, span_warning("[src] is dead, why would we want to touch it?"))
 		return FALSE
 

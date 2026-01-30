@@ -160,6 +160,8 @@
 	var/implanted_embryos = 0
 	for(var/obj/item/alien_embryo/implanted in victim.contents)
 		implanted_embryos++
+	for(var/mob/living/carbon/xenomorph/larva/implanted in victim.contents)
+		implanted_embryos++
 	if(implanted_embryos < limit)
 		return TRUE
 	return FALSE

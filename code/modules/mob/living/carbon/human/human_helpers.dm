@@ -407,7 +407,7 @@
 			face_atom(user)
 			var/action = /datum/sex_action/tonguebath // neuter things ig
 			if(gender == MALE)
-				if(user.gender == MALE)
+				if(user.gender == MALE || (isxeno(user) && user.client?.prefs?.xenogender > 2))
 					if(isxeno(user))
 						action = pick(/datum/sex_action/anal_sex, /datum/sex_action/tailpegging_anal, /datum/sex_action/throat_sex, /datum/sex_action/frotting) //funny frot
 					else
