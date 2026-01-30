@@ -82,7 +82,7 @@
 	var/datum/action/ability/activable/xeno/hunter_mark/assassin/dm_ability = xenomorph_owner.actions_by_path[/datum/action/ability/activable/xeno/hunter_mark/assassin]
 	if(!dm_ability)
 		return
-	dm_ability.death_mark_multiplier += initial(dm_ability.death_mark_multiplier) * get_duration_multiplier(new_amount - previous_amount, FALSE)
+	dm_ability.death_mark_multiplier += initial(dm_ability.death_mark_multiplier) * get_multiplier(new_amount - previous_amount, FALSE)
 	dm_ability.death_mark_damage_multiplier += initial(dm_ability.death_mark_damage_multiplier) * get_multiplier(new_amount - previous_amount, FALSE)
 
 /datum/mutation_upgrade/veil/death_trail/proc/get_multiplier(structure_count, include_initial = TRUE)
