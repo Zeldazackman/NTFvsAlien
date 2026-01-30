@@ -93,6 +93,8 @@
 			if(swapping)
 				user.balloon_alert(user, "Futa")
 	user.client?.prefs?.xenogender = xgen
+	if(swapping)
+		user.client.prefs.save_preferences()
 
 	if(xeno_caste.caste_flags & CASTE_HAS_WOUND_MASK) //ig if u cant see wounds u shouldnt see tiddies too maybe for things like being ethereal
 		apply_overlay(GENITAL_LAYER)

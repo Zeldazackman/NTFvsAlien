@@ -228,10 +228,10 @@
 		if(mark?.marked_target == M)
 			to_chat(owner, span_xenodanger("We strike our death mark with a calculated pounce."))
 			M.adjust_stagger(6 SECONDS)
-			M.add_slowdown(2)
+			M.add_slowdown(3)
 		else
 			M.adjust_stagger(3 SECONDS)
-			M.add_slowdown(1)
+			M.add_slowdown(2)
 		to_chat(owner, span_xenodanger("Pouncing from the shadows, we stagger our victim."))
 	if(stealth_flags & DIS_POUNCE_SLASH)
 		cancel_stealth()

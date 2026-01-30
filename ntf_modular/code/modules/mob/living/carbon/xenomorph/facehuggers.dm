@@ -17,7 +17,7 @@
 
 /obj/item/clothing/mask/facehugger/latching/equipped(mob/living/user, slot)
 	. = ..()
-	if(slot == SLOT_UNDERWEAR || slot == SLOT_WEAR_MASK)
+	if(slot == SLOT_UNDERWEAR || slot == SLOT_SHIRT || slot == SLOT_WEAR_MASK)
 		if(user.gender == MALE && target_hole == HOLE_VAGINA)
 			target_hole = HOLE_ASS //i aint writing fem hugger on male messages for allat plus their descs have cock and balls
 		wearer = user

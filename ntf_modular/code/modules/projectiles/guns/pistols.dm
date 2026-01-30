@@ -113,7 +113,7 @@
 	cock_delay = 1 SECONDS
 	caliber = CALIBER_9X19_TRANQUILIZER //codex
 	load_method = SINGLE_CASING //codex
-	max_shells = null
+	max_shells = 12
 	max_chamber_items = 12 //codex
 	default_ammo_type = /obj/item/ammo_magazine/pistol/g22tranq
 	allowed_ammo_types = list(/obj/item/ammo_magazine/pistol/g22tranq, /obj/item/ammo_magazine/pistol/g22)
