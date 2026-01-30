@@ -452,7 +452,7 @@
 			return
 	erptime(user, src)
 
-/mob/living/carbon/human/proc/start_quick_fuck(mob/target, sexforce = SEX_FORCE_MID)
+/mob/living/proc/start_quick_fuck(mob/target, sexforce = SEX_FORCE_MID)
 	if(!istype(target))
 		return
 	var/action
