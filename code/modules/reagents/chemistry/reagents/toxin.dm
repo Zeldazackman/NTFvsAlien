@@ -709,7 +709,6 @@
 	if(prob(25))
 		L.adjustStaminaLoss(L.reagents.get_reagent_amount(/datum/reagent/toxin/xeno_aphrotoxin))
 		L.sexcon.adjust_arousal(L.reagents.get_reagent_amount(/datum/reagent/toxin/xeno_aphrotoxin))
-	if(prob(10))
 		switch(L.sexcon.arousal)
 			if(1 to 50)
 				to_chat(L, span_warning("You feel your [L.gender==MALE ? "cock throb a little," : "vagina get a bit wet,"] distracting you.") )
