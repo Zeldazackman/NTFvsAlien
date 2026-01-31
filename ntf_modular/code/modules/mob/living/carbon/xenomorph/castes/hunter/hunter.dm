@@ -1,3 +1,7 @@
+/mob/living/carbon/xenomorph/hunter
+	icon = 'ntf_modular/icons/Xeno/castes/hunter.dmi'
+	pixel_x = -12
+
 /mob/living/carbon/xenomorph/hunter/assassin
 	icon_state = "Assassin Hunter Running"
 	caste_base_type = /datum/xeno_caste/hunter/assassin

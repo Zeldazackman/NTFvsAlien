@@ -1,4 +1,5 @@
 // Assassin strain
+//sacrifices armor, pounce stun, plasma and health for greater killing power and speed.
 /datum/xeno_caste/hunter/assassin
 	caste_type_path = /mob/living/carbon/xenomorph/hunter/assassin
 	display_name = "Assassin"
@@ -7,7 +8,10 @@
 	gib_anim = "Assassin Hunter Gibs"
 	gib_flick = "Assassin Hunter Gibbed"
 	upgrade = XENO_UPGRADE_BASETYPE
-	caste_desc = "A fast, creeping death, light faintly shimmers on it's strange, light-bending carapace."
+	caste_desc = "A fast, less armored but sharper clawed creeping death, light faintly shimmers on it's strange, light-bending carapace."
+
+	// *** Melee Attacks *** //
+	melee_ap = 10
 
 	// *** Speed *** //
 	speed = -1.6
@@ -22,7 +26,7 @@
 	stealth_break_threshold = 18
 
 	// *** Defense *** //
-	soft_armor = list(MELEE = 40, BULLET = 15, LASER = 15, ENERGY = 15, BOMB = 0, BIO = 20, FIRE = 30, ACID = 20)
+	soft_armor = list(MELEE = 35, BULLET = 25, LASER = 25, ENERGY = 25, BOMB = 0, BIO = 20, FIRE = 30, ACID = 20)
 
 	actions = list(
 		/datum/action/ability/xeno_action/xeno_resting,

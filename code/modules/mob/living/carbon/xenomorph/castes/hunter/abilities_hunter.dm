@@ -427,7 +427,8 @@
 /datum/action/ability/activable/xeno/pounce/proc/mob_hit(datum/source, mob/living/living_target)
 	SIGNAL_HANDLER
 	. = TRUE
-	if(living_target.stat || isxeno(living_target)) //we leap past xenos
+	if(living_target.stat == DEAD|| isxeno(living_target)) //we leap past xenos
+		pounce_complete()
 		return
 
 	if(ishuman(living_target) && (angle_to_dir(Get_Angle(xeno_owner.throw_source, living_target)) in reverse_nearby_direction(living_target.dir)))
