@@ -15,6 +15,11 @@
 	COOLDOWN_DECLARE(implant_cooldown)
 	var/last_came = 0
 
+/obj/item/clothing/mask/facehugger/latching/check_lifecycle()
+	if(attached) //we got a timer that adds check lifecycle for being dropped anyway.
+		return
+	. = ..()
+
 /obj/item/clothing/mask/facehugger/latching/equipped(mob/living/user, slot)
 	. = ..()
 	if(slot == SLOT_UNDERWEAR || slot == SLOT_SHIRT || slot == SLOT_WEAR_MASK)
