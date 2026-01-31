@@ -19159,8 +19159,8 @@
 	phone_category = "Medical";
 	phone_id = "Research"
 	},
-/obj/effect/spawner/random/engineering/extinguisher/regularweighted,
 /obj/item/storage/box/monkeycubes,
+/obj/item/tool/extinguisher,
 /turf/open/floor/mainship/sterile/corner{
 	dir = 8
 	},
