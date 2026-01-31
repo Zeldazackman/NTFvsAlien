@@ -1306,12 +1306,15 @@ to_chat will check for valid clients itself already so no need to double check f
 // Make sure they can understand english
 /datum/hive_status/corrupted/post_add(mob/living/carbon/xenomorph/X)
 	. = ..()
+	X.inherent_accesses += ALL_MARINE_ACCESS
 	X.grant_language(/datum/language/common)
 	X.AddComponent(/datum/component/xeno_iff, TGMC_LOYALIST_IFF)
 
 /datum/hive_status/corrupted/post_removal(mob/living/carbon/xenomorph/X)
 	. = ..()
+	X.inherent_accesses = initial(X.inherent_accesses)
 	X.remove_language(/datum/language/common)
+	X.remove_component(/datum/component/xeno_iff)
 
 /datum/hive_status/corrupted/can_xeno_message()
 	return TRUE // can always talk in hivemind
