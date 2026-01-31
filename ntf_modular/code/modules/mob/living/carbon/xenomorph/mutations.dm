@@ -136,6 +136,7 @@
 /datum/mutation_upgrade/veil/cannonballs
 	name = "Cannonballs"
 	desc = "Earth Riser can have 1/2/3 more pillars active at a time, but its cooldown duration is doubled."
+	var/amount_per_structure = 1
 
 /datum/mutation_upgrade/veil/cannonballs/get_desc_for_alert(new_amount)
 	if(!new_amount)
