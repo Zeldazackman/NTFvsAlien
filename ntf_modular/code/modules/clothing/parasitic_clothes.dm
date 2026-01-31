@@ -86,6 +86,10 @@
 /obj/item/clothing/resin_sack/attack_self(mob/user)
 	. = ..()
 	var/turf/current_turf = get_turf(user)
+	if(iscarbon(user))
+		var/mob/living/carbon/cuser = user
+		if(cuser.back != src || cuser.back != loc)
+			return
 	if(!COOLDOWN_FINISHED(src, egg_cooldown_timer))
 		balloon_alert(user, "On cooldown: [round((egg_cooldown_timer - world.time)/10)]s")
 		return

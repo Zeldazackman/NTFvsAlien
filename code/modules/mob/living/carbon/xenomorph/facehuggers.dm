@@ -707,6 +707,7 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 			if(!user.IsStaggered())
 				user.adjust_stagger(4 SECONDS)
 				user.add_slowdown(6)
+				strip_delay *= 2
 			user.apply_damage(50, STAMINA)
 	attached = TRUE
 	go_idle(FALSE, TRUE)

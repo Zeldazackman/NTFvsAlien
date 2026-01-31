@@ -200,6 +200,11 @@
 
 /obj/structure/bed/nest/advanced/process()
 	. = ..()
+	INVOKE_ASYNC(src, PROC_REF(sex_process)) //so we can have random delays to make it less robotic between two huggers
+
+
+/obj/structure/bed/nest/advanced/proc/sex_process()
+	sleep(rand(1,6)) //tiny sleep to make it off-sync with self and other huggers
 	if(obj_integrity < max_integrity)
 		obj_integrity += min(obj_integrity+4, max_integrity)
 	if(!LAZYLEN(buckled_mobs))
