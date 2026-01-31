@@ -3,6 +3,8 @@
 // ***************************************
 /datum/action/ability/activable/xeno/secrete_resin/widow
 	buildable_structures = list(
+		//Each entry corresponds to an entry in the global resin_images_list, in order.
+		//Make sure to keep them synced up.
 		/turf/closed/wall/resin/regenerating/thick,
 		/turf/closed/wall/resin/membrane,
 		/obj/alien/resin/sticky,
