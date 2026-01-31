@@ -133,7 +133,7 @@
 			return FALSE
 		to_chat(src, span_alien("We feel a new larva forming within us."))
 		addtimer(CALLBACK(src, PROC_REF(xenobirth)), 5 MINUTES)
-		Shake(3 SECONDS)
+		Shake(duration = 3 SECONDS)
 		preggo = TRUE
 		return TRUE
 	return FALSE
