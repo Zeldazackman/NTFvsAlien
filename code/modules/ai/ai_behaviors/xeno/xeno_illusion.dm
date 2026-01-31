@@ -25,6 +25,8 @@
 						continue
 					if((H.status_flags & XENO_HOST && H.buckled) || HAS_TRAIT(H, TRAIT_HAULED))
 						continue
+					if(H.status_flags & GODMODE|INCORPOREAL)
+						continue
 					if(ismonkey(H))
 						continue
 				melee_interact(null, victim)

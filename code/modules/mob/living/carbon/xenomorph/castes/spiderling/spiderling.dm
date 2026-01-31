@@ -34,6 +34,12 @@
 	else
 		AddComponent(/datum/component/ai_controller, /datum/ai_behavior/xeno)
 
+/mob/living/carbon/xenomorph/spiderling/Destroy()
+	if(spidermother)
+		UnregisterSignal(spidermother, COMSIG_MOB_DEATH)
+	remove_component(/datum/component/ai_controller)
+	. = ..()
+
 /mob/living/carbon/xenomorph/spiderling/update_icons(state_change = TRUE)
 	. = ..()
 	if(state_change)

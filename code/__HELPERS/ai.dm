@@ -156,6 +156,8 @@
 			//ntf addition for ai bs
 			if(ismonkey(nearby_human))
 				continue
+			if(nearby_human.status_flags & GODMODE|INCORPOREAL)
+				continue
 			if((nearby_human.status_flags & XENO_HOST && nearby_human.buckled\
 			&& (istype(nearby_human.buckled, /obj/structure/bed/nest) || istype(nearby_human.buckled, /obj/structure/bed/nest/wall)\
 			|| istype(nearby_human.buckled, /obj/structure/bed/nest/advanced)\
