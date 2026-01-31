@@ -69,7 +69,7 @@
 	remove_danger_overlay() //Remove the danger overlay
 	if(stat == CONSCIOUS)
 		update_icon()
-	else if(!attached && !(stasis || no_activate))
+	if(!attached && !(stasis || no_activate))
 		activetimer = addtimer(CALLBACK(src, PROC_REF(go_active)), activate_time, TIMER_STOPPABLE|TIMER_UNIQUE)
 		lifetimer = addtimer(CALLBACK(src, PROC_REF(check_lifecycle)), FACEHUGGER_DEATH, TIMER_STOPPABLE|TIMER_UNIQUE)
 

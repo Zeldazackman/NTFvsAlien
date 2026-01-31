@@ -37,7 +37,7 @@
 	remove_overlay(GENITAL_LAYER)
 	if(QDELETED(user)||QDELETED(src))
 		return
-	var/xgen = user?.client?.prefs?.xenogender
+	var/xgen = client?.prefs?.xenogender
 	if(swapping)
 		if(!COOLDOWN_FINISHED(src, gender_swap_cooldown))
 			to_chat(src, span_xenonotice("You need to wait [DisplayTimeText(COOLDOWN_TIMELEFT(src, gender_swap_cooldown))] more."))
@@ -94,6 +94,7 @@
 				user.balloon_alert(user, "Futa")
 	user.client?.prefs?.xenogender = xgen
 	if(swapping)
+		user.client.prefs.save_character()
 		user.client.prefs.save_preferences()
 
 	if(xeno_caste.caste_flags & CASTE_HAS_WOUND_MASK) //ig if u cant see wounds u shouldnt see tiddies too maybe for things like being ethereal
