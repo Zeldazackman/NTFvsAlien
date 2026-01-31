@@ -33,6 +33,7 @@
 //#define WALL_RESIN_NEST "wall resin nest"
 #define LIGHT_TOWER "light tower"
 #define ADVANCED_RESIN_NEST "tentacle breeding nest"
+#define SPECIAL_RESIN_NEST "sentient tentacle breeding nest"
 
 //Special resin defines
 #define BULLETPROOF_WALL "bulletproof resin wall"
@@ -174,6 +175,7 @@ GLOBAL_LIST_INIT(resin_images_list, list(
 		RESIN_NEST = image('ntf_modular/icons/Xeno/construction.dmi', icon_state = RESIN_NEST),
 		LIGHT_TOWER = image('ntf_modular/icons/Xeno/construction.dmi', icon_state = LIGHT_TOWER),
 		ADVANCED_RESIN_NEST = image('ntf_modular/icons/Xeno/construction.dmi', icon_state = RESIN_NEST),
+		SPECIAL_RESIN_NEST = image('ntf_modular/icons/Xeno/construction.dmi', icon_state = RESIN_NEST),//sentient nest
 		BULLETPROOF_WALL = image('icons/Xeno/actions/construction.dmi', icon_state = BULLETPROOF_WALL),
 		FIREPROOF_WALL = image('icons/Xeno/actions/construction.dmi', icon_state = FIREPROOF_WALL),
 		HARDY_WALL = image('icons/Xeno/actions/construction.dmi', icon_state = HARDY_WALL),
