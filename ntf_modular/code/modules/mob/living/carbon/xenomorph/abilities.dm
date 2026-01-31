@@ -1010,5 +1010,5 @@ GLOBAL_LIST_INIT(xeno_resin_keys, list(
 		/obj/structure/bed/nest = RESIN_NEST,
 		/obj/structure/xeno/lighttower = LIGHT_TOWER,
 		/obj/structure/bed/nest/advanced = ADVANCED_RESIN_NEST,
-		/obj/structure/bed/nest/advanced/special = ADVANCED_RESIN_NEST,
+		/obj/structure/bed/nest/advanced/special = SPECIAL_RESIN_NEST,
 	))
