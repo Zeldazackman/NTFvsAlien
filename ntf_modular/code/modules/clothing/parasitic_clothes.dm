@@ -12,6 +12,13 @@
 	color = COLOR_PURPLE
 	equip_slot_flags = ITEM_SLOT_UNDERWEAR|ITEM_SLOT_ICLOTHING|ITEM_SLOT_OCLOTHING
 
+//others can remove it
+/obj/item/clothing/suit/resin_bodysuit/canStrip(mob/stripper, mob/owner)
+	if(!do_mob(stripper, owner, 2.5 SECONDS, BUSY_ICON_FRIENDLY))
+		return FALSE
+	REMOVE_TRAIT(src, TRAIT_NODROP, "parasite_trait")
+	return TRUE
+
 /obj/item/clothing/suit/resin_bodysuit/equipped(mob/user, slot)
 	if(!ishuman(user))
 		return
