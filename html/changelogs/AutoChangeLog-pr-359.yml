@@ -1,0 +1,4 @@
+author: "Colfer1"
+delete-after: True
+changes:
+  - balance: "samples now have an icon on the map, so you can find those pesky researchers"
