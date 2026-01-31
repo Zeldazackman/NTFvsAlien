@@ -334,8 +334,7 @@
 						X.visible_message(span_danger("[X] digs out a larva from [src]!"), span_danger("We dig out a larva from [src]."), span_warning("You hear flesh cut open."), 5)
 						for(var/mob/living/carbon/xenomorph/larva/implanted in contents)
 							implanted.forceMove(loc)
-							sleep(1.5 SECONDS)
-							implanted.burrow()
+							addtimer(CALLBACK(implanted, TYPE_PROC_REF(/mob/living/carbon/xenomorph/larva, burrow)), 1.5 SECONDS)
 							break
 			to_chat(X, span_warning("[src] is dead, why would we want to touch it?"))
 		return FALSE
