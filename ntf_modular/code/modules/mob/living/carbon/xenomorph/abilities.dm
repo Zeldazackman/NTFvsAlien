@@ -990,9 +990,9 @@
 /datum/action/ability/activable/xeno/tail_stab/ai_should_use(atom/A)
 	if(!iscarbon(A))
 		return FALSE
-	if(!can_use_ability(A, override_flags = ABILITY_IGNORE_SELECTED_ABILITY))
+	if(owner.issamexenohive(A))
 		return FALSE
-	if(A.get_xeno_hivenumber() == owner.get_xeno_hivenumber())
+	if(!can_use_ability(A, silent = TRUE, override_flags = ABILITY_IGNORE_SELECTED_ABILITY))
 		return FALSE
 	return TRUE
 
