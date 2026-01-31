@@ -39,7 +39,7 @@
 	mutations = list(
 		/datum/mutation_upgrade/shell/rocky_layers,
 		/datum/mutation_upgrade/spur/refined_palate,
-		/datum/mutation_upgrade/veil/avalanche
+		/datum/mutation_upgrade/veil/cannonballs
 	)
 
 /datum/xeno_caste/behemoth/sieger/normal
