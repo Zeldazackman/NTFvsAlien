@@ -14,11 +14,11 @@
 
 	// *** Melee Attacks *** //
 	melee_damage = 25
-	melee_ap = 5
+	melee_ap = 10
 	attack_delay = 7
 
 	// *** Speed *** //
-	speed = -1.4
+	speed = -1.3
 	weeds_speed_mod = -0.2
 
 	// *** Plasma *** //

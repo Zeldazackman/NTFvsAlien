@@ -54,3 +54,9 @@
 			to_chat(xeno_attacker, span_xenonotice("<i>(War mode)</i> We have no reason to grab that."))
 			return FALSE
 	. = ..()
+
+/mob/living/carbon/xenomorph/attack_hand(mob/living/user)
+	. = ..()
+	for(var/mob/living/under_me in loc)
+		attack_hand(under_me)
+		break

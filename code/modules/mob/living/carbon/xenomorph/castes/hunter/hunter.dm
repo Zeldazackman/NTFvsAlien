@@ -17,7 +17,7 @@
 
 /mob/living/carbon/xenomorph/hunter/Initialize(mapload)
 	. = ..()
-	ADD_TRAIT(src, TRAIT_SILENT_FOOTSTEPS, XENO_TRAIT)
+	ADD_TRAIT(src, TRAIT_LIGHT_STEP, XENO_TRAIT)
 
 /mob/living/carbon/xenomorph/hunter/weapon_x
 	caste_base_type = /datum/xeno_caste/hunter/weapon_x

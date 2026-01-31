@@ -11,10 +11,10 @@
 	caste_desc = "A fast, less armored but sharper clawed creeping death, light faintly shimmers on it's strange, light-bending carapace."
 
 	// *** Melee Attacks *** //
-	melee_ap = 10
+	melee_ap = 15 //literally ravager now
 
 	// *** Speed *** //
-	speed = -1.6
+	speed = -1.5
 
 	// *** Plasma *** //
 	plasma_max = 250
