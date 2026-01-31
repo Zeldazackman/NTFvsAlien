@@ -112,9 +112,8 @@
 	cock_animation = "g22_fire"
 	cock_delay = 1 SECONDS
 	caliber = CALIBER_9X19_TRANQUILIZER //codex
-	load_method = SINGLE_CASING //codex
-	max_shells = 12
-	max_chamber_items = 12 //codex
+	load_method = MAGAZINE //codex
+	max_shells = 13
 	default_ammo_type = /obj/item/ammo_magazine/pistol/g22tranq
 	allowed_ammo_types = list(/obj/item/ammo_magazine/pistol/g22tranq, /obj/item/ammo_magazine/pistol/g22)
 	attachable_offset = list("muzzle_x" = 29, "muzzle_y" = 20,"rail_x" = 10, "rail_y" = 21, "under_x" = 21, "under_y" = 15, "stock_x" = 21, "stock_y" = 17)
