@@ -109,10 +109,11 @@
 
 	var/the_duration = DEATH_MARK_TIMEOUT * death_mark_multiplier
 	to_chat(X, span_xenodanger("We will be able to maintain the mark for [the_duration / 10] seconds."))
-	for(var/atom/light AS in GLOB.nightfall_toggleable_lights)
-		if(isnull(light.loc) || (marked_target.loc.z != light.loc.z) || (get_dist(marked_target, light) >= light_off_range))
-			continue
-		light.turn_light(null, FALSE, the_duration/3, TRUE, TRUE, TRUE)
+	if(turn_off_lights)
+		for(var/atom/light AS in GLOB.nightfall_toggleable_lights)
+			if(isnull(light.loc) || (marked_target.loc.z != light.loc.z) || (get_dist(marked_target, light) >= light_off_range))
+				continue
+			light.turn_light(null, FALSE, the_duration/3, TRUE, TRUE, TRUE)
 	addtimer(CALLBACK(src, PROC_REF(unset_target)), the_duration)
 
 	playsound(marked_target, 'sound/effects/alien/new_larva.ogg', 50, 0, 1)
