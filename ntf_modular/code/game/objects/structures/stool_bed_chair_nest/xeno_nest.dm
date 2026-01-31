@@ -383,7 +383,6 @@
 	if(curarea.ceiling < CEILING_UNDERGROUND || isdropshiparea(curarea) || (get_xeno_hivenumber() == XENO_HIVE_CORRUPTED && (is_mainship_level(z) || curarea.area_flags & MARINE_BASE)))
 		to_chat(src, span_xenowarning("The weeds here are not strong enough for nesting hosts easily, caves would be better."))
 		nesting_time *= 3
-		return
 
 	if(!supplier_turf.density)
 		var/obj/structure/window/framed/framed_window = locate(/obj/structure/window/framed/) in supplier_turf
