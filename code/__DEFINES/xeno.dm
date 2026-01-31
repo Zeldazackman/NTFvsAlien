@@ -168,6 +168,9 @@ GLOBAL_LIST_INIT(plant_images_list, list(
 
 //List of resin structure images
 GLOBAL_LIST_INIT(resin_images_list, list(
+		//This is the menu for secrete resin.
+		//Each entry corresponds to an entry in secrete resin's buildable_structures list, in order.
+		//Make sure to keep them synced up.
 		RESIN_WALL = image('icons/Xeno/actions/construction.dmi', icon_state = RESIN_WALL),
 		RESIN_MEMBRANE = image('ntf_modular/icons/Xeno/construction.dmi', icon_state = RESIN_MEMBRANE),
 		STICKY_RESIN = image('icons/Xeno/actions/construction.dmi', icon_state = STICKY_RESIN),
