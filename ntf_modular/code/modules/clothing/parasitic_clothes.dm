@@ -63,6 +63,13 @@
 	var/evolve_timer
 	COOLDOWN_DECLARE(egg_cooldown_timer)
 
+//others can remove it
+/obj/item/clothing/resin_sack/canStrip(mob/stripper, mob/owner)
+	if(!do_mob(stripper, owner, 2.5 SECONDS, BUSY_ICON_FRIENDLY))
+		return FALSE
+	REMOVE_TRAIT(src, TRAIT_NODROP, "parasite_trait")
+	return TRUE
+
 /obj/item/clothing/resin_sack/setDir(newdir)
 	. = ..()
 	dir = NORTH
