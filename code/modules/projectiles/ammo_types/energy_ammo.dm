@@ -465,7 +465,7 @@
 /datum/ammo/energy/lasgun/marine/autolaser/mini
 	name = "mini laser bolt"
 	hitscan_effect_icon = "beam_particle"
-	damage = 10
+	damage = 5
 	penetration = 5
 	sundering = 0.5
 

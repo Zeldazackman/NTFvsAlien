@@ -1029,7 +1029,7 @@
 	fire_mode = GUN_FIREMODE_AUTOMATIC
 	icon_state = "tem"
 	radial_icon_state = "laser_disabler"
-	description = "Fires a rapid laser pulse with moderately reduced damage, but vastly improved energy efficiency."
+	description = "Fires a rapid laser pulse with greatly reduced damage, but vastly improved energy efficiency."
 
 // TE X-Ray
 
