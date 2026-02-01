@@ -33,6 +33,7 @@
 		/obj/item/storage/belt/knifepouch,
 		/obj/item/weapon/twohanded,
 		/obj/item/tool/pickaxe/plasmacutter,
+		/obj/item/armor_module/storage/pocket,
 	)
 	attachments_allowed = list(
 		/obj/item/armor_module/module/better_shoulder_lamp,
@@ -64,6 +65,7 @@
 		/obj/item/armor_module/storage/grenade,
 		/obj/item/armor_module/storage/integrated,
 		/obj/item/armor_module/armor/badge,
+		/obj/item/armor_module/storage/pocket,
 	)
 	var/locate_cooldown = 0 //Cooldown for SL locator
 	var/list/armor_overlays = list()

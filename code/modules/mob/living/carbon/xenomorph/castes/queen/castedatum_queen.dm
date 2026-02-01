@@ -12,7 +12,8 @@
 	wound_type = "queen" //used to match appropriate wound overlays
 
 	// *** Melee Attacks *** //
-	melee_damage = 25
+	melee_damage = 28
+	attack_delay = 9
 
 	// *** Speed *** //
 	speed = -0.3
@@ -47,7 +48,7 @@
 
 	// *** Ranged Attack *** //
 	spit_delay = 1.1 SECONDS
-	spit_types = list(/datum/ammo/xeno/sticky, /datum/ammo/xeno/acid, /datum/ammo/xeno/toxin/aphrotoxin/upgrade3, /datum/ammo/xeno/toxin/upgrade3)
+	spit_types = list(/datum/ammo/xeno/sticky, /datum/ammo/xeno/acid/medium, /datum/ammo/xeno/toxin/aphrotoxin/upgrade3, /datum/ammo/xeno/toxin/upgrade3)
 
 	// *** Pheromones *** //
 	aura_strength = 5 //The Queen's aura is strong and stays so, and gets devastating late game. Climbs by 1 to 5

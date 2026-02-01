@@ -130,9 +130,10 @@
 
 /mob/living/carbon/xenomorph/Move(atom/newloc, direction, glide_size_override)
 	. = ..()
-	var/mob/user = eaten_mob
+	var/mob/living/carbon/human/user = eaten_mob
 	if(user && HAS_TRAIT(user, TRAIT_HAULED)) //this trait lets us know if they are devoured or carried in a real lazy shitcode way, it just works.
 		user.forceMove(loc)
+		user.haul_dir_check()
 
 /mob/living/carbon/xenomorph/forceMove(atom/destination)
 	. = ..()

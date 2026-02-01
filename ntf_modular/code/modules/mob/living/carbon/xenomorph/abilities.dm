@@ -544,7 +544,7 @@
 	owner_xeno.eject_victim()
 	owner_xeno.remove_movespeed_modifier("devourer", TRUE)
 	log_combat(owner_xeno, victim, "released", addition="from being devoured")
-	REMOVE_TRAIT(victim, TRAIT_STASIS, TRAIT_STASIS)
+	REMOVE_TRAIT(victim, TRAIT_STASIS, "devour")
 	victim.ParalyzeNoChain(2 SECONDS)
 
 /datum/action/ability/activable/xeno/devour/use_ability(atom/target)
@@ -579,7 +579,7 @@
 	owner_xeno.devouring_mob = null
 	log_combat(owner_xeno, victim, "devoured")
 	owner.visible_message(span_warning("[owner_xeno] devour [victim]!"), span_warning("We devour [victim]!"), null, 5)
-	ADD_TRAIT(victim, TRAIT_STASIS, TRAIT_STASIS)
+	ADD_TRAIT(victim, TRAIT_STASIS, "devour")
 	victim.forceMove(owner_xeno)
 	owner_xeno.eaten_mob = victim
 	if(xeno_owner.eaten_mob?.mob_size && !ismonkey(xeno_owner.eaten_mob) && !isxenolarva(xeno_owner.eaten_mob))
@@ -619,16 +619,6 @@
 			xeno_owner.add_movespeed_modifier("hauler", TRUE, 0, NONE, TRUE, xeno_owner.eaten_mob.mob_size/1.5)
 		xeno_owner.eaten_mob.forceMove(xeno_owner.loc, get_dir(target.loc, xeno_owner.loc))
 		xeno_owner.eaten_mob.handle_haul(xeno_owner)
-		RegisterSignal(xeno_owner.eaten_mob, COMSIG_MOB_DEATH, PROC_REF(release_dead_haul))
-
-/datum/action/ability/activable/xeno/devour/proc/release_dead_haul()
-	SIGNAL_HANDLER
-	var/mob/living/carbon/human/user = xeno_owner.eaten_mob
-	to_chat(src, span_warning("[user] is dead. No more use for them now."))
-	user.handle_unhaul()
-	UnregisterSignal(user, COMSIG_MOB_DEATH)
-	UnregisterSignal(src, COMSIG_ATOM_DIR_CHANGE)
-	xeno_owner.eaten_mob = null
 
 // Releasing a hauled mob
 /datum/action/ability/activable/xeno/devour/proc/release_haul(stuns = FALSE)
@@ -645,7 +635,6 @@
 	if(stuns)
 		user.AdjustStun(2)
 	UnregisterSignal(user, COMSIG_MOB_DEATH)
-	UnregisterSignal(src, COMSIG_ATOM_DIR_CHANGE)
 	xeno_owner.eaten_mob = null
 
 // ***************************************
