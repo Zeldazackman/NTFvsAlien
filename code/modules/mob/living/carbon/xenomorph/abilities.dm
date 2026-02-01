@@ -636,7 +636,7 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 		target.adjustStaminaLoss(-amount/5, TRUE)
 		target.AdjustUnconscious(-6 SECONDS) //The exact same amount of unc/stun/para gets removed on help act. Works on humans only, too.
 		target.AdjustStun(-6 SECONDS)
-		target.AdjustParalyze(-6 SECONDS)
+		target.AdjustParalyzed(-6 SECONDS)
 		to_chat(target, span_notice("Your body tenses as alien plasma restores some of your stamina."))
 	to_chat(xeno_owner, span_xenodanger("We have transferred [amount] units of plasma to [target]. We now have [xeno_owner.plasma_stored]/[xeno_owner.xeno_caste.plasma_max]."))
 	playsound(xeno_owner, SFX_ALIEN_DROOL, 25)
