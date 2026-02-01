@@ -93,6 +93,9 @@
 	if(!wearer)
 		reset_attach_status()
 		return
+	if(wearer.stat == DEAD)
+		reset_attach_status()
+		return
 	var/as_planned = wearer?.wear_mask == src || wearer?.w_underwear == src  || wearer?.w_undershirt == src
 	if(!as_planned)
 		reset_attach_status()
