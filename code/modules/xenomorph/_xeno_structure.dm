@@ -86,7 +86,7 @@
 			return
 
 	threat_warning = TRUE
-	GLOB.hive_datums[hivenumber].xeno_message("Our [name] has detected a nearby hostile [hostile] at [get_area(hostile)] (X: [hostile.x], Y: [hostile.y]).", "xenoannounce", 5, FALSE, hostile, 'sound/voice/alien/help1.ogg', FALSE, null, /atom/movable/screen/arrow/leader_tracker_arrow)
+	GLOB.hive_datums[hivenumber].xeno_message("Our [name] has detected a nearby hostile [hostile] at [get_area(hostile)] (X: [hostile.x], Y: [hostile.y]).", "xenoannounce", 5, FALSE, hostile, 'ntf_modular/sound/voice/help1nonearrape.ogg', FALSE, null, /atom/movable/screen/arrow/leader_tracker_arrow)
 	COOLDOWN_START(src, proxy_alert_cooldown, XENO_STRUCTURE_DETECTION_COOLDOWN)
 	addtimer(CALLBACK(src, PROC_REF(clear_warning)), XENO_STRUCTURE_DETECTION_COOLDOWN)
 	update_minimap_icon()
