@@ -583,3 +583,6 @@ alt gamemodes
 		/datum/job/terragov/civilian/liaison_transco = 1,
 		/datum/job/clf/liaison_clf = 1,
 	)
+
+	time_between_round_group = 0
+	time_between_round_group_name = "GROUP_Extended"
