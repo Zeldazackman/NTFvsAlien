@@ -126,6 +126,8 @@
 		/datum/xeno_caste/dragon = 0,
 	)
 	max_larva_preg_at_once = MAX_LARVA_PREGNANCIES_SOL
+	time_between_round_group = 0
+	time_between_round_group_name = "GROUP_Extended"
 
 /datum/game_mode/infestation/secret_of_life/pre_setup()
 	. = ..()
@@ -583,6 +585,3 @@ alt gamemodes
 		/datum/job/terragov/civilian/liaison_transco = 1,
 		/datum/job/clf/liaison_clf = 1,
 	)
-
-	time_between_round_group = 0
-	time_between_round_group_name = "GROUP_Extended"
