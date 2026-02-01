@@ -5,7 +5,7 @@
 	caste_desc = "Gross, cute, bloated and ready to explode!"
 	base_strain_type = /mob/living/carbon/xenomorph/baneling
 	caste_type_path = /mob/living/carbon/xenomorph/baneling
-	tier = XENO_TIER_ONE
+	tier = XENO_TIER_MINION
 	upgrade = XENO_UPGRADE_BASETYPE
 	wound_type = "baneling" //used to match appropriate wound overlays
 
