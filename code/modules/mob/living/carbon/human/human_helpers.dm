@@ -399,7 +399,7 @@
 	if(!isliving(dropping))
 		return
 	if(!isliving(user))
-		return_air
+		return
 	if(!user.sexcon || !sexcon)
 		return
 	if(dropping != src)
