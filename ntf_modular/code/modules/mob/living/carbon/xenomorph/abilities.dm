@@ -725,19 +725,12 @@
 	else
 		owner.do_attack_animation(A, ATTACK_EFFECT_REDSTAB)
 
-	if(A.resistance_flags & (INDESTRUCTIBLE|CRUSHER_IMMUNE) && !(A.resistance_flags & TAIL_STABABLE)) //no bolting down indestructible airlocks.
+	if(A.resistance_flags & (INDESTRUCTIBLE|CRUSHER_IMMUNE) && !(A.resistance_flags & TAIL_STABABLE))
 		if(!silent)
 			to_chat(owner, span_xenodanger("We cannot damage this target!"))
 			add_cooldown(1 SECONDS)
 			playsound(owner, "alien_tail_swipe", 50, TRUE)
 		return FALSE
-
-	if(isstructure(A) || ismachinery(A))
-		if(!(A.resistance_flags & XENO_DAMAGEABLE) && !(A.resistance_flags & TAIL_STABABLE))
-			to_chat(xeno, span_xenodanger("We cannot damage this target!"))
-			add_cooldown(1 SECONDS)
-			playsound(owner, "alien_tail_swipe", 50, TRUE)
-			return FALSE
 
 	if(isxeno(A) && A.issamexenohive(owner))
 		if(!silent)
