@@ -1023,7 +1023,7 @@
 /datum/lasrifle/energy_mg_mode/standard/minigun
 	rounds_per_shot = 2
 	ammo_datum_type = /datum/ammo/energy/lasgun/marine/autolaser/mini
-	fire_delay = 0.08 SECONDS
+	fire_delay = 0.1 SECONDS
 	fire_sound = 'sound/weapons/guns/fire/Laser Pistol Standard.ogg'
 	message_to_user = "You set the machine laser's charge mode to standard fire."
 	fire_mode = GUN_FIREMODE_AUTOMATIC
