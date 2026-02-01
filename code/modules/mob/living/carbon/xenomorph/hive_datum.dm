@@ -993,6 +993,8 @@ to_chat will check for valid clients itself already so no need to double check f
 /datum/hive_status/burrow_larva(mob/living/carbon/xenomorph/larva/L)
 	if(!is_ground_level(L.z) && !L.get_xeno_hivenumber() == XENO_HIVE_CORRUPTED)
 		return
+	if(L.stat)
+		return
 	L.visible_message(span_xenodanger("[L] quickly burrows into the ground."))
 	var/datum/job/xeno_job = SSjob.GetJobType(GLOB.hivenumber_to_job_type[hivenumber])
 	xeno_job.add_job_positions(1)
