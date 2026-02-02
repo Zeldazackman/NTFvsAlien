@@ -402,6 +402,8 @@
 		return
 	if(!user.sexcon || !sexcon)
 		return
+	if(user.incapacitated(TRUE))
+		return
 	if(dropping != src)
 		user.sexcon.set_target(src)
 		if(user.a_intent != INTENT_HELP && !user.sexcon.current_action)
