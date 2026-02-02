@@ -63,7 +63,7 @@
 	var/properkey = "[speed][force][sigkey]"
 	if(prob(10))
 		user.balloon_alert_to_viewers(pick("*plap*","*plop*","*slap*","*pap*","*slick*",))
-	if(properkey == msg_signature && last_msg_signature + 10 SECONDS >= world.time)
+	if(properkey == msg_signature && last_msg_signature + 20 SECONDS >= world.time)
 		return FALSE
 	msg_signature = properkey
 	last_msg_signature = world.time
