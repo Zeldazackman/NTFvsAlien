@@ -17,7 +17,7 @@
 	src.identifier = identifier
 	setDir(direction)
 	update_icon()
-	addtimer(CALLBACK(src, PROC_REF(qdel)), 3 SECONDS) //incase
+	addtimer(CALLBACK(src, PROC_REF(qdel)), 3 SECONDS, TIMER_DELETE_ME) //incase
 
 ///Remove the blip from the operator screen
 /obj/effect/blip/edge_blip/remove_blip(mob/operator)
