@@ -362,14 +362,13 @@
 		to_chat(user, span_warning("\The [src]'s processors are still cooling! Wait before trying to flip the switch again."))
 		return
 	toggle_state(user) // just flip dat switch
-	var/turf/commloc = get_turf(src)
 	var/area/commarea = get_area(src)
 	if(on) //now, if it went on it now uses power
 		use_power = IDLE_POWER_USE
-		message_admins("[key_name(user)] turned \the [src] in [commarea] ON. [ADMIN_JMP(commloc.loc)]")
+		message_admins("[key_name(user)] turned \the [src] in [commarea] ON. [ADMIN_JMP(src)]")
 	else
 		use_power = NO_POWER_USE
-		message_admins("[key_name(user)] turned \the [src] in [commarea] OFF. [ADMIN_JMP(commloc.loc)]")
+		message_admins("[key_name(user)] turned \the [src] in [commarea] OFF. [ADMIN_JMP(src)]")
 	toggle_cooldown = world.time + 4 SECONDS
 	update_icon_state()
 
