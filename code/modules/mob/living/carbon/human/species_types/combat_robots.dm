@@ -37,7 +37,6 @@
 //		SLOT_GLASSES,
 	)
 	blood_color = "#2d2055" //an oil-like color - a little note, robots cannot shed blood in any way, due to their flags
-	hair_color = "#00000000"
 	has_organ = list()
 	screams = list(MALE = SFX_ROBOT_SCREAM, FEMALE = SFX_ROBOT_SCREAM, PLURAL = SFX_ROBOT_SCREAM, NEUTER = SFX_ROBOT_SCREAM)
 	paincries = list(MALE = SFX_ROBOT_PAIN, FEMALE = SFX_ROBOT_PAIN, PLURAL = SFX_ROBOT_PAIN, NEUTER = SFX_ROBOT_PAIN)
