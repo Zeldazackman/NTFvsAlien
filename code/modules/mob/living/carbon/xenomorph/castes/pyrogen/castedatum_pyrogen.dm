@@ -29,7 +29,7 @@
 	// *** Evolution *** //
 	upgrade_threshold = TIER_TWO_THRESHOLD
 
-	deevolves_to = /mob/living/carbon/xenomorph/runner
+	deevolves_to = /datum/xeno_caste/runner
 
 	// *** Flags *** //
 	caste_flags = CASTE_EVOLUTION_ALLOWED|CASTE_FIRE_IMMUNE|CASTE_MUTATIONS_ALLOWED
