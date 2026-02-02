@@ -25,6 +25,7 @@
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_TOGGLE_STEALTH,
 	)
 	cooldown_duration = HUNTER_STEALTH_COOLDOWN
+	use_state_flags = ABILITY_USE_LYING
 	///last stealthed time.
 	var/last_stealth = null
 	///if stealthed.
