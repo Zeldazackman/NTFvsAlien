@@ -233,7 +233,7 @@
 /// Adds spiderlings to spiderling list and registers them for death so we can remove them later
 /datum/action/ability/xeno_action/create_spiderling/proc/add_spiderling()
 	/// This creates and stores the spiderling so we can reassign the owner for spider swarm and cap how many spiderlings you can have at once
-	var/mob/living/carbon/xenomorph/spiderling/new_spiderling = new(owner.loc, owner, owner)
+	var/mob/living/carbon/xenomorph/spiderling/new_spiderling = new(owner.loc, TRUE, owner.get_xeno_hivenumber(), owner)
 	RegisterSignals(new_spiderling, list(COMSIG_MOB_DEATH, COMSIG_QDELETING), PROC_REF(remove_spiderling))
 	spiderlings += new_spiderling
 	new_spiderling.pixel_x = rand(-8, 8)

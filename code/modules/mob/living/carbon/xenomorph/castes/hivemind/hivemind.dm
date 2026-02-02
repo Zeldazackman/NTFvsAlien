@@ -36,7 +36,7 @@
 	///pass_flags given when manifested
 	var/manifest_pass_flags = PASS_LOW_STRUCTURE|PASS_MOB|PASS_XENO
 
-/mob/living/carbon/xenomorph/hivemind/Initialize(mapload)
+/mob/living/carbon/xenomorph/hivemind/Initialize(mapload, do_not_set_as_ruler, _hivenumber)
 	var/obj/structure/xeno/hivemindcore/new_core = new /obj/structure/xeno/hivemindcore(loc, hivenumber)
 	core = WEAKREF(new_core)
 	. = ..()
