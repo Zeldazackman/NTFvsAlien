@@ -341,12 +341,18 @@
 //harmless corrupted special pet huggers
 /obj/item/clothing/mask/facehugger/latching/friendly
 	name = "Jamal"
-	desc = "It has some sort of weird pulsating gigantic (for his size) alien cock with bountiful massive balls and a strong boney tail. This one seems to be modified to not have acidic-enough cum to hurt anyone and does not expire in a short time unlike usual huggers. Friend shaped? doubt."
+	desc = "It has some sort of weird pulsating gigantic (for his size) alien cock with bountiful massive balls and a strong boney tail. This one seems to be modified to not have acidic-enough cum to hurt anyone and does not expire in a short time unlike usual huggers. Friend shaped? doubt. It's non-expirity cost it, it's fertility."
 	filter_color = COLOR_RED_LIGHT
 	hivenumber = XENO_HIVE_CORRUPTED
 	harmless = TRUE
 	strip_delay = 2 SECONDS
 	special_effect_delay = 30 SECONDS
+
+/obj/item/clothing/mask/facehugger/latching/proc/special_effect()
+	wearer.visible_message(span_lovebold("[src]'s [cock_flavor] cums thick globs of acidic cum into [wearer]'s [target_hole]!"),
+	span_lovebold("[src]'s [cock_flavor] pumps thick globs of acidic cum into your [target_hole]!"),
+	span_notice("You hear spurting."), vision_distance = 5)
+	wearer.reagents.add_reagent(/datum/reagent/consumable/nutriment/cum/xeno, 10)
 
 //immortal
 /obj/item/clothing/mask/facehugger/latching/friendly/check_lifecycle()
