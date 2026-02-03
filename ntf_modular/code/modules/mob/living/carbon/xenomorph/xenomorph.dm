@@ -29,6 +29,7 @@
 	eject_victim()
 	if(GetComponent(/datum/component/ai_controller) && xeno_caste.tier != XENO_TIER_MINION)
 		gibbing = TRUE
+		remove_component(/datum/component/ai_controller) //incase, cleanup.
 	. = ..()
 
 /mob/living/carbon/xenomorph/on_crit()
