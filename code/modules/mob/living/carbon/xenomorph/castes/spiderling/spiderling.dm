@@ -24,7 +24,7 @@
 	/// What sprite state this - normal, enraged, guarding? Used for update_icons()
 	var/spiderling_state = SPIDERLING_NORMAL
 
-/mob/living/carbon/xenomorph/spiderling/Initialize(mapload, mob/living/carbon/xenomorph/mother)
+/mob/living/carbon/xenomorph/spiderling/Initialize(mapload, do_not_set_as_ruler, _hivenumber, mob/living/carbon/xenomorph/mother)
 	. = ..()
 	spidermother = mother
 	if(spidermother)
