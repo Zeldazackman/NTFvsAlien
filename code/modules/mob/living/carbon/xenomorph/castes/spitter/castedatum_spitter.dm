@@ -52,7 +52,6 @@
 	// *** Abilities *** //
 	actions = list(
 		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/psychic_whisper,
 		/datum/action/ability/xeno_action/psychic_influence,
 		/datum/action/ability/activable/xeno/impregnate,
 		/datum/action/ability/xeno_action/watch_xeno,
@@ -106,7 +105,6 @@
 	// *** Ablities *** //
 	actions = list(
 		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/psychic_whisper,
 		/datum/action/ability/xeno_action/psychic_influence,
 		/datum/action/ability/activable/xeno/impregnate,
 		/datum/action/ability/xeno_action/watch_xeno,
@@ -138,7 +136,6 @@
 
 	actions = list(
 		/datum/action/ability/xeno_action/xeno_resting,
-		/datum/action/ability/xeno_action/psychic_whisper,
 		/datum/action/ability/xeno_action/psychic_influence,
 		/datum/action/ability/activable/xeno/impregnate,
 		/datum/action/ability/xeno_action/watch_xeno,

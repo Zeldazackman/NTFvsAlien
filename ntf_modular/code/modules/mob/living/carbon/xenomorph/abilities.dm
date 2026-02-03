@@ -994,3 +994,41 @@ GLOBAL_LIST_INIT(xeno_resin_keys, list(
 		/obj/structure/bed/nest/advanced = ADVANCED_RESIN_NEST,
 		/obj/structure/bed/nest/advanced/special = SPECIAL_RESIN_NEST,
 	))
+
+// ***************************************
+// *********** Rouny Zoom
+// ***************************************
+/datum/action/ability/xeno_action/runner_zoom
+	name = "Toggle Zoom"
+	action_icon_state = "toggle_queen_zoom"
+	action_icon = 'icons/Xeno/actions/queen.dmi'
+	desc = "Zoom out for a larger view around wherever you are looking."
+	ability_cost = 0
+	keybinding_signals = list(
+		KEYBINDING_NORMAL = COMSIG_XENOABILITY_TOGGLE_QUEEN_ZOOM,
+	)
+	use_state_flags = ABILITY_USE_LYING
+
+/datum/action/ability/xeno_action/runner_zoom/action_activate()
+	if(xeno_owner.do_actions)
+		return
+	if(xeno_owner.xeno_flags & XENO_ZOOMED)
+		zoom_xeno_out(xeno_owner.observed_xeno ? FALSE : TRUE)
+		return
+	if(!do_after(xeno_owner, 1 SECONDS, IGNORE_HELD_ITEM, null, BUSY_ICON_GENERIC) || (xeno_owner.xeno_flags & XENO_ZOOMED))
+		return
+	zoom_xeno_in(xeno_owner.observed_xeno ? FALSE : TRUE) //No need for feedback message if our eye is elsewhere.
+
+/datum/action/ability/xeno_action/runner_zoom/proc/zoom_xeno_in(message = TRUE)
+	if(message)
+		xeno_owner.visible_message(span_notice("[xeno_owner] perks up, focusing further away."),
+		span_notice("We start focusing to expand the reach of our senses."), null, 5)
+	xeno_owner.xeno_flags |= XENO_CAN_MOVE_ZOOMED
+	xeno_owner.zoom_in(0, 12)
+
+/datum/action/ability/xeno_action/runner_zoom/proc/zoom_xeno_out(message = TRUE)
+	if(message)
+		xeno_owner.visible_message(span_notice("[xeno_owner] lowers down and stops focusing further off."),
+		span_notice("We stop the effort of expanding our senses."), null, 5)
+	xeno_owner.xeno_flags &= ~XENO_CAN_MOVE_ZOOMED
+	xeno_owner.zoom_out()
