@@ -112,9 +112,9 @@
 		staggerstun(target_mob, proj, stun = 0.5 SECONDS)
 	var/mob/living/carbon/human/human_victim = target_mob
 	if(human_victim.species.species_flags & ROBOTIC_LIMBS)
-		human_victim.adjustStaminaLoss(proj.damage*1.5)
-		human_victim.add_slowdown(2,2)
-		human_victim.AdjustStun(0.8 SECONDS)
+		human_victim.adjustStaminaLoss(proj.damage/2)
+		human_victim.add_slowdown(0.2,1)
+		human_victim.AdjustStun(0.2 SECONDS)
 		if(human_victim.getStaminaLoss() > 20)
 			human_victim.overlay_fullscreen_timer(human_victim.getStaminaLoss(), 10, "glitch", /atom/movable/screen/fullscreen/robot_glitch)
 		if((human_victim.getStaminaLoss() >= human_victim.maxHealth*2) && !human_victim.IsUnconscious())

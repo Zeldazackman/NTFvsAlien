@@ -81,26 +81,26 @@
 	name = "tranq bullet"
 	hud_state = "pistol_tranq"
 	armor_type = "bullet"
-	damage = 20
-	penetration = 20
-	damage_type = STAMINA
+	damage = 15
 	shell_speed = 3.3
 	shrapnel_chance = 0.2
+	var/inject_amount_min = 5
+	var/inject_amount_max = 8
 
 /datum/ammo/bullet/pistol/tranq/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
-	if(iscarbon(target_mob))
+	if(iscarbon(target_mob) && !isxeno(target_mob))
 		var/mob/living/carbon/carbon_victim = target_mob
-		carbon_victim.reagents.add_reagent(/datum/reagent/toxin/sleeptoxin, rand(5,8), no_overdose = TRUE)
+		carbon_victim.reagents.add_reagent(/datum/reagent/toxin/sleeptoxin, rand(inject_amount_min,inject_amount_max), no_overdose = TRUE)
+	else if(isxeno(target_mob))
+		var/mob/living/carbon/xenomorph/xtarg = target_mob
+		xtarg.use_stun_health(proj.damage * (xtarg.xeno_caste.max_health/200))
 
 /datum/ammo/bullet/pistol/tranq/weak
 	name = "weak tranq bullet"
-	damage = 5
-	penetration = 5
-
-/datum/ammo/bullet/pistol/tranq/weak/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
-	if(iscarbon(target_mob))
-		var/mob/living/carbon/carbon_victim = target_mob
-		carbon_victim.reagents.add_reagent(/datum/reagent/toxin/sleeptoxin, rand(3,5), no_overdose = TRUE)
+	damage = 10
+	accuracy = -10 //like usual c99 ammo
+	inject_amount_min = 3
+	inject_amount_max = 5
 
 /obj/item/weapon/gun/pistol/g22/tranq
 	name = "\improper P-22 custom pistol"
