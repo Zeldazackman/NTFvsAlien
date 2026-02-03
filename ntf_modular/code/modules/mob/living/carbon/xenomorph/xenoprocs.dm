@@ -97,7 +97,7 @@
 		user.client.prefs.save_character()
 		user.client.prefs.save_preferences()
 
-	if(xeno_caste.caste_flags & CASTE_HAS_WOUND_MASK) //ig if u cant see wounds u shouldnt see tiddies too maybe for things like being ethereal
+	if(xeno_caste.caste_flags & CASTE_HAS_WOUND_MASK && !HAS_TRAIT(src, TRAIT_XENOMORPH_INVISIBLE_BLOOD)) //ig if u cant see wounds u shouldnt see tiddies too maybe for things like being ethereal
 		apply_overlay(GENITAL_LAYER)
 	genital_overlay.vis_flags &= ~VIS_HIDE // Show the overlay
 

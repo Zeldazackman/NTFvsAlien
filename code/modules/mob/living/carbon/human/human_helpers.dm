@@ -416,7 +416,7 @@
 				else if(user.gender == FEMALE)
 					action = pick(/datum/sex_action/vaginal_ride_sex, /datum/sex_action/anal_ride_sex, /datum/sex_action/blowjob)
 			else if(gender == FEMALE)
-				if(user.gender == MALE)
+				if(user.gender == MALE || (isxeno(user) && user.client?.prefs?.xenogender <= 2))
 					action = pick(/datum/sex_action/vaginal_sex, /datum/sex_action/anal_sex, /datum/sex_action/throat_sex)
 				else if(user.gender == FEMALE)
 					action = pick(/datum/sex_action/scissoring, /datum/sex_action/facesitting, /datum/sex_action/cunnilingus)

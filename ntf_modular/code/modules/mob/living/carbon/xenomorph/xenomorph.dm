@@ -52,6 +52,8 @@
 /mob/living/carbon/xenomorph/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount, damage_type, armor_type, effects, armor_penetration, isrightclick)
 	if(xeno_attacker == src)
 		for(var/mob/living/under_me in loc)
+			if(issamexenohive(under_me))
+				continue
 			UnarmedAttack(under_me)
 			break
 	. = ..()
