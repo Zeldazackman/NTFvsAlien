@@ -332,6 +332,9 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 		if(combat_hugger && M.buckled)
 			continue
 
+		if(M.key && (M.afk_status == MOB_RECENTLY_DISCONNECTED || M.afk_status == MOB_DISCONNECTED))
+			continue
+
 		if(!M.can_be_facehugged(src))
 			continue
 

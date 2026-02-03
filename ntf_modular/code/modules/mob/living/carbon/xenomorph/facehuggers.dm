@@ -12,8 +12,6 @@
 	var/harmless = FALSE
 	strip_delay = 6 SECONDS //actually if you get facehugged you lose 10 seconds as is, crotch hugs are less disadvantageous for you tho.
 	can_self_remove = TRUE
-	///how many times can it trigger special effect before detaching and dying.
-	var/cum_charges = 8
 	COOLDOWN_DECLARE(implant_cooldown)
 	var/last_came = 0
 
@@ -21,12 +19,6 @@
 	if(attached) //we got a timer that adds check lifecycle for being dropped anyway.
 		return
 	. = ..()
-
-/obj/item/clothing/mask/facehugger/latching/proc/consume_cum_charge()
-	if(cum_charges)
-		cum_charges--
-		return TRUE
-	return FALSE
 
 /obj/item/clothing/mask/facehugger/latching/equipped(mob/living/user, slot)
 	. = ..()
@@ -53,9 +45,6 @@
 		add_filter("base_color", -10, color_matrix_filter(filter_color))
 
 /obj/item/clothing/mask/facehugger/latching/proc/special_effect()
-	if(!consume_cum_charge())
-		kill_hugger()
-		return
 	if(can_implant_embryo(wearer) && !sterile)
 		wearer.visible_message(span_lovebold("[src] roughly slams it's [cock_flavor] into [wearer]'s [target_hole], a round bulge visibly sliding throug as it inserts an egg into [wearer]!"),
 		span_lovebold("[src] roughly thrusts it's [cock_flavor] into your [target_hole], a round bulge visibly sliding through as it inserts an egg into you!"),
@@ -107,11 +96,14 @@
 	if(wearer.stat == DEAD)
 		reset_attach_status()
 		return
+	if(wearer.key && (wearer.afk_status == MOB_RECENTLY_DISCONNECTED || wearer.afk_status == MOB_DISCONNECTED))
+		wearer.visible_message(span_loveextreme("[src] loses interest in [wearer] as they are SSD."))
+		reset_attach_status()
+		return
 	var/as_planned = wearer?.wear_mask == src || wearer?.w_underwear == src  || wearer?.w_undershirt == src
 	if(!as_planned)
 		reset_attach_status()
 		return
-	Shake(duration = 0.5 SECONDS)
 	if(COOLDOWN_FINISHED(src, implant_cooldown))
 		COOLDOWN_START(src, implant_cooldown, special_effect_delay)
 		last_came = world.time
@@ -140,9 +132,6 @@
 	strip_delay = 3 SECONDS
 
 /obj/item/clothing/mask/facehugger/latching/clawer/special_effect()
-	if(!consume_cum_charge())
-		kill_hugger()
-		return
 	wearer.emote("scream")
 	wearer.visible_message(span_danger("[src] goes in a fucking-frenzy into [wearer]'s [target_hole] with it's [cock_flavor] while cumming!"),span_danger("[src] goes on a fucking-frenzy and shreds your [target_hole] sloppily with it's cumming [cock_flavor]!"), vision_distance = 5)
 	wearer.do_attack_animation(wearer, ATTACK_EFFECT_REDSLASH)
@@ -195,9 +184,6 @@
 
 
 /obj/item/clothing/mask/facehugger/latching/chemical/special_effect()
-	if(!consume_cum_charge())
-		kill_hugger()
-		return
 	wearer.reagents.add_reagent(/datum/reagent/consumable/nutriment/cum/xeno, 10)
 	wearer.visible_message(span_loveextreme("[src] slams it's [cock_flavor] ballsdeep into [wearer]'s [target_hole] and it's balls start to throb strongly, pumping thick globs of something inside!"),span_loveextreme("[src] slams it's [cock_flavor] ballsdeep into your [target_hole] and it's balls start to throb strongly, pumping thick globs of something inside!"), vision_distance = 5)
 	wearer.visible_message(span_lovebold("[injected_chemical_type.name] gas explodes out of [wearer]'s [target_hole], around [src]'s [cock_flavor]!"),span_lovebold("[injected_chemical_type.name] gas explodes out of your [target_hole], around [src]'s [cock_flavor]!"), vision_distance = 5)
@@ -264,9 +250,6 @@
 	strip_delay = 6 SECONDS
 
 /obj/item/clothing/mask/facehugger/latching/chemical/acid/special_effect()
-	if(!consume_cum_charge())
-		kill_hugger()
-		return
 	wearer.reagents.add_reagent(/datum/reagent/consumable/nutriment/cum/xeno, 10)
 	wearer.reagents.add_reagent(/datum/reagent/toxin/acid/xeno_cum, 1)
 	wearer.emote("scream")
@@ -290,9 +273,6 @@
 	strip_delay = 6 SECONDS
 
 /obj/item/clothing/mask/facehugger/latching/chemical/resin/special_effect()
-	if(!consume_cum_charge())
-		kill_hugger()
-		return
 	wearer.reagents.add_reagent(/datum/reagent/consumable/nutriment/cum/xeno/resin, 5)
 	wearer.reagents.add_reagent(/datum/reagent/toxin/acid/xeno_cum, 1)
 	wearer.emote("scream")

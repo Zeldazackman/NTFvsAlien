@@ -77,6 +77,8 @@
 		return
 	if(target.stat == DEAD)
 		return
+	if(target.key && target.afk_status == MOB_DISCONNECTED)
+		return
 	if(target.buckled)
 		return
 	if(target in grabbing)
@@ -255,6 +257,9 @@
 		return
 	var/mob/living/carbon/human/victim = buckled_mobs[1]
 	if(!victim)
+		return
+	if(victim.key && victim.afk_status == MOB_DISCONNECTED)
+		unbuckle_mob(victim)
 		return
 	if(victim.stat == DEAD)
 		unbuckle_mob(victim)
