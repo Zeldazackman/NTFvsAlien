@@ -348,7 +348,7 @@
 	strip_delay = 2 SECONDS
 	special_effect_delay = 30 SECONDS
 
-/obj/item/clothing/mask/facehugger/latching/proc/special_effect()
+/obj/item/clothing/mask/facehugger/latching/friendly/special_effect()
 	wearer.visible_message(span_lovebold("[src]'s [cock_flavor] cums thick globs of acidic cum into [wearer]'s [target_hole]!"),
 	span_lovebold("[src]'s [cock_flavor] pumps thick globs of acidic cum into your [target_hole]!"),
 	span_notice("You hear spurting."), vision_distance = 5)
