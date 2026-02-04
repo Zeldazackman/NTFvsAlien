@@ -1,12 +1,12 @@
 /client/proc/ask_reclone()
 	var/the_question = "You can now reclone, All your equipment will be with you when you do. If you choose to stay, you can pop this up again by trying to ghost while nested. You can still freely ghost around and return to your body."
 	if(world.time < (nested_time + NESTED_RECLONE_TIME))
-		the_question = "A new body is growing, You will be able to reclone in [round((nested_time + NESTED_RECLONE_TIME) - world.time) SECONDS]s, keeping your equipment, You can choose to stay for now or ghost and re-enter your body freely... You can pop this up again by trying to ghost."
+		the_question = "A new body is growing, You will be able to reclone in [round((nested_time + NESTED_RECLONE_TIME) - world.time)], keeping your equipment, You can choose to stay for now or ghost and re-enter your body freely... You can pop this up again by trying to ghost."
 	var/choice = tgui_input_list(src, the_question, "Recloning", list("Reclone","Ghost","Stay in body"), "Stay in body")
 	switch(choice)
 		if("Reclone")
 			if(world.time < (nested_time + NESTED_RECLONE_TIME))
-				to_chat(src, span_warning("You need to wait [round((nested_time + NESTED_RECLONE_TIME) - world.time) SECONDS]s."))
+				to_chat(src, span_warning("You need to wait [round((nested_time + NESTED_RECLONE_TIME) - world.time)]."))
 				return
 			for(var/mob/living/carbon/xenomorph/larva/implanted in mob.contents)
 				to_chat(src, span_warning("(N-UI) ALERT: Developed foreign body and psychic interference detected, can not proceed... Try again later."))
