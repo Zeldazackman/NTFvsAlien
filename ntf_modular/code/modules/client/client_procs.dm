@@ -1,5 +1,5 @@
 /client/proc/ask_reclone()
-	var/the_question = "You can now reclone, All your equipment will be with you when you do. If you choose to stay, you can pop this up again by trying to ghost while nested. You can still freely ghost around and return to your body."
+	var/the_question = "You can now reclone, All your equipment will be with you if you do. If you choose to stay, you can pop this up again by trying to ghost while nested. You can still freely ghost around and return to your body."
 	if(world.time < (nested_time + NESTED_RECLONE_TIME))
 		the_question = "A new body is growing, You will be able to reclone in [round((nested_time + NESTED_RECLONE_TIME) - world.time)], keeping your equipment, You can choose to stay for now or ghost and re-enter your body freely... You can pop this up again by trying to ghost."
 	var/choice = tgui_input_list(src, the_question, "Recloning", list("Reclone","Ghost","Stay in body"), "Stay in body")
