@@ -148,7 +148,7 @@
 
 ///Actually changes the xenomorph to another caste
 /mob/living/carbon/xenomorph/proc/finish_evolve(new_mob_type)
-	var/mob/living/carbon/xenomorph/new_xeno = new new_mob_type(get_turf(src), TRUE)
+	var/mob/living/carbon/xenomorph/new_xeno = new new_mob_type(get_turf(src), TRUE, hivenumber)
 
 	if(!istype(new_xeno))
 		//Something went horribly wrong!
@@ -174,7 +174,6 @@
 
 	//Pass on the unique nicknumber, then regenerate the new mob's name on Login()
 	new_xeno.nicknumber = nicknumber
-	new_xeno.transfer_to_hive(hivenumber)
 	new_xeno.generate_name() // This is specifically for numbered xenos who want to keep their previous number instead of a random new one.
 	if(new_xeno.hive)
 		INVOKE_NEXT_TICK_UNIQUE(new_xeno.hive, TYPE_PROC_REF(/datum/hive_status, update_ruler)) // Since ruler wasn't set during initialization, update ruler now.
