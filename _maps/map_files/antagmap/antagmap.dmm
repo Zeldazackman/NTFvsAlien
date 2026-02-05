@@ -516,10 +516,6 @@
 	dir = 4
 	},
 /area/antag_ship/vsd/med)
-"di" = (
-/obj/effect/landmark/start/job/som/icc_tech,
-/turf/open/floor/plating/plating_catwalk,
-/area/antag_ship/icc/generator_room)
 "dk" = (
 /obj/effect/turf_decal/trimline/dark_blue/line,
 /obj/machinery/light/small,
@@ -7769,7 +7765,8 @@
 /obj/machinery/light/mainship{
 	light_color = "#da2f1b"
 	},
-/turf/open/floor/plating/ground/concrete,
+/obj/structure/cable,
+/turf/open/floor/plating/plating_catwalk,
 /area/antag_ship/icc/generator_room)
 "Lb" = (
 /obj/machinery/vending/medical/icc,
@@ -19381,10 +19378,10 @@ Cc
 la
 Jo
 qA
+qA
 SX
-qA
-qA
-qA
+jo
+SX
 la
 la
 zb
@@ -19476,10 +19473,10 @@ Cc
 la
 vF
 eM
-SX
+qA
 oe
 tK
-di
+QQ
 la
 la
 zb
@@ -19571,7 +19568,7 @@ Cc
 la
 xI
 Gh
-SX
+qA
 tx
 qA
 KY
@@ -19666,10 +19663,10 @@ Cc
 la
 VQ
 pY
-SX
+qA
 yI
 iD
-qA
+SX
 la
 la
 zb
@@ -19761,10 +19758,10 @@ Cc
 la
 yI
 Jo
-SX
+qA
 BQ
 qA
-qA
+SX
 la
 la
 zb
