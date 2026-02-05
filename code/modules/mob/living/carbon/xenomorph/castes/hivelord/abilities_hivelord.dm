@@ -484,7 +484,7 @@
 		return FALSE
 
 	playsound(src, SFX_ALIEN_RESIN_BUILD, 25)
-	new xeno_owner.selected_plant(get_turf(owner))
+	new xeno_owner.selected_plant(get_turf(owner), xeno_owner.get_xeno_hivenumber())
 	add_cooldown()
 	return succeed_activate()
 
