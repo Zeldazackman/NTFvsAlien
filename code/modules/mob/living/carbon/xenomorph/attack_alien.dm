@@ -102,10 +102,12 @@
 			playsound(loc, sound, 25, TRUE, 7)
 
 		if(IsParalyzed())
-			if(AmountParalyzed() < 10 SECONDS)
-				X.visible_message("<span class='danger'>[X] holds [src] down!</span>",
-				"<span class='danger'>We hold [src] down!</span>", null, 5)
+			if((AmountParalyzed() < 10 SECONDS)  && stamina_loss >= maxHealth * 2)
 				AdjustParalyzed(2 SECONDS)
+			else
+				apply_damage(damage_to_deal, STAMINA, BODY_ZONE_CHEST, armor_block, FALSE, FALSE, TRUE, armor_pen, X)
+			X.visible_message("<span class='danger'>[X] holds [src] down!</span>",
+			"<span class='danger'>We hold [src] down!</span>", null, 5)
 		else
 			if(pulling)
 				X.visible_message("<span class='danger'>[X] has broken [src]'s grip on [pulling]!</span>",
