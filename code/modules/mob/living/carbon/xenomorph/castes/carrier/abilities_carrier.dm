@@ -71,14 +71,16 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 
 /datum/action/ability/activable/xeno/throw_hugger/use_ability(atom/A)
 	//target a hugger on the ground to store it directly (unless its a fake/harmless hugger)
-	if(istype(A, /obj/item/clothing/mask/facehugger) && !istype(A, /obj/item/clothing/mask/facehugger/combat/harmless))
+	if(istype(A, /obj/item/clothing/mask/facehugger))
 		if(isturf(get_turf(A)) && xeno_owner.Adjacent(A))
 			if(!xeno_owner.issamexenohive(A))
 				to_chat(xeno_owner, span_warning("That facehugger is tainted!"))
 				xeno_owner.dropItemToGround(A)
 				return fail_activate()
-			xeno_owner.store_hugger(A)
-			return succeed_activate()
+			if(xeno_owner.store_hugger(A))
+				return succeed_activate()
+			else
+				return fail_activate()
 
 	var/obj/item/clothing/mask/facehugger/F = xeno_owner.get_active_held_item()
 	if(!istype(F) || F.stat == DEAD) //empty active hand
@@ -129,17 +131,22 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 		return succeed_activate()
 
 /mob/living/carbon/xenomorph/proc/store_hugger(obj/item/clothing/mask/facehugger/F, message = TRUE, forced = FALSE) //todo: wrap this into ability
+	if(istype(F, /obj/item/clothing/mask/facehugger/combat/harmless))
+		to_chat(src, span_notice("This fakehugger is useless to absorb."))
+		return FALSE
 	if(huggers < xeno_caste.huggers_max)
 		if(F.stat == DEAD && !forced)
 			to_chat(src, span_notice("This facehugger has already expired, we cannot salvage it."))
-			return
+			return FALSE
 		F.kill_hugger()
 		huggers++
 		if(message)
 			playsound(src, 'sound/voice/alien/drool2.ogg', 50, 0, 1)
 			to_chat(src, span_notice("We salvage this facehugger's biomass to produce another. Now sheltering: [huggers] / [xeno_caste.huggers_max]."))
+		return TRUE
 	else if(message)
 		to_chat(src, span_warning("We can't carry any more facehuggers!"))
+		return FALSE
 
 // ***************************************
 // ********* Trap
