@@ -1344,6 +1344,7 @@
 		/obj/item/whistle,
 		/obj/item/clothing/glasses/hud/health,
 		/obj/item/clothing/under/marine/sneaking,
+		/obj/item/generic_skillbook/fcskill,
 	)
 
 /obj/effect/vendor_bundle/synth

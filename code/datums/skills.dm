@@ -424,7 +424,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 
 /datum/skills/fo
 	name = FIELD_COMMANDER
-	engineer = SKILL_ENGINEER_ENGI //to fix CIC apc.
+	engineer = SKILL_ENGINEER_PLASTEEL //to fix CIC apc. NTF change: ENGI -> PLASTEEL
 	construction = SKILL_CONSTRUCTION_PLASTEEL
 	leadership = SKILL_LEAD_MASTER
 	medical = SKILL_MEDICAL_PRACTICED

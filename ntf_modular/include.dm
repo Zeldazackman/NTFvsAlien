@@ -98,6 +98,7 @@
 #include "code\game\objects\items\storage\medicdispenser.dm"
 #include "code\game\objects\items\tools\loadout_tool.dm"
 #include "code\game\objects\items\tools\maintenance_tools.dm"
+#include "code\game\objects\items\Skillbook.dm"
 #include "code\game\objects\machinery\OpTable.dm"
 #include "code\game\objects\machinery\artillery\shells.dm"
 #include "code\game\objects\machinery\camera\camera.dm"

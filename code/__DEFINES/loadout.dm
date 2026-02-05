@@ -1978,6 +1978,7 @@ GLOBAL_LIST_INIT(loadout_role_essential_set, list(
 		/obj/item/whistle = 1,
 		/obj/item/clothing/glasses/hud/health = 1,
 		/obj/item/armor_module/module/valkyrie_autodoc = 1,
+		/obj/item/generic_skillbook/fcskill = 1,
 	),
 	SYNTHETIC = list(
 		/obj/item/stack/sheet/plasteel/medium_stack = 1,
