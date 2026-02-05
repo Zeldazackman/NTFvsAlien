@@ -1742,7 +1742,7 @@
 			continue
 		if(H.incapacitated())
 			continue
-		if((H.status_flags & XENO_HOST && H.buckled) || HAS_TRAIT(H, TRAIT_HAULED))
+		if((isnestedhost(H) || HAS_TRAIT(H, TRAIT_HAULED)))
 			continue
 		if(ismonkey(H))
 			continue

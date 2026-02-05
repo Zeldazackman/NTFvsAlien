@@ -143,3 +143,10 @@
 	if(isxeno(xeno_user))
 		xeno_user.toggle_destroy_weeds()
 		return TRUE
+
+/datum/keybinding/xeno/toggle_rouny_zoom
+	name = "toggle_rouny_zoom"
+	full_name = "Runner: Toggle Zoom"
+	description = ""
+	keybind_signal = COMSIG_XENOABILITY_TOGGLE_ROUNY_ZOOM
+	hotkey_keys = list("C")

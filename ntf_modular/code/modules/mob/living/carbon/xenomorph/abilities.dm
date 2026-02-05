@@ -1007,7 +1007,7 @@ GLOBAL_LIST_INIT(xeno_resin_keys, list(
 	desc = "Zoom out for a larger view around wherever you are looking."
 	ability_cost = 0
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_TOGGLE_QUEEN_ZOOM,
+		KEYBINDING_NORMAL = COMSIG_XENOABILITY_TOGGLE_ROUNY_ZOOM,
 	)
 	use_state_flags = ABILITY_USE_LYING
 

@@ -2,7 +2,7 @@
 /obj/item/clothing/mask/facehugger/latching
 	name = "evolved larval facehugger"
 	desc = "It has some sort of weird pulsating gigantic (for it's size) alien cock with bountiful massive balls and a strong boney tail."
-	face_tint = TINT_5 //we want those to let more sight since they are persistent if not removed
+	face_tint = TINT_5 //we want those to let more sight since they are persistent
 	var/filter_color
 	var/datum/reagent/injected_chemical_type
 	var/amount_injected = 5
@@ -26,7 +26,7 @@
 		if(user.gender == MALE && target_hole == HOLE_VAGINA)
 			target_hole = HOLE_ASS //i aint writing fem hugger on male messages for allat plus their descs have cock and balls
 		wearer = user
-		COOLDOWN_START(src, implant_cooldown, special_effect_delay)
+		COOLDOWN_START(src, implant_cooldown, special_effect_delay/2)
 		RegisterSignal(wearer, COMSIG_LIVING_IGNITED, PROC_REF(burn_moment))
 		START_PROCESSING(SSobj, src)
 	else
@@ -129,7 +129,7 @@
 	filter_color = COLOR_RED
 	special_effect_delay = 15 SECONDS
 	cock_flavor = "ribbed cock"
-	strip_delay = 3 SECONDS
+	strip_delay = 4 SECONDS
 
 /obj/item/clothing/mask/facehugger/latching/clawer/special_effect()
 	wearer.emote("scream")

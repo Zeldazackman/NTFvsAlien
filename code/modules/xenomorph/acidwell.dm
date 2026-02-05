@@ -157,6 +157,8 @@
 	SIGNAL_HANDLER
 	if(CHECK_MULTIPLE_BITFIELDS(A.allow_pass_flags, HOVERING))
 		return
+	if(A.status_flags & GODMODE || A.status_flags & INCORPOREAL)
+		return
 	if(iscarbon(A))
 		HasProximity(A)
 

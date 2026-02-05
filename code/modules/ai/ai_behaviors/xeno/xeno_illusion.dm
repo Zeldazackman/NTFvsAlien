@@ -23,7 +23,9 @@
 					var/mob/living/carbon/human/H = victim
 					if(H.stat == DEAD)
 						continue
-					if((H.status_flags & XENO_HOST && H.buckled) || HAS_TRAIT(H, TRAIT_HAULED))
+					if(HAS_TRAIT(H, TRAIT_HAULED))
+						continue
+					if(isnestedhost(H))
 						continue
 					if(H.status_flags & GODMODE|INCORPOREAL)
 						continue
