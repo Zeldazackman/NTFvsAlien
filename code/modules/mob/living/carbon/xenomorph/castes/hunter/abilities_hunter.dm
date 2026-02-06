@@ -381,6 +381,8 @@
 	var/attack_on_pounce = FALSE
 	/// Pass_flags given when leaping.
 	var/leap_pass_flags = PASS_LOW_STRUCTURE|PASS_FIRE|PASS_XENO
+	///sound to be played when xeno lands on a target.
+	var/pounce_sound = 'sound/voice/alien/pounce.ogg'
 
 /datum/action/ability/activable/xeno/pounce/New(Target)
 	. = ..()
@@ -437,13 +439,15 @@
 		if(!human_target.check_shields(COMBAT_TOUCH_ATTACK, 30, "melee", shield_flags = SHIELD_FLAG_XENOMORPH))
 			xeno_owner.Paralyze(XENO_POUNCE_SHIELD_STUN_DURATION)
 			xeno_owner.set_throwing(FALSE)
+			playsound(xeno_owner, 'ntf_modular/sound/machines/bonk.ogg', 50, FALSE)
 			return
 	trigger_pounce_effect(living_target)
 	pounce_complete()
 
 ///Triggers the effect of a successful pounce on the target.
 /datum/action/ability/activable/xeno/pounce/proc/trigger_pounce_effect(mob/living/living_target)
-	playsound(get_turf(living_target), 'sound/voice/alien/pounce.ogg', 25, TRUE)
+	if(pounce_sound)
+		playsound(get_turf(living_target), pounce_sound, 25, TRUE)
 	xeno_owner.Immobilize(self_immobilize_duration)
 	xeno_owner.forceMove(get_turf(living_target))
 	living_target.Paralyze(stun_duration)
