@@ -1,0 +1,4 @@
+author: "OrbisAnima"
+delete-after: True
+changes:
+  - balance: "Supersoldier movement increase stim can no longer be stacked, but it gives 0.2 of a bonus instead of 0.1. Hive Pheromones Stim has an injection similar to the others (2.5 seconds at the time of this writting) from 15 seconds."
