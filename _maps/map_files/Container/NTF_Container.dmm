@@ -64,6 +64,16 @@
 /obj/machinery/quick_vendor/beginner,
 /turf/open/floor/mainship/mono,
 /area/mainship/squads/general)
+"abV" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/obj/structure/bed/chair/office/dark{
+	dir = 4
+	},
+/turf/open/floor/mainship/floor,
+/area/mainship/command/cic)
 "abW" = (
 /obj/effect/landmark/start/job/squadcorpsman,
 /turf/open/floor/plating/plating_catwalk,
@@ -280,6 +290,15 @@
 /area/mainship/engineering/engineering_workshop{
 	name = "Armorer's Workshop"
 	})
+"asJ" = (
+/obj/structure/table/black,
+/obj/structure/transmitter/desk{
+	pixel_y = 6;
+	phone_category = "Combat Information Center";
+	phone_id = "CIC Reception"
+	},
+/turf/open/floor/mainship/mono,
+/area/mainship/command/cic)
 "atm" = (
 /obj/structure/prop/urban/containersextended/greenleft,
 /turf/open/floor/mainship/floor,
@@ -364,6 +383,19 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/item/weapon/gun/sentry/big_sentry/premade/radial{
+	name = "\improper ST-571 sentry gun"
+	},
+/obj/structure/barricade/solid{
+	dir = 1
+	},
+/obj/structure/barricade/solid{
+	dir = 4
+	},
+/obj/structure/barricade/solid{
+	dir = 8
+	},
+/obj/structure/barricade/solid,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/starboard_hallway)
 "axJ" = (
@@ -1621,6 +1653,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/closed/wall/mainship,
 /area/mainship/engineering/lower_engine_monitoring)
+"bGq" = (
+/obj/structure/table/black,
+/obj/item/reagent_containers/cup/soda_cans/cola,
+/turf/open/floor/mainship/mono,
+/area/mainship/command/cic)
 "bGx" = (
 /obj/machinery/door/airlock/mainship/security/glass/free_access{
 	dir = 2
@@ -2983,7 +3020,7 @@
 "cQW" = (
 /obj/structure/table/wood/fancy,
 /obj/machinery/computer/secure_data{
-	dir = 1
+	dir = 4
 	},
 /turf/open/floor/urban/wood,
 /area/mainship/shipboard/chief_mp_office)
@@ -3429,6 +3466,22 @@
 /obj/machinery/holopad,
 /turf/open/floor/freezer,
 /area/mainship/living/grunt_rnr)
+"dqd" = (
+/obj/structure/barricade/solid{
+	dir = 4
+	},
+/obj/structure/barricade/solid{
+	dir = 1
+	},
+/obj/structure/barricade/solid{
+	dir = 8
+	},
+/obj/structure/barricade/solid,
+/obj/item/weapon/gun/sentry/big_sentry/premade/radial{
+	name = "\improper ST-571 sentry gun"
+	},
+/turf/open/floor/mainship/tcomms,
+/area/mainship/command/self_destruct)
 "dqh" = (
 /obj/structure/window/framed/mainship/hull,
 /obj/machinery/door/poddoor/shutters/opened/wy{
@@ -5227,6 +5280,12 @@
 /obj/item/clothing/underwear/shirt/tanktop_midriff_alt,
 /turf/open/floor/grayscale/darkgray,
 /area/mainship/hull/starboard_hull)
+"eQG" = (
+/obj/structure/table/black,
+/obj/structure/paper_bin,
+/obj/item/tool/pen,
+/turf/open/floor/mainship/mono,
+/area/mainship/command/cic)
 "eQV" = (
 /obj/structure/rack,
 /obj/effect/urban/decal/dirt,
@@ -6224,14 +6283,6 @@
 /obj/item/clothing/mask/balaclava,
 /obj/item/clothing/under/suit_jacket/charcoal,
 /obj/item/clothing/under/suit_jacket/female,
-/obj/item/weapon/gun/pistol/g22/tranq,
-/obj/item/ammo_magazine/pistol/g22tranq,
-/obj/item/ammo_magazine/pistol/g22tranq,
-/obj/item/ammo_magazine/pistol/g22tranq,
-/obj/item/ammo_magazine/pistol/g22tranq,
-/obj/item/ammo_magazine/pistol/g22tranq,
-/obj/item/ammo_magazine/pistol/g22tranq,
-/obj/item/armor_module/storage/uniform/holster,
 /turf/open/floor/carpet{
 	icon_state = "carpetside"
 	},
@@ -6778,6 +6829,11 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/aft_hallway)
+"gqU" = (
+/turf/open/floor/mainship/mono,
+/area/deltastation/command/teleporter{
+	name = "\improper Quantum Pads"
+	})
 "grg" = (
 /obj/structure/table/mainship/nometal,
 /obj/effect/spawner/random/misc/paperbin,
@@ -9838,7 +9894,7 @@
 "juL" = (
 /obj/structure/table/mainship/nometal,
 /obj/machinery/computer/secure_data{
-	dir = 8
+	dir = 4
 	},
 /obj/item/tool/hand_labeler,
 /obj/structure/transmitter/desk{
@@ -9928,6 +9984,10 @@
 /obj/structure/supply_drop,
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/req)
+"jxd" = (
+/obj/machinery/holopad,
+/turf/open/floor/mainship/mono,
+/area/mainship/command/cic)
 "jxg" = (
 /obj/machinery/vending/weapon,
 /obj/structure/window/reinforced{
@@ -15175,6 +15235,19 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/structure/disposalpipe/junction,
+/obj/item/weapon/gun/sentry/big_sentry/premade/radial{
+	name = "\improper ST-571 sentry gun"
+	},
+/obj/structure/barricade/solid{
+	dir = 1
+	},
+/obj/structure/barricade/solid{
+	dir = 8
+	},
+/obj/structure/barricade/solid{
+	dir = 4
+	},
+/obj/structure/barricade/solid,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/port_hallway)
 "orM" = (
@@ -20972,7 +21045,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
-/obj/machinery/holopad,
+/obj/structure/table/black,
+/obj/machinery/computer/secure_data{
+	dir = 4
+	},
 /turf/open/floor/mainship/floor,
 /area/mainship/command/cic)
 "tXy" = (
@@ -21044,6 +21120,11 @@
 /obj/effect/urban/decal/dirt,
 /turf/open/floor/plating,
 /area/mainship/hallways/hangar)
+"uaL" = (
+/obj/structure/table/black,
+/obj/item/reagent_containers/cup/soda_cans/space_up,
+/turf/open/floor/mainship/mono,
+/area/mainship/command/cic)
 "uba" = (
 /turf/open/floor/mainship/orange/corner{
 	dir = 1
@@ -28337,7 +28418,7 @@ eIZ
 bui
 hjN
 cJv
-iOs
+jxd
 mCn
 sYD
 uhU
@@ -28440,9 +28521,9 @@ lht
 pJb
 hjN
 mRq
-iOs
-cQC
-iOs
+eQG
+abV
+bGq
 jQM
 vZp
 tFU
@@ -28543,9 +28624,9 @@ gHl
 tFU
 hJv
 mRq
-iOs
+asJ
 tWC
-iOs
+uaL
 jQM
 fzP
 kPM
@@ -41513,7 +41594,7 @@ vhC
 mHa
 aAr
 voh
-nqJ
+gqU
 aGF
 aGF
 aGF
@@ -42027,7 +42108,7 @@ abJ
 agt
 cAU
 ioZ
-qZk
+wUY
 uxo
 uUK
 mue
@@ -42047,7 +42128,7 @@ mue
 rEd
 uUK
 uxo
-wgB
+jFH
 uUY
 ags
 agt
@@ -45642,7 +45723,7 @@ nZa
 nZa
 hrF
 hrF
-hrF
+nZe
 hrF
 hrF
 nZa
@@ -45839,7 +45920,7 @@ nVF
 ifV
 nZa
 wJw
-nZe
+nZa
 hrF
 snM
 hrF
@@ -45857,7 +45938,7 @@ hrF
 hrF
 abo
 hrF
-nZe
+nZa
 nZa
 vld
 nZa
@@ -48628,9 +48709,9 @@ wFr
 pss
 vKn
 enq
-enq
+dqd
 cUT
-enq
+dqd
 enq
 vKn
 azX
