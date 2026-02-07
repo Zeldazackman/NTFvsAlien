@@ -86,6 +86,7 @@
 		/datum/job/clf/tech = 3,
 		/datum/job/clf/leader = 2,
 		/datum/job/clf/silicon/synthetic/clf = 1,
+		/datum/job/clf/mo = 1,
 		/datum/job/other/prisonerclf = 2,
 		/datum/job/vsd_squad/standard = -1,
 		/datum/job/vsd_squad/medic = 1,
