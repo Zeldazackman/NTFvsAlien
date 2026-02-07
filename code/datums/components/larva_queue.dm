@@ -51,7 +51,11 @@
 
 /mob/living/carbon/xenomorph/can_wait_in_larva_queue()
 	. = FALSE
-	if (xeno_caste.tier == XENO_TIER_MINION || get_xeno_hivenumber() == XENO_HIVE_FALLEN)
+	if(get_xeno_hivenumber() == XENO_HIVE_FALLEN)
+		return TRUE
+	if(actions_by_path[/datum/action/ability/xeno_action/return_to_body])
+		return FALSE
+	if(xeno_caste.tier == XENO_TIER_MINION)
 		return TRUE
 
 /**

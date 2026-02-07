@@ -8,7 +8,7 @@
 	maxHealth = 250
 	plasma_stored = 100
 	pixel_x = 0
-	tier = XENO_TIER_ZERO
+	tier = XENO_TIER_MINION
 	upgrade = XENO_UPGRADE_BASETYPE
 	initial_language_holder = /datum/language_holder/xeno/puppet // So we can speak while possessed
 	pull_speed = -1
