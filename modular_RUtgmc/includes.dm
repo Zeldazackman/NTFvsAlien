@@ -1,6 +1,3 @@
-#include "code\__DEFINES\is_helpers.dm"
-#include "code\__DEFINES\mobs.dm"
-#include "code\__DEFINES\mode.dm"
 #include "code\_globalvars\lists\objects.dm"
 #include "code\_onclick\xeno.dm"
 #include "code\datums\actions\observer_action.dm"

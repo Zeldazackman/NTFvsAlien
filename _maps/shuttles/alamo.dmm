@@ -231,7 +231,7 @@
 /obj/machinery/camera/autoname/mainship/dropship_one{
 	pixel_y = 32
 	},
-/obj/machinery/vending/weapon{
+/obj/machinery/vending/marineFood{
 	pixel_y = 27;
 	density = 0
 	},
@@ -277,7 +277,10 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/largecrate/supply/supplies/plasteel,
+/obj/item/stack/sheet/plasteel/large_stack,
+/obj/item/stack/sheet/plasteel/large_stack,
+/obj/structure/rack,
+/obj/item/stack/sheet/plasteel/large_stack,
 /turf/open/shuttle/dropship/floor,
 /area/shuttle/dropship/alamo)
 "bk" = (
@@ -291,7 +294,8 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/structure/largecrate/supply/supplies/metal,
+/obj/structure/rack,
+/obj/structure/largecrate/supply/medicine/blood,
 /turf/open/shuttle/dropship/floor,
 /area/shuttle/dropship/alamo)
 "bn" = (
@@ -362,7 +366,15 @@
 	},
 /area/shuttle/dropship/alamo)
 "bI" = (
-/obj/structure/largecrate/supply/supplies/plasteel,
+/obj/item/stack/sheet/metal/large_stack,
+/obj/item/stack/sheet/metal/large_stack,
+/obj/item/stack/sheet/metal/large_stack,
+/obj/item/stack/sheet/metal/large_stack,
+/obj/item/stack/sheet/metal/large_stack,
+/obj/item/stack/sheet/metal/large_stack,
+/obj/item/stack/sheet/metal/large_stack,
+/obj/item/stack/sheet/metal/large_stack,
+/obj/structure/rack,
 /turf/open/shuttle/dropship/floor,
 /area/shuttle/dropship/alamo)
 "bJ" = (
@@ -477,7 +489,8 @@
 /turf/open/shuttle/dropship/floor,
 /area/shuttle/dropship/alamo)
 "dO" = (
-/obj/structure/largecrate/supply/supplies/metal,
+/obj/structure/largecrate/supply/medicine/medkits,
+/obj/structure/rack,
 /turf/open/shuttle/dropship/floor,
 /area/shuttle/dropship/alamo)
 "dS" = (
@@ -536,6 +549,7 @@
 /obj/item/storage/backpack/marine/radiopack,
 /obj/item/ammo_magazine/packet/p4570,
 /obj/item/ammo_magazine/packet/p4570,
+/obj/machinery/cell_charger,
 /turf/open/shuttle/dropship/four,
 /area/shuttle/dropship/alamo)
 "li" = (
@@ -551,7 +565,7 @@
 /turf/open/shuttle/dropship/floor/out,
 /area/shuttle/dropship/alamo)
 "nt" = (
-/obj/vehicle/ridden/powerloader,
+/obj/structure/largecrate/supply/medicine/iv,
 /turf/open/shuttle/dropship/floor,
 /area/shuttle/dropship/alamo)
 "nO" = (
@@ -573,7 +587,8 @@
 /obj/machinery/vending/nanomed{
 	dir = 4
 	},
-/obj/structure/largecrate/supply/supplies/water,
+/obj/structure/largecrate/supply/explosives/disposable,
+/obj/structure/rack,
 /turf/open/shuttle/dropship/floor,
 /area/shuttle/dropship/alamo)
 "pm" = (
@@ -602,7 +617,16 @@
 /turf/template_noop,
 /area/shuttle/dropship/alamo)
 "vQ" = (
-/obj/structure/largecrate/supply/supplies/mre,
+/obj/item/stack/sandbags/large_stack,
+/obj/item/stack/sandbags/large_stack,
+/obj/item/stack/sandbags/large_stack,
+/obj/item/stack/sandbags/large_stack,
+/obj/item/stack/sandbags/large_stack,
+/obj/item/stack/sandbags/large_stack,
+/obj/item/stack/sandbags/large_stack,
+/obj/item/stack/sandbags/large_stack,
+/obj/structure/rack,
+/obj/item/stack/sandbags/large_stack,
 /turf/open/shuttle/dropship/floor,
 /area/shuttle/dropship/alamo)
 "yv" = (
@@ -629,7 +653,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/recharge_station,
+/obj/vehicle/ridden/powerloader,
 /turf/open/shuttle/dropship/floor/out{
 	dir = 1
 	},
@@ -645,8 +669,13 @@
 	dir = 8
 	},
 /area/shuttle/dropship/alamo)
+"Iy" = (
+/obj/machinery/recharge_station,
+/turf/open/shuttle/dropship/floor,
+/area/shuttle/dropship/alamo)
 "IA" = (
-/obj/structure/largecrate/supply/medicine/medkits,
+/obj/structure/rack,
+/obj/structure/largecrate/supply/explosives/grenades,
 /turf/open/shuttle/dropship/floor,
 /area/shuttle/dropship/alamo)
 "Ki" = (
@@ -673,7 +702,7 @@
 /obj/machinery/vending/nanomed{
 	dir = 8
 	},
-/obj/structure/largecrate/supply/supplies/metal,
+/obj/structure/largecrate/supply/generator,
 /turf/open/shuttle/dropship/floor,
 /area/shuttle/dropship/alamo)
 "QK" = (
@@ -692,7 +721,7 @@
 	},
 /area/shuttle/dropship/alamo)
 "UI" = (
-/obj/structure/largecrate/supply/supplies/flares,
+/obj/structure/largecrate/supply/floodlights,
 /turf/open/shuttle/dropship/floor,
 /area/shuttle/dropship/alamo)
 "VW" = (
@@ -915,7 +944,7 @@ aw
 aE
 RK
 aU
-bi
+Iy
 cL
 Dp
 bw

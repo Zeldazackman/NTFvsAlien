@@ -172,8 +172,10 @@
 			X.balloon_alert(X, "Light disorients us!")
 			X.adjust_stagger(6 SECONDS)
 			X.add_slowdown(4)
-		for(var/obj/machinery/light/lightie in range(rand(7,10), whereweat))
-			lightie.set_flicker(2 SECONDS, 1.5, 2.5, rand(1,2))
+		for(var/obj/machinery/light/light AS in GLOB.nightfall_toggleable_lights)
+			if(isnull(light.loc) || (X.loc.z != light.loc.z) || (get_dist(whereweat, light) >= rand(10,15)))
+				continue
+			light.set_flicker(4 SECONDS, 2, 3, rand(2,4))
 		X.status_flags = initial(X.status_flags)
 		X.pass_flags = initial(X.pass_flags)
 		X.density = TRUE
@@ -185,8 +187,10 @@
 		X.update_action_buttons()
 		return
 	var/turf/whereweat = get_turf(X)
-	for(var/obj/machinery/light/lightie in range(rand(7,10), whereweat))
-		lightie.set_flicker(2 SECONDS, 1, 2, rand(1,2))
+	for(var/obj/machinery/light/light in range(rand(10,15), whereweat))
+		if(isnull(light.loc) || (X.loc.z != light.loc.z) || (get_dist(whereweat, light) >= rand(10,15)))
+			continue
+		light.set_flicker(4 SECONDS, 2, 3, rand(2,4))
 	ADD_TRAIT(X, TRAIT_HANDS_BLOCKED, X)
 	X.status_flags = INCORPOREAL
 	X.alpha = SCOUT_CLOAK_WALK_ALPHA

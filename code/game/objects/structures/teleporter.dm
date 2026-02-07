@@ -80,6 +80,9 @@
 			teleporting += thing
 			continue
 		if(is_type_in_list(thing, teleportable_types) && !thing.anchored)
+			if(isliving(thing))
+				if(thing.status_flags & INCORPOREAL)
+					continue
 			teleporting += thing
 
 	if(!length(teleporting))
