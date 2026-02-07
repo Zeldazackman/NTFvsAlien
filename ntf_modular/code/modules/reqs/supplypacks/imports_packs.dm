@@ -78,16 +78,6 @@
 	contains = list(/obj/item/ammo_magazine/rifle/nt_halter/foxfire)
 	cost = 20
 
-/datum/supply_packs/imports/antienergyshield
-	name = "NTC Anti Energy Shield"
-	contains = list(/obj/item/armor_module/module/eshield/absorbant/energy)
-	cost = 1000
-
-/datum/supply_packs/imports/antiballisticshield
-	name = "KZ Anti Ballsitic Shield"
-	contains = list(/obj/item/armor_module/module/eshield/absorbant/ballistic)
-	cost = 1000
-
 /datum/supply_packs/imports/unity_ammo
 	name = "NT105 Unity Revolver Ammo"
 	contains = list(/obj/item/ammo_magazine/pistol/ntunity)
@@ -165,8 +155,29 @@
 	contains = list(/obj/structure/bed/chair/stasis/red)
 	cost = 25
 
+/datum/supply_packs/imports/antienergyshield
+	name = "NTC Anti Energy Shield"
+	contains = list(/obj/item/armor_module/module/eshield/absorbant/energy)
+	cost = 500
+
+/datum/supply_packs/imports/antiballisticshield
+	name = "KZ Anti Ballsitic Shield"
+	contains = list(/obj/item/armor_module/module/eshield/absorbant/ballistic)
+	cost = 500
 
 //faction specific things below here.
+
+/datum/supply_packs/imports/antienergyshieldfs
+	name = "NTC Anti Energy Shield (Faction Supply)"
+	contains = list(/obj/item/armor_module/module/eshield/absorbant/energy)
+	faction_lock = list(FACTION_TERRAGOV) //novamed
+	cost = 300
+
+/datum/supply_packs/imports/antiballisticshieldfs
+	name = "KZ Anti Ballsitic Shield (Faction Supply)"
+	contains = list(/obj/item/armor_module/module/eshield/absorbant/ballistic)
+	faction_lock = list(FACTION_TERRAGOV) //novamed
+	cost = 300
 
 /datum/supply_packs/medical/carpotoxin
 	name = "Carpotoxin Bottle"

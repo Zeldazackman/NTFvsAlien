@@ -151,6 +151,10 @@
 #define ROLE_ERT "Emergency Response Team"
 #define ROLE_VALHALLA "Valhalla"
 
+//ntf addition start
+#define ROLE_XENO_HUGGER "Xeno Facehugger"
+//ntf addition end
+
 #define ROLE_FALLEN(role) ("Fallen " + ##role)
 
 GLOBAL_LIST_EMPTY(jobs_command)
@@ -166,13 +170,13 @@ CHIEF_MEDICAL_OFFICER, SYNTHETIC, SILICON_AI, CORPORATE_LIAISON, SHIP_TECH, ASSA
 MEDICAL_DOCTOR, MEDICAL_RESEARCHER, SQUAD_LEADER, SQUAD_SPECIALIST, SQUAD_SMARTGUNNER, SQUAD_CORPSMAN, SQUAD_ENGINEER, SQUAD_MARINE, SQUAD_SLUT, SQUAD_ROBOT, SQUAD_VATGROWN, \
 SOM_SQUAD_SLUT, SOM_SQUAD_MARINE, SOM_SQUAD_VETERAN, SOM_SQUAD_ENGINEER, SOM_SQUAD_CORPSMAN, SOM_SQUAD_LEADER, SOM_CHEF, SOM_MEDICAL_DOCTOR, SOM_TECH, SOM_CHIEF_MEDICAL_OFFICER, SOM_CHIEF_ENGINEER, SOM_REQUISITIONS_OFFICER, SOM_MECH_PILOT, SOM_PILOT_OFFICER, SOM_ASSAULT_CREWMAN, SOM_FIELD_COMMANDER, SOM_STAFF_OFFICER, SOM_COMMANDER, \
 PMC_MEDIC, PMC_ENGINEER, PMC_GUNNER, PMC_STANDARD, PMC_SNIPER, PMC_LEADER,\
-"CLF Breeder", "CLF Standard", "CLF Medic", "CLF Specialist", "CLF Synthetic", "CLF Medical Officer", "CLF Leader", "CLF Base Technician",\
+"CLF Breeder", "CLF Standard", "CLF Medic", "CLF Specialist", "CLF Synthetic", "CLF Leader", "CLF Combat Technician",\
 "KZ Standard", "KZ Engineer", "KZ Medic", "KZ Specialist", "KZ Squad Leader",\
 "CM Standard", "CM Medic", "CM Guardsman", "CM Squad Leader", "CM Base Technician",\
 "Prisoner", "SOM Prisoner", "CLF Prisoner",\
 "Morale Officer", "Worker", "Archercorp Liaison", "Novamed Liaison", "TRANSCo Liaison", "Kaizoku Liaison", "Colonial Militia Representative", "CLF Representative", "Sons of Mars Representative"))
 
-GLOBAL_LIST_INIT(jobs_xenos, list(ROLE_XENOMORPH, ROLE_XENO_QUEEN))
+GLOBAL_LIST_INIT(jobs_xenos, list(ROLE_XENOMORPH, ROLE_XENO_QUEEN, ROLE_XENO_HUGGER))
 GLOBAL_LIST_INIT(jobs_fallen_marine, typecacheof(list(/datum/job/fallen/marine), TRUE))
 ///Squad type role, regardless of faction
 GLOBAL_LIST_INIT(jobs_squad_roles, list(SQUAD_LEADER, SQUAD_SMARTGUNNER, SQUAD_CORPSMAN, SQUAD_ENGINEER, SQUAD_MARINE, SOM_SQUAD_MARINE, SOM_SQUAD_VETERAN, SOM_SQUAD_ENGINEER, SOM_SQUAD_CORPSMAN, SOM_SQUAD_LEADER))

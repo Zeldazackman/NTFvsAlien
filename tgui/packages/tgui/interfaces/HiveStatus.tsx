@@ -426,9 +426,13 @@ const EvolutionBar = (_props: any) => {
   const { act, data } = useBackend<InputPack>();
   const { static_info, user_ref, user_xeno, user_index, user_evolution } = data;
 
+  if (!user_xeno || !user_index) {
+    return <Box />; // Empty.
+  }
+
   const max = static_info[user_index].evolution_max;
 
-  if (!user_xeno || max === 0) {
+  if (max === 0) {
     return <Box />; // Empty.
   }
 
