@@ -7,15 +7,15 @@
 /datum/fire_support/gau/solmode
 	uses = 4
 	impact_quantity = 8
-	solmode_rearm_duration = 5 MINUTES
-	cooldown_duration = 15 SECONDS
+	solmode_rearm_duration = 6 MINUTES
+	cooldown_duration = 3 MINUTES
 	bino_cooldown_mult = 0.2
 
 /datum/fire_support/rockets/solmode
 	uses = 3
 	impact_quantity = 12
-	solmode_rearm_duration = 10 MINUTES
-	cooldown_duration = 15 SECONDS
+	solmode_rearm_duration = 12 MINUTES
+	cooldown_duration = 3 MINUTES
 	bino_cooldown_mult = 0.5
 
 /datum/fire_support/cruise_missile/solmode
