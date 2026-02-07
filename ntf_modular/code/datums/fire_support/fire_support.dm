@@ -3,6 +3,7 @@
 	var/solmode_rearm_duration = 3 MINUTES
 	var/rearm_timer
 	var/bino_cooldown_mult = 1
+	var/always_available = FALSE
 
 /datum/fire_support/gau/solmode
 	uses = 4
@@ -27,11 +28,13 @@
 	fire_support_type = FIRESUPPORT_TYPE_SENTRY_POD_SOLMODE
 	solmode_rearm_duration = 4
 	bino_cooldown_mult = 0.1
+	always_available = TRUE
 
 /datum/fire_support/droppod/supply/solmode
 	fire_support_type = FIRESUPPORT_TYPE_SUPPLY_POD_SOLMODE
 	solmode_rearm_duration = 4
 	bino_cooldown_mult = 0.1
+	always_available = TRUE
 
 //som shit has also lasting fire and overall crazy so i gotta gut em a bit.
 /datum/fire_support/volkite/solmode
@@ -76,6 +79,13 @@
 	var/list/weapon_cooldowns = list()
 	faction = FACTION_TERRAGOV
 	color = COLOR_RED_GRAY //so its distinguishable hopefully
+
+/obj/item/binoculars/fire_support/extended/acquire_target(atom/target, mob/living/carbon/human/user)
+	if(!(SSticker.mode.round_type_flags & MODE_CAMPAIGN_LITE_SUPPORT))
+		if(mode && !mode.always_available)
+			user.balloon_alert(user, "This fire-support is not available for this mission.")
+			return
+	. = ..()
 
 /obj/item/binoculars/fire_support/extended/sl
 	name = "pair of NTC SL laser-designator"
