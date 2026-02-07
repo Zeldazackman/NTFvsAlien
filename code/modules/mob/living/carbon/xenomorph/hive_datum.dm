@@ -167,7 +167,7 @@
 
 	.["xeno_info"] = list()
 	for(var/mob/living/carbon/xenomorph/xeno AS in get_all_xenos())
-		if(initial(xeno.tier) == XENO_TIER_MINION)
+		if((!(xeno.client)) && (xeno.xeno_caste.caste_flags & (CASTE_HIDE_IN_STATUS|CASTE_IS_A_MINION)))
 			continue // Skipping minions
 		var/datum/xeno_caste/caste = xeno.xeno_caste
 		var/plasma_multi = caste.plasma_regen_limit == 0 ? 1 : caste.plasma_regen_limit // Division by 0 bad.

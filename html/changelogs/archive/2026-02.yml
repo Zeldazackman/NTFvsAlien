@@ -39,3 +39,12 @@
       a book which lets them choose between +1 engineering or +1 to surgery.
   mudzbe:
   - bugfix: Cleanup mech removal queen evo oversight
+2026-02-07:
+  Colfer1:
+  - bugfix: the healthbar no longer blinks
+  EaglePhntm:
+  - rscadd: Adds playable huggers
+  OrbisAnima:
+  - balance: Supersoldier movement increase stim can no longer be stacked, but it
+      gives 0.2 of a bonus instead of 0.1. Hive Pheromones Stim has an injection similar
+      to the others (2.5 seconds at the time of this writting) from 15 seconds.

@@ -182,8 +182,6 @@ GLOBAL_LIST_INIT(hive_ui_static_data, init_hive_status_lists()) // init by make_
 
 		var/icon/xeno_minimap = icon('icons/UI_icons/map_blips.dmi', initial(caste.minimap_icon))
 		var/tier = initial(caste.tier)
-		if(tier == XENO_TIER_MINION)
-			continue
 		if(isnull(per_tier_counter[tier]))
 			per_tier_counter[tier] = 0
 
