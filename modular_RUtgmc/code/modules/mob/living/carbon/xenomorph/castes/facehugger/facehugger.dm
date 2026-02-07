@@ -85,6 +85,7 @@
 	if(host.can_be_facehugged(mask, provoked = TRUE))
 		if(mask.try_attach(host, no_evade = TRUE)) //Attach hugger-mask
 			if(!client) //delete if no sauce and keep the mask attached foreva
+				mask.clear_hugger_source()
 				qdel(src)
 			return TRUE
 		else
