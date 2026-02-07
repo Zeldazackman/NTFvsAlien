@@ -64,7 +64,6 @@
  */
 /datum/component/larva_queue/proc/add_queue_action()
 	SIGNAL_HANDLER
-	log_world("waiter.mob = [logdetails(waiter.mob)], waiter.mob.can_wait_in_larva_queue() = [waiter.mob.can_wait_in_larva_queue()]")
 	if (waiter.mob.can_wait_in_larva_queue())
 		var/datum/action/join_larva_queue/existing_action = waiter.mob.actions_by_path[/datum/action/join_larva_queue]
 		if(!existing_action)
