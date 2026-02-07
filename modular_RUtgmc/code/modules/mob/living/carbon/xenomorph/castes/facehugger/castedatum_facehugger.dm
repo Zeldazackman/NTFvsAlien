@@ -5,8 +5,8 @@
 	caste_desc = "A fast, flexible creature that wants to hug your head."
 	wound_type = ""
 	job_type = /datum/job/xenomorph/facehugger
-	caste_type_path = /mob/living/carbon/xenomorph/facehugger
-	base_strain_type = /mob/living/carbon/xenomorph/facehugger
+	caste_type_path = /mob/living/carbon/xenomorph/facehugger/larval
+	base_strain_type = /mob/living/carbon/xenomorph/facehugger/larval
 
 	tier = XENO_TIER_MINION
 	upgrade = XENO_UPGRADE_BASETYPE
@@ -51,6 +51,8 @@
 
 //strains
 /datum/xeno_caste/facehugger/larval //so it pops up in strains
+	display_name = "Larval Facehugger"
+	caste_name = "Larval Facehugger"
 
 /datum/xeno_caste/facehugger/slash
 	display_name = "Clawed Facehugger"

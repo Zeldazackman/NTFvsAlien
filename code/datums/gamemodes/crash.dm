@@ -22,6 +22,7 @@
 	)
 	respawn_time = 15 MINUTES
 	xenorespawn_time = 3 MINUTES
+	whitelist_ship_maps = list(MAP_EAGLE_CLASSIC)
 	blacklist_ground_maps = list(MAP_COLONY1, MAP_BIG_RED, MAP_DELTA_STATION, MAP_PRISON_STATION, MAP_LV_624, MAP_LV_624BASES, MAP_WHISKEY_OUTPOST, MAP_OSCAR_OUTPOST, MAP_FORT_PHOBOS, MAP_CHIGUSA, MAP_LAVA_OUTPOST, MAP_CORSAT, MAP_KUTJEVO_REFINERY, MAP_BLUESUMMERS)
 	tier_three_penalty = 1
 	tier_three_inclusion = TRUE
