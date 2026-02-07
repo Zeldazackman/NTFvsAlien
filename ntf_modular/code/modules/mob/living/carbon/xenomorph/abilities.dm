@@ -337,10 +337,10 @@
 			if(!returning.action_activate())
 				returning.remove_action(new_mob)
 		log_admin("[owner.key] took control of [new_mob.name] as [new_mob.p_they()] used the possession ability.")
-		new_mob.transfer_mob(owner)
 		returning = new
 		returning.give_action(new_mob)
 		returning.old_mob = owner
+		new_mob.transfer_mob(owner)
 		ADD_TRAIT(X, TRAIT_POSSESSING, TRAIT_POSSESSING)
 		return TRUE
 
