@@ -4,6 +4,9 @@
 		source.status_flags |= GODMODE
 		ADD_TRAIT(source, TRAIT_HANDS_BLOCKED, REF(src))
 		source.forceMove(user)
+	if(slot == SLOT_L_HAND && slot == SLOT_R_HAND)
+		reset_attach_status() //drop em
+
 
 /obj/item/clothing/mask/facehugger/reset_attach_status(forcedrop)
 	. = ..()

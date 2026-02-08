@@ -136,17 +136,17 @@
 	wearer.do_attack_animation(wearer, ATTACK_EFFECT_REDSLASH)
 	wearer.do_attack_animation(wearer, ATTACK_EFFECT_CLAW)
 	wearer.sexcon.adjust_arousal(5)
-	wearer.apply_damage(CARRIER_SLASH_HUGGER_DAMAGE/2, BRUTE, BODY_ZONE_PRECISE_GROIN, MELEE)
-	wearer.reagents.add_reagent(/datum/reagent/consumable/nutriment/cum/xeno, 10)
-	wearer.reagents.add_reagent(/datum/reagent/toxin/acid/xeno_cum, 1)
+	wearer.apply_damage(CARRIER_SLASH_HUGGER_DAMAGE*2, BRUTE, BODY_ZONE_PRECISE_GROIN, MELEE)
+	wearer.reagents.add_reagent(/datum/reagent/consumable/nutriment/cum/xeno, 7)
+	wearer.reagents.add_reagent(/datum/reagent/toxin/acid/xeno_cum, 3)
 
 /obj/item/clothing/mask/facehugger/latching/clawer/thrust_effect()
 	wearer.sexcon.adjust_arousal(5)
 	if(prob(20))
 		wearer.visible_message(span_danger("[src] roughly fucks [wearer] with a [cock_flavor], damaging [wearer.p_their()] [target_hole]!"),span_danger("[src] churns your [target_hole] painfully with it's [cock_flavor]!"), vision_distance = 5)
-		wearer.apply_damage(CARRIER_SLASH_HUGGER_DAMAGE/4, BRUTE, BODY_ZONE_PRECISE_GROIN, MELEE)
+		wearer.apply_damage(CARRIER_SLASH_HUGGER_DAMAGE/2, BRUTE, BODY_ZONE_PRECISE_GROIN, MELEE)
 	if(prob(20))
-		var/the_damage = CARRIER_SLASH_HUGGER_DAMAGE/4
+		var/the_damage = CARRIER_SLASH_HUGGER_DAMAGE
 		var/gangbang = 0
 		for(var/obj/item/clothing/mask/facehugger/combat/slash/frens in orange(3, loc))
 			gangbang ++
