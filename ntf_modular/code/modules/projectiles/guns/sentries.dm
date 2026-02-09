@@ -26,7 +26,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	faction = FACTION_TERRAGOV
 
-	soft_armor = list(MELEE = 0, BULLET = 30, LASER = 30, ENERGY = 30, BOMB = 30, BIO = 100, FIRE = 100, ACID = 30)
+	soft_armor = list(MELEE = 0, BULLET = 40, LASER = 40, ENERGY = 40, BOMB = 30, BIO = 100, FIRE = 100, ACID = 10)
 
 	gun_features_flags = GUN_AMMO_COUNTER|GUN_DEPLOYED_FIRE_ONLY|GUN_WIELDED_FIRING_ONLY|GUN_AMMO_COUNT_BY_SHOTS_REMAINING|GUN_IFF|GUN_SMOKE_PARTICLES
 	reciever_flags = AMMO_RECIEVER_MAGAZINES|AMMO_RECIEVER_DO_NOT_EJECT_HANDFULS|AMMO_RECIEVER_CYCLE_ONLY_BEFORE_FIRE
@@ -38,8 +38,8 @@
 	rounds_per_shot = 2
 	scatter = 10
 	throw_range = 4
-	fire_delay = 0.1 SECONDS
-	accuracy_mult = 0.8
+	fire_delay = 0.15 SECONDS
+	accuracy_mult = 0.7
 	ammo_datum_type = /datum/ammo/bullet/rifle/nut
 	default_ammo_type = /obj/item/ammo_magazine/rifle/nut_ammo
 	allowed_ammo_types = list(/obj/item/ammo_magazine/rifle/nut_ammo)

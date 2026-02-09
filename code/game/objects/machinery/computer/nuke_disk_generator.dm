@@ -87,7 +87,7 @@
 	if(!faction)
 		return
 	SSpoints.add_supply_points(faction, disk_cycle_reward)
-	SSpoints.add_dropship_points(faction, disk_cycle_reward/10)
+	SSpoints.add_dropship_points(faction, disk_cycle_reward/2)
 	GLOB.round_statistics.points_from_objectives += disk_cycle_reward
 
 	say("Program has execution has rewarded [disk_cycle_reward] requisitions points to [faction]!")
