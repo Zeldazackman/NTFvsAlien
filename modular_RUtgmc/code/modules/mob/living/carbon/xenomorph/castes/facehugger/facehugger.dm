@@ -28,7 +28,7 @@
 	bubble_icon = "alien"
 	speaking_noise = SFX_LARVA_TALK
 	var/obj/item/clothing/mask/facehugger/latching/hugger_type = /obj/item/clothing/mask/facehugger/latching
-	var/hug_range = 3
+	var/hug_range = 4
 	var/filtercolor
 	var/obj/item/clothing/mask/facehugger/mask
 
@@ -84,6 +84,9 @@
 	mask = new hugger_type(host, src.hivenumber, src)
 	if(host.can_be_facehugged(mask, provoked = TRUE))
 		if(mask.try_attach(host, no_evade = TRUE)) //Attach hugger-mask
+			if(!client) //delete if no sauce and keep the mask attached foreva
+				mask.clear_hugger_source()
+				qdel(src)
 			return TRUE
 		else
 			qdel(mask)
@@ -93,6 +96,11 @@
 		return FALSE
 
 //strains
+/mob/living/carbon/xenomorph/facehugger/larval
+	name = "Larval Facehugger"
+	hugger_type = /obj/item/clothing/mask/facehugger/latching
+	hug_range = 4
+
 /mob/living/carbon/xenomorph/facehugger/combat/slash
 	name = "Clawed Facehugger"
 	hugger_type = /obj/item/clothing/mask/facehugger/latching/clawer

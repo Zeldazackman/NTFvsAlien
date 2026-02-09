@@ -94,6 +94,7 @@ export const JobPreferences = (props) => {
     'CLF Medic',
     'CLF Specialist',
     'CLF Synthetic',
+    'CLF Medical Officer',
     'CLF Leader',
     'CLF Combat Technician',
     'CLF Representative',
@@ -306,6 +307,38 @@ const JobPreference = (props) => {
   const { job, setShownDescription } = props;
   const jobData = jobs[job];
   const preference = job_preferences[job];
+
+  if (!jobData) {
+    return (
+      <LabeledList.Item label={job}>
+        <Box align="right">
+          <Button.Checkbox
+            inline
+            icon="exclamation-triangle"
+            color="bad"
+            content={'Sorry, coders fucked this up'}
+            onClick={() =>
+              setShownDescription(
+                'failed to find /datum/job with title "' +
+                  job +
+                  '" in SSjob.joinable_occupations in /datum/preferences/ui_static_data(mob/user) ',
+              )
+            }
+          />
+          <Button
+            content="?"
+            onClick={() =>
+              setShownDescription(
+                'failed to find /datum/job with title "' +
+                  job +
+                  '" in SSjob.joinable_occupations in /datum/preferences/ui_static_data(mob/user) ',
+              )
+            }
+          />
+        </Box>
+      </LabeledList.Item>
+    );
+  }
 
   if (jobData.banned) {
     return (

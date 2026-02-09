@@ -5315,7 +5315,8 @@
 /obj/structure/cable,
 /obj/machinery/door/airlock/mainship/medical/glass{
 	name = "\improper KZ Medbay Airlock";
-	req_access = list(237)
+	req_access = list(237);
+	req_one_access = null
 	},
 /turf/open/floor/grayscale/round/black,
 /area/antag_ship/vsd/med)

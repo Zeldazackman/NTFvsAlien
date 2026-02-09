@@ -61,7 +61,7 @@
 /datum/emote/living/carbon/xenomorph/xurrender/run_emote(mob/user, params, type_override, intentional = TRUE, prefix)
 	if(!isxeno(user))
 		return
-	if(isxenolarva(user))
+	if(isxenolarva(user) || isxenofacehugger(user))
 		return //Because larva replace the emote
 	. = ..()
 	var/image/surrendering = image('icons/mob/effects/talk.dmi', user, icon_state = "surrendering")
@@ -107,7 +107,7 @@
 /datum/emote/living/carbon/xenomorph/xubmit/run_emote(mob/user, params, type_override, intentional = TRUE, prefix)
 	if(!isxeno(user))
 		return
-	if(isxenolarva(user))
+	if(isxenolarva(user) || isxenofacehugger(user))
 		return //Because larva replace the emote
 	. = ..()
 	var/image/submitting = image('icons/mob/effects/talk.dmi', user, icon_state = "submit")

@@ -34,7 +34,6 @@
 	name = "tentacle breeding nest"
 	icon = 'icons/Xeno/Effects.dmi'
 	desc = "A trap nest, It's a gruesome pile of thick, sticky resin-covered tentacles shaped like a nest. It will quickly capture who stay on it and cum acid and larva inside if given opportunity. It is rather easy to escape from."
-	layer = BELOW_OBJ_LAYER
 	var/hivenumber = XENO_HIVE_NORMAL
 	var/target_hole = HOLE_MOUTH
 	var/settings_locked = FALSE
