@@ -80,13 +80,6 @@
 	faction = FACTION_TERRAGOV
 	color = COLOR_RED_GRAY //so its distinguishable hopefully
 
-/obj/item/binoculars/fire_support/extended/acquire_target(atom/target, mob/living/carbon/human/user)
-	if(!(SSticker.mode.round_type_flags & MODE_CAMPAIGN_LITE_SUPPORT))
-		if(mode && !mode.always_available)
-			user.balloon_alert(user, "This fire-support is not available for this mission.")
-			return
-	. = ..()
-
 /obj/item/binoculars/fire_support/extended/sl
 	name = "pair of NTC SL laser-designator"
 	mode_list = list(
@@ -133,6 +126,10 @@
 /obj/item/binoculars/fire_support/extended/acquire_target(atom/target, mob/living/carbon/human/user)
 	set waitfor = 0
 	//had issues with parent so fuck it
+	if(!(SSticker.mode.round_type_flags & MODE_CAMPAIGN_LITE_SUPPORT))
+		if(mode && !mode.always_available)
+			user.balloon_alert(user, "This fire-support is not available for this mission.")
+			return
 	if(!(COOLDOWN_FINISHED(src, bino_cooldown_timer)))
 		balloon_alert(user, "Too soon! Systems recalibrating... [round((bino_cooldown_timer - world.time)/10)]s")
 		return
