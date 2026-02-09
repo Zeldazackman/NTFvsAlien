@@ -1,0 +1,4 @@
+author: "Colfer1"
+delete-after: True
+changes:
+  - balance: "Tanks can no longer be disassembled in 2 seconds"
