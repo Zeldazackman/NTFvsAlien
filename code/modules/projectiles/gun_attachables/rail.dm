@@ -94,6 +94,7 @@
 	accuracy_mod = -0.10
 	delay_mod = -0.125 SECONDS
 	burst_mod = -1
+	scatter_mod = 1
 	accuracy_unwielded_mod = -0.15
 
 /obj/item/attachable/magnetic_harness

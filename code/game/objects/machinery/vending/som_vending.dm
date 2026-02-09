@@ -221,6 +221,7 @@
 			/obj/item/attachable/gyro = -1,
 			/obj/item/attachable/lasersight = -1,
 			/obj/item/attachable/burstfire_assembly = -1,
+			/obj/item/attachable/quickfire = -1,
 			/obj/item/weapon/gun/shotgun/combat/masterkey = -1,
 			/obj/item/weapon/gun/grenade_launcher/underslung = -1,
 			/obj/item/weapon/gun/flamer/mini_flamer = -1,
