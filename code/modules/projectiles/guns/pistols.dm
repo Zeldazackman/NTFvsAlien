@@ -103,6 +103,7 @@
 		/obj/item/attachable/shoulder_mount,
 		/obj/item/attachable/scope/marine,
 		/obj/item/weapon/gun/shotgun/combat/masterkey,
+		/obj/item/weapon/gun/pistol/g22/tranq,
 	)
 
 	muzzleflash_iconstate = "muzzle_flash_laser"
@@ -128,7 +129,8 @@
 	placed_overlay_iconstate = "tx7"
 
 /obj/item/weapon/gun/pistol/plasma_pistol/beginner
-	starting_attachment_types = list(/obj/item/weapon/gun/shotgun/combat/masterkey, /obj/item/attachable/reddot, /obj/item/attachable/lasersight)
+	starting_attachment_types = list(/obj/item/weapon/gun/shotgun/combat/masterkey,
+		/obj/item/weapon/gun/pistol/g22/tranq, /obj/item/attachable/reddot, /obj/item/attachable/lasersight)
 
 /obj/item/weapon/gun/pistol/plasma_pistol/can_attach(obj/item/attaching_to, mob/attacher)
 	if(!attachments_by_slot[ATTACHMENT_SLOT_RAIL])
@@ -142,6 +144,7 @@
 
 /obj/item/weapon/gun/pistol/plasma_pistol/on_detach(obj/item/attached_to, mob/user)
 	gun_features_flags &= ~(GUN_WIELDED_STABLE_FIRING_ONLY|GUN_WIELDED_FIRING_ONLY)
+	set_gun_user(user)
 	return ..()
 
 /obj/item/weapon/gun/pistol/plasma_pistol/guardsman_pistol

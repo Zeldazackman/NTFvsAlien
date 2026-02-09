@@ -22,6 +22,7 @@
 #include "code\datums\jobs\job\shipside.dm"
 #include "code\datums\jobs\job\survivor.dm"
 #include "code\datums\keybinding\communication.dm"
+#include "code\datums\keybinding\human.dm"
 #include "code\datums\keybinding\xeno.dm"
 #include "code\datums\outfits\shipside.dm"
 #include "code\datums\outfits\survivor.dm"
