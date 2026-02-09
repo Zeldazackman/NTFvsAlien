@@ -172,7 +172,9 @@
 			X.balloon_alert(X, "Light disorients us!")
 			X.adjust_stagger(6 SECONDS)
 			X.add_slowdown(4)
-		for(var/obj/machinery/light/light AS in GLOB.nightfall_toggleable_lights)
+		for(var/obj/machinery/light/light in GLOB.nightfall_toggleable_lights)
+			if(!istype(light))
+				continue
 			if(isnull(light.loc) || (X.loc.z != light.loc.z) || (get_dist(whereweat, light) >= rand(10,15)))
 				continue
 			light.set_flicker(4 SECONDS, 2, 3, rand(2,4))
@@ -187,7 +189,9 @@
 		X.update_action_buttons()
 		return
 	var/turf/whereweat = get_turf(X)
-	for(var/obj/machinery/light/light in range(rand(10,15), whereweat))
+	for(var/obj/machinery/light/light in GLOB.nightfall_toggleable_lights)
+		if(!istype(light))
+			continue
 		if(isnull(light.loc) || (X.loc.z != light.loc.z) || (get_dist(whereweat, light) >= rand(10,15)))
 			continue
 		light.set_flicker(4 SECONDS, 2, 3, rand(2,4))
