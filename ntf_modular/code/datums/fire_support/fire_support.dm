@@ -9,7 +9,7 @@
 	uses = 3
 	impact_quantity = 8
 	solmode_rearm_duration = 6 MINUTES
-	cooldown_duration = 3 MINUTES
+	cooldown_duration = 1 MINUTES
 	bino_cooldown_mult = 0.2
 
 /datum/fire_support/rockets/solmode
