@@ -1,7 +1,8 @@
 //nest overrides
 /obj/structure/bed/nest/post_buckle_mob(mob/living/buckling_mob)
 	. = ..()
-	INVOKE_ASYNC(buckling_mob.client, TYPE_PROC_REF(/client, ask_reclone)) //pops up the prompt
+	if(buckling_mob.client)
+		INVOKE_ASYNC(buckling_mob.client, TYPE_PROC_REF(/client, ask_reclone)) //pops up the prompt
 
 /obj/structure/bed/nest/welder_act(mob/living/user, obj/item/I)
 	if(!welder_needed_unbuckle)

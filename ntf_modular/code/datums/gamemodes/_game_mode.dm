@@ -8,6 +8,7 @@ GLOBAL_LIST_EMPTY(reclone_tp_spots)
 	var/zombie_rebirth = FALSE
 	var/zombie_ids = FALSE
 	var/static_comms_amount = 2
+	var/round_type_flags2 = NONE
 
 /datum/game_mode/pre_setup()
 	. = ..()
