@@ -47,7 +47,7 @@
 
 /datum/fire_support/mortar/solmode
 	fire_support_type = FIRESUPPORT_TYPE_HE_MORTAR_SOLMODE
-	uses = 2
+	uses = 1
 	solmode_rearm_duration = 5 MINUTES
 	cooldown_duration = 1 MINUTES
 	bino_cooldown_mult = 0.2
