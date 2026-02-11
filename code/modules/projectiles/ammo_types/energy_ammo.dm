@@ -920,7 +920,7 @@
 	max_range = 40
 	accurate_range = 10
 	accuracy = 25
-	damage = 300
+	damage = 400
 	penetration = 120
 	sundering = 30
 	damage_falloff = 5
