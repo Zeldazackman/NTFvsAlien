@@ -69,12 +69,12 @@ CLOTHING
 /datum/supply_packs/clothing/night_vision
 	name = "BE-47 Night Vision Goggles (Requires nvg batteries to operate)"
 	contains = list(/obj/item/clothing/glasses/night_vision)
-	cost = 500 //requires batteries and not great vis range
+	cost = 1000 //requires batteries and not great vis range
 
 /datum/supply_packs/clothing/night_vision_mounted
 	name = "BE-35 Night Vision Module (Requires nvg batteries to operate)"
 	contains = list(/obj/item/armor_module/module/night_vision)
-	cost = 400
+	cost = 800
 
 /datum/supply_packs/clothing/night_vision_batteries
 	name = "Double pack of night vision batteries"

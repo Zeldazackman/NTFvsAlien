@@ -156,7 +156,7 @@
 		switch(blame_mob.sexcon.drain_style)
 			if(SEX_DRAIN_STYLE_HEAL_TARGET)
 				if(ishuman(user))
-					user.heal_overall_damage(rand(10, 20)+(20*blame_mob.skills.sex), rand(10, 20)+(20*blame_mob.skills.sex), TRUE, TRUE)
+					user.heal_overall_damage(rand(5, 10)+(10*blame_mob.skills.sex), rand(5, 10)+(10*blame_mob.skills.sex), TRUE, TRUE)
 				else if(isxeno(user))
 					var/mob/living/carbon/xenomorph/xeno_user = user
 					var/heal_amount = rand(10, 20) + (20*blame_mob.skills.sex) + (xeno_user.recovery_aura * xeno_user.maxHealth * 0.01)
@@ -329,7 +329,7 @@
 
 /datum/sex_controller/proc/perform_sex_action(mob/living/action_target, arousal_amt, pain_amt, giving)
 	var/datum/sex_action/action = SEX_ACTION(current_action)
-	var/healing_amount = (action?.heal_sex) ? rand(2, 4) : 0
+	var/healing_amount = (action?.heal_sex) ? rand(1, 3) : 0
 	action_target.sexcon.receive_sex_action(arousal_amt, pain_amt, giving, force, speed, healing_amount, user)
 
 /datum/sex_controller/proc/receive_sex_action(arousal_amt, pain_amt, giving, applied_force, applied_speed, healing_amount, mob/living/blame_mob)
