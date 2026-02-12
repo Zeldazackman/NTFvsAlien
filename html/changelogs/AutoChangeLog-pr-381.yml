@@ -1,0 +1,6 @@
+author: "OrbisAnima"
+delete-after: True
+changes:
+  - code_imp: "implemented null checks on traits. (A lot of stuff affected, from aphrotoxin to abilities and much more)"
+  - code_imp: "implemented caste check on xeno death and avoided procesing double+ deaths for xeno deaths (facehuggers being a big source)"
+  - code_imp: "implemented a safeguard for greyicons when they try to merge with a non icon check (I assume invisible modules but could be for other cases)"
