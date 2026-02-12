@@ -165,6 +165,16 @@
 	contains = list(/obj/item/armor_module/module/eshield/absorbant/ballistic)
 	cost = 500
 
+/datum/supply_packs/imports/m16/ammo/extended
+	name = "FN M16 Assault Rifle Ammo Extended Mag"
+	contains = list(/obj/item/ammo_magazine/rifle/m16_quadstack)
+	cost = 6
+
+/datum/supply_packs/imports/m16/ammo/drum
+	name = "FN M16 Assault Rifle Ammo Drum"
+	contains = list(/obj/item/ammo_magazine/rifle/m16_cmag)
+	cost = 10
+
 //faction specific things below here.
 
 /datum/supply_packs/imports/antienergyshieldfs

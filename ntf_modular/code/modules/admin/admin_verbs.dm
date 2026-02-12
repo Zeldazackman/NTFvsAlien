@@ -68,7 +68,7 @@ ADMIN_VERB(command_report_to_faction, R_FUN, "Command Report to Faction", "Creat
 	if(!input)
 		return
 
-	faction_announce(input, customname, 'sound/AI/commandreport.ogg', to_faction = faction_choice);
+	faction_announce(input, customname, sound = 'sound/AI/commandreport.ogg', to_faction = faction_choice);
 
 	log_admin("[key_name(user)] has created a command report for [faction_choice]: [input]")
 	message_admins("[ADMIN_TPMONTY(user.mob)] has created a command report for [faction_choice].")
