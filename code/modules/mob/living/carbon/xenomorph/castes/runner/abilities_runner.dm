@@ -120,7 +120,7 @@
 	savage_buff_amount = amount
 	xeno_owner.xeno_melee_damage_modifier += savage_buff_amount
 	xeno_owner.add_filter("runner_savage_buff_outline", 3, outline_filter(1, COLOR_VIVID_RED))
-	savage_buff_timer_id = addtimer(CALLBACK(src, PROC_REF(end_buff)), 7 SECONDS)
+	savage_buff_timer_id = addtimer(CALLBACK(src, PROC_REF(end_buff)), 7 SECONDS, TIMER_STOPPABLE)
 
 /// Removes the temporary melee damage modifier and the outline that was given.
 /datum/action/ability/activable/xeno/pounce/runner/proc/end_buff()
