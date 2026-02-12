@@ -11,3 +11,8 @@
 ///how many ambrosia per supply point from intel
 #define INTEL_AMBROSIA_PER_SUPPLY_POINT (1/120)
 #define MAX_FACEHUGGERS 8
+
+///extra round type flags
+#define MODE_CAMPAIGN_LITE_SUPPORT (1<<0)
+///Only disables joining as an observer.
+#define MODE_NO_GHOSTS (1<<1)

@@ -794,7 +794,7 @@ GLOBAL_LIST_INIT(stealth_greyscale_matrix,\
 		wearer.alpha = max(wearer.alpha, shimmer_alpha) //50% invisible
 	//Stationary stealth
 	else if( wearer.last_move_intent < stealth_delay ) //If we're standing still and haven't shimmed in the past 2 seconds we become almost completely invisible
-		wearer.alpha = SCOUT_CLOAK_STILL_ALPHA //95% invisible
+		wearer.alpha = SCOUT_CLOAK_STILL_ALPHA/2
 		camo_adjust_energy(wearer, SCOUT_CLOAK_ACTIVE_RECOVERY)
 
 // Welder Backpacks //

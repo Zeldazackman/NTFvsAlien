@@ -107,7 +107,6 @@ GLOBAL_LIST_INIT(playable_icons, list(
 	"defender",
 	"defiler",
 	"drone",
-	"facehugger",
 	"fieldcommander",
 	"gorger",
 	"hivelord",

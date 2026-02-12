@@ -283,6 +283,7 @@
 
 /obj/item/research_product/supply_export(faction_selling, mob/user)
 	SSpoints.add_supply_points(faction_selling, export_points)  //NTF edit. Forcibly caps req points
+	SSpoints.add_dropship_points(faction_selling, export_points)  //ntf edit
 	GLOB.round_statistics.points_from_research += export_points
 	return list(new /datum/export_report(export_points, name, faction_selling))
 

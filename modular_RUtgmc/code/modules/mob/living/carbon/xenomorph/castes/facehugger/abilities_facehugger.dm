@@ -40,7 +40,7 @@
 			playsound(caster.loc, 'sound/weapons/punch1.ogg', 30, TRUE)
 			H.do_attack_animation(caster, ATTACK_EFFECT_PUNCH)
 			H.visible_message(span_warning("[H] smacks [caster] down mid air!"))
-			caster.Paralyze(self_immobilize_duration)
+			caster.ParalyzeNoChain(self_immobilize_duration*2)
 			caster.apply_damage(caster.xeno_caste.max_health/3, BRUTE, blocked = MELEE)
 			return
 		if(get_dist(start_turf, caster.loc) <= caster.hug_range)

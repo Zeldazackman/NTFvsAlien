@@ -67,12 +67,17 @@
 			continue
 		if(nearby_human.last_move_time + move_sensitivity < world.time)
 			continue
+		if(HAS_TRAIT(nearby_human, TRAIT_TURRET_HIDDEN))
+			continue
 		if(!(nearby_human.get_iff_signal() & operator.get_iff_signal()))
 			ping_count++
 		prepare_blip(nearby_human, nearby_human.wear_id?.iff_signal & operator.get_iff_signal() ? MOTION_DETECTOR_FRIENDLY : MOTION_DETECTOR_HOSTILE)
 	for (var/mob/living/carbon/xenomorph/nearby_xeno AS in cheap_get_xenos_near(operator, range))
 		if(nearby_xeno.last_move_time + move_sensitivity < world.time )
 			continue
+		if(HAS_TRAIT(nearby_xeno, TRAIT_TURRET_HIDDEN))
+			continue
+			//turret trait is for the xeno variant of the turret, and turret_hidden is for the xenos that are hiding in walls and such, both should be undetectable by motion sensors.
 		if(!(nearby_xeno.get_iff_signal() & operator.get_iff_signal()))
 			ping_count++
 		prepare_blip(nearby_xeno, nearby_xeno.get_iff_signal() & operator.get_iff_signal() ?  MOTION_DETECTOR_FRIENDLY : MOTION_DETECTOR_HOSTILE)

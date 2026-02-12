@@ -168,7 +168,7 @@
 	icon_state = "marine_riot"
 	slowdown = 1.3
 	stamina_regen_mod = -0.4
-	soft_armor = list(MELEE = 65, BULLET = 90, LASER = 95, ENERGY = 10, BOMB = 45, BIO = 10, FIRE = 10, ACID = 10)
+	soft_armor = list(MELEE = 65, BULLET = 75, LASER = 75, ENERGY = 10, BOMB = 45, BIO = 10, FIRE = 10, ACID = 10)
 	allowed = list(
 		/obj/item/weapon/gun,
 		/obj/item/storage/belt/sparepouch,
@@ -282,8 +282,8 @@
 	name = "\improper M4 pattern PMC armor"
 	desc = "A modification of outdated army vest. Even tho it doesn't have an advanced armor layering and protection against unwelcome enviroment, that armor is still produced by Ninetails Armory Divison for low ranking members of Ninetails PMC and security firms of Outer Rim."
 	icon_state = "pmc_armor"
-	soft_armor = list(MELEE = 50, BULLET = 55, LASER = 55, ENERGY = 55, BOMB = 50, BIO = 50, FIRE = 50, ACID = 50)
-	slowdown = SLOWDOWN_ARMOR_LIGHT
+	soft_armor = MARINE_ARMOR_MEDIUM
+	slowdown = SLOWDOWN_ARMOR_MEDIUM
 	armor_features_flags = ARMOR_LAMP_OVERLAY
 	allowed = list(
 		/obj/item/weapon/gun,
@@ -730,7 +730,7 @@
 	cold_protection_flags = CHEST|GROIN|ARMS|LEGS|FEET|HANDS
 	heat_protection_flags =CHEST|GROIN|ARMS|LEGS|FEET|HANDS
 	item_flags = SYNTH_RESTRICTED
-	soft_armor = list(MELEE = 40, BULLET = 40, LASER = 40, ENERGY = 30, BOMB = 60, BIO = 30, FIRE = 30, ACID = 30)
+	soft_armor = MARINE_ARMOR_LIGHT
 	allowed = list(
 		/obj/item/weapon/twohanded,
 		/obj/item/weapon/gun,
@@ -776,8 +776,8 @@
 	name = "\improper K12 ceramic plated armor"
 	desc = "A set of grey, heavy ceramic armor with dark blue highlights. It is the standard uniform of a unknown mercenary group working in the sector"
 	icon_state = "mercenary_heavy_armor"
-	soft_armor = list(MELEE = 75, BULLET = 62, LASER = 42, ENERGY = 38, BOMB = 40, BIO = 15, FIRE = 38, ACID = 38)
-	slowdown = SLOWDOWN_ARMOR_LIGHT
+	soft_armor = MARINE_ARMOR_HEAVY
+	slowdown = SLOWDOWN_ARMOR_HEAVY
 	allowed = list(
 		/obj/item/weapon/gun,
 		/obj/item/tank/emergency_oxygen,
@@ -797,7 +797,7 @@
 	name = "\improper Y8 armored miner vest"
 	desc = "A set of beige, light armor built for protection while mining. It is a specialized uniform of a unknown mercenary group working in the sector"
 	icon_state = "mercenary_miner_armor"
-	soft_armor = list(MELEE = 50, BULLET = 42, LASER = 42, ENERGY = 38, BOMB = 25, BIO = 15, FIRE = 38, ACID = 38)
+	soft_armor = MARINE_ARMOR_LIGHT
 	slowdown = SLOWDOWN_ARMOR_LIGHT
 	allowed = list(
 		/obj/item/weapon/gun,
@@ -818,8 +818,8 @@
 	name = "\improper Z7 armored engineer vest"
 	desc = "A set of blue armor with yellow highlights built for protection while building in highly dangerous environments. It is a specialized uniform of a unknown mercenary group working in the sector"
 	icon_state = "mercenary_engineer_armor"
-	soft_armor = list(MELEE = 55, BULLET = 52, LASER = 42, ENERGY = 38, BOMB = 30, BIO = 15, FIRE = 38, ACID = 38)
-	slowdown = SLOWDOWN_ARMOR_LIGHT
+	soft_armor = MARINE_ARMOR_MEDIUM
+	slowdown = SLOWDOWN_ARMOR_MEDIUM
 	allowed = list(
 		/obj/item/weapon/gun,
 		/obj/item/tank/emergency_oxygen,
@@ -847,8 +847,7 @@
 	icon_state = "som_armor"
 	worn_icon_state = "som_armor"
 	slowdown = SLOWDOWN_ARMOR_LIGHT
-	armor_protection_flags = CHEST|GROIN|ARMS|LEGS|HANDS|FEET
-	soft_armor = list(MELEE = 50, BULLET = 55, LASER = 55, ENERGY = 55, BOMB = 55, BIO = 55, FIRE = 55, ACID = 55)
+	soft_armor = MARINE_ARMOR_LIGHT
 	item_map_variant_flags = NONE
 
 /obj/item/clothing/suit/storage/marine/som/veteran
@@ -857,8 +856,7 @@
 	icon_state = "som_armor_veteran"
 	worn_icon_state = "som_armor_veteran"
 	slowdown = SLOWDOWN_ARMOR_HEAVY
-	armor_protection_flags = CHEST|GROIN|ARMS|LEGS|HANDS|FEET
-	soft_armor = list(MELEE = 65, BULLET = 70, LASER = 70, ENERGY = 55, BOMB = 55, BIO = 55, FIRE = 55, ACID = 60)
+	soft_armor = MARINE_ARMOR_HEAVY
 
 /obj/item/clothing/suit/storage/marine/som/leader
 	name = "\improper S13 leader hauberk"
@@ -866,8 +864,7 @@
 	icon_state = "som_armor_leader"
 	worn_icon_state = "som_armor_leader"
 	slowdown = SLOWDOWN_ARMOR_MEDIUM
-	armor_protection_flags = CHEST|GROIN|ARMS|LEGS|HANDS|FEET
-	soft_armor = list(MELEE = 55, BULLET = 50, LASER = 40, ENERGY = 55, BOMB = 55, BIO = 55, FIRE = 55, ACID = 60)
+	soft_armor = MARINE_ARMOR_MEDIUM
 
 /obj/item/clothing/suit/storage/marine/icc
 	name = "\improper Modelle/16 combat armor"
@@ -883,21 +880,22 @@
 	armor_protection_flags = CHEST|GROIN|ARMS|LEGS|FEET|HANDS
 	cold_protection_flags = CHEST|GROIN|ARMS|LEGS|FEET|HANDS
 	heat_protection_flags =CHEST|GROIN|ARMS|LEGS|FEET|HANDS
-	soft_armor = list(MELEE = 50, BULLET = 60, LASER = 50, ENERGY = 60, BOMB = 70, BIO = 10, FIRE = 60, ACID = 50)
+	soft_armor = MARINE_ARMOR_MEDIUM
 	item_map_variant_flags = NONE
 
 /obj/item/clothing/suit/storage/marine/icc/guard
 	name = "\improper Modelle/19 combat armor"
 	desc = "A piece of ICCGF body armor, worn by specialized infantry. Most Infantry actions in the ICC forces are done by adhoc personnel due to constant shortages of manpower, however most real Infantry divisions are of high quality, and are better known as 'Guardsmen'.  Protects well from most sources, and will entirely protect from explosions."
 	icon_state = "icc_guard"
-	soft_armor = list(MELEE = 60, BULLET = 65, LASER = 40, ENERGY = 60, BOMB = 85, BIO = 10, FIRE = 55, ACID = 40)
+	slowdown = SLOWDOWN_ARMOR_LIGHT
+	soft_armor = MARINE_ARMOR_LIGHT
 
 /obj/item/clothing/suit/storage/marine/icc/guard/heavy
 	name = "\improper Modelle/22 'Cuirassier' combat armor"
 	desc = "A piece of ICCGF body armor, worn by specialized infantry. Most Infantry actions in the ICC forces are done by adhoc personnel due to constant shortages of manpower, however most real Infantry divisions are of high quality, and are better known as 'Guardsmen'.  Protects well from most sources, and will entirely protect from explosions."
 	icon_state = "icc_guard_heavy"
 	slowdown = SLOWDOWN_ARMOR_HEAVY
-	soft_armor = list(MELEE = 70, BULLET = 75, LASER = 40, ENERGY = 60, BOMB = 90, BIO = 10, FIRE = 55, ACID = 40)
+	soft_armor = MARINE_ARMOR_HEAVY
 
 //===========================SPEC OPS================================
 

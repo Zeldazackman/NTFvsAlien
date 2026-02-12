@@ -55,3 +55,9 @@
   - balance: Tanks can no longer be disassembled in 2 seconds
   destrucktoid:
   - rscadd: Som version of FC skillbook
+2026-02-10:
+  Nokia2Student:
+  - bugfix: SOM Hovertank invisible interior gun overlay fix
+2026-02-11:
+  EaglePhntm:
+  - rscadd: Ports chimera from rutgmc
