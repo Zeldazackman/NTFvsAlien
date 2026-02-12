@@ -22,13 +22,13 @@
 	plasma_max = 150
 	plasma_gain = 0
 	plasma_regen_limit = 0.2
-	plasma_icon_state = "panther"
+	//plasma_icon_state = "panther"
 
 	// *** Health *** //
 	max_health = 240
 
 	// *** Flags *** //
-	caste_flags = CASTE_INNATE_PLASMA_REGEN|CASTE_PLASMADRAIN_IMMUNE|CASTE_EVOLUTION_ALLOWED
+	caste_flags = CASTE_INNATE_PLASMA_REGEN|CASTE_PLASMADRAIN_IMMUNE|CASTE_EVOLUTION_ALLOWED|CASTE_MUTATIONS_ALLOWED
 	can_flags = CASTE_CAN_BE_QUEEN_HEALED|CASTE_CAN_BE_LEADER|CASTE_CAN_RIDE_CRUSHER
 	caste_traits = list(TRAIT_CAN_VENTCRAWL)
 
