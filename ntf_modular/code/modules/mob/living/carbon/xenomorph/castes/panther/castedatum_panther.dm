@@ -57,6 +57,17 @@
 		/datum/action/ability/xeno_action/place_stew_pod,
 	)
 
+
+	mutations = list(
+		/datum/mutation_upgrade/shell/upfront_evasion,
+		/datum/mutation_upgrade/shell/borrowed_time,
+		/datum/mutation_upgrade/shell/ingrained_evasion,
+		/datum/mutation_upgrade/spur/sneak_attack,
+		/datum/mutation_upgrade/spur/right_here,
+		/datum/mutation_upgrade/veil/headslam,
+		/datum/mutation_upgrade/veil/passing_glance
+	)
+
 /datum/xeno_caste/runner/panther/normal
 	upgrade = XENO_UPGRADE_NORMAL
 
