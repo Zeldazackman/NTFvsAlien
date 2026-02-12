@@ -185,3 +185,4 @@
 	)
 	accuracy_mult = 1.15
 	accuracy_mult_unwielded = 0.95
+	damage_mult = 1
