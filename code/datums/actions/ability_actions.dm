@@ -252,7 +252,7 @@
 	if(!CHECK_BITFIELD(to_check_flags, ABILITY_TARGET_SELF) && A == owner)
 		return FALSE
 	//ntf addition
-	if(HAS_TRAIT(A, TRAIT_HAULED))
+	if(istype(A) && HAS_TRAIT(A, TRAIT_HAULED))
 		return FALSE
 
 ///the thing to do when the selected action ability is selected and triggered by middle_click
