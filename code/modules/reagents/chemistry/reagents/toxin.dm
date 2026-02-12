@@ -702,7 +702,7 @@
 
 /datum/reagent/toxin/xeno_aphrotoxin/on_mob_life(mob/living/L, metabolism)
 	if(prob(5))
-		if(HAS_TRAIT(L, XENO_HOST))
+		if(CHECK_BITFIELD(L.status_flags, XENO_HOST))
 			L.reagents.add_reagent(/datum/reagent/consumable/larvajelly, 2)
 			L.reagents.remove_reagent(/datum/reagent/toxin/xeno_aphrotoxin, 4)
 	particle_holder.particles.spawning = 1 + round(debuff_owner.reagents.get_reagent_amount(/datum/reagent/toxin/xeno_aphrotoxin) / 4)
