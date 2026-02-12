@@ -5,7 +5,7 @@
 	caste_desc = "A strange xeno that utilizes its psychic powers to move out of phase with reality."
 	base_strain_type = /mob/living/carbon/xenomorph/wraith
 	caste_type_path = /mob/living/carbon/xenomorph/wraith
-	tier = XENO_TIER_THREE
+	tier = XENO_TIER_TWO
 	upgrade = XENO_UPGRADE_BASETYPE
 	wound_type = "wraith" //used to match appropriate wound overlays
 
@@ -23,9 +23,9 @@
 	max_health = 340
 
 	// *** Evolution *** //
-	upgrade_threshold = TIER_THREE_THRESHOLD
+	upgrade_threshold = TIER_TWO_THRESHOLD
 
-	deevolves_to = /datum/xeno_caste/hunter
+	deevolves_to = /datum/xeno_caste/runner
 
 	// *** Flags *** //
 	caste_flags = CASTE_EVOLUTION_ALLOWED

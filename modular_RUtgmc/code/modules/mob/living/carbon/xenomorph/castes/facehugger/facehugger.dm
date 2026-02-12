@@ -102,6 +102,7 @@
 	hug_range = 4
 
 /mob/living/carbon/xenomorph/facehugger/combat/slash
+	caste_base_type = /datum/xeno_caste/facehugger/slash
 	name = "Clawed Facehugger"
 	hugger_type = /obj/item/clothing/mask/facehugger/latching/clawer
 	hug_range = 5
@@ -128,6 +129,7 @@
 	special_pounce(host)
 
 /mob/living/carbon/xenomorph/facehugger/chemical/neurotoxin
+	caste_base_type = /datum/xeno_caste/facehugger/neuro
 	name = "Neurotoxin Facehugger"
 	hugger_type = /obj/item/clothing/mask/facehugger/latching/chemical/neuro
 	hug_range = 4
@@ -143,18 +145,21 @@
 	host.apply_damage(damage, STAMINA, BODY_ZONE_HEAD, updating_health = TRUE) //This should prevent sprinting
 
 /mob/living/carbon/xenomorph/facehugger/chemical/aphrotoxin
+	caste_base_type = /datum/xeno_caste/facehugger/aphro
 	name = "Aphrotoxin Facehugger"
 	hugger_type = /obj/item/clothing/mask/facehugger/latching/chemical/aphrotox
 	hug_range = 4
 	injected_chemical_type = /datum/reagent/toxin/xeno_aphrotoxin
 
 /mob/living/carbon/xenomorph/facehugger/chemical/ozelomelyn
+	caste_base_type = /datum/xeno_caste/facehugger/ozelomelyn
 	name = "Ozelomelyn Facehugger"
 	hugger_type = /obj/item/clothing/mask/facehugger/latching/chemical/ozelomelyn
 	hug_range = 4
 	injected_chemical_type = /datum/reagent/toxin/xeno_ozelomelyn
 
 /mob/living/carbon/xenomorph/facehugger/combat/acid
+	caste_base_type = /datum/xeno_caste/facehugger/acid
 	name = "Acid Facehugger"
 	hugger_type = /obj/item/clothing/mask/facehugger/latching/chemical/acid
 	hug_range = 3
@@ -172,6 +177,7 @@
 	A.start()
 
 /mob/living/carbon/xenomorph/facehugger/combat/resin
+	caste_base_type = /datum/xeno_caste/facehugger/resin
 	name = "Resin Facehugger"
 	hugger_type = /obj/item/clothing/mask/facehugger/latching/chemical/resin
 	hug_range = 3

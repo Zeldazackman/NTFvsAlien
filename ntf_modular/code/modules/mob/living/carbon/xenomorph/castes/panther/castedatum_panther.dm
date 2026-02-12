@@ -4,6 +4,7 @@
 	upgrade_name = ""
 	caste_desc = "Run fast, hit hard, die young."
 	caste_type_path = /mob/living/carbon/xenomorph/runner/panther
+	base_strain_type = /mob/living/carbon/xenomorph/runner/panther
 	tier = XENO_TIER_ONE
 	upgrade = XENO_UPGRADE_BASETYPE
 	wound_type = "panther" //used to match appropriate wound overlays

@@ -2,6 +2,7 @@
 	caste_name = "Chimera"
 	display_name = "Chimera"
 	upgrade_name = ""
+	base_strain_type = /mob/living/carbon/xenomorph/chimera
 	caste_type_path = /mob/living/carbon/xenomorph/chimera
 	caste_desc = "A slim, deadly alien creature. It has two additional arms with mantis blades."
 	tier = XENO_TIER_THREE
@@ -25,7 +26,7 @@
 	// *** Evolution *** //
 	upgrade_threshold = TIER_THREE_THRESHOLD
 
-	deevolves_to = /datum/xeno_caste/hunter
+	deevolves_to = /datum/xeno_caste/wraith
 
 	// *** Flags *** //
 	caste_flags = CASTE_EVOLUTION_ALLOWED
@@ -36,7 +37,7 @@
 
 	wraith_blink_range = 5
 
-	minimap_icon = "chimera"
+	minimap_icon = "wraith"
 
 	// *** Abilities *** //
 	actions = list(
