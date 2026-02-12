@@ -1,4 +1,6 @@
 /client/proc/ask_reclone()
+	if(!ishuman(mob))
+		return
 	var/area/the_area = get_area(mob)
 	var/the_cost = 300
 	if(!reclone_start_time) //keep progress until its over.
