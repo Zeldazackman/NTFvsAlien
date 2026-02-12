@@ -475,7 +475,8 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	var/datum/internal_organ/O
 	for(var/i in list(ORGAN_SLOT_HEART, ORGAN_SLOT_LUNGS, ORGAN_SLOT_LIVER))
 		O = victim.get_organ_slot(i)
-		O.take_damage(debuff, TRUE)
+		if(istype(O))
+			O.take_damage(debuff, TRUE)
 
 	young.adjust_boost_timer(20, 40)
 
