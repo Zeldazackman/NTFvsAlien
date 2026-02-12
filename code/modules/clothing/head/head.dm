@@ -436,7 +436,7 @@
 	)
 	icon_state = "rebel_hood"
 	siemens_coefficient = 2
-	armor_protection_flags = HEAD|CHEST
+	armor_protection_flags = HEAD
 	cold_protection_flags = HEAD
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
 	inventory_flags = BLOCKSHARPOBJ
