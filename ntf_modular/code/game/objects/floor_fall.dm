@@ -77,12 +77,11 @@
 				aliving.animation_spin(speed = 25, loop_amount = 2)
 				aliving.playsound_local(aliving.loc, 'sound/effects/bomb_fall.ogg', 100, FALSE)
 				aliving.emote("scream")
+			sleep(5 SECONDS)
 			A.x = fn_teleport_x
 			A.y = fn_teleport_y
 			A.z = fn_teleport_z
 			A.pixel_y = 255
-			A.alpha = 0
-			animate(A, time = 5, alpha = initial(A.alpha), easing = LINEAR_EASING|EASE_OUT)
 			animate(A, time = 10, pixel_y = initial(A.pixel_y), easing = BOUNCE_EASING)
 			sleep(5)
 			if(isliving(A))
