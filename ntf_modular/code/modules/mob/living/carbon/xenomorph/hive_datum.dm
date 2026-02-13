@@ -31,8 +31,7 @@
 	queueable = TRUE
 
 /datum/hive_status/corrupted
-	melee_multiplier = 0.95
-	health_multiplier = 0.95
+	health_multiplier = 0.8
 	aura_multiplier = 0.95
 	req_jelly_progress_required = 148 // 750 seconds = 12.5 minutes per globule
 	queueable = TRUE
