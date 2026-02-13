@@ -1,0 +1,4 @@
+author: "Colfer1"
+delete-after: True
+changes:
+  - balance: "SH-39 can no longer stunlock xenomorphs infinitely"
