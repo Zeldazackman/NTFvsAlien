@@ -1,0 +1,5 @@
+author: "Lefunny"
+delete-after: True
+changes:
+  - balance: "Increased culverin powerpack maxcharge from 3000 to 9000, which is equivalent to 100 to 300 culverin rounds."
+  - balance: "Culverin recharge increased from 100 to 150, thanks to increased maxcharge"
