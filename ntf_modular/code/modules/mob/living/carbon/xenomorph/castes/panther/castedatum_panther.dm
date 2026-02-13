@@ -4,6 +4,7 @@
 	upgrade_name = ""
 	caste_desc = "Run fast, hit hard, die young."
 	caste_type_path = /mob/living/carbon/xenomorph/runner/panther
+	base_strain_type = /mob/living/carbon/xenomorph/runner/panther
 	tier = XENO_TIER_ONE
 	upgrade = XENO_UPGRADE_BASETYPE
 	wound_type = "panther" //used to match appropriate wound overlays
@@ -22,13 +23,13 @@
 	plasma_max = 150
 	plasma_gain = 0
 	plasma_regen_limit = 0.2
-	plasma_icon_state = "panther"
+	//plasma_icon_state = "panther"
 
 	// *** Health *** //
 	max_health = 240
 
 	// *** Flags *** //
-	caste_flags = CASTE_INNATE_PLASMA_REGEN|CASTE_PLASMADRAIN_IMMUNE|CASTE_EVOLUTION_ALLOWED
+	caste_flags = CASTE_INNATE_PLASMA_REGEN|CASTE_PLASMADRAIN_IMMUNE|CASTE_EVOLUTION_ALLOWED|CASTE_MUTATIONS_ALLOWED
 	can_flags = CASTE_CAN_BE_QUEEN_HEALED|CASTE_CAN_BE_LEADER|CASTE_CAN_RIDE_CRUSHER
 	caste_traits = list(TRAIT_CAN_VENTCRAWL)
 
@@ -55,6 +56,17 @@
 		/datum/action/ability/xeno_action/select_reagent/panther,
 		/datum/action/ability/xeno_action/create_edible_jelly,
 		/datum/action/ability/xeno_action/place_stew_pod,
+	)
+
+
+	mutations = list(
+		/datum/mutation_upgrade/shell/upfront_evasion,
+		/datum/mutation_upgrade/shell/borrowed_time,
+		/datum/mutation_upgrade/shell/ingrained_evasion,
+		/datum/mutation_upgrade/spur/sneak_attack,
+		/datum/mutation_upgrade/spur/right_here,
+		/datum/mutation_upgrade/veil/headslam,
+		/datum/mutation_upgrade/veil/passing_glance
 	)
 
 /datum/xeno_caste/runner/panther/normal

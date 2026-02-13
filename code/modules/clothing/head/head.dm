@@ -354,9 +354,9 @@
 	icon_state = "bearpelt"
 	siemens_coefficient = 2
 	anti_hug = 4
-	armor_protection_flags = HEAD|CHEST|ARMS
+	armor_protection_flags = HEAD
 	soft_armor = list(MELEE = 90, BULLET = 70, LASER = 45, ENERGY = 55, BOMB = 45, BIO = 10, FIRE = 55, ACID = 55)
-	cold_protection_flags = HEAD|CHEST|ARMS
+	cold_protection_flags = HEAD
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
 	inventory_flags = BLOCKSHARPOBJ
 	inv_hide_flags = HIDEEARS|HIDETOPHAIR
@@ -436,7 +436,7 @@
 	)
 	icon_state = "rebel_hood"
 	siemens_coefficient = 2
-	armor_protection_flags = HEAD|CHEST
+	armor_protection_flags = HEAD
 	cold_protection_flags = HEAD
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
 	inventory_flags = BLOCKSHARPOBJ

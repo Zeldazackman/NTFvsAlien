@@ -260,16 +260,6 @@ Imports
 	contains = list(/obj/item/ammo_magazine/rifle/m16)
 	cost = 3
 
-/datum/supply_packs/imports/m16/ammo/extended
-	name = "FN M16 Assault Rifle Ammo Extended Mag"
-	contains = list(/obj/item/ammo_magazine/rifle/m16_quadstack)
-	cost = 6
-
-/datum/supply_packs/imports/m16/ammo/drum
-	name = "FN M16 Assault Rifle Ammo Drum"
-	contains = list(/obj/item/ammo_magazine/rifle/m16_cmag)
-	cost = 10
-
 /datum/supply_packs/imports/m16/ammo_packet
 	name = "556x45mm Ammo Box"
 	contains = list(/obj/item/ammo_magazine/packet/pnato)

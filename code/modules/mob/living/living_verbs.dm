@@ -85,7 +85,7 @@
 		return
 	// Gamemode disallowed handler - END
 
-	if(client) //ask on death first time.
+	if(client && ishuman(src)) //ask on death first time.
 		INVOKE_ASYNC(client, TYPE_PROC_REF(/client, ask_reclone))
 		return
 	if(stat == DEAD || isxenohivemind(src) || iszombie(src))

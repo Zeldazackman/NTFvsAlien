@@ -43,7 +43,7 @@ GLOBAL_LIST_INIT(panther_toxin_type_list, list(
 /datum/action/ability/xeno_action/tearingtail/action_activate()
 	xeno_owner.add_filter("defender_tail_sweep", 2, gauss_blur_filter(1)) //Add cool SFX
 	xeno_owner.spin(4, 1)
-	AddComponent(xeno_owner, /datum/component/throw_parry, duration = 0.6 SECONDS, _directional = FALSE, source = xeno_owner)
+	xeno_owner.AddComponent(/datum/component/throw_parry, duration = 0.6 SECONDS, _directional = FALSE, source = xeno_owner)
 	playsound(xeno_owner, SFX_ALIEN_TAIL_SWIPE, 25, 1) //Sound effects
 
 	var/sweep_range = 1

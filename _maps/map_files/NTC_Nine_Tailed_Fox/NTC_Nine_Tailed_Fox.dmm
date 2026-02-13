@@ -778,9 +778,6 @@
 	outside = 0;
 	name = "Security Checkpoint"
 	})
-"aIJ" = (
-/turf/closed/wall,
-/area/mainship/hallways/dorm2)
 "aIM" = (
 /obj/structure/ship_rail_gun,
 /obj/effect/turf_decal/warning_stripes/thin{
@@ -28867,11 +28864,6 @@
 /obj/machinery/suit_storage_unit/carbon_unit,
 /turf/open/floor/mainship/mono,
 /area/mainship/hull/lower_hull)
-"xMb" = (
-/obj/structure/bed,
-/obj/item/bedsheet/blue,
-/turf/closed/wall/mainship,
-/area/mainship/hallways/dorm3)
 "xMy" = (
 /obj/machinery/computer/supplycomp,
 /turf/open/floor/mainship/green{
@@ -57611,7 +57603,7 @@ aPj
 eQZ
 rWN
 qZo
-aIJ
+cqi
 tSR
 qtZ
 ubs
@@ -59877,7 +59869,7 @@ weT
 elF
 fff
 typ
-xMb
+rPp
 sDc
 typ
 vSB

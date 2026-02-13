@@ -545,7 +545,7 @@
 	min_cold_protection_temperature = ARMOR_MIN_COLD_PROTECTION_TEMPERATURE
 	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECTION_TEMPERATURE
 	blood_overlay_type = "armor"
-	soft_armor = list(MELEE = 50, BULLET = 40, LASER = 35, ENERGY = 20, BOMB = 25, BIO = 10, FIRE = 20, ACID = 20)
+	soft_armor = MARINE_ARMOR_MEDIUM
 	siemens_coefficient = 0.7
 	slowdown = SLOWDOWN_ARMOR_MEDIUM
 	allowed = list(
@@ -725,7 +725,7 @@
 	name = "\improper colonial militia hauberk"
 	desc = "The hauberk of a colonist militia member, created from boiled leather and some modern armored plates. While primitive compared to most modern suits of armor, it gives the wearer almost perfect mobility, which suits the needs of the local colonists. "
 	icon_state = "rebel_armor"
-	slowdown = SLOWDOWN_ARMOR_VERY_LIGHT
+	slowdown = SLOWDOWN_ARMOR_LIGHT
 	armor_protection_flags = CHEST|GROIN|ARMS|LEGS|FEET|HANDS
 	cold_protection_flags = CHEST|GROIN|ARMS|LEGS|FEET|HANDS
 	heat_protection_flags =CHEST|GROIN|ARMS|LEGS|FEET|HANDS
@@ -868,7 +868,7 @@
 
 /obj/item/clothing/suit/storage/marine/icc
 	name = "\improper Modelle/16 combat armor"
-	desc = "A piece of ICC body armor, worn durning boarding actions by personnel in close quarters, as most ICC personnel serve dual purpose roles as ad-hoc marines, due to personnel shortages. Protects well from most sources, particularly explosions."
+	desc = "A piece of ICC body armor, worn durning boarding actions by personnel in close quarters, as most ICC personnel serve dual purpose roles as ad-hoc marines, due to personnel shortages."
 	icon = 'icons/obj/clothing/suits/ert_suits.dmi'
 	worn_icon_list = list(
 		slot_wear_suit_str = 'icons/mob/clothing/suits/ert_suits.dmi',
@@ -885,14 +885,14 @@
 
 /obj/item/clothing/suit/storage/marine/icc/guard
 	name = "\improper Modelle/19 combat armor"
-	desc = "A piece of ICCGF body armor, worn by specialized infantry. Most Infantry actions in the ICC forces are done by adhoc personnel due to constant shortages of manpower, however most real Infantry divisions are of high quality, and are better known as 'Guardsmen'.  Protects well from most sources, and will entirely protect from explosions."
+	desc = "A piece of ICCGF body armor, worn by specialized infantry. Most Infantry actions in the ICC forces are done by adhoc personnel due to constant shortages of manpower, however most real Infantry divisions are of high quality, and are better known as 'Guardsmen'."
 	icon_state = "icc_guard"
 	slowdown = SLOWDOWN_ARMOR_LIGHT
 	soft_armor = MARINE_ARMOR_LIGHT
 
 /obj/item/clothing/suit/storage/marine/icc/guard/heavy
 	name = "\improper Modelle/22 'Cuirassier' combat armor"
-	desc = "A piece of ICCGF body armor, worn by specialized infantry. Most Infantry actions in the ICC forces are done by adhoc personnel due to constant shortages of manpower, however most real Infantry divisions are of high quality, and are better known as 'Guardsmen'.  Protects well from most sources, and will entirely protect from explosions."
+	desc = "A piece of ICCGF body armor, worn by specialized infantry. Most Infantry actions in the ICC forces are done by adhoc personnel due to constant shortages of manpower, however most real Infantry divisions are of high quality, and are better known as 'Guardsmen'."
 	icon_state = "icc_guard_heavy"
 	slowdown = SLOWDOWN_ARMOR_HEAVY
 	soft_armor = MARINE_ARMOR_HEAVY

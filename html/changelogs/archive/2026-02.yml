@@ -61,3 +61,26 @@
 2026-02-11:
   EaglePhntm:
   - rscadd: Ports chimera from rutgmc
+2026-02-13:
+  Colfer1:
+  - balance: SH-39 can no longer stunlock xenomorphs infinitely
+  Lefunny:
+  - balance: Increased culverin powerpack maxcharge from 3000 to 9000, which is equivalent
+      to 100 to 300 culverin rounds.
+  - balance: Culverin recharge increased from 100 to 150, thanks to increased maxcharge
+  OrbisAnima:
+  - balance: style line cannot equip absorvant shields but work as a rownie when they
+      have no equalizer equipped.
+  - balance: Rownie skeletons no longer can use absorvant type shields
+  - balance: Style line armor no longer is as fast as the rownie base, but the armor
+      attachments dont give them extra slowdown either (they are functionally the
+      same as before the change, this allows the line to still use the absorvant shields
+      and work like a xenonauten set)
+  - balance: Swat boots no longer give you a rownie equivalent speed boost. Shame
+      on you for abusing those.
+  - code_imp: implemented null checks on traits. (A lot of stuff affected, from aphrotoxin
+      to abilities and much more)
+  - code_imp: implemented caste check on xeno death and avoided procesing double+
+      deaths for xeno deaths (facehuggers being a big source)
+  - code_imp: implemented a safeguard for greyicons when they try to merge with a
+      non icon check (I assume invisible modules but could be for other cases)

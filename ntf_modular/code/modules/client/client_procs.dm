@@ -1,7 +1,9 @@
 /client/proc/ask_reclone()
+	if(!ishuman(mob))
+		return
 	var/area/the_area = get_area(mob)
 	var/the_cost = 300
-	if(!reclone_start_time) //keep progress until its over.
+	if(reclone_start_time == null) //keep progress until its over.
 		reclone_start_time = world.time
 		reclone_time = SSticker.mode.respawn_time
 		if(the_area.ceiling >= CEILING_UNDERGROUND)
@@ -59,7 +61,7 @@
 			else
 				for(var/obj/structure/bed/nest/preexisting_nest in get_turf(doppleganger))
 					preexisting_nest.buckle_mob(doppleganger, TRUE, FALSE)
-			var/turf/thespot = pick(GLOB.latejoinsurvivor) //gl
+			var/turf/thespot = pick(GLOB.corpse_landmarks_list) //gl
 			switch(mob.faction)
 				if(FACTION_CLF)
 					thespot = pick(GLOB.latejoinclf)
@@ -71,6 +73,8 @@
 					thespot = pick(GLOB.latejoinmoff)
 				if(FACTION_NANOTRASEN,FACTION_TERRAGOV)
 					thespot = pick(GLOB.reclone_tp_spots)
+				else
+					thespot = pick(GLOB.corpse_landmarks_list)
 			doppleganger.death(FALSE, "shudders for a moment and goes limp, something beeps at the back of their neck momentarily.")
 			reclone_start_time = null
 			reclone_time = null

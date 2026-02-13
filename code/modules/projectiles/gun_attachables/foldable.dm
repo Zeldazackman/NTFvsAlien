@@ -156,8 +156,18 @@
 		if(user)
 			balloon_alert(user, "Unwielded")
 		return
-	if(!user.lying_angle)
-		var/obj/structure/barricade/cade = locate() in loc.contents
+
+
+	if(!user.lying_angle && folded)
+		var/cade
+		var/turf/current_turf = get_turf(user)
+		if(!current_turf)
+			return
+		for(var/obj/structure/barricade/cades AS in current_turf.contents)
+			if(!istype(cades))
+				continue
+			cade = cades
+			break
 		if(!cade)
 			balloon_alert(user, "Must lay or be at a barricade")
 			to_chat(user, span_warning("You can't deploy a bipod without laying or being at a barricade."))
@@ -170,6 +180,7 @@
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 		to_chat(user, span_notice("You retract [src]."))
 		return
+
 
 	if(user)
 		RegisterSignals(master_gun, list(COMSIG_ITEM_DROPPED, COMSIG_ITEM_EQUIPPED, COMSIG_ITEM_UNWIELD), PROC_REF(retract_bipod))
