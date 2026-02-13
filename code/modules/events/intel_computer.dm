@@ -52,9 +52,9 @@
 
 	switch(length(active_computers))
 		if(0)
-			weight = initial(weight)*108
+			weight = initial(weight)*216
 		if(1)
-			weight = initial(weight)*108
+			weight = initial(weight)*216
 		if(2)
 			weight = initial(weight)*12
 		if(3)
