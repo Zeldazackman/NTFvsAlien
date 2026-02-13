@@ -1,6 +1,0 @@
-author: "OrbisAnima"
-delete-after: True
-changes:
-  - balance: "Rownie skeletons no longer can use absorvant type shields"
-  - balance: "Style line armor no longer is as fast as the rownie base, but the armor attachments dont give them extra slowdown either (they are functionally the same as before the change, this allows the line to still use the absorvant shields and work like a xenonauten set)"
-  - balance: "Swat boots no longer give you a rownie equivalent speed boost. Shame on you for abusing those."
