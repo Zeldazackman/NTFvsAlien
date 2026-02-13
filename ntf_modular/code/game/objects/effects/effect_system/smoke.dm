@@ -1,7 +1,8 @@
 /obj/effect/particle_effect/smoke/xeno/aphrotoxin
 	color = "#ba03f1"
 	alpha = 120
-	smoke_traits = SMOKE_XENO|SMOKE_COUGH|SMOKE_XENO_APHROTOXIN
+	smoke_traits = SMOKE_XENO|SMOKE_COUGH
+	smoke_traits2 = SMOKE_XENO_APHROTOXIN
 
 /datum/effect_system/smoke_spread/xeno/aphrotoxin
 	smoke_type = /obj/effect/particle_effect/smoke/xeno/aphrotoxin
@@ -22,14 +23,16 @@
 /obj/effect/particle_effect/smoke/xeno/aphrotoxin/light
 	alpha = 120
 	opacity = FALSE
-	smoke_traits = SMOKE_XENO|SMOKE_XENO_APHROTOXIN|SMOKE_COUGH
+	smoke_traits = SMOKE_XENO|SMOKE_COUGH
+	smoke_traits2 = SMOKE_XENO_APHROTOXIN
 
 /datum/effect_system/smoke_spread/xeno/aphrotoxin/light/fast
 	smoke_type = /obj/effect/particle_effect/smoke/xeno/aphrotoxin/light/fast
 
 /obj/effect/particle_effect/smoke/xeno/aphrotoxin/light/fast
 	lifetime = 1
-	smoke_traits = SMOKE_XENO|SMOKE_XENO_APHROTOXIN|SMOKE_COUGH|SMOKE_EXTINGUISH
+	smoke_traits = SMOKE_XENO|SMOKE_COUGH|SMOKE_EXTINGUISH
+	smoke_traits2 = SMOKE_XENO_APHROTOXIN
 
 /obj/effect/particle_effect/smoke/debris
 	alpha = 50
