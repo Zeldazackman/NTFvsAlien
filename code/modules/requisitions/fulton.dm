@@ -103,10 +103,10 @@
 		if(!spirited_away_human)
 			return
 		spirited_away_human.ParalyzeNoChain(6.2 SECONDS)
+		var/obj/item/radio/headset/mainship/headset = spirited_away_human.wear_ear
+		if(istype(headset))
+			headset.disable_locator(9 SECONDS)
 		if(spirited_away_human.stat == CONSCIOUS)
-			var/obj/item/radio/headset/mainship/headset = spirited_away_human.wear_ear
-			if(istype(headset))
-				headset.disable_locator(9 SECONDS)
 			spirited_away_human.visible_message(span_notice("[spirited_away_human] lets out a yelp as they are suddenly lifted off the air!"), span_warning("You let out a yelp as you are suddenly lifted off the air!"), null, 5)
 			addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), get_turf(holder_obj), 'ntf_modular/sound/misc/kirby_scream_meme.ogg', 60, FALSE), 6.25 SECONDS)
 

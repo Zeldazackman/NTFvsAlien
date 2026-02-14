@@ -74,8 +74,8 @@
 	if(stat == CONSCIOUS)
 		update_icon()
 	if(!attached && !(stasis || no_activate))
-		activetimer = addtimer(CALLBACK(src, PROC_REF(go_active)), activate_time, TIMER_STOPPABLE|TIMER_UNIQUE)
-		lifetimer = addtimer(CALLBACK(src, PROC_REF(check_lifecycle)), FACEHUGGER_DEATH, TIMER_STOPPABLE|TIMER_UNIQUE)
+		activetimer = addtimer(CALLBACK(src, PROC_REF(go_active)), activate_time, TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_DELETE_ME)
+		lifetimer = addtimer(CALLBACK(src, PROC_REF(check_lifecycle)), FACEHUGGER_DEATH, TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_DELETE_ME)
 
 /obj/item/clothing/mask/facehugger/latching/try_impregnate(mob/living/carbon/human/target)
 	return
@@ -118,7 +118,7 @@
 /obj/item/clothing/mask/facehugger/latching/dropped(mob/user)
 	UnregisterSignal(wearer, COMSIG_LIVING_IGNITED)
 	reset_attach_status()
-	activetimer = addtimer(CALLBACK(src, PROC_REF(go_active)), activate_time*2, TIMER_STOPPABLE|TIMER_UNIQUE)
+	activetimer = addtimer(CALLBACK(src, PROC_REF(go_active)), activate_time*2, TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_DELETE_ME)
 	update_icon()
 
 //claw

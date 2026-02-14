@@ -61,7 +61,7 @@
 			else
 				for(var/obj/structure/bed/nest/preexisting_nest in get_turf(doppleganger))
 					preexisting_nest.buckle_mob(doppleganger, TRUE, FALSE)
-			var/turf/thespot = pick(GLOB.corpse_landmarks_list) //gl
+			var/turf/thespot = pick(GLOB.latejoinsurvivor) //gl
 			switch(mob.faction)
 				if(FACTION_CLF)
 					thespot = pick(GLOB.latejoinclf)
@@ -74,7 +74,7 @@
 				if(FACTION_NANOTRASEN,FACTION_TERRAGOV)
 					thespot = pick(GLOB.reclone_tp_spots)
 				else
-					thespot = pick(GLOB.corpse_landmarks_list)
+					thespot = pick(GLOB.latejoinsurvivor)
 			doppleganger.death(FALSE, "shudders for a moment and goes limp, something beeps at the back of their neck momentarily.")
 			reclone_start_time = null
 			reclone_time = null

@@ -355,6 +355,7 @@
 	if(current_state != on)
 		to_chat(user, span_notice("\The [src] is already turned [on ? "on" : "off"]!"))
 		return
+	power_change()
 	if(machine_stat & NOPOWER)
 		to_chat(user, span_warning("\The [src] makes a small plaintful beep, and nothing happens. It seems to be out of power."))
 		return FALSE
