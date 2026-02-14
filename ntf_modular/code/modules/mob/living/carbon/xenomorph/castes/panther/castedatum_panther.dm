@@ -4,7 +4,6 @@
 	upgrade_name = ""
 	caste_desc = "Run fast, hit hard, die young."
 	caste_type_path = /mob/living/carbon/xenomorph/runner/panther
-	base_strain_type = /mob/living/carbon/xenomorph/runner/panther
 	tier = XENO_TIER_ONE
 	upgrade = XENO_UPGRADE_BASETYPE
 	wound_type = "panther" //used to match appropriate wound overlays
@@ -23,7 +22,7 @@
 	plasma_max = 150
 	plasma_gain = 0
 	plasma_regen_limit = 0.2
-	//plasma_icon_state = "panther"
+	plasma_icon_state = "fury"
 
 	// *** Health *** //
 	max_health = 240
@@ -37,7 +36,7 @@
 	soft_armor = list(MELEE = 20, BULLET = 19, LASER = 19, ENERGY = 19, BOMB = 0, BIO = 7, FIRE = 19, ACID = 7)
 
 	// *** Minimap Icon *** //
-	minimap_icon = "panther"
+	//minimap_icon = "panther"
 
 	// *** Abilities *** ///
 	actions = list(
