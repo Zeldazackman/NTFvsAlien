@@ -84,3 +84,9 @@
       deaths for xeno deaths (facehuggers being a big source)
   - code_imp: implemented a safeguard for greyicons when they try to merge with a
       non icon check (I assume invisible modules but could be for other cases)
+2026-02-14:
+  Lefunny:
+  - balance: Neuro now deals oxy and tox damage, no longer does the stamina stun and
+      other things.
+  OrbisAnima:
+  - qol: filters minions out of the crew manifest.
