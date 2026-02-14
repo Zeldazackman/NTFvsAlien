@@ -17,7 +17,8 @@
 	src.identifier = identifier
 	setDir(direction)
 	update_icon()
-	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel), src), 3 SECONDS, TIMER_DELETE_ME) //incase
+	if(operator)
+		addtimer(CALLBACK(src, PROC_REF(remove_blip), operator), 3 SECONDS, TIMER_STOPPABLE|TIMER_DELETE_ME) //incase
 
 ///Remove the blip from the operator screen
 /obj/effect/blip/edge_blip/remove_blip(mob/operator)
@@ -39,6 +40,8 @@
 	blip_image = image('icons/effects/blips.dmi', src, "close_blip_[identifier]")
 	SET_PLANE_EXPLICIT(blip_image, ABOVE_HUD_PLANE, src)
 	user.client.images += blip_image
+	if(user)
+		addtimer(CALLBACK(src, PROC_REF(remove_blip), user), 3 SECONDS, TIMER_STOPPABLE|TIMER_DELETE_ME) //incase
 
 /// Remove the blip from the operator images
 /obj/effect/blip/close_blip/remove_blip(mob/user)
@@ -154,7 +157,7 @@
 	else
 		playsound(loc, 'ntf_modular/sound/items/detector.ogg', 60, 0, 7, 2)
 
-	addtimer(CALLBACK(src, PROC_REF(clean_blips)), 1 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(clean_blips)), 1 SECONDS, TIMER_STOPPABLE|TIMER_DELETE_ME)
 
 ///Clean all blips from operator screen
 /obj/item/attachable/motiondetector/proc/clean_blips()

@@ -2,7 +2,7 @@
 /datum/round_event_control/hive_threat
 	name = "Hive threat"
 	typepath = /datum/round_event/hive_threat
-	weight = 36
+	weight = 144
 
 	gamemode_blacklist = list("Combat Patrol", "Sensor Capture", "Campaign", "Zombie Crash")
 

@@ -1,0 +1,4 @@
+author: "Colfer1"
+delete-after: True
+changes:
+  - balance: "the SH-39's fire delay is now 1.4 instead of 1.2"

@@ -90,7 +90,7 @@
 		return FALSE
 	action_activate()
 	LAZYINCREMENT(owner.do_actions, target)
-	addtimer(CALLBACK(src, PROC_REF(decrease_do_action), target), windup_time)
+	addtimer(CALLBACK(src, PROC_REF(decrease_do_action), target), windup_time, TIMER_STOPPABLE)
 	return TRUE
 
 ///Decrease the do_actions of the owner

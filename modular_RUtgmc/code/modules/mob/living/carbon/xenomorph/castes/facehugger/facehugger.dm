@@ -65,6 +65,7 @@
 	///We QDEL them as cleanup and preventing them from being sold
 	QDEL_IN(src, 1 MINUTES)
 	GLOB.hive_datums[hivenumber].facehuggers -= src
+	LAZYREMOVE(GLOB.ssd_living_mobs, src)
 	return ..()
 
 /mob/living/carbon/xenomorph/facehugger/start_pulling(atom/movable/AM, force = move_force, suppress_message = FALSE)

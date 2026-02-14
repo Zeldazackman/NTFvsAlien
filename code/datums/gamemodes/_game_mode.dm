@@ -234,9 +234,9 @@ GLOBAL_VAR(common_report) //Contains common part of roundend report
 	for(var/i in GLOB.new_player_list)
 		var/mob/new_player/player = i
 		var/mob/living = player.transfer_character()
+		player = null
 		if(!living)
 			continue
-		qdel(player)
 		living.client.init_verbs()
 		living.notransform = TRUE
 		SEND_GLOBAL_SIGNAL(COMSIG_GLOB_PLAYER_ROUNDSTART_SPAWNED, living)

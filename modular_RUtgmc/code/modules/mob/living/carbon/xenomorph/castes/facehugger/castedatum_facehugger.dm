@@ -27,7 +27,7 @@
 	crit_health = -25
 
 	// *** Flags *** //
-	caste_flags = CASTE_NOT_IN_BIOSCAN|CASTE_DO_NOT_ANNOUNCE_DEATH|CASTE_DO_NOT_ALERT_LOW_LIFE|CASTE_CAN_RIDE_CRUSHER|CASTE_CAN_BE_GIVEN_PLASMA
+	caste_flags = CASTE_NOT_IN_BIOSCAN|CASTE_DO_NOT_ANNOUNCE_DEATH|CASTE_DO_NOT_ALERT_LOW_LIFE|CASTE_CAN_RIDE_CRUSHER|CASTE_CAN_BE_GIVEN_PLASMA|CASTE_IS_A_MINION
 	caste_traits = list(TRAIT_CAN_VENTCRAWL)
 
 	// *** Defense *** //
@@ -52,11 +52,9 @@
 //strains
 /datum/xeno_caste/facehugger/larval //so it pops up in strains
 	display_name = "Larval Facehugger"
-	caste_name = "Larval Facehugger"
 
 /datum/xeno_caste/facehugger/slash
 	display_name = "Clawed Facehugger"
-	caste_name = "Clawed Facehugger"
 	caste_desc = "This one looks much more active than its fellows. This nasty little creature is a nightmarish scrabble of muscle and sharp, long claws."
 	caste_type_path = /mob/living/carbon/xenomorph/facehugger/combat/slash
 	melee_damage = 25
@@ -67,7 +65,6 @@
 
 /datum/xeno_caste/facehugger/neuro
 	display_name = "Neurotoxin Facehugger"
-	caste_name = "Neurotoxin Facehugger"
 	caste_desc = "This one looks much more active than its fellows. This strange creature has a single prominent sharp proboscis."
 	caste_type_path = /mob/living/carbon/xenomorph/facehugger/chemical/neurotoxin
 	speed = -1.3
@@ -75,7 +72,6 @@
 
 /datum/xeno_caste/facehugger/aphro
 	display_name = "Aphrotoxin Facehugger"
-	caste_name = "Aphrotoxin Facehugger"
 	caste_desc = "This one looks much more active than its fellows. This strange creature has a single prominent sharp proboscis."
 	caste_type_path = /mob/living/carbon/xenomorph/facehugger/chemical/aphrotoxin
 	speed = -1.3
@@ -83,7 +79,6 @@
 
 /datum/xeno_caste/facehugger/ozelomelyn
 	display_name = "Ozelomelyn Facehugger"
-	caste_name = "Ozelomelyn Facehugger"
 	caste_desc = "This one looks much more active than its fellows. This strange creature has a single prominent sharp proboscis."
 	caste_type_path = /mob/living/carbon/xenomorph/facehugger/chemical/ozelomelyn
 	speed = -1.3
@@ -91,7 +86,6 @@
 
 /datum/xeno_caste/facehugger/acid
 	display_name = "Acid Facehugger"
-	caste_name = "Acid Facehugger"
 	caste_desc = "This one looks much more active than its fellows. This repulsive looking thing is bloated with throbbing, putrescent green sacks of flesh."
 	caste_type_path = /mob/living/carbon/xenomorph/facehugger/combat/acid
 	speed = -1.1
@@ -99,7 +93,6 @@
 
 /datum/xeno_caste/facehugger/resin
 	display_name = "Resin Facehugger"
-	caste_name = "Resin Facehugger"
 	caste_desc = "This one looks much more active than its fellows. This truly bizzare, bloated creature drips with purple, viscous resin."
 	caste_type_path = /mob/living/carbon/xenomorph/facehugger/combat/resin
 	speed = -1.1
