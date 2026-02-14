@@ -102,7 +102,7 @@
 		var/mob/living/carbon/human/spirited_away_human = spirited_away
 		if(!spirited_away_human)
 			return
-		spirited_away_human.ParalyzeNoChain(6.2 SECONDS)
+		spirited_away_human.ImmobilizeNoChain(6.2 SECONDS)
 		var/obj/item/radio/headset/mainship/headset = spirited_away_human.wear_ear
 		if(istype(headset))
 			headset.disable_locator(9 SECONDS)
@@ -304,6 +304,7 @@
 		if(ishuman(movable_target))
 			var/mob/living/carbon/human/movable_target_human = movable_target
 			movable_target_human.ImmobilizeNoChain(4 SECONDS)
+			movable_target_human.KnockdownNoChain(4 SECONDS)
 		playsound(droploc, 'sound/items/fultext_deploy.ogg', 30, TRUE)
 		var/image/fulton_image = image('icons/obj/items/fulton_balloon.dmi', src, "fulton_balloon")
 		movable_target.pixel_z = 400
