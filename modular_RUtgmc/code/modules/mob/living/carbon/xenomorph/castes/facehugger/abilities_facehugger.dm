@@ -35,6 +35,8 @@
 	. = ..()
 	var/mob/living/carbon/xenomorph/facehugger/caster = owner
 	caster.icon_state = "[caster.xeno_caste.caste_name] Walking"
+	if(caster.stat == DEAD) //when you get shot mid air and die somehow.
+		caster.icon_state = "[caster.xeno_caste.caste_name] Dead"
 	for(var/mob/living/carbon/human/H in caster.loc.contents)
 		if(H.in_throw_mode && !H.get_active_held_item() && prob(75))
 			playsound(caster.loc, 'sound/weapons/punch1.ogg', 30, TRUE)

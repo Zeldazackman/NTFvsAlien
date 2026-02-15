@@ -311,6 +311,12 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 /obj/item/radio/headset/mainship/proc/update_minimap_icon()
 	SIGNAL_HANDLER
 	SSminimaps.remove_marker(wearer)
+	if(locator_disabled_timer || wearer.stat == DEAD)
+		if(camera.status)
+			camera.toggle_cam(null, FALSE)
+	else
+		if(headset_hud_on && wearer.stat != DEAD && !(camera.status))
+			camera.toggle_cam(null, FALSE)
 	if(!wearer.job || !wearer.job.minimap_icon || locator_disabled_timer)
 		return
 	var/marker_flags = initial(minimap_type.marker_flags)

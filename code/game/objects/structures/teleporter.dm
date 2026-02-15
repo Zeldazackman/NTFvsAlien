@@ -181,7 +181,7 @@
 
 /obj/item/teleporter_kit/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/deployable_item, /obj/machinery/deployable/teleporter, 2 SECONDS, 2 SECONDS)
+	AddComponent(/datum/component/deployable_item, /obj/machinery/deployable/teleporter, 2 SECONDS, 2 SECONDS, CALLBACK(src, PROC_REF(can_deploy_here)))
 	cell = new /obj/item/cell/high(src)
 	tele_tag++
 	self_tele_tag = tele_tag

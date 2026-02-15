@@ -36,6 +36,8 @@ SUBSYSTEM_DEF(vote)
 	var/shuffle_choices = FALSE
 	/// Shuffle vote choices per ckey cache
 	var/list/shuffle_cache = list()
+	/// Vote weights by choice
+	var/list/voteweights_by_choice = list()
 
 // Called by master_controller
 /datum/controller/subsystem/vote/fire()
@@ -70,15 +72,16 @@ SUBSYSTEM_DEF(vote)
 	var/greatest_votes = 0
 	var/total_votes = 0
 	for(var/option in choices)
-		var/votes = choices[option]
+		var/votes = choices[option] * (voteweights_by_choice[option] || 1)
 		total_votes += votes
 		if(votes > greatest_votes)
 			greatest_votes = votes
+			log_world("[option] - greatest_votes = [greatest_votes]")
 	//default-vote for everyone who didn't vote -- REMOVED
 	. = list()
 	if(greatest_votes)
 		for(var/option in choices)
-			if(choices[option] == greatest_votes)
+			if((choices[option] * (voteweights_by_choice[option] || 1)) == greatest_votes)
 				. += option
 
 /// Announce the votes tally to everyone
@@ -104,7 +107,7 @@ SUBSYSTEM_DEF(vote)
 	else
 		text += "<b>[capitalize(mode)] Vote</b>"
 	for(var/i = 1 to length(choices))
-		var/votes = choices[choices[i]]
+		var/votes = choices[choices[i]] * (voteweights_by_choice[choices[i]] || 1)
 		if(!votes)
 			votes = 0
 		text += "\n<b>[choices[i]]:</b> [votes]"
@@ -137,6 +140,7 @@ SUBSYSTEM_DEF(vote)
 		return
 	var/restart = FALSE
 	var/endround = FALSE
+	var/datum/map_config/VM
 	switch(mode)
 		if("restart")
 			if(. == "Restart Round")
@@ -161,7 +165,7 @@ SUBSYSTEM_DEF(vote)
 				else
 					var/list/mapnames = list()
 					for(var/map in config.maplist[ANTAG_MAP])
-						var/datum/map_config/VM = config.maplist[ANTAG_MAP][map]
+						VM = config.maplist[ANTAG_MAP][map]
 						if(new_gamemode.whitelist_antag_maps)
 							if(!(VM.map_name in new_gamemode.whitelist_antag_maps))
 								continue
@@ -214,10 +218,10 @@ SUBSYSTEM_DEF(vote)
 					GLOB.master_mode = .
 			return
 		if("groundmap")
-			var/datum/map_config/VM = config.maplist[GROUND_MAP][.]
+			VM = config.maplist[GROUND_MAP][.]
 			SSmapping.changemap(VM, GROUND_MAP)
 		if("shipmap")
-			var/datum/map_config/VM = config.maplist[SHIP_MAP][.]
+			VM = config.maplist[SHIP_MAP][.]
 			SSmapping.changemap(VM, SHIP_MAP)
 	if(restart)
 		var/active_admins = FALSE
@@ -300,11 +304,20 @@ SUBSYSTEM_DEF(vote)
 				return FALSE
 
 		reset()
+		var/datum/game_mode/next_gamemode = config.pick_mode(trim(file2text("data/mode.txt")))
+		var/list/maps = list()
+		var/list/voteweights_by_map_name = list()
 		switch(vote_type)
 			if("restart")
 				choices.Add("Restart Round", "Continue Playing")
+				if((world.time - SSticker.round_start_time) < 3 HOURS)
+					to_chat(world, "Voteweight for \"Restart Round\" reduced to 0.5 because round duration is less than 3 hours.")
+					voteweights_by_choice["Restart Round"] = 0.5
 			if("endround")
 				choices.Add("End Round and Restart", "Continue Playing")
+				if((world.time - SSticker.round_start_time) < 3 HOURS)
+					to_chat(world, "Voteweight for \"End Round and Restart\" reduced to 0.5 because round duration is less than 3 hours.")
+					voteweights_by_choice["End Round and Restart"] = 0.5
 			if("gamemode")
 				multiple_vote = TRUE
 				for(var/datum/game_mode/mode AS in config.votable_modes)
@@ -330,8 +343,6 @@ SUBSYSTEM_DEF(vote)
 				if(!lower_admin && SSmapping.groundmap_voted)
 					to_chat(usr, span_warning("The next ground map has already been selected."))
 					return FALSE
-				var/datum/game_mode/next_gamemode = config.pick_mode(trim(file2text("data/mode.txt")))
-				var/list/maps = list()
 				if(!config.maplist)
 					return
 				for(var/map in config.maplist[GROUND_MAP])
@@ -353,16 +364,16 @@ SUBSYSTEM_DEF(vote)
 						if(VM.config_min_users && players < VM.config_min_users)
 							continue
 					maps += VM.map_name
+					voteweights_by_map_name[VM.map_name] = VM.voteweight
 					shuffle_choices = TRUE
 				for(var/valid_map in maps)
 					choices.Add(valid_map)
+					voteweights_by_choice[valid_map] = voteweights_by_map_name[valid_map]
 			if("shipmap")
 				multiple_vote = TRUE
 				if(!lower_admin && SSmapping.shipmap_voted)
 					to_chat(usr, span_warning("The next ship map has already been selected."))
 					return FALSE
-				var/datum/game_mode/next_gamemode = config.pick_mode(trim(file2text("data/mode.txt")))
-				var/list/maps = list()
 				if(!config.maplist)
 					return
 				for(var/map in config.maplist[SHIP_MAP])
@@ -382,9 +393,11 @@ SUBSYSTEM_DEF(vote)
 						if(VM.config_min_users && players < VM.config_min_users)
 							continue
 					maps += VM.map_name
+					voteweights_by_map_name[VM.map_name] = VM.voteweight
 					shuffle_choices = TRUE
 				for(var/valid_map in maps)
 					choices.Add(valid_map)
+					voteweights_by_choice[valid_map] = voteweights_by_map_name[valid_map]
 			if("custom")
 				question = stripped_input(usr, "What is the vote for?")
 				if(!question)
@@ -464,6 +477,7 @@ SUBSYSTEM_DEF(vote)
 	var/list/data = list(
 		"choices" = list(),
 		"vote_counts" = list(),
+		"vote_weights" = list(),
 		"lower_admin" = !!user.client?.holder,
 		"mode" = mode,
 		"question" = question,
@@ -489,6 +503,7 @@ SUBSYSTEM_DEF(vote)
 			"num_index" = choice_num++
 		))
 		data["vote_counts"] += choices[key] || 0
+		data["vote_weights"] += voteweights_by_choice[key] || 1
 
 	if(shuffle_choices)
 		// if useLocalState can be made to work with Vote.js this could be pure clientside
