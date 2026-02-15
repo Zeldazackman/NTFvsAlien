@@ -297,14 +297,16 @@
 	log_combat(src, null, "was born as a larva.")
 	log_game("[key_name(src)] was born as a larva at [AREACOORD(src)].")
 	if(ismonkey(victim))
+		var/mob/living/carbon/human/monkey = victim
 		if(prob(66)) //1/3 chance
-			var/mob/living/carbon/human/monkey = victim
 			monkey.death()
 			log_game("Marking [logdetails(monkey)] as undefibbable because it is giving birth as a monkey.")
 			monkey.set_undefibbable()
-
-		victim.take_overall_damage(140, BRUTE, MELEE)
-		victim.take_overall_damage(20, BURN, MELEE)
+			monkey.take_overall_damage(100, CLONE, MELEE)
+			monkey.take_overall_damage(40, BRUTE, MELEE)
+		else
+			monkey.take_overall_damage(140, BRUTE, MELEE)
+		monkey.take_overall_damage(20, BURN, MELEE)
 	if(ishuman(victim) && !(SSticker.mode.round_type_flags & MODE_CHILL_RULES))
 		if(victim.getCloneLoss() < 30)
 			victim.adjustCloneLoss(45)
