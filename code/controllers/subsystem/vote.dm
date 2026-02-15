@@ -76,7 +76,6 @@ SUBSYSTEM_DEF(vote)
 		total_votes += votes
 		if(votes > greatest_votes)
 			greatest_votes = votes
-			log_world("[option] - greatest_votes = [greatest_votes]")
 	//default-vote for everyone who didn't vote -- REMOVED
 	. = list()
 	if(greatest_votes)
