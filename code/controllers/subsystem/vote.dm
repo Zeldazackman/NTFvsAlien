@@ -63,6 +63,7 @@ SUBSYSTEM_DEF(vote)
 	vote_happening = FALSE
 	shuffle_choices = FALSE
 	shuffle_cache.Cut()
+	voteweights_by_choice.Cut()
 
 	remove_action_buttons()
 
