@@ -134,5 +134,6 @@ GLOBAL_LIST_EMPTY(indestructible_teleporters)
 	attack_hand(xeno_attacker)
 
 /obj/item/teleporter_kit/proc/can_deploy_here(mob/user, turf/location)
-	if(istype(get_area(location), /area/interior)) //inside tank or APC
+	var/area/area_to_check = get_area(location)
+	if(istype(area_to_check, /area/interior/tank) || istype(area_to_check, /area/interior/apc)) //inside tank or APC
 		balloon_alert(user, "unsuitable area!")
