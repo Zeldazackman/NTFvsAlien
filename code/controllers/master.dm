@@ -114,6 +114,9 @@ GLOBAL_REAL(Master, /datum/controller/master)
 					_subsystems += existing_subsystem
 				else
 					_subsystems += new I
+					if(GLOB.runtimes_restarting_mc)
+						log_world("Encountered runtume creating [I] while attmpting to restart MC, aborting")
+						return
 
 	if(!GLOB)
 		new /datum/controller/global_vars
@@ -235,6 +238,8 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 	SStgui.update_uis(src)
 	already_updating = FALSE
 
+GLOBAL_VAR(runtimes_restarting_mc)
+
 // Returns 1 if we created a new mc, 0 if we couldn't due to a recent restart,
 //	-1 if we encountered a runtime trying to recreate it
 /proc/Recreate_MC()
@@ -249,10 +254,14 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 	Master.restart_clear = world.time + (delay * 2)
 	if(Master) //Can only do this if master hasn't been deleted
 		Master.processing = FALSE //stop ticking this one
-	try
-		new/datum/controller/master()
-	catch
+	GLOB.runtimes_restarting_mc = 0
+	log_world("Recreating MC.  Runtimes after this may cause failure:")
+	new/datum/controller/master()
+	if(GLOB.runtimes_restarting_mc)
+		log_world("[GLOB.runtimes_restarting_mc] runtimes caused MC restart failure!")
+		GLOB.runtimes_restarting_mc = null
 		return -1
+	log_world("MC recreated with no runtimes")
 	return 1
 
 
