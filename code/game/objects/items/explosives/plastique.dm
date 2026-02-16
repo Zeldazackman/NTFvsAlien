@@ -55,6 +55,8 @@
 /obj/item/explosive/plastique/afterattack(atom/target, mob/user, flag)
 	if(!flag)
 		return FALSE
+	if(isxeno(user))
+		return FALSE
 	if(!target.can_plastique(user, src))
 		return FALSE
 	user.visible_message(span_warning("[user] is trying to plant [name] on [target]!"),
