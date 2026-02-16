@@ -347,6 +347,21 @@ GLOBAL_LIST_EMPTY(radio_packs)
 			internal_transmitter.phone_id += " ([H.assigned_squad.name])"
 	else
 		internal_transmitter.phone_id = "[user]"
+	switch(user.faction)
+		if(FACTION_TERRAGOV)
+			internal_transmitter.phone_category = PHONE_MARINE
+		if(FACTION_SOM)
+			internal_transmitter.phone_category = PHONE_SOM
+		if(FACTION_VSD)
+			internal_transmitter.phone_category = PHONE_KZ
+		if(FACTION_CLF)
+			internal_transmitter.phone_category = PHONE_CLF
+		if(FACTION_ICC)
+			internal_transmitter.phone_category = PHONE_CM
+		else
+			internal_transmitter.phone_category = "Civilian"
+	internal_transmitter.networks_receive = list(user.faction)
+	internal_transmitter.networks_transmit = list(user.faction)
 	internal_transmitter.enabled = TRUE
 
 /obj/item/armor_module/module/antenna/proc/use_phone(mob/user)
