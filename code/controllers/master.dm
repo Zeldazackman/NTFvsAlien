@@ -115,7 +115,7 @@ GLOBAL_REAL(Master, /datum/controller/master)
 				else
 					_subsystems += new I
 					if(GLOB.runtimes_restarting_mc)
-						log_world("Encountered runtume creating [I] while attmpting to restart MC, aborting")
+						log_world("Encountered runtime creating [I] while attmpting to restart MC, aborting")
 						return
 
 	if(!GLOB)
@@ -283,15 +283,15 @@ GLOBAL_VAR(runtimes_restarting_mc)
 			msg += "\t [varname] = [logdetails(D)]([D.ref_search_details()])\n"
 		else
 			if(islist(varval))
-				msg += "\t [varname] = list({"
+				msg += "\t [varname] = list("
 				for(var/datum/item AS in varval)
 					if(isdatum(item))
-						msg += "[logdetails(item)]([item.ref_search_details()])},"
+						msg += "{[logdetails(item)]([item.ref_search_details()])},"
 					else
 						if(islist(item))
-							msg += "list([json_encode(item)])},"
+							msg += "{list([json_encode(item)])},"
 						else
-							msg +="[logdetails(item)]},"
+							msg +="{[logdetails(item)]},"
 				msg += ")\n"
 			else
 				msg += "\t [varname] = [logdetails(varval)]\n"
