@@ -117,6 +117,11 @@ GLOBAL_REAL(Failsafe, /datum/controller/failsafe)
 								master_iteration = 0
 								log_game_world("FailSafe: MC restarted successfully")
 								to_chat(GLOB.admins, span_adminnotice("MC restarted successfully"))
+							if(rtn == 0)
+								log_game_world("FailSafe: MC attempted to restart too recently, waiting...")
+							if(rtn < 0)
+								log_game_world("FailSafe: failed to restart MC in defcon 0.  Giving up and rebooting.")
+								world.Reboot()
 				else
 					defcon = min(defcon + 1,5)
 					master_iteration = Master.iteration

@@ -114,6 +114,9 @@ GLOBAL_REAL(Master, /datum/controller/master)
 					_subsystems += existing_subsystem
 				else
 					_subsystems += new I
+					if(GLOB.runtimes_restarting_mc)
+						log_world("Encountered runtime creating [I] while attmpting to restart MC, aborting")
+						return
 
 	if(!GLOB)
 		new /datum/controller/global_vars
@@ -235,6 +238,8 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 	SStgui.update_uis(src)
 	already_updating = FALSE
 
+GLOBAL_VAR(runtimes_restarting_mc)
+
 // Returns 1 if we created a new mc, 0 if we couldn't due to a recent restart,
 //	-1 if we encountered a runtime trying to recreate it
 /proc/Recreate_MC()
@@ -249,10 +254,14 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 	Master.restart_clear = world.time + (delay * 2)
 	if(Master) //Can only do this if master hasn't been deleted
 		Master.processing = FALSE //stop ticking this one
-	try
-		new/datum/controller/master()
-	catch
+	GLOB.runtimes_restarting_mc = 0
+	log_world("Recreating MC.  Runtimes after this may cause failure:")
+	new/datum/controller/master()
+	if(GLOB.runtimes_restarting_mc)
+		log_world("[GLOB.runtimes_restarting_mc] runtimes caused MC restart failure!")
+		GLOB.runtimes_restarting_mc = null
 		return -1
+	log_world("MC recreated with no runtimes")
 	return 1
 
 
@@ -271,22 +280,47 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 		var/varval = master_attributes[varname]
 		if (isdatum(varval)) // Check if it has a type var.
 			var/datum/D = varval
-			msg += "\t [varname] = [D]([D.type])\n"
+			msg += "\t [varname] = [logdetails(D)]([D.ref_search_details()])\n"
 		else
-			msg += "\t [varname] = [varval]\n"
+			if(islist(varval))
+				msg += "\t [varname] = list("
+				for(var/datum/item AS in varval)
+					if(isdatum(item))
+						msg += "{[logdetails(item)]([item.ref_search_details()])},"
+					else
+						if(islist(item))
+							msg += "{list([json_encode(item)])},"
+						else
+							msg +="{[logdetails(item)]},"
+				msg += ")\n"
+			else
+				msg += "\t [varname] = [logdetails(varval)]\n"
 	log_world(msg)
 
 	var/datum/controller/subsystem/BadBoy = Master.last_type_processed
+	var/datum/controller/subsystem/processing/BadBoy_processing = BadBoy
 	var/FireHim = FALSE
 	if(istype(BadBoy))
 		msg = null
 		LAZYINITLIST(BadBoy.failure_strikes)
 		switch(++BadBoy.failure_strikes[BadBoy.type])
+			if(1)
+				if(istype(BadBoy_processing))
+					msg = "The subsystem [logdetails(BadBoy)]([BadBoy.ref_search_details()]) was the last to fire for a controller restart while processing [logdetails(BadBoy_processing.currently_processing)][isdatum(BadBoy_processing.currently_processing) ? "([BadBoy_processing.currently_processing.ref_search_details()])" : ""].  Attempting to stop processing this item:"
+					if(BadBoy_processing.currently_processing)
+						if(BadBoy_processing.currently_processing.datum_flags & DF_ISPROCESSING)
+							STOP_PROCESSING(BadBoy_processing, BadBoy_processing.currently_processing)
+							msg += "Done."
+						else
+							msg += "Failed, already stopped."
+					else
+						msg += "Failed, item nulled."
+
 			if(2)
-				msg = "The [BadBoy.name] subsystem was the last to fire for 2 controller restarts. It will be recovered now and disabled if it happens again."
+				msg = "The subsystem [logdetails(BadBoy)]([BadBoy.ref_search_details()]) was the last to fire for 2 controller restarts. It will be recovered now and disabled if it happens again."
 				FireHim = TRUE
 			if(3)
-				msg = "The [BadBoy.name] subsystem seems to be destabilizing the MC and will be offlined."
+				msg = "The subsystem [logdetails(BadBoy)]([BadBoy.ref_search_details()]) seems to be destabilizing the MC and will be offlined."
 				BadBoy.flags |= SS_NO_FIRE
 		if(msg)
 			to_chat(GLOB.admins, span_boldannounce("[msg]"))
