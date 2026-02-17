@@ -1394,6 +1394,8 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 		if(!silent)
 			to_chat(X, span_warning("We're too busy being on fire to do this!"))
 		return FALSE
+	if(X.status_flags & INCORPOREAL)
+		to_chat(X, span_warning("We are too well hidden to do this."))
 	if(A.gender == X.gender && X.client?.prefs?.xenogender != 4)
 		to_chat(X, span_xenonotice("We can't get anywhere [A.gender == FEMALE ? "clam mashing." : "sword fighting."]."))
 		return FALSE
