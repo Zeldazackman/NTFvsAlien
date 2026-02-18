@@ -137,3 +137,5 @@ GLOBAL_LIST_EMPTY(indestructible_teleporters)
 	var/area/area_to_check = get_area(location)
 	if(istype(area_to_check, /area/interior/tank) || istype(area_to_check, /area/interior/apc)) //inside tank or APC
 		balloon_alert(user, "unsuitable area!")
+		return FALSE
+	return TRUE
