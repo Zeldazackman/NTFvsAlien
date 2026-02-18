@@ -3861,7 +3861,6 @@
 /area/mainship/medical/operating_room_one)
 "dbJ" = (
 /obj/machinery/door/airlock/centcom,
-/obj/machinery/door/airlock/centcom,
 /obj/structure/curtain/open/temple,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
@@ -12067,7 +12066,7 @@
 	})
 "jXM" = (
 /obj/machinery/door_control{
-	id = "bigdorm3"
+	id = "bigdorm5"
 	},
 /turf/open/floor/wood,
 /area/mainship/hallways/dorm3)
@@ -59627,7 +59626,7 @@ qZo
 jUb
 qZo
 typ
-jXM
+kNB
 afC
 pEN
 typ
@@ -60341,7 +60340,7 @@ typ
 crc
 qZo
 typ
-kNB
+jXM
 afC
 pEN
 typ
