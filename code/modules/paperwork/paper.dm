@@ -274,15 +274,14 @@
 
 		t = replacetext(t, "\n", "<BR>")
 		//injection protection
-		t = replacetext(t, "&#34", "")
-		t = replacetext(t, "&gt", "")
-		t = replacetext(t, "autoplay&gt", "")
-		t = replacetext(t, "loop&gt", "")
-		l
-		t = replacetext(t, "&lt;embed", "")
-		t = replacetext(t, "&lt", "")
+		t = replacetext(t, "autoplay>", "")
+		t = replacetext(t, "loop>", "")
+		t = replacetext(t, "<embed", "")
+		t = replacetext(t, "<", "")
+		t = replacetext(t, ">", "")
 		t = replacetext(t, "byond://", "byond;//")
 		t = replacetext(t, "https://", "https;//")
+		t = replacetext(t, "<video", "")
 		//injection protection end
 		t = parsepencode(t, i, usr, iscrayon) // Encode everything from pencode to html
 
