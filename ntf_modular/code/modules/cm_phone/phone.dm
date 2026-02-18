@@ -692,6 +692,13 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	name = "wired telephone"
 	icon_state = "desk_phone"
 
+/obj/structure/transmitter/colony_net/desk/auto_id/Initialize(mapload, ...)
+	. = ..()
+	var/area/thearea = get_area(src)
+	phone_category = "Colony"
+	if(thearea)
+		phone_id = thearea.name
+
 /obj/structure/transmitter/som_net
 	color = COLOR_ORANGE
 	networks_receive = list(FACTION_SOM)
