@@ -275,7 +275,7 @@
 		t = replacetext(t, "\n", "<BR>")
 		//injection protection
 		t = replacetext(t, "&#34", "")
-		t = replacetext(t, "&gt;", "")
+		t = replacetext(t, "&gt", "")
 		//injection protection end
 		t = parsepencode(t, i, usr, iscrayon) // Encode everything from pencode to html
 
