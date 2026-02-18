@@ -102,8 +102,6 @@
 		/obj/item/attachable/buildasentry,
 		/obj/item/attachable/shoulder_mount,
 		/obj/item/attachable/scope/marine,
-		/obj/item/weapon/gun/shotgun/combat/masterkey,
-		/obj/item/weapon/gun/pistol/g22/tranq,
 	)
 
 	muzzleflash_iconstate = "muzzle_flash_laser"
