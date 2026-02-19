@@ -1628,7 +1628,7 @@
 	dir = 10
 	},
 /obj/structure/transmitter/som_net{
-	phone_category = "Prison";
+	phone_category = "SOM Prison";
 	phone_id = "Prison";
 	dir = 1;
 	pixel_y = -25
