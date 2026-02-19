@@ -93,3 +93,6 @@
 2026-02-15:
   Colfer1:
   - balance: the SH-39's fire delay is now 1.4 instead of 1.2
+2026-02-19:
+  Ldip999:
+  - bugfix: fixed HTML Injection with carbon copies
