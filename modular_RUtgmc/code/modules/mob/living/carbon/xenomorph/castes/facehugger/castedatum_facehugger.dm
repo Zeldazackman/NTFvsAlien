@@ -20,7 +20,6 @@
 
 	// *** Plasma *** //
 	plasma_max = 100
-	plasma_gain = 2
 
 	// *** Health *** //
 	max_health = 30
@@ -90,6 +89,7 @@
 	caste_type_path = /mob/living/carbon/xenomorph/facehugger/combat/acid
 	speed = -1.1
 	plasma_max = 40 //very deadly
+	plasma_gain = 2
 
 /datum/xeno_caste/facehugger/resin
 	display_name = "Resin Facehugger"
@@ -97,3 +97,4 @@
 	caste_type_path = /mob/living/carbon/xenomorph/facehugger/combat/resin
 	speed = -1.1
 	plasma_max = 50
+	plasma_gain = 2
