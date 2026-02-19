@@ -83,15 +83,15 @@ ADMIN_VERB(change_dnr_time, R_ADMIN, "Change Global DNR Time", "Change the time 
 /proc/daysSince(realtimev)
 	return round((world.realtime - realtimev) / (24 HOURS))
 
-/client/proc/addbunkerbypass(ckeytobypass as text)
-	set category = "Server"
-	set name = "Allow PB Bypass"
-	set desc = "Allows a given ckey to connect despite the panic bunker for a given round."
+ADMIN_VERB(add_bunker_bypass, R_ADMIN, "Add Bunker Bypass", "Allows a ckey to connect despite the panic bunker for a given round.", ADMIN_CATEGORY_SERVER)
 	if(!check_rights(R_ADMIN))
 		return
 
 	if(!CONFIG_GET(flag/sql_enabled))
 		to_chat(usr, "<span class='adminnotice'>The Database is not enabled!</span>")
+		return
+	var/ckeytobypass = tgui_input_text(usr, "Enter ckey", "CKEY", null)
+	if(!ckeytobypass)
 		return
 
 	GLOB.bunker_passthrough |= ckey(ckeytobypass)
@@ -129,15 +129,16 @@ ADMIN_VERB(change_dnr_time, R_ADMIN, "Change Global DNR Time", "Change the time 
 	SavePanicBunker()
 	. = ..()
 
-/client/proc/revokebunkerbypass(ckeytobypass as text)
-	set category = "Server"
-	set name = "Revoke PB Bypass"
-	set desc = "Revokes a ckey's permission to bypass the panic bunker for a given round."
+ADMIN_VERB(remove_bunker_bypass, R_ADMIN, "Remove Bunker Bypass", "Revokes a ckey's permission to bypass the panic bunker for a given round.", ADMIN_CATEGORY_SERVER)
 	if(!check_rights(R_ADMIN))
 		return
 
 	if(!CONFIG_GET(flag/sql_enabled))
 		to_chat(usr, "<span class='adminnotice'>The Database is not enabled!</span>")
+		return
+
+	var/ckeytobypass = tgui_input_text(usr, "Enter ckey", "CKEY", null)
+	if(!ckeytobypass)
 		return
 
 	GLOB.bunker_passthrough -= ckey(ckeytobypass)
