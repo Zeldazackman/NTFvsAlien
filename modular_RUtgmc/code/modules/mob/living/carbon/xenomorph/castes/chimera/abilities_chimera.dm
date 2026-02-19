@@ -302,4 +302,4 @@
 	update_button_icon()
 
 /datum/action/ability/activable/xeno/blink/chimera
-	ability_cost = 100
+	ability_cost = 75

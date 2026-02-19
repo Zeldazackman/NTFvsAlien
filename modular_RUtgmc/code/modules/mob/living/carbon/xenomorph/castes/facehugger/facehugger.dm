@@ -85,6 +85,7 @@
 	mask = new hugger_type(host, src.hivenumber, src)
 	if(host.can_be_facehugged(mask, provoked = TRUE))
 		if(mask.try_attach(host, no_evade = TRUE)) //Attach hugger-mask
+			set_plasma(0, TRUE)
 			if(!client) //delete if no sauce and keep the mask attached foreva
 				mask.clear_hugger_source()
 				qdel(src)
