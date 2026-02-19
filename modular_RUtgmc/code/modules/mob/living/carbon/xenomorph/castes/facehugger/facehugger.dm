@@ -52,7 +52,7 @@
 /mob/living/carbon/xenomorph/facehugger/handle_living_health_updates()
 	. = ..()
 	//We lose health if we go off the weed
-	if(!loc_weeds_type && !is_ventcrawling && !(lying_angle || resting) && !(status_flags & GODMODE))
+	if((isturf(loc) && !loc_weeds_type) && !is_ventcrawling && !(lying_angle || resting) && !(status_flags & GODMODE))
 		adjustBruteLoss(1, TRUE)
 		return
 
