@@ -9,3 +9,6 @@
       Valhalla as well.
   mudzbe:
   - bugfix: Cleanup mech removal queen evo oversight
+2026-02-19:
+  Ldip999:
+  - bugfix: fixed HTML Injection with carbon copies
