@@ -105,17 +105,21 @@ ADMIN_VERB(add_bunker_bypass, R_ADMIN, "Add Bunker Bypass", "Allows a ckey to co
 	var/json_file = file("data/bunker_passthrough.json")
 	var/list/file_data = list()
 	file_data["data"] = GLOB.bunker_passthrough
+	var/encoded_data = json_encode(file_data)
 	fdel(json_file)
-	WRITE_FILE(json_file, json_encode(file_data))
+	WRITE_FILE(json_file, encoded_data)
+	log_game("Saved bunker_passthrough: [encoded_data]")
 
 /datum/controller/subsystem/persistence/proc/LoadPanicBunker()
 	var/bunker_path = file("data/bunker_passthrough.json")
 	if(fexists(bunker_path))
 		var/list/json = json_decode(file2text(bunker_path))
 		GLOB.bunker_passthrough = json["data"]
+		log_game("loaded bunker_passthrough: [json_encode(GLOB.bunker_passthrough)]")
 		for(var/ckey in GLOB.bunker_passthrough)
 			if(daysSince(GLOB.bunker_passthrough[ckey]) >= 7)
 				GLOB.bunker_passthrough -= ckey
+				log_game("Removed [ckey] from bunker_passthrough for being added too long ago.")
 
 
 ///Loads data at the start of the round
