@@ -1,4 +1,4 @@
-proc/logperf()
+/proc/logperf()
 	log_game_world("===PERFLOG===")
 	log_game_world("CPU: [world.cpu]")
 	log_game_world("Master Controller:" + Master.stat_entry())
