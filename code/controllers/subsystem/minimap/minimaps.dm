@@ -359,14 +359,13 @@ SUBSYSTEM_DEF(minimaps)
 		return
 	UnregisterSignal(source, list(COMSIG_QDELETING, COMSIG_MOVABLE_Z_CHANGED))
 	var/turf/source_turf = get_turf(source)
-	var/image/blip/blip_to_destroy
+	var/static/list/image/blip/blips_to_destroy = list()
 	for(var/flag in GLOB.all_minimap_flags)
-		blip_to_destroy = minimaps_by_z["[source_turf.z]"].images_assoc["[flag]"][source]
+		blips_to_destroy |= minimaps_by_z["[source_turf.z]"].images_assoc["[flag]"][source]
 		minimaps_by_z["[source_turf.z]"].images_assoc["[flag]"] -= source
-		qdel(blip_to_destroy)
-	blip_to_destroy = images_by_source[source]
+	blips_to_destroy |= images_by_source[source]
 	images_by_source -= source
-	qdel(blip_to_destroy)
+	QDEL_LIST(blips_to_destroy)
 	removal_cbs[source].Invoke()
 	removal_cbs -= source
 
