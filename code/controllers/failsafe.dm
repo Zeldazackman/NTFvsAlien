@@ -105,8 +105,8 @@ GLOBAL_VAR_INIT(soft_failed_mc_restarts, 0)
 							if(Master.iteration < 2)
 								GLOB.soft_failed_mc_restarts++
 								if(GLOB.soft_failed_mc_restarts > 2)
-								log_game_world("FailSafe: MC has failed to get past its first iteration 3 different times.  Giving up and rebooting.")
-								world.Reboot()
+									log_game_world("FailSafe: MC has failed to get past its first iteration 3 different times.  Giving up and rebooting.")
+									world.Reboot()
 							var/rtn = Recreate_MC()
 							if(rtn > 0)
 								defcon = 4
