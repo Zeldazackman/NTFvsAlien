@@ -587,12 +587,13 @@ GLOBAL_VAR(runtimes_restarting_mc)
 	set waitfor = 0
 	if(delay)
 		sleep(delay)
-	log_world("Master starting processing")
+	log_world("MC: StartProcessing() starting")
 	var/started_stage
 	var/rtn = -2
 	do
 		started_stage = init_stage_completed
 		rtn = Loop(started_stage)
+		log_world("MC: StartProcessing() - Loop finished, rtn = [rtn], processing = [processing], started_stage = [started_stage], init_stage_completed = [init_stage_completed]")
 	while (rtn == MC_LOOP_RTN_NEWSTAGES && processing > 0 && started_stage < init_stage_completed)
 
 	if (rtn >= MC_LOOP_RTN_GRACEFUL_EXIT || processing < 0)
