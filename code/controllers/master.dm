@@ -331,6 +331,7 @@ GLOBAL_VAR(runtimes_restarting_mc)
 			Master.subsystems += new BadBoy.type	//NEW_SS_GLOBAL will remove the old one
 		subsystems = Master.subsystems
 		current_runlevel = Master.current_runlevel
+		log_world("About to start processing new Master, in Recover()")
 		StartProcessing(10)
 	else
 		log_world("The Master Controller is having some issues, we will need to re-initialize EVERYTHING")
@@ -586,7 +587,7 @@ GLOBAL_VAR(runtimes_restarting_mc)
 	set waitfor = 0
 	if(delay)
 		sleep(delay)
-	testing("Master starting processing")
+	log_world("Master starting processing")
 	var/started_stage
 	var/rtn = -2
 	do
@@ -686,6 +687,8 @@ GLOBAL_VAR(runtimes_restarting_mc)
 			if (starting_tick_usage > TICK_LIMIT_MC) //if there isn't enough time to bother doing anything this tick, sleep a bit.
 				sleep_delta *= 2
 				current_ticklimit = TICK_LIMIT_RUNNING * 0.5
+				if(iteration < 2)
+					log_world("MC: High tick contention before first iteration completed.  sleep_delta increased from [sleep_delta/2] to [sleep_delta].  current_ticklimit decreased from [current_ticklimit * 2] to current_ticklimit.  world.tick_lag = [world.tick_lag].  processing = [processing].  Master loop will now sleep for [world.tick_lag * (processing * sleep_delta)] deciseconds")
 				sleep(world.tick_lag * (processing * sleep_delta))
 				continue
 
@@ -721,8 +724,12 @@ GLOBAL_VAR(runtimes_restarting_mc)
 				for(var/datum/controller/subsystem/SS as anything in current_runlevel_subsystems)
 					//we only want to offset it if it's new and also behind
 					if(SS.next_fire > world.time || (SS in old_subsystems))
+						if(GLOB.soft_failed_mc_restarts && iteration < 2)
+							log_world("MC: Loop() skipping [logdetails(SS)], SS.next_fire = [SS.next_fire], world.time = [world.time], world.tick_lag = [world.tick_lag]")
 						continue
 					SS.next_fire = world.time + world.tick_lag * rand(0, DS2TICKS(min(SS.wait, 2 SECONDS)))
+					if(GLOB.soft_failed_mc_restarts && iteration < 2)
+						log_world("MC: Loop() just set next_fire of [logdetails(SS)] to = [SS.next_fire], world.time = [world.time], world.tick_lag = [world.tick_lag]")
 
 			subsystems_to_check = current_runlevel_subsystems
 		else
@@ -805,6 +812,8 @@ GLOBAL_VAR(runtimes_restarting_mc)
 	var/SS_flags
 
 	for (var/thing in subsystemstocheck)
+		if(GLOB.soft_failed_mc_restarts && iteration < 2)
+			log_world("MC: CheckQueue() considering whether to enqueue [logdetails(SS)]")
 		if (!thing)
 			subsystemstocheck -= thing
 		SS = thing
@@ -820,6 +829,8 @@ GLOBAL_VAR(runtimes_restarting_mc)
 			continue
 		if ((SS_flags & (SS_TICKER|SS_KEEP_TIMING)) == SS_KEEP_TIMING && SS.last_fire + (SS.wait * 0.75) > world.time)
 			continue
+		if(GLOB.soft_failed_mc_restarts && iteration < 2)
+			log_world("MC: CheckQueue() about to enqueue [logdetails(SS)]")
 		SS.enqueue()
 	. = 1
 
@@ -897,8 +908,12 @@ GLOBAL_VAR(runtimes_restarting_mc)
 				world.Profile(PROFILE_START)
 
 			tick_usage = TICK_USAGE
+			if(GLOB.soft_failed_mc_restarts && iteration < 2)
+				log_world("MC: About to ignite [logdetails(queue_node)], tick_usage = [tick_usage].")
 			var/state = queue_node.ignite(queue_node_paused)
 			tick_usage = TICK_USAGE - tick_usage
+			if(GLOB.soft_failed_mc_restarts && iteration < 2)
+				log_world("MC: Just ignited [logdetails(queue_node)], tick_usage = [tick_usage].")
 
 			if(use_rolling_usage)
 				queue_node.prune_rolling_usage()
@@ -917,6 +932,8 @@ GLOBAL_VAR(runtimes_restarting_mc)
 			if (tick_usage < 0)
 				tick_usage = 0
 			queue_node.tick_overrun = max(0, MC_AVG_FAST_UP_SLOW_DOWN(queue_node.tick_overrun, tick_usage-tick_precentage))
+			if(GLOB.soft_failed_mc_restarts && iteration < 2)
+				log_world("MC: Setting new tick overrun of [logdetails(queue_node)] to [queue_node.tick_overrun].")
 			queue_node.state = state
 
 			if (state == SS_PAUSED)

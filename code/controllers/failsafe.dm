@@ -57,6 +57,8 @@ GLOBAL_REAL(Failsafe, /datum/controller/failsafe)
 	..()
 	. = QDEL_HINT_HARDDEL_NOW
 
+GLOBAL_VAR_INIT(soft_failed_mc_restarts, 0)
+
 /datum/controller/failsafe/proc/Loop()
 	while(running)
 		lasttick = world.time
@@ -100,6 +102,11 @@ GLOBAL_REAL(Failsafe, /datum/controller/failsafe)
 							--defcon
 							log_game_world("Current MC perf monitor at the time of DEFCON 1:")
 							logperf()
+							if(Master.iteration < 2)
+								GLOB.soft_failed_mc_restarts++
+								if(GLOB.soft_failed_mc_restarts > 2)
+								log_game_world("FailSafe: MC has failed to get past its first iteration 3 different times.  Giving up and rebooting.")
+								world.Reboot()
 							var/rtn = Recreate_MC()
 							if(rtn > 0)
 								defcon = 4
