@@ -96,3 +96,6 @@
 2026-02-19:
   Ldip999:
   - bugfix: fixed HTML Injection with carbon copies
+2026-02-21:
+  Ldip999:
+  - server: Performance logging
