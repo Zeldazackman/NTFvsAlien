@@ -1,4 +1,0 @@
-author: "Generalcamo"
-delete-after: True
-changes:
-  - bugfix: "Fixed `flash_lighting_fx`. Camera flash effects work again."
