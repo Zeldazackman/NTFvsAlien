@@ -94,15 +94,10 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/shipboard/brig)
-"aeX" = (
-/obj/machinery/vending/cola{
-	product_slogans = ""
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
+"aeS" = (
+/obj/structure/bed/chair/comfy,
 /turf/open/floor/wood,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
+/area/mainship/groundhq/clf/living/cafeteria)
 "afq" = (
 /obj/machinery/camera/autoname{
 	dir = 4
@@ -111,15 +106,6 @@
 	dir = 1
 	},
 /area/mainship/groundhq/ntf/hallways/gardens)
-"afx" = (
-/obj/machinery/disposal,
-/obj/structure/disposalpipe/trunk{
-	dir = 1
-	},
-/turf/open/floor/prison/kitchen,
-/area/mainship/groundhq/ntf/living/captain_mess{
-	name = "Kitchen"
-	})
 "afB" = (
 /obj/machinery/door/airlock/mainship/security{
 	name = "\improper Corpsec Office"
@@ -286,13 +272,6 @@
 /obj/structure/cable,
 /turf/open/floor/wood,
 /area/chapel/office)
-"amr" = (
-/obj/structure/table/mainship,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/freezer,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "amS" = (
 /obj/structure/table/urban/shiny_black,
 /obj/machinery/light/red,
@@ -304,12 +283,6 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/mainship/engineering/port_atmos)
-"anl" = (
-/obj/effect/ai_node,
-/turf/open/floor/mainship/green{
-	dir = 1
-	},
-/area/mainship/living/basketball)
 "aog" = (
 /obj/machinery/door/airlock/mainship/generic,
 /obj/structure/cable,
@@ -437,6 +410,11 @@
 /area/mainship/medical/upper_medical{
 	name = "Shipside Medbay"
 	})
+"axC" = (
+/obj/effect/spawner/random/food_or_drink/sugary_snack,
+/obj/structure/table/wood/fancy,
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "axM" = (
 /obj/machinery/light{
 	dir = 1
@@ -454,6 +432,13 @@
 "aya" = (
 /turf/closed/wall/mainship,
 /area/mainship/hull/lower_hull)
+"ayk" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/ground/grass,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "ayz" = (
 /turf/closed/wall/mainship,
 /area/mainship/hallways/starboard_hallway{
@@ -499,13 +484,13 @@
 /turf/closed/wall/mainship/outer,
 /area/mainship/hull/upper_hull)
 "aAj" = (
-/obj/machinery/door/poddoor/mainship/open/cic{
-	id = "shipside_cic_lockdown2";
-	dir = 2
-	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/machinery/door/airlock/mainship/command/cic{
+/obj/machinery/door/poddoor/mainship/open/cic{
+	id = "shipside_cic_lockdown";
+	dir = 2
+	},
+/obj/machinery/door/airlock/mainship/command/officer{
 	dir = 2
 	},
 /turf/open/floor/squares,
@@ -684,11 +669,6 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/upper_hull)
-"aFH" = (
-/obj/structure/window/reinforced,
-/obj/structure/bed/chair,
-/turf/open/floor/mainship/green,
-/area/mainship/living/basketball)
 "aFJ" = (
 /obj/structure/cable,
 /turf/open/floor/mainship/red{
@@ -715,10 +695,6 @@
 /obj/structure/dropship_equipment/shuttle/operatingtable,
 /turf/open/floor/mainship/office,
 /area/mainship/hallways/hangar)
-"aGL" = (
-/obj/machinery/light,
-/turf/open/floor/mainship/green,
-/area/mainship/living/basketball)
 "aHq" = (
 /turf/open/floor/mainship/orange{
 	dir = 4
@@ -838,12 +814,6 @@
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
 	})
-"aJu" = (
-/obj/structure/kitchenspike,
-/turf/open/floor/freezer,
-/area/mainship/groundhq/ntf/living/captain_mess{
-	name = "Kitchen"
-	})
 "aJX" = (
 /obj/structure/bed/chair/wood/wings{
 	dir = 4;
@@ -955,7 +925,7 @@
 	},
 /obj/machinery/vending/cola,
 /turf/open/floor/mainship,
-/area/mainship/living/basketball)
+/area/mainship/groundhq/clf/living/cafeteria)
 "aNn" = (
 /obj/machinery/light{
 	dir = 4
@@ -971,7 +941,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/upper_hull)
 "aNP" = (
-/turf/open/floor/freezer,
+/turf/open/floor/prison/kitchen,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "aNT" = (
 /obj/structure/cable,
@@ -1188,10 +1158,9 @@
 /obj/structure/drop_pod_launcher,
 /turf/open/shuttle/escapepod,
 /area/mainship/hallways/hangar/droppod)
-"aZa" = (
-/obj/machinery/vending/boozeomat,
-/turf/open/floor/wood,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
+"aYG" = (
+/turf/open/floor/freezer,
+/area/mainship/groundhq/clf/living/cafeteria)
 "aZs" = (
 /obj/machinery/door/poddoor/railing{
 	id = "supply_elevator_railing"
@@ -1727,14 +1696,11 @@
 "bxg" = (
 /turf/open/floor/mainship/black/full,
 /area/mainship/command/self_destruct)
-"bxW" = (
-/obj/structure/hoop{
-	dir = 4;
-	id = "basketball";
-	side = "left"
-	},
-/turf/open/floor/wood,
-/area/mainship/living/basketball)
+"bxO" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/window,
+/turf/open/ground/grass,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "bye" = (
 /obj/structure/drop_pod_launcher,
 /obj/structure/droppod,
@@ -1745,7 +1711,7 @@
 	dir = 4
 	},
 /turf/open/floor/carpet/royalblack{
-	icon_state = "carpet_royalblack-55"
+	icon_state = "carpet_royalblack-38"
 	},
 /area/sulaco/command{
 	name = "Captain's Room";
@@ -1791,13 +1757,6 @@
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
 	})
-"bAq" = (
-/obj/structure/bed/chair/comfy{
-	dir = 8
-	},
-/obj/effect/ai_node,
-/turf/open/floor/mainship,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "bAE" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 10
@@ -1894,15 +1853,6 @@
 /obj/structure/largecrate/supply/weapons/pistols,
 /turf/open/floor/mainship/cargo,
 /area/mainship/hallways/hangar)
-"bEx" = (
-/obj/structure/closet/secure_closet/freezer/kitchen,
-/obj/effect/spawner/random/food_or_drink/sugary_snack,
-/obj/effect/spawner/random/food_or_drink/sugary_snack,
-/obj/effect/spawner/random/food_or_drink/sugary_snack,
-/obj/effect/spawner/random/food_or_drink/sugary_snack,
-/obj/effect/spawner/random/food_or_drink/sugary_snack,
-/turf/open/floor/freezer,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "bEM" = (
 /turf/open/floor/mainship/black{
 	dir = 6
@@ -2012,7 +1962,7 @@
 	dir = 8
 	},
 /turf/open/floor/carpet/royalblack{
-	icon_state = "carpet_royalblack-203"
+	icon_state = "carpet_royalblack-74"
 	},
 /area/sulaco/command{
 	name = "Captain's Room";
@@ -2040,11 +1990,6 @@
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
 	})
-"bKy" = (
-/turf/open/floor/mainship/green{
-	dir = 4
-	},
-/area/mainship/living/basketball)
 "bMc" = (
 /obj/structure/cable,
 /obj/machinery/camera/autoname{
@@ -2145,6 +2090,10 @@
 /area/mainship/medical/surgery_hallway{
 	name = "Research"
 	})
+"bQd" = (
+/obj/structure/table/wood/fancy,
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "bQl" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -2505,6 +2454,10 @@
 /obj/effect/ai_node,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/upper_hull)
+"cbX" = (
+/obj/structure/flora/grass/both,
+/turf/open/ground/grass,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "cch" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment/corner{
@@ -2516,12 +2469,6 @@
 /obj/effect/ai_node,
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/engineering/upper_engine_monitoring)
-"ccy" = (
-/obj/structure/disposalpipe/segment/corner{
-	dir = 4
-	},
-/turf/open/floor/freezer,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "ccI" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/mainship{
@@ -2557,11 +2504,8 @@
 /turf/open/floor/plating,
 /area/mainship/engineering/port_atmos)
 "cfQ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/machinery/light,
-/turf/open/floor/wood,
+/obj/structure/table/reinforced/fabric,
+/turf/open/floor/prison/kitchen,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "cgM" = (
 /obj/structure/table/mainship,
@@ -2661,10 +2605,10 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/hangar)
 "cky" = (
-/obj/structure/disposalpipe/segment/corner{
-	dir = 1
+/obj/structure/curtain/open/temple{
+	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/mainship/red/full,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "cll" = (
 /obj/structure/cable,
@@ -2755,17 +2699,6 @@
 /obj/structure/dropship_equipment/cas/weapon/minirocket_pod,
 /turf/open/floor/plating,
 /area/mainship/hallways/hangar)
-"cpJ" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/bed/chair{
-	dir = 8
-	},
-/turf/open/floor/mainship/green{
-	dir = 8
-	},
-/area/mainship/living/basketball)
 "cqe" = (
 /obj/machinery/door/airlock/mainship/generic{
 	dir = 1;
@@ -2786,7 +2719,7 @@
 "cqV" = (
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/mainship/mono,
-/area/mainship/living/basketball)
+/area/mainship/groundhq/clf/living/cafeteria)
 "crc" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -2797,6 +2730,10 @@
 /area/mainship/hallways/aft_hallway{
 	name = "Ship Floor 3 Hallways"
 	})
+"cre" = (
+/obj/structure/cable,
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "cru" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -2900,6 +2837,14 @@
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
 	})
+"cuC" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/freezer,
+/area/mainship/groundhq/ntf/living/captain_mess{
+	name = "Kitchen"
+	})
 "cvd" = (
 /obj/structure/sign/poster,
 /obj/machinery/light/mainship{
@@ -2924,6 +2869,12 @@
 	dir = 9
 	},
 /area/mainship/hull/upper_hull)
+"cwe" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/freezer,
+/area/mainship/groundhq/clf/living/cafeteria)
 "cwf" = (
 /obj/docking_port/stationary/marine_dropship/crash_target,
 /turf/open/floor/mainship/orange/full,
@@ -2944,10 +2895,6 @@
 	dir = 8
 	},
 /area/mainship/squads/specialist)
-"cwQ" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/layer1,
-/turf/open/floor/mainship,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "cxr" = (
 /obj/item/weapon/gun/sentry/big_sentry/premade/radial{
 	name = "\improper ST-571 sentry gun"
@@ -3115,15 +3062,6 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/lower_hull)
-"cCX" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 5
-	},
-/turf/open/floor/prison/kitchen,
-/area/mainship/groundhq/ntf/living/captain_mess{
-	name = "Kitchen"
-	})
 "cDw" = (
 /obj/machinery/cryopod/right{
 	dir = 1
@@ -3133,15 +3071,6 @@
 "cDB" = (
 /turf/open/floor/mainship/mono,
 /area/mainship/living/pilotbunks)
-"cDI" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/prison/kitchen,
-/area/mainship/groundhq/ntf/living/captain_mess{
-	name = "Kitchen"
-	})
 "cDZ" = (
 /obj/machinery/light/mainship{
 	dir = 1
@@ -3152,6 +3081,12 @@
 	static_lighting = 1;
 	base_lighting_alpha = 0
 	})
+"cEa" = (
+/obj/structure/table/reinforced/fabric,
+/obj/structure/prop/urban/misc/coffeestuff/coffeemachine1,
+/obj/item/reagent_containers/cup/coffeepot,
+/turf/open/floor/carpet/blue,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "cEm" = (
 /turf/open/floor/mainship_hull/dir{
 	dir = 4
@@ -3505,6 +3440,14 @@
 "cRa" = (
 /turf/open/floor/mainship_hull,
 /area/mainship/hull/lower_hull)
+"cRd" = (
+/obj/structure/table/reinforced,
+/obj/item/tool/kitchen/knife/butcher,
+/obj/machinery/reagentgrinder,
+/turf/open/floor/prison/kitchen,
+/area/mainship/groundhq/ntf/living/captain_mess{
+	name = "Kitchen"
+	})
 "cRf" = (
 /obj/machinery/computer/body_scanconsole,
 /turf/open/floor/mainship/sterile/side{
@@ -3516,17 +3459,6 @@
 "cRm" = (
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/shipboard/brig_cells)
-"cRG" = (
-/obj/machinery/door/airlock/mainship/generic{
-	name = "\improper Freezer"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/turf/open/floor/mainship,
-/area/mainship/groundhq/ntf/living/captain_mess{
-	name = "Kitchen"
-	})
 "cRK" = (
 /obj/machinery/vending/marineFood,
 /turf/open/floor/mainship/mono,
@@ -3749,10 +3681,6 @@
 	},
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/req)
-"dbC" = (
-/obj/effect/landmark/start/job/requisitionsofficer,
-/turf/open/floor/wood,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "dbG" = (
 /obj/structure/flora/pottedplant/twentytwo,
 /turf/open/floor/freezer,
@@ -3844,12 +3772,6 @@
 	outside = 0;
 	name = "CEO Office"
 	})
-"deZ" = (
-/obj/structure/bed/chair/comfy{
-	dir = 1
-	},
-/turf/open/floor/wood,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "dfL" = (
 /obj/machinery/light{
 	dir = 4
@@ -3914,10 +3836,10 @@
 	},
 /area/mainship/groundhq/ntf/shipboard/brig)
 "diV" = (
-/obj/machinery/camera/autoname/mainship{
-	dir = 8
+/obj/machinery/light{
+	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/mainship/red/full,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "diW" = (
 /turf/open/floor/step_trigger/supply_fall/row_one/four,
@@ -3961,10 +3883,6 @@
 	dir = 9
 	},
 /area/mainship/command/cic)
-"dlH" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/mainship,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "dmp" = (
 /obj/machinery/computer/camera_advanced,
 /obj/structure/table/reinforced,
@@ -4125,15 +4043,33 @@
 /area/outpost/cargo{
 	outside = 1
 	})
+"dvw" = (
+/obj/structure/table/wood/fancy,
+/obj/item/trash/plate{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/tool/kitchen/utensil/fork{
+	pixel_y = 3;
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/food/snacks/pastries/cheesecakeslice{
+	pixel_x = 3;
+	pixel_y = 2
+	},
+/obj/structure/cable,
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "dvy" = (
 /obj/structure/sign/deathsposal,
 /turf/closed/wall/mainship/outer,
 /area/mainship/hull/upper_hull)
-"dwT" = (
-/obj/structure/table/mainship,
-/obj/item/reagent_containers/food/snacks/baguette,
-/turf/open/floor/mainship,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
+"dwc" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/freezer,
+/area/mainship/groundhq/clf/living/cafeteria)
 "dxx" = (
 /obj/structure/largecrate/random/barrel/white,
 /turf/open/floor/mainship/cargo,
@@ -4251,9 +4187,11 @@
 /turf/open/floor/wood,
 /area/mainship/squads/specialist)
 "dCW" = (
-/obj/structure/table/mainship,
-/obj/effect/spawner/random/food_or_drink/sugary_snack,
-/turf/open/floor/mainship,
+/obj/structure/rack,
+/obj/item/reagent_containers/cup/glass/bottle/champagne,
+/obj/item/reagent_containers/cup/glass/bottle/champagne,
+/obj/item/reagent_containers/cup/glass/bottle/champagne,
+/turf/open/floor/wood/variable/mosaic,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "dCY" = (
 /obj/machinery/vending/weapon,
@@ -4286,6 +4224,11 @@
 "dDT" = (
 /turf/open/floor/mainship,
 /area/mainship/shipboard/firing_range)
+"dDW" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/window,
+/turf/open/ground/grass,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "dEF" = (
 /obj/structure/bed/chair/stasis/sec,
 /turf/open/floor/mainship/mono,
@@ -4306,6 +4249,15 @@
 	},
 /turf/closed/wall/mainship,
 /area/mainship/hull/upper_hull)
+"dFy" = (
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment/corner{
+	dir = 8
+	},
+/turf/open/floor/prison/kitchen,
+/area/mainship/groundhq/ntf/living/captain_mess{
+	name = "Kitchen"
+	})
 "dFW" = (
 /obj/effect/turf_decal/warning_stripes/thick,
 /obj/effect/turf_decal/warning_stripes/thick{
@@ -4405,6 +4357,16 @@
 "dIx" = (
 /turf/open/floor/stairs/rampbottom,
 /area/mainship/groundhq/ntf/engineering/upper_engine_monitoring)
+"dIz" = (
+/obj/machinery/door/poddoor/mainship/open/cic{
+	id = "shipside_cic_lockdown";
+	dir = 2
+	},
+/obj/structure/stairs{
+	dir = 1
+	},
+/turf/open/floor/mainship/mono,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "dIJ" = (
 /turf/open/floor/plating/plating_catwalk,
 /area/outpost/cargo{
@@ -4423,6 +4385,12 @@
 /area/mainship/medical/upper_medical{
 	name = "Shipside Medbay"
 	})
+"dJE" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "dKF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
@@ -4783,6 +4751,10 @@
 /area/mainship/hallways/aft_hallway{
 	name = "Ship Floor 3 Hallways"
 	})
+"edo" = (
+/obj/machinery/griddle,
+/turf/open/floor/prison/kitchen,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "edp" = (
 /obj/structure/cable,
 /obj/machinery/power/terminal{
@@ -4819,6 +4791,10 @@
 /area/mainship/hallways/bow_hallway{
 	name = "Ship Floor 1 Hallways"
 	})
+"efl" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "efA" = (
 /obj/item/storage/box/explosive_mines/antitank,
 /obj/item/storage/box/explosive_mines/antitank,
@@ -4826,10 +4802,6 @@
 /obj/item/minelayer,
 /turf/open/floor/mainship/cargo,
 /area/mainship/hallways/hangar)
-"efM" = (
-/obj/structure/bed/stool,
-/turf/open/floor/wood,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "egv" = (
 /obj/machinery/light/mainship{
 	dir = 1
@@ -4896,6 +4868,13 @@
 	},
 /turf/open/floor/wood,
 /area/mainship/hallways/dorm2)
+"eiu" = (
+/obj/structure/bed/chair/comfy{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "eiJ" = (
 /obj/structure/cable,
 /turf/open/floor/mainship,
@@ -4959,17 +4938,23 @@
 /obj/effect/landmark/start/job/squadsmartgunner,
 /turf/open/floor/wood,
 /area/mainship/hallways/dorm3)
+"elP" = (
+/obj/machinery/door/airlock/mainship/generic{
+	dir = 1;
+	name = "\improper Kitchen"
+	},
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/turf/open/floor/prison/kitchen,
+/area/mainship/groundhq/ntf/living/captain_mess{
+	name = "Kitchen"
+	})
 "elS" = (
 /obj/machinery/vending/boozeomat,
 /turf/open/floor/tile/darkish,
 /area/mainship/groundhq/ntf/crimsonveil)
-"emw" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/structure/cable,
-/turf/open/floor/mainship,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "emY" = (
 /obj/effect/turf_decal/warning_stripes/thick/corner{
 	dir = 8
@@ -5120,11 +5105,6 @@
 	},
 /turf/open/floor/plating,
 /area/mainship/hallways/hangar)
-"eub" = (
-/turf/open/floor/mainship/green{
-	dir = 8
-	},
-/area/mainship/living/basketball)
 "euQ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
 	dir = 1
@@ -5152,6 +5132,22 @@
 /obj/machinery/vending/uniform_supply,
 /turf/open/floor/mainship/floor,
 /area/mainship/hallways/hangar)
+"ewy" = (
+/obj/structure/table/wood/fancy,
+/obj/item/trash/plate{
+	pixel_x = 3;
+	pixel_y = 7
+	},
+/obj/item/tool/kitchen/utensil/fork{
+	pixel_y = 3;
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/food/snacks/pastries/plaincakeslice{
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "ewZ" = (
 /obj/machinery/computer/med_data,
 /turf/open/floor/mainship/sterile/side,
@@ -5501,7 +5497,7 @@
 	dir = 8
 	},
 /turf/open/floor/mainship,
-/area/mainship/living/basketball)
+/area/mainship/groundhq/clf/living/cafeteria)
 "eOP" = (
 /obj/structure/lattice,
 /turf/closed/shuttle/ert{
@@ -5621,6 +5617,14 @@
 /area/mainship/shipboard/port_missiles{
 	name = "Shipside Corpsec Office"
 	})
+"eSL" = (
+/obj/structure/table/wood/fancy,
+/obj/item/flashlight/lamp/green,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "eSQ" = (
 /turf/open/floor/urban/wood,
 /area/sulaco/command{
@@ -5638,11 +5642,6 @@
 /area/mainship/medical/upper_medical{
 	name = "Shipside Medbay"
 	})
-"eTF" = (
-/obj/machinery/disposal,
-/obj/structure/disposalpipe/trunk,
-/turf/open/floor/wood,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "eTR" = (
 /obj/machinery/vending/nanomed,
 /obj/vehicle/ridden/powerloader,
@@ -5767,12 +5766,25 @@
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
 	})
+"eYf" = (
+/obj/structure/curtain/open/temple{
+	dir = 8
+	},
+/turf/open/floor/wood/variable/mosaic,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "eYz" = (
 /obj/machinery/chem_master/condimaster,
 /turf/open/floor/prison/kitchen,
 /area/mainship/groundhq/ntf/living/captain_mess{
 	name = "Kitchen"
 	})
+"eYA" = (
+/obj/machinery/light,
+/obj/structure/bed/chair/comfy{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "eYJ" = (
 /obj/machinery/camera/autoname/mainship{
 	dir = 8
@@ -6039,10 +6051,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1{
 	on = 1
 	},
-/obj/structure/closet/basketball,
 /obj/structure/cable,
 /turf/open/floor/mainship/mono,
-/area/mainship/living/basketball)
+/area/mainship/groundhq/clf/living/cafeteria)
 "fij" = (
 /obj/structure/disposalpipe/segment,
 /turf/closed/wall/mainship,
@@ -6222,6 +6233,10 @@
 "fqs" = (
 /turf/open/floor/step_trigger/supply_fall/row_two/five,
 /area/mainship/squads/req)
+"fqA" = (
+/obj/item/stool,
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "fqR" = (
 /obj/effect/soundplayer,
 /turf/closed/wall/mainship,
@@ -6301,6 +6316,12 @@
 /area/outpost/cargo{
 	outside = 1
 	})
+"fuv" = (
+/obj/structure/table/reinforced/fabric,
+/obj/item/tool/kitchen/knife/butcher,
+/obj/item/reagent_containers/food/condiment/enzyme,
+/turf/open/floor/freezer,
+/area/mainship/groundhq/clf/living/cafeteria)
 "fvh" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -6435,10 +6456,20 @@
 /turf/open/shuttle/escapepod,
 /area/mainship/hallways/hangar/droppod)
 "fAP" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 10
+/obj/structure/table/reinforced,
+/obj/item/tool/kitchen/utensil/knife,
+/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/glass/rag,
+/obj/item/book/manual/chef_recipes,
+/obj/structure/transmitter/desk{
+	pixel_x = 10;
+	phone_category = "Service";
+	phone_id = "Bar Kitchen"
 	},
-/turf/open/floor/freezer,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/prison/kitchen,
 /area/mainship/groundhq/ntf/living/captain_mess{
 	name = "Kitchen"
 	})
@@ -6455,12 +6486,6 @@
 /area/mainship/hallways/bow_hallway{
 	name = "Ship Floor 1 Hallways"
 	})
-"fAZ" = (
-/obj/structure/bed/chair/comfy{
-	dir = 8
-	},
-/turf/open/floor/wood,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "fBl" = (
 /obj/effect/ai_node,
 /obj/structure/table/wood/fancy,
@@ -6567,20 +6592,14 @@
 	outside = 1
 	})
 "fFk" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -9;
-	pixel_y = 1
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/layer1{
-	dir = 8;
-	on = 1
-	},
-/obj/structure/cable,
-/turf/open/floor/prison/kitchen,
+/turf/open/floor/freezer,
 /area/mainship/groundhq/ntf/living/captain_mess{
 	name = "Kitchen"
 	})
+"fFy" = (
+/obj/machinery/chem_master/condimaster,
+/turf/open/floor/freezer,
+/area/mainship/groundhq/clf/living/cafeteria)
 "fFI" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment/corner{
@@ -6605,6 +6624,13 @@
 	outside = 0;
 	name = "CEO Office"
 	})
+"fGg" = (
+/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/open/ground/grass,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "fGq" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -6726,10 +6752,9 @@
 	name = "Ship Floor 1 Hallways"
 	})
 "fLj" = (
-/obj/structure/table/reinforced,
-/obj/item/tool/kitchen/knife/butcher,
-/obj/item/reagent_containers/food/snacks/monkeysdelight,
-/obj/effect/ai_node,
+/obj/machinery/door/airlock/mainship/generic{
+	name = "\improper Freezer"
+	},
 /turf/open/floor/prison/kitchen,
 /area/mainship/groundhq/ntf/living/captain_mess{
 	name = "Kitchen"
@@ -6745,14 +6770,6 @@
 /obj/item/bedsheet/red,
 /turf/open/floor/wood,
 /area/mainship/hallways/dorm2)
-"fLF" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/mainship/green{
-	dir = 1
-	},
-/area/mainship/living/basketball)
 "fLT" = (
 /obj/machinery/light/mainship{
 	dir = 1
@@ -6892,16 +6909,6 @@
 /obj/item/tool/crowbar,
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/hangar)
-"fQJ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 5
-	},
-/obj/machinery/power/apc/mainship{
-	dir = 4
-	},
-/obj/structure/cable,
-/turf/open/floor/mainship,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "fQR" = (
 /obj/machinery/door/firedoor/mainship{
 	dir = 2
@@ -6959,12 +6966,6 @@
 	},
 /turf/open/floor/wood,
 /area/mainship/hallways/synthdorms)
-"fSA" = (
-/obj/effect/ai_node,
-/turf/open/floor/freezer,
-/area/mainship/groundhq/ntf/living/captain_mess{
-	name = "Kitchen"
-	})
 "fSC" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1{
 	dir = 8;
@@ -7049,10 +7050,6 @@
 /area/mainship/hallways/aft_hallway{
 	name = "Ship Floor 3 Hallways"
 	})
-"fWf" = (
-/obj/effect/ai_node,
-/turf/open/floor/freezer,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "fWn" = (
 /obj/structure/rack,
 /turf/open/floor/mainship/red{
@@ -7211,8 +7208,12 @@
 	},
 /area/mainship/medical/operating_room_one)
 "gbP" = (
-/obj/machinery/griddle,
-/turf/open/floor/wood,
+/obj/structure/bed/chair/sofa/left{
+	dir = 4
+	},
+/turf/open/floor/carpet/royalblack{
+	icon_state = "carpet_royalblack-38"
+	},
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "gbV" = (
 /obj/effect/ai_node,
@@ -7496,13 +7497,6 @@
 /obj/structure/table/wood/gambling/urban/black,
 /turf/open/floor/urban/wood/blackwood,
 /area/mainship/groundhq/ntf/crimsonveil)
-"goF" = (
-/obj/structure/bed/chair/wood/normal,
-/obj/item/ammo_casing/bullet{
-	pixel_y = -8
-	},
-/turf/open/floor/wood,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "goL" = (
 /obj/machinery/camera/autoname/mainship{
 	dir = 8
@@ -7734,13 +7728,6 @@
 /obj/effect/spawner/random/engineering/powercell,
 /turf/open/floor/mainship/mono,
 /area/mainship/command/telecomms)
-"gyy" = (
-/obj/structure/bed/chair/comfy{
-	dir = 4
-	},
-/obj/machinery/light,
-/turf/open/floor/mainship,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "gzF" = (
 /obj/machinery/camera/autoname/mainship{
 	dir = 8
@@ -7795,6 +7782,13 @@
 /area/outpost/cargo{
 	outside = 1
 	})
+"gBN" = (
+/obj/structure/bed/chair/comfy,
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
+"gCo" = (
+/turf/open/floor/tile/darkish,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "gCR" = (
 /turf/open/floor/mainship/black/full,
 /area/mainship/squads/general)
@@ -7814,16 +7808,6 @@
 /obj/machinery/vending/MarineMed,
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
-"gDp" = (
-/obj/structure/cable,
-/obj/structure/disposalpipe/junction,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
-	dir = 4
-	},
-/turf/open/floor/plating/plating_catwalk,
-/area/mainship/hallways/bow_hallway{
-	name = "Ship Floor 1 Hallways"
-	})
 "gDR" = (
 /obj/structure/cable,
 /turf/open/floor/mainship/black/full,
@@ -7880,6 +7864,18 @@
 	},
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/groundhq/ntf/shipboard/brig_cells)
+"gGs" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/mainship/mono,
+/area/mainship/hallways/aft_hallway{
+	name = "Ship Floor 3 Hallways"
+	})
 "gHi" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -8135,13 +8131,6 @@
 	},
 /turf/open/floor/plating/plating_catwalk/prison,
 /area/mainship/groundhq/ntf/shipboard/brig_cells)
-"gRR" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 6
-	},
-/turf/open/floor/freezer,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "gSb" = (
 /obj/effect/ai_node,
 /turf/open/floor/wood,
@@ -8248,14 +8237,12 @@
 /obj/machinery/vending/cola,
 /turf/open/floor/mainship_hull,
 /area/mainship/groundhq/ntf/hallways/gardens)
-"gUV" = (
-/obj/structure/window/reinforced{
-	dir = 1
+"gUZ" = (
+/obj/machinery/vending/cola{
+	product_slogans = ""
 	},
-/turf/open/floor/mainship/green{
-	dir = 1
-	},
-/area/mainship/living/basketball)
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "gVf" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment/corner,
@@ -8338,9 +8325,6 @@
 /area/mainship/living/officer_study)
 "gYV" = (
 /obj/structure/bed/chair/office/dark{
-	dir = 8
-	},
-/obj/structure/window/reinforced/tinted{
 	dir = 8
 	},
 /turf/open/floor/mainship/mono,
@@ -8436,22 +8420,11 @@
 	},
 /turf/open/floor/wood,
 /area/mainship/living/chapel)
-"hcd" = (
-/obj/structure/table/mainship,
-/obj/effect/spawner/random/food_or_drink/sugary_snack,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/wood,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "hch" = (
 /obj/machinery/power/apc/mainship{
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 1
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 1
 	},
@@ -8628,6 +8601,10 @@
 /obj/machinery/telecomms/processor/preset_one,
 /turf/open/floor/mainship/tcomms,
 /area/mainship/command/telecomms)
+"hih" = (
+/obj/structure/table/wood/fancy,
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "hjc" = (
 /obj/structure/cable,
 /turf/open/floor/plating,
@@ -8720,6 +8697,9 @@
 /obj/structure/stairs,
 /turf/open/floor/urban/wood/blackwood,
 /area/mainship/groundhq/ntf/crimsonveil)
+"hmO" = (
+/turf/open/floor/carpet/blue,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "hnp" = (
 /obj/machinery/light,
 /obj/machinery/nuclearbomb,
@@ -8766,9 +8746,18 @@
 	name = "Shipside Corpsec Office"
 	})
 "hqG" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/cable,
-/turf/open/floor/mainship,
+/obj/structure/stairs{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/mainship/open/cic{
+	id = "shipside_cic_lockdown";
+	dir = 2
+	},
+/turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "hqW" = (
 /obj/structure/curtain/open/black,
@@ -8851,17 +8840,6 @@
 /area/mainship/medical/surgery_hallway{
 	name = "Research"
 	})
-"hvs" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/transmitter{
-	pixel_y = 22;
-	phone_category = "Service";
-	phone_id = "Bar"
-	},
-/turf/open/floor/freezer,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "hvB" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/floor/grass,
@@ -8882,6 +8860,15 @@
 /obj/structure/cable,
 /turf/open/floor/mainship/mono,
 /area/mainship/hull/upper_hull)
+"hvX" = (
+/obj/machinery/door/poddoor/mainship/open{
+	dir = 2;
+	id = "officermess";
+	name = "Privacy shutters"
+	},
+/obj/structure/window/framed/mainship,
+/turf/open/floor/plating,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "hxd" = (
 /obj/structure/sign/evac,
 /turf/open/floor/plating/mainship,
@@ -9104,9 +9091,6 @@
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
 	})
-"hJP" = (
-/turf/open/floor/mainship/green,
-/area/mainship/living/basketball)
 "hJY" = (
 /obj/structure/cable,
 /obj/effect/ai_node,
@@ -9151,11 +9135,8 @@
 	name = "Ship Floor 3 Hallways"
 	})
 "hNA" = (
-/obj/machinery/power/apc/mainship{
-	dir = 4
-	},
-/obj/structure/cable,
-/turf/open/floor/prison/kitchen,
+/obj/structure/closet/secure_closet/freezer/fridge,
+/turf/open/floor/freezer,
 /area/mainship/groundhq/ntf/living/captain_mess{
 	name = "Kitchen"
 	})
@@ -9209,6 +9190,13 @@
 /obj/item/toy/inflatable_duck,
 /turf/open/liquid/water/river/deep,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
+"hQi" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/open/ground/grass,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "hQn" = (
 /obj/machinery/vending/nanomed,
 /turf/open/floor/mainship/mono,
@@ -9229,6 +9217,10 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/upper_hull)
+"hRC" = (
+/obj/structure/flora/desert/bush,
+/turf/open/ground/grass,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "hRE" = (
 /obj/effect/landmark/start/job/researcher,
 /obj/effect/landmark/start/job/researcher,
@@ -9336,6 +9328,7 @@
 	})
 "hTv" = (
 /obj/structure/table/urban/shiny_brown,
+/obj/docking_port/stationary/marine_dropship/crash_target,
 /turf/open/floor/carpet/royalblack{
 	icon_state = "carpet_royalblack-157"
 	},
@@ -9400,7 +9393,7 @@
 /area/mainship/medical/lower_medical)
 "hWv" = (
 /turf/open/floor/plating/plating_catwalk,
-/area/mainship/living/basketball)
+/area/mainship/groundhq/clf/living/cafeteria)
 "hWW" = (
 /obj/effect/ai_node,
 /obj/structure/cable,
@@ -9620,10 +9613,6 @@
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
 	})
-"ieh" = (
-/obj/structure/table/mainship,
-/turf/open/floor/mainship,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "iei" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1{
 	dir = 4
@@ -9782,11 +9771,22 @@
 /obj/machinery/telecomms/receiver/preset_left,
 /turf/open/floor/mainship/tcomms,
 /area/mainship/command/telecomms)
+"inm" = (
+/obj/structure/closet/secure_closet/freezer/kitchen,
+/obj/effect/spawner/random/food_or_drink/sugary_snack,
+/obj/effect/spawner/random/food_or_drink/sugary_snack,
+/obj/effect/spawner/random/food_or_drink/sugary_snack,
+/obj/effect/spawner/random/food_or_drink/sugary_snack,
+/obj/effect/spawner/random/food_or_drink/sugary_snack,
+/turf/open/floor/freezer,
+/area/mainship/groundhq/clf/living/cafeteria)
 "inB" = (
-/obj/machinery/light{
-	dir = 8
+/obj/structure/bed/chair/sofa/right{
+	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/carpet/royalblack{
+	icon_state = "carpet_royalblack-21"
+	},
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "inR" = (
 /obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
@@ -9816,6 +9816,12 @@
 /obj/effect/turf_decal/siding/dark,
 /turf/open/floor/tile/dark,
 /area/mainship/groundhq/ntf/hallways/gardens)
+"ipY" = (
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "iqa" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment,
@@ -10269,6 +10275,15 @@
 /obj/effect/ai_node,
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/groundhq/ntf/hallways/bathroom)
+"iHd" = (
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/turf/open/floor/prison/kitchen,
+/area/mainship/groundhq/ntf/living/captain_mess{
+	name = "Kitchen"
+	})
 "iHf" = (
 /obj/machinery/status_display,
 /turf/closed/wall/mainship,
@@ -10491,10 +10506,6 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/mainship/command/self_destruct)
-"iPQ" = (
-/obj/effect/ai_node,
-/turf/open/floor/wood,
-/area/mainship/living/basketball)
 "iQD" = (
 /obj/structure/table/mainship,
 /obj/item/tool/kitchen/utensil/fork,
@@ -10554,6 +10565,22 @@
 	},
 /turf/open/floor/wood,
 /area/mainship/groundhq/ntf/command/corporateliaison)
+"iSj" = (
+/obj/structure/table/urban/shiny_black,
+/obj/item/reagent_containers/food/drinks/bottle/kahlua{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/drinks/bottle/vermouth{
+	pixel_x = -1;
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/food/drinks/bottle/vodka{
+	pixel_x = 7;
+	pixel_y = 2
+	},
+/turf/open/floor/tile/darkish,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "iSz" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/wood/darker,
@@ -10582,16 +10609,6 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/bow_hallway{
 	name = "Ship Floor 1 Hallways"
-	})
-"iTM" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/layer1{
-	dir = 1;
-	on = 1
-	},
-/obj/effect/landmark/itemspawner/waiter,
-/turf/open/floor/freezer,
-/area/mainship/groundhq/ntf/living/captain_mess{
-	name = "Kitchen"
 	})
 "iTR" = (
 /obj/machinery/computer/camera_advanced,
@@ -10698,7 +10715,7 @@
 	})
 "iWN" = (
 /turf/open/floor/mainship,
-/area/mainship/living/basketball)
+/area/mainship/groundhq/clf/living/cafeteria)
 "iWU" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
@@ -10907,8 +10924,7 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/hull/upper_hull)
 "jiX" = (
-/obj/structure/table/reinforced,
-/obj/machinery/reagentgrinder,
+/obj/structure/closet/secure_closet/freezer/kitchen,
 /turf/open/floor/prison/kitchen,
 /area/mainship/groundhq/ntf/living/captain_mess{
 	name = "Kitchen"
@@ -10973,6 +10989,9 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 5
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 1
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/aft_hallway{
@@ -11090,6 +11109,10 @@
 /obj/structure/cable,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/living/cryo_cells)
+"jqU" = (
+/obj/structure/window/framed/mainship,
+/turf/open/floor/plating,
+/area/mainship/groundhq/clf/living/cafeteria)
 "jrp" = (
 /obj/machinery/vending/hydroseeds,
 /turf/open/floor/prison/cleanmarked,
@@ -11172,15 +11195,6 @@
 /area/mainship/hallways/bow_hallway{
 	name = "Ship Floor 1 Hallways"
 	})
-"juE" = (
-/obj/machinery/scoreboard{
-	id = "basketball";
-	pixel_y = 30
-	},
-/turf/open/floor/mainship/green{
-	dir = 1
-	},
-/area/mainship/living/basketball)
 "juR" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 1
@@ -11258,6 +11272,11 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/upper_hull)
+"jyB" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/window,
+/turf/open/ground/grass,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "jyM" = (
 /obj/machinery/marine_selector/gear/specialist,
 /obj/machinery/light{
@@ -11314,6 +11333,10 @@
 	},
 /turf/open/floor/wood/darker,
 /area/mainship/medical/lower_medical)
+"jDn" = (
+/obj/machinery/vending/cigarette,
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "jDu" = (
 /obj/structure/sign/fixedinplace/medical{
 	dir = 8
@@ -11515,16 +11538,6 @@
 	dir = 8
 	},
 /area/mainship/groundhq/ntf/shipboard/brig)
-"jJB" = (
-/obj/structure/bed/chair/comfy{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/mainship,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "jJF" = (
 /obj/machinery/computer/cryopod{
 	dir = 8
@@ -11775,10 +11788,6 @@
 /obj/effect/ai_node,
 /turf/open/floor/plating,
 /area/mainship/living/tankerbunks)
-"jTv" = (
-/obj/docking_port/stationary/marine_dropship/crash_target,
-/turf/open/floor/wood,
-/area/mainship/living/basketball)
 "jTz" = (
 /turf/open/floor/mainship/cargo,
 /area/mainship/squads/general)
@@ -11805,16 +11814,10 @@
 	name = "Ship Floor 3 Hallways"
 	})
 "jUe" = (
-/obj/structure/closet/secure_closet/freezer/kitchen,
-/obj/effect/spawner/random/food_or_drink/sugary_snack,
-/obj/effect/spawner/random/food_or_drink/sugary_snack,
-/obj/effect/spawner/random/food_or_drink/sugary_snack,
-/obj/effect/spawner/random/food_or_drink/sugary_snack,
-/obj/effect/spawner/random/food_or_drink/sugary_snack,
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/freezer,
+/turf/open/floor/prison/kitchen,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "jUx" = (
 /obj/structure/table/mainship/nometal,
@@ -11906,17 +11909,31 @@
 	name = "Ship Floor 2 Hallways"
 	})
 "jXX" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/sofa/corner{
 	dir = 4
 	},
-/turf/open/floor/mainship/mono,
-/area/mainship/living/basketball)
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
+"jYn" = (
+/obj/structure/bed/chair/comfy{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "jYs" = (
 /obj/machinery/vending/cigarette,
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/aft_hallway{
 	name = "Ship Floor 3 Hallways"
 	})
+"jYX" = (
+/obj/structure/bed/chair/sofa{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblack{
+	icon_state = "carpet_royalblack-203"
+	},
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "jZb" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -11937,6 +11954,12 @@
 	},
 /turf/open/floor/plating,
 /area/mainship/hallways/hangar)
+"jZp" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/layer1{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "jZt" = (
 /obj/structure/table/reinforced,
 /obj/item/folder/red,
@@ -11962,6 +11985,16 @@
 /area/mainship/hallways/aft_hallway{
 	name = "Ship Floor 3 Hallways"
 	})
+"jZI" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment/corner{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "jZQ" = (
 /obj/structure/cable,
 /obj/effect/ai_node,
@@ -11972,21 +12005,11 @@
 	static_lighting = 1;
 	base_lighting_alpha = 0
 	})
-"kat" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
-/obj/machinery/door/poddoor/shutters/mainship/open/checkpoint{
-	dir = 2;
-	id = "floor3shipcheckpoint2"
-	},
-/turf/open/floor/mainship/stripesquare,
-/area/mainship/living/basketball)
 "kbb" = (
 /obj/structure/bed/chair/comfy{
-	dir = 4
+	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/carpet/red,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "kbh" = (
 /turf/open/floor/mainship/mono,
@@ -12489,15 +12512,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/mainship/mono,
 /area/mainship/hull/lower_hull)
-"kvI" = (
-/obj/machinery/camera/autoname/mainship{
-	dir = 4
+"kvM" = (
+/obj/structure/bed/chair/comfy{
+	dir = 1
 	},
-/obj/effect/ai_node,
-/turf/open/floor/mainship/green{
-	dir = 8
-	},
-/area/mainship/living/basketball)
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "kwl" = (
 /obj/machinery/floodlight/landing/hq,
 /turf/open/floor/mainship/cargo,
@@ -12630,6 +12650,13 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
+"kBI" = (
+/obj/structure/bed/chair/comfy,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "kCB" = (
 /obj/structure/rack,
 /obj/item/storage/firstaid/fire{
@@ -12755,6 +12782,10 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/lower_hull)
+"kGQ" = (
+/obj/structure/flora/pottedplant/ten,
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "kGW" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 4
@@ -12828,6 +12859,9 @@
 /obj/effect/ai_node,
 /turf/open/floor/plating/mainship,
 /area/mainship/living/evacuation/two)
+"kJf" = (
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "kJl" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1{
 	on = 1
@@ -12882,14 +12916,17 @@
 /obj/effect/landmark/start/job/squadcorpsman,
 /turf/open/floor/wood,
 /area/mainship/hallways/dorm2)
+"kNe" = (
+/obj/structure/bed/chair/comfy{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "kNA" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 1
-	},
 /turf/open/floor/urban/wood,
 /area/sulaco/command{
 	name = "Captain's Room";
@@ -12922,6 +12959,13 @@
 	},
 /turf/open/floor/mainship/stripesquare,
 /area/mainship/hallways/hangar)
+"kOc" = (
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment/corner{
+	dir = 4
+	},
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "kOh" = (
 /obj/machinery/door_control/mainship/ammo,
 /obj/structure/reagent_dispensers/fueltank,
@@ -13053,10 +13097,6 @@
 "kQG" = (
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/shipboard/brig)
-"kQK" = (
-/obj/structure/benchpress,
-/turf/open/floor/mainship/mono,
-/area/mainship/living/basketball)
 "kQW" = (
 /obj/structure/window/reinforced/toughened{
 	dir = 8
@@ -13117,7 +13157,7 @@
 "kRC" = (
 /obj/structure/cable,
 /turf/open/floor/mainship/mono,
-/area/mainship/living/basketball)
+/area/mainship/groundhq/clf/living/cafeteria)
 "kRS" = (
 /obj/structure/platform/metalplatform/nondense{
 	dir = 4
@@ -13188,11 +13228,11 @@
 /mob/living/simple_animal/lizard,
 /turf/open/floor/plating/ground/dirt,
 /area/mainship/groundhq/ntf/hallways/gardens)
-"kUN" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 10
+"kUX" = (
+/obj/structure/disposalpipe/segment/corner{
+	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/carpet/red,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "kVb" = (
 /obj/machinery/telecomms/processor/preset_two,
@@ -13219,9 +13259,9 @@
 	name = "Shipside Medbay"
 	})
 "kWN" = (
-/obj/structure/table/mainship,
-/obj/effect/spawner/random/food_or_drink/sugary_snack,
-/turf/open/floor/wood,
+/obj/machinery/chem_dispenser/beer,
+/obj/structure/table/urban/shiny_black,
+/turf/open/floor/tile/darkish,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "kXh" = (
 /obj/machinery/camera/autoname/mainship{
@@ -13323,6 +13363,12 @@
 /obj/effect/ai_node,
 /turf/open/floor/mainship/floor,
 /area/mainship/hallways/hangar)
+"laf" = (
+/obj/structure/disposalpipe/segment/corner{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "lat" = (
 /turf/open/floor/mainship/sterile/side,
 /area/mainship/medical/surgery_hallway{
@@ -13401,6 +13447,13 @@
 	},
 /turf/open/floor/mainship/black,
 /area/mainship/command/self_destruct)
+"lcs" = (
+/obj/structure/flora/drought/grass,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/open/ground/grass,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "lcv" = (
 /obj/structure/table/mainship/nometal,
 /obj/machinery/chem_dispenser/beer,
@@ -13452,9 +13505,6 @@
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
 	})
-"leh" = (
-/turf/open/floor/wood,
-/area/mainship/living/basketball)
 "leF" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/floor/grass,
@@ -13519,6 +13569,23 @@
 	},
 /turf/open/floor/wood/darker,
 /area/mainship/medical/lower_medical)
+"lhX" = (
+/obj/structure/table/reinforced/fabric,
+/obj/machinery/microwave,
+/obj/item/reagent_containers/food/snacks/meat{
+	pixel_x = -1;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/food/snacks/meat{
+	pixel_x = -1;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/food/snacks/meat{
+	pixel_x = -1;
+	pixel_y = 2
+	},
+/turf/open/floor/freezer,
+/area/mainship/groundhq/clf/living/cafeteria)
 "lik" = (
 /obj/structure/cable,
 /obj/machinery/power/monitor/core,
@@ -13548,6 +13615,12 @@
 /area/mainship/medical/upper_medical{
 	name = "Shipside Medbay"
 	})
+"liU" = (
+/obj/machinery/vending/cola{
+	product_slogans = ""
+	},
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "liW" = (
 /obj/effect/ai_node,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -13732,6 +13805,15 @@
 /obj/structure/window/framed/mainship,
 /turf/open/floor/plating,
 /area/mainship/groundhq/ntf/engineering/upper_engine_monitoring)
+"loE" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/ground/grass,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
+"lpJ" = (
+/obj/structure/flora/pottedplant/twenty,
+/obj/structure/window,
+/turf/open/ground/grass,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "lpM" = (
 /obj/machinery/landinglight/alamo{
 	dir = 1
@@ -13774,7 +13856,7 @@
 /area/mainship/command/telecomms)
 "lrN" = (
 /turf/open/floor/mainship/mono,
-/area/mainship/living/basketball)
+/area/mainship/groundhq/clf/living/cafeteria)
 "lss" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment,
@@ -14233,27 +14315,12 @@
 /turf/open/floor/freezer,
 /area/mainship/living/cafeteria_starboard)
 "lJF" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/structure/closet/crate/freezer/rations,
-/turf/open/floor/freezer,
-/area/mainship/groundhq/ntf/living/captain_mess{
-	name = "Kitchen"
-	})
+/obj/structure/flora/drought/shroom,
+/turf/open/ground/grass,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "lJI" = (
 /turf/open/floor/plating,
 /area/mainship/living/evacuation/pod/one)
-"lJT" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
-/obj/machinery/door/poddoor/shutters/mainship/open/checkpoint{
-	dir = 2;
-	id = "floor3shipcheckpoint2"
-	},
-/turf/open/floor/mainship/stripesquare,
-/area/mainship/living/basketball)
 "lJY" = (
 /obj/structure/transmitter{
 	pixel_y = -22;
@@ -14286,7 +14353,7 @@
 	dir = 8
 	},
 /turf/open/floor/mainship/mono,
-/area/mainship/living/basketball)
+/area/mainship/groundhq/clf/living/cafeteria)
 "lKP" = (
 /turf/open/floor/mainship/sterile/side,
 /area/mainship/medical/upper_medical{
@@ -14400,6 +14467,15 @@
 /area/mainship/hallways/bow_hallway{
 	name = "Ship Floor 1 Hallways"
 	})
+"lOR" = (
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/plating/plating_catwalk,
+/area/mainship/hallways/bow_hallway{
+	name = "Ship Floor 1 Hallways"
+	})
 "lOS" = (
 /obj/effect/landmark/start/job/shiptech,
 /turf/open/floor/plating/plating_catwalk,
@@ -14426,28 +14502,12 @@
 	name = "Shipside Medbay"
 	})
 "lPQ" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
-/obj/item/reagent_containers/food/drinks/bottle/bluecuracao,
-/obj/item/reagent_containers/food/drinks/bottle/absinthe,
-/obj/item/reagent_containers/food/drinks/bottle/davenport,
-/obj/item/reagent_containers/food/drinks/bottle/cream,
-/obj/item/reagent_containers/food/drinks/bottle/cognac,
-/obj/item/reagent_containers/food/drinks/bottle/gin,
-/obj/item/reagent_containers/food/drinks/bottle/goldschlager,
-/obj/item/reagent_containers/food/drinks/bottle/kahlua,
-/obj/item/reagent_containers/food/drinks/bottle/sake,
-/obj/item/reagent_containers/food/drinks/bottle/tequila,
-/obj/item/reagent_containers/food/drinks/bottle/whiskey,
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
-/obj/item/reagent_containers/food/drinks/bottle/vermouth,
-/obj/item/reagent_containers/food/drinks/bottle/wine,
-/obj/item/reagent_containers/glass/rag,
-/obj/item/reagent_containers/food/drinks/shaker,
-/obj/item/reagent_containers/food/drinks/bottle/wine,
-/obj/item/reagent_containers/food/drinks/cans/ale,
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
-/turf/open/floor/wood,
+/obj/structure/bed/chair/sofa{
+	dir = 4
+	},
+/turf/open/floor/carpet/royalblack{
+	icon_state = "carpet_royalblack-55"
+	},
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "lQc" = (
 /obj/structure/window/framed/mainship/white,
@@ -14486,11 +14546,10 @@
 /area/mainship/hallways/aft_hallway{
 	name = "Ship Floor 3 Hallways"
 	})
-"lRW" = (
-/obj/structure/bed/chair/sofa/right{
-	dir = 8
-	},
-/turf/open/floor/mainship,
+"lQO" = (
+/obj/structure/table/reinforced/fabric,
+/obj/item/reagent_containers/cup/glass/bottle/champagne,
+/turf/open/floor/carpet/blue,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "lRY" = (
 /obj/machinery/light/floor,
@@ -14534,6 +14593,22 @@
 /obj/effect/landmark/start/job/crash/squadmarine,
 /turf/open/floor/mainship/mono,
 /area/mainship/living/cryo_cells)
+"lUE" = (
+/obj/structure/table/wood/fancy,
+/obj/item/trash/plate{
+	pixel_x = 3;
+	pixel_y = 7
+	},
+/obj/item/tool/kitchen/utensil/fork{
+	pixel_y = 3;
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/food/snacks/pastries/pumpkinpieslice{
+	pixel_y = 4;
+	pixel_x = 3
+	},
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "lVv" = (
 /obj/structure/transmitter{
 	pixel_y = 24;
@@ -14742,8 +14817,9 @@
 /turf/open/floor/tile/darkish,
 /area/mainship/groundhq/ntf/crimsonveil)
 "mfy" = (
-/obj/structure/disposalpipe/junction,
-/turf/open/floor/wood,
+/obj/structure/table/urban/shiny_black,
+/obj/item/reagent_containers/food/drinks/shaker,
+/turf/open/floor/tile/darkish,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "mfN" = (
 /obj/effect/turf_decal/warning_stripes/thin{
@@ -14787,13 +14863,10 @@
 /turf/open/floor/prison/cleanmarked,
 /area/mainship/groundhq/ntf/shipboard/brig_cells)
 "mhv" = (
-/obj/structure/table/mainship,
-/obj/machinery/chem_dispenser/soda,
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/camera/autoname/mainship,
-/turf/open/floor/wood,
+/turf/open/floor/urban/wood,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "mie" = (
 /obj/machinery/holopad,
@@ -14827,6 +14900,18 @@
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment/corner,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 4
+	},
+/turf/open/floor/plating/plating_catwalk,
+/area/mainship/hallways/aft_hallway{
+	name = "Ship Floor 3 Hallways"
+	})
+"mjr" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /turf/open/floor/plating/plating_catwalk,
@@ -15101,11 +15186,6 @@
 	dir = 9
 	},
 /area/mainship/command/self_destruct)
-"msc" = (
-/obj/item/toy/deck/kotahi,
-/obj/structure/table/wood/gambling,
-/turf/open/floor/wood,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "msx" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
@@ -15314,6 +15394,10 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/living/port_emb)
+"mCT" = (
+/obj/structure/flora/ausbushes/stalkybush,
+/turf/open/ground/grass,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "mDk" = (
 /obj/machinery/door/airlock/mainship/security{
 	name = "\improper Corpsec Office"
@@ -15441,10 +15525,6 @@
 /obj/effect/landmark/start/job/synthetic,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/living/cryo_cells)
-"mGM" = (
-/obj/machinery/floodlight/landing/hq,
-/turf/open/floor/wood,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "mHg" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	dir = 1
@@ -15616,6 +15696,9 @@
 	dir = 8
 	},
 /obj/effect/ai_node,
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/aft_hallway{
 	name = "Ship Floor 3 Hallways"
@@ -15907,6 +15990,13 @@
 /obj/machinery/marine_selector/gear/leader,
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
+"ndn" = (
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "nec" = (
 /turf/open/floor/step_trigger/supply_fall/row_two,
 /area/mainship/squads/req)
@@ -15936,6 +16026,11 @@
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
 	})
+"neR" = (
+/obj/structure/flora/pottedplant/nine,
+/obj/structure/window,
+/turf/open/ground/grass,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "neU" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/cable,
@@ -15949,6 +16044,15 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/living/port_emb)
+"nfz" = (
+/obj/structure/bed/chair/comfy{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "nfT" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
@@ -15978,12 +16082,6 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/shipboard/brig)
-"ngN" = (
-/obj/item/stack/flag/red,
-/turf/open/floor/mainship/green/corner{
-	dir = 4
-	},
-/area/mainship/living/basketball)
 "ngO" = (
 /obj/machinery/door/airlock/mainship/marine/general/sl,
 /turf/open/floor/mainship,
@@ -15996,11 +16094,6 @@
 	dir = 8
 	},
 /area/mainship/command/cic)
-"nhA" = (
-/turf/open/floor/mainship/green{
-	dir = 1
-	},
-/area/mainship/living/basketball)
 "nhR" = (
 /obj/structure/table/reinforced,
 /obj/item/flashlight/lamp{
@@ -16034,6 +16127,13 @@
 /area/mainship/medical/upper_medical{
 	name = "Shipside Medbay"
 	})
+"niX" = (
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "nje" = (
 /turf/closed/wall/mainship/outer,
 /area/mainship/hull/lower_hull)
@@ -16103,8 +16203,8 @@
 /turf/open/floor/wood,
 /area/mainship/hallways/dorm3)
 "nlR" = (
-/obj/structure/table/mainship,
-/turf/open/floor/wood,
+/obj/machinery/vending/boozeomat,
+/turf/open/floor/tile/darkish,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "nny" = (
 /obj/machinery/shower{
@@ -16125,6 +16225,13 @@
 /area/mainship/hallways/aft_hallway{
 	name = "Ship Floor 3 Hallways"
 	})
+"noM" = (
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment/corner{
+	dir = 2
+	},
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "npc" = (
 /obj/item/tool/crowbar,
 /turf/open/floor/mainship/mono,
@@ -16190,6 +16297,12 @@
 "nsr" = (
 /turf/open/floor/grass,
 /area/mainship/living/port_garden)
+"nss" = (
+/obj/structure/bed/chair/sofa/right{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "nsE" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 5
@@ -16236,6 +16349,13 @@
 /area/mainship/hallways/aft_hallway{
 	name = "Ship Floor 3 Hallways"
 	})
+"nwl" = (
+/obj/structure/ladder,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "nwr" = (
 /turf/open/space/basic,
 /area/space)
@@ -16295,14 +16415,6 @@
 /obj/effect/ai_node,
 /turf/open/floor/prison,
 /area/mainship/groundhq/ntf/shipboard/brig_cells)
-"nyh" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/mainship/green{
-	dir = 10
-	},
-/area/mainship/living/basketball)
 "nyt" = (
 /obj/machinery/gear{
 	id = "supply_elevator_gear"
@@ -16386,12 +16498,6 @@
 	},
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/general)
-"nDl" = (
-/obj/item/stack/flag/green,
-/turf/open/floor/mainship/green/corner{
-	dir = 1
-	},
-/area/mainship/living/basketball)
 "nDV" = (
 /obj/machinery/photocopier,
 /turf/open/floor/mainship/mono,
@@ -16602,6 +16708,12 @@
 /area/mainship/hallways/bow_hallway{
 	name = "Ship Floor 1 Hallways"
 	})
+"nOn" = (
+/obj/structure/bed/chair/sofa/left{
+	dir = 4
+	},
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "nOr" = (
 /obj/effect/ai_node,
 /turf/open/floor/mainship/orange{
@@ -16624,10 +16736,6 @@
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
 	})
-"nPj" = (
-/obj/structure/closet/basketball,
-/turf/open/floor/mainship,
-/area/mainship/living/basketball)
 "nPo" = (
 /turf/open/floor/step_trigger/supply_fall/row_five/two,
 /area/mainship/squads/req)
@@ -16644,19 +16752,6 @@
 	outside = 0;
 	name = "CEO Office"
 	})
-"nPI" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/layer1{
-	dir = 8;
-	on = 1
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/urban/wood,
-/area/sulaco/command{
-	name = "Captain's Room";
-	outside = 0
-	})
 "nQf" = (
 /obj/machinery/door/airlock/mainship/security{
 	dir = 1;
@@ -16669,6 +16764,12 @@
 /obj/structure/table/mainship,
 /turf/open/floor/wood,
 /area/mainship/hallways/dorm3)
+"nQA" = (
+/obj/structure/bed/chair/comfy,
+/obj/machinery/power/apc/mainship,
+/obj/structure/cable,
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "nQH" = (
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/mainship/mono,
@@ -16679,14 +16780,6 @@
 	},
 /turf/open/floor/wood,
 /area/mainship/groundhq/ntf/command/corporateliaison)
-"nQW" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/mainship/green{
-	dir = 8
-	},
-/area/mainship/living/basketball)
 "nRr" = (
 /turf/open/floor/prison/darkred/full,
 /area/mainship/groundhq/ntf/hallways/gardens)
@@ -16777,6 +16870,20 @@
 /obj/machinery/landinglight/cas,
 /turf/open/floor/plating,
 /area/mainship/hallways/hangar)
+"nTE" = (
+/obj/structure/cable,
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
+"nTG" = (
+/obj/structure/stairs{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/mainship/open/cic{
+	id = "shipside_cic_lockdown";
+	dir = 2
+	},
+/turf/open/floor/mainship/mono,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "nTM" = (
 /obj/effect/landmark/start/job/captain,
 /turf/open/floor/carpet/royalblack{
@@ -16805,6 +16912,13 @@
 	},
 /turf/open/floor/mainship/sterile/dark,
 /area/campaign/jungle_outpost/outpost/living/bathroom)
+"nUY" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/ground/grass,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "nVh" = (
 /obj/structure/closet/secure_closet/evidence,
 /turf/open/floor/mainship/red{
@@ -16818,17 +16932,6 @@
 	},
 /turf/open/floor/wood,
 /area/mainship/squads/specialist)
-"nVF" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/bed/chair{
-	dir = 4
-	},
-/turf/open/floor/mainship/green{
-	dir = 4
-	},
-/area/mainship/living/basketball)
 "nVK" = (
 /obj/structure/transmitter{
 	pixel_y = -22;
@@ -16891,8 +16994,27 @@
 	name = "Ship Floor 2 Hallways"
 	})
 "nYw" = (
-/obj/machinery/vending/dinnerware,
-/turf/open/floor/wood,
+/obj/structure/bed/chair/sofa/right{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblack{
+	icon_state = "carpet_royalblack-74"
+	},
+/area/mainship/groundhq/ntf/living/grunt_rnr)
+"nYO" = (
+/obj/structure/table/wood/fancy,
+/obj/item/reagent_containers/cup/glass/drinkingglass{
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/cup/glass/drinkingglass{
+	pixel_y = 0;
+	pixel_x = 6
+	},
+/obj/item/reagent_containers/food/drinks/bottle/specialwhiskey{
+	pixel_y = 0;
+	pixel_x = 1
+	},
+/turf/open/floor/carpet/royalblack,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "nZq" = (
 /obj/structure/cable,
@@ -17165,6 +17287,15 @@
 	},
 /turf/open/floor/mainship/floor,
 /area/campaign/jungle_outpost/outpost/living/bathroom)
+"ojh" = (
+/obj/structure/bed/chair/comfy{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment/corner{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "ojL" = (
 /obj/effect/ai_node,
 /turf/open/floor/mainship/mono,
@@ -17204,11 +17335,6 @@
 	},
 /turf/closed/wall/mainship,
 /area/mainship/hallways/workerprep)
-"omb" = (
-/obj/structure/table/wood,
-/obj/item/toy/deck,
-/turf/open/floor/mainship,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "omg" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -17251,21 +17377,6 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
-	})
-"ooA" = (
-/obj/structure/table/reinforced,
-/obj/item/tool/kitchen/utensil/knife,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/glass/rag,
-/obj/item/book/manual/chef_recipes,
-/obj/structure/transmitter/desk{
-	pixel_x = 10;
-	phone_category = "Service";
-	phone_id = "Bar Kitchen"
-	},
-/turf/open/floor/prison/kitchen,
-/area/mainship/groundhq/ntf/living/captain_mess{
-	name = "Kitchen"
 	})
 "ooD" = (
 /obj/machinery/vending/armor_supply,
@@ -17319,19 +17430,26 @@
 /obj/item/tool/crowbar,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/living/cryo_cells)
-"oqc" = (
-/obj/machinery/door/poddoor/shutters/mainship/open/checkpoint{
-	dir = 2;
-	id = "floor3shipcheckpoint2"
-	},
-/turf/open/floor/mainship/stripesquare,
-/area/mainship/living/basketball)
 "oqJ" = (
 /obj/structure/cable,
 /turf/closed/wall/mainship/white,
 /area/mainship/medical/surgery_hallway{
 	name = "Research"
 	})
+"oqM" = (
+/obj/effect/spawner/random/food_or_drink/sugary_snack,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/table/urban/shiny_brown,
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
+"oqP" = (
+/obj/structure/bed/chair/sofa/left{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "orc" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
@@ -17499,36 +17617,12 @@
 	},
 /turf/open/floor/tile/darkish,
 /area/mainship/groundhq/ntf/crimsonveil)
-"oxM" = (
-/obj/structure/closet/lasertag/blue,
-/turf/open/floor/mainship/green{
-	dir = 1
-	},
-/area/mainship/living/basketball)
 "oyb" = (
 /obj/machinery/processor,
 /turf/open/floor/prison/darkyellow{
 	dir = 6
 	},
 /area/mainship/groundhq/ntf/shipboard/brig_cells)
-"oyd" = (
-/obj/structure/bed/chair/wood/normal{
-	dir = 4
-	},
-/obj/item/ammo_casing/bullet{
-	pixel_x = 5;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/blood,
-/obj/item/weapon/gun/revolver/standard_revolver,
-/turf/open/floor/wood,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
-"oys" = (
-/obj/structure/closet/athletic_mixed,
-/turf/open/floor/mainship/green{
-	dir = 1
-	},
-/area/mainship/living/basketball)
 "oyt" = (
 /obj/item/ashtray/glass{
 	pixel_x = 10;
@@ -17559,9 +17653,6 @@
 	outside = 0
 	})
 "oyH" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -17633,7 +17724,7 @@
 /area/mainship/hallways/dorm3)
 "oAJ" = (
 /turf/closed/wall/mainship,
-/area/mainship/living/basketball)
+/area/mainship/groundhq/clf/living/cafeteria)
 "oAK" = (
 /obj/machinery/door/poddoor/mainship/ammo{
 	dir = 2;
@@ -17644,6 +17735,12 @@
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
 	})
+"oAW" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "oBL" = (
 /obj/machinery/door/airlock/mainship/generic{
 	dir = 1;
@@ -17728,20 +17825,15 @@
 /obj/structure/window/framed/mainship/hull,
 /turf/open/floor/mainship_hull,
 /area/mainship/hull/upper_hull)
-"oGf" = (
-/obj/structure/closet/secure_closet/freezer/kitchen,
-/obj/item/reagent_containers/food/snacks/soylentgreen,
-/obj/item/reagent_containers/food/snacks/spesslaw,
-/obj/item/reagent_containers/food/snacks/stuffing,
-/obj/item/reagent_containers/food/snacks/tofurkey,
-/obj/item/reagent_containers/food/snacks/waffles,
-/obj/machinery/light{
-	dir = 8
+"oFB" = (
+/obj/structure/bed/chair/comfy{
+	dir = 1
 	},
-/turf/open/floor/prison/kitchen,
-/area/mainship/groundhq/ntf/living/captain_mess{
-	name = "Kitchen"
-	})
+/obj/structure/disposalpipe/segment/corner{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "oGg" = (
 /turf/open/floor/mainship/black,
 /area/mainship/living/tankerbunks)
@@ -17842,10 +17934,11 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/living/cryo_cells)
 "oIx" = (
-/obj/structure/bed/chair/comfy{
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/open/floor/mainship,
+/turf/open/ground/grass,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "oID" = (
 /obj/machinery/camera/autoname/mainship{
@@ -17866,10 +17959,6 @@
 /area/outpost/cargo{
 	outside = 1
 	})
-"oJT" = (
-/obj/effect/ai_node,
-/turf/open/floor/mainship/green,
-/area/mainship/living/basketball)
 "oJY" = (
 /turf/closed/wall/mainship/outer,
 /area/mainship/hull/upper_hull)
@@ -17961,6 +18050,12 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/groundhq/ntf/engineering/upper_engine_monitoring)
+"oPR" = (
+/obj/structure/bed/chair/comfy{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "oRa" = (
 /obj/structure/closet/radiation,
 /turf/open/floor/mainship/cargo,
@@ -18052,12 +18147,8 @@
 	name = "Research"
 	})
 "oTP" = (
-/obj/machinery/door/airlock/mainship/generic{
-	dir = 1;
-	name = "\improper Kitchen"
-	},
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/prison/kitchen,
+/obj/machinery/smartfridge,
+/turf/closed/wall/mainship,
 /area/mainship/groundhq/ntf/living/captain_mess{
 	name = "Kitchen"
 	})
@@ -18122,6 +18213,17 @@
 /area/outpost/cargo{
 	outside = 1
 	})
+"oXl" = (
+/obj/structure/rack,
+/obj/item/reagent_containers/food/drinks/bottle/wine,
+/obj/item/reagent_containers/food/drinks/bottle/wine,
+/obj/item/reagent_containers/food/drinks/bottle/wine,
+/turf/open/floor/wood/variable/mosaic,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
+"oXC" = (
+/obj/machinery/vending/dinnerware,
+/turf/open/floor/freezer,
+/area/mainship/groundhq/clf/living/cafeteria)
 "oXJ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1{
 	dir = 4
@@ -18160,6 +18262,19 @@
 /obj/structure/window/framed/mainship/requisitions,
 /turf/open/floor/plating,
 /area/mainship/living/officer_study)
+"oYZ" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/door/airlock/multi_tile/mainship/generic/canteen{
+	dir = 2
+	},
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "oZv" = (
 /obj/machinery/light{
 	dir = 8
@@ -18400,6 +18515,13 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/command/telecomms)
+"pje" = (
+/obj/machinery/door/airlock/mainship/generic{
+	name = "\improper Freezer";
+	dir = 2
+	},
+/turf/open/floor/freezer,
+/area/mainship/groundhq/clf/living/cafeteria)
 "pjt" = (
 /obj/vehicle/ridden/big_bike{
 	dir = 4
@@ -18601,6 +18723,10 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/mainship/living/port_emb)
+"puz" = (
+/obj/machinery/light,
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "puE" = (
 /obj/structure/sign/directions/supply{
 	pixel_y = 14
@@ -18659,6 +18785,22 @@
 /obj/machinery/vending/weapon,
 /turf/open/floor/mainship/floor,
 /area/mainship/hallways/hangar)
+"pxf" = (
+/obj/structure/table/wood/fancy,
+/obj/item/trash/plate{
+	pixel_x = 3;
+	pixel_y = 7
+	},
+/obj/item/tool/kitchen/utensil/fork{
+	pixel_y = 3;
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/food/snacks/pastries/cheesecakeslice{
+	pixel_x = 3;
+	pixel_y = 2
+	},
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "pyl" = (
 /obj/structure/table/black,
 /obj/structure/flora/pottedplant/fourteen,
@@ -18694,17 +18836,10 @@
 /area/mainship/hallways/bow_hallway{
 	name = "Ship Floor 1 Hallways"
 	})
-"pzV" = (
-/obj/structure/closet/secure_closet/freezer/kitchen,
-/obj/item/reagent_containers/food/snacks/omelette,
-/turf/open/floor/prison/kitchen,
-/area/mainship/groundhq/ntf/living/captain_mess{
-	name = "Kitchen"
-	})
 "pAz" = (
 /obj/effect/ai_node,
 /turf/open/floor/mainship/mono,
-/area/mainship/living/basketball)
+/area/mainship/groundhq/clf/living/cafeteria)
 "pBp" = (
 /obj/machinery/vending/MarineMed,
 /obj/machinery/light,
@@ -18739,7 +18874,7 @@
 	dir = 4
 	},
 /turf/open/floor/mainship/mono,
-/area/mainship/living/basketball)
+/area/mainship/groundhq/clf/living/cafeteria)
 "pEN" = (
 /obj/machinery/light,
 /turf/open/floor/wood,
@@ -18814,6 +18949,17 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/lower_hull)
+"pIF" = (
+/obj/machinery/power/apc/mainship{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/machinery/disposal,
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "pJb" = (
 /obj/machinery/cic_maptable,
 /turf/open/floor/mainship/sterile/side{
@@ -18849,6 +18995,11 @@
 	},
 /turf/open/floor/mainship/green,
 /area/mainship/squads/req)
+"pLc" = (
+/obj/structure/table/reinforced/fabric,
+/obj/machinery/reagentgrinder,
+/turf/open/floor/freezer,
+/area/mainship/groundhq/clf/living/cafeteria)
 "pLo" = (
 /turf/open/floor/mainship/stripesquare,
 /area/mainship/hallways/bow_hallway{
@@ -18881,6 +19032,13 @@
 /area/mainship/medical/upper_medical{
 	name = "Shipside Medbay"
 	})
+"pMQ" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/table/urban/shiny_brown,
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "pMX" = (
 /obj/machinery/light{
 	dir = 8
@@ -18888,7 +19046,11 @@
 /turf/open/floor/stairs/rampbottom,
 /area/mainship/groundhq/ntf/engineering/upper_engine_monitoring)
 "pNe" = (
-/turf/open/floor/mainship,
+/obj/structure/flora/ausbushes/pointybush,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/ground/grass,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "pNm" = (
 /obj/structure/cable,
@@ -18970,13 +19132,6 @@
 	},
 /turf/open/floor/plating,
 /area/mainship/hallways/hangar)
-"pRi" = (
-/obj/structure/table/mainship,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/turf/open/floor/freezer,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "pSd" = (
 /obj/item/tool/mop,
 /obj/item/reagent_containers/glass/bucket/janibucket,
@@ -19093,6 +19248,12 @@
 	},
 /turf/open/floor/plating,
 /area/mainship/command/telecomms)
+"pWd" = (
+/obj/structure/bed/chair/comfy{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "pWA" = (
 /obj/machinery/door/poddoor/shutters/mainship/selfdestruct,
 /turf/closed/wall/mainship,
@@ -19111,6 +19272,16 @@
 /obj/structure/cable,
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/synthdorms)
+"pWS" = (
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/machinery/disposal,
+/obj/machinery/camera/autoname/mainship{
+	dir = 8
+	},
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "pXn" = (
 /obj/machinery/landinglight/alamo{
 	dir = 8
@@ -19314,13 +19485,12 @@
 /obj/structure/cable,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/living/cryo_cells)
-"qfa" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/prison/kitchen,
-/area/mainship/groundhq/ntf/living/captain_mess{
-	name = "Kitchen"
-	})
+"qeZ" = (
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "qfl" = (
 /obj/structure/table/mainship,
 /obj/machinery/computer/security/marinemainship{
@@ -19432,15 +19602,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/upper_hull)
-"qiV" = (
-/obj/structure/closet/secure_closet/freezer/fridge,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/freezer,
-/area/mainship/groundhq/ntf/living/captain_mess{
-	name = "Kitchen"
-	})
 "qjb" = (
 /obj/machinery/door/airlock/mainship/maint,
 /obj/machinery/door/poddoor/mainship/open/cic{
@@ -19456,13 +19617,6 @@
 "qjs" = (
 /turf/open/floor/tile/barber,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
-"qjw" = (
-/obj/machinery/door/airlock/mainship/maint,
-/obj/structure/cable,
-/turf/open/floor/prison/kitchen,
-/area/mainship/groundhq/ntf/living/captain_mess{
-	name = "Kitchen"
-	})
 "qld" = (
 /obj/effect/turf_decal/warning_stripes/thick/corner{
 	dir = 8
@@ -19653,13 +19807,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/upper_hull)
 "qsx" = (
-/obj/machinery/vending/cigarette{
-	product_slogans = ""
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/turf/open/floor/wood,
+/turf/open/floor/urban/wood,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "qsM" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -20085,6 +20233,13 @@
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
 	})
+"qJt" = (
+/obj/structure/rack,
+/obj/item/reagent_containers/cup/glass/bottle/lizardwine,
+/obj/item/reagent_containers/cup/glass/bottle/lizardwine,
+/obj/item/reagent_containers/cup/glass/bottle/lizardwine,
+/turf/open/floor/wood/variable/mosaic,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "qJw" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment,
@@ -20165,11 +20320,11 @@
 	},
 /turf/open/floor/mainship/cargo,
 /area/mainship/squads/req)
-"qMQ" = (
-/turf/open/floor/mainship/green{
-	dir = 6
-	},
-/area/mainship/living/basketball)
+"qNe" = (
+/obj/structure/table/reinforced/fabric,
+/obj/effect/spawner/random/food_or_drink/sugary_snack,
+/turf/open/floor/prison/kitchen,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "qNB" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 10
@@ -20441,13 +20596,6 @@
 /area/mainship/hallways/aft_hallway{
 	name = "Ship Floor 3 Hallways"
 	})
-"qZD" = (
-/obj/effect/ai_node,
-/obj/machinery/camera/autoname/mainship{
-	dir = 1
-	},
-/turf/open/floor/freezer,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "qZG" = (
 /mob/living/simple_animal/cat/martin,
 /turf/open/floor/mainship/mono,
@@ -20510,6 +20658,13 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/upper_hull)
+"rca" = (
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/turf/open/floor/prison/kitchen,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "rcw" = (
 /obj/structure/bed/chair/wood/wings,
 /obj/effect/ai_node,
@@ -20566,6 +20721,9 @@
 "reh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/cable,
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/aft_hallway{
 	name = "Ship Floor 3 Hallways"
@@ -20629,7 +20787,9 @@
 	pixel_y = 0;
 	pixel_x = 1
 	},
-/turf/open/floor/carpet/royalblack,
+/turf/open/floor/carpet/royalblack{
+	icon_state = "carpet_royalblack-110"
+	},
 /area/sulaco/command{
 	name = "Captain's Room";
 	outside = 0
@@ -20710,17 +20870,8 @@
 	name = "Shipside Medbay"
 	})
 "roJ" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/wood,
+/turf/open/floor/mainship/red/full,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
-"roO" = (
-/obj/structure/closet/boxinggloves,
-/turf/open/floor/mainship/green{
-	dir = 5
-	},
-/area/mainship/living/basketball)
 "rpR" = (
 /obj/machinery/light{
 	dir = 1
@@ -20745,10 +20896,6 @@
 /obj/structure/table/wood,
 /obj/item/camera,
 /turf/open/floor/wood,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
-"rsk" = (
-/obj/structure/table/mainship,
-/turf/open/floor/freezer,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "rsm" = (
 /turf/open/ground/coast{
@@ -20778,13 +20925,6 @@
 /area/mainship/medical/upper_medical{
 	name = "Shipside Medbay"
 	})
-"rsH" = (
-/obj/machinery/vending/coffee,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/turf/open/floor/wood,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "rte" = (
 /obj/effect/landmark/start/job/squadmarine,
 /obj/effect/landmark/start/job/crash/squadmarine,
@@ -20814,6 +20954,10 @@
 	},
 /turf/open/floor/wood,
 /area/mainship/hallways/dorm2)
+"ruP" = (
+/obj/machinery/vending/boozeomat,
+/turf/open/floor/freezer,
+/area/mainship/groundhq/clf/living/cafeteria)
 "ruW" = (
 /obj/machinery/door/poddoor/shutters/mainship/selfdestruct,
 /obj/machinery/keycard_auth,
@@ -21164,14 +21308,6 @@
 	dir = 4
 	},
 /area/mainship/command/self_destruct)
-"rKO" = (
-/obj/structure/hoop{
-	dir = 8;
-	id = "basketball";
-	side = "right"
-	},
-/turf/open/floor/wood,
-/area/mainship/living/basketball)
 "rLn" = (
 /obj/structure/urinal{
 	pixel_y = 20
@@ -21195,12 +21331,6 @@
 	outside = 0;
 	name = "CEO Office"
 	})
-"rLL" = (
-/obj/structure/closet/lasertag/red,
-/turf/open/floor/mainship/green{
-	dir = 1
-	},
-/area/mainship/living/basketball)
 "rMn" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -21229,6 +21359,22 @@
 /obj/structure/cable,
 /turf/open/floor/mainship/mono,
 /area/mainship/living/tankerbunks)
+"rNS" = (
+/obj/structure/table/wood/fancy,
+/obj/item/trash/plate{
+	pixel_x = 3;
+	pixel_y = 7
+	},
+/obj/item/tool/kitchen/utensil/fork{
+	pixel_y = 3;
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/food/snacks/meatsteak{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "rOu" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/mainship/maint,
@@ -21247,10 +21393,10 @@
 	name = "Shipside Medbay"
 	})
 "rOD" = (
-/obj/structure/bed/chair/comfy{
-	dir = 4
+/obj/machinery/light/small{
+	dir = 8
 	},
-/turf/open/floor/mainship,
+/turf/open/floor/wood/variable/mosaic,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "rOZ" = (
 /obj/structure/cable,
@@ -21352,13 +21498,6 @@
 	dir = 8
 	},
 /area/mainship/medical/operating_room_four)
-"rTL" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/ai_node,
-/turf/open/floor/wood,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "rTO" = (
 /obj/structure/flora/pottedplant/twentytwo,
 /obj/machinery/firealarm,
@@ -21400,6 +21539,12 @@
 /obj/structure/cable,
 /turf/open/floor/stairs/rampbottom,
 /area/mainship/hull/upper_hull)
+"rVV" = (
+/obj/structure/table/reinforced/fabric,
+/obj/item/reagent_containers/cup/glass,
+/obj/item/reagent_containers/cup/glass,
+/turf/open/floor/carpet/blue,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "rWA" = (
 /obj/item/radio/intercom/general,
 /obj/structure/cable,
@@ -21552,11 +21697,11 @@
 	},
 /area/mainship/hull/upper_hull)
 "sbU" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/structure/disposalpipe/junction/flipped{
 	dir = 4
 	},
 /turf/open/floor/plating/plating_catwalk,
@@ -21755,12 +21900,6 @@
 	},
 /turf/closed/wall/mainship,
 /area/mainship/ntf/fcroom)
-"skM" = (
-/obj/structure/punching_bag,
-/turf/open/floor/mainship/green{
-	dir = 9
-	},
-/area/mainship/living/basketball)
 "slI" = (
 /obj/structure/cable,
 /turf/open/floor/urban/wood,
@@ -21927,6 +22066,30 @@
 	},
 /turf/open/floor/mainship/black/full,
 /area/mainship/shipboard/firing_range)
+"sso" = (
+/obj/item/reagent_containers/food/snacks/grown/tomato,
+/obj/item/reagent_containers/food/snacks/grown/tomato,
+/obj/item/reagent_containers/food/snacks/grown/tomato,
+/obj/item/reagent_containers/food/snacks/grown/tomato,
+/obj/item/reagent_containers/food/snacks/grown/tomato,
+/obj/item/reagent_containers/food/snacks/grown/tomato,
+/obj/item/reagent_containers/food/snacks/grown/tomato,
+/obj/item/reagent_containers/food/snacks/grown/tomato,
+/obj/item/reagent_containers/food/snacks/grown/tomato,
+/obj/item/reagent_containers/food/snacks/grown/tomato,
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/food/snacks/grown/potato,
+/obj/item/reagent_containers/food/snacks/grown/potato,
+/obj/item/reagent_containers/food/snacks/grown/potato,
+/obj/item/reagent_containers/food/snacks/grown/potato,
+/obj/item/reagent_containers/food/snacks/grown/potato,
+/obj/item/reagent_containers/food/snacks/grown/potato,
+/obj/item/reagent_containers/food/snacks/grown/potato,
+/obj/item/reagent_containers/food/snacks/grown/potato,
+/obj/item/reagent_containers/food/snacks/grown/potato,
+/obj/item/reagent_containers/food/snacks/grown/potato,
+/turf/open/floor/freezer,
+/area/mainship/groundhq/clf/living/cafeteria)
 "ssx" = (
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/port_umbilical{
@@ -22041,8 +22204,8 @@
 	name = "Research"
 	})
 "swI" = (
-/obj/machinery/floodlight/landing/hq,
-/turf/open/floor/mainship,
+/obj/structure/flora/ausbushes/reedbush,
+/turf/open/ground/grass,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "swM" = (
 /turf/open/floor/plating/plating_catwalk,
@@ -22110,6 +22273,11 @@
 /obj/structure/cable,
 /turf/open/floor/mainship/mono,
 /area/mainship/squads/req)
+"szl" = (
+/obj/structure/table/reinforced/fabric,
+/obj/item/reagent_containers/food/drinks/coffee/cafe_latte,
+/turf/open/floor/carpet/blue,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "szL" = (
 /obj/machinery/door/airlock/multi_tile/mainship/maint{
 	dir = 1;
@@ -22206,6 +22374,20 @@
 /area/outpost/cargo{
 	outside = 1
 	})
+"sEn" = (
+/obj/item/reagent_containers/food/snacks/meat/monkey,
+/obj/item/reagent_containers/food/snacks/meat/monkey,
+/obj/item/reagent_containers/food/snacks/meat/monkey,
+/obj/item/reagent_containers/food/snacks/meat/monkey,
+/obj/item/reagent_containers/food/snacks/meat/monkey,
+/obj/item/reagent_containers/food/snacks/flour,
+/obj/item/reagent_containers/food/snacks/flour,
+/obj/item/reagent_containers/food/snacks/flour,
+/obj/item/reagent_containers/food/snacks/flour,
+/obj/item/reagent_containers/food/snacks/flour,
+/obj/structure/closet/crate/freezer,
+/turf/open/floor/freezer,
+/area/mainship/groundhq/clf/living/cafeteria)
 "sEt" = (
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating,
@@ -22262,9 +22444,6 @@
 /obj/structure/cable,
 /obj/effect/landmark/start/job/vanguard,
 /obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
 /turf/open/floor/plating/plating_catwalk,
@@ -22368,11 +22547,9 @@
 /turf/open/floor/freezer,
 /area/mainship/living/cafeteria_starboard)
 "sMc" = (
-/obj/structure/table/mainship,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/wood,
+/obj/machinery/chem_dispenser/soda,
+/obj/structure/table/urban/shiny_black,
+/turf/open/floor/tile/darkish,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "sMi" = (
 /obj/effect/turf_decal/warning_stripes/thin{
@@ -22446,18 +22623,12 @@
 "sOB" = (
 /turf/open/floor/step_trigger/supply_fall/row_two/three,
 /area/mainship/squads/req)
-"sPj" = (
-/obj/structure/bed/chair/comfy{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/mainship,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "sPm" = (
-/obj/structure/sink{
-	pixel_y = 15
+/obj/structure/table/wood/fancy,
+/obj/item/coin/gold,
+/turf/open/floor/carpet/royalblack{
+	icon_state = "carpet_royalblack-110"
 	},
-/turf/open/floor/wood,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "sPt" = (
 /obj/item/tool/soap{
@@ -22481,18 +22652,13 @@
 	name = "Captain's Room";
 	outside = 0
 	})
-"sQc" = (
-/obj/structure/table/wood,
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/machinery/camera/autoname/mainship{
-	dir = 8
-	},
-/turf/open/floor/mainship,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "sQj" = (
-/turf/open/floor/wood,
+/obj/structure/cable,
+/obj/machinery/door/airlock/mainship/command/cic{
+	dir = 2;
+	name = "\improper Officer's Mess"
+	},
+/turf/open/floor/urban/wood,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "sQz" = (
 /obj/structure/cable,
@@ -22599,6 +22765,16 @@
 	},
 /turf/open/floor/plating,
 /area/mainship/living/cryo_cells)
+"sUh" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/structure/disposalpipe/junction,
+/turf/open/floor/plating/plating_catwalk,
+/area/mainship/hallways/aft_hallway{
+	name = "Ship Floor 3 Hallways"
+	})
 "sUl" = (
 /turf/open/floor/plating/ground/dirtgrassborder/corner2{
 	dir = 4
@@ -22731,10 +22907,32 @@
 /obj/structure/catwalk,
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/hallways/gardens)
+"taF" = (
+/obj/structure/table/reinforced/fabric,
+/obj/item/book/manual/chef_recipes,
+/turf/open/floor/freezer,
+/area/mainship/groundhq/clf/living/cafeteria)
 "taH" = (
 /obj/effect/ai_node,
 /turf/open/floor/mainship,
 /area/mainship/living/cafeteria_starboard)
+"taI" = (
+/obj/structure/table/wood/fancy,
+/obj/item/trash/plate{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/tool/kitchen/utensil/fork{
+	pixel_y = 3;
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/food/snacks/meatsteak{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/structure/cable,
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "taO" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk,
@@ -22883,6 +23081,11 @@
 /area/mainship/hallways/bow_hallway{
 	name = "Ship Floor 1 Hallways"
 	})
+"thc" = (
+/obj/structure/table/reinforced/fabric,
+/obj/item/reagent_containers/food/snacks/fries,
+/turf/open/floor/prison/kitchen,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "thg" = (
 /turf/open/floor/step_trigger/supply_fall/row_four/five,
 /area/mainship/squads/req)
@@ -22927,6 +23130,12 @@
 "tiy" = (
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/living/port_emb)
+"tiM" = (
+/obj/machinery/door/airlock/multi_tile/mainship/generic/canteen{
+	dir = 2
+	},
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "tje" = (
 /obj/structure/table/mainship,
 /obj/item/tool/extinguisher/mini,
@@ -23015,10 +23224,6 @@
 	},
 /turf/open/floor/plating,
 /area/mainship/hallways/hangar)
-"tlO" = (
-/obj/machinery/door/airlock/mainship/maint,
-/turf/open/floor/freezer,
-/area/mainship/hull/upper_hull)
 "tlP" = (
 /obj/effect/landmark/start/job/medicalofficer,
 /turf/open/floor/mainship/sterile/dark,
@@ -23098,10 +23303,6 @@
 /obj/machinery/door/poddoor/shutters/mainship/req/ro,
 /turf/open/floor/mainship/mono,
 /area/mainship/squads/req)
-"tnM" = (
-/obj/effect/ai_node,
-/turf/open/floor/wood,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "toa" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
@@ -23112,6 +23313,16 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/mainship/living/port_emb)
+"tor" = (
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/obj/machinery/door/airlock/mainship/command/cic{
+	dir = 2;
+	name = "\improper Officer's Mess"
+	},
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "toZ" = (
 /obj/structure/bed,
 /obj/item/bedsheet/green,
@@ -23121,6 +23332,10 @@
 /area/mainship/hallways/port_hallway{
 	name = "Ship Floor 2 Hallways"
 	})
+"tpi" = (
+/obj/structure/ladder,
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "tpw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
@@ -23176,6 +23391,10 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/lower_hull)
+"trc" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "tro" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
@@ -23275,6 +23494,11 @@
 "typ" = (
 /turf/closed/wall/mainship,
 /area/mainship/hallways/dorm3)
+"tyH" = (
+/obj/effect/spawner/random/food_or_drink/sugary_snack,
+/obj/structure/table/urban/shiny_brown,
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "tzm" = (
 /turf/open/floor/mainship/orange/corner{
 	dir = 1
@@ -23307,9 +23531,6 @@
 /turf/open/space/basic,
 /area/mainship/hull/lower_hull)
 "tAw" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 6
-	},
 /obj/structure/disposalpipe/segment/corner{
 	dir = 4
 	},
@@ -23318,6 +23539,10 @@
 	name = "Captain's Room";
 	outside = 0
 	})
+"tBd" = (
+/obj/structure/table/urban/shiny_brown,
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "tBv" = (
 /obj/machinery/telecomms/server/presets/alpha,
 /turf/open/floor/mainship/tcomms,
@@ -23345,13 +23570,6 @@
 	},
 /turf/closed/wall/mainship/outer,
 /area/mainship/hull/lower_hull)
-"tCx" = (
-/obj/machinery/door/airlock/mainship/maint,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/plating/plating_catwalk,
-/area/mainship/hull/upper_hull)
 "tCH" = (
 /obj/machinery/door/airlock/mainship/security{
 	dir = 1;
@@ -23400,9 +23618,6 @@
 "tED" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
 /obj/machinery/camera/autoname,
@@ -23466,6 +23681,13 @@
 /obj/effect/ai_node,
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
+"tIg" = (
+/obj/structure/bed/chair/sofa{
+	dir = 1
+	},
+/obj/machinery/light,
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "tIk" = (
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/hangar)
@@ -23580,6 +23802,20 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/mainship/command/cic)
+"tLN" = (
+/obj/structure/table/wood/fancy,
+/obj/item/trash/plate{
+	pixel_x = 3;
+	pixel_y = 7
+	},
+/obj/item/tool/kitchen/utensil/fork{
+	pixel_y = 3;
+	pixel_x = -7
+	},
+/obj/structure/cable,
+/obj/item/reagent_containers/food/snacks/burger/cheese,
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "tLW" = (
 /obj/machinery/door/airlock/mainship/generic{
 	dir = 1;
@@ -23776,11 +24012,17 @@
 /obj/machinery/loadout_vendor,
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/general)
+"tUb" = (
+/obj/structure/window/framed/mainship,
+/turf/closed/wall/mainship/outer,
+/area/deltastation/engineering{
+	name = "Engine Monitoring";
+	outside = 0
+	})
 "tUF" = (
-/obj/structure/closet/basketball,
 /obj/structure/cable,
 /turf/open/floor/mainship,
-/area/mainship/living/basketball)
+/area/mainship/groundhq/clf/living/cafeteria)
 "tVt" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/cable,
@@ -24008,6 +24250,19 @@
 /obj/structure/cable,
 /turf/open/floor/tile/barber,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
+"ufS" = (
+/obj/machinery/power/apc/mainship{
+	dir = 4
+	},
+/obj/machinery/disposal,
+/obj/structure/cable,
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/turf/open/floor/prison/kitchen,
+/area/mainship/groundhq/ntf/living/captain_mess{
+	name = "Kitchen"
+	})
 "ugx" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment/corner{
@@ -24220,6 +24475,12 @@
 	},
 /turf/open/floor/urban/wood/blackwood,
 /area/mainship/groundhq/ntf/crimsonveil)
+"uqd" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/space/basic,
+/area/space)
 "uqg" = (
 /obj/machinery/light{
 	dir = 1
@@ -24318,10 +24579,6 @@
 "uuz" = (
 /turf/open/floor/plating/icefloor/warnplate,
 /area/mainship/squads/req)
-"uuB" = (
-/obj/item/toy/beach_ball/basketball,
-/turf/open/floor/wood,
-/area/mainship/living/basketball)
 "uuH" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/mainship,
@@ -24400,6 +24657,12 @@
 /obj/item/bedsheet/yellow,
 /turf/open/floor/mainship,
 /area/mainship/groundhq/ntf/engineering/ce_room)
+"uwW" = (
+/obj/structure/disposalpipe/segment/corner{
+	dir = 1
+	},
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "uxe" = (
 /obj/structure/closet/secure_closet/injection,
 /turf/open/floor/mainship/red{
@@ -24427,17 +24690,6 @@
 	dir = 4
 	},
 /area/mainship/groundhq/ntf/shipboard/brig)
-"uyu" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/bed/chair{
-	dir = 1
-	},
-/turf/open/floor/mainship/green{
-	dir = 1
-	},
-/area/mainship/living/basketball)
 "uyy" = (
 /turf/open/floor/plating/icefloor/warnplate{
 	dir = 8
@@ -24449,12 +24701,6 @@
 /obj/structure/cable,
 /turf/open/floor/mainship/mono,
 /area/mainship/living/port_garden)
-"uyH" = (
-/obj/item/stack/flag/green,
-/turf/open/floor/mainship/green/corner{
-	dir = 8
-	},
-/area/mainship/living/basketball)
 "uzi" = (
 /obj/structure/largecrate/supply/medicine,
 /turf/open/floor/mainship/cargo,
@@ -24642,6 +24888,18 @@
 	dir = 8
 	},
 /area/mainship/command/self_destruct)
+"uHn" = (
+/obj/structure/table/urban/shiny_black,
+/obj/item/reagent_containers/food/drinks/bottle/rum{
+	pixel_x = 6;
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/food/drinks/bottle/whiskey{
+	pixel_x = 1;
+	pixel_y = 3
+	},
+/turf/open/floor/tile/darkish,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "uHy" = (
 /obj/structure/table/wood,
 /obj/item/clipboard{
@@ -24872,6 +25130,13 @@
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
 	})
+"uSR" = (
+/obj/structure/flora/pottedplant/ten,
+/obj/machinery/camera/autoname/mainship{
+	dir = 1
+	},
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "uSY" = (
 /obj/machinery/door/firedoor/mainship{
 	dir = 2
@@ -24945,13 +25210,6 @@
 	},
 /turf/open/floor/mainship/cargo,
 /area/mainship/engineering/port_atmos)
-"uVR" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/structure/cable,
-/turf/open/floor/mainship,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "uVU" = (
 /obj/machinery/door/airlock/mainship/engineering/engine{
 	dir = 2
@@ -24975,16 +25233,6 @@
 /area/outpost/cargo{
 	outside = 1
 	})
-"uWm" = (
-/obj/structure/bed/chair/wood/normal{
-	dir = 8
-	},
-/obj/item/ammo_casing/bullet{
-	pixel_x = -7;
-	pixel_y = 4
-	},
-/turf/open/floor/wood,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "uWU" = (
 /obj/structure/closet/secure_closet/engineering_personal,
 /obj/item/storage/backpack/marine/engineerpack,
@@ -25018,6 +25266,13 @@
 /area/mainship/groundhq/ntf/living/captain_mess{
 	name = "Kitchen"
 	})
+"uYf" = (
+/obj/structure/table/reinforced/fabric,
+/turf/open/floor/freezer,
+/area/mainship/groundhq/clf/living/cafeteria)
+"uYj" = (
+/turf/open/floor/wood/variable/mosaic,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "uYD" = (
 /turf/open/ground/coast/corner2{
 	dir = 8
@@ -25084,6 +25339,16 @@
 	},
 /turf/open/floor/mainship/stripesquare,
 /area/mainship/hull/upper_hull)
+"vbu" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/ground/grass,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
+"vbx" = (
+/obj/structure/bed/chair/comfy{
+	dir = 1
+	},
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "vbI" = (
 /obj/machinery/landinglight/alamo,
 /turf/open/floor/plating,
@@ -25109,11 +25374,11 @@
 	name = "Research"
 	})
 "vcI" = (
-/obj/structure/bed/chair/comfy{
-	dir = 4
-	},
-/obj/effect/ai_node,
-/turf/open/floor/mainship,
+/obj/structure/rack,
+/obj/item/reagent_containers/cup/glass/bottle/wine,
+/obj/item/reagent_containers/cup/glass/bottle/wine,
+/obj/item/reagent_containers/cup/glass/bottle/wine,
+/turf/open/floor/wood/variable/mosaic,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "vcT" = (
 /obj/machinery/power/apc/mainship,
@@ -25152,6 +25417,15 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/groundhq/ntf/engineering/engine_core)
+"veb" = (
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/turf/open/floor/plating/plating_catwalk,
+/area/mainship/hallways/aft_hallway{
+	name = "Ship Floor 3 Hallways"
+	})
 "ven" = (
 /turf/open/floor/mainship/sterile/side{
 	dir = 6
@@ -25262,11 +25536,6 @@
 	outside = 0;
 	name = "CEO Office"
 	})
-"vkp" = (
-/obj/structure/table/mainship,
-/obj/machinery/chem_dispenser/beer,
-/turf/open/floor/wood,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "vkz" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -25366,12 +25635,6 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/upper_hull)
-"vnS" = (
-/obj/structure/cable,
-/turf/open/floor/prison/kitchen,
-/area/mainship/groundhq/ntf/living/captain_mess{
-	name = "Kitchen"
-	})
 "voB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 1
@@ -25438,7 +25701,7 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/plating/plating_catwalk,
-/area/mainship/living/basketball)
+/area/mainship/groundhq/clf/living/cafeteria)
 "vpR" = (
 /obj/effect/landmark/start/job/fieldcommander,
 /obj/machinery/light,
@@ -25460,6 +25723,11 @@
 /obj/structure/window/framed/mainship/hull,
 /turf/open/floor/plating,
 /area/mainship/command/cic)
+"vqq" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/window,
+/turf/open/ground/grass,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "vqB" = (
 /obj/structure/rack,
 /obj/item/storage/box/flashbangs,
@@ -25744,6 +26012,13 @@
 	},
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/req)
+"vBf" = (
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/food/snacks/sliceable/cheesewheel,
+/turf/open/floor/prison/kitchen,
+/area/mainship/groundhq/ntf/living/captain_mess{
+	name = "Kitchen"
+	})
 "vBk" = (
 /obj/machinery/door/airlock/mainship/maint{
 	dir = 8
@@ -25802,6 +26077,9 @@
 	dir = 4
 	},
 /obj/effect/ai_node,
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/aft_hallway{
 	name = "Ship Floor 3 Hallways"
@@ -25810,15 +26088,6 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass,
 /area/mainship/living/port_garden)
-"vDU" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/camera/autoname/mainship,
-/turf/open/floor/mainship/mono,
-/area/mainship/hallways/aft_hallway{
-	name = "Ship Floor 3 Hallways"
-	})
 "vEe" = (
 /obj/machinery/light/mainship{
 	dir = 8
@@ -25827,8 +26096,7 @@
 /turf/open/floor/mainship,
 /area/mainship/squads/general)
 "vEf" = (
-/obj/machinery/door/airlock/multi_tile/mainship/generic,
-/turf/open/floor/mainship,
+/turf/open/floor/carpet/red,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "vFx" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -26049,6 +26317,14 @@
 /obj/machinery/light/small,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/upper_hull)
+"vTr" = (
+/obj/structure/bed/chair/sofa/left{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblack{
+	icon_state = "carpet_royalblack-137"
+	},
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "vTs" = (
 /obj/structure/cargo_container/nt{
 	dir = 1
@@ -26057,10 +26333,6 @@
 /area/outpost/cargo{
 	outside = 1
 	})
-"vTw" = (
-/obj/structure/sign/double/barsign,
-/turf/closed/wall/mainship/outer,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "vTM" = (
 /obj/structure/largecrate/supply/powerloader,
 /turf/open/floor/mainship/cargo,
@@ -26097,7 +26369,6 @@
 	})
 "vWx" = (
 /obj/machinery/light/mainship/small,
-/obj/effect/ai_node,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/upper_hull)
 "vXl" = (
@@ -26117,6 +26388,10 @@
 "vXZ" = (
 /turf/open/floor/step_trigger/supply_fall/row_two/two,
 /area/mainship/squads/req)
+"vYA" = (
+/obj/machinery/vending/snack,
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "vYS" = (
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/upper_medical{
@@ -26306,6 +26581,16 @@
 /area/deltastation/engineering/engine_smes{
 	outside = 0
 	})
+"wgi" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "wgw" = (
 /obj/structure/morgue{
 	dir = 8
@@ -26625,6 +26910,19 @@
 /obj/machinery/loadout_vendor,
 /turf/open/floor/mainship/sterile/plain,
 /area/mainship/living/tankerbunks)
+"wqF" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/open/ground/grass,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
+"wqG" = (
+/obj/structure/table/reinforced/fabric,
+/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/item/reagent_containers/food/condiment/saltshaker,
+/turf/open/floor/freezer,
+/area/mainship/groundhq/clf/living/cafeteria)
 "wqO" = (
 /obj/structure/transport/linear/public{
 	icon = 'icons/turf/elevator.dmi';
@@ -26709,16 +27007,6 @@
 /area/mainship/shipboard/port_missiles{
 	name = "Shipside Corpsec Office"
 	})
-"wwI" = (
-/obj/structure/bed/chair/wood/normal,
-/obj/item/ammo_casing/bullet{
-	pixel_x = 5
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/wood,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "wwK" = (
 /obj/machinery/door/poddoor/shutters/mainship/open/checkpoint{
 	dir = 2;
@@ -26779,6 +27067,10 @@
 /area/mainship/medical/upper_medical{
 	name = "Shipside Medbay"
 	})
+"wzR" = (
+/obj/structure/disposalpipe/junction,
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "wAa" = (
 /obj/machinery/vending/coffee,
 /turf/open/floor/mainship_hull,
@@ -26828,6 +27120,13 @@
 /obj/effect/ai_node,
 /turf/open/floor/mainship/mono,
 /area/mainship/living/port_garden)
+"wCf" = (
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "wCC" = (
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating/plating_catwalk,
@@ -26858,6 +27157,10 @@
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/command/corporateliaison)
+"wEa" = (
+/obj/machinery/vending/snack,
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "wFf" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -26958,6 +27261,21 @@
 /area/mainship/hallways/bow_hallway{
 	name = "Ship Floor 1 Hallways"
 	})
+"wJu" = (
+/obj/structure/table/wood/fancy,
+/obj/item/trash/plate{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/tool/kitchen/utensil/fork{
+	pixel_y = 3;
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/food/snacks/pastries/plaincakeslice{
+	pixel_x = 2
+	},
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "wJU" = (
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/aft_hallway{
@@ -26975,6 +27293,10 @@
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
 	})
+"wKX" = (
+/obj/machinery/gibber,
+/turf/open/floor/freezer,
+/area/mainship/groundhq/clf/living/cafeteria)
 "wKZ" = (
 /obj/structure/bed/chair/nometal{
 	dir = 1
@@ -27031,10 +27353,6 @@
 	},
 /turf/open/floor/plating/mainship,
 /area/mainship/hull/upper_hull)
-"wMu" = (
-/obj/item/stack/flag/red,
-/turf/open/floor/mainship/green/corner,
-/area/mainship/living/basketball)
 "wMy" = (
 /obj/vehicle/ridden/powerloader,
 /turf/open/floor/mainship/cargo,
@@ -27080,10 +27398,12 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/shipboard/brig)
 "wNU" = (
-/obj/structure/bed/chair/sofa/right{
-	dir = 1
-	},
-/turf/open/floor/mainship,
+/obj/structure/table/wood/fancy,
+/obj/item/clothing/under/rank/bartender,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/under/dress/maid,
+/obj/item/clothing/shoes/laceup,
+/turf/open/floor/tile/darkish,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "wNY" = (
 /turf/open/floor/mainship/green{
@@ -27490,10 +27810,12 @@
 /obj/effect/landmark/reclone_tp,
 /turf/open/floor/mainship,
 /area/mainship/living/port_emb)
-"xbB" = (
-/obj/structure/reagent_dispensers/water_cooler,
-/turf/open/floor/mainship,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
+"xbu" = (
+/obj/structure/bed/chair/sofa{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "xbI" = (
 /obj/structure/table/mainship,
 /obj/machinery/computer/station_alert{
@@ -27554,7 +27876,7 @@
 	dir = 1
 	},
 /turf/open/floor/mainship/mono,
-/area/mainship/living/basketball)
+/area/mainship/groundhq/clf/living/cafeteria)
 "xea" = (
 /obj/machinery/door/airlock/multi_tile/mainship/maint,
 /obj/machinery/door/firedoor/multi_tile,
@@ -27576,10 +27898,8 @@
 	name = "Ship Floor 1 Hallways"
 	})
 "xgj" = (
-/obj/structure/bed/chair/sofa/corner{
-	dir = 8
-	},
-/turf/open/floor/mainship,
+/obj/structure/reagent_dispensers/beerkeg,
+/turf/open/floor/tile/darkish,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "xgW" = (
 /turf/open/floor/mainship/research/containment/floor2{
@@ -27719,9 +28039,12 @@
 /area/mainship/hull/upper_hull)
 "xlz" = (
 /obj/structure/table/urban/shiny_brown,
-/obj/item/tool/pen/blue,
-/obj/structure/paper_bin,
-/obj/docking_port/stationary/marine_dropship/crash_target,
+/obj/item/tool/pen/blue{
+	pixel_y = 6
+	},
+/obj/structure/paper_bin{
+	pixel_y = 9
+	},
 /turf/open/floor/carpet/royalblack{
 	icon_state = "carpet_royalblack-21"
 	},
@@ -27811,6 +28134,19 @@
 	},
 /turf/open/floor/wood,
 /area/mainship/hallways/dorm2)
+"xnJ" = (
+/obj/structure/table/wood/fancy,
+/obj/item/trash/plate{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/tool/kitchen/utensil/fork{
+	pixel_y = 3;
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/food/snacks/burger/cheese,
+/turf/open/floor/carpet/red,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "xoj" = (
 /obj/structure/bed/chair,
 /obj/structure/cable,
@@ -27876,9 +28212,6 @@
 /obj/structure/disposalpipe/segment/corner{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 5
-	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/bow_hallway{
 	name = "Ship Floor 1 Hallways"
@@ -27910,6 +28243,20 @@
 /area/mainship/medical/surgery_hallway{
 	name = "Research"
 	})
+"xsg" = (
+/obj/item/ashtray/glass{
+	pixel_x = 10;
+	pixel_y = -2
+	},
+/obj/item/storage/fancy/cigar{
+	pixel_x = -4
+	},
+/obj/item/tool/lighter/zippo,
+/obj/structure/table/wood/fancy,
+/turf/open/floor/carpet/royalblack{
+	icon_state = "carpet_royalblack-157"
+	},
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "xsh" = (
 /obj/machinery/camera/autoname/mainship,
 /turf/open/floor/mainship/cargo/arrow{
@@ -27932,6 +28279,13 @@
 /area/mainship/medical/surgery_hallway{
 	name = "Research"
 	})
+"xtn" = (
+/obj/machinery/door_control/old{
+	id = "officermess";
+	pixel_y = 11
+	},
+/turf/closed/wall/mainship,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "xts" = (
 /obj/structure/cable,
 /obj/machinery/light/mainship{
@@ -28192,10 +28546,17 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/effect/ai_node,
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
 /turf/open/floor/mainship/stripesquare,
 /area/mainship/hallways/aft_hallway{
 	name = "Ship Floor 3 Hallways"
 	})
+"xDo" = (
+/obj/structure/curtain/open/temple,
+/turf/open/floor/tile/darkish,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "xDE" = (
 /obj/effect/soundplayer,
 /turf/closed/wall/mainship,
@@ -28205,9 +28566,6 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 1
-	},
 /obj/machinery/door/airlock/mainship/command/CPToffice{
 	dir = 2;
 	name = "\improper Commander's Office"
@@ -28533,14 +28891,6 @@
 	},
 /turf/open/floor/mainship/tcomms,
 /area/mainship/command/self_destruct)
-"xQe" = (
-/obj/machinery/camera/autoname/mainship{
-	dir = 1
-	},
-/turf/open/floor/prison/kitchen,
-/area/mainship/groundhq/ntf/living/captain_mess{
-	name = "Kitchen"
-	})
 "xQf" = (
 /obj/item/storage/backpack/dispenser,
 /obj/item/storage/backpack/marine/radiopack,
@@ -28595,11 +28945,11 @@
 /turf/closed/wall/mainship,
 /area/mainship/hull/lower_hull)
 "xSQ" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/sofa/corner{
 	dir = 8
 	},
-/turf/open/floor/mainship/mono,
-/area/mainship/living/basketball)
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "xSY" = (
 /obj/effect/ai_node,
 /obj/structure/bed/chair{
@@ -28643,10 +28993,15 @@
 	},
 /area/mainship/groundhq/ntf/shipboard/brig)
 "xVa" = (
-/obj/structure/bed/chair/sofa/left{
-	dir = 8
+/obj/machinery/light{
+	dir = 1
 	},
-/turf/open/floor/mainship,
+/obj/structure/rack,
+/obj/item/storage/fancy/cigar,
+/obj/item/storage/fancy/cigar,
+/obj/item/storage/fancy/cigar,
+/obj/item/storage/fancy/cigar,
+/turf/open/floor/tile/darkish,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "xVb" = (
 /obj/structure/cable,
@@ -28658,15 +29013,6 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/hangar)
-"xWP" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/wood,
-/area/mainship/groundhq/ntf/living/grunt_rnr)
 "xXf" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 8
@@ -28710,6 +29056,12 @@
 	},
 /turf/open/shuttle/escapepod/four,
 /area/mainship/command/self_destruct)
+"xYh" = (
+/obj/machinery/vending/cigarette{
+	product_slogans = ""
+	},
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "xYG" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment,
@@ -28720,6 +29072,12 @@
 	dir = 9
 	},
 /area/mainship/hull/upper_hull)
+"xZC" = (
+/obj/structure/bed/chair/sofa/right{
+	dir = 4
+	},
+/turf/open/floor/urban/wood,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "yac" = (
 /obj/structure/table/reinforced,
 /obj/structure/paper_bin,
@@ -28884,6 +29242,16 @@
 /turf/closed/wall/mainship/research/containment/wall/north,
 /area/mainship/medical/surgery_hallway{
 	name = "Research"
+	})
+"yhG" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/turf/open/floor/plating/plating_catwalk,
+/area/mainship/hallways/aft_hallway{
+	name = "Ship Floor 3 Hallways"
 	})
 "yhI" = (
 /turf/open/floor/step_trigger/supply_fall/row_three/two,
@@ -33918,11 +34286,11 @@ dQa
 swp
 xTA
 eSQ
-nPI
+oyH
 rlb
 oyt
 unY
-aHt
+lOR
 kyS
 sIF
 ltZ
@@ -34041,7 +34409,7 @@ xil
 bJO
 osi
 unY
-aHt
+lOR
 kyS
 sIF
 sIF
@@ -34160,7 +34528,7 @@ slL
 slL
 slL
 slL
-aHt
+lOR
 rZs
 sIF
 sIF
@@ -34279,7 +34647,7 @@ slL
 qMb
 kXS
 slL
-aHt
+lOR
 kyS
 sIF
 sIF
@@ -34398,7 +34766,7 @@ fOp
 smP
 vDu
 slL
-aHt
+lOR
 kyS
 sIF
 sIF
@@ -34636,7 +35004,7 @@ slL
 slL
 uxD
 slL
-aHt
+lOR
 kyS
 wZr
 orA
@@ -34755,7 +35123,7 @@ kyS
 kyS
 aXE
 kyS
-aHt
+lOR
 kyS
 kyS
 kyS
@@ -34874,7 +35242,7 @@ qPn
 tlR
 tlR
 tlR
-gDp
+oYl
 oES
 oES
 mZZ
@@ -49141,7 +49509,7 @@ nwr
 nwr
 abh
 wgC
-lLY
+tUb
 uUn
 moY
 saD
@@ -54608,7 +54976,7 @@ nwr
 nwr
 nwr
 nwr
-brs
+nwr
 nwr
 nwr
 nwr
@@ -54724,7 +55092,7 @@ nwr
 nwr
 nwr
 nwr
-lDw
+nwr
 nwr
 nwr
 nwr
@@ -54849,7 +55217,7 @@ nwr
 nwr
 nwr
 nwr
-nKd
+nwr
 nwr
 nwr
 nwr
@@ -56164,7 +56532,7 @@ nwr
 oJY
 iSM
 aMa
-wvg
+aMa
 aMa
 aMa
 aMa
@@ -56283,19 +56651,19 @@ oJY
 oJY
 kiN
 aMa
-lrN
-lrN
-skM
-eub
-nQW
-eub
-kvI
-nQW
-eub
-eub
-nyh
+fFy
+inm
+inm
+oAJ
+oXC
+aYG
+aYG
+cwe
+kJf
+kJf
+oqP
 jXX
-kat
+oAJ
 tUF
 oAJ
 uoG
@@ -56402,19 +56770,19 @@ reV
 gJN
 wnb
 aMa
-kQK
-lrN
-nhA
-wMu
-nVF
-nVF
-nVF
-nVF
-nVF
-ngN
-hJP
-pAz
-oqc
+dwc
+aYG
+aYG
+pje
+aYG
+aYG
+aYG
+taF
+kJf
+kJf
+tBd
+xbu
+oAJ
 kRC
 fih
 vpP
@@ -56521,19 +56889,19 @@ reV
 aMa
 iSM
 aMa
-lrN
-lrN
-anl
-aFH
-leh
-leh
-bxW
-leh
-leh
-gUV
-hJP
-lrN
-oqc
+sEn
+sso
+wKX
+oAJ
+ruP
+aYG
+aYG
+wqG
+kJf
+kJf
+tBd
+xbu
+oAJ
 pAz
 lrN
 hWv
@@ -56638,23 +57006,23 @@ oJY
 vWx
 aMa
 aMa
-qjw
+aMa
+aMa
 uXI
 uXI
-uXI
-fLF
-aFH
-leh
-leh
-leh
-leh
-leh
-gUV
-oJT
+oAJ
+oAJ
+lhX
+fuv
+pLc
+uYf
+kJf
+kJf
+nss
 xSQ
-lJT
-nPj
-nPj
+oAJ
+iWN
+iWN
 aNd
 eOB
 iWN
@@ -56756,20 +57124,20 @@ nwr
 rXt
 reV
 aMa
-oGf
-vnS
+wXt
+fFk
 fFk
 hNA
 uXI
-nhA
-aFH
-leh
-leh
-leh
-leh
-leh
-gUV
-aGL
+trc
+jDn
+kJf
+kJf
+kJf
+kJf
+kJf
+kJf
+kJf
 tMv
 tMv
 tMv
@@ -56875,20 +57243,20 @@ eNM
 oFe
 reV
 aMa
-pzV
-xkP
-hZx
-xkP
+aJk
+fFk
+fFk
+alb
 uXI
-oxM
-hJP
-leh
-leh
-leh
-leh
-leh
-nhA
-hJP
+oPR
+oPR
+oPR
+kJf
+oPR
+kJf
+aeS
+tyH
+eYA
 tMv
 dWx
 hRN
@@ -56994,20 +57362,20 @@ eNM
 oFe
 reV
 aMa
-uXW
-xkP
-oDu
-xkP
+xtY
+cuC
+fFk
+sVR
 uXI
-oxM
-hJP
-leh
-leh
-iPQ
-leh
-leh
-nhA
-hJP
+oqM
+tyH
+tyH
+kJf
+axC
+kJf
+aeS
+tBd
+jYn
 tMv
 dWx
 fZd
@@ -57106,27 +57474,27 @@ nwr
 nwr
 nwr
 nwr
-nKd
+nwr
 iqJ
 yco
 yco
 iqJ
-tlO
 aMa
-kZX
-xkP
-fLj
-xkP
+aMa
 uXI
-fLF
-aFH
-leh
-leh
-leh
-leh
-leh
-uyu
-hJP
+uXI
+fLj
+uXI
+uXI
+kNe
+kNe
+kNe
+kJf
+kNe
+kJf
+kJf
+kJf
+kJf
 tMv
 qQR
 ose
@@ -57225,27 +57593,27 @@ nwr
 nwr
 nwr
 nwr
-nKd
+nwr
 yco
-bEx
-bEx
-jUe
+qsx
 aNP
+jUe
+edo
 uXI
 jiX
+ufS
 xkP
-ooA
-xQe
+uXW
 uXI
-juE
-aFH
-leh
-leh
-uuB
-leh
-leh
-uyu
-aGL
+oPR
+oPR
+oPR
+kJf
+oPR
+kJf
+kJf
+oqP
+jXX
 tMv
 dWx
 jEE
@@ -57344,27 +57712,27 @@ nwr
 nwr
 nwr
 nwr
-nKd
+nwr
 yco
-aNP
-fWf
-aNP
-qZD
+kOc
+rca
+rca
+rca
+elP
+iHd
+dFy
+xkP
+xkP
 uXI
-eYz
-xkP
-xkP
-xkP
-uXI
-fLF
-aFH
-leh
-leh
-leh
-leh
-leh
-uyu
-hJP
+tBd
+tyH
+tyH
+kJf
+hih
+kJf
+jZp
+hih
+xbu
 tMv
 tMv
 tMv
@@ -57465,25 +57833,25 @@ iqJ
 yco
 yco
 iqJ
-hvs
+niX
+cfQ
 aNP
-ccy
-gRR
+aNP
 oTP
-qfa
-cCX
-cDI
-afx
+xkP
+xkP
+xkP
+kZX
 uXI
-rLL
-hJP
-leh
-leh
-leh
-leh
-leh
-nhA
-hJP
+kNe
+kNe
+kNe
+kJf
+kNe
+kJf
+oAW
+nss
+xSQ
 tMv
 rLn
 dQB
@@ -57584,25 +57952,25 @@ yco
 gbP
 lPQ
 inB
-rsk
+niX
+qNe
 aNP
-amr
-pRi
+aNP
+vBf
+xkP
+xkP
+xkP
+hZx
 uXI
-uXI
-cRG
-uXI
-uXI
-uXI
-rLL
-hJP
-leh
-leh
-iPQ
-leh
-leh
-nhA
-oJT
+oPR
+oPR
+oPR
+kJf
+oPR
+kJf
+jZI
+ndn
+pIF
 tMv
 bNN
 dQB
@@ -57701,27 +58069,27 @@ nwr
 nwr
 yco
 sPm
-sQj
-sQj
-sQj
-sQj
-roJ
-cfQ
+nYO
+xsg
+niX
+thc
+qNe
+qNe
 uXI
-qiV
+eYz
 fAP
-iTM
-alb
+oDu
+cRd
 uXI
-nhA
-aFH
-leh
-leh
-jTv
-leh
-leh
-uyu
-hJP
+pMQ
+tyH
+tBd
+kJf
+axC
+kJf
+wgi
+oqP
+jXX
 tMv
 rLn
 dQB
@@ -57820,27 +58188,27 @@ nwr
 nwr
 yco
 nYw
-tnM
-kWN
-efM
-sQj
-rTL
+jYX
+vTr
+noM
+uwW
 qsx
+puz
 uXI
-aJu
-fSA
-sVR
-sVR
 uXI
-fLF
-aFH
-leh
-leh
-leh
-leh
-leh
-uyu
-aGL
+uXI
+uXI
+uXI
+uXI
+kNe
+kNe
+kNe
+kJf
+kNe
+kJf
+wgi
+hih
+tIg
 tMv
 dQB
 tMv
@@ -57939,27 +58307,27 @@ nwr
 iqJ
 iqJ
 mhv
-dbC
-nlR
-efM
-sQj
-roJ
-rsH
-uXI
-xtY
-wXt
+qsx
+qsx
+nTE
+nwl
+qsx
+wEa
+hvX
+swI
+cbX
 lJF
-aJk
-uXI
-anl
-aFH
-leh
-leh
-rKO
-leh
-leh
-uyu
-hJP
+loE
+gvX
+vYA
+gUZ
+kJf
+kJf
+kJf
+kJf
+wgi
+nss
+xSQ
 tMv
 pSd
 tMv
@@ -58055,30 +58423,30 @@ nwr
 nwr
 nwr
 nwr
-vTw
-vkp
-sQj
-sQj
-kWN
-efM
-sQj
-roJ
-aeX
-uXI
-uXI
-uXI
-uXI
-uXI
-uXI
-oys
-uyH
-cpJ
-cpJ
-cpJ
-cpJ
-cpJ
-nDl
-hJP
+yco
+bxO
+vEf
+pWd
+pWd
+cre
+dJE
+qsx
+xYh
+hvX
+wqF
+hQi
+lcs
+fGg
+gvX
+jqU
+jqU
+kJf
+tiM
+jqU
+kJf
+oYZ
+jqU
+jqU
 tMv
 tMv
 tMv
@@ -58174,30 +58542,30 @@ nwr
 nwr
 nwr
 nwr
-iqJ
-aZa
-sQj
-sQj
-kWN
-efM
-sQj
-roJ
-kUN
-sPj
-sPj
-jJB
-dlH
-fQJ
+yco
+lpJ
+gBN
+rNS
+wJu
+eiu
+dJE
+qsx
+xtn
 gvX
-roO
-bKy
-bKy
-bKy
-bKy
-bKy
-bKy
-bKy
-qMQ
+eSL
+nOn
+xZC
+kGQ
+gvX
+qZo
+qZo
+qZo
+qZo
+qZo
+qZo
+gGs
+qZo
+qZo
 qZo
 ivx
 qZo
@@ -58294,27 +58662,27 @@ nwr
 nwr
 nwr
 yco
-kWN
-nlR
-nlR
-kWN
-efM
+vqq
+gBN
+lUE
+dvw
+eiu
+niX
+nTE
 sQj
-roJ
-sQj
-dwT
-dCW
-ieh
-pNe
-emw
-vEf
+cre
+cre
+cre
+cre
+cre
+dIz
 wJU
 wJU
 wJU
 wJU
 wJU
 wJU
-wJU
+mjr
 wJU
 wJU
 wJU
@@ -58412,36 +58780,36 @@ nwr
 nwr
 nwr
 nwr
-yco
-efM
-efM
-efM
-efM
-mGM
-sQj
-roJ
-sQj
-oIx
-bAq
-oIx
-cwQ
-uVR
+iqJ
+iqJ
+nQA
+tLN
+taI
+vbx
+dJE
+qsx
+hvX
+vEf
+laf
+qeZ
+qeZ
+wCf
 hqG
-reh
+veb
 reh
 mNH
-gFt
-gFt
-gFt
-gFt
-gFt
-gFt
-gFt
+yhG
+yhG
+yhG
+sUh
+yhG
+yhG
+yhG
 xCS
-gFt
-gFt
-gFt
-gFt
+yhG
+yhG
+yhG
+yhG
 jlA
 vDH
 sbU
@@ -58532,21 +58900,21 @@ nwr
 nwr
 nwr
 yco
-sQj
-sQj
-sQj
-sQj
-sQj
-sQj
-roJ
-sQj
-pNe
-pNe
-pNe
-pNe
-gyy
-gvX
-vDU
+jyB
+gBN
+pxf
+wJu
+oFB
+wzR
+ipY
+tor
+qeZ
+kUX
+vEf
+vEf
+vEf
+nTG
+qZo
 wJU
 siy
 qZo
@@ -58651,20 +59019,20 @@ nwr
 nwr
 nwr
 yco
-kbb
-kbb
-kbb
-sQj
-sQj
-oyd
-roJ
-sQj
-rOD
-rOD
-rOD
-pNe
-dCW
-cSI
+neR
+gBN
+ewy
+xnJ
+nfz
+qsx
+qsx
+gvX
+gvX
+kBI
+bQd
+kvM
+uSR
+gvX
 qZo
 wJU
 siy
@@ -58770,20 +59138,20 @@ nwr
 nwr
 nwr
 yco
-nlR
-hcd
-kWN
-sQj
-goF
-msc
-wwI
-sQj
-dCW
-dCW
-dCW
+dDW
+vEf
+kbb
+ojh
+kUX
+qsx
+qsx
+liU
+hvX
+nUY
+ayk
 pNe
 oIx
-cSI
+gvX
 qZo
 wJU
 nvR
@@ -58890,19 +59258,19 @@ nwr
 nwr
 iqJ
 iqJ
-fAZ
-fAZ
-sQj
-sQj
-uWm
-xWP
-sQj
-oIx
-oIx
-oIx
-pNe
+mhv
+qsx
+dJE
+qsx
+tpi
+qsx
+efl
+hvX
+vbu
+mCT
+hRC
 swI
-cSI
+gvX
 qZo
 wJU
 wJU
@@ -59009,19 +59377,19 @@ nwr
 nwr
 nwr
 yco
-sQj
-sQj
-sQj
-sQj
-sQj
-roJ
-sQj
-pNe
-pNe
-pNe
-pNe
-rOD
-cSI
+cEa
+hmO
+dJE
+qsx
+qsx
+qsx
+puz
+gvX
+gvX
+gvX
+gvX
+gvX
+gvX
 qZo
 wJU
 wJU
@@ -59128,19 +59496,19 @@ nwr
 nwr
 nwr
 yco
-kbb
-kbb
-kbb
-tnM
-sQj
-roJ
-sQj
-rOD
+szl
+hmO
+dJE
+fqA
+fqA
+fqA
+qsx
+gvX
 vcI
 rOD
-pNe
+uYj
 dCW
-cSI
+gvX
 qZo
 wJU
 wJU
@@ -59247,19 +59615,19 @@ nwr
 nwr
 nwr
 yco
-kWN
-nlR
-nlR
-mGM
-eTF
+rVV
+lQO
+pWS
+iSj
+uHn
 mfy
 cky
-dCW
-dCW
-dCW
-pNe
-oIx
-cSI
+gvX
+oXl
+uYj
+uYj
+qJt
+gvX
 qZo
 wJU
 wJU
@@ -59370,15 +59738,15 @@ yco
 yco
 iqJ
 sMc
-deZ
-sQj
 roJ
-oIx
-oIx
-oIx
-pNe
-xbB
-cSI
+roJ
+roJ
+gvX
+gvX
+eYf
+eYf
+gvX
+gvX
 qZo
 wJU
 wJU
@@ -59489,15 +59857,15 @@ nwr
 nwr
 yco
 kWN
-deZ
-tnM
 roJ
-pNe
-omb
-pNe
-pNe
+roJ
+roJ
+xDo
+gCo
+gCo
+gCo
 wNU
-cSI
+gvX
 cSI
 bNR
 kBz
@@ -59608,15 +59976,15 @@ nwr
 nwr
 yco
 nlR
-nlR
+roJ
 diV
 roJ
-lRW
+gvX
 xVa
-sQc
-lRW
+gCo
+gCo
 xgj
-cSI
+gvX
 gsn
 bNR
 bNR
@@ -59729,7 +60097,7 @@ iqJ
 yco
 yco
 iqJ
-tCx
+aMa
 aMa
 gvX
 gvX
@@ -61395,7 +61763,7 @@ nwr
 nwr
 nwr
 nwr
-nwr
+uqd
 nwr
 nwr
 nwr
