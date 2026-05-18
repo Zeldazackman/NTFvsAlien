@@ -9,7 +9,8 @@
 	name = "Sovl War"
 	config_tag = "Sovl War"
 	silo_scaling = SOVL_WAR_SILO_SCALE
-	round_type_flags = MODE_ALAMO_ONLY|MODE_INFESTATION|MODE_LATE_OPENING_SHUTTER_TIMER|MODE_XENO_RULER|MODE_PSY_POINTS|MODE_PSY_POINTS_ADVANCED|MODE_HIJACK_POSSIBLE|MODE_SILO_RESPAWN|MODE_SILOS_SPAWN_MINIONS|MODE_ALLOW_XENO_QUICKBUILD|MODE_FORCE_CUSTOMSQUAD_UI
+	round_type_flags = MODE_ALAMO_ONLY|MODE_INFESTATION|MODE_LATE_OPENING_SHUTTER_TIMER|MODE_XENO_RULER|MODE_PSY_POINTS|MODE_PSY_POINTS_ADVANCED|MODE_HIJACK_POSSIBLE|MODE_SILO_RESPAWN|MODE_SILOS_SPAWN_MINIONS|MODE_ALLOW_XENO_QUICKBUILD|MODE_FORCE_CUSTOMSQUAD_UI|MODE_MUTATIONS_OBTAINABLE
+	round_type_flags2 = MODE_2_NO_ABDUCT
 	xeno_abilities_flags = ABILITY_NUCLEARWAR
 	valid_job_types = list(
 		/datum/job/terragov/command/captain = 1,
@@ -33,6 +34,7 @@
 		/datum/job/terragov/squad/smartgunner = 1,
 		/datum/job/terragov/squad/leader = 1,
 		/datum/job/terragov/squad/standard = -1,
+		/datum/job/terragov/squad/slut = -1,
 		/datum/job/xenomorph = FREE_XENO_AT_START,
 		/datum/job/xenomorph/queen = 1
 	)
@@ -46,24 +48,33 @@
 	evo_requirements = list(
 		/datum/xeno_caste/queen = 8,
 		/datum/xeno_caste/king = 12,
+		/datum/xeno_caste/dragon = 12,
 	)
+/* NTF edit
 	restricted_castes = list(/datum/xeno_caste/wraith, /datum/xeno_caste/hivemind)
-
-/datum/game_mode/infestation/sovl_war/post_setup()
+*/
+/datum/game_mode/infestation/sovl_war/setup()
 	. = ..()
+	/*
 	//testing only
 	addtimer(CALLBACK(src, PROC_REF(enable_pods)), deploy_time_lock)
+	*/
 	for(var/obj/machinery/computer/camera_advanced/remote_fob/computer AS in GLOB.remote_fob_computers)
 		computer.metal_remaining += 100
 		computer.plasteel_remaining += 50
+	var/turf/T = get_turf(GLOB.remote_fob_computers[1])
+	if(istype(T))
+		new /obj/item/storage/box/crate/sentry_sniper(T)
+		new /obj/item/storage/box/crate/sentry_sniper(T)
+		new /obj/item/storage/box/crate/sentry_sniper(T)
 
-	SSpoints.add_strategic_psy_points(XENO_HIVE_NORMAL, 1400)
-	SSpoints.add_tactical_psy_points(XENO_HIVE_NORMAL, 300)
-	GLOB.loadout_role_essential_set[SQUAD_LEADER][/obj/item/binoculars/fire_support] = 1
-	GLOB.loadout_role_essential_set[FIELD_COMMANDER][/obj/item/binoculars/fire_support] = 1
-	if(GLOB.vending_records[/obj/machinery/vending/weapon]) //you've seriously fucked up if marines have no weapon vendors
-		var/datum/vending_product/record = new (null, /obj/item/storage/box/crate/sentry_sniper, 3, tab = "Heavy Weapons")
-		GLOB.vending_records[/obj/machinery/vending/weapon] += record
+/datum/game_mode/infestation/sovl_war/post_setup()
+	. = ..()
+
+	for(var/hivenumber in GLOB.hive_datums)
+		SSpoints.add_strategic_psy_points(hivenumber, 1400)
+		SSpoints.add_tactical_psy_points(hivenumber, 300)
+		SSpoints.add_biomass_points(hivenumber, 0) // Solely to make sure it isn't null.
 
 	for(var/obj/effect/landmark/corpsespawner/corpse AS in GLOB.corpse_landmarks_list)
 		corpse.create_mob()
@@ -88,8 +99,10 @@
 	if(round_finished)
 		return
 	if(round_stage == INFESTATION_MARINE_CRASHING)
+		priority_announce("The hive has collapsed due to lack of rulership.", "Orphan hivemind collapse", type = ANNOUNCEMENT_PRIORITY)
 		round_finished = MODE_INFESTATION_M_MINOR
 		return
+	priority_announce("The hive has collapsed due to lack of rulership.  Marines win!", "Orphan hivemind collapse", type = ANNOUNCEMENT_PRIORITY)
 	round_finished = MODE_INFESTATION_M_MAJOR
 
 /datum/game_mode/infestation/sovl_war/get_hivemind_collapse_countdown()
@@ -100,10 +113,10 @@
 	if(round_finished)
 		return TRUE
 
-	if(world.time < (SSticker.round_start_time + 5 SECONDS))
+	if(world.time < (SSticker.round_start_time + 2 MINUTES))
 		return FALSE
 
-	var/list/living_player_list = count_humans_and_xenos(count_flags = COUNT_IGNORE_ALIVE_SSD|COUNT_IGNORE_XENO_SPECIAL_AREA)
+	var/list/living_player_list = count_humans_and_xenos(count_flags = COUNT_IGNORE_ALIVE_SSD|COUNT_IGNORE_XENO_SPECIAL_AREA| COUNT_CLF_TOWARDS_XENOS | COUNT_GREENOS_TOWARDS_MARINES )
 	var/num_humans = living_player_list[1]
 	var/num_xenos = living_player_list[2]
 	var/num_humans_ship = living_player_list[3]
