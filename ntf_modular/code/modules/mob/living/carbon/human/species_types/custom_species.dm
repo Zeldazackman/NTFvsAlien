@@ -114,6 +114,7 @@
 
 		shake_camera(affected_mob, 1 SECONDS, 1)
 		affected_mob.Shake(duration = 1 SECONDS) //SFX
+		playsound(affected_mob.loc, 'ntf_modular/sound/effects/ut-heavy-hit.ogg', 50)
 
 		if(rage_power >= RAVAGER_RAGE_SUPER_RAGE_THRESHOLD && affected_mob.hud_used) //If we're super pissed it's time to get crazy
 			var/atom/movable/plane_master_controller/game_plane_master_controller = affected_mob.hud_used.plane_master_controllers[PLANE_MASTERS_GAME]
