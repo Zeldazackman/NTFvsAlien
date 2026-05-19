@@ -2,9 +2,21 @@
 	gender = pick(MALE, FEMALE)
 	species = pick(get_playable_species())
 	synthetic_type = pick(SYNTH_TYPES)
+	synthetic_body_base = pick(SYNTHETIC_BODY_BASES)
 	robot_type = pick(ROBOT_TYPES)
-	ethnicity = random_ethnicity()
+	robot_body_base = pick(ROBOT_BODY_BASES)
+	robot_head_base = pick(ROBOT_HEAD_BASES)
+	supersoldier_body_base = pick(SUPERSOLDIER_BODY_BASES)
+	supersoldier_head_base = pick(SUPERSOLDIER_HEAD_BASES)
+	ethnicity = initial(ethnicity)
 	moth_wings = pick(GLOB.moth_wings_list)
+	tail = pick(GLOB.lizard_tails_list)
+	snout = pick(GLOB.snouts_list)
+	ears = pick(GLOB.ears_list)
+	horns = pick(GLOB.horns_list)
+	wings = pick(GLOB.wings_list)
+	synth_antenna = pick(GLOB.synth_antennas_list)
+	digitigrade_legs = "Normal"
 
 	h_style = random_hair_style(gender, species)
 	f_style = random_facial_hair_style(gender, species)
@@ -129,43 +141,31 @@
 
 
 /datum/preferences/proc/update_preview_icon()
-	// Determine what job is marked as 'High' priority, and dress them up as such.
-	var/datum/job/previewJob
-	var/highest_pref = JOBS_PRIORITY_NEVER
-	if(LAZYLEN(SSjob.occupations))
-		for(var/job in job_preferences)
-			if(job_preferences[job] > highest_pref)
-				previewJob = SSjob.GetJob(job)
-				highest_pref = job_preferences[job]
-
-	if(!previewJob)
-		var/mob/living/carbon/human/dummy/mannequin = generate_or_wait_for_human_dummy(DUMMY_HUMAN_SLOT_PREFERENCES)
-		copy_to(mannequin)
-		mannequin.set_species(species)
-		parent.show_character_previews(new /mutable_appearance(mannequin))
-		unset_busy_human_dummy(DUMMY_HUMAN_SLOT_PREFERENCES)
-		return
-
-	if(previewJob.handle_special_preview(parent))
-		return
-
-	// Set up the dummy for its photoshoot
-	var/mob/living/carbon/human/dummy/mannequin = generate_or_wait_for_human_dummy(DUMMY_HUMAN_SLOT_PREFERENCES)
-	copy_to(mannequin)
-
-	if(previewJob)
-		mannequin.job = previewJob
-		previewJob.equip_dummy(mannequin, preference_source = parent)
-
-	parent.show_character_previews(new /mutable_appearance(mannequin))
-	unset_busy_human_dummy(DUMMY_HUMAN_SLOT_PREFERENCES)
+	screen_main?.update_body()
 
 
 /datum/preferences/proc/randomize_species_specific()
 	moth_wings = pick(GLOB.moth_wings_list - "Burnt Off")
+	tail = pick(character_creator_tail_options() - "None")
+	snout = pick(GLOB.snouts_list - "None")
+	ears = pick(GLOB.ears_list - "None")
+	horns = pick(GLOB.horns_list - "None")
+	wings = pick(GLOB.wings_list - "None")
+	synth_antenna = pick(GLOB.synth_antennas_list - "None")
+	var/list/leg_options = digitigrade_leg_options()
+	if(length(leg_options) > 1)
+		digitigrade_legs = pick(leg_options)
+	else
+		digitigrade_legs = "Normal"
 
 
 /datum/preferences/proc/copy_to(mob/living/carbon/human/character, safety = FALSE)
+	if(species && GLOB.all_species[species])
+		character.set_species(species)
+	else
+		character.set_species("Human")
+	sync_synthetic_type_to_species()
+
 	var/new_name
 	if(random_name)
 		new_name = character.species.random_name(gender)
@@ -220,6 +220,59 @@
 	character.pitch = tts_pitch
 
 	character.moth_wings = moth_wings
+	character.synthetic_body_base = synthetic_body_base
+	character.allow_mismatched_parts = allow_mismatched_parts
+	character.allow_emissives = allow_emissives
+	character.custom_supersoldier_parts = custom_supersoldier_parts
+	character.supersoldier_body_base = supersoldier_body_base
+	character.supersoldier_head_base = supersoldier_head_base
+	if(species == "Combat Robot" && !allow_mismatched_parts)
+		character.robot_body_base = "Combat Robot"
+		character.robot_head_base = "Combat Robot"
+	else
+		character.robot_body_base = robot_body_base
+		character.robot_head_base = robot_head_base
+	//Tail coloration and accessories
+	character.tail = tail
+	character.tail_color = tail_color
+	character.tail_color_secondary = tail_color_secondary
+	character.tail_color_tertiary = tail_color_tertiary
+	character.tail_emissive = tail_emissive ? tail_emissive.Copy() : list(FALSE, FALSE, FALSE)
+	character.snout = snout
+	character.snout_color = snout_color
+	character.snout_color_secondary = snout_color_secondary
+	character.snout_color_tertiary = snout_color_tertiary
+	character.snout_emissive = snout_emissive ? snout_emissive.Copy() : list(FALSE, FALSE, FALSE)
+	character.ears = ears
+	character.ears_color = ears_color
+	character.ears_color_secondary = ears_color_secondary
+	character.ears_color_tertiary = ears_color_tertiary
+	character.ears_emissive = ears_emissive ? ears_emissive.Copy() : list(FALSE, FALSE, FALSE)
+	character.horns = horns
+	character.horns_color = horns_color
+	character.horns_color_secondary = horns_color_secondary
+	character.horns_color_tertiary = horns_color_tertiary
+	character.horns_emissive = horns_emissive ? horns_emissive.Copy() : list(FALSE, FALSE, FALSE)
+	character.wings = wings
+	character.wings_color = wings_color
+	character.wings_color_secondary = wings_color_secondary
+	character.wings_color_tertiary = wings_color_tertiary
+	character.wings_emissive = wings_emissive ? wings_emissive.Copy() : list(FALSE, FALSE, FALSE)
+	character.synth_antenna = synth_antenna
+	character.synth_antenna_color = synth_antenna_color
+	character.synth_antenna_color_secondary = synth_antenna_color_secondary
+	character.synth_antenna_color_tertiary = synth_antenna_color_tertiary
+	character.synth_antenna_emissive = synth_antenna_emissive ? synth_antenna_emissive.Copy() : list(FALSE, FALSE, FALSE)
+	character.fluff = fluff
+	character.fluff_color = fluff_color
+	character.fluff_color_secondary = fluff_color_secondary
+	character.fluff_color_tertiary = fluff_color_tertiary
+	character.fluff_emissive = fluff_emissive ? fluff_emissive.Copy() : list(FALSE, FALSE, FALSE)
+	character.digitigrade_legs = digitigrade_legs
+
+	character.body_color = body_color
+	character.spines = spines
+	character.body_markings = body_markings ? body_markings.Copy() : list()
 
 	/*NTF Removal
 	character.underwear = underwear
@@ -228,8 +281,30 @@
 
 	if(character.species.has_genital_selection)
 		character.ass = genitalia_ass
+		character.ass_size = genitalia_ass_size
+		character.ass_color = genitalia_ass_color
+		character.ass_emissive = genitalia_ass_emissive ? genitalia_ass_emissive.Copy() : list(FALSE, FALSE, FALSE)
 		character.boobs = genitalia_boobs
+		character.boobs_size = genitalia_boobs_size
+		character.boobs_color = genitalia_boobs_color
+		character.boobs_color_secondary = genitalia_boobs_color_secondary
+		character.boobs_emissive = genitalia_boobs_emissive ? genitalia_boobs_emissive.Copy() : list(FALSE, FALSE, FALSE)
 		character.cock = genitalia_cock
+		character.cock_size = genitalia_cock_size
+		character.cock_color = genitalia_cock_color
+		character.cock_emissive = genitalia_cock_emissive ? genitalia_cock_emissive.Copy() : list(FALSE, FALSE, FALSE)
+		character.vagina = genitalia_vagina
+		character.vagina_color = genitalia_vagina_color
+		character.vagina_emissive = genitalia_vagina_emissive ? genitalia_vagina_emissive.Copy() : list(FALSE, FALSE, FALSE)
+		character.belly = genitalia_belly
+		character.belly_size = genitalia_belly_size
+		character.belly_color = genitalia_belly_color
+		character.belly_emissive = genitalia_belly_emissive ? genitalia_belly_emissive.Copy() : list(FALSE, FALSE, FALSE)
+		character.testicles = genitalia_testicles
+		character.testicles_size = genitalia_testicles_size
+		character.testicles_color = genitalia_testicles_color
+		character.testicles_color_secondary = genitalia_testicles_color_secondary
+		character.testicles_emissive = genitalia_testicles_emissive ? genitalia_testicles_emissive.Copy() : list(FALSE, FALSE, FALSE)
 
 	character.ooc_notes = metadata
 	character.ooc_notes_likes = metadata_likes
