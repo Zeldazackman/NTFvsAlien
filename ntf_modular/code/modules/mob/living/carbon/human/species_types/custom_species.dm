@@ -107,7 +107,7 @@
 	carbon_owner.adjustBruteLoss(-carbon_owner.getBruteLoss(TRUE) * 0.60) //as if double inaprovaline
 	carbon_owner.adjustFireLoss(-carbon_owner.getFireLoss(TRUE) * 0.60)
 	carbon_owner.Stun(1 SECONDS)
-	carbon_owner.mote("me", 1, "slams their fist to the ground.")
+	carbon_owner.emote("me", 1, "slams their fist to the ground.")
 	carbon_owner.health_threshold_dead *= 2 //refuse death for now
 	playsound(carbon_owner.loc, 'ntf_modular/sound/effects/ut-heavy-hit.ogg', 50)
 
