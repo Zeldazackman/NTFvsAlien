@@ -8550,7 +8550,7 @@
 	},
 /area/antag_ship/pmc_ntf/starboard/medbay)
 "Sa" = (
-/obj/docking_port/stationary/supplysom,
+/obj/docking_port/stationary/supply/som,
 /turf/open/floor/mainship/empty,
 /area/antag_ship/som/requisition)
 "Sb" = (
@@ -9629,7 +9629,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship/icc/warehouse)
 "WG" = (
-/obj/docking_port/stationary/supplyclf,
+/obj/docking_port/stationary/supply/clf,
 /turf/open/floor/mainship/empty,
 /area/antag_ship/clf_base/requisition)
 "WH" = (

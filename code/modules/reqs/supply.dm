@@ -34,42 +34,56 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	dheight = 2
 	height = 5
 
-/obj/docking_port/stationary/supplyhq
+/obj/docking_port/stationary/supply/hq
 	id = "supply_hq"
-	roundstart_template = /datum/map_template/shuttle/supplyhq
+	roundstart_template = /datum/map_template/shuttle/supply/hq
 	width = 5
 	dwidth = 2
 	dheight = 2
 	height = 5
 
-/obj/docking_port/stationary/supplysom
+/obj/docking_port/stationary/supply/som
 	id = "supply_som"
-	roundstart_template = /datum/map_template/shuttle/supplysom
+	roundstart_template = /datum/map_template/shuttle/supply/som
 	width = 3
 	dwidth = 1
 	dheight = 0
 	height = 1
 
-/obj/docking_port/stationary/supplyclf
+/obj/docking_port/stationary/supply/clf
 	id = "supply_clf"
-	roundstart_template = /datum/map_template/shuttle/supplyclf
+	roundstart_template = /datum/map_template/shuttle/supply/clf
 	width = 3
 	dwidth = 1
 	dheight = 0
 	height = 1
 
-/obj/docking_port/stationary/supplyicc
+/obj/docking_port/stationary/supply/icc
 	id = "supply_icc"
-	roundstart_template = /datum/map_template/shuttle/supplyicc
+	roundstart_template = /datum/map_template/shuttle/supply/icc
 	dir = 1
 	width = 1
 	dwidth = 0
 	dheight = 1
 	height = 3
 
+/obj/docking_port/stationary/supplycolony
+	id = "supply_colony"
+	roundstart_template = /datum/map_template/shuttle/supply/colony
+	width = 3
+	dwidth = 1
+	dheight = 0
+	height = 1
+
 /obj/docking_port/stationary/supply/som
-	id = "supply_SOM_home"
+	id = "supply_som_home"
 	roundstart_template = /datum/map_template/shuttle/supply/som
+
+
+/obj/docking_port/stationary/supply/colony
+	id = "supply_colony_home"
+	roundstart_template = /datum/map_template/shuttle/supply/colony
+
 
 /obj/docking_port/mobile/supply
 	name = "supply shuttle"
@@ -98,8 +112,8 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	name = "SOM supply shuttle"
 	id = SHUTTLE_SOM_SUPPLY
 	faction = FACTION_SOM
-	home_id = "supply_SOM_home"
-	railing_gear_name = "supply_SOM"
+	home_id = "supply_som_home"
+	railing_gear_name = "supply_som"
 
 /obj/docking_port/mobile/supply/Destroy(force)
 	for(var/i in railings)
@@ -267,7 +281,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 /obj/machinery/computer/supplycomp/hvh/som
 	faction = FACTION_SOM
 	shuttle_id = SHUTTLE_SOM_SUPPLY
-	home_id = "supply_SOM_home"
+	home_id = "supply_som_home"
 
 /obj/machinery/computer/supplycomp/interact(mob/user)
 	. = ..()
@@ -632,7 +646,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	return supply_interface.interact(user)
 
 /obj/machinery/computer/supplycomp/som
-	shuttle_id = "supplysom"
+	shuttle_id = "supply_som"
 	faction = FACTION_SOM
 	home_id = "supply_som"
 	req_access = list(ACCESS_SOM_REQUESITIONS)
@@ -649,11 +663,17 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	home_id = "supply_icc"
 	req_access = list(ACCESS_ICC_CARGO)
 
+/obj/machinery/computer/supplycomp/colony
+	shuttle_id = "supply_colony"
+	faction = FACTION_ICC
+	home_id = "supply_colony"
+	req_access = list(ACCESS_CIVILIAN_LOGISTICS)
+
 /obj/docking_port/mobile/supply/som
 	dir = 1
 	height = 1
 	home_id = "supply_som"
-	id = "supplysom"
+	id = "supply_som"
 	name = "som supply shuttle"
 	dheight = 0
 	dwidth = 0

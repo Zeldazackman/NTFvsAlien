@@ -5688,7 +5688,7 @@
 	},
 /area/whiskey_outpost)
 "AD" = (
-/obj/docking_port/stationary/supplyhq{
+/obj/docking_port/stationary/supply/hq{
 	name = "hqdock"
 	},
 /turf/open/floor/mainship/empty,

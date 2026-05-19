@@ -38,4 +38,4 @@
 	id = "supply_elevator_gear"
 
 /obj/machinery/gear/supply/som
-	id = "supply_SOM_elevator_gear"
+	id = "supply_som_elevator_gear"
