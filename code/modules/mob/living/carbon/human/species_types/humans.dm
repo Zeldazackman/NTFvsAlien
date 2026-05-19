@@ -51,7 +51,8 @@
 /datum/action/ability/indominable
 	name = "Indominable Spirit"
 	action_icon_state = "warding"
-	desc = "Using your indominable human spirit, you are able to restore maximum stamina instantly, gain increased stamina regen and shrug off pain for a while. When the effect ends, you get maximum stamina immediately, again."
+	desc = "Using your indominable human spirit, you are able to restore maximum stamina instantly, gain increased stamina regen and shrug off pain for a while. \
+	When the effect ends, you get maximum stamina immediately, again."
 	cooldown_duration = 2.5 MINUTES
 	use_state_flags = ABILITY_USE_BUCKLED|ABILITY_USE_BUSY|ABILITY_USE_HANDCUFFED|ABILITY_USE_INCAP|ABILITY_USE_LYING|ABILITY_USE_STAGGERED|ABILITY_USE_NOTTURF
 

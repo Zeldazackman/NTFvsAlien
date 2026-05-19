@@ -109,6 +109,7 @@
 	carbon_owner.Stun(1 SECONDS)
 	carbon_owner.emote("me", 1, "slams their fist to the ground.")
 	carbon_owner.health_threshold_dead *= 2 //refuse death for now
+	carbon_owner.health_threshold_crit = -100
 	playsound(carbon_owner.loc, 'ntf_modular/sound/effects/ut-heavy-hit.ogg', 50)
 
 	for(var/turf/affected_tiles AS in RANGE_TURFS(rage_power_radius / 2, carbon_owner.loc))
@@ -161,6 +162,7 @@
 		return
 	var/mob/living/carbon/carbon_owner = owner
 	carbon_owner.health_threshold_dead = initial(carbon_owner.health_threshold_dead)
+	carbon_owner.health_threshold_crit = initial(carbon_owner.health_threshold_crit)
 	owner.do_jitter_animation(1000)
 	owner.remove_filter("last_stand_outline")
 	owner.visible_message(span_warning("[owner] seems to tire out."), \
