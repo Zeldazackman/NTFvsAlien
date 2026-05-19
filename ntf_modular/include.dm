@@ -11,7 +11,6 @@
 #include "code\datums\gamemodes\extendedsurv.dm"
 #include "code\datums\gamemodes\solmode\secrets_of_life.dm"
 #include "code\datums\gamemodes\solmode\solmode_procs.dm"
-#include "code\datums\gamemodes\sovl_war.dm"
 #include "code\datums\gamemodes\sovl_war_plus.dm"
 #include "code\datums\gamemodes\survival.dm"
 #include "code\datums\gamemodes\whiskey_outpost.dm"
