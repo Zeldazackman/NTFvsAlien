@@ -169,6 +169,8 @@
 			return "insect"
 		if("Skrell")
 			return "skrell"
+		if("Resurgentis")
+			return "resurgentis"
 	return "human"
 
 /proc/get_supersoldier_body_icon(body_base)

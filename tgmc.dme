@@ -2594,5 +2594,4 @@
 #include "interface\fonts\vcr_osd_mono.dm"
 #include "modular_RUtgmc\includes.dm"
 #include "ntf_modular\include.dm"
-#include "ntf_modular\code\_DEFINES\accessories.dm"
 // END_INCLUDE

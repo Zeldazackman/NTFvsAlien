@@ -180,6 +180,7 @@
 	var/has_genital_selection = FALSE
 	/// NTF ADDITION START
 	var/has_underwear_slots = FALSE
+	var/species_description = null
 
 /datum/species/New()
 	if(hud_type)
