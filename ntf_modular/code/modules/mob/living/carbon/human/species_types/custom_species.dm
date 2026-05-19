@@ -25,9 +25,9 @@
 	flesh_color = "#780064"
 	total_health = 115
 	brute_mod = 0.9
-	burn_mod = 1.15
+	burn_mod = 1.1
 	taste_sensitivity = TASTE_SENSITIVE
-	species_description = "<br /><br /><b>Lore</b><br /><br /> \
+	species_description = "<br /><br /><b>Lore</b>:<br /><br /> \
 	The Resurgentis are one of the oldest species of humanoids after humans, they are the primary population of phantom city, the now biggest free city of the new world.<br /><br /> \
 	They have been allegedly, ancestrally created by the death god, from altered semi-undead humans who were supposed to be the superior race...<br /><br /> \
 	While their ancestors are semi-undead, their offspring, therefore entirety of the race except the tree originals are entirely living.<br /><br /> \
@@ -74,6 +74,7 @@
 
 /datum/action/ability/last_stand
 	name = "Last Stand"
+	desc = "Your body is wired to go into a berserk rage when you are critically injured, granting you temporary boosts to your strength and speed, but leaving you exhausted once the effect ends. <br><br> Triggers when your health drops below a certain threshold. Cooldown is automatically refreshed in 5 minutes."
 	cooldown_duration = 5 MINUTES
 
 //basically stolen from rav but shittier
@@ -159,3 +160,4 @@
 	REMOVE_TRAIT(owner, TRAIT_STUNIMMUNE, RAGE_TRAIT)
 	REMOVE_TRAIT(owner, TRAIT_SLOWDOWNIMMUNE, RAGE_TRAIT)
 	REMOVE_TRAIT(owner, TRAIT_STAGGERIMMUNE, RAGE_TRAIT)
+	owner.reagents.add_reagent(/datum/reagent/toxin/chloralhydrate, 5)
