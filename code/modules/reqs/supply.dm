@@ -79,12 +79,6 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	id = "supply_SOM_home"
 	roundstart_template = /datum/map_template/shuttle/supply/som
 
-
-/obj/docking_port/stationary/supply/colony
-	id = "supply_colony_home"
-	roundstart_template = /datum/map_template/shuttle/supply/colony
-
-
 /obj/docking_port/mobile/supply
 	name = "supply shuttle"
 	id = SHUTTLE_SUPPLY
