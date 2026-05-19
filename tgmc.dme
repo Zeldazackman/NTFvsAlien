@@ -2592,7 +2592,7 @@
 #include "interface\fonts\spess_font.dm"
 #include "interface\fonts\tiny_unicode.dm"
 #include "interface\fonts\vcr_osd_mono.dm"
-#include "modular_RUtgmc\includes.dm"
+#include "modular_RUtgmc\include.dm"
+#include "modular_skyrat\include.dm"
 #include "ntf_modular\include.dm"
-#include "ntf_modular\code\_DEFINES\accessories.dm"
 // END_INCLUDE

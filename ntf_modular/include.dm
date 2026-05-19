@@ -1,4 +1,3 @@
-#include "..\modular_skyrat\modules\customization\modules\mob\dead\new_player\sprite_accessories\hair.dm"
 #include "code\_DEFINES\colors.dm"
 #include "code\_DEFINES\sexcon_defines.dm"
 #include "code\_DEFINES\skills.dm"
@@ -154,7 +153,6 @@
 #include "code\modules\factory\howtopaper.dm"
 #include "code\modules\factory\parts.dm"
 #include "code\modules\factory\unboxer.dm"
-#include "code\modules\keybindings\ctrl_face_movement.dm"
 #include "code\modules\language\language_holder.dm"
 #include "code\modules\language\telepathy.dm"
 #include "code\modules\mob\_pose.dm"
