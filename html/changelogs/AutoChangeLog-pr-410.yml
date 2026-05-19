@@ -1,0 +1,4 @@
+author: "SpooksAnno"
+delete-after: True
+changes:
+  - rscadd: "Emissives with all its piping process for hairs\n:cl:"
