@@ -2871,7 +2871,7 @@
 /turf/open/floor/plating/ground/desertdam/asphalt/tile,
 /area/riptide/inside/landingzoneone)
 "bYe" = (
-/obj/docking_port/stationary/supply/colony,
+/obj/docking_port/stationary/supplycolony,
 /turf/open/floor/mainship/empty,
 /area/riptide/inside/engineering/bridge)
 "bYk" = (

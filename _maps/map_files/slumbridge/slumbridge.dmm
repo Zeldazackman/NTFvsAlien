@@ -7136,7 +7136,7 @@
 	},
 /area/slumbridge/inside/houses/dorms)
 "fvq" = (
-/obj/docking_port/stationary/supply/colony,
+/obj/docking_port/stationary/supplycolony,
 /turf/open/floor/mainship/empty,
 /area/slumbridge/inside/engi/south)
 "fvt" = (

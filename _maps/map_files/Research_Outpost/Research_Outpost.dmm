@@ -9472,7 +9472,7 @@
 	},
 /area/outpost/hallway/south_west)
 "RT" = (
-/obj/docking_port/stationary/supply/colony,
+/obj/docking_port/stationary/supplycolony,
 /turf/open/floor/mainship/empty,
 /area/outpost/cargo)
 "RV" = (

@@ -212,7 +212,7 @@
 /turf/open/floor/tile/whiteyellow/full,
 /area/lv624/lazarus/quart)
 "bK" = (
-/obj/docking_port/stationary/supply/colony,
+/obj/docking_port/stationary/supplycolony,
 /turf/open/floor/mainship/empty,
 /area/vapor_processing/cargo3)
 "bL" = (

@@ -42574,7 +42574,7 @@
 	},
 /area/prison/material_processing)
 "jJQ" = (
-/obj/docking_port/stationary/supply/colony,
+/obj/docking_port/stationary/supplycolony,
 /turf/open/floor/mainship/empty,
 /area/prison/hangar_storage/main)
 "jKi" = (
