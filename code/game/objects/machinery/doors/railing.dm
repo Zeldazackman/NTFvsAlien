@@ -95,4 +95,4 @@
 	id = "supply_elevator_railing"
 
 /obj/machinery/door/poddoor/railing/supply/som
-	id = "supply_som_elevator_railing"
+	id = "supply_SOM_elevator_railing"

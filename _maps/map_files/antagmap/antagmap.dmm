@@ -622,7 +622,7 @@
 /turf/open/floor/iron/dark,
 /area/antag_ship/vsd/med)
 "dR" = (
-/obj/docking_port/stationary/supply/icc,
+/obj/docking_port/stationary/supplyicc,
 /turf/open/floor/mainship/empty,
 /area/antag_ship/icc/requisition)
 "dS" = (
@@ -9294,7 +9294,7 @@
 	},
 /area/antag_ship/pmc_ntf/starboard/medbay)
 "Sa" = (
-/obj/docking_port/stationary/supply/som,
+/obj/docking_port/stationary/supplysom,
 /turf/open/floor/mainship/empty,
 /area/antag_ship/som/requisition)
 "Sc" = (
@@ -10424,7 +10424,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship/icc/warehouse)
 "WG" = (
-/obj/docking_port/stationary/supply/clf,
+/obj/docking_port/stationary/supplyclf,
 /turf/open/floor/mainship/empty,
 /area/antag_ship/clf_base/requisition)
 "WH" = (

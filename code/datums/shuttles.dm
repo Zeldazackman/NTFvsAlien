@@ -222,23 +222,27 @@
 	shuttle_id = SHUTTLE_SUPPLY
 	name = SHUTTLE_SUPPLY
 
-/datum/map_template/shuttle/supply/hq
+/datum/map_template/shuttle/supplyhq
 	shuttle_id = "supplyhq"
 	name = "HQ Supply Shuttle"
 
-/datum/map_template/shuttle/supply/clf
+/datum/map_template/shuttle/supplyclf
 	shuttle_id = "supplyclf"
 	name = "Clf Supply Shuttle"
 
-/datum/map_template/shuttle/supply/icc
+/datum/map_template/shuttle/supplysom
+	shuttle_id = "supplysom"
+	name = "Som Supply Shuttle"
+
+/datum/map_template/shuttle/supplyicc
 	shuttle_id = "supplyicc"
 	name = "CM Supply Shuttle"
 
-/datum/map_template/shuttle/supply/vsd
+/datum/map_template/shuttle/supplyvsd
 	shuttle_id = "supplyvsd"
 	name = "KZ Supply Shuttle"
 
-/datum/map_template/shuttle/supply/pmc
+/datum/map_template/shuttle/supplypmc
 	shuttle_id = "supplypmc"
 	name = "AC Supply Shuttle"
 
@@ -256,7 +260,7 @@
 
 /datum/map_template/shuttle/supply/som
 	shuttle_id = SHUTTLE_SOM_SUPPLY
-	name = "Som Supply S"
+	name = SHUTTLE_SOM_SUPPLY
 
 /datum/map_template/shuttle/supply/vehicle
 	shuttle_id = SHUTTLE_VEHICLE_SUPPLY

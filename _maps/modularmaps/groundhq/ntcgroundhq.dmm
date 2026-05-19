@@ -18433,7 +18433,7 @@
 /turf/open/floor/wood,
 /area/mainship/hallways/ntf/dorm1)
 "vsw" = (
-/obj/docking_port/stationary/supply/hq{
+/obj/docking_port/stationary/supplyhq{
 	name = "hqdock"
 	},
 /turf/open/floor/mainship/empty,
