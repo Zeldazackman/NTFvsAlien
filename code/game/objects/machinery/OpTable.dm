@@ -246,7 +246,7 @@
 	check_victim()
 	if(blood_flow_on && victim && blood_pack && blood_pack.reagents.get_reagent_amount(/datum/reagent/blood) > 0)
 		var/transfer_amount = 4
-		if(victim.blood_volume <= BLOOD_VOLUME_NORMAL)
+		if(victim.get_blood_volume() <= BLOOD_VOLUME_NORMAL)
 			victim.inject_blood(blood_pack, transfer_amount)
 			update_appearance(UPDATE_ICON)
 		else
