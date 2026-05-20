@@ -26,7 +26,7 @@
 	special_death_message = "<big>You have perished.</big><br><small>But it is not the end of you yet... if you still have your body with your head still attached, wait until somebody can resurrect you...</small>"
 	joinable_roundstart = TRUE
 	has_genital_selection = TRUE
-	stamina_mod = 0.8
+	stamina_mod = 0.9
 	species_description = "<br /><br /><b>Lore</b>:<br /><br /> \
 	Humans and all 'humanoids' are the most common species on Earth, and the most common sapient species in the known universe.<br /><br /> \
 	Humans have colonized planets and space stations before the great war.<br /><br /> \

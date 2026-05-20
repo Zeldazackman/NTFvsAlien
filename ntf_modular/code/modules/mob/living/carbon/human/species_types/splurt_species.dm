@@ -35,8 +35,7 @@
 		"Digitigrade" = "digitigrade_1",
 		"Digitigrade 2" = "digitigrade_2",
 	)
-	burn_mod = 0.85
-	slowdown = -0.95
+	burn_mod = 0.9
 	taste_sensitivity = TASTE_SENSITIVE
 
 	species_description = "<br /><br /><b>Lore</b>:<br /><br /> \
@@ -47,7 +46,7 @@
 	They have shark-like features, which lets them swim efficiently in water.<br /><br /><br /><br /> \
 	<b>Psychology</b>:<br /><br /> \
 	Akulas are a proud and fierce species, they have a strong sense of loyalty to their pack and to those they consider family. They can be aggressive and territorial, but they are also capable of great compassion and empathy towards those they care about.<br /><br />"
-	liquid_slowdown = 0.6 //faster than xenos
+	liquid_slowdown = 0.7 //faster than xenos
 
 /datum/species/anthro
 	name = "Anthro"
@@ -77,8 +76,8 @@
 		"Digitigrade" = "digitigrade_1",
 		"Digitigrade 2" = "digitigrade_2",
 	)
-	stamina_mod = 0.9
-	slowdown = -1.1
+	stamina_mod = 0.95
+	slowdown = -1.05
 	species_description = "<br /><br /><b>Lore</b>:<br /><br /> \
 	Anthros is a general term for all animallike humanoids, they are not a specific species but rather a collection of different species that share similar traits, they can be found in all parts of the world and have a wide range of cultures and societies.<br /><br /> \
 	<b>Physiology</b>:<br /><br /> \
@@ -154,8 +153,8 @@
 		"Digitigrade" = "digitigrade_1",
 		"Digitigrade 2" = "digitigrade_2",
 	)
-	burn_mod = 0.9
-	liquid_slowdown = 0.6 //faster than xenos
+	burn_mod = 0.95
+	liquid_slowdown = 0.7 //faster than xenos
 	species_description = "<br /><br /><b>Lore</b>:<br /><br /> \
 	Like Anthros, this is a general term for all water-dwelling humanoids, they are not a specific species but rather a collection of different species that share similar traits, they can be found in all parts of the world and have a wide range of cultures and societies.<br /><br /> \
 	<b>Physiology</b>:<br /><br /> \
@@ -186,12 +185,11 @@
 	warcries = list(MALE = SFX_MALE_WARCRY, FEMALE = SFX_FEMALE_WARCRY)
 	special_death_message = "<big>You have perished.</big><br><small>But it is not the end of you yet... if you still have your body with your head still attached, wait until somebody can resurrect you...</small>"
 	splurt_limb_prefix = "insect"
-	brute_mod = 0.9
-	burn_mod = 0.9
+	brute_mod = 0.95
 	species_description = "<br /><br /><b>Lore</b>:<br /><br /> \
 	Insectoids are a fascinating species known for their insect-like characteristics and unique biology. They possess exoskeletons, multiple limbs, and often have specialized appendages for various tasks.<br /><br /> \
 	<b>Physiology</b>:<br /><br /> \
-	Insectoids have a hard exoskeleton that provides protection and support for their bodies for both brute and burn damage. Their sensory organs are often highly developed, allowing them to navigate their environment with precision.<br /><br /> \
+	Insectoids have a hard exoskeleton that provides protection and support for their bodies from brute damage. Their sensory organs are often highly developed, allowing them to navigate their environment with precision.<br /><br /> \
 	<b>Psychology</b>:<br /><br /> \
 	Insectoids are often highly social creatures, living in colonies or hives with complex hierarchies and division of labor. They communicate through a variety of methods, including pheromones, sounds, and body language. They are sometimes subject to a hive mind...<br /><br />"
 	inherent_actions = list(/datum/action/ability/pheromones)
@@ -263,6 +261,38 @@
 	carbon_owner.remove_emitted_auras(src, AURA_HUMAN_HOLD)
 	carbon_owner.remove_emitted_auras(src, AURA_HUMAN_MOVE)
 	to_chat(carbon_owner, span_notice("You stop emitting pheromones."))
+
+/datum/species/skrell
+	name = "Skrell"
+	icobase = BODYPART_ICON_SKRELL
+	unarmed_type = /datum/unarmed_attack/claws
+	species_flags = HAS_LIPS|HAS_UNDERWEAR|HAS_SKIN_COLOR
+	count_human = TRUE
+	joinable_roundstart = TRUE
+	has_genital_selection = TRUE
+	limb_type = SPECIES_LIMB_SPLURT
+	screams = list(MALE = SFX_MALE_SCREAM, FEMALE = SFX_FEMALE_SCREAM)
+	paincries = list(MALE = SFX_MALE_PAIN, FEMALE = SFX_FEMALE_PAIN)
+	goredcries = list(MALE = SFX_MALE_GORED, FEMALE = SFX_FEMALE_GORED)
+	gasps = list(MALE = SFX_MALE_GASP, FEMALE = SFX_FEMALE_GASP)
+	chokes = list(FEMALE = SFX_FEMALE_CHOKE)
+	coughs = list(MALE = SFX_MALE_COUGH, FEMALE = SFX_FEMALE_COUGH)
+	groans = list(FEMALE = SFX_FEMALE_GROAN)
+	chokes = list(FEMALE = SFX_FEMALE_CHOKE)
+	sexymoanlights = list(FEMALE = SFX_FEMALE_SEXYMOANLIGHT)
+	sexymoanhvys = list(FEMALE = SFX_FEMALE_SEXYMOANHVY)
+	burstscreams = list(MALE = SFX_MALE_PREBURST, FEMALE = SFX_FEMALE_PREBURST)
+	warcries = list(MALE = SFX_MALE_WARCRY, FEMALE = SFX_FEMALE_WARCRY)
+	special_death_message = "<big>You have perished.</big><br><small>But it is not the end of you yet... if you still have your body with your head still attached, wait until somebody can resurrect you...</small>"
+	splurt_limb_prefix = "skrell"
+	stamina_mod = 0.9
+	burn_mod = 0.9
+	species_description = "<br /><br /><b>Lore</b>:<br /><br /> \
+	<b>Physiology</b>:<br /><br /> \
+	<b>Psychology</b>:<br /><br />"
+	liquid_slowdown = 0.8
+	taste_sensitivity = TASTE_SENSITIVE
+
 
 // Disabled SPLURT species placeholders keep the type paths and sprite wiring ready for later ports.
 // Do not enable these until their body sprites, mechanics, and preference defaults are finished.
@@ -431,29 +461,6 @@
 		"Digitigrade 2" = "digitigrade_2",
 	)
 
-/datum/species/skrell
-	name = "Skrell"
-	icobase = BODYPART_ICON_SKRELL
-	unarmed_type = /datum/unarmed_attack/claws
-	species_flags = HAS_LIPS|HAS_UNDERWEAR|HAS_SKIN_COLOR
-	count_human = TRUE
-	joinable_roundstart = TRUE
-	has_genital_selection = TRUE
-	limb_type = SPECIES_LIMB_SPLURT
-	screams = list(MALE = SFX_MALE_SCREAM, FEMALE = SFX_FEMALE_SCREAM)
-	paincries = list(MALE = SFX_MALE_PAIN, FEMALE = SFX_FEMALE_PAIN)
-	goredcries = list(MALE = SFX_MALE_GORED, FEMALE = SFX_FEMALE_GORED)
-	gasps = list(MALE = SFX_MALE_GASP, FEMALE = SFX_FEMALE_GASP)
-	chokes = list(FEMALE = SFX_FEMALE_CHOKE)
-	coughs = list(MALE = SFX_MALE_COUGH, FEMALE = SFX_FEMALE_COUGH)
-	groans = list(FEMALE = SFX_FEMALE_GROAN)
-	chokes = list(FEMALE = SFX_FEMALE_CHOKE)
-	sexymoanlights = list(FEMALE = SFX_FEMALE_SEXYMOANLIGHT)
-	sexymoanhvys = list(FEMALE = SFX_FEMALE_SEXYMOANHVY)
-	burstscreams = list(MALE = SFX_MALE_PREBURST, FEMALE = SFX_FEMALE_PREBURST)
-	warcries = list(MALE = SFX_MALE_WARCRY, FEMALE = SFX_FEMALE_WARCRY)
-	special_death_message = "<big>You have perished.</big><br><small>But it is not the end of you yet... if you still have your body with your head still attached, wait until somebody can resurrect you...</small>"
-	splurt_limb_prefix = "skrell"
 
 /datum/species/teshari
 	name = "Teshari"

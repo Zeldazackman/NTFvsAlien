@@ -25,7 +25,7 @@
 	special_death_message = "<big>You have perished.</big><br><small>But it is not the end of you yet... if you still have your body with your head still attached, wait until somebody can resurrect you...</small>"
 	joinable_roundstart = TRUE
 	has_genital_selection = TRUE
-	burn_mod = 0.8
+	burn_mod = 0.9 //weak ass ability so get 0.9 than 0.95
 	species_description = "<br /><br /><b>Lore</b>:<br /><br /> \
 	Reptilians are much like any other humanoid species, but with scaly skin, tails, and a variety of other reptilian features.<br /><br /> \
 	They are a diverse and adaptable species, found in a wide range of environments across the planet.<br /><br /> \
@@ -46,11 +46,10 @@
 
 /datum/action/ability/tailsweep
 	name = "Tailsweep"
-	action_icon_state = "frenzy"
-	desc = "Spin around, knocking everything to the ground briefly."
+	desc = "Spin around, knocking everything next to you to the ground briefly."
 	action_icon_state = "tail_sweep"
 	action_icon = 'icons/Xeno/actions/defender.dmi'
-	cooldown_duration = 2 MINUTES
+	cooldown_duration = 1.5 MINUTES
 	use_state_flags = ABILITY_USE_STAGGERED
 
 /datum/action/ability/tailsweep/can_use_action(silent, override_flags, selecting)
@@ -65,6 +64,7 @@
 	if(!carbon_owner)		return FALSE
 	carbon_owner.visible_message(span_xenowarning("\The [carbon_owner] sweeps [carbon_owner.p_their()] tail in a wide circle!"), \
 	span_xenowarning("You sweep your tail in a wide circle!"))
+	playsound(carbon_owner.loc, 'ntf_modular/sound/effects/dt-spin.ogg', 50)
 
 	carbon_owner.add_filter("defender_tail_sweep", 2, gauss_blur_filter(1)) //Add cool SFX
 	carbon_owner.spin(4, 1)
@@ -74,7 +74,9 @@
 	var/sweep_range = 1
 	var/list/L = orange(sweep_range, carbon_owner)		// Not actually the fruit
 
-	for (var/mob/living/carbon/human/H in L)
+	for (var/mob/living/carbon/H in L)
+		if(H == carbon_owner)
+			continue
 		if(H.stat == DEAD || !carbon_owner.Adjacent(H))
 			continue
 		if(HAS_TRAIT(H, TRAIT_HAULED) || (H.status_flags & (INCORPOREAL|GODMODE)))
@@ -84,6 +86,8 @@
 		H.Paralyze(0.5 SECONDS)
 		shake_camera(H, 2, 1)
 
+		to_chat(H, span_xenowarning("You are struck by \the [xeno_owner]'s tail sweep!"))
+		playsound(H,'sound/weapons/alien_claw_block.ogg', 50, 1)
 
 	addtimer(CALLBACK(carbon_owner, TYPE_PROC_REF(/datum, remove_filter), "defender_tail_sweep"), 0.5 SECONDS) //Remove cool SFX
 	succeed_activate()

@@ -50,7 +50,6 @@
 	They are known for their aggressive behavior and tendency to go into a berserk rage when injured or provoked, especially if they are of weak will.<br /><br /><br /><br /> \
 	<img src=https://images2.imgbox.com/eb/ed/Ej1joSvd_o.png width=100 height=150/> <img src=https://images2.imgbox.com/3e/34/Grph56ZU_o.png width=100 height=150/> <img src=https://images2.imgbox.com/83/96/oDGu3zmO_o.png width=100 height=150/><img src=https://images2.imgbox.com/66/71/1633KcMb_o.png width=100 height=150/>"
 	//need force emissive on eye, hair, nipples and vaginas somehow
-	var/last_raged = 0
 	inherent_actions = list(/datum/action/ability/last_stand)
 
 /datum/species/resurgentis/apply_damage(damage, damagetype, def_zone, blocked, sharp, edge, updating_health, penetration, mob/living/attacker, mob/living/carbon/human/victim)
@@ -104,8 +103,8 @@
 
 	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/adrenaline, 6, no_overdose = TRUE)
 	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/oxycodone, 5, no_overdose = TRUE)
-	carbon_owner.adjustBruteLoss(-carbon_owner.getBruteLoss(TRUE) * 0.60) //as if double inaprovaline
-	carbon_owner.adjustFireLoss(-carbon_owner.getFireLoss(TRUE) * 0.60)
+	carbon_owner.adjustBruteLoss(-carbon_owner.getBruteLoss(TRUE) * 0.30) //as if inaprovaline
+	carbon_owner.adjustFireLoss(-carbon_owner.getFireLoss(TRUE) * 0.30)
 	carbon_owner.Stun(1 SECONDS)
 	carbon_owner.emote("me", 1, "slams their fist to the ground.")
 	carbon_owner.health_threshold_crit = -100 //stop when u dead
@@ -122,7 +121,7 @@
 		if(affected_mob.stat || affected_mob == carbon_owner) //We don't care about the dead/unconsious
 			continue
 
-		affected_mob.adjust_stagger(3 SECONDS)
+		affected_mob.adjust_stagger(1 SECONDS)
 		shake_camera(affected_mob, 1 SECONDS, 1)
 		affected_mob.Shake(duration = 1 SECONDS) //SFX
 
@@ -136,6 +135,7 @@
 	carbon_owner.add_filter("last_stand_outline", 5, outline_filter(1.5, COLOR_RED)) //Set our cool aura; also confirmation we have the buff
 
 	//Too angry to be stunned/slowed/staggered/knocked down
+	ADD_TRAIT(carbon_owner, TRAIT_PAIN_IMMUNE, "[type]")
 	ADD_TRAIT(carbon_owner, TRAIT_STUNIMMUNE, "[type]")
 	ADD_TRAIT(carbon_owner, TRAIT_SLOWDOWNIMMUNE, "[type]")
 	ADD_TRAIT(carbon_owner, TRAIT_STAGGERIMMUNE, "[type]")
@@ -166,6 +166,7 @@
 
 	owner.remove_movespeed_modifier(MOVESPEED_ID_RAVAGER_RAGE) //Reset speed
 
+	REMOVE_TRAIT(owner, TRAIT_PAIN_IMMUNE, "[type]")
 	REMOVE_TRAIT(owner, TRAIT_STUNIMMUNE, "[type]")
 	REMOVE_TRAIT(owner, TRAIT_SLOWDOWNIMMUNE, "[type]")
 	REMOVE_TRAIT(owner, TRAIT_STAGGERIMMUNE, "[type]")
