@@ -580,6 +580,14 @@
 	dir = 6
 	},
 /area/lawankaoutpost/colony/biologics)
+"axA" = (
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
+	},
+/turf/open/floor/tile/green/whitegreen{
+	dir = 1
+	},
+/area/lawankaoutpost/colony/medbay)
 "axF" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/effect/ai_node,
@@ -781,6 +789,7 @@
 /area/lawankaoutpost/outside/west)
 "aFv" = (
 /obj/effect/ai_node,
+/obj/effect/spawner/random/misc/structure/crate,
 /turf/open/floor/tile/dark/brown2/corner,
 /area/lawankaoutpost/colony/cargo)
 "aFw" = (
@@ -1413,6 +1422,12 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/colony/operations_hall)
+"bhJ" = (
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
+	},
+/turf/open/floor/plating,
+/area/lawankaoutpost/colony/biologics_storage)
 "bhR" = (
 /obj/machinery/disposal,
 /obj/machinery/light{
@@ -1934,6 +1949,10 @@
 	dir = 1
 	},
 /area/lawankaoutpost/colony/mining)
+"bDx" = (
+/obj/docking_port/stationary/supplycolony,
+/turf/open/floor/mainship/empty,
+/area/lawankaoutpost/colony/cargo)
 "bDB" = (
 /obj/effect/turf_decal/tracks/wheels/bloody,
 /turf/open/floor/cult,
@@ -3302,6 +3321,7 @@
 "cJk" = (
 /obj/structure/table,
 /obj/item/stack/sheet/metal/small_stack,
+/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/tile/dark/yellow2{
 	dir = 1
 	},
@@ -3782,6 +3802,9 @@
 /area/lawankaoutpost/outside/central)
 "dep" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
+	},
 /turf/open/floor/tile/dark/yellow2{
 	dir = 5
 	},
@@ -4778,6 +4801,9 @@
 "eaq" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
+	},
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
 	},
 /turf/open/floor/tile/dark/red2{
 	dir = 1
@@ -6242,6 +6268,16 @@
 "fkz" = (
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/caves/rock)
+"fkJ" = (
+/obj/structure/prop/mainship/railing{
+	dir = 4
+	},
+/obj/machinery/computer/supplycomp/colony,
+/obj/effect/urban/decal/dirt,
+/obj/effect/urban/decal/dirt,
+/obj/effect/urban/decal/dirt,
+/turf/open/floor/tile/dark/brown2/corner,
+/area/lawankaoutpost/colony/cargo)
 "flw" = (
 /obj/structure/closet/wardrobe/chaplain_black,
 /obj/machinery/light{
@@ -7724,6 +7760,12 @@
 /obj/effect/landmark/weed_node,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/north)
+"gni" = (
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
+	},
+/turf/open/floor/tile/green/full,
+/area/lawankaoutpost/colony/hydroponics)
 "gnx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/weed_node,
@@ -8009,6 +8051,9 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/tile/purple/whitepurple,
 /area/lawankaoutpost/colony/medbay)
+"gAr" = (
+/turf/open/floor/mainship/empty,
+/area/lawankaoutpost/colony/cargo)
 "gAQ" = (
 /obj/structure/flora/ausbushes/grassybush{
 	pixel_x = -7;
@@ -8069,6 +8114,14 @@
 /obj/structure/cable,
 /turf/open/floor/wood,
 /area/lawankaoutpost/colony/bar)
+"gEh" = (
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
+	},
+/turf/open/floor/tile/dark/brown2{
+	dir = 1
+	},
+/area/lawankaoutpost/colony/cargo)
 "gEk" = (
 /obj/effect/ai_node,
 /turf/open/floor/tile/dark/yellow2,
@@ -8647,6 +8700,14 @@
 /obj/effect/landmark/patrol_point/som/som_21,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/caves/southwest)
+"hhb" = (
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
+	},
+/turf/open/floor/tile/red/redtaupe{
+	dir = 1
+	},
+/area/lawankaoutpost/colony/recdorms)
 "hhr" = (
 /obj/effect/landmark/weed_node,
 /obj/effect/ai_node,
@@ -12884,6 +12945,13 @@
 	dir = 1
 	},
 /area/lawankaoutpost/colony/atmos)
+"kQA" = (
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 4;
+	pixel_x = -14
+	},
+/turf/open/floor/tile/green/whitegreenfull,
+/area/lawankaoutpost/colony/chapel)
 "kQT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
@@ -15231,6 +15299,14 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/green/whitegreenfull,
 /area/lawankaoutpost/colony/chapel)
+"mKH" = (
+/obj/effect/landmark/weed_node,
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 4;
+	pixel_x = -14
+	},
+/turf/open/floor/wood,
+/area/lawankaoutpost/colony/bar)
 "mLf" = (
 /obj/machinery/landinglight/lz1{
 	dir = 8
@@ -20216,6 +20292,13 @@
 /obj/effect/landmark/weed_node,
 /turf/open/ground/grass/weedable,
 /area/lawankaoutpost/outside/west)
+"qJt" = (
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 4;
+	pixel_x = -14
+	},
+/turf/open/floor,
+/area/lawankaoutpost/colony/landingzonetwo)
 "qJG" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/tile/dark2,
@@ -20318,6 +20401,13 @@
 	},
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/outside/southeast)
+"qPr" = (
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 4;
+	pixel_x = -14
+	},
+/turf/open/floor/tile/purple/taupepurple/corner,
+/area/lawankaoutpost/colony/biologics)
 "qPW" = (
 /obj/item/stool,
 /turf/open/floor/tile/white,
@@ -20562,6 +20652,14 @@
 	},
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/colony/engineering)
+"qYp" = (
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
+	},
+/turf/open/floor/tile/dark/brown2{
+	dir = 1
+	},
+/area/lawankaoutpost/colony/mining)
 "qYw" = (
 /turf/open/floor/tile/red/redtaupe{
 	dir = 8
@@ -21955,10 +22053,10 @@
 /turf/open/floor,
 /area/lawankaoutpost/colony/recdorms)
 "sce" = (
-/obj/effect/spawner/random/misc/structure/crate,
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/effect/spawner/random/misc/structure/supplycrate,
 /turf/open/floor/tile/dark/brown2/corner,
 /area/lawankaoutpost/colony/cargo)
 "sdr" = (
@@ -24255,6 +24353,12 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor,
 /area/lawankaoutpost/colony/biologics)
+"tSR" = (
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
+	},
+/turf/open/floor/cult,
+/area/lawankaoutpost/caves/southwest)
 "tSX" = (
 /obj/effect/landmark/weed_node,
 /turf/open/ground/grass/weedable,
@@ -24395,6 +24499,9 @@
 /area/lawankaoutpost/colony/engineering)
 "tZz" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
+	},
 /turf/open/floor/tile/blue/taupeblue{
 	dir = 5
 	},
@@ -26479,10 +26586,13 @@
 /turf/open/floor/tile/dark2,
 /area/lawankaoutpost/caves/nanotrasen_lab)
 "vMt" = (
+/obj/structure/prop/mainship/railing{
+	dir = 8
+	},
+/obj/effect/urban/decal/dirt,
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/tile/dark/brown2/corner,
 /area/lawankaoutpost/colony/cargo)
 "vMv" = (
@@ -27827,6 +27937,17 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
+	},
+/turf/open/floor/tile/blue/taupeblue{
+	dir = 1
+	},
+/area/lawankaoutpost/colony/northdorms)
+"wPs" = (
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 4
+	},
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
 	},
 /turf/open/floor/tile/blue/taupeblue{
 	dir = 1
@@ -39141,7 +39262,7 @@ rRZ
 gxq
 eSE
 dun
-pxb
+tSR
 pxb
 pxb
 uea
@@ -49736,7 +49857,7 @@ uxA
 pGg
 cDN
 mpM
-dlb
+mKH
 rdP
 rSo
 rdP
@@ -52729,7 +52850,7 @@ uaK
 dDh
 bHX
 vXr
-bAi
+axA
 lbk
 dQi
 qML
@@ -53675,7 +53796,7 @@ miV
 pGo
 tTN
 pGo
-rIX
+kQA
 dBe
 lXR
 ada
@@ -55749,7 +55870,7 @@ jaI
 vbg
 azC
 aym
-cHR
+qYp
 rAA
 wyi
 kKl
@@ -57263,9 +57384,9 @@ jGj
 sVx
 sVx
 oVD
-pth
+fkJ
 sce
-aoe
+kUI
 oVD
 teF
 hWV
@@ -57480,7 +57601,7 @@ sVx
 kXZ
 sVx
 oVD
-aoe
+gAr
 nzi
 bwg
 oVD
@@ -57697,7 +57818,7 @@ sVx
 sVx
 luL
 oVD
-kUI
+bDx
 aFv
 pth
 oVD
@@ -57822,7 +57943,7 @@ vmk
 vmk
 lmH
 ezB
-mCO
+gni
 rxt
 pSu
 fOX
@@ -57914,7 +58035,7 @@ idf
 sVx
 sVx
 oVD
-aoe
+gAr
 qRw
 aoe
 oVD
@@ -58352,7 +58473,7 @@ aoe
 aoe
 aoe
 oVD
-fuQ
+gEh
 hdB
 riv
 rST
@@ -59622,7 +59743,7 @@ oqq
 oqq
 oqq
 jTQ
-mcj
+bhJ
 wdK
 wwj
 oNy
@@ -62025,7 +62146,7 @@ mAi
 kIr
 kFv
 mLL
-mLL
+qPr
 mLL
 ihs
 hRr
@@ -70535,7 +70656,7 @@ pTn
 pTn
 pTn
 pTn
-lWg
+wPs
 jvt
 pTn
 wtm
@@ -71524,7 +71645,7 @@ wEk
 wEk
 wEk
 wEk
-wEk
+qJt
 pwF
 wEk
 wEk
@@ -71857,7 +71978,7 @@ gDs
 gDs
 dVY
 aiH
-qRX
+hhb
 aTm
 vwR
 iqG

@@ -86,7 +86,7 @@
 		H.Paralyze(0.5 SECONDS)
 		shake_camera(H, 2, 1)
 
-		to_chat(H, span_xenowarning("You are struck by \the [xeno_owner]'s tail sweep!"))
+		to_chat(H, span_warning("You are struck by [carbon_owner]'s tail sweep!"))
 		playsound(H,'sound/weapons/alien_claw_block.ogg', 50, 1)
 
 	addtimer(CALLBACK(carbon_owner, TYPE_PROC_REF(/datum, remove_filter), "defender_tail_sweep"), 0.5 SECONDS) //Remove cool SFX

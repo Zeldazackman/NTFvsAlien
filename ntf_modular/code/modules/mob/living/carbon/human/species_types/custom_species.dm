@@ -102,7 +102,8 @@
 	carbon_owner.do_jitter_animation(1000)
 
 	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/adrenaline, 6, no_overdose = TRUE)
-	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/oxycodone, 5, no_overdose = TRUE)
+	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/regeneration, 15, no_overdose = TRUE)
+	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/tramadol, 15, no_overdose = TRUE)
 	carbon_owner.adjustBruteLoss(-carbon_owner.getBruteLoss(TRUE) * 0.30) //as if inaprovaline
 	carbon_owner.adjustFireLoss(-carbon_owner.getFireLoss(TRUE) * 0.30)
 	carbon_owner.Stun(1 SECONDS)

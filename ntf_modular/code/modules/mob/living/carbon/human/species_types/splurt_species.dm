@@ -90,7 +90,7 @@
 	name = "Predator Stance"
 	action_icon = 'icons/Xeno/actions/queen.dmi'
 	action_icon_state = "screech"
-	desc = "You will listen in and start noticing motion in the distance for about 2 minutes. this gives you adrenaline and extre movement speed also."
+	desc = "You will listen in and start noticing motion in the distance for about 2 minutes. this gives you adrenaline and extra movement speed."
 	cooldown_duration = 4 MINUTES
 	use_state_flags = ABILITY_USE_BUCKLED|ABILITY_USE_BUSY|ABILITY_USE_LYING|ABILITY_USE_NOTTURF
 	var/obj/item/attachable/motiondetector/natural/sensor
@@ -109,6 +109,7 @@
 	sensor = new /obj/item/attachable/motiondetector/natural(owner.contents)
 	sensor.activate(carbon_owner)
 	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/adrenaline, 6, no_overdose = TRUE)
+	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/regeneration, 5, no_overdose = TRUE)
 	playsound(carbon_owner.loc, 'ntf_modular/sound/effects/dt-sonar.ogg', 50)
 	carbon_owner.emote("me", 1, "enters a focused state.")
 	owner.add_movespeed_modifier("[type]", TRUE, 0, NONE, TRUE, -0.2)
@@ -239,12 +240,9 @@
 		to_chat(affected_mob, span_notice("You are affected by [carbon_owner]'s [phero_choice] pheromones."))
 		switch(phero_choice)
 			if(AURA_XENO_RECOVERY)
-				affected_mob.reagents.add_reagent(/datum/reagent/medicine/bicaridine, 8, no_overdose = TRUE)
-				affected_mob.reagents.add_reagent(/datum/reagent/medicine/tricordrazine, 8, no_overdose = TRUE)
-				affected_mob.reagents.add_reagent(/datum/reagent/medicine/kelotane, 8, no_overdose = TRUE)
-				affected_mob.reagents.add_reagent(/datum/reagent/medicine/tramadol, 5, no_overdose = TRUE)
-				affected_mob.adjustBruteLoss(-affected_mob.getBruteLoss(TRUE) * 0.40)
-				affected_mob.adjustFireLoss(-affected_mob.getFireLoss(TRUE) * 0.40)
+				affected_mob.reagents.add_reagent(/datum/reagent/medicine/regeneration, 15, no_overdose = TRUE)
+				affected_mob.adjustBruteLoss(-affected_mob.getBruteLoss(TRUE) * 0.30)
+				affected_mob.adjustFireLoss(-affected_mob.getFireLoss(TRUE) * 0.30)
 			if(AURA_XENO_WARDING)
 				affected_mob.reagents.add_reagent(/datum/reagent/medicine/tramadol, 5, no_overdose = TRUE)
 				affected_mob.reagents.add_reagent(/datum/reagent/medicine/oxycodone, 5, no_overdose = TRUE)

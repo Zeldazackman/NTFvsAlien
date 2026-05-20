@@ -836,6 +836,9 @@
 "awD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/weed_node,
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
+	},
 /turf/open/floor/carpet/side{
 	dir = 5
 	},
@@ -1229,7 +1232,14 @@
 /turf/open/liquid/water/river/autosmooth,
 /area/lv624/ground/river2)
 "aFk" = (
+/obj/structure/prop/mainship/railing{
+	dir = 8
+	},
+/obj/effect/urban/decal/dirt,
 /obj/effect/spawner/random/engineering/ore_box,
+/turf/open/floor/prison/cellstripe{
+	dir = 1
+	},
 /turf/open/floor,
 /area/lv624/ground/sand2)
 "aFm" = (
@@ -1488,6 +1498,7 @@
 /area/lv624/ground/filtration)
 "aLO" = (
 /obj/structure/table/reinforced,
+/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/tile/red/redtaupe{
 	dir = 4
 	},
@@ -1627,6 +1638,12 @@
 /obj/structure/closet/secure_closet/freezer/kitchen,
 /turf/open/floor/freezer,
 /area/lv624/lazarus/kitchen)
+"aPw" = (
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
+	},
+/turf/open/floor/tile/blue/whiteblue,
+/area/lv624/lazarus/internal_affairs)
 "aPE" = (
 /obj/effect/landmark/weed_node,
 /turf/open/floor/marking/bot,
@@ -3757,6 +3774,19 @@
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth,
 /area/lv624/ground/jungle7)
+"coL" = (
+/obj/structure/prop/mainship/railing{
+	dir = 4
+	},
+/obj/machinery/computer/supplycomp/colony,
+/obj/effect/urban/decal/dirt,
+/obj/effect/urban/decal/dirt,
+/obj/effect/urban/decal/dirt,
+/turf/open/floor/prison/cellstripe{
+	dir = 1
+	},
+/turf/open/floor,
+/area/lv624/ground/sand2)
 "cpi" = (
 /obj/structure/mopbucket,
 /obj/item/tool/mop,
@@ -5858,6 +5888,12 @@
 	dir = 5
 	},
 /area/lv624/ground/river2)
+"esq" = (
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
+	},
+/turf/open/floor/wood,
+/area/lv624/lazarus/captain)
 "esF" = (
 /obj/structure/barricade/wooden,
 /obj/effect/ai_node,
@@ -6011,6 +6047,12 @@
 /obj/structure/cable,
 /turf/open/floor/tile/red/redtaupe,
 /area/lv624/lazarus/security)
+"eBR" = (
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
+	},
+/turf/open/floor/tile/dark,
+/area/lv624/lazarus/quartstorage/dome)
 "eBT" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -6918,6 +6960,10 @@
 "fxN" = (
 /obj/structure/cable,
 /obj/effect/ai_node,
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 4;
+	pixel_x = -14
+	},
 /turf/open/floor/freezer,
 /area/lv624/lazarus/toilet)
 "fxU" = (
@@ -7834,6 +7880,10 @@
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 5
 	},
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 8;
+	pixel_x = 14
+	},
 /turf/open/floor/tile/dark/brown2{
 	dir = 8
 	},
@@ -8361,6 +8411,9 @@
 "haS" = (
 /obj/structure/extinguisher_cabinet{
 	dir = 1
+	},
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
 	},
 /turf/open/floor/tile/blue/whiteblue,
 /area/lv624/lazarus/corporate_affairs)
@@ -11726,6 +11779,15 @@
 	},
 /turf/open/floor/tile/whiteyellow/full,
 /area/lv624/lazarus/sandtemple/garbledradio)
+"kkR" = (
+/obj/effect/turf_decal/warning_stripes/thin{
+	dir = 6
+	},
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
+	},
+/turf/open/floor/tile/dark,
+/area/lv624/lazarus/quartstorage)
 "klB" = (
 /turf/open/floor/tile/green/whitegreen,
 /area/lv624/lazarus/hydroponics/aux)
@@ -12282,6 +12344,9 @@
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone,
 /turf/open/floor/tile/dark,
 /area/lv624/lazarus/quartstorage)
+"kMz" = (
+/turf/open/floor/mainship/empty,
+/area/lv624/ground/sand2)
 "kMH" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 4
@@ -12364,8 +12429,9 @@
 	},
 /area/lv624/lazarus/sleep_female)
 "kQG" = (
-/obj/machinery/colony_floodlight_switch{
-	pixel_x = 32
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 8;
+	pixel_x = 14
 	},
 /turf/open/floor/plating,
 /area/lv624/lazarus/engineering)
@@ -13476,7 +13542,9 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/caves/central4)
 "lXu" = (
-/obj/effect/spawner/random/engineering/tool,
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
+	},
 /turf/open/floor/plating/warning{
 	dir = 1
 	},
@@ -14775,6 +14843,10 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/wood,
 /area/lv624/lazarus/bar)
+"nhx" = (
+/obj/docking_port/stationary/supplycolony,
+/turf/open/floor/mainship/empty,
+/area/lv624/ground/sand2)
 "niS" = (
 /obj/structure/flora/jungle/vines,
 /obj/structure/platform,
@@ -15042,7 +15114,10 @@
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/jungle9)
 "nAQ" = (
-/obj/effect/decal/cleanable/blood/splatter/animated,
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 8;
+	pixel_x = 14
+	},
 /turf/open/floor/tile/white,
 /area/lv624/lazarus/research)
 "nAY" = (
@@ -17925,6 +18000,14 @@
 /obj/structure/catwalk,
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth,
 /area/lv624/ground/jungle6)
+"qIW" = (
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
+	},
+/turf/open/floor/tile/green/whitegreen{
+	dir = 1
+	},
+/area/lv624/lazarus/hydroponics/aux)
 "qJo" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/cup/glass/drinkingglass{
@@ -18082,6 +18165,12 @@
 /obj/effect/decal/cleanable/blood/oil,
 /turf/open/floor/plating/icefloor,
 /area/shuttle/drop2/lz2)
+"qQF" = (
+/obj/structure/table/mainship,
+/obj/effect/spawner/random/weaponry/gun/sidearms,
+/obj/structure/transmitter/colony_net/desk/auto_id,
+/turf/open/floor/tile/dark,
+/area/lv624/lazarus/secure_storage)
 "qRg" = (
 /obj/effect/landmark/excavation_site_spawner,
 /turf/open/floor/plating/platebot,
@@ -19042,6 +19131,14 @@
 	},
 /turf/open/floor/plating,
 /area/lv624/ground/sand7)
+"rHA" = (
+/obj/structure/table/wood,
+/obj/item/tool/candle,
+/obj/structure/transmitter/colony_net/desk/auto_id,
+/turf/open/floor/tile/chapel{
+	dir = 8
+	},
+/area/lv624/lazarus/chapel)
 "rHK" = (
 /obj/structure/table,
 /obj/item/tool/analyzer/plant_analyzer{
@@ -21106,6 +21203,12 @@
 /obj/structure/flora/jungle/vines,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/lazarus/overgrown)
+"tIL" = (
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
+	},
+/turf/open/floor/tile/bar,
+/area/lv624/lazarus/canteen)
 "tIT" = (
 /obj/machinery/light,
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth,
@@ -21285,6 +21388,15 @@
 	},
 /turf/open/floor/plating,
 /area/lv624/lazarus/quartstorage/dome)
+"tTf" = (
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 4;
+	pixel_x = -14
+	},
+/turf/open/floor/tile/purple/whitepurplecorner{
+	dir = 4
+	},
+/area/lv624/lazarus/fitness)
 "tTg" = (
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/dirt,
@@ -23897,6 +24009,15 @@
 	dir = 8
 	},
 /area/lv624/lazarus/chapel)
+"wru" = (
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 8;
+	pixel_x = 14
+	},
+/turf/open/floor/tile/brown{
+	dir = 9
+	},
+/area/lv624/lazarus/comms)
 "wrP" = (
 /turf/open/ground/grass,
 /area/lv624/ground/jungle5)
@@ -24182,6 +24303,7 @@
 "wEB" = (
 /obj/structure/table/wood,
 /obj/machinery/light/small,
+/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/grimy,
 /area/lv624/lazarus/captain)
 "wEJ" = (
@@ -25729,6 +25851,13 @@
 	},
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/sand7)
+"xWr" = (
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = -24;
+	dir = 1
+	},
+/turf/open/floor/tile/dark,
+/area/lv624/lazarus/armory)
 "xWz" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -25825,6 +25954,11 @@
 /obj/effect/turf_decal/riverdecal,
 /turf/open/floor/plating,
 /area/lv624/ground/river1)
+"ybI" = (
+/obj/structure/table,
+/obj/structure/transmitter/colony_net/desk/auto_id,
+/turf/open/floor/tile/barber,
+/area/lv624/lazarus/kitchen)
 "ybZ" = (
 /obj/structure/cable,
 /turf/open/floor/tile/white,
@@ -29889,7 +30023,7 @@ dAK
 wLI
 ucI
 udH
-gGr
+qQF
 qyE
 gGr
 udH
@@ -40682,7 +40816,7 @@ hUE
 jJZ
 dVN
 dre
-itM
+qIW
 umb
 klB
 dre
@@ -65212,7 +65346,7 @@ rmS
 pir
 pir
 pir
-pir
+wru
 fZS
 fuA
 nEX
@@ -69469,7 +69603,7 @@ dco
 wdi
 dco
 dco
-vpc
+aPw
 fnp
 dSR
 dco
@@ -69753,7 +69887,7 @@ uDA
 gim
 hnV
 laT
-dHc
+tTf
 mkE
 wgH
 jtZ
@@ -73707,7 +73841,7 @@ wjy
 vGr
 vPC
 rQR
-wns
+xWr
 vPC
 uKf
 vPC
@@ -76311,7 +76445,7 @@ xsY
 ann
 iBt
 bhp
-iBt
+rHA
 lIF
 lTr
 jsE
@@ -77962,7 +78096,7 @@ ngY
 saF
 vpz
 xuv
-iyl
+esq
 oXD
 mYW
 eOC
@@ -78523,7 +78657,7 @@ hcU
 axO
 axO
 aCP
-axO
+coL
 aqx
 aHh
 aHh
@@ -78850,7 +78984,7 @@ axO
 axO
 aBM
 iJC
-axO
+kMz
 awP
 dqS
 agv
@@ -79177,7 +79311,7 @@ axO
 aqW
 aBp
 aqW
-hww
+nhx
 awP
 agv
 agv
@@ -79504,7 +79638,7 @@ axO
 axO
 aBs
 etj
-axO
+kMz
 awP
 agv
 agv
@@ -81232,7 +81366,7 @@ iuM
 iPi
 pFs
 dgm
-fdF
+ybI
 uCO
 lmd
 lJl
@@ -83844,7 +83978,7 @@ wjy
 mxO
 mxO
 mxO
-nvS
+tIL
 gPa
 brH
 brH
@@ -85126,7 +85260,7 @@ fbf
 hlQ
 hes
 hes
-pvx
+kkR
 ngJ
 wCI
 tJH
@@ -90347,7 +90481,7 @@ cGV
 tyR
 ecr
 ecr
-ngA
+eBR
 dzb
 gGj
 gGj
