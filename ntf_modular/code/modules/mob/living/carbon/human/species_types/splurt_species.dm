@@ -47,7 +47,7 @@
 	They have shark-like features, which lets them swim efficiently in water.<br /><br /><br /><br /> \
 	<b>Psychology</b>:<br /><br /> \
 	Akulas are a proud and fierce species, they have a strong sense of loyalty to their pack and to those they consider family. They can be aggressive and territorial, but they are also capable of great compassion and empathy towards those they care about.<br /><br />"
-	liquid_slowdown = 0.95 //faster than xenos
+	liquid_slowdown = 0.6 //faster than xenos
 
 /datum/species/anthro
 	name = "Anthro"
@@ -85,6 +85,46 @@
 	Anthros have a wide range of physical traits, depending on their specific species, but they all share some common traits such as fur, tails, and animal-like ears. They are generally similiar to humans, not as enduring but slightly more agile.<br /><br /> \
 	<b>Psychology</b>:<br /><br /> \
 	Anthros are a diverse group of species, with a wide range of cultures and societies.<br /><br />"
+	inherent_actions = list(/datum/action/ability/predator_stance)
+
+/datum/action/ability/predator_stance
+	name = "Predator Stance"
+	action_icon = 'icons/Xeno/actions/queen.dmi'
+	action_icon_state = "screech"
+	desc = "You will listen in and start noticing motion in the distance for about 2 minutes. this gives you adrenaline and extre movement speed also."
+	cooldown_duration = 4 MINUTES
+	use_state_flags = ABILITY_USE_BUCKLED|ABILITY_USE_BUSY|ABILITY_USE_LYING|ABILITY_USE_NOTTURF
+	var/obj/item/attachable/motiondetector/natural/sensor
+
+/datum/action/ability/predator_stance/can_use_action(silent, override_flags, selecting)
+	. = ..()
+	if(!.)
+		return FALSE
+	var/mob/living/carbon/carbon_owner = owner
+	if(!carbon_owner)		return FALSE
+
+/datum/action/ability/predator_stance/action_activate()
+	var/mob/living/carbon/carbon_owner = owner
+	if(!carbon_owner)		return FALSE
+
+	sensor = new /obj/item/attachable/motiondetector/natural(owner.contents)
+	sensor.activate(carbon_owner)
+	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/adrenaline, 6, no_overdose = TRUE)
+	playsound(carbon_owner.loc, 'ntf_modular/sound/effects/dt-sonar.ogg', 50)
+	carbon_owner.emote("me", 1, "enters a focused state.")
+	owner.add_movespeed_modifier("[type]", TRUE, 0, NONE, TRUE, -0.2)
+	addtimer(CALLBACK(src, PROC_REF(predator_stance_deactivate)), 120 SECONDS)
+	succeed_activate()
+	add_cooldown()
+
+/datum/action/ability/predator_stance/proc/predator_stance_deactivate()
+	if(QDELETED(owner))
+		return
+	var/mob/living/carbon/carbon_owner = owner
+	sensor.clean_blips()
+	qdel(sensor)
+	carbon_owner.remove_movespeed_modifier("[type]", TRUE)
+	to_chat(carbon_owner, span_danger("You lose your focus."))
 
 /datum/species/aquatic
 	name = "Aquatic"
@@ -115,7 +155,7 @@
 		"Digitigrade 2" = "digitigrade_2",
 	)
 	burn_mod = 0.9
-	liquid_slowdown = 0.95 //faster than xenos
+	liquid_slowdown = 0.6 //faster than xenos
 	species_description = "<br /><br /><b>Lore</b>:<br /><br /> \
 	Like Anthros, this is a general term for all water-dwelling humanoids, they are not a specific species but rather a collection of different species that share similar traits, they can be found in all parts of the world and have a wide range of cultures and societies.<br /><br /> \
 	<b>Physiology</b>:<br /><br /> \
@@ -154,6 +194,75 @@
 	Insectoids have a hard exoskeleton that provides protection and support for their bodies for both brute and burn damage. Their sensory organs are often highly developed, allowing them to navigate their environment with precision.<br /><br /> \
 	<b>Psychology</b>:<br /><br /> \
 	Insectoids are often highly social creatures, living in colonies or hives with complex hierarchies and division of labor. They communicate through a variety of methods, including pheromones, sounds, and body language. They are sometimes subject to a hive mind...<br /><br />"
+	inherent_actions = list(/datum/action/ability/pheromones)
+
+/datum/action/ability/pheromones
+	name = "Pheromones"
+	action_icon_state = "recovery"
+	desc = "You will release selected pheromones to nearby allies and yourself, recovery applies medicine, warding applies hold order, frenzy applies move orders and restores stamina. right click to choose type."
+	cooldown_duration = 4 MINUTES
+	use_state_flags = ABILITY_USE_BUCKLED|ABILITY_USE_BUSY|ABILITY_USE_HANDCUFFED|ABILITY_USE_STAGGERED|ABILITY_USE_NOTTURF
+
+/datum/action/ability/pheromones/can_use_action(silent, override_flags, selecting)
+	. = ..()
+	if(!.)
+		return FALSE
+
+	var/mob/living/carbon/carbon_owner = owner
+	if(!carbon_owner)		return FALSE
+
+/datum/action/ability/pheromones/action_activate()
+	var/mob/living/carbon/carbon_owner = owner
+	if(!carbon_owner)		return FALSE
+
+	var/phero_choice = show_radial_menu(owner, owner, GLOB.pheromone_images_list, radius = 35)
+	if(!phero_choice)
+		return fail_activate()
+
+	to_chat(carbon_owner, span_notice("You start to emit pheromones!"))
+	carbon_owner.do_jitter_animation(1000)
+
+	carbon_owner.emote("me", 1, "vibrates for a moment.")
+	playsound(carbon_owner.loc, 'ntf_modular/sound/effects/dt-pendant.ogg', 50)
+
+	switch(phero_choice)
+		if(AURA_XENO_WARDING)
+			carbon_owner.add_emitted_auras(src, AURA_HUMAN_HOLD)
+			addtimer(CALLBACK(src, PROC_REF(end_auras)), 20 SECONDS)
+		if(AURA_XENO_FRENZY)
+			carbon_owner.add_emitted_auras(src, AURA_HUMAN_MOVE)
+			addtimer(CALLBACK(src, PROC_REF(end_auras)), 20 SECONDS)
+
+	for(var/mob/living/affected_mob in cheap_get_living_near(carbon_owner, 4))
+		if(carbon_owner.get_iff_signal() != affected_mob.get_iff_signal())
+			continue
+		if(affected_mob.stat || affected_mob == carbon_owner) //We don't care about the dead/unconsious
+			continue
+		to_chat(affected_mob, span_notice("You are affected by [carbon_owner]'s [phero_choice] pheromones."))
+		switch(phero_choice)
+			if(AURA_XENO_RECOVERY)
+				affected_mob.reagents.add_reagent(/datum/reagent/medicine/bicaridine, 8, no_overdose = TRUE)
+				affected_mob.reagents.add_reagent(/datum/reagent/medicine/tricordrazine, 8, no_overdose = TRUE)
+				affected_mob.reagents.add_reagent(/datum/reagent/medicine/kelotane, 8, no_overdose = TRUE)
+				affected_mob.reagents.add_reagent(/datum/reagent/medicine/tramadol, 5, no_overdose = TRUE)
+				affected_mob.adjustBruteLoss(-affected_mob.getBruteLoss(TRUE) * 0.40)
+				affected_mob.adjustFireLoss(-affected_mob.getFireLoss(TRUE) * 0.40)
+			if(AURA_XENO_WARDING)
+				affected_mob.reagents.add_reagent(/datum/reagent/medicine/tramadol, 5, no_overdose = TRUE)
+				affected_mob.reagents.add_reagent(/datum/reagent/medicine/oxycodone, 5, no_overdose = TRUE)
+			if(AURA_XENO_FRENZY)
+				affected_mob.reagents.add_reagent(/datum/reagent/medicine/adrenaline, 5, no_overdose = TRUE)
+				affected_mob.setStaminaLoss(-affected_mob.max_stamina)
+
+	succeed_activate()
+	add_cooldown()
+
+/datum/action/ability/pheromones/proc/end_auras()
+	var/mob/living/carbon/carbon_owner = owner
+	if(!carbon_owner)		return FALSE
+	carbon_owner.remove_emitted_auras(src, AURA_HUMAN_HOLD)
+	carbon_owner.remove_emitted_auras(src, AURA_HUMAN_MOVE)
+	to_chat(carbon_owner, span_notice("You stop emitting pheromones."))
 
 // Disabled SPLURT species placeholders keep the type paths and sprite wiring ready for later ports.
 // Do not enable these until their body sprites, mechanics, and preference defaults are finished.

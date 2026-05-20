@@ -26,7 +26,7 @@
 	special_death_message = "<big>You have perished.</big><br><small>But it is not the end of you yet... if you still have your body with your head still attached, wait until somebody can resurrect you...</small>"
 	joinable_roundstart = TRUE
 	has_genital_selection = TRUE
-	stamina_mod = 0.8 //more endurance since they get nothing
+	stamina_mod = 0.8
 	species_description = "<br /><br /><b>Lore</b>:<br /><br /> \
 	Humans and all 'humanoids' are the most common species on Earth, and the most common sapient species in the known universe.<br /><br /> \
 	Humans have colonized planets and space stations before the great war.<br /><br /> \
@@ -54,9 +54,8 @@
 	desc = "Using your indominable human spirit, you are able to restore maximum stamina instantly, gain increased stamina regen and shrug off pain for a while. \
 	When the effect ends, you get maximum stamina immediately, again."
 	cooldown_duration = 2.5 MINUTES
-	use_state_flags = ABILITY_USE_BUCKLED|ABILITY_USE_BUSY|ABILITY_USE_HANDCUFFED|ABILITY_USE_INCAP|ABILITY_USE_LYING|ABILITY_USE_STAGGERED|ABILITY_USE_NOTTURF
+	use_state_flags = ABILITY_USE_BUCKLED|ABILITY_USE_BUSY|ABILITY_USE_STAGGERED|ABILITY_USE_NOTTURF
 
-//basically stolen from rav but shittier
 /datum/action/ability/indominable/can_use_action(silent, override_flags, selecting)
 	. = ..()
 	if(!.)
@@ -67,9 +66,7 @@
 /datum/action/ability/indominable/action_activate()
 	var/mob/living/carbon/carbon_owner = owner
 	if(!carbon_owner)		return FALSE
-	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/inaprovaline, 15, no_overdose = TRUE)
-	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/oxycodone, 10, no_overdose = TRUE)
-	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/synaptizine, 6, no_overdose = TRUE)
+	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/oxycodone, 5, no_overdose = TRUE)
 	carbon_owner.setStaminaLoss(-carbon_owner.max_stamina)
 	playsound(carbon_owner.loc, 'ntf_modular/sound/effects/ut-boost.ogg', 75)
 	carbon_owner.emote("me", 1, "takes a deep breath between gritted teeth.")
@@ -78,9 +75,6 @@
 	carbon_owner.add_stamina_regen_modifier("indominable", 0.8)
 	carbon_owner.add_filter("indominable_outline", 5, outline_filter(1, COLOR_CYAN)) //Set our cool aura; also confirmation we have the buff
 	addtimer(CALLBACK(src, PROC_REF(indominable_deactivate)), 15 SECONDS)
-
-	ADD_TRAIT(carbon_owner, TRAIT_SLOWDOWNIMMUNE, "[type]")
-	ADD_TRAIT(carbon_owner, TRAIT_STAGGERIMMUNE, "[type]")
 
 	succeed_activate()
 	add_cooldown()
@@ -92,6 +86,3 @@
 	carbon_owner.do_jitter_animation(1000)
 	carbon_owner.remove_stamina_regen_modifier("indominable")
 	owner.remove_filter("indominable_outline")
-	carbon_owner.setStaminaLoss(-carbon_owner.max_stamina)
-	REMOVE_TRAIT(owner, TRAIT_SLOWDOWNIMMUNE, "[type]")
-	REMOVE_TRAIT(owner, TRAIT_STAGGERIMMUNE, "[type]")

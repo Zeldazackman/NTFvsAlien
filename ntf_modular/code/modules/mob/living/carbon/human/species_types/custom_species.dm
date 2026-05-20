@@ -108,14 +108,13 @@
 	carbon_owner.adjustFireLoss(-carbon_owner.getFireLoss(TRUE) * 0.60)
 	carbon_owner.Stun(1 SECONDS)
 	carbon_owner.emote("me", 1, "slams their fist to the ground.")
-	carbon_owner.health_threshold_dead *= 2 //refuse death for now
-	carbon_owner.health_threshold_crit = -100
+	carbon_owner.health_threshold_crit = -100 //stop when u dead
 	playsound(carbon_owner.loc, 'ntf_modular/sound/effects/ut-heavy-hit.ogg', 50)
 
 	for(var/turf/affected_tiles AS in RANGE_TURFS(rage_power_radius / 2, carbon_owner.loc))
 		affected_tiles.Shake(duration = 1 SECONDS) //SFX
 
-	for(var/mob/living/affected_mob in cheap_get_living_near(carbon_owner, rage_power_radius) + cheap_get_xenos_near(carbon_owner, rage_power_radius)) //Roar that applies cool SFX
+	for(var/mob/living/affected_mob in cheap_get_living_near(carbon_owner, rage_power_radius)) //Roar that applies cool SFX
 		if(affected_mob == carbon_owner)
 			continue
 		if(carbon_owner.get_iff_signal() == affected_mob.get_iff_signal())
@@ -146,9 +145,6 @@
 
 	succeed_activate()
 	add_cooldown()
-
-	GLOB.round_statistics.ravager_rages++ //Statistics
-	SSblackbox.record_feedback("tally", "round_statistics", 1, "ravager_rages")
 
 ///Warns the user when his rage is about to end.
 /datum/action/ability/last_stand/proc/rage_warning()
