@@ -4,3 +4,34 @@
   - imagedel: 'green conqueror
 
       :cl:'
+2026-05-20:
+  Lumipharon:
+  - balance: Abduct windup now scales with range
+  - balance: Abduct CD increased to 18 seconds from 12
+  - balance: Abduct stagger reduced to 1 second from 3 seconds per human caught
+  - bugfix: Abduct can be properly cancelled by stuns and stagger
+  - balance: Multitile vehicles are not slowed by sticky weeds/resin
+  - bugfix: fixed tail lash going through walls
+  - bugfix: fixed abduct not working if you clicked too far away
+  - bugfix: fixed a silo runtime
+  Runian:
+  - bugfix: Xenomorphs no longer permanently lose health from radiation (cloneloss
+      / toxin / oxygen damage). It is converted to brute or burn.
+  SpooksAnno:
+  - rscadd: Added expanded character customization options including new tails, snouts,
+      ears, horns, wings, markings, synth antennas, digitigrade legs, and body features.
+  - rscadd: Added toggleable tail wagging.
+  - rscadd: Added Ctrl + direction facing so characters can turn without walking.
+  - rscadd: Added emissive toggles for supported character customization parts.
+  - qol: Reworked the character creator into a cleaner tabbed layout with a larger
+      rotating preview.
+  - qol: Added more compact color controls for character customization.
+  - bugfix: Fixed several character accessory layering issues involving tails, wings,
+      clothing, belts, backpacks, markings, and body overlays.
+  - bugfix: Fixed multiple customization options not updating or saving correctly.
+  - imageadd: Added new character customization sprites from SPLURT/Skyrat-style sources.
+  - code_imp: Added modular character creator helpers and documentation for future
+      customization work.
+  - rscadd: 'Emissives with all its piping process for hairs
+
+      :cl:'
