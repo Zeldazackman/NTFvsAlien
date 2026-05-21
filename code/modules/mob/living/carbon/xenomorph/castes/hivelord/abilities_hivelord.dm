@@ -16,7 +16,7 @@
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_RECYCLE,
 	)
 	ability_cost = 750
-	gamemode_flags = ABILITY_NUCLEARWAR|ABILITY_ENCOUNTER
+	gamemode_flags = ABILITY_ALL_GAMEMODE
 
 /datum/action/ability/activable/xeno/recycle/can_use_ability(atom/target, silent = FALSE, override_flags)
 	. = ..()

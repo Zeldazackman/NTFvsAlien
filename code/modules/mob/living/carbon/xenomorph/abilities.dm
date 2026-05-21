@@ -1699,7 +1699,7 @@ GLOBAL_LIST_INIT(pattern_images_list, list(
 	action_icon_state = "square2x2"
 	action_icon = 'icons/Xeno/patterns.dmi'
 	target_flags = ABILITY_TURF_TARGET
-	gamemode_flags = ABILITY_NUCLEARWAR|ABILITY_ENCOUNTER
+	gamemode_flags = ABILITY_ALL_GAMEMODE
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_PLACE_PATTERN,
 		KEYBINDING_ALTERNATE = COMSIG_XENOABILITY_SELECT_PATTERN,

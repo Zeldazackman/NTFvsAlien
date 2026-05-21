@@ -189,7 +189,7 @@ GLOBAL_LIST_INIT(tier_to_primo_upgrade, list(
 	desc = "Constructs a silo that generates xeno larvas over time."
 	psypoint_cost = RESIN_SILO_PRICE
 	icon = "larvasilo"
-	gamemode_flags = ABILITY_NUCLEARWAR|ABILITY_ENCOUNTER
+	gamemode_flags = ABILITY_ALL_GAMEMODE
 	building_type = /obj/structure/xeno/silo
 
 /datum/hive_upgrade/building/silo/can_buy(mob/living/carbon/xenomorph/buyer, silent = TRUE)
@@ -217,7 +217,7 @@ GLOBAL_LIST_INIT(tier_to_primo_upgrade, list(
 	desc = "Constructs a tower that increases the rate of evolution point generation by 0.2 and maturity point generation by 0.4 per tower."
 	psypoint_cost = EVOLUTION_TOWER_PRICE
 	icon = "evotower"
-	gamemode_flags = ABILITY_NUCLEARWAR|ABILITY_ENCOUNTER
+	gamemode_flags = ABILITY_ALL_GAMEMODE
 	building_type = /obj/structure/xeno/evotower
 
 /datum/hive_upgrade/building/psychictower
@@ -225,7 +225,7 @@ GLOBAL_LIST_INIT(tier_to_primo_upgrade, list(
 	desc = "Constructs a tower that increases the number of available slots of higher tier castes."
 	psypoint_cost = PSYCHIC_RELAY_PRICE
 	icon = "maturitytower"
-	gamemode_flags = ABILITY_NUCLEARWAR|ABILITY_ENCOUNTER
+	gamemode_flags = ABILITY_ALL_GAMEMODE
 	building_type = /obj/structure/xeno/psychictower
 
 /datum/hive_upgrade/building/pherotower
@@ -233,7 +233,7 @@ GLOBAL_LIST_INIT(tier_to_primo_upgrade, list(
 	desc = "Constructs a tower that emanates a selectable type of pheromone."
 	psypoint_cost = PHEROMONE_TOWER_PRICE
 	icon = "pherotower"
-	gamemode_flags = ABILITY_NUCLEARWAR|ABILITY_ENCOUNTER
+	gamemode_flags = ABILITY_ALL_GAMEMODE
 	upgrade_flags = UPGRADE_FLAG_USES_TACTICAL
 	building_type = /obj/structure/xeno/pherotower
 	building_time = 5 SECONDS
@@ -243,7 +243,7 @@ GLOBAL_LIST_INIT(tier_to_primo_upgrade, list(
 	desc = "Constructs a spawner that generates ai xenos over time"
 	psypoint_cost = SPAWNER_PRICE
 	icon = "spawner"
-	gamemode_flags = ABILITY_NUCLEARWAR|ABILITY_ENCOUNTER
+	gamemode_flags = ABILITY_ALL_GAMEMODE
 	upgrade_flags = UPGRADE_FLAG_USES_TACTICAL
 	building_type = /obj/structure/xeno/spawner
 
@@ -252,7 +252,7 @@ GLOBAL_LIST_INIT(tier_to_primo_upgrade, list(
 	desc = "Constructs a pool that allows xenos to regenerate sunder in it while resting."
 	psypoint_cost = ACID_POOL_PRICE
 	icon = "pool"
-	gamemode_flags = ABILITY_NUCLEARWAR|ABILITY_ENCOUNTER
+	gamemode_flags = ABILITY_ALL_GAMEMODE
 	upgrade_flags = UPGRADE_FLAG_USES_TACTICAL
 	building_type = /obj/structure/xeno/acid_pool
 
@@ -275,7 +275,7 @@ GLOBAL_LIST_INIT(tier_to_primo_upgrade, list(
 	desc = "Constructs an acid maw that allows the hive to bombard its enemies from afar. Must be placed outdoors."
 	psypoint_cost = ACID_JAWS_PRICE
 	icon = "jaws"
-	gamemode_flags = ABILITY_NUCLEARWAR|ABILITY_ENCOUNTER
+	gamemode_flags = ABILITY_ALL_GAMEMODE
 	upgrade_flags = UPGRADE_FLAG_USES_TACTICAL
 	building_type = /obj/structure/xeno/acid_maw/acid_jaws
 
@@ -407,7 +407,7 @@ GLOBAL_LIST_INIT(tier_to_primo_upgrade, list(
 	desc = "Places a tunnel entrance, allowing for rapid repositioning"
 	icon = "tunnel"
 	psypoint_cost = 75
-	gamemode_flags = ABILITY_NUCLEARWAR|ABILITY_ENCOUNTER
+	gamemode_flags = ABILITY_ALL_GAMEMODE
 	upgrade_flags = UPGRADE_FLAG_USES_TACTICAL
 
 /datum/hive_upgrade/building/tunnel/on_buy(mob/living/carbon/xenomorph/buyer)
@@ -424,7 +424,7 @@ GLOBAL_LIST_INIT(tier_to_primo_upgrade, list(
 	desc = "Places a acid spitting resin turret under you. Must be at least 6 tiles away from other turrets, not near fog, and on a weeded area."
 	icon = "acidturret"
 	psypoint_cost = XENO_ACID_TURRET_PRICE
-	gamemode_flags = ABILITY_NUCLEARWAR|ABILITY_ENCOUNTER
+	gamemode_flags = ABILITY_ALL_GAMEMODE
 	upgrade_flags = UPGRADE_FLAG_USES_TACTICAL
 	///How long to build one turret
 	var/build_time = 10 SECONDS
