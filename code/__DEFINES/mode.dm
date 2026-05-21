@@ -73,7 +73,7 @@
 /// Should marines have access to quickbuild?
 #define MODE_ALLOW_MARINE_QUICKBUILD (1<<18)
 /// Should Area Power Controllers have no access restrictions
-#define MODE_APC_ALL_ACCESS (1<19)
+#define MODE_APC_ALL_ACCESS (1<<19)
 #define MODE_BUFFED_XENO_ABILITIES (1<<20)
 ///Alamo only, no tad or pods. Sovl.
 #define MODE_ALAMO_ONLY (1<<21)

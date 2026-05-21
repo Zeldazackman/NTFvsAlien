@@ -582,19 +582,21 @@ GLOBAL_LIST_INIT(tier_to_primo_upgrade, list(
 /datum/hive_upgrade/abilities/on_buy(mob/living/carbon/xenomorph/buyer)
 	if(!can_buy(buyer, FALSE))
 		return FALSE
-	GLOB.hive_datums[buyer.hivenumber].hive_abilities += ability
-	for(var/mob/living/carbon/xenomorph/xeno AS in GLOB.alive_xeno_list_hive[buyer.hivenumber])
+	var/hivenumber = buyer.get_xeno_hivenumber()
+	var/datum/hive_status/hive = GLOB.hive_datums[hivenumber]
+	hive.hive_abilities += ability
+	for(var/mob/living/carbon/xenomorph/xeno AS in GLOB.alive_xeno_list_hive[hivenumber])
 		if(xeno.xeno_caste.caste_flags & CASTE_IS_A_MINION)
 			continue
 		if(((ability::parent_type) in xeno.xeno_caste.actions) && !ability::cooldown_duration)
 			continue
 		xeno.add_ability(ability)
 
-	if(!CHECK_BITFIELD(buyer.hive.hive_flags, HIVE_ALL_CAN_BUILD) && construction_ability)
-		buyer.hive.hive_flags += HIVE_ALL_CAN_BUILD
+	if(!CHECK_BITFIELD(hive.hive_flags, HIVE_ALL_CAN_BUILD) && construction_ability)
+		hive.hive_flags += HIVE_ALL_CAN_BUILD
 
 	log_game("[buyer] has bought [name], spending [psypoint_cost] psy points in the process")
-	xeno_message("[buyer] has bought [name]!", "xenoannounce", 5, buyer.hivenumber)
+	xeno_message("[buyer] has bought [name]!", "xenoannounce", 5, hivenumber)
 	return ..()
 
 /datum/hive_upgrade/abilities/weed
