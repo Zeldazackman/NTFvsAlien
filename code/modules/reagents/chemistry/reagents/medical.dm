@@ -1544,7 +1544,7 @@
 	friction = generator(GEN_NUM, 0.1, 0.15)
 	position = generator(GEN_SQUARE, 0, 16)
 
-/datum/reagent/medicine/regeneration
+/datum/reagent/medicine/regen
 	name = "Regeneration"
 	description = "A natural regeneration caused by will or some other power."
 	color = COLOR_GREEN
