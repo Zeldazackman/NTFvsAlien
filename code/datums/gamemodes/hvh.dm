@@ -24,6 +24,10 @@
 	)
 	/// Time between two bioscan
 	var/bioscan_interval = 3 MINUTES
+	/*NTF edit - moved to game_mode
+	///campaign stats organised by faction
+	var/list/datum/faction_stats/stat_list = list()
+	*/
 	///List of death times by ckey. Used for respawn time
 	var/list/player_death_times = list()
 
@@ -36,6 +40,11 @@
 	. = ..()
 	RegisterSignals(SSdcs, list(COMSIG_GLOB_MOB_DEATH, COMSIG_MOB_GHOSTIZE), PROC_REF(record_death))
 
+	/*NTF edit - moved to game_mode
+	for(var/faction in factions)
+		stat_list[faction] = new /datum/faction_stats(faction)
+	*/
+
 /datum/game_mode/hvh/setup()
 	. = ..()
 	RegisterSignal(SSdcs, COMSIG_GLOB_HVH_DEPLOY_POINT_ACTIVATED, PROC_REF(deploy_point_activated))
@@ -44,6 +53,9 @@
 	. = ..()
 	for(var/z_num in SSmapping.levels_by_any_trait(list(ZTRAIT_MARINE_MAIN_SHIP, ZTRAIT_GROUND)))
 		set_z_lighting(z_num)
+
+/datum/game_mode/hvh/ghost_verbs(mob/dead/observer/observer)
+	return list(/datum/action/campaign_loadout)
 
 //sets NTC and SOM squads
 /datum/game_mode/hvh/set_valid_squads()
@@ -274,6 +286,7 @@ Sensors indicate [num_som_delta || "no"] unknown lifeform signature[num_som_delt
 ///Allows all the dead to respawn together
 /datum/game_mode/hvh/proc/respawn_wave()
 	wave_timer = addtimer(CALLBACK(src, PROC_REF(respawn_wave)), wave_timer_length, TIMER_STOPPABLE)
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_HVH_RESPAWN_WAVE, src)
 
 	var/respawn_list = player_death_times.Copy()
 	player_death_times.Cut()
@@ -385,5 +398,9 @@ Sensors indicate [num_som_delta || "no"] unknown lifeform signature[num_som_delt
 	if(!job.special_check_latejoin(candidate.client))
 		return FALSE
 	return TRUE
+
+///Returns the value for end of wave/mission fund rewards
+/datum/game_mode/hvh/proc/get_fund_value(base_amount)
+	return base_amount
 
 #undef BIOSCAN_DELTA

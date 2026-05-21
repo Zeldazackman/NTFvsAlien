@@ -40,10 +40,6 @@
 
 /datum/game_mode/hvh/campaign/pre_setup()
 	. = ..()
-	/* NTF EDIT - moved to /datum/game_mode/proc/pre_setup()
-	for(var/faction in factions)
-		stat_list[faction] = new /datum/faction_stats(faction)
-	*/
 	RegisterSignals(SSdcs, list(COMSIG_GLOB_PLAYER_ROUNDSTART_SPAWNED, COMSIG_GLOB_PLAYER_LATE_SPAWNED), PROC_REF(register_faction_member))
 	RegisterSignal(SSdcs, COMSIG_GLOB_CAMPAIGN_MISSION_ENDED, PROC_REF(end_mission))
 	addtimer(CALLBACK(SSticker.mode, TYPE_PROC_REF(/datum/game_mode/hvh/campaign, intro_sequence)), SSticker.round_start_time + 1 MINUTES)

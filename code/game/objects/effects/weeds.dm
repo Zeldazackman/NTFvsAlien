@@ -146,7 +146,7 @@
 
 ///overrides the turf's normal footstep sound
 /obj/alien/weeds/footstep_override(atom/movable/source, list/footstep_overrides)
-	footstep_overrides[FOOTSTEP_RESIN] = layer
+	footstep_overrides[FOOTSTEP_RESIN] = get_footstep_layer(layer, plane)
 
 /obj/alien/weeds/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage * xeno_attacker.xeno_melee_damage_modifier, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(xeno_attacker.status_flags & INCORPOREAL)
