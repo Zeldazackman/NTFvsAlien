@@ -29,9 +29,6 @@
 
 /obj/structure/sensor_tower/Initialize(mapload)
 	. = ..()
-	if(CHECK_BITFIELD(SSticker.mode?.round_type_flags, MODE_ENCOUNTER))
-		new /obj/structure/campaign_objective/capture_objective/sensor_tower(loc)
-		qdel(src)
 	name += " " + num2text(id)
 	towerid = id
 	id++
@@ -41,7 +38,7 @@
 	. = ..()
 	icon_state = initial(icon_state)
 	if(current_timer || activated)
-		icon_state += "_TerraGov"
+		icon_state += "_tgmc"
 
 /obj/structure/sensor_tower/attack_hand(mob/living/user)
 	if(!ishuman(user))

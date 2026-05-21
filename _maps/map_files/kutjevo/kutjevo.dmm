@@ -4378,6 +4378,10 @@
 	},
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/kutjevo/exterior/scrubland/south)
+"eDR" = (
+/obj/effect/landmark/patrol_point/xeno/xeno_21,
+/turf/open/floor/plating/ground/mars/random/sand,
+/area/kutjevo/exterior/colony_north)
 "eDS" = (
 /obj/structure/rock/basalt/alt5,
 /obj/effect/landmark/weed_node,
@@ -16244,6 +16248,10 @@
 	},
 /turf/open/floor/plating/kutjevo,
 /area/kutjevo/interior/power)
+"qUy" = (
+/obj/effect/landmark/patrol_point/xeno/xeno_11,
+/turf/open/floor/plating/ground/mars/random/sand,
+/area/kutjevo/exterior/lz_dunes)
 "qUC" = (
 /obj/structure/rack,
 /turf/open/floor/kutjevo/colors/orange,
@@ -25052,7 +25060,7 @@ prJ
 sDT
 txp
 wGH
-wGH
+qUy
 sDT
 wGH
 prJ
@@ -53166,7 +53174,7 @@ ykY
 ykY
 ykY
 ykY
-ykY
+eDR
 ykY
 ykY
 ykY

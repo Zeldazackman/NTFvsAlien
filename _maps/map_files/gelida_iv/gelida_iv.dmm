@@ -7005,6 +7005,11 @@
 	dir = 1
 	},
 /area/gelida/indoors/a_block/admin)
+"eLw" = (
+/obj/structure/cable,
+/obj/effect/landmark/patrol_point/xeno/xeno_21,
+/turf/open/floor/plating/ground/ice,
+/area/gelida/caves/central_caves)
 "eLB" = (
 /obj/structure/cable,
 /obj/vehicle/ridden/powerloader{
@@ -9010,6 +9015,11 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/mainship/stripesquare,
 /area/gelida/indoors/a_block/fitness)
+"glr" = (
+/obj/effect/landmark/weed_node,
+/obj/effect/landmark/patrol_point/xeno/xeno_11,
+/turf/open/floor/plating/ground/snow/layer0,
+/area/gelida/outdoors/w_rockies)
 "glI" = (
 /obj/effect/landmark/weed_node,
 /turf/open/floor/prison/darkred/full,
@@ -37278,7 +37288,7 @@ fBJ
 fBJ
 fBJ
 fBJ
-nmr
+glr
 fBJ
 fBJ
 fBJ
@@ -52911,7 +52921,7 @@ cgS
 eQn
 uGF
 uGF
-qzH
+eLw
 xEg
 cqM
 eQn
