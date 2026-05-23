@@ -8655,7 +8655,7 @@
 "lLS" = (
 /obj/structure/rack,
 /obj/item/storage/box/visual/grenade/teargas,
-/obj/item/shotgunbox/tracker,
+/obj/item/big_ammo_box/shotgun/tracker,
 /turf/open/floor/mainship/red,
 /area/mainship/groundhq/ntf/shipboard/brig)
 "lLU" = (

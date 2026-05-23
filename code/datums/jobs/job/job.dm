@@ -57,7 +57,7 @@ GLOBAL_PROTECT(exp_specialmap)
 	///whether the job has multiple outfits
 	var/multiple_outfits = FALSE
 	///list of outfit variants
-	var/list/datum/outfit/job/outfits = list()
+	var/list/datum/outfit/job/outfits
 	///Skills for this job
 	var/skills_type = /datum/skills
 	///Any special traits that are assigned for this job
@@ -81,6 +81,11 @@ GLOBAL_PROTECT(exp_specialmap)
 			stack_trace("Job created with an invalid outfit parameter ([outfit])")
 		else
 			outfit = new outfit //Can be improved to reference a singleton.
+	if(length(outfits))
+		var/list/options_list = outfits.Copy()
+		outfits.Cut()
+		for(var/path in options_list)
+			outfits += new path
 
 ///called during gamemode pre_setup, use for stuff like roundstart poplock
 /datum/job/proc/on_pre_setup()
@@ -253,7 +258,7 @@ GLOBAL_PROTECT(exp_specialmap)
 	if(total_positions == -1)
 		CRASH("remove_job_positions called with [amount] amount for a job set to overflow")
 	var/previous_amount = total_positions
-	total_positions -= amount
+	total_positions = max(total_positions - amount, 0)
 	manage_job_lists(previous_amount)
 	return TRUE
 
@@ -332,7 +337,8 @@ GLOBAL_PROTECT(exp_specialmap)
 	var/list/valid_outfits = list()
 
 	for(var/datum/outfit/variant AS in assigned_role.outfits)
-		variant = new variant
+		if(ispath(variant))
+			variant = new variant
 		if((src.species.species_type) in variant.species)
 			valid_outfits += variant
 	if(!length(valid_outfits))
