@@ -2436,6 +2436,7 @@
 /area/lv624/ground/sand9)
 "bnl" = (
 /obj/item/tool/surgery/surgicaldrill,
+/obj/effect/landmark/patrol_point/xeno/xeno_21,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/lazarus/sandtemple)
 "bnx" = (
@@ -16114,6 +16115,10 @@
 /obj/effect/spawner/random/medical/firstaid,
 /turf/open/floor/plating,
 /area/lv624/lazarus/quartstorage)
+"qUZ" = (
+/obj/effect/landmark/patrol_point/xeno/xeno_11,
+/turf/open/floor/tile/dark,
+/area/lv624/lazarus/engineering)
 "qVk" = (
 /obj/structure/cargo_container{
 	dir = 4
@@ -45937,7 +45942,7 @@ ygV
 wsP
 czt
 sTw
-sTw
+qUZ
 lma
 sTw
 osD

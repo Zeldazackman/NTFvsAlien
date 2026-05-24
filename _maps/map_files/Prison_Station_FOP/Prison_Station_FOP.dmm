@@ -39533,6 +39533,10 @@
 /obj/effect/landmark/xeno_resin_door,
 /turf/open/floor/plating,
 /area/prison/cellblock/maxsec/south)
+"dwu" = (
+/obj/effect/landmark/patrol_point/xeno/xeno_21,
+/turf/open/floor/plating,
+/area/prison/cellblock/mediumsec/south)
 "dxh" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/random/misc/paperbin{
@@ -44880,6 +44884,12 @@
 "okw" = (
 /turf/open/floor/wood,
 /area/prison/library)
+"onW" = (
+/obj/effect/landmark/patrol_point/xeno/xeno_11,
+/turf/open/floor/prison/arrow{
+	dir = 1
+	},
+/area/prison/engineering)
 "ooN" = (
 /obj/structure/cable,
 /turf/open/floor/prison,
@@ -77256,7 +77266,7 @@ fMj
 fMj
 bhC
 fMj
-fMj
+dwu
 cyw
 cyw
 bWl
@@ -84698,7 +84708,7 @@ sar
 vej
 dOd
 vej
-pRl
+onW
 dOA
 cfs
 chF

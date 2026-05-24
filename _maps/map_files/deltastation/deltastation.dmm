@@ -63767,6 +63767,7 @@
 "mZU" = (
 /obj/effect/turf_decal/warning_stripes/box/empty,
 /obj/structure/cable,
+/obj/effect/landmark/patrol_point/xeno/xeno_11,
 /turf/open/floor/iron/dark/textured_large,
 /area/deltastation/engineering/atmos/hfr_room)
 "mZX" = (
@@ -92489,6 +92490,11 @@
 /obj/effect/spawner/random/misc/structure/chair_or_metal/east,
 /turf/open/floor/iron,
 /area/deltastation/hallway/primary/central/aft)
+"sPd" = (
+/obj/effect/mapping_helpers/simple_pipes/green/visible,
+/obj/effect/landmark/patrol_point/xeno/xeno_21,
+/turf/open/floor/iron,
+/area/deltastation/engineering/supermatter/room)
 "sPe" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/stripes/line{
@@ -143055,7 +143061,7 @@ oQC
 sEz
 nVE
 aqn
-jFd
+sPd
 llW
 vxg
 dFe

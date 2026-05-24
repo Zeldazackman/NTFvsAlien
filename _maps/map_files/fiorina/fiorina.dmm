@@ -10752,6 +10752,10 @@
 /obj/effect/spawner/random/machinery/machine_frame,
 /turf/open/floor/plating/kutjevo,
 /area/fiorina/tumor/aux_engi)
+"gad" = (
+/obj/effect/landmark/patrol_point/xeno/xeno_11,
+/turf/open/floor/prison/plate,
+/area/fiorina/tumor/aux_engi)
 "gaV" = (
 /obj/structure/table/reinforced/prison,
 /obj/machinery/light/small{
@@ -12742,6 +12746,10 @@
 	dir = 6
 	},
 /area/fiorina/station/power_ring)
+"heO" = (
+/obj/effect/landmark/patrol_point/xeno/xeno_21,
+/turf/open/floor/plating/kutjevo,
+/area/fiorina/tumor/aux_engi)
 "heR" = (
 /obj/structure/monorail{
 	name = "launch track"
@@ -51576,7 +51584,7 @@ osj
 vJr
 osj
 osj
-vJr
+gad
 egx
 kDD
 edf
@@ -54948,7 +54956,7 @@ roc
 vJr
 vJr
 aiT
-aiT
+heO
 xTh
 xTh
 xTh

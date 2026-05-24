@@ -418,6 +418,10 @@
 /obj/structure/fence,
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/northeast)
+"fr" = (
+/obj/effect/landmark/patrol_point/som/som_11,
+/turf/open/lavaland/basalt,
+/area/lavaland/cave/north)
 "fs" = (
 /obj/machinery/light{
 	dir = 1
@@ -563,6 +567,10 @@
 	},
 /turf/open/floor/tile/dark2,
 /area/lavaland/engie/engine)
+"gG" = (
+/obj/machinery/computer/intel_computer,
+/turf/open/floor/tile/white,
+/area/lavaland/security)
 "gJ" = (
 /obj/machinery/light{
 	dir = 1
@@ -2163,6 +2171,10 @@
 /obj/effect/ai_node,
 /turf/open/lavaland/basalt/glowing,
 /area/lavaland/cave/west)
+"wx" = (
+/obj/effect/landmark/patrol_point/xeno/xeno_21,
+/turf/open/lavaland/basalt,
+/area/lavaland/cave/north)
 "wA" = (
 /obj/effect/landmark/excavation_site_spawner,
 /turf/open/lavaland/basalt,
@@ -2188,6 +2200,13 @@
 	},
 /turf/open/floor/tile/white,
 /area/lavaland/security)
+"wG" = (
+/obj/effect/turf_decal/warning_stripes/thin{
+	dir = 1
+	},
+/obj/machinery/computer/intel_computer,
+/turf/open/floor/tile/dark,
+/area/lavaland/security/nuke)
 "wP" = (
 /obj/effect/landmark/excavation_site_spawner,
 /obj/structure/cable,
@@ -2289,6 +2308,11 @@
 /obj/effect/ai_node,
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/south)
+"yf" = (
+/obj/effect/landmark/weed_node,
+/obj/machinery/computer/intel_computer,
+/turf/open/floor/tile/white,
+/area/lavaland/medical)
 "yi" = (
 /obj/structure/closet/crate,
 /obj/item/stack/sheet/mineral/diamond{
@@ -3417,6 +3441,10 @@
 /obj/machinery/mineral/unloading_machine,
 /turf/open/floor/tile/dark2,
 /area/lavaland/engie/refine)
+"IX" = (
+/obj/machinery/computer/intel_computer,
+/turf/open/floor/tile/dark2,
+/area/lavaland/engie/refine)
 "IY" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced{
@@ -3993,6 +4021,10 @@
 "Pa" = (
 /turf/open/floor/tile/white,
 /area/lavaland/security/infocenter)
+"Pb" = (
+/obj/machinery/computer/intel_computer,
+/turf/open/floor/tile/bar,
+/area/lavaland/civilian/botany)
 "Pc" = (
 /obj/effect/ai_node,
 /obj/structure/cable,
@@ -4027,6 +4059,10 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/dark2,
 /area/lavaland/engie/refine)
+"Pw" = (
+/obj/machinery/computer/intel_computer,
+/turf/open/floor/plating/asteroidfloor,
+/area/lavaland/engie/engine)
 "Pz" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 8
@@ -4157,6 +4193,10 @@
 	},
 /turf/open/floor/tile/dark,
 /area/lavaland/security/nuke)
+"Ra" = (
+/obj/machinery/computer/intel_computer,
+/turf/open/floor/marking,
+/area/lavaland/cave/central)
 "Rb" = (
 /obj/machinery/power/apc/drained{
 	dir = 1
@@ -18567,7 +18607,7 @@ Dt
 ZW
 ZW
 yH
-RY
+Pw
 RY
 RY
 RY
@@ -23682,7 +23722,7 @@ ZN
 EY
 EY
 EY
-FM
+IX
 FM
 FM
 HM
@@ -24691,7 +24731,7 @@ gN
 gN
 gN
 lr
-pj
+Pb
 ra
 pj
 ra
@@ -24907,7 +24947,7 @@ al
 aZ
 aZ
 aZ
-aZ
+fr
 aZ
 al
 al
@@ -29659,7 +29699,7 @@ KU
 WM
 Ey
 KU
-Ey
+gG
 RK
 du
 Yy
@@ -30067,7 +30107,7 @@ al
 al
 al
 al
-aZ
+wx
 aZ
 cw
 CY
@@ -32969,7 +33009,7 @@ Qb
 Qb
 YL
 GO
-qo
+Ra
 qo
 qo
 qo
@@ -45834,7 +45874,7 @@ EB
 Gt
 Gt
 kg
-OU
+wG
 sA
 bU
 sA
@@ -51481,7 +51521,7 @@ jR
 vo
 Zk
 Zk
-QO
+yf
 SB
 rR
 EF

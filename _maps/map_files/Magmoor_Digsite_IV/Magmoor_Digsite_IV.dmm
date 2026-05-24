@@ -8132,6 +8132,10 @@
 /obj/structure/cable,
 /turf/open/floor/bcircuit/off,
 /area/magmoor/research/serverroom)
+"fze" = (
+/obj/effect/landmark/sensor_tower,
+/turf/open/floor/plating/ground/mars/random/dirt,
+/area/magmoor/compound/northeast)
 "fzh" = (
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/concrete,
@@ -9696,6 +9700,10 @@
 	dir = 6
 	},
 /area/magmoor/command/lobby/east)
+"gzw" = (
+/obj/effect/landmark/sensor_tower,
+/turf/open/floor/plating/ground/mars/random/dirt,
+/area/magmoor/compound/west)
 "gzB" = (
 /obj/structure/flora/pottedplant/twentytwo,
 /obj/machinery/light,
@@ -10161,6 +10169,10 @@
 	dir = 4
 	},
 /area/magmoor/medical/surgery)
+"gSW" = (
+/obj/effect/landmark/patrol_point/xeno/xeno_11,
+/turf/open/floor/mainship/orange,
+/area/magmoor/engi/thermal)
 "gSZ" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -13680,6 +13692,11 @@
 	},
 /turf/open/floor/mainship,
 /area/magmoor/landing/two)
+"jtO" = (
+/obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/patrol_point/xeno/xeno_21,
+/turf/open/floor/cult,
+/area/magmoor/cave/north)
 "jtT" = (
 /turf/closed/wall,
 /area/magmoor/civilian/jani)
@@ -18221,6 +18238,12 @@
 /obj/item/weapon/gun/revolver/cmb,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/magmoor/cave/north)
+"mDm" = (
+/obj/effect/landmark/sensor_tower,
+/turf/open/floor/plating/ground/concrete/lines{
+	dir = 4
+	},
+/area/magmoor/compound/north)
 "mDr" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber{
 	dir = 4
@@ -22043,6 +22066,10 @@
 	},
 /turf/open/floor/tile/dark,
 /area/magmoor/security/storage)
+"png" = (
+/obj/effect/landmark/sensor_tower,
+/turf/open/floor/plating/ground/mars/random/sand,
+/area/magmoor/compound/north)
 "pnC" = (
 /turf/open/floor/plating/ground/mars/dirttosand{
 	dir = 8
@@ -24000,6 +24027,10 @@
 "qDg" = (
 /turf/open/floor/mainship/black,
 /area/magmoor/landing/two)
+"qDQ" = (
+/obj/effect/landmark/sensor_tower,
+/turf/open/floor/plating/ground/mars/dirttosand,
+/area/magmoor/compound/north)
 "qEP" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -40204,7 +40235,7 @@ dze
 dze
 kaF
 ibO
-dze
+gzw
 dze
 dze
 ibO
@@ -50167,7 +50198,7 @@ lMP
 wOh
 kGc
 gNd
-lGa
+mDm
 lGa
 dYD
 lGa
@@ -55775,7 +55806,7 @@ dWo
 ejf
 hJM
 vyy
-dSo
+png
 joN
 tdp
 bDf
@@ -55918,7 +55949,7 @@ iLH
 rxl
 rxl
 lRD
-aPs
+jtO
 aPs
 aPs
 iCx
@@ -56447,7 +56478,7 @@ qzH
 ivX
 wwg
 kqL
-oiI
+gSW
 mNg
 mNg
 mNg
@@ -61343,7 +61374,7 @@ ymj
 ymj
 xfT
 xfT
-dXE
+qDQ
 dSo
 ukX
 dSo
@@ -73489,7 +73520,7 @@ tUU
 fJO
 fJO
 fJO
-fJO
+fze
 fJO
 fJO
 ugo
