@@ -3060,6 +3060,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/grimy,
 /area/lv624/lazarus/captain)
+"ot" = (
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 4
+	},
+/obj/effect/landmark/patrol_point/xeno/xeno_21,
+/turf/open/floor/plating/ground/dirt,
+/area/lv624/ground/jungle9)
 "ou" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone/lz2{
@@ -4737,6 +4744,10 @@
 /obj/structure/flora/jungle/vines,
 /turf/open/floor/plating/ground/dirt,
 /area/lv624/ground/jungle9)
+"wu" = (
+/obj/effect/landmark/patrol_point/xeno/xeno_11,
+/turf/open/floor/plating/ground/dirt,
+/area/lv624/ground/caves/central1)
 "ww" = (
 /obj/structure/cable,
 /turf/open/floor/tile/white,
@@ -15509,7 +15520,7 @@ On
 ua
 ua
 qI
-ua
+wu
 ua
 ua
 qI
@@ -16908,7 +16919,7 @@ Va
 OF
 EH
 ft
-ll
+ot
 VW
 Om
 Om

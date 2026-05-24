@@ -2710,6 +2710,11 @@
 /obj/structure/catwalk,
 /turf/open/floor/plating/warning,
 /area/lv624/ground/filtration)
+"bqM" = (
+/obj/structure/flora/jungle/vines,
+/obj/effect/landmark/patrol_point/xeno/xeno_21,
+/turf/open/ground/grass,
+/area/lv624/ground/jungle2)
 "bqO" = (
 /obj/structure/flora/jungle/vines,
 /turf/open/ground/grass,
@@ -10432,6 +10437,11 @@
 	dir = 1
 	},
 /area/lv624/lazarus/internal_affairs)
+"iTA" = (
+/obj/structure/flora/jungle/vines,
+/obj/effect/landmark/patrol_point/xeno/xeno_11,
+/turf/open/ground/grass,
+/area/lv624/ground/jungle2)
 "iTI" = (
 /obj/structure/catwalk,
 /obj/effect/turf_decal/riverdecal/edge{
@@ -60129,7 +60139,7 @@ bqO
 lvO
 mOs
 mOs
-bqO
+iTA
 mOs
 uLl
 uLl
@@ -70593,7 +70603,7 @@ wHN
 uxz
 onC
 iqe
-bqO
+bqM
 bqO
 uLl
 uLl

@@ -129,17 +129,17 @@
 	var/new_max_health = max(xeno_caste.max_health * hive.health_multiplier, 10)
 	var/new_endurance_health_max = new_max_health * 1.5
 	if(new_endurance_health_max != endurance_health_max)
-		endurance_health = endurance_health * new_endurance_health_max / endurance_health_max
+		endurance_health = endurance_health * (endurance_health_max ? (new_endurance_health_max / endurance_health_max) : 1)
 		endurance_health_max = new_endurance_health_max
 	if(new_max_health == maxHealth)
 		return
 	var/needed_healing = 0
-	var/new_stun_damage = (stun_health_damage * new_max_health)/maxHealth
+	var/new_stun_damage = stun_health_damage * (maxHealth ? (new_max_health/maxHealth) : 1)
 
 	if(health < 0) //In crit. Death threshold below 0 doesn't change with stat buff, so we can just apply damage equal to the max health change
 		needed_healing = maxHealth - new_max_health //Positive means our max health is going down, so heal to keep parity
 	else
-		var/current_health_percent = health / maxHealth //We want to keep this fixed so that applying the scalar doesn't heal or harm, relatively.
+		var/current_health_percent = maxHealth ? (health / maxHealth) : 1 //We want to keep this fixed so that applying the scalar doesn't heal or harm, relatively.
 		var/new_health = current_health_percent * new_max_health //What we're aiming for
 		var/new_total_damage = new_max_health - new_health
 		var/current_total_damage = maxHealth - health

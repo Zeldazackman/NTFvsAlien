@@ -14672,6 +14672,13 @@
 	},
 /turf/open/floor/prison/bright_clean,
 /area/lv759/indoors/hospital/outgoing)
+"cHO" = (
+/obj/item/device/flashlight/lamp/tripod/grey,
+/obj/effect/landmark/sensor_tower,
+/turf/open/floor/plating/plating_catwalk{
+	color = "#dfcfc0"
+	},
+/area/lv759/indoors/caves/north_west_caves)
 "cHQ" = (
 /obj/structure/largecrate/random/case/small,
 /obj/structure/cable,
@@ -31071,6 +31078,10 @@
 	dir = 6
 	},
 /area/lv759/indoors/nt_research_complex/hangarbay)
+"fFc" = (
+/obj/effect/landmark/patrol_point/xeno/xeno_21,
+/turf/open/engineership/engineer_floor9,
+/area/lv759/indoors/derelict_ship)
 "fFj" = (
 /obj/effect/decal/cleanable/blood,
 /obj/structure/prop/urban/vehicles/large/armored_trucks/nt_security/truck_2{
@@ -45842,6 +45853,13 @@
 /obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
 /turf/open/urbanshale/layer1,
 /area/lv759/indoors/caves/north_caves)
+"ijc" = (
+/obj/effect/urban/decal/road/road_edge/two,
+/obj/effect/landmark/sensor_tower,
+/turf/open/urban/street/sidewalkcenter{
+	dir = 8
+	},
+/area/lv759/outdoors/colony_streets/north_street)
 "ijd" = (
 /obj/item/clothing/under/colonist,
 /obj/structure/closet/cabinet,
@@ -52697,6 +52715,11 @@
 	dir = 8
 	},
 /area/lv759/outdoors/landing_zone_2)
+"jtT" = (
+/obj/effect/urban/decal/dirt,
+/obj/effect/landmark/sensor_tower,
+/turf/open/urban/street/sidewalk,
+/area/lv759/outdoors/colony_streets/east_central_street)
 "jtU" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	pixel_y = -1
@@ -56619,6 +56642,12 @@
 /obj/effect/urban/decal/road/lines1,
 /turf/open/urban/street/asphalt,
 /area/lv759/outdoors/colony_streets/north_west_street)
+"kgk" = (
+/obj/effect/landmark/sensor_tower,
+/turf/open/urban/street/sidewalk{
+	dir = 8
+	},
+/area/lv759/outdoors/colony_streets/central_streets)
 "kgx" = (
 /obj/structure/window/framed/urban/reinforced{
 	dir = 4
@@ -72920,6 +72949,10 @@
 /obj/structure/window/framed/urban/reinforced,
 /turf/open/floor/plating,
 /area/lv759/indoors/colonial_marshals/wardens_office)
+"naH" = (
+/obj/effect/landmark/patrol_point/xeno/xeno_11,
+/turf/open/floor/urban_plating,
+/area/lv759/indoors/power_plant/equipment_west)
 "naI" = (
 /obj/structure/table/mainship,
 /obj/item/clothing/gloves/marine/insulated,
@@ -95064,6 +95097,12 @@
 /obj/effect/landmark/xeno_resin_wall,
 /turf/open/urban/street/asphalt,
 /area/lv759/outdoors/colony_streets/central_streets)
+"raw" = (
+/obj/effect/landmark/sensor_tower,
+/turf/open/urban/street/sidewalk{
+	dir = 8
+	},
+/area/lv759/outdoors/colony_streets/north_west_street)
 "ray" = (
 /obj/effect/urban/decal/dirt,
 /obj/effect/spawner/random/engineering/wood,
@@ -111269,6 +111308,7 @@
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 8
 	},
+/obj/effect/landmark/sensor_tower,
 /turf/open/floor/prison{
 	dir = 1
 	},
@@ -141523,7 +141563,7 @@ iWB
 jjV
 aLY
 iWB
-bxm
+cHO
 wwX
 dhs
 lEh
@@ -142893,7 +142933,7 @@ tro
 tro
 tro
 ydz
-fqS
+raw
 spy
 hmF
 srY
@@ -159967,7 +160007,7 @@ cLw
 bXE
 bXE
 bXE
-bXE
+kgk
 bXE
 cYU
 qfn
@@ -161800,7 +161840,7 @@ xIF
 kwv
 jrN
 tjt
-mJw
+naH
 dEN
 chl
 vPv
@@ -165753,7 +165793,7 @@ hMX
 dkf
 nNR
 wwV
-vyq
+fFc
 iAI
 vyq
 iAI
@@ -165818,7 +165858,7 @@ hVj
 kXR
 dNE
 dNE
-dNE
+ijc
 dNE
 xPe
 dNE
@@ -174765,7 +174805,7 @@ iGH
 rMO
 kKY
 rvq
-nUN
+jtT
 ejU
 ejU
 ejU

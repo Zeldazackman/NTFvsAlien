@@ -5399,6 +5399,10 @@
 	dir = 1
 	},
 /area/daedalusprison/inside/mining)
+"esL" = (
+/obj/effect/landmark/patrol_point/xeno/xeno_11,
+/turf/open/floor/plating/ground/ice,
+/area/daedalusprison/caves/southwest/garbledradio)
 "esP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -24087,6 +24091,10 @@
 /obj/item/clothing/mask/facehugger/dead,
 /turf/open/floor/mainship/floor,
 /area/daedalusprison/caves/research)
+"toQ" = (
+/obj/effect/landmark/patrol_point/xeno/xeno_21,
+/turf/open/floor/plating/ground/ice,
+/area/daedalusprison/caves/southwest/garbledradio)
 "tpJ" = (
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone{
 	dir = 2
@@ -35728,7 +35736,7 @@ vBS
 dLg
 dVz
 dVz
-dVz
+toQ
 dLg
 bvc
 vBS
@@ -41739,7 +41747,7 @@ liI
 dVz
 dLg
 dVz
-dVz
+esL
 dLg
 liI
 sLx

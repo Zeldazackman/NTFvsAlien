@@ -3132,6 +3132,10 @@
 	dir = 8
 	},
 /area/lawankaoutpost/colony/operations_hall)
+"cDp" = (
+/obj/effect/landmark/patrol_point/xeno/xeno_11,
+/turf/open/floor/tile/dark2,
+/area/lawankaoutpost/colony/engineering)
 "cDB" = (
 /obj/structure/closet/secure_closet/hos,
 /obj/machinery/light{
@@ -8671,6 +8675,10 @@
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/dirt,
 /area/lawankaoutpost/outside/central)
+"hfO" = (
+/obj/effect/landmark/patrol_point/xeno/xeno_21,
+/turf/open/floor/tile/dark,
+/area/lawankaoutpost/caves/nukestorage)
 "hgd" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/tile/blue/taupeblue{
@@ -47708,7 +47716,7 @@ xGW
 xGW
 tRS
 skU
-nva
+cDp
 nva
 nva
 skU
@@ -49939,7 +49947,7 @@ bKe
 xGW
 hoj
 lTQ
-lTQ
+hfO
 lTQ
 hoj
 xsy
