@@ -76,7 +76,7 @@ export const CharacterCustomization = (props) => {
       onClick={() => act(action)}
     />
   );
-  const colorField = (label, color, action, extra = null) => (
+  const colorField = (label, color, action, extra: any = null) => (
     <LabeledList.Item label={label}>
       {colorSwatchButton(color, action, color)}
       {extra}
@@ -219,6 +219,16 @@ export const CharacterCustomization = (props) => {
     }
     return (
       <Box as="span">
+        <Button
+          compact
+          icon="fill-drip"
+          tooltip="Match body color"
+          onClick={() =>
+            act('sync_character_creator_colors_to_body', {
+              field: row.id,
+            })
+          }
+        />
         {Array.from({ length: colorCount }, (_, index) => {
           const colorIndex = index + 1;
           const colorAction =

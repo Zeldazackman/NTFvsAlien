@@ -175,6 +175,11 @@ GLOBAL_LIST_INIT(breast_number_to_size, list(
 		"vaginaState" = GLOB.possible_vagina_sprite_names[human.vagina],
 		"bellyState" = GLOB.possible_belly_sprite_names[human.belly],
 		"testicleState" = GLOB.possible_testicle_sprite_names[human.testicles],
+		"assSize" = human.ass_size,
+		"boobSize" = GLOB.breast_number_to_size["[human.boobs_size]"] || GLOB.breast_number_to_size["3"],
+		"cockSize" = human.cock_size,
+		"bellySize" = human.belly_size,
+		"testicleSize" = human.testicles_size,
 	)
 	data["possibleCockStates"] = list()
 	for(var/entry in GLOB.possible_cock_sprites)
@@ -199,6 +204,10 @@ GLOBAL_LIST_INIT(breast_number_to_size, list(
 	data["possibleTesticleStates"] = list()
 	for(var/entry in GLOB.possible_testicle_sprites)
 		data["possibleTesticleStates"] += entry
+
+	data["possibleBoobSizes"] = list()
+	for(var/entry in GLOB.breast_size_to_number)
+		data["possibleBoobSizes"] += entry
 
 	return data
 
@@ -271,6 +280,32 @@ GLOBAL_LIST_INIT(breast_number_to_size, list(
 			human.update_genitals()
 			return TRUE
 
+		if("changeSize")
+			var/size_field = params["field"]
+			switch(size_field)
+				if("ass")
+					human.ass_size = sanitize_integer(params["newSize"], 1, 8, initial(human.ass_size))
+					human.client?.prefs?.genitalia_ass_size = human.ass_size
+				if("boobs")
+					var/new_boob_size = params["newSize"]
+					if(!(new_boob_size in GLOB.breast_size_to_number))
+						return TRUE
+					human.boobs_size = GLOB.breast_size_to_number[new_boob_size]
+					human.client?.prefs?.genitalia_boobs_size = human.boobs_size
+				if("cock")
+					human.cock_size = sanitize_integer(params["newSize"], 1, 7, initial(human.cock_size))
+					human.client?.prefs?.genitalia_cock_size = human.cock_size
+				if("belly")
+					human.belly_size = sanitize_integer(params["newSize"], 0, 10, initial(human.belly_size))
+					human.client?.prefs?.genitalia_belly_size = human.belly_size
+				if("testicles")
+					human.testicles_size = sanitize_integer(params["newSize"], 0, 8, initial(human.testicles_size))
+					human.client?.prefs?.genitalia_testicles_size = human.testicles_size
+				else
+					return TRUE
+			human.update_genitals()
+			return TRUE
+
 		if("reset")
 			human.boobs = null
 			human.ass = null
@@ -278,11 +313,21 @@ GLOBAL_LIST_INIT(breast_number_to_size, list(
 			human.vagina = null
 			human.belly = null
 			human.testicles = null
+			human.boobs_size = initial(human.boobs_size)
+			human.ass_size = initial(human.ass_size)
+			human.cock_size = initial(human.cock_size)
+			human.belly_size = initial(human.belly_size)
+			human.testicles_size = initial(human.testicles_size)
 			human.client?.prefs?.genitalia_boobs = null
 			human.client?.prefs?.genitalia_ass = null
 			human.client?.prefs?.genitalia_cock = null
 			human.client?.prefs?.genitalia_vagina = null
 			human.client?.prefs?.genitalia_belly = null
 			human.client?.prefs?.genitalia_testicles = null
+			human.client?.prefs?.genitalia_boobs_size = human.boobs_size
+			human.client?.prefs?.genitalia_ass_size = human.ass_size
+			human.client?.prefs?.genitalia_cock_size = human.cock_size
+			human.client?.prefs?.genitalia_belly_size = human.belly_size
+			human.client?.prefs?.genitalia_testicles_size = human.testicles_size
 			human.update_genitals()
 			return TRUE

@@ -13,6 +13,7 @@
 		"Synskin Combat Robot" = 'icons/mob/species/robot/glasses.dmi')
 	icon_state = "night"
 	worn_icon_state = "glasses"
+	worn_item_state_slots = list()
 	toggleable = TRUE
 	// deactive_state = "night_vision_off" // gonna test what it does without a deactive_state
 	color_cutoffs = list(10, 30, 10)
