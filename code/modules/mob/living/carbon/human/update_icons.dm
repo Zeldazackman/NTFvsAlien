@@ -636,10 +636,12 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 	overlays_standing[BODYPARTS_LAYER] = image(icon=stand_icon, icon_state="blank", layer=-BODYPARTS_LAYER)
 	apply_overlay(BODYPARTS_LAYER)
 
-/proc/ntf_north_body_clothing_layer(direction)
+/proc/ntf_north_body_clothing_layer(direction, clothing_layer)
 	if(direction != NORTH)
 		return null
-	return -(BODYPARTS_LAYER - 0.5)
+	. = -(BODYPARTS_LAYER - 0.5)
+	if(!isnull(clothing_layer))
+		. -= clothing_layer * 0.001
 
 /proc/ntf_set_worn_appearance_layer(mutable_appearance/standing, draw_layer)
 	if(isnull(draw_layer) || !standing)
@@ -919,7 +921,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 		w_socks.screen_loc = "WEST:6,SOUTH+5:15"
 		client.screen += w_socks
 
-	overlays_standing[SOCKS_LAYER] = ntf_set_worn_appearance_layer(w_socks.make_worn_icon(species_type = species.name, slot_name = slot_socks_str, default_icon = 'ntf_modular/modules/underwear/underwear/underwear.dmi', default_layer = SOCKS_LAYER), ntf_north_body_clothing_layer(dir))
+	overlays_standing[SOCKS_LAYER] = ntf_set_worn_appearance_layer(w_socks.make_worn_icon(species_type = species.name, slot_name = slot_socks_str, default_icon = 'ntf_modular/modules/underwear/underwear/underwear.dmi', default_layer = SOCKS_LAYER), ntf_north_body_clothing_layer(dir, SOCKS_LAYER))
 
 	apply_overlay(SOCKS_LAYER)
 
@@ -932,7 +934,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 		w_underwear.screen_loc = "WEST:6,SOUTH+4:13"
 		client.screen += w_underwear
 
-	overlays_standing[UNDERWEAR_LAYER] = ntf_set_worn_appearance_layer(w_underwear.make_worn_icon(species_type = species.name, slot_name = slot_underwear_str, default_icon = 'ntf_modular/modules/underwear/underwear/underwear.dmi', default_layer = UNDERWEAR_LAYER), ntf_north_body_clothing_layer(dir))
+	overlays_standing[UNDERWEAR_LAYER] = ntf_set_worn_appearance_layer(w_underwear.make_worn_icon(species_type = species.name, slot_name = slot_underwear_str, default_icon = 'ntf_modular/modules/underwear/underwear/underwear.dmi', default_layer = UNDERWEAR_LAYER), ntf_north_body_clothing_layer(dir, UNDERWEAR_LAYER))
 
 	apply_overlay(UNDERWEAR_LAYER)
 
@@ -945,7 +947,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 		w_undershirt.screen_loc = "WEST:6,SOUTH+6:17"
 		client.screen += w_undershirt
 
-	overlays_standing[UNDERSHIRT_LAYER] = ntf_set_worn_appearance_layer(w_undershirt.make_worn_icon(species_type = species.name, slot_name = slot_shirt_str, default_icon = 'ntf_modular/modules/underwear/underwear/underwear.dmi', default_layer = UNDERSHIRT_LAYER), ntf_north_body_clothing_layer(dir))
+	overlays_standing[UNDERSHIRT_LAYER] = ntf_set_worn_appearance_layer(w_undershirt.make_worn_icon(species_type = species.name, slot_name = slot_shirt_str, default_icon = 'ntf_modular/modules/underwear/underwear/underwear.dmi', default_layer = UNDERSHIRT_LAYER), ntf_north_body_clothing_layer(dir, UNDERSHIRT_LAYER))
 
 	apply_overlay(UNDERSHIRT_LAYER)
 
@@ -958,7 +960,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 		bra.screen_loc = "WEST+1:8,SOUTH+4:13"
 		client.screen += bra
 
-	overlays_standing[BRA_LAYER] = ntf_set_worn_appearance_layer(bra.make_worn_icon(species_type = species.name, slot_name = slot_bra_str, default_icon = 'ntf_modular/modules/underwear/underwear/underwear.dmi', default_layer = BRA_LAYER), ntf_north_body_clothing_layer(dir))
+	overlays_standing[BRA_LAYER] = ntf_set_worn_appearance_layer(bra.make_worn_icon(species_type = species.name, slot_name = slot_bra_str, default_icon = 'ntf_modular/modules/underwear/underwear/underwear.dmi', default_layer = BRA_LAYER), ntf_north_body_clothing_layer(dir, BRA_LAYER))
 
 	apply_overlay(BRA_LAYER)
 

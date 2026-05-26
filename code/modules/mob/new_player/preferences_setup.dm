@@ -160,10 +160,14 @@
 
 
 /datum/preferences/proc/copy_to(mob/living/carbon/human/character, safety = FALSE)
-	if(species && GLOB.all_species[species])
-		character.set_species(species)
-	else
-		character.set_species("Human")
+	var/datum/species/preference_species = GLOB.all_species[species]
+	var/preserve_job_species = (character.species?.species_flags & (IS_SYNTHETIC|ROBOTIC_LIMBS)) && !(preference_species?.species_flags & (IS_SYNTHETIC|ROBOTIC_LIMBS))
+	// Synthetic jobs spawn an exact synthetic/robot species before preferences are copied.
+	if(!preserve_job_species)
+		if(preference_species)
+			character.set_species(species)
+		else
+			character.set_species("Human")
 	sync_synthetic_type_to_species()
 
 	var/new_name

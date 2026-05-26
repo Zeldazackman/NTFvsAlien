@@ -622,6 +622,25 @@
 		return TRUE
 
 	switch(action)
+		if("sync_character_creator_colors_to_body")
+			var/field = params["field"]
+			var/body_color_to_copy = sanitize_hexcolor(body_color, 6, TRUE, initial(body_color))
+			if(field in genital_actions)
+				for(var/color_index in 1 to character_creator_genital_color_count(field))
+					var/color_var = character_creator_genital_color_var(field, color_index)
+					if(color_var)
+						vars[color_var] = body_color_to_copy
+				update_preview_icon()
+				return TRUE
+			if(field in character_creator_part_ids())
+				var/list/part_definition = character_creator_part_definition(field)
+				var/color_count = part_definition?["colors"] || 0
+				for(var/color_index in 1 to color_count)
+					var/color_var = character_creator_color_var(field, color_index)
+					if(color_var)
+						vars[color_var] = body_color_to_copy
+				update_preview_icon()
+				return TRUE
 		if("genitalia_ass_size")
 			genitalia_ass_size = sanitize_integer(params["newValue"], 1, 8, initial(genitalia_ass_size))
 			update_preview_icon()

@@ -639,6 +639,9 @@
 /mob/living/carbon/xenomorph/proc/sync_hive_abilities()
 	if(hive)
 		for(var/datum/action/ability/hive_ability AS in hive.hive_abilities)
+			var/ability_type = ispath(hive_ability) ? hive_ability : hive_ability.type
+			if(actions_by_path[ability_type])
+				continue
 			if(((hive_ability.parent_type) in xeno_caste.actions) && !hive_ability.cooldown_duration)
 				continue
 			add_ability(hive_ability)
