@@ -113,6 +113,7 @@
 	max_larva_preg_at_once = MAX_LARVA_PREGNANCIES_SOL
 	time_between_round_group = 0
 	time_between_round_group_name = "GROUP_Extended"
+	spawn_xeno_shit = FALSE
 
 /datum/game_mode/infestation/secret_of_life/pre_setup()
 	. = ..()
@@ -219,9 +220,6 @@
 		SSpoints.add_tactical_psy_points(hivenumber, 300)
 		SSpoints.add_biomass_points(hivenumber, 0) // Solely to make sure it isn't null.
 
-	for(var/obj/effect/landmark/corpsespawner/corpse AS in GLOB.corpse_landmarks_list)
-		corpse.create_mob()
-
 //NTF addition start
 	if(randomize_miners)
 		if(length(GLOB.miner_list) > MINIMUM_MINERS)
@@ -260,6 +258,48 @@
 		xeno.evolution_stored = xeno.xeno_caste.evolution_threshold //Immediate roundstart evo for larva.
 
 	generate_nuke_disk_spawners()
+
+	if(!spawn_xeno_shit) //repair colony a bit
+		for(var/obj/machinery/power/apc/drained/apse in GLOB.apcs_list)
+			if(apse.cell) //charge apc cells
+				apse.cell.charge = apse.cell.maxcharge
+		//repair window frames
+		for(var/obj/structure/window_frame/colony/reinforced/frame in world)
+			if(!is_ground_level(frame.z))
+				continue
+			if(istype(frame, /obj/structure/window_frame/colony/reinforced))
+				var/obj/structure/window/framed/colony/reinforced/placed_thing = new /obj/structure/window/framed/colony/reinforced(frame.loc)
+				placed_thing.dir = frame.dir
+				qdel(frame)
+		for(var/obj/structure/window_frame/colony/frame in world)
+			if(!is_ground_level(frame.z))
+				continue
+			if(istype(frame, /obj/structure/window_frame/colony))
+				var/obj/structure/window/framed/colony/placed_thing = new /obj/structure/window/framed/colony(frame.loc)
+				placed_thing.dir = frame.dir
+				qdel(frame)
+		//clean blood
+		for(var/obj/effect/decal/cleanable/blood/splatter/blood_splatter in world)
+			if(!is_ground_level(blood_splatter.z))
+				continue
+			if(istype(blood_splatter, /obj/effect/decal/cleanable/blood/splatter))
+				qdel(blood_splatter)
+		for(var/obj/effect/decal/cleanable/blood/gibs in world)
+			if(!is_ground_level(gibs.z))
+				continue
+			if(istype(gibs, /obj/effect/decal/cleanable/blood/gibs))
+				qdel(gibs)
+		//make girders into basic walls?
+		for(var/obj/structure/girder/frame in world)
+			if(!is_ground_level(frame.z))
+				continue
+			if(istype(frame, /obj/structure/girder))
+				var/obj/structure/girder/placed_thing = new /turf/closed/wall(frame.loc)
+				placed_thing.dir = frame.dir
+				qdel(frame)
+	else //we got xeno bs all over colony
+		for(var/obj/effect/landmark/corpsespawner/corpse AS in GLOB.corpse_landmarks_list)
+			corpse.create_mob()
 
 	RegisterSignal(SSdcs, COMSIG_GLOB_NUKE_EXPLODED, PROC_REF(on_nuclear_explosion))
 	RegisterSignal(SSdcs, COMSIG_GLOB_NUKE_DEFUSED, PROC_REF(on_nuclear_defuse))

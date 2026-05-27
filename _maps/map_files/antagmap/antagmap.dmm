@@ -1630,7 +1630,7 @@
 	},
 /obj/structure/transmitter/som_net{
 	phone_category = "SOM Prison";
-	phone_id = "Prison";
+	phone_id = "SOM Prison";
 	dir = 1;
 	pixel_y = -25
 	},

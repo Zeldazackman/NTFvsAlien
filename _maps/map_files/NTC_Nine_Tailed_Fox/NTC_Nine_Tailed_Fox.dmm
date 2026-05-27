@@ -9519,8 +9519,7 @@
 /area/mainship/groundhq/ntf/hallways/gardens)
 "iaL" = (
 /obj/structure/window/reinforced{
-	pixel_y = -6;
-	dir = 2
+	pixel_y = -6
 	},
 /obj/structure/bed/chair/comfy/black{
 	dir = 8
@@ -11080,7 +11079,7 @@
 /obj/machinery/camera/autoname,
 /obj/structure/transmitter{
 	phone_category = "Corpsec";
-	phone_id = "Prison";
+	phone_id = "NTC Prison";
 	pixel_y = 25;
 	max_integrity = 50
 	},
@@ -11479,7 +11478,6 @@
 /obj/machinery/door_control/old/cic{
 	id = "captainprivacyshutters";
 	name = "Privacy Shutter";
-	pixel_y = 0;
 	req_one_access = list(200,40);
 	pixel_x = -5
 	},
@@ -12537,8 +12535,7 @@
 "kwE" = (
 /obj/structure/table/urban/shiny_black,
 /obj/structure/window/reinforced{
-	pixel_y = -6;
-	dir = 2
+	pixel_y = -6
 	},
 /obj/item/spacecash/c20{
 	pixel_x = 3;
@@ -16989,11 +16986,9 @@
 	pixel_x = -5
 	},
 /obj/item/reagent_containers/cup/glass/drinkingglass{
-	pixel_y = 0;
 	pixel_x = 6
 	},
 /obj/item/reagent_containers/food/drinks/bottle/specialwhiskey{
-	pixel_y = 0;
 	pixel_x = 1
 	},
 /turf/open/floor/carpet/royalblack,
@@ -22455,7 +22450,6 @@
 "sJC" = (
 /obj/structure/table/urban/shiny_black,
 /obj/item/ashtray/glass{
-	pixel_y = 0;
 	pixel_x = -4
 	},
 /obj/item/storage/fancy/cigarettes/dromedaryco{
@@ -25961,8 +25955,7 @@
 	})
 "vzV" = (
 /obj/structure/window/reinforced{
-	pixel_y = -6;
-	dir = 2
+	pixel_y = -6
 	},
 /obj/structure/bed/chair/comfy/black{
 	dir = 4
