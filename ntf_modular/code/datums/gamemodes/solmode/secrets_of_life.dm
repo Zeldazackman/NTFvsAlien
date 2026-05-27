@@ -90,16 +90,10 @@
 		/datum/job/clf/silicon/synthetic/clf = 1,
 		/datum/job/clf/mo = 1,
 		/datum/job/other/prisonerclf = 2,
-		/datum/job/vsd_squad/standard = -1,
-		/datum/job/vsd_squad/medic = 1,
-		/datum/job/vsd_squad/engineer = 1,
-		/datum/job/vsd_squad/spec = 1,
-		/datum/job/vsd_squad/leader = 1,
 		/datum/job/terragov/civilian/liaison_novamed = 1,
 		/datum/job/terragov/civilian/liaison_transco = 1,
 		/datum/job/clf/liaison_clf = 1,
 		/datum/job/som/civilian/liaison_som = 1,
-		/datum/job/vsd_squad/liaison_kaizoku = 1,
 	)
 	enable_fun_tads = TRUE
 	xenorespawn_time = 2 MINUTES

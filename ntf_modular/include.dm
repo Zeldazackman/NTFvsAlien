@@ -81,6 +81,7 @@
 #include "code\datums\sexcon\sex_actions\sex\vaginal_sex.dm"
 #include "code\datums\sexcon\sexcon.dm"
 #include "code\datums\sexcon\sexcon_helpers.dm"
+#include "code\game\areas\lava_outpost_v1.dm"
 #include "code\game\objects\effects\effect_system\smoke.dm"
 #include "code\game\objects\effects\landmarks\landmarks.dm"
 #include "code\game\objects\effects\landmarks\marine_spawns.dm"

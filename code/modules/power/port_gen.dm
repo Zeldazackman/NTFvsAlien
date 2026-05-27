@@ -102,6 +102,7 @@
 	var/sheet_left = 0 // How much is left of the sheet
 	var/time_per_sheet = 300
 	var/current_heat = 0
+	var/start_full = TRUE
 	power_gen = 15000
 	interaction_flags = INTERACT_MACHINE_TGUI
 
@@ -116,6 +117,8 @@
 	component_parts += new /obj/item/stack/cable_coil(src)
 	component_parts += new /obj/item/stock_parts/capacitor(src)
 	RefreshParts()
+	if(start_full)
+		sheets = max_sheets
 
 	var/obj/S = sheet_path
 	sheet_name = initial(S.name)
@@ -279,6 +282,9 @@
 				power_output++
 				. = TRUE
 
+/obj/machinery/power/port_gen/pacman/empty
+	start_full = FALSE
+
 /obj/machinery/power/port_gen/pacman/super
 	name = "\improper S.U.P.E.R.P.A.C.M.A.N.-type portable generator"
 	icon_state = "portgen1"
@@ -290,6 +296,9 @@
 
 /obj/machinery/power/port_gen/pacman/super/overheat()
 	explosion(loc, 4, explosion_cause=src)
+
+/obj/machinery/power/port_gen/pacman/super/empty
+	start_full = FALSE
 
 /obj/machinery/power/port_gen/pacman/mrs
 	name = "\improper M.R.S.P.A.C.M.A.N.-type portable generator"

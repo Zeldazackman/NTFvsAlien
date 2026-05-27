@@ -7,6 +7,8 @@
 	blacklist_ship_maps = null
 	blacklist_ground_maps = list(MAP_WHISKEY_OUTPOST, MAP_OSCAR_OUTPOST, MAP_FORT_PHOBOS, MAP_CHIGUSA, MAP_CORSAT, MAP_COLONY1)
 	bioscan_interval = 3 MINUTES
+	respawn_time = 90 SECONDS
+	xenorespawn_time = 90 SECONDS
 	/// Timer used to calculate how long till round ends
 	var/game_timer
 	///The length of time until round ends.
