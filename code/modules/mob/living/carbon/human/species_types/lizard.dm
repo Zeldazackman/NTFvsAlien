@@ -64,7 +64,7 @@
 	if(!carbon_owner)		return FALSE
 	carbon_owner.visible_message(span_xenowarning("\The [carbon_owner] sweeps [carbon_owner.p_their()] tail in a wide circle!"), \
 	span_xenowarning("You sweep your tail in a wide circle!"))
-	playsound(carbon_owner.loc, 'ntf_modular/sound/effects/dt-spin.ogg', 50)
+	playsound(carbon_owner.loc, 'ntf_modular/sound/effects/dt-spin.ogg', 25)
 
 	carbon_owner.add_filter("defender_tail_sweep", 2, gauss_blur_filter(1)) //Add cool SFX
 	carbon_owner.spin(4, 1)

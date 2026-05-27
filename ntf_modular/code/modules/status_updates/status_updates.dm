@@ -24,7 +24,7 @@ GLOBAL_LIST_INIT(mode_to_pingid, list(
 	"Secret of Life - Main" = PINGID_SOL_MODE_PING,
 	"Secret of Life - No Subfactions" = PINGID_SOL_MODE_PING,
 	"Secret of Life - NTF vs Alien only" = PINGID_SOL_MODE_PING,
-	"Secret of Life - NTF vs CLF" = PINGID_SOL_MODE_PING,
+	"Secret of Life - NTF vs Cult" = PINGID_SOL_MODE_PING,
 	"Secret of Life - Faction Chaos" = PINGID_SOL_MODE_PING,
 	"Whiskey Outpost" = PINGID_WHISKEY_OUTPOST,
 	"Encounter" = PINGID_ENCOUNTER,

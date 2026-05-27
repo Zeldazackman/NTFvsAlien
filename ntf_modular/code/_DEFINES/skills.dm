@@ -40,7 +40,7 @@
 	sex = SKILL_SEX_EXPERT
 
 /datum/skills/slut/clf
-	name = "CLF Breeder"
+	name = "Cult Offering"
 	engineer = SKILL_ENGINEER_METAL
 
 /datum/skills/civilian/mo

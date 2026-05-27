@@ -207,4 +207,4 @@
 	department = "SOM"
 
 /obj/machinery/faxmachine/clf
-	department = "CLF"
+	department = "Cult"

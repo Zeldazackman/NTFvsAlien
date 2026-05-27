@@ -2,7 +2,7 @@
 #define FACTION_TERRAGOV "Ninetails Corporation"
 #define FACTION_XENO "Xeno"
 #define FACTION_ZOMBIE "Zombie"
-#define FACTION_CLF "Colonial Liberation Force"
+#define FACTION_CLF "Cult of Evolution"
 #define FACTION_DEATHSQUAD "Deathsquad"
 #define FACTION_FREELANCERS "Freelancers"
 #define FACTION_IMP "Imperium of Mankind"
@@ -129,7 +129,7 @@ GLOBAL_LIST_INIT(faction_to_acronym, list(
 	FACTION_SPECFORCE = "SRF",
 	FACTION_NANOTRASEN = "ACAP",
 	FACTION_FREELANCERS = "FRE",
-	FACTION_CLF = "CLF",
+	FACTION_CLF = "Cult",
 	FACTION_DEATHSQUAD = "Deathsquad",
 	FACTION_IMP = "IMP",
 	FACTION_UNKN_MERCS = "Unknown",

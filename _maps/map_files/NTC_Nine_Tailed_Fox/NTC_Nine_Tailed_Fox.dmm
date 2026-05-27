@@ -27681,6 +27681,10 @@
 /area/mainship/medical/upper_medical{
 	name = "Shipside Medbay"
 	})
+"wYr" = (
+/obj/structure/table/wood,
+/turf/open/floor/mainship_hull,
+/area/space)
 "wYL" = (
 /obj/structure/closet/secure_closet/engineering_personal{
 	req_access = null
@@ -55678,7 +55682,7 @@ nwr
 nwr
 nwr
 guP
-gwf
+wYr
 gwf
 gwf
 gwf

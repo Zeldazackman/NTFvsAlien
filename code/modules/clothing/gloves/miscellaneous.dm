@@ -241,3 +241,9 @@
 	name = "Techpriest gloves"
 	desc = "Praise the Omnissiah!"
 	icon_state = "tp_gloves"
+	siemens_coefficient = 0
+	permeability_coefficient = 0.05
+	cold_protection_flags = HANDS
+	min_cold_protection_temperature = GLOVES_MIN_COLD_PROTECTION_TEMPERATURE
+	heat_protection_flags = HANDS
+	max_heat_protection_temperature = GLOVES_MAX_HEAT_PROTECTION_TEMPERATURE

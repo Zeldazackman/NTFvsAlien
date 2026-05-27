@@ -186,7 +186,7 @@
 /*
 /datum/map_template/shuttle/minidropship/clf
 	suffix = "_clf"
-	display_name = "CLF Technical"
+	display_name = "Cult Technical"
 	pickable = FALSE
 
 /datum/map_template/shuttle/minidropship/colmil

@@ -5,7 +5,7 @@
 	faction = FACTION_CLF
 	shadow_languages = list(/datum/language/xenocommon)
 	job_category = JOB_CAT_MARINE
-	supervisors = "the xenomorphs and CLF Leaders"
+	supervisors = "the xenomorphs and Cultist Sect Leaders"
 	minimap_icon = "CLF1"
 	jobworth = list(
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
@@ -26,15 +26,15 @@
 /datum/job/clf/get_spawn_message_information(mob/M)
 	. = ..()
 	. += separator_hr("[span_role_header("<b>[title] Information</b>")]")
-	. += {"As a CLF member you are an ex NTC worker or a defector from one of the main factions. Whatever your reasons, you are now a servant of Xenomorphs, they are superior, evolved beings that you must serve.
+	. += {"As a Xeno cultist, you are an ex worker of the colonies or a defector from one of the main factions. Whatever your reasons, you are now a servant of Xenomorphs and the cult of evolution, xenomorphs, the overevolved beings that you must serve.
 You can understand but not speak xeno language but they can understand your language already, Obey your Xenomorph masters.
-Your primary goal is to serve the hive, and ultimate goal is to liberate the colonies from all occupational forces so the Xenos may reclaim the lands, and breed your kind forever."}
+Your primary goal is to serve the hive, and ultimate goal is to liberate the colonies from all forces so the Xenos may reclaim the lands, and breed your kind forever until they are ascended into xenohood aswell by dying in birth."}
 
-//CLF Standard
+//Cultist
 /datum/job/clf/standard
-	title = "CLF Standard"
-	paygrade = "CLF1"
-	comm_title = "CLF1"
+	title = "Cultist"
+	paygrade = "CLT"
+	comm_title = "CLT"
 	outfit = /datum/outfit/job/clf/standard/uzi
 	job_flags = JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_LATEJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_OVERRIDELATEJOINSPAWN|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_ADDTOMANIFEST
 	multiple_outfits = TRUE
@@ -48,12 +48,12 @@ Your primary goal is to serve the hive, and ultimate goal is to liberate the col
 		/datum/outfit/job/clf/standard/som_smg,
 	)
 
-//CLF Medic
+//Cultist Mender
 /datum/job/clf/medic
-	title = "CLF Medic"
-	paygrade = "CLF2"
-	comm_title = "CLF2"
-	minimap_icon = "CLF2"
+	title = "Cultist Mender"
+	paygrade = "CLTM"
+	comm_title = "CLTM"
+	minimap_icon = "CLTM"
 	job_flags = JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_LATEJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_OVERRIDELATEJOINSPAWN|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_ADDTOMANIFEST
 	skills_type = /datum/skills/combat_medic/crafty
 	outfit = /datum/outfit/job/clf/medic/uzi
@@ -74,12 +74,12 @@ Your primary goal is to serve the hive, and ultimate goal is to liberate the col
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
 
-//CLF Specialist
+//Cultist Champion
 /datum/job/clf/specialist
-	title = "CLF Specialist"
-	paygrade = "CLF4"
-	comm_title = "CLF4"
-	minimap_icon = "CLF4"
+	title = "Cultist Champion"
+	paygrade = "CLTC"
+	comm_title = "CLTC"
+	minimap_icon = "CLTC"
 	skills_type = /datum/skills/specialist
 	job_flags = JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_LATEJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_OVERRIDELATEJOINSPAWN|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_ADDTOMANIFEST
 	outfit = /datum/outfit/job/clf/specialist
@@ -99,12 +99,12 @@ Your primary goal is to serve the hive, and ultimate goal is to liberate the col
 	)
 
 
-//CLF Leader
+//Cultist Sect Leader
 /datum/job/clf/leader
-	title = "CLF Leader"
-	paygrade = "CLF3"
-	comm_title = "CLF3"
-	minimap_icon = "CLF3"
+	title = "Cultist Sect Leader"
+	paygrade = "CLTL"
+	comm_title = "CLTL"
+	minimap_icon = "CLTL"
 	job_flags = JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_LATEJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_OVERRIDELATEJOINSPAWN|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_ADDTOMANIFEST
 	skills_type = /datum/skills/sl/clf
 	outfit = /datum/outfit/job/clf/leader/assault_rifle
@@ -127,10 +127,10 @@ Your primary goal is to serve the hive, and ultimate goal is to liberate the col
 	)
 
 /datum/job/clf/breeder
-	title = "CLF Breeder"
-	paygrade = "CLF0"
-	comm_title = "CLF0"
-	minimap_icon = "CLF0"
+	title = "Cult Offering"
+	paygrade = "CLTO"
+	comm_title = "CLTO"
+	minimap_icon = "CLTO"
 	outfit = /datum/outfit/job/clf/breeder
 	skills_type = /datum/skills/slut/clf
 	job_flags = JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_LATEJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_OVERRIDELATEJOINSPAWN|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_ADDTOMANIFEST
@@ -142,11 +142,11 @@ Your primary goal is to serve the hive, and ultimate goal is to liberate the col
 
 //synthetic
 /datum/job/clf/silicon/synthetic/clf
-	title = "CLF Synthetic"
+	title = "Cult Synthetic"
 	req_admin_notify = TRUE
 	comm_title = "Syn"
 	paygrade = "Mk.I"
-	supervisors = "the xenomorphs and CLF"
+	supervisors = "the xenomorphs and Cult"
 	total_positions = 1
 	skills_type = /datum/skills/synthetic
 	access = ALL_CLF_ACCESS
@@ -233,10 +233,10 @@ Your primary goal is to serve the hive, and ultimate goal is to liberate the col
 In addition, being a Synthetic gives you knowledge in every field and specialization possible on-board the ship."}
 
 /datum/job/clf/tech
-	title = "CLF Combat Technician"
-	paygrade = "CLF5"
-	comm_title = "CLF4"
-	minimap_icon = "CLF4"
+	title = "Cultist Technomancer"
+	paygrade = "CLTW"
+	comm_title = "CLTC"
+	minimap_icon = "CLT4"
 	skills_type = /datum/skills/combat_engineer
 	job_flags = JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_LATEJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_OVERRIDELATEJOINSPAWN|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_ADDTOMANIFEST
 	outfit = /datum/outfit/job/clf/tech
@@ -251,10 +251,10 @@ In addition, being a Synthetic gives you knowledge in every field and specializa
 	)
 
 /datum/job/clf/mo
-	title = "CLF Medical Officer"
+	title = "Cultist Archmender"
 	paygrade = "MO"
-	comm_title = "CLFMO"
-	minimap_icon = "CLF2"
+	comm_title = "CLTMO"
+	minimap_icon = "CLT2"
 	supervisors = "The Hive."
 	total_positions = 1
 	skills_type = /datum/skills/cmo
@@ -272,3 +272,30 @@ In addition, being a Synthetic gives you knowledge in every field and specializa
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
+
+//the bigus dickus leader of the cult
+/datum/job/clf/messiah
+	title = "Cult Messiah"
+	paygrade = "CLTL"
+	comm_title = "CLTMS"
+	minimap_icon = "CLTMS"
+	supervisors = "The Hive."
+	job_flags = JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_LATEJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_OVERRIDELATEJOINSPAWN|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_ADDTOMANIFEST
+	skills_type = /datum/skills/captain
+	outfit = /datum/outfit/job/clf/messiah
+	multiple_outfits = TRUE
+	supervisors = "the xenomorphs"
+	jobworth = list(
+		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_HIGH,
+		/datum/job/terragov/squad/specialist = SMARTIE_POINTS_HIGH,
+		/datum/job/terragov/squad/corpsman = SMARTIE_POINTS_REGULAR,
+		/datum/job/terragov/squad/engineer = SMARTIE_POINTS_REGULAR,
+		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
+		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
+	)
+
+/datum/job/clf/messiah/get_spawn_message_information(mob/M)
+	. = ..()
+	. += separator_hr("[span_role_header("<b>[title] Information</b>")]")
+	. += {"You are the current great leader of the cult of evolution, lead your cult from safety and comfort, get them to kidnap people for breeding and probably sacrifice after,
+	or at the same time, whatever you want, you can do it. Well you are still below the queen and the queen mother of the hive."}

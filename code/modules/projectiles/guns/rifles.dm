@@ -374,7 +374,7 @@
 	unload_sound = 'sound/weapons/guns/interact/m41a_unload.ogg'
 	reload_sound = 'sound/weapons/guns/interact/m41a_reload.ogg'
 	caliber = CALIBER_10X24_CASELESS //codex
-	max_shells = 40 //codex
+	max_shells = 50 //codex
 	default_ammo_type = /obj/item/ammo_magazine/rifle
 	allowed_ammo_types = list(
 		/obj/item/ammo_magazine/rifle,
