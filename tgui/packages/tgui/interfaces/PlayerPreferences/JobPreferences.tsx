@@ -96,7 +96,7 @@ export const JobPreferences = (props) => {
     'Cult Synthetic',
     'Cultist Archmender',
     'Cultist Sect Leader',
-    'Cult Technomancer',
+    'Cultist Technomancer',
     'Cult Representative',
     'Cult Messiah',
   ];

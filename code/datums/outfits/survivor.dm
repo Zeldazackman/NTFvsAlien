@@ -100,8 +100,9 @@
 	wear_suit = /obj/item/clothing/suit/armor/patrol
 	head = /obj/item/clothing/head/securitycap
 	shoes = /obj/item/clothing/shoes/marine/full
-	back = /obj/item/storage/backpack/security
-	belt = /obj/item/storage/belt/security
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud
+	back = /obj/item/storage/backpack/satchel/sec
+	belt = /obj/item/storage/belt/security/tactical
 	gloves = /obj/item/clothing/gloves/black
 	suit_store = /obj/item/weapon/gun/pistol/g22
 	ears = /obj/item/radio/headset/survivor
@@ -118,6 +119,8 @@
 		/obj/item/ammo_magazine/pistol/g22 = 2,
 		/obj/item/flashlight/combat = 1,
 		/obj/item/weapon/telebaton = 1,
+		/obj/item/restraints/handcuffs = 1,
+		/obj/item/flash = 1,
 	)
 
 /datum/outfit/job/survivor/civilian
