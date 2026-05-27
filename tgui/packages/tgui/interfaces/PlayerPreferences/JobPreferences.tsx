@@ -98,6 +98,7 @@ export const JobPreferences = (props) => {
     'Cultist Sect Leader',
     'Cult Technomancer',
     'Cult Representative',
+    'Cult Messiah',
   ];
   const cmJobs = [
     'CM Standard',
