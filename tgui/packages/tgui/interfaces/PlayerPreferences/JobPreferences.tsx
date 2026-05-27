@@ -106,6 +106,9 @@ export const JobPreferences = (props) => {
     'CM Squad Leader',
     'CM Base Technician',
     'Colonial Militia Representative',
+    'CM Commander',
+    'CM Militia Captain',
+    'CM Colony Administrator',
   ];
   const kzJobs = [
     'KZ Standard',

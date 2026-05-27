@@ -174,7 +174,7 @@ PMC_MEDIC, PMC_ENGINEER, PMC_GUNNER, PMC_STANDARD, PMC_SNIPER, PMC_LEADER,\
 "KZ Standard", "KZ Engineer", "KZ Medic", "KZ Specialist", "KZ Squad Leader",\
 "CM Standard", "CM Medic", "CM Guardsman", "CM Squad Leader", "CM Base Technician",\
 "Prisoner", "SOM Prisoner", "Cult Prisoner",\
-"Morale Officer", "Worker", "Archercorp Liaison", "Novamed Liaison", "TRANSCo Liaison", "Kaizoku Liaison", "Colonial Militia Representative", "Cult Representative", "Sons of Mars Representative"))
+"Morale Officer", "Worker", "Archercorp Liaison", "Novamed Liaison", "TRANSCo Liaison", "Kaizoku Liaison", "Colonial Militia Representative", "Cult Representative", "Sons of Mars Representative", "Cult Messiah", "CM Commander", "CM Militia Captain", "CM Colony Administrator"))
 
 GLOBAL_LIST_INIT(jobs_xenos, list(ROLE_XENOMORPH, ROLE_XENO_QUEEN, ROLE_XENO_HUGGER))
 GLOBAL_LIST_INIT(jobs_fallen_marine, typecacheof(list(/datum/job/fallen/marine), TRUE))
