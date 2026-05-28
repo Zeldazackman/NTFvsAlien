@@ -532,8 +532,8 @@ Make the CM proud!"}
 	paygrade = "O1"
 	comm_title = "ADM"
 	total_positions = 4
-	access = ALL_MARINE_ACCESS
-	minimal_access = ALL_MARINE_ACCESS
+	access = ALL_ICC_ACCESS
+	minimal_access = ALL_ICC_ACCESS
 	skills_type = /datum/skills/so
 	display_order = JOB_DISPLAY_ORDER_STAFF_OFFICER
 	outfit = /datum/outfit/job/command/staffofficer

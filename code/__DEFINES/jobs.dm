@@ -137,6 +137,7 @@
 #define JOB_CAT_UNASSIGNED "Unassigned"
 #define JOB_CAT_PMC "ArcherCorp Asset Protection"
 #define JOB_CAT_VSD "Kaizoku Corporation"
+#define JOB_CAT_CLF "Cult of Evolution"
 
 #define JOB_CAT_COMMANDSOM "SOM Command"
 #define JOB_CAT_MARINESOM "Sons of Mars"

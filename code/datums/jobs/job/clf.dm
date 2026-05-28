@@ -4,7 +4,8 @@
 	skills_type = /datum/skills/crafty
 	faction = FACTION_CLF
 	shadow_languages = list(/datum/language/xenocommon)
-	job_category = JOB_CAT_MARINE
+	job_category = JOB_CAT_CLF
+	selection_color = "#60008a"
 	supervisors = "the xenomorphs and Cultist Sect Leaders"
 	minimap_icon = "CLF1"
 	jobworth = list(
