@@ -54,6 +54,7 @@
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud
 	belt = /obj/item/storage/belt/security/tactical
 	head = /obj/item/clothing/head/beret/sec
+	mask = /obj/item/clothing/mask/gas/hardlight
 	ears = /obj/item/radio/headset/mainship/marine/generic/sec
 	w_uniform = /obj/item/clothing/under/rank/security/corp
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/bulletresistant
