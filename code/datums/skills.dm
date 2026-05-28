@@ -904,6 +904,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	name = SECURITY_OFFICER
 
 	unarmed = SKILL_UNARMED_MP
+	medical = SKILL_MEDICAL_PRACTICED
 	combat = SKILL_COMBAT_DEFAULT
 	smgs = SKILL_SMGS_TRAINED
 	rifles = SKILL_RIFLES_TRAINED
