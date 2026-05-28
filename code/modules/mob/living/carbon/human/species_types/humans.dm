@@ -68,7 +68,7 @@
 	if(!carbon_owner)		return FALSE
 	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/oxycodone, 5, no_overdose = TRUE)
 	carbon_owner.setStaminaLoss(-carbon_owner.max_stamina)
-	playsound(carbon_owner.loc, 'ntf_modular/sound/effects/ut-boost.ogg', 75)
+	playsound(carbon_owner.loc, 'ntf_modular/sound/effects/ut-boost.ogg', 50)
 	carbon_owner.emote("me", 1, "takes a deep breath between gritted teeth.")
 	carbon_owner.do_jitter_animation(1000)
 

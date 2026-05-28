@@ -109,6 +109,13 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	home_id = "supply_SOM_home"
 	railing_gear_name = "supply_SOM"
 
+/obj/docking_port/mobile/supply/colony
+	name = "colony supply shuttle"
+	id = "supplycolony"
+	faction = FACTION_NEUTRAL
+	home_id = "supply_colony"
+	railing_gear_name = "supply_colony"
+
 /obj/docking_port/mobile/supply/Destroy(force)
 	for(var/i in railings)
 		var/obj/machinery/door/poddoor/railing/railing = i
@@ -658,7 +665,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	req_access = list(ACCESS_ICC_CARGO)
 
 /obj/machinery/computer/supplycomp/colony
-	shuttle_id = "supply_colony"
+	shuttle_id = "supplycolony"
 	faction = FACTION_ICC
 	home_id = "supply_colony"
 	req_access = list(ACCESS_CIVILIAN_LOGISTICS)

@@ -86,18 +86,19 @@ export const JobPreferences = (props) => {
     'Morale Officer',
     'Prisoner',
     'SOM Prisoner',
-    'CLF Prisoner',
+    'Cult Prisoner',
   ];
   const clfJobs = [
-    'CLF Breeder',
-    'CLF Standard',
-    'CLF Medic',
-    'CLF Specialist',
-    'CLF Synthetic',
-    'CLF Medical Officer',
-    'CLF Leader',
-    'CLF Combat Technician',
-    'CLF Representative',
+    'Cult Offering',
+    'Cultist',
+    'Cultist Mender',
+    'Cultist Champion',
+    'Cult Synthetic',
+    'Cultist Archmender',
+    'Cultist Sect Leader',
+    'Cultist Technomancer',
+    'Cult Representative',
+    'Cult Messiah',
   ];
   const cmJobs = [
     'CM Standard',
@@ -106,6 +107,9 @@ export const JobPreferences = (props) => {
     'CM Squad Leader',
     'CM Base Technician',
     'Colonial Militia Representative',
+    'CM Commander',
+    'CM Militia Captain',
+    'CM Colony Administrator',
   ];
   const kzJobs = [
     'KZ Standard',
@@ -115,28 +119,28 @@ export const JobPreferences = (props) => {
     'KZ Squad Leader',
     'Kaizoku Liaison',
   ];
-  const survivorJobs = [
-    'Assistant Survivor',
-    'Scientist Survivor',
-    'Doctor Survivor',
-    'Liaison Survivor',
-    'Security Guard Survivor',
-    'Civilian Survivor',
-    'Chef Survivor',
-    'Botanist Survivor',
-    'Technician Survivor',
-    'Chaplain Survivor',
-    'Miner Survivor',
-    'Salesman Survivor',
-    'Colonial Marshal Survivor',
-    'Bartender Survivor',
-    'Pharmacy Technician Survivor',
-    'Roboticist Survivor',
-    'Non-Deployed Operative Survivor',
-    'Prisoner Survivor',
-    'Stripper Survivor',
-    'Maid Survivor',
-    'Synthetic Survivor',
+  const ColonistJobs = [
+    'Assistant Colonist',
+    'Scientist Colonist',
+    'Doctor Colonist',
+    'Liaison Colonist',
+    'Security Guard Colonist',
+    'Civilian Colonist',
+    'Chef Colonist',
+    'Botanist Colonist',
+    'Technician Colonist',
+    'Chaplain Colonist',
+    'Miner Colonist',
+    'Salesman Colonist',
+    'Colonial Marshal Colonist',
+    'Bartender Colonist',
+    'Pharmacy Technician Colonist',
+    'Roboticist Colonist',
+    'Non-Deployed Operative Colonist',
+    'Prisoner Colonist',
+    'Stripper Colonist',
+    'Maid Colonist',
+    'Synthetic Colonist',
   ];
   const pmcJobs = [
     'AC Standard',
@@ -278,7 +282,7 @@ export const JobPreferences = (props) => {
           <JobList name="SOM Jobs" jobs={somJobs} />
         </Stack.Item>
         <Stack.Item grow>
-          <JobList name="Survivor Jobs" jobs={survivorJobs} />
+          <JobList name="Colonist Jobs" jobs={ColonistJobs} />
         </Stack.Item>
       </Stack>
       <Stack>

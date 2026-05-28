@@ -421,11 +421,17 @@
 		CAT_MEDSUP = MEDIC_TOTAL_BUY_POINTS,
 	)
 
+//we wont use dogtags anymore
 /obj/item/card/id/dogtag/clf
-	name = "\improper CLF dogtag"
-	desc = "Used by the CLF."
+	name = "\improper Cult dogtag"
+	desc = "Used by the Cult."
 	icon_state = "dogtag"
 	worn_icon_state = "dogtag"
+	iff_signal = CLF_IFF
+
+/obj/item/card/id/clf
+	name = "\improper Cult id"
+	desc = "A card used to provide ID and determine access to a large array of machinery. It has a faint mark of purple by the edge..."
 	iff_signal = CLF_IFF
 
 /obj/item/card/id/dogtag/examine(mob/user)

@@ -117,7 +117,7 @@
 	name = "SOM Supply Shuttle"
 
 /area/shuttle/supply/clf
-	name = "CLF Supply Shuttle"
+	name = "Cult Supply Shuttle"
 
 /area/shuttle/supply/icc
 	name = "CM Supply Shuttle"

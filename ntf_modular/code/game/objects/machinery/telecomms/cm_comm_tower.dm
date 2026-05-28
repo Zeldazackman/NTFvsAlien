@@ -30,7 +30,7 @@
 	build_path = /obj/machinery/telecomms/relay/preset/tower/faction/som
 
 /obj/item/circuitboard/machine/telecomms/relay/tower/faction/clf
-	name = "\improper TC-4T Telecommunications CLF Circuit Board"
+	name = "\improper TC-4T Telecommunications Cult Circuit Board"
 	build_path = /obj/machinery/telecomms/relay/preset/tower/faction/clf
 
 /obj/item/circuitboard/machine/telecomms/relay/tower/faction/cm
@@ -287,7 +287,7 @@
 
 /obj/machinery/telecomms/relay/preset/tower/faction/clf
 	freq_listening = CLF_FREQS
-	faction_shorthand = "CLF"
+	faction_shorthand = "Cult"
 
 /obj/machinery/telecomms/relay/preset/tower/faction/Initialize(mapload, ...)
 	if(faction_shorthand)
