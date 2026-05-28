@@ -3486,6 +3486,7 @@
 	name = "Ship Floor 2 Hallways"
 	})
 "cUt" = (
+/obj/structure/curtain/open/black,
 /turf/open/floor/wood,
 /area/mainship/living/pilotbunks)
 "cUL" = (
@@ -8687,6 +8688,11 @@
 /obj/structure/curtain/open/temple,
 /turf/open/floor/urban/wood/blackwood,
 /area/mainship/groundhq/ntf/crimsonveil)
+"hmu" = (
+/obj/effect/landmark/start/job/transport_crewman,
+/obj/structure/curtain/open/black,
+/turf/open/floor/wood,
+/area/mainship/living/pilotbunks)
 "hmO" = (
 /turf/open/floor/carpet/blue,
 /area/mainship/groundhq/ntf/living/grunt_rnr)
@@ -10489,7 +10495,7 @@
 	},
 /obj/machinery/door/firedoor/mainship,
 /obj/structure/cable,
-/turf/closed/wall/mainship,
+/turf/open/floor/mainship/mono,
 /area/mainship/living/pilotbunks)
 "iPx" = (
 /obj/effect/spawner/random/engineering/wood,
@@ -19017,6 +19023,7 @@
 "pNm" = (
 /obj/structure/cable,
 /obj/effect/landmark/start/job/assault_crewman,
+/obj/structure/curtain/open/black,
 /turf/open/floor/wood,
 /area/mainship/living/pilotbunks)
 "pOb" = (
@@ -48458,7 +48465,7 @@ eiJ
 pvZ
 nWL
 azh
-hMj
+hmu
 hMj
 cUt
 uRI
