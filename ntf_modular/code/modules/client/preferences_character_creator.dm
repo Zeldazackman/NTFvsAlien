@@ -406,8 +406,6 @@
 /datum/preferences/proc/sync_synthetic_type_to_species()
 	if(species == "Early Synthetic")
 		synthetic_type = "Early Synthetic"
-	else if(species == "Combat Robot")
-		synthetic_type = "Combat Robot"
 	else if(species == "Synthetic")
 		synthetic_type = "Synthetic"
 

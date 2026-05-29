@@ -456,18 +456,12 @@
 			if(!choice)
 				return
 			synthetic_type = choice
-			if(synthetic_type == "Combat Robot")
-				robot_body_base = synthetic_body_base == "Human" ? "Combat Robot" : synthetic_body_base
-				robot_head_base = synthetic_body_base == "Human" ? "Combat Robot" : synthetic_body_base
 			update_preview_icon()
 		if("synthetic_body_base")
 			var/choice = tgui_input_list(ui.user, "What synthetic body base do you want?", "Synthetic body base", SYNTHETIC_BODY_BASES)
 			if(!choice)
 				return
 			synthetic_body_base = choice
-			if(synthetic_type == "Combat Robot")
-				robot_body_base = choice == "Human" ? "Combat Robot" : choice
-				robot_head_base = choice == "Human" ? "Combat Robot" : choice
 			if(!(digitigrade_legs in synthetic_digitigrade_leg_options()))
 				digitigrade_legs = "Normal"
 			update_preview_icon()
