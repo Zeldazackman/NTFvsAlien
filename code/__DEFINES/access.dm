@@ -92,7 +92,7 @@ GLOBAL_LIST_EMPTY(all_req_one_access)
 #define ACCESS_VSD_CARGO 241
 #define ACCESS_VSD_TADPOLE 242
 
-//CLF access defines
+//Cult access defines
 #define ACCESS_CLF_CARGO 250
 #define ACCESS_CLF_TADPOLE 251
 #define ACCESS_CLF_ENGINEERING 252

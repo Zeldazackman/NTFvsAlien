@@ -682,6 +682,13 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/vending/nanoammo, (-26))
 		/obj/item/storage/belt/security = -1,
 		/obj/item/explosive/grenade/smokebomb/sleep = 4,
 		/obj/item/roller/bedroll/sec = -1,
+		/obj/item/explosive/grenade/bednade = 20,
+		/obj/item/clothing/under/rank/warden/corp = 1,
+		/obj/item/clothing/under/rank/security/corp = 2,
+		/obj/item/clothing/under/marine/mp = 2,
+		/obj/item/tool/taperoll/police = 2,
+		/obj/item/clothing/suit/armor/patrol = 2,
+		/obj/item/reagent_containers/hypospray/autoinjector/combat = 8,
 	)
 
 /obj/machinery/vending/hydronutrients

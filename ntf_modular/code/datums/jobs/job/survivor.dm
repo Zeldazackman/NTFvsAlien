@@ -1,31 +1,31 @@
 //Non-Deployed Operative Survivor
 /datum/job/survivor/non_deployed_operative
-	title = "Non-Deployed Operative Survivor"
+	title = "Non-Deployed Operative Colonist"
 	skills_type = /datum/skills/civilian/survivor
 	outfit = /datum/outfit/job/survivor/non_deployed_operative
 
 //Prisoner Survivor
 /datum/job/survivor/prisoner
-	title = "Prisoner Survivor"
+	title = "Prisoner Colonist"
 	skills_type = /datum/skills/civilian/survivor
 	outfit = /datum/outfit/job/survivor/prisoner
 
 //Stripper Survivor
 /datum/job/survivor/stripper
-	title = "Stripper Survivor"
+	title = "Stripper Colonist"
 	skills_type = /datum/skills/civilian/survivor
 	outfit = /datum/outfit/job/survivor/stripper
 
 //Maid Survivor
 /datum/job/survivor/maid
-	title = "Maid Survivor"
+	title = "Maid Colonist"
 	skills_type = /datum/skills/civilian/survivor
 	outfit = /datum/outfit/job/survivor/maid
 
 
 //Robot(ic) Survivor
 /datum/job/survivor/synth
-	title = "Synthetic Survivor"
+	title = "Synthetic Colonist"
 	paygrade = "Mk.I"
 	supervisors = "the acting captain, Ninetails."
 	skills_type = /datum/skills/synthetic

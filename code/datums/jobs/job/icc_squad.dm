@@ -11,8 +11,9 @@
 	. += {"You are part of the colonial militia that formed shortly after Xenomorph invasion,
 after ransacking the armories of the colonies owned by NTC, you took arms to fight against the Xenomorph assault.
 Though soon they turned less lethal, danger still persists, especially those that are alone, namely survivors. Which is your job to protect now.
-You are all former or current employees/colonists of Ninetails but there is still some tensions after what happened.
-For that CM is closer to NTC than the rest, and believes SOM and Kaizoku to be vultures on top of a stillborn colonization"}
+You are all colonists hired by Ninetails, Novamed, TRANSCo and Archercorp, depending on your initial assignments. That's why you are here in this cursed planet to begin with.
+For that CM is closer to NTC and the corps than the rest, they gave your families or just you hope and funds to live comfortably back in earth and you a possibiity of a new begginning until it is all taken away. \
+CM believes the other factions to be vultures on top of a stillborn colonization. Corporate Council decided to appoint Colonial Milita as the governing force over the colonies, although while still serving under them."}
 
 /datum/job/icc_squad/after_spawn(mob/living/carbon/C, mob/M, latejoin = FALSE)
 	. = ..()
@@ -140,4 +141,3 @@ For that CM is closer to NTC than the rest, and believes SOM and Kaizoku to be v
 	ears = /obj/item/radio/headset/mainship/marine/icc
 	glasses = /obj/item/clothing/glasses/meson
 	gloves = /obj/item/clothing/gloves/insulated
-
