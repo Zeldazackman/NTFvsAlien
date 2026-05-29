@@ -1,12 +1,12 @@
 #define ALLTIPS (SSstrings.get_list_from_file("tips/marine") + SSstrings.get_list_from_file("tips/xeno") + SSstrings.get_list_from_file("tips/meme") + SSstrings.get_list_from_file("tips/meta") + SSstrings.get_list_from_file("tips/HvH"))
 
-#define SYNTH_TYPES list("Synthetic","Early Synthetic","Combat Robot")
+#define SYNTH_TYPES list("Synthetic","Early Synthetic")
 
 #define ROBOT_TYPES list("Basic","Hammerhead","Chilvaris","Ratcher","Sterling","Synskin")
 
 #define DIGITIGRADE_LEG_TYPES list("Normal", "Digitigrade", "Digitigrade 2")
 
-#define SYNTHETIC_BODY_BASES list("Human", "Lizard", "Anthro")
+#define SYNTHETIC_BODY_BASES list("Human")
 
 #define ROBOT_BODY_BASES list("Combat Robot", "Hammerhead", "Chilvaris", "Ratcher", "Sterling", "Synskin", "Android", "Dark Android", "Human", "Lizard", "Anthro", "Morpheus Cyberkinetics", "Bishop Cyberkinetics", "Bishop Cyberkinetics 2.0", "Hephaestus Industries", "Hephaestus Industries 2.0", "Shellguard Munitions", "Ward-Takahashi Manufacturing", "Xion Manufacturing Group", "Xion Manufacturing Group 2.0", "Zeng-Hu Pharmaceuticals", "E3N AI")
 

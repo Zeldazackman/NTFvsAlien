@@ -664,20 +664,6 @@ You are also an expert when it comes to botany and hydroponics. If you do not kn
 /datum/job/som/silicon/synthetic/som/return_spawn_type(datum/preferences/prefs)
 	if(prefs?.synthetic_type == "Early Synthetic")
 		return /mob/living/carbon/human/species/early_synthetic
-	if(prefs?.synthetic_type == "Combat Robot")
-		switch(prefs?.robot_type)
-			if("Basic")
-				return /mob/living/carbon/human/species/robot
-			if("Hammerhead")
-				return /mob/living/carbon/human/species/robot/alpharii
-			if("Chilvaris")
-				return /mob/living/carbon/human/species/robot/charlit
-			if("Ratcher")
-				return /mob/living/carbon/human/species/robot/deltad
-			if("Sterling")
-				return /mob/living/carbon/human/species/robot/bravada
-			if("Synskin")
-				return /mob/living/carbon/human/species/robot/synskin
 	return /mob/living/carbon/human/species/synthetic
 
 /datum/job/som/silicon/synthetic/som/return_skills_type(datum/preferences/prefs)

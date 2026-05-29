@@ -410,6 +410,15 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	police = SKILL_POLICE_MP
 	powerloader = SKILL_POWERLOADER_MASTER
 
+/datum/skills/combat_robot
+	name = COMBAT_ROBOT
+	engineer = SKILL_ENGINEER_METAL
+	construction = SKILL_CONSTRUCTION_METAL
+	combat = SKILL_COMBAT_TRAINED
+	medical = SKILL_MEDICAL_NOVICE
+	pistols = SKILL_PISTOLS_TRAINED
+	powerloader = SKILL_POWERLOADER_TRAINED
+
 /datum/skills/captain
 	name = CAPTAIN
 	leadership = SKILL_LEAD_MASTER

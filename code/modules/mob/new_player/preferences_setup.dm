@@ -158,11 +158,12 @@
 	else
 		digitigrade_legs = "Normal"
 
-
 /datum/preferences/proc/copy_to(mob/living/carbon/human/character, safety = FALSE)
 	var/datum/species/preference_species = GLOB.all_species[species]
-	var/preserve_job_species = (character.species?.species_flags & (IS_SYNTHETIC|ROBOTIC_LIMBS)) && !(preference_species?.species_flags & (IS_SYNTHETIC|ROBOTIC_LIMBS))
-	// Synthetic jobs spawn an exact synthetic/robot species before preferences are copied.
+	var/preserve_job_species = character.species?.species_flags & (IS_SYNTHETIC|ROBOTIC_LIMBS)
+	var/preserve_synthetic_job_species = character.species?.species_flags & IS_SYNTHETIC
+	// Synthetic and robot jobs spawn their exact species before preferences are copied.
+	// Preserve that job species so cosmetic species prefs cannot turn one job into the other.
 	if(!preserve_job_species)
 		if(preference_species)
 			character.set_species(species)
@@ -227,6 +228,10 @@
 	character.pitch = tts_pitch
 
 	character.moth_wings = moth_wings
+	if(preserve_synthetic_job_species && preference_species && !(preference_species.species_flags & IS_SYNTHETIC))
+		character.synthetic_appearance_species = preference_species.name
+	else
+		character.synthetic_appearance_species = initial(character.synthetic_appearance_species)
 	character.synthetic_body_base = synthetic_body_base
 	character.allow_mismatched_parts = allow_mismatched_parts
 	character.allow_emissives = allow_emissives

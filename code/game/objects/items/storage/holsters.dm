@@ -96,13 +96,6 @@
 		slot_l_hand_str = 'icons/mob/inhands/equipment/backpacks_left.dmi',
 		slot_r_hand_str = 'icons/mob/inhands/equipment/backpacks_right.dmi',
 	)
-	sprite_sheets = list(
-		"Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Sterling Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Chilvaris Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Hammerhead Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		)
 	storage_type = /datum/storage/holster/backholster
 
 //only applies on storage of all items, not withdrawal
@@ -129,13 +122,6 @@
 		/obj/item/weapon/gun/launcher/rocket/recoillessrifle,
 		/obj/item/weapon/gun/launcher/rocket/recoillessrifle/low_impact,
 	)
-	sprite_sheets = list(
-		"Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Sterling Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Chilvaris Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Hammerhead Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		)
 
 /obj/item/storage/holster/backholster/rpg/full/PopulateContents()
 	new /obj/item/ammo_magazine/rocket/recoilless/light(src)
@@ -212,14 +198,6 @@
 	holsterable_allowed = list(/obj/item/mortar_kit)
 	storage_type = /datum/storage/holster/backholster/mortar
 
-	sprite_sheets = list(
-		"Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Sterling Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Chilvaris Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Hammerhead Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		)
-
 /obj/item/storage/holster/backholster/mortar/full/PopulateContents()
 	new /obj/item/mortar_kit(src)
 
@@ -230,13 +208,6 @@
 	w_class = WEIGHT_CLASS_BULKY
 	holsterable_allowed = list(/obj/item/weapon/gun/flamer/big_flamer/marinestandard/engineer)
 	storage_type = /datum/storage/holster/backholster/flamer
-	sprite_sheets = list(
-		"Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Sterling Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Chilvaris Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Hammerhead Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		"Ratcher Combat Robot" = 'icons/mob/species/robot/backpack.dmi',
-		)
 	///The type of fuel this carries
 	var/fuel_type = DEFAULT_FUEL_TYPE
 
