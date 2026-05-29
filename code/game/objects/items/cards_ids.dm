@@ -282,7 +282,7 @@
 	desc = "A colonist generalized ID card."
 	icon_state = "silver"
 	worn_icon_state = "silver_id"
-
+	access = list(ACCESS_MARINE_MEDBAY, ACCESS_CIVILIAN_PUBLIC, ACCESS_CIVILIAN_LOGISTICS, ACCESS_CIVILIAN_ENGINEERING, ACCESS_CIVILIAN_MEDICAL, ACCESS_CIVILIAN_RESEARCH)
 
 /obj/item/card/id/equipped(mob/living/carbon/human/H, slot)
 	if(istype(H))
