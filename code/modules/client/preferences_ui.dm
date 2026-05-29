@@ -31,6 +31,12 @@
 	show_to.register_map_obj(screen_bg)
 	return ..()
 
+/datum/preferences/proc/input_preference_color(mob/user, prompt, title, current_color, fallback = "#FFFFFF")
+	var/new_color = input(user, prompt, title, sanitize_hexcolor(current_color, 6, TRUE, fallback)) as null|color
+	if(!new_color)
+		return null
+	return sanitize_hexcolor(new_color, 6, TRUE, fallback)
+
 /atom/movable/screen/map_view/preference_preview/proc/update_body()
 	if(!preferences)
 		return
@@ -519,7 +525,7 @@
 			digitigrade_legs = choice
 			update_preview_icon()
 		if("bodycolor")
-			var/new_color = input(user, "Choose your body color:", "Body Color") as null|color
+			var/new_color = input_preference_color(user, "Choose your body color:", "Body Color", body_color, initial(body_color))
 			if(!new_color)
 				return
 
@@ -751,7 +757,7 @@
 			ui_style = choice
 
 		if("uicolor")
-			var/ui_style_color_new = input(user, "Choose your UI color, dark colors are not recommended!", "UI Color") as null|color
+			var/ui_style_color_new = input_preference_color(user, "Choose your UI color, dark colors are not recommended!", "UI Color", ui_style_color, initial(ui_style_color))
 			if(!ui_style_color_new)
 				return
 			ui_style_color = ui_style_color_new
@@ -778,7 +784,7 @@
 			update_preview_icon()
 
 		if("haircolor")
-			var/new_color = input(user, "Choose your character's hair colour:", "Hair Color") as null|color
+			var/new_color = input_preference_color(user, "Choose your character's hair colour:", "Hair Color", rgb(r_hair, g_hair, b_hair))
 			if(!new_color)
 				return
 			r_hair = hex2num(copytext(new_color, 2, 4))
@@ -787,7 +793,7 @@
 			update_preview_icon()
 
 		if("grad_color")
-			var/new_grad = input(user, "Choose your character's secondary hair color:", "Gradient Color") as null|color
+			var/new_grad = input_preference_color(user, "Choose your character's secondary hair color:", "Gradient Color", rgb(r_grad, g_grad, b_grad))
 			if(!new_grad)
 				return
 			r_grad = hex2num(copytext(new_grad, 2, 4))
@@ -827,7 +833,7 @@
 			update_preview_icon()
 
 		if("facialcolor")
-			var/facial_color = input(user, "Choose your character's facial-hair colour:", "Facial Hair Color") as null|color
+			var/facial_color = input_preference_color(user, "Choose your character's facial-hair colour:", "Facial Hair Color", rgb(r_facial, g_facial, b_facial))
 			if(!facial_color)
 				return
 			r_facial = hex2num(copytext(facial_color, 2, 4))
@@ -836,7 +842,7 @@
 			update_preview_icon()
 
 		if("eyecolor")
-			var/eyecolor = input(user, "Choose your character's eye colour:", "Character Preference") as null|color
+			var/eyecolor = input_preference_color(user, "Choose your character's eye colour:", "Character Preference", rgb(r_eyes, g_eyes, b_eyes))
 			if(!eyecolor)
 				return
 			r_eyes = hex2num(copytext(eyecolor, 2, 4))
@@ -974,7 +980,7 @@
 			xeno_edible_jelly_name = newValue
 
 		if("xeno_edible_jelly_colors")
-			var/jelly_color = input(user, "Choose the color of the jelly:", "Jelly Color") as null|color
+			var/jelly_color = input_preference_color(user, "Choose the color of the jelly:", "Jelly Color", rgb(r_jelly, g_jelly, b_jelly))
 			if(!jelly_color)
 				return
 			r_jelly = hex2num(copytext(jelly_color, 2, 4))
@@ -1369,7 +1375,7 @@
 			hear_ooc_anywhere_as_staff = !hear_ooc_anywhere_as_staff
 
 		if("bloodcolor")
-			var/bloodcolor = input(user, "Choose your character's blood colour:", "Character Preference") as null|color
+			var/bloodcolor = input_preference_color(user, "Choose your character's blood colour:", "Character Preference", blood_color, initial(blood_color))
 			if(!bloodcolor)
 				return
 			blood_color = bloodcolor
