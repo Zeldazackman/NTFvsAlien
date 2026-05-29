@@ -406,8 +406,6 @@
 /datum/preferences/proc/sync_synthetic_type_to_species()
 	if(species == "Early Synthetic")
 		synthetic_type = "Early Synthetic"
-	else if(species == "Combat Robot")
-		synthetic_type = "Combat Robot"
 	else if(species == "Synthetic")
 		synthetic_type = "Synthetic"
 
@@ -586,9 +584,9 @@
 			marking_index++
 			if(row_id != body_marking_row_id(zone, marking_index))
 				continue
-			var/new_color = input(user, "Choose your marking color:", "Marking Color") as null|color
+			var/new_color = input_preference_color(user, "Choose your marking color:", "Marking Color", body_marking_entry_color(body_markings[zone][marking_name]))
 			if(new_color)
-				body_markings[zone][marking_name][1] = sanitize_hexcolor(new_color, 6, TRUE, "#FFFFFF")
+				body_markings[zone][marking_name][1] = new_color
 				update_preview_icon()
 			return TRUE
 
@@ -677,7 +675,7 @@
 				continue
 
 			var/color_var = character_creator_genital_color_var(genital_id, color_index)
-			var/new_color = input(user, "Choose your [lowertext(character_creator_genital_color_label(genital_id, color_index))]:", character_creator_genital_color_label(genital_id, color_index)) as null|color
+			var/new_color = input_preference_color(user, "Choose your [lowertext(character_creator_genital_color_label(genital_id, color_index))]:", character_creator_genital_color_label(genital_id, color_index), vars[color_var])
 			if(!new_color)
 				return TRUE
 			vars[color_var] = new_color
@@ -702,7 +700,7 @@
 				continue
 
 			var/color_var = character_creator_color_var(part_id, color_index)
-			var/new_color = input(user, "Choose your [lowertext(character_creator_accessory_color_label(part_id, color_index))]:", character_creator_accessory_color_label(part_id, color_index)) as null|color
+			var/new_color = input_preference_color(user, "Choose your [lowertext(character_creator_accessory_color_label(part_id, color_index))]:", character_creator_accessory_color_label(part_id, color_index), vars[color_var])
 			if(!new_color)
 				return TRUE
 			vars[color_var] = new_color

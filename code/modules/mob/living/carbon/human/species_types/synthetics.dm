@@ -2,10 +2,7 @@
 	name = "Synthetic"
 	default_language_holder = /datum/language_holder/synthetic
 	unarmed_type = /datum/unarmed_attack/punch
-	limb_type = SPECIES_LIMB_SPLURT
-	splurt_limb_prefix = "human"
-	icobase = BODYPART_ICON_HUMAN
-	digitigrade_leg_options = list("Normal", "Digitigrade", "Digitigrade 2")
+	limb_type = SPECIES_LIMB_HUMAN
 
 	total_health = 150 //more health than regular humans
 
@@ -92,10 +89,7 @@
 	total_health = 225 //Tough boys, very tough boys
 	//brute_mod = 0.6
 	burn_mod = 0.6
-	limb_type = SPECIES_LIMB_SPLURT
-	splurt_limb_prefix = "human"
-	icobase = BODYPART_ICON_HUMAN
-	digitigrade_leg_options = list("Normal", "Digitigrade", "Digitigrade 2")
+	limb_type = SPECIES_LIMB_HUMAN
 
 	cold_level_1 = -1
 	cold_level_2 = -1
