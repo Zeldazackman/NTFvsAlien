@@ -93,7 +93,7 @@ SUBSYSTEM_DEF(job)
 		JobDebug("AR job doesn't exist! Player: [player], Job: [job]")
 		return FALSE
 	JobDebug("Running AR, Player: [player], Job: [job.title], LJ: [latejoin]")
-	if(!player.IsJobAvailable(job))
+	if(!player.IsJobAvailable(job, latejoin))
 		return FALSE
 	if(is_banned_from(player.ckey, job.title))
 		JobDebug("AR isbanned failed, Player: [player], Job:[job.title]")

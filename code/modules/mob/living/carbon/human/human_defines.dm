@@ -50,6 +50,7 @@
 	//Species specific
 	var/moth_wings = "Plain"
 	var/allow_emissives = FALSE
+	var/synthetic_appearance_species = "Human"
 	var/synthetic_body_base = "Human"
 	var/robot_body_base = "Combat Robot"
 	var/robot_head_base = "Combat Robot"

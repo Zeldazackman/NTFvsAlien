@@ -4,19 +4,22 @@
 		g = "f"
 	return g
 
+/mob/living/carbon/human/proc/get_visual_species()
+	if(species?.species_flags & IS_SYNTHETIC)
+		var/datum/species/appearance_species = GLOB.all_species[synthetic_appearance_species]
+		if(appearance_species && !(appearance_species.species_flags & IS_SYNTHETIC))
+			return appearance_species
+	return species
+
 /proc/get_limb_icon_name(datum/species/S, gender, limb_name, ethnicity, digitigrade_legs = "Normal", synthetic_body_base = "Human", robot_body_base = "Combat Robot", robot_head_base = "Combat Robot", custom_supersoldier_parts = FALSE, supersoldier_body_base = "Human", supersoldier_head_base = "Human")
 	if(istype(S, /datum/species/robot))
-		var/robot_base = get_effective_robot_body_base(limb_name == "head" ? robot_head_base : robot_body_base, synthetic_body_base)
+		var/robot_base = get_effective_robot_body_base(limb_name == "head" ? robot_head_base : robot_body_base)
 		if(is_old_robot_body_base(robot_base))
 			return get_generic_limb_icon_name(gender, limb_name, null)
 		return get_robot_limb_icon_name(robot_base, gender, limb_name, digitigrade_legs)
 	if(istype(S, /datum/species/human/prototype_supersoldier) && custom_supersoldier_parts)
 		var/supersoldier_base = limb_name == "head" ? supersoldier_head_base : supersoldier_body_base
 		return get_splurt_limb_icon_name(get_supersoldier_limb_prefix(supersoldier_base), gender, limb_name, digitigrade_legs)
-	if(S.species_flags & IS_SYNTHETIC)
-		var/synthetic_prefix = get_splurt_synthetic_limb_prefix(synthetic_body_base)
-		if(synthetic_prefix)
-			return get_splurt_limb_icon_name(synthetic_prefix, gender, limb_name, digitigrade_legs)
 	if(S.limb_type == SPECIES_LIMB_HUMAN) // todo this section is fucking stupid and can be way more generic easily
 		switch(limb_name)
 			if ("torso", "chest")
@@ -93,22 +96,6 @@
 	else
 		var/digitigrade_prefix = S.digitigrade_limb_prefixes[digitigrade_legs]
 		return get_generic_limb_icon_name(gender, limb_name, digitigrade_prefix)
-
-/proc/get_splurt_synthetic_limb_prefix(synthetic_body_base)
-	switch(synthetic_body_base)
-		if("Lizard")
-			return "synthliz"
-		if("Anthro")
-			return "synthmammal"
-	return null
-
-/proc/get_splurt_robot_limb_prefix(robot_base)
-	switch(robot_base)
-		if("Lizard")
-			return "synthliz"
-		if("Anthro")
-			return "synthmammal"
-	return null
 
 /proc/get_supersoldier_limb_prefix(body_base)
 	switch(body_base)
@@ -221,7 +208,7 @@
 		return get_old_robot_body_icon(robot_base)
 	return get_robot_part_body_icon(robot_base)
 
-/proc/get_effective_robot_body_base(robot_base, synthetic_body_base)
+/proc/get_effective_robot_body_base(robot_base)
 	return robot_base || "Combat Robot"
 
 /proc/get_robot_limb_icon_name(robot_base, gender, limb_name, digitigrade_legs)
@@ -336,37 +323,34 @@
 		e_icon = E.icon_name
 
 	for(var/datum/limb/L in limbs)
-		L.icon_name = get_limb_icon_name(species, physique, L.display_name, e_icon, digitigrade_legs, synthetic_body_base, robot_body_base, robot_head_base, custom_supersoldier_parts, supersoldier_body_base, supersoldier_head_base)
+		L.icon_name = get_limb_icon_name(get_visual_species(), physique, L.display_name, e_icon, digitigrade_legs, synthetic_body_base, robot_body_base, robot_head_base, custom_supersoldier_parts, supersoldier_body_base, supersoldier_head_base)
 
 /mob/living/carbon/human/proc/get_body_icon()
-	if(istype(species, /datum/species/robot))
-		return get_splurt_robot_body_icon(get_effective_robot_body_base(robot_body_base, synthetic_body_base))
-	if(istype(species, /datum/species/human/prototype_supersoldier) && custom_supersoldier_parts)
+	var/datum/species/visual_species = get_visual_species()
+	if(istype(visual_species, /datum/species/robot))
+		return get_splurt_robot_body_icon(get_effective_robot_body_base(robot_body_base))
+	if(istype(visual_species, /datum/species/human/prototype_supersoldier) && custom_supersoldier_parts)
 		return get_supersoldier_body_icon(supersoldier_body_base)
-	if(species?.species_flags & IS_SYNTHETIC)
-		switch(synthetic_body_base)
-			if("Lizard")
-				return BODYPART_ICON_SYNTHLIZARD
-			if("Anthro")
-				return BODYPART_ICON_SYNTHMAMMAL
-	return species.icobase
+	return visual_species.icobase
 
 /mob/living/carbon/human/proc/get_body_icon_for_limb(limb_name)
-	if(istype(species, /datum/species/robot))
-		var/robot_base = get_effective_robot_body_base(limb_name == "head" ? robot_head_base : robot_body_base, synthetic_body_base)
+	var/datum/species/visual_species = get_visual_species()
+	if(istype(visual_species, /datum/species/robot))
+		var/robot_base = get_effective_robot_body_base(limb_name == "head" ? robot_head_base : robot_body_base)
 		return get_splurt_robot_body_icon(robot_base)
-	if(istype(species, /datum/species/human/prototype_supersoldier) && custom_supersoldier_parts)
+	if(istype(visual_species, /datum/species/human/prototype_supersoldier) && custom_supersoldier_parts)
 		var/supersoldier_base = limb_name == "head" ? supersoldier_head_base : supersoldier_body_base
 		return get_supersoldier_body_icon(supersoldier_base)
 	return get_body_icon()
 
 /mob/living/carbon/human/proc/get_eye_icon_state()
-	if(istype(species, /datum/species/robot))
-		var/robot_base = get_effective_robot_body_base(robot_head_base, synthetic_body_base)
+	var/datum/species/visual_species = get_visual_species()
+	if(istype(visual_species, /datum/species/robot))
+		var/robot_base = get_effective_robot_body_base(robot_head_base)
 		if(robot_head_uses_human_eyes(robot_base))
 			return "eyes_s"
 		return "blank_eyes"
-	return species.eyes
+	return visual_species.eyes
 
 /mob/living/carbon/human/proc/get_render_body_color()
 	if(species?.name == "Moth" && (!body_color || body_color == "#FFFFFF"))

@@ -54,9 +54,10 @@
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud
 	belt = /obj/item/storage/belt/security/tactical
 	head = /obj/item/clothing/head/beret/sec
+	mask = /obj/item/clothing/mask/gas/hardlight
 	ears = /obj/item/radio/headset/mainship/marine/generic/sec
 	w_uniform = /obj/item/clothing/under/rank/security/corp
-	wear_suit = /obj/item/clothing/suit/armor/patrol
+	wear_suit = /obj/item/clothing/suit/modular/xenonauten/bulletresistant
 	shoes = /obj/item/clothing/shoes/swat
 	gloves = /obj/item/clothing/gloves/swat
 
@@ -65,6 +66,7 @@
 		/obj/item/restraints/handcuffs = 2,
 		/obj/item/flash = 1,
 	)
+	backpack_contents = list(/obj/item/book/manual/marine_law = 1,)
 
 //quik clap grenade
 /obj/item/explosive/grenade/bednade
