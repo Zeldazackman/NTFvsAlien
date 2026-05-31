@@ -445,7 +445,7 @@
 		var/choice = tgui_input_list(user, "What do you want to change?", "Alter ID", list("name", "occupation", "rank", "cancel"), "cancel")
 		switch(choice)
 			if("name")
-				registered_name = tgui_input_text(user, "Input the name. (ex: John Doe)", "Name", "[initial(name)]", 40)
+				registered_name = tgui_input_text(user, "Input the name. (ex: John Doe)", "Name", "[initial(registered_name)]", 40)
 				to_chat(user, span_notice("name set to [registered_name]."))
 			if("occupation")
 				assignment = tgui_input_text(user, "Input the occupation (ex: Assistant Colonist).", "Occupation", "", 40)
