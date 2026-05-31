@@ -100,7 +100,7 @@
 	var/sheet_name = ""
 	var/sheet_path = /obj/item/stack/sheet/mineral/phoron
 	var/sheet_left = 0 // How much is left of the sheet
-	var/time_per_sheet = 300
+	var/time_per_sheet = 600
 	var/current_heat = 0
 	var/start_full = TRUE
 	power_gen = 15000
@@ -292,7 +292,7 @@
 	circuit = /obj/item/circuitboard/machine/pacman/super
 	sheet_path = /obj/item/stack/sheet/mineral/uranium
 	power_gen = 30000
-	time_per_sheet = 600
+	time_per_sheet = 1200
 
 /obj/machinery/power/port_gen/pacman/super/overheat()
 	explosion(loc, 4, explosion_cause=src)
@@ -307,7 +307,7 @@
 	circuit = /obj/item/circuitboard/machine/pacman/mrs
 	sheet_path = /obj/item/stack/sheet/mineral/diamond
 	power_gen = 40000
-	time_per_sheet = 80
+	time_per_sheet = 300
 
 /obj/machinery/power/port_gen/pacman/mrs/overheat()
 	explosion(loc, 4, explosion_cause=src)
