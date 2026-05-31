@@ -19599,6 +19599,10 @@
 	dir = 1
 	},
 /area/magmoor/civilian/rnr)
+"nED" = (
+/obj/machinery/colony_floodlight_switch,
+/turf/closed/wall/r_wall,
+/area/magmoor/engi/thermal)
 "nEG" = (
 /turf/open/floor/plating/ground/mars/cavetodirt,
 /area/magmoor/compound/west)
@@ -56243,7 +56247,7 @@ uRD
 wHB
 hmK
 lMq
-wwg
+nED
 yco
 oiI
 guR
