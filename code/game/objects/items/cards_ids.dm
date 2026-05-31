@@ -445,14 +445,14 @@
 		var/choice = tgui_input_list(user, "What do you want to change?", "Alter ID", list("name", "occupation", "rank", "cancel"), "cancel")
 		switch(choice)
 			if("name")
-				registered_name = tgui_input_text(user, "Input the name. (ex: John Doe)", "Name", "[initial(name)]", 24)
+				registered_name = tgui_input_text(user, "Input the name. (ex: John Doe)", "Name", "[initial(name)]", 40)
 				to_chat(user, span_notice("name set to [registered_name]."))
 			if("occupation")
-				assignment = tgui_input_text(user, "Input the occupation (ex: Assistant Colonist).", "Occupation", "[initial(assignment)]", 15)
+				assignment = tgui_input_text(user, "Input the occupation (ex: Assistant Colonist).", "Occupation", "", 40)
 				rank = assignment
 				to_chat(user, span_notice("occupation set to [assignment]."))
 			if("rank")
-				paygrade = tgui_input_text(user, "Input the rank (ex: PVT).", "Rank", "[initial(paygrade)]", 15)
+				paygrade = tgui_input_text(user, "Input the rank (ex: PVT).", "Rank", "", 40)
 				to_chat(user, span_notice("rank set to [rank]."))
 	update_label()
 
