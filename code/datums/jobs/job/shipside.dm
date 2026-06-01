@@ -937,7 +937,7 @@ It is also recommended that you gear up like a regular marine, or your 'internsh
 	shadow_languages = list(/datum/language/xenocommon)
 	access = ALL_ACCESS
 	minimal_access = ALL_ACCESS
-	skills_type = /datum/skills/captain
+	skills_type = /datum/skills/operations_officer
 	display_order = JOB_DISPLAY_ORDER_CORPORATE_LIAISON
 	outfit = /datum/outfit/job/civilian/liaison
 	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD
