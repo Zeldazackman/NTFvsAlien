@@ -1,4 +1,0 @@
-author: "SpooksAnno"
-delete-after: True
-changes:
-  - server: "Reduced idle machinery processing overhead in SSmachines."
