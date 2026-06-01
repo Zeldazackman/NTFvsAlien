@@ -10,8 +10,7 @@
 	wear_suit = /obj/item/clothing/suit/modular/clf/cultist_robe
 	gloves = /obj/item/clothing/gloves/black
 	r_pocket = /obj/item/storage/pouch/medical_injectors/firstaid
-	l_pocket = /obj/item/flashlight
-	back = /obj/item/storage/backpack/cultpack
+	back = /obj/item/storage/backpack/satchel
 
 	backpack_contents = list(
 		/obj/item/tool/crowbar/red = 1,

@@ -42,7 +42,7 @@
 	Crossbreeds with resurgentis are usually sterile and with potential for disabilities such as muteness or else, due to the strange genes of resurgentis, and the said dominant genes make the crossbreeds \
 	result in largely resurgentis-appearing offspring with features from the other race. <br /><br />\
 	The resurgentis have extremely low birth rate due to the short lifespan of eggs of females and scarcer ovulation cycles, therefore putting their species at risk of extinction due to the high violence of Phantom City and overall the world, but their high libido is a compensation for such problem, barely.<br /><br /><br /><br /> \
-	They can't have essence black essence color, and white is considered extremely rare, being more resillient to psionics and mind control for unknown reasons and is seen as a gift from the death god, made to protect themselves from the corruption in the world.<br /><br /> \
+	They can't have black essence color, and white is considered extremely rare, being more resillient to psionics and mind control for unknown reasons and is seen as a gift from the death god, made to protect themselves from the corruption in the world.<br /><br /> \
 	<b>Psychology</b>:<br /><br /> \
 	They are largely human-like behaving although slightly more unhinged in terms of lewdity and more inclined to act on their impulses if not conditioned against it mentally.<br /><br /> \
 	Cryostatis is more disorienting to resurgentis than to other species, mentally and physically.<br /><br /> \
