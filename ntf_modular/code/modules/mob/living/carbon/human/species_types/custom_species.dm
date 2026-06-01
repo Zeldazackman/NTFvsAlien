@@ -48,7 +48,7 @@
 	Cryostatis is more disorienting to resurgentis than to other species, mentally and physically.<br /><br /> \
 	Resurgentis are the prime prey of Corrupted (the shadowy monsters that started emerging after the great war.), they are able to be corrupted into one of them through 'mind flayers' fog, except the white essence resurgentis, phantom city had to fight sieges of those things in the past.<br /><br />\
 	They are known for their aggressive behavior and tendency to go into a berserk rage when injured or provoked, especially if they are of weak will.<br /><br /><br /><br /> \
-	<img src=https://images2.imgbox.com/eb/ed/Ej1joSvd_o.png width=100 height=150/> <img src=https://images2.imgbox.com/3e/34/Grph56ZU_o.png width=100 height=150/> <img src=https://images2.imgbox.com/83/96/oDGu3zmO_o.png width=100 height=150/><img src=https://images2.imgbox.com/66/71/1633KcMb_o.png width=100 height=150/>"
+	<img src=https://images2.imgbox.com/eb/ed/Ej1joSvd_o.png width=100 height=150/> <img src=https://images2.imgbox.com/a1/a1/CRPdB4Ir_o.png width=100 height=150/><br /><img src=https://images2.imgbox.com/3e/34/Grph56ZU_o.png width=100 height=150/> <img src=https://images2.imgbox.com/83/96/oDGu3zmO_o.png width=100 height=150/><br /><img src=https://images2.imgbox.com/66/71/1633KcMb_o.png width=100 height=150/>"
 	//need force emissive on eye, hair, nipples and vaginas somehow
 	inherent_actions = list(/datum/action/ability/last_stand)
 
