@@ -167,7 +167,7 @@
 		/obj/item/attachable/flashlight/under,
 	)
 
-	gun_features_flags = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER|GUN_WIELDED_FIRING_ONLY|GUN_SMOKE_PARTICLES
+	gun_features_flags = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER|GUN_SMOKE_PARTICLES
 	reciever_flags = AMMO_RECIEVER_TOGGLES_OPEN|AMMO_RECIEVER_TOGGLES_OPEN_EJECTS|AMMO_RECIEVER_HANDFULS
 	attachable_offset = list("muzzle_x" = 33, "muzzle_y" = 21,"rail_x" = 15, "rail_y" = 22, "under_x" = 21, "under_y" = 16, "stock_x" = 21, "stock_y" = 16)
 
@@ -178,7 +178,7 @@
 	recoil = 2
 	recoil_unwielded = 4
 	aim_slowdown = 0.6
-	damage_mult = 0.7
+	damage_mult = 1.2
 
 /obj/item/weapon/gun/shotgun/double/sawn
 	name = "sawn-off shotgun"
