@@ -808,7 +808,7 @@
 	caliber = CALIBER_12G
 	icon_state = "ml41"
 	default_ammo = /datum/ammo/bullet/shotgun/flechette
-	max_rounds = 16
+	max_rounds = 20
 	icon_state_mini = "mag_rifle"
 
 /obj/item/ammo_magazine/rifle/icc_autoshotgun/rubber
