@@ -42,13 +42,13 @@
 	Crossbreeds with resurgentis are usually sterile and with potential for disabilities such as muteness or else, due to the strange genes of resurgentis, and the said dominant genes make the crossbreeds \
 	result in largely resurgentis-appearing offspring with features from the other race. <br /><br />\
 	The resurgentis have extremely low birth rate due to the short lifespan of eggs of females and scarcer ovulation cycles, therefore putting their species at risk of extinction due to the high violence of Phantom City and overall the world, but their high libido is a compensation for such problem, barely.<br /><br /><br /><br /> \
-	They can't have essence black essence color, and white is considered extremely rare, being more resillient to psionics and mind control for unknown reasons and is seen as a gift from the death god, made to protect themselves from the corruption in the world.<br /><br /> \
+	They can't have black essence color, and white is considered extremely rare, being more resillient to psionics and mind control for unknown reasons and is seen as a gift from the death god, made to protect themselves from the corruption in the world.<br /><br /> \
 	<b>Psychology</b>:<br /><br /> \
 	They are largely human-like behaving although slightly more unhinged in terms of lewdity and more inclined to act on their impulses if not conditioned against it mentally.<br /><br /> \
 	Cryostatis is more disorienting to resurgentis than to other species, mentally and physically.<br /><br /> \
 	Resurgentis are the prime prey of Corrupted (the shadowy monsters that started emerging after the great war.), they are able to be corrupted into one of them through 'mind flayers' fog, except the white essence resurgentis, phantom city had to fight sieges of those things in the past.<br /><br />\
 	They are known for their aggressive behavior and tendency to go into a berserk rage when injured or provoked, especially if they are of weak will.<br /><br /><br /><br /> \
-	<img src=https://images2.imgbox.com/eb/ed/Ej1joSvd_o.png width=100 height=150/> <img src=https://images2.imgbox.com/3e/34/Grph56ZU_o.png width=100 height=150/> <img src=https://images2.imgbox.com/83/96/oDGu3zmO_o.png width=100 height=150/><img src=https://images2.imgbox.com/66/71/1633KcMb_o.png width=100 height=150/>"
+	<img src=https://images2.imgbox.com/eb/ed/Ej1joSvd_o.png width=100 height=150/> <img src=https://images2.imgbox.com/a1/a1/CRPdB4Ir_o.png width=100 height=150/><br /><img src=https://images2.imgbox.com/3e/34/Grph56ZU_o.png width=100 height=150/> <img src=https://images2.imgbox.com/83/96/oDGu3zmO_o.png width=100 height=150/><br /><img src=https://images2.imgbox.com/66/71/1633KcMb_o.png width=100 height=150/>"
 	//need force emissive on eye, hair, nipples and vaginas somehow
 	inherent_actions = list(/datum/action/ability/last_stand)
 

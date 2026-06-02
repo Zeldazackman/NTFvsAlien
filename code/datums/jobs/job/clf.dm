@@ -85,6 +85,8 @@ Your primary goal is to serve the hive, and ultimate goal is to liberate the col
 	skills_type = /datum/skills/specialist
 	job_flags = JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_LATEJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_OVERRIDELATEJOINSPAWN|JOB_FLAG_PROVIDES_SQUAD_HUD
 	outfit = /datum/outfit/job/clf/specialist
+	access = ALL_CLF_ACCESS
+	minimal_access = ALL_CLF_ACCESS
 	multiple_outfits = TRUE
 	outfits = list(
 		/datum/outfit/job/clf/specialist/dpm,
