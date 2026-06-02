@@ -150,6 +150,7 @@
 	bonus_projectiles_amount = 2
 	bonus_projectiles_scatter = 6
 	accuracy_variation = 8
+	accuracy = -20
 	max_range = 15
 	damage = 10
 	damage_falloff = 0.5
