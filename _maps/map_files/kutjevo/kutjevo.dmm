@@ -6241,7 +6241,7 @@
 /area/kutjevo/exterior/colony_South)
 "gAu" = (
 /obj/effect/landmark/static_comms/net_two,
-/turf/open/floor/plating/plating_catwalk/kutjev,
+/turf/open/floor/plating/plating_catwalk/kutjevo,
 /area/kutjevo/interior/complex/med/operating)
 "gBa" = (
 /obj/effect/spawner/random/misc/structure/barrel,
