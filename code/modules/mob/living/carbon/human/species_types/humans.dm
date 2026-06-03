@@ -51,8 +51,7 @@
 /datum/action/ability/indominable
 	name = "Indominable Spirit"
 	action_icon_state = "warding"
-	desc = "Using your indominable human spirit, you are able to restore maximum stamina instantly, gain increased stamina regen and shrug off pain for a while. \
-	When the effect ends, you get maximum stamina immediately, again."
+	desc = "Using your indominable human spirit, you are able to ignore pain, stagger and regenerate stamina faster."
 	cooldown_duration = 2.5 MINUTES
 	use_state_flags = ABILITY_USE_BUCKLED|ABILITY_USE_BUSY|ABILITY_USE_STAGGERED|ABILITY_USE_NOTTURF
 
@@ -67,10 +66,12 @@
 	var/mob/living/carbon/carbon_owner = owner
 	if(!carbon_owner)		return FALSE
 	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/oxycodone, 5, no_overdose = TRUE)
-	carbon_owner.setStaminaLoss(-carbon_owner.max_stamina)
 	playsound(carbon_owner.loc, 'ntf_modular/sound/effects/ut-boost.ogg', 50)
 	carbon_owner.emote("me", 1, "takes a deep breath between gritted teeth.")
 	carbon_owner.do_jitter_animation(1000)
+
+	ADD_TRAIT(carbon_owner, TRAIT_PAIN_IMMUNE, "[type]")
+	ADD_TRAIT(carbon_owner, TRAIT_STAGGERIMMUNE, "[type]")
 
 	carbon_owner.add_stamina_regen_modifier("indominable", 0.8)
 	carbon_owner.add_filter("indominable_outline", 5, outline_filter(1, COLOR_CYAN)) //Set our cool aura; also confirmation we have the buff
@@ -86,3 +87,5 @@
 	carbon_owner.do_jitter_animation(1000)
 	carbon_owner.remove_stamina_regen_modifier("indominable")
 	owner.remove_filter("indominable_outline")
+	REMOVE_TRAIT(owner, TRAIT_PAIN_IMMUNE, "[type]")
+	REMOVE_TRAIT(owner, TRAIT_STAGGERIMMUNE, "[type]")

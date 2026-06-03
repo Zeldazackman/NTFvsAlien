@@ -93,7 +93,7 @@
 		if(in_hand)
 			idiot.dropItemToGround(src, TRUE)
 			loc = idiot.loc
-	var/obj/item/roller/bedroll/sec/sexbed = new /obj/item/roller/bedroll/sec(loc)
+	var/obj/structure/bed/bedroll/sec = new /obj/structure/bed/bedroll/sec(loc)
 	update_icon()
 	qdel(src)
 	sleep(2)
