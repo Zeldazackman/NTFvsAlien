@@ -27,10 +27,8 @@
 		/datum/job/survivor/synth = 1,
 		/datum/job/clf/standard = 1,
 		/datum/job/clf/medic = 1,
-		/datum/job/clf/specialist = 1,
-		/datum/job/clf/tech = 1,
 		/datum/job/clf/leader = 1,
-		/datum/job/xenomorph = 2
+		/datum/job/xenomorph = 2,//two so they dont wipe by a mistake or maybe duo.
 	)
 
 	shutters_drop_time = 5 SECONDS
@@ -66,7 +64,7 @@
 	to_chat(world, span_round_header("The current map is - [SSmapping.configs[GROUND_MAP].map_name]!"))
 	to_chat(world, span_information("The brave colonists from earth were just settling down in this colony in some part of the planet XF-69, Surely nothing will go out of the ordinary this shift. // Stick to roleplay requirements."))
 	priority_announce(
-		message = "It's the beginning of another profitable shift in [SSmapping.configs[GROUND_MAP].map_name]. Make Ninetails proud!",
+		message = "It's the beginning of another shift in [SSmapping.configs[GROUND_MAP].map_name]. Make Ninetails proud!",
 		title = "Good morning, crew.",
 		type = ANNOUNCEMENT_PRIORITY,
 		color_override = "blue"
@@ -77,7 +75,7 @@
 		SEND_SOUND(M, S)
 		to_chat(M, assemble_alert(
 			title = "Queen Mother Calls.",
-			message = "Wake my children. It is time for you to wake from your sleep as new hosts are coming nearby... Capture the hosts and form a new hive out of them.",
+			message = "Rise my children, it is time to assault this still unbuilt tall-host hive before they can call for help. You are alone, so take care and infect hosts to grow your hive. Do not let the talls find you out too soon, or you will have trouble.",
 			color_override = "purple"
 		))
 		to_chat(M, span_information("You are a xenomorph, your primary goal is to breed as many hosts as possible while keeping yourself and the larvas in the hosts alive. You must still stick to roleplay standards. There is no time limit in this mode, take your time with erp or whatever rather than spamming impregnate on people. Game ends when all Xenos or Humans die. If you allow the talls to call for help, you will have trouble."))
@@ -85,6 +83,8 @@
 
 
 /datum/game_mode/infestation/survival/check_finished()
+	if(round_finished)
+		return TRUE
 
 	if(world.time < (SSticker.round_start_time + 5 MINUTES))
 		return FALSE
