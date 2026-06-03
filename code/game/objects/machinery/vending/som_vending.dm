@@ -160,6 +160,7 @@
 			/obj/item/explosive/grenade/rad = 5,
 			/obj/item/explosive/grenade/chem_grenade/metalfoam = 5,
 			/obj/item/explosive/grenade/smokebomb/neuro = 5,
+			/obj/item/explosive/grenade/smokebomb/neuro/alt = 3,
 			/obj/item/explosive/grenade/smokebomb/acid = 5,
 			/obj/item/explosive/grenade/smokebomb/aphrotoxin = 5,
 			/obj/item/explosive/grenade/smokebomb/sleep = 10,

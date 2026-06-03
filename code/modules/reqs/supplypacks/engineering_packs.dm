@@ -134,7 +134,7 @@ ENGINEERING
 /datum/supply_packs/engineering/foam_grenade
 	name = "Foam Grenade"
 	contains = list(/obj/item/explosive/grenade/chem_grenade/metalfoam)
-	cost = 30
+	cost = 20
 
 /datum/supply_packs/engineering/floodlight
 	name = "Deployable Floodlight"
