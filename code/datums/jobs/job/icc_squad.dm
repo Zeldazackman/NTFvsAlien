@@ -1,5 +1,5 @@
 /datum/job/icc_squad
-	job_category =  JOB_CAT_UNASSIGNED
+	job_category =  JOB_CAT_ICC
 	supervisors = "CM high command"
 	selection_color = "#ffeeee"
 	faction = FACTION_ICC
