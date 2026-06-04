@@ -1,7 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"aa" = (
-/turf/closed/wall/desert/invincible,
-/area/deathmatch)
 "ez" = (
 /obj/structure/barricade/solid/plasteel,
 /obj/effect/mapping_helpers/barricade/wired,
@@ -168,11 +165,11 @@ MP
 MP
 MP
 MP
-aa
-aa
-aa
-aa
-aa
+MP
+MP
+MP
+MP
+MP
 MP
 MP
 MP
