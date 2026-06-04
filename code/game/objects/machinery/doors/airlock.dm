@@ -124,7 +124,7 @@
 /obj/machinery/door/airlock/proc/canAIControl(mob/user)
 	if(hackProof)
 		return
-	if(z != user.z)
+	if(!SSmapping.level_trait(z,ZTRAIT_MARINE_MAIN_SHIP))
 		return
 	return ((aiControlDisabled != 1) && !isAllPowerCut())
 
