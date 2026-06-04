@@ -142,6 +142,14 @@ EXPLOSIVES
 	)
 	cost = 250
 
+/datum/supply_packs/explosives/explosives_metalfoam
+	name = "Metal-Foam Grenade box"
+	notes = "Contains 25 grenades"
+	contains = list(
+		/obj/item/storage/box/visual/grenade/metalfoam,
+	)
+	cost = 480
+
 /datum/supply_packs/explosives/explosives_mines/emp
 	name = "EMP Grenades"
 	notes = "Contains 5 EMPs"
