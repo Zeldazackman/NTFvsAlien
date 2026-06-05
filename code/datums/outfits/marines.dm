@@ -93,8 +93,8 @@
 		if(in_hand)
 			idiot.dropItemToGround(src, TRUE)
 			loc = idiot.loc
-	var/obj/structure/bed/bedroll/sec = new /obj/structure/bed/bedroll/sec(loc)
+	var/obj/structure/bed/bedroll/sec/sexbed = new /obj/structure/bed/bedroll/sec(loc)
 	update_icon()
 	qdel(src)
 	sleep(2)
-	playsound(sec.loc, 'sound/machines/ping.ogg', 25, 1)
+	playsound(sexbed.loc, 'sound/machines/ping.ogg', 25, 1)

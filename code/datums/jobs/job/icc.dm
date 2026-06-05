@@ -481,7 +481,7 @@ Godspeed, Commander! And remember, you are not above the law."}
 	minimap_icon = "fieldcommander"
 
 /datum/outfit/job/command/fieldcommandericc
-	name = FIELD_COMMANDER
+	name = "CM Militia Captain"
 	jobtype = /datum/job/icc/fieldcommander
 
 	id = /obj/item/card/id/dogtag/fc
@@ -536,10 +536,10 @@ Make the CM proud!"}
 	minimal_access = ALL_ICC_ACCESS
 	skills_type = /datum/skills/so
 	display_order = JOB_DISPLAY_ORDER_STAFF_OFFICER
-	outfit = /datum/outfit/job/command/staffofficer
+	outfit = /datum/outfit/job/administrator
 	multiple_outfits = TRUE
 	outfits = list(
-		/datum/outfit/job/command/staffofficer,
+		/datum/outfit/job/administrator,
 	)
 	exp_requirements = XP_REQ_INTERMEDIATE
 	exp_type = EXP_TYPE_REGULAR_ALL
@@ -587,3 +587,20 @@ Make the CM proud!"}
 		if(18001 to INFINITY) // 300 hrs
 			new_human.wear_id.paygrade = "O5"
 	new_human.wear_id.update_label()
+
+/datum/outfit/job/administrator
+	name = "CM Colony Administrator"
+	jobtype = /datum/job/icc/administrator
+
+	id = /obj/item/card/id/silver
+	belt = /obj/item/storage/holster/belt/pistol/m4a3/officer
+	ears = /obj/item/radio/headset/mainship/marine/icc
+	w_uniform = /obj/item/clothing/under/marine/officer/bridge
+	shoes = /obj/item/clothing/shoes/marine/full
+	head = /obj/item/clothing/head/tgmccap/ro
+	r_pocket = /obj/item/storage/pouch/general/large
+	l_pocket = /obj/item/binoculars/tactical
+
+/datum/outfit/job/administrator/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	. = ..()
+	H.equip_to_slot_or_hand(new /obj/item/binoculars/fire_support/extended/sl, SLOT_IN_R_POUCH)

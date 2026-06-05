@@ -266,7 +266,7 @@ In addition, being a Synthetic gives you knowledge in every field and specializa
 //the bigus dickus leader of the cult
 /datum/job/clf/messiah
 	title = "Cult Messiah"
-	paygrade = "CLTL"
+	paygrade = "CLTMS"
 	comm_title = "CLTMS"
 	minimap_icon = "CLTMS"
 	supervisors = "The Hive."
