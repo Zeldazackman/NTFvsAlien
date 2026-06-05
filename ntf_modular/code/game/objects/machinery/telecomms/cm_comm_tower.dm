@@ -381,30 +381,31 @@
 			to_chat(user, span_warning("\The [src.name] needs repairs to have frequencies added to its software!"))
 			return
 		var/choice = tgui_input_list(user, "What do you wish to do?", "TC-3T comms tower", list("Wipe communication frequencies", "Add your faction's frequencies"))
-		if(choice == "Wipe communication frequencies")
-			freq_listening = list(FREQ_CIV_GENERAL)
-			to_chat(user, span_notice("You wipe the preexisting frequencies from \the [src]."))
-			return
-		else if(choice == "Add your faction's frequencies")
-			if(!do_after(user, 10, IGNORE_HAND|IGNORE_HELD_ITEM, BUSY_ICON_BUILD))
+		switch(choice)
+			if("Wipe communication frequencies")
+				freq_listening = list(FREQ_CIV_GENERAL)
+				to_chat(user, span_notice("You wipe the preexisting frequencies from \the [src]."))
 				return
-			if(user.faction in GLOB.faction_to_radio)
-				switch(user.faction)
-					if(FACTION_TERRAGOV,FACTION_NANOTRASEN,FACTION_ICC)
-						freq_listening -= NTC_SIDED_FREQS
-						freq_listening += NTC_SIDED_FREQS
-					if(FACTION_SOM)
-						freq_listening -= SOM_FREQS
-						freq_listening += SOM_FREQS
-					if(FACTION_VSD)
-						freq_listening -= KZ_FREQS
-						freq_listening += KZ_FREQS
-					if(FACTION_CLF)
-						freq_listening -= CLF_FREQS
-						freq_listening += CLF_FREQS
-				to_chat(user, span_notice("You add your faction's communication frequencies to \the [src]'s comm list."))
-			else
-				to_chat(user, span_notice("You don't have a fitting faction."))
+			if("Add your faction's frequencies")
+				if(!do_after(user, 10, IGNORE_HAND|IGNORE_HELD_ITEM, BUSY_ICON_BUILD))
+					return
+				if(user.faction in GLOB.faction_to_radio)
+					switch(user.faction)
+						if(FACTION_TERRAGOV,FACTION_NANOTRASEN,FACTION_ICC)
+							freq_listening -= NTC_SIDED_FREQS
+							freq_listening += NTC_SIDED_FREQS
+						if(FACTION_SOM)
+							freq_listening -= SOM_FREQS
+							freq_listening += SOM_FREQS
+						if(FACTION_VSD)
+							freq_listening -= KZ_FREQS
+							freq_listening += KZ_FREQS
+						if(FACTION_CLF)
+							freq_listening -= CLF_FREQS
+							freq_listening += CLF_FREQS
+					to_chat(user, span_notice("You add your faction's communication frequencies to \the [src]'s comm list."))
+				else
+					to_chat(user, span_notice("You don't have a fitting faction."))
 			return
 	. = ..()
 
