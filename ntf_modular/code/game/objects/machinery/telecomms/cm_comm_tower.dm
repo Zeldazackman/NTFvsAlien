@@ -406,7 +406,7 @@
 					to_chat(user, span_notice("You add your faction's communication frequencies to \the [src]'s comm list."))
 				else
 					to_chat(user, span_notice("You don't have a fitting faction."))
-			return
+				return
 	. = ..()
 
 /obj/machinery/telecomms/relay/preset/tower/mapcomms/power_change()

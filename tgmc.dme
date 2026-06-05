@@ -2479,6 +2479,8 @@
 #include "code\modules\transport\tram\tram_floors.dm"
 #include "code\modules\transport\tram\tram_machinery.dm"
 #include "code\modules\transport\tram\tram_power.dm"
+#include "code\modules\admin\panels\medal_panel.dm"
+#include "code\modules\client\medal_persistence.dm"
 #include "code\modules\transport\tram\tram_remote.dm"
 #include "code\modules\transport\tram\tram_signals.dm"
 #include "code\modules\transport\tram\tram_structures.dm"
