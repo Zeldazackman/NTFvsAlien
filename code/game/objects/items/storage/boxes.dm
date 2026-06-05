@@ -1364,6 +1364,12 @@
 	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade/smokebomb/neuro/alt
 
+/obj/item/storage/box/visual/grenade/metalfoam
+	name = "\improper Metal-Foam Grenade box"
+	desc = "A secure box holding 25 Metal-Foam Grenades. Used for emergency sealing of air breaches, or to provide cover from snipers."
+	spawn_number = 25
+	spawn_type = /obj/item/explosive/grenade/chem_grenade/metalfoam
+
 #undef BOX_OVERLAY_SHIFT_X
 #undef BOX_OVERLAY_SHIFT_Y
 

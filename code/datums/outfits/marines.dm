@@ -97,4 +97,4 @@
 	update_icon()
 	qdel(src)
 	sleep(2)
-	playsound(sexbed.loc, 'sound/machines/ping.ogg', 25, 1)
+	playsound(sec.loc, 'sound/machines/ping.ogg', 25, 1)
