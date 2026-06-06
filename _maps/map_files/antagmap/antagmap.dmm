@@ -2338,8 +2338,8 @@
 "kP" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/transmitter/som_net{
-	phone_category = "Medbay";
-	phone_id = "Medbay";
+	phone_category = "SOM Medbay";
+	phone_id = "SOM Medbay";
 	dir = 4;
 	pixel_x = -15
 	},
@@ -8130,8 +8130,8 @@
 	dir = 10
 	},
 /obj/structure/transmitter/som_net{
-	phone_category = "Engineering";
-	phone_id = "Engineering";
+	phone_category = "SOM Engineering";
+	phone_id = "SOM Engineering";
 	dir = 1;
 	pixel_y = -25
 	},
