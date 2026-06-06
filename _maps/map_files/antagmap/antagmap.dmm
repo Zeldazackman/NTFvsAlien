@@ -1813,6 +1813,7 @@
 /obj/structure/prop/mainship/gelida/powerconnector{
 	dir = 8
 	},
+/obj/machinery/power/smes/buildable,
 /turf/open/floor/prison/plate,
 /area/antag_ship/vsd/engi)
 "iG" = (
@@ -6230,6 +6231,7 @@
 /obj/structure/prop/mainship/gelida/powerconnector{
 	dir = 8
 	},
+/obj/machinery/power/smes/buildable,
 /turf/open/floor/prison/plate,
 /area/antag_ship/vsd/engi)
 "BB" = (
@@ -7418,7 +7420,6 @@
 /area/antag_ship/icc/generator_room)
 "Gj" = (
 /obj/structure/mecha_wreckage/mauler,
-/obj/structure/cable,
 /turf/open/floor/plating/platebot,
 /area/antag_ship/vsd/engi)
 "Gk" = (
@@ -8580,11 +8581,6 @@
 /obj/structure/bed/chair/east,
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship/icc/prisoner_holding)
-"KP" = (
-/obj/machinery/power/smes/buildable,
-/obj/structure/cable,
-/turf/open/floor/prison/plate,
-/area/antag_ship/vsd/engi)
 "KR" = (
 /obj/item/reagent_containers/jerrycan,
 /turf/open/floor/mainship/mono,
@@ -9010,7 +9006,7 @@
 /area/antag_ship/som/office/torture_chamber)
 "ML" = (
 /obj/machinery/power/geothermal/reinforced,
-/turf/open/floor/prison/plate,
+/turf/open/floor/plating/heatinggrate,
 /area/antag_ship/vsd/engi)
 "MM" = (
 /obj/structure/closet/crate,
@@ -11206,13 +11202,6 @@
 /obj/effect/turf_decal/siding/wideplating_new/light,
 /turf/open/floor/grayscale/edge,
 /area/antag_ship/clf_base/bathroom)
-"VE" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/cable,
-/turf/open/floor/prison/plate,
-/area/antag_ship/vsd/engi)
 "VF" = (
 /obj/effect/ai_node,
 /turf/open/floor/carpet/side,
@@ -15728,7 +15717,7 @@ XQ
 yZ
 OY
 Gj
-KP
+Gj
 mg
 dr
 EN
@@ -15824,7 +15813,7 @@ gp
 WQ
 fj
 jx
-VE
+jx
 mg
 hZ
 dp
