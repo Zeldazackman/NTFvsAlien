@@ -122,7 +122,7 @@
 	desc = "A beautiful, glittering mound of honey-like resin. It might fetch a good price, or be shaped by a xenomorph into a potent healing poultice."
 	icon = 'ntf_modular/icons/xeno/xeno_materials.dmi'
 	icon_state = "reqjelly"
-	max_amount = 5
+	max_amount = 125
 	stack_name = "pile"
 	singular_name = "globule"
 	var/hivenumber = XENO_HIVE_NORMAL
@@ -281,7 +281,7 @@
 	user.visible_message(span_notice("[user] starts smoothing [src] over [human_patient]'s wounds."),
 		span_notice("You start smoothing [src] over [human_patient]'s wounds."))
 
-	if(!do_after(user, 4 SECONDS, NONE, human_patient, BUSY_ICON_FRIENDLY, BUSY_ICON_MEDICAL))
+	if(!do_after(user, 8 SECONDS, NONE, human_patient, BUSY_ICON_FRIENDLY, BUSY_ICON_MEDICAL))
 		to_chat(user, span_warning("You stop applying [src]."))
 		return FALSE
 
