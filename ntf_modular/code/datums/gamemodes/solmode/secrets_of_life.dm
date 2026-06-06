@@ -379,8 +379,8 @@ alt gamemodes
 /datum/game_mode/infestation/secret_of_life/nosub
 	name = "Secret of Life - No Subfactions"
 	config_tag = "Secret of Life - No Subfactions"
-	factions = list(FACTION_TERRAGOV, FACTION_XENO, FACTION_CLF, FACTION_SOM)
-	human_factions = list(FACTION_TERRAGOV, FACTION_CLF, FACTION_SOM)
+	factions = list(FACTION_TERRAGOV, FACTION_ICC, FACTION_XENO, FACTION_CLF, FACTION_SOM)
+	human_factions = list(FACTION_TERRAGOV, FACTION_ICC, FACTION_CLF, FACTION_SOM)
 	valid_job_types = list(
 		/datum/job/terragov/command/captain = 1,
 		/datum/job/terragov/command/fieldcommander = 1,
@@ -572,8 +572,8 @@ alt gamemodes
 /datum/game_mode/infestation/secret_of_life/ntf_vs_clf
 	name = "Secret of Life - NTF vs Cult"
 	config_tag = "Secret of Life - NTF vs Cult"
-	factions = list(FACTION_TERRAGOV, FACTION_XENO, FACTION_CLF)
-	human_factions = list(FACTION_TERRAGOV, FACTION_CLF)
+	factions = list(FACTION_TERRAGOV, FACTION_ICC, FACTION_XENO, FACTION_CLF)
+	human_factions = list(FACTION_TERRAGOV, FACTION_ICC, FACTION_CLF)
 	valid_job_types = list(
 		/datum/job/terragov/command/ceo = 1,
 		/datum/job/terragov/command/nm_ceo = 1,
