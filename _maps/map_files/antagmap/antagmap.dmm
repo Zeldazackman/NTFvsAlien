@@ -1494,6 +1494,23 @@
 	},
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship/icc/medical_room)
+"hr" = (
+/obj/structure/table/wood/fancy,
+/obj/item/flashlight/lamp/green{
+	pixel_x = -10
+	},
+/obj/structure/paper_bin{
+	pixel_x = 10
+	},
+/obj/item/tool/pen{
+	pixel_x = 10
+	},
+/obj/machinery/computer/communications/coe{
+	dir = 1;
+	pixel_x = -8
+	},
+/turf/open/floor/carpet/royalblack,
+/area/antag_ship/clf_base/reedroom)
 "hs" = (
 /obj/structure/cable,
 /turf/open/floor/mainship/black/corner{
@@ -6795,6 +6812,15 @@
 	},
 /turf/open/floor/prison/plate,
 /area/antag_ship/vsd/engi)
+"DS" = (
+/obj/structure/morgue/crematorium{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/cult,
+/area/antag_ship/clf_base/reedroom)
 "DT" = (
 /obj/structure/xeno/lighttower,
 /turf/open/floor/plating/ground/desertdam/asphalt/cement_sunbleached,
@@ -8417,9 +8443,10 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/antag_ship/som/maintenance/south)
 "Kk" = (
-/turf/open/floor/plating/ground/desertdam/asphalt/threeside{
-	dir = 4
+/obj/machinery/shower{
+	pixel_y = 16
 	},
+/turf/open/floor/plating/plating_catwalk/prison/alt,
 /area/antag_ship/clf_base/reedroom)
 "Km" = (
 /obj/item/disk/kz_neurodisk,
@@ -8446,7 +8473,7 @@
 	id = "mesdorm";
 	name = "\improper Messiah Privacy Shutters"
 	},
-/turf/open/floor/wood/fancy,
+/turf/open/floor/cult,
 /area/antag_ship/clf_base/reedroom)
 "Kr" = (
 /obj/effect/ai_node,
@@ -8758,7 +8785,7 @@
 /area/antag_ship/clf_base/hallways/inside)
 "LG" = (
 /obj/structure/mineral_door/wood,
-/turf/closed/wall/cult,
+/turf/open/floor/cult,
 /area/antag_ship/clf_base/reedroom)
 "LH" = (
 /obj/structure/window/framed/prison/reinforced/hull,
@@ -8909,7 +8936,7 @@
 /area/antag_ship/clf_base/prison)
 "Mo" = (
 /obj/structure/morgue,
-/turf/open/floor/plating/ground/desertdam/asphalt/tile,
+/turf/open/floor/cult,
 /area/antag_ship/clf_base/reedroom)
 "Mq" = (
 /obj/structure/closet/secure_closet/engineering_welding,
@@ -10097,17 +10124,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating/plating_catwalk,
 /area/antag_ship/pmc_ntf/aft/spaceport)
-"Rz" = (
-/obj/structure/morgue/crematorium{
-	dir = 4
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/plating/ground/desertdam/asphalt/threeside{
-	dir = 4
-	},
-/area/antag_ship/clf_base/reedroom)
 "RA" = (
 /obj/machinery/light/red{
 	dir = 1
@@ -10328,12 +10344,6 @@
 	},
 /turf/open/floor/prison/darkyellow/full,
 /area/antag_ship/som/security/cell)
-"Sp" = (
-/obj/machinery/shower{
-	pixel_y = 16
-	},
-/turf/open/floor/plating/plating_catwalk/prison/alt,
-/area/antag_ship/clf_base/reedroom)
 "Sr" = (
 /obj/machinery/light{
 	dir = 1
@@ -12131,7 +12141,7 @@
 	pixel_y = 30
 	},
 /obj/effect/ai_node,
-/turf/open/floor/plating/ground/desertdam/asphalt/tile,
+/turf/open/floor/cult,
 /area/antag_ship/clf_base/reedroom)
 "Zy" = (
 /obj/structure/bed/chair/kz/extractor,
@@ -12194,23 +12204,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating/plating_catwalk,
 /area/antag_ship/pmc_ntf/aft/engiroom/port)
-"ZN" = (
-/obj/structure/table/wood/fancy,
-/obj/item/flashlight/lamp/green{
-	pixel_x = -10
-	},
-/obj/structure/paper_bin{
-	pixel_x = 10
-	},
-/obj/item/tool/pen{
-	pixel_x = 10
-	},
-/obj/machinery/computer/communications/coe{
-	dir = 1;
-	pixel_x = -8
-	},
-/turf/open/floor/carpet/royalblack,
-/area/antag_ship/clf_base/reedroom)
 "ZP" = (
 /obj/effect/turf_decal/trimline/brown/warning{
 	dir = 1
@@ -25014,11 +25007,11 @@ JW
 gW
 iA
 sx
-Rz
+DS
 Mo
 sx
 Ig
-ZN
+hr
 Xb
 "}
 (134,1,1) = {"
@@ -25111,7 +25104,7 @@ JW
 gW
 sx
 Zw
-Kk
+cu
 sx
 gb
 UC
@@ -25387,7 +25380,7 @@ GN
 GN
 GN
 ce
-Sp
+Kk
 IC
 sH
 kE
