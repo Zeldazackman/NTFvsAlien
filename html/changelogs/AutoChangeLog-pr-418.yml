@@ -1,0 +1,11 @@
+author: "SpooksAnno"
+delete-after: True
+changes:
+  - rscadd: "Alien ambrosia can now be used by xenos to heal living humans and xenos."
+  - rscadd: "Alien ambrosia can now treat infections, internal bleeding, and delayed bone mending on humans."
+  - rscadd: "Alien ambrosia can revive dead humans, with monkeys limited to one ambrosia revival."
+  - rscadd: "Alien ambrosia now leaves visible alien residue after use and can be detected by medical scanners."
+  - rscadd: "Added ambrosia dependence effects for repeated human use."
+  - qol: "Alien ambrosia now auto-stacks"
+  - qol: "Xenos can now toggle hive target participation through the hive menu."
+  - balance: "Alien ambrosia stacks are capped at 5 and living healing has a 10 second per-target cooldown."
