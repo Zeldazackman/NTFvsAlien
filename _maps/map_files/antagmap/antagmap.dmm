@@ -14,6 +14,13 @@
 /obj/effect/urban/decal/warning/redandwhite_S,
 /turf/open/floor/grayscale/darkblue,
 /area/antag_ship/vsd/med)
+"ag" = (
+/obj/effect/turf_decal/tile/full/black,
+/obj/machinery/light/mainship{
+	dir = 4
+	},
+/turf/open/floor/plating/ground/concrete,
+/area/antag_ship/icc/medical_room)
 "ai" = (
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/dirt,
@@ -49,6 +56,15 @@
 /obj/structure/largecrate/supply/supplies/plasteel,
 /turf/open/floor/mainship/black/full,
 /area/antag_ship/pmc_ntf/center/armory)
+"ax" = (
+/obj/effect/turf_decal/tile/full/black,
+/obj/structure/curtain/medical,
+/turf/open/floor/plating/ground/concrete,
+/area/antag_ship/icc/medical_room)
+"ay" = (
+/obj/structure/closet/secure_closet/chemical,
+/turf/open/floor/plating/ground/concrete,
+/area/antag_ship/icc/medical_room)
 "az" = (
 /obj/machinery/iv_drip,
 /turf/open/floor/iron/dark/smooth_edge,
@@ -63,6 +79,9 @@
 "aB" = (
 /obj/structure/toilet{
 	dir = 4
+	},
+/obj/machinery/light/mainship/small{
+	dir = 8
 	},
 /turf/open/floor/tile/white/hall/full,
 /area/antag_ship/icc/hangar/west)
@@ -116,6 +135,10 @@
 	dir = 1
 	},
 /area/antag_ship)
+"aR" = (
+/obj/machinery/autodoc,
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "aS" = (
 /obj/machinery/light/mainship/small{
 	dir = 8
@@ -159,6 +182,13 @@
 "bb" = (
 /turf/closed/wall/mainship/gray,
 /area/antag_ship)
+"bc" = (
+/obj/structure/closet/secure_closet/chemical,
+/obj/machinery/light/mainship{
+	dir = 1
+	},
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "be" = (
 /obj/machinery/power/apc{
 	dir = 4
@@ -210,6 +240,10 @@
 /obj/structure/largecrate/supply/supplies/mre,
 /turf/open/floor/mainship/black/full,
 /area/antag_ship/pmc_ntf/center/armory)
+"bq" = (
+/obj/machinery/vending/medical/icc,
+/turf/open/floor/mainship/sterile/side,
+/area/antag_ship/icc/medical_room)
 "br" = (
 /turf/open/floor/iron/dark,
 /area/antag_ship/vsd/port)
@@ -263,6 +297,11 @@
 	dir = 4
 	},
 /area/antag_ship/som/mech_bay)
+"bH" = (
+/obj/item/bedsheet/medical,
+/obj/structure/bed/roller/hospital_empty/bigrollerempty,
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "bJ" = (
 /obj/structure/table/black,
 /obj/effect/spawner/random/misc/paperbin,
@@ -285,6 +324,10 @@
 	},
 /turf/open/floor/iron/grimy,
 /area/antag_ship/som/office/commander/field)
+"bP" = (
+/obj/machinery/iv_drip,
+/turf/open/floor/mainship/sterile/side,
+/area/antag_ship/icc/medical_room)
 "bQ" = (
 /obj/structure/largecrate/supply/supplies/plastic,
 /turf/open/floor/plating/ground/dirt,
@@ -378,6 +421,10 @@
 /obj/effect/landmark/start/job/som/commander,
 /turf/open/floor/iron/grimy,
 /area/antag_ship/som/office/commander)
+"cl" = (
+/obj/structure/fulton_extraction_point,
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "cm" = (
 /obj/structure/largecrate/random,
 /obj/effect/turf_decal/warning_stripes/thin{
@@ -563,6 +610,12 @@
 	icon_state = "carpet-1"
 	},
 /area/antag_ship/som/bridge)
+"de" = (
+/obj/machinery/light/mainship,
+/obj/structure/curtain/medical,
+/obj/effect/turf_decal/tile/full/black,
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "df" = (
 /obj/machinery/bioprinter/stocked,
 /turf/open/floor/iron/dark/smooth_edge{
@@ -575,6 +628,10 @@
 	},
 /turf/open/floor/urban/carpet/carpetblack,
 /area/antag_ship/icc/generator_room)
+"dh" = (
+/obj/structure/curtain/open/medical,
+/turf/open/floor/mainship/sterile/dark,
+/area/antag_ship/icc/medical_room)
 "di" = (
 /obj/structure/cable,
 /obj/structure/mineral_door/wood,
@@ -637,6 +694,12 @@
 	dir = 4
 	},
 /area/antag_ship/clf_base/techroom)
+"dv" = (
+/obj/machinery/light/mainship{
+	dir = 1
+	},
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "dz" = (
 /obj/structure/table/mainship,
 /obj/effect/spawner/random/food_or_drink/burger,
@@ -684,6 +747,13 @@
 /obj/machinery/iv_drip,
 /turf/open/floor/cult/clock,
 /area/antag_ship/clf_base/reedroom)
+"dL" = (
+/obj/structure/table,
+/obj/machinery/light/mainship{
+	dir = 8
+	},
+/turf/open/floor/tile/white/hall/full,
+/area/antag_ship/icc/hangar/west)
 "dM" = (
 /obj/effect/turf_decal/siding/thinplating_new/dark{
 	dir = 8
@@ -694,6 +764,11 @@
 	},
 /turf/open/floor/mainship/red/full,
 /area/antag_ship/som/bridge)
+"dN" = (
+/turf/open/floor/mainship/sterile/side{
+	dir = 8
+	},
+/area/antag_ship/icc/medical_room)
 "dO" = (
 /obj/effect/ai_node,
 /obj/structure/cable,
@@ -791,7 +866,7 @@
 	dir = 4
 	},
 /obj/structure/curtain/open/shower,
-/turf/open/floor/plating/ground/concrete,
+/turf/open/floor/tile/white/hall/full,
 /area/antag_ship/icc/prisoner_holding)
 "en" = (
 /turf/open/floor/mainship/mono,
@@ -818,9 +893,9 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/antag_ship/icc/hangar/center)
 "et" = (
-/obj/machinery/iv_drip,
-/obj/machinery/light/mainship,
-/turf/open/floor/plating/ground/concrete,
+/obj/item/bedsheet/medical,
+/obj/structure/bed/roller/hospital_empty/bigrollerbloodempty,
+/turf/open/floor/mainship/sterile/dark,
 /area/antag_ship/icc/medical_room)
 "ew" = (
 /obj/structure/table/mainship,
@@ -979,7 +1054,7 @@
 /turf/open/floor/prison/darkyellow/full,
 /area/antag_ship/som/security/cell)
 "eZ" = (
-/turf/closed/wall/mainship/gray,
+/turf/closed/wall/mainship,
 /area/antag_ship/icc/prisoner_holding)
 "fa" = (
 /obj/machinery/light/mainship{
@@ -1066,6 +1141,10 @@
 "fr" = (
 /turf/open/floor/plating/ground/desertdam/asphalt/open,
 /area/antag_ship/icc/hangar/east)
+"fs" = (
+/obj/machinery/atmospherics/components/unary/cryo_cell,
+/turf/closed/mineral/smooth/desertdamrockwall/indestructible,
+/area/space)
 "ft" = (
 /obj/machinery/door/airlock/mainship/generic/bathroom,
 /turf/closed/wall/mainship/gray,
@@ -1238,12 +1317,6 @@
 /obj/machinery/computer,
 /turf/open/floor/mainship/mono,
 /area/antag_ship/clf_base/techroom)
-"gm" = (
-/obj/machinery/vending/MarineMed/Blood{
-	isshared = 0
-	},
-/turf/open/floor/plating/ground/concrete,
-/area/antag_ship/icc/medical_room)
 "gn" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -1279,10 +1352,6 @@
 /obj/structure/cable,
 /turf/open/floor/prison/plate,
 /area/antag_ship/vsd/engi)
-"gu" = (
-/obj/machinery/sleeper,
-/turf/open/floor/plating/ground/concrete,
-/area/antag_ship/icc/medical_room)
 "gv" = (
 /obj/effect/turf_decal/trimline/brown/warning{
 	dir = 6
@@ -1313,6 +1382,9 @@
 /obj/item/bedsheet/green,
 /turf/open/floor/urban/carpet,
 /area/antag_ship/icc/living_area)
+"gC" = (
+/turf/open/floor/tile/white/hall/full,
+/area/antag_ship/icc/prisoner_holding)
 "gD" = (
 /obj/effect/decal/cleanable/blood/splatter/cum,
 /turf/open/floor/purptwo,
@@ -1385,6 +1457,10 @@
 	},
 /turf/open/floor/plating/ground/desertdam/asphalt/cement_sunbleached,
 /area/antag_ship/clf_base/prison)
+"gT" = (
+/obj/machinery/chem_master,
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "gU" = (
 /obj/structure/cable,
 /obj/machinery/light/small{
@@ -1412,6 +1488,23 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/desertdam/asphalt/cement_sunbleached,
 /area/antag_ship/clf_base/prison)
+"gZ" = (
+/obj/structure/table/mainship,
+/obj/item/storage/surgical_tray,
+/obj/item/reagent_containers/spray/cleaner{
+	desc = "Someone has crossed out the Space from Space Cleaner and written in Surgery. 'Do not remove under punishment of death!!!' is scrawled on the back.";
+	name = "Surgery Cleaner";
+	pixel_x = 12;
+	pixel_y = 2
+	},
+/obj/item/tool/soap/syndie,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/tank/anesthetic,
+/obj/item/clothing/mask/breath/medical,
+/turf/open/floor/mainship/sterile/corner{
+	dir = 1
+	},
+/area/antag_ship/icc/medical_room)
 "ha" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/food/drinks/coffee{
@@ -1488,6 +1581,13 @@
 "ho" = (
 /turf/closed/mineral/smooth,
 /area/antag_ship/clf_base/prison)
+"hp" = (
+/obj/machinery/iv_drip,
+/obj/machinery/light/mainship/small{
+	dir = 4
+	},
+/turf/open/floor/mainship/sterile/dark,
+/area/antag_ship/icc/medical_room)
 "hq" = (
 /obj/machinery/light/mainship{
 	dir = 1
@@ -1528,9 +1628,9 @@
 	},
 /area/antag_ship/vsd/armory)
 "hu" = (
-/obj/structure/curtain/open/medical,
-/turf/open/floor/plating/ground/concrete,
-/area/antag_ship/icc/medical_room)
+/obj/effect/turf_decal/tile/full/black,
+/turf/closed/wall/mainship/gray,
+/area/antag_ship)
 "hw" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/mainship/maint{
@@ -1555,6 +1655,12 @@
 	},
 /turf/open/floor/prison/blackfloor,
 /area/antag_ship/vsd/hall)
+"hC" = (
+/obj/effect/turf_decal/trimline/blue/end{
+	dir = 1
+	},
+/turf/open/floor/plating/ground/concrete,
+/area/antag_ship/icc/medical_room)
 "hG" = (
 /obj/effect/turf_decal/tile/transparent/dark_green/half/contrasted{
 	dir = 4
@@ -1593,6 +1699,9 @@
 /obj/effect/landmark/start/job/vsd/liason,
 /turf/open/floor/prison/blackfloor,
 /area/antag_ship/vsd/hall)
+"hL" = (
+/turf/closed/wall/mainship,
+/area/antag_ship)
 "hM" = (
 /turf/open/floor/mainship/black{
 	dir = 9
@@ -1628,8 +1737,16 @@
 /area/antag_ship/icc/warehouse)
 "hV" = (
 /obj/machinery/vending/weapon/icc,
+/obj/machinery/light/mainship{
+	dir = 8
+	},
 /turf/open/floor/urban/carpet/carpetblack,
 /area/antag_ship/icc/generator_room)
+"hW" = (
+/obj/structure/table,
+/obj/machinery/light,
+/turf/open/floor/plating/ground/concrete,
+/area/antag_ship/icc/living_area)
 "hY" = (
 /obj/structure/fulton_extraction_point,
 /turf/open/floor/mainship/floor,
@@ -1871,6 +1988,11 @@
 	dir = 8
 	},
 /area/antag_ship/pmc_ntf/starboard/medbay)
+"iR" = (
+/obj/machinery/iv_drip,
+/obj/machinery/light/mainship,
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "iS" = (
 /obj/structure/cable,
 /turf/open/floor/mainship/black/corner,
@@ -1960,6 +2082,15 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/antag_ship/som/maintenance/north)
+"jk" = (
+/obj/effect/turf_decal/trimline/blue/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/blue/warning{
+	dir = 4
+	},
+/turf/open/floor/plating/ground/concrete,
+/area/antag_ship/icc/medical_room)
 "jl" = (
 /obj/effect/landmark/weed_node,
 /obj/effect/landmark/xeno_resin_wall,
@@ -1983,10 +2114,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/mainship/mono,
 /area/antag_ship/som/preparation)
-"jt" = (
-/obj/structure/window/reinforced,
-/turf/open/floor/plating/ground/concrete,
-/area/antag_ship/icc/living_area)
 "jv" = (
 /obj/structure/cable,
 /obj/machinery/power/apc{
@@ -2079,7 +2206,7 @@
 	pixel_x = 10
 	},
 /obj/machinery/light,
-/turf/open/floor/plating/ground/concrete,
+/turf/open/floor/tile/white/hall/full,
 /area/antag_ship/icc/prisoner_holding)
 "jM" = (
 /obj/structure/table/black,
@@ -2289,6 +2416,12 @@
 /obj/item/storage/backpack/lightpack/icc,
 /turf/open/floor/plating/plating_catwalk,
 /area/antag_ship/icc/warehouse)
+"kD" = (
+/obj/structure/bed/chair/east{
+	dir = 8
+	},
+/turf/open/floor/plating/ground/concrete,
+/area/antag_ship/icc/prisoner_holding)
 "kE" = (
 /obj/effect/decal/cleanable/blood/splatter/girlcum,
 /obj/structure/cable,
@@ -2347,6 +2480,9 @@
 /area/antag_ship/som/medbay)
 "kQ" = (
 /obj/effect/turf_decal/tile/full/black,
+/obj/machinery/light/mainship{
+	dir = 8
+	},
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship/icc/medical_room)
 "kR" = (
@@ -2505,6 +2641,15 @@
 /obj/machinery/floodlight/outpost/oscar,
 /turf/open/floor/plating/ground/concrete/lines,
 /area/antag_ship/icc/hangar/east)
+"lx" = (
+/obj/structure/closet/secure_closet/medical2,
+/obj/machinery/light/mainship{
+	dir = 1
+	},
+/turf/open/floor/mainship/sterile/side{
+	dir = 1
+	},
+/area/antag_ship/icc/medical_room)
 "ly" = (
 /obj/effect/teleporter_linker/indestructible,
 /turf/open/floor/mainship/mono,
@@ -2631,6 +2776,11 @@
 	},
 /turf/open/floor/plating/ground/desertdam/asphalt/cement_sunbleached,
 /area/antag_ship/clf_base/prison)
+"lX" = (
+/obj/machinery/computer/body_scanconsole,
+/obj/machinery/light/mainship/small,
+/turf/open/floor/mainship/sterile/dark,
+/area/antag_ship/icc/medical_room)
 "lY" = (
 /obj/machinery/vending/uniform_supply/pmc,
 /obj/machinery/light/mainship{
@@ -3167,6 +3317,10 @@
 	dir = 1
 	},
 /area/shuttle/transport)
+"nN" = (
+/obj/structure/curtain/open/medical,
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "nO" = (
 /obj/machinery/telecomms/bus/preset_four/pmc,
 /turf/open/floor/bcircuit/anim,
@@ -3193,6 +3347,14 @@
 	},
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship)
+"nV" = (
+/obj/structure/cable,
+/obj/machinery/door/airlock/mainship/generic{
+	dir = 2;
+	name = "\improper Quarters"
+	},
+/turf/open/floor/plating/plating_catwalk,
+/area/antag_ship/icc/living_area)
 "nW" = (
 /obj/structure/rack,
 /obj/item/storage/belt/utility/full,
@@ -3203,6 +3365,12 @@
 	},
 /turf/open/floor/mainship/cargo,
 /area/antag_ship/clf_base/requisition)
+"nX" = (
+/obj/machinery/door/airlock/multi_tile/mainship/generic/canteen{
+	dir = 2
+	},
+/turf/open/floor/plating/ground/concrete,
+/area/antag_ship/icc/living_area)
 "nY" = (
 /obj/structure/table/reinforced,
 /obj/item/circuitboard/apc,
@@ -3268,6 +3436,9 @@
 "oo" = (
 /obj/structure/toilet{
 	dir = 4
+	},
+/obj/machinery/light/mainship/small{
+	dir = 8
 	},
 /turf/open/floor/tile/white/hall/full,
 /area/antag_ship/icc/generator_room)
@@ -3417,10 +3588,6 @@
 /obj/machinery/power/apc,
 /turf/open/floor/plating/plating_catwalk,
 /area/antag_ship/som/maintenance/north)
-"oT" = (
-/obj/machinery/door/airlock/glass,
-/turf/open/floor/plating/ground/concrete,
-/area/antag_ship/icc/living_area)
 "oU" = (
 /obj/structure/bed/chair/office/dark/north,
 /turf/open/floor/plating/ground/concrete,
@@ -3523,6 +3690,18 @@
 /obj/structure/bed/alien,
 /turf/open/floor/purptwo,
 /area/antag_ship/clf_base/reedroom)
+"pr" = (
+/obj/structure/bed/roller/hospital_empty/bigrollerempty{
+	dir = 8
+	},
+/turf/open/floor/mainship/sterile/dark,
+/area/antag_ship/icc/medical_room)
+"ps" = (
+/obj/machinery/optable,
+/turf/open/floor/mainship/sterile/corner{
+	dir = 8
+	},
+/area/antag_ship/icc/medical_room)
 "pt" = (
 /obj/structure/bookcase/manuals/medical,
 /obj/machinery/light{
@@ -3637,10 +3816,6 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/antag_ship/clf_base/bathroom)
-"pP" = (
-/obj/machinery/bodyscanner,
-/turf/open/floor/plating/ground/concrete,
-/area/antag_ship/icc/medical_room)
 "pR" = (
 /obj/structure/cable,
 /turf/open/floor/plating/ground/dirt,
@@ -3651,6 +3826,9 @@
 /obj/item/tool/multitool,
 /turf/open/shuttle/dropship/floor,
 /area/shuttle/transport)
+"pT" = (
+/turf/closed/wall/mainship/gray,
+/area/antag_ship/icc/generator_room)
 "pU" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/thinplating_new/dark{
@@ -3690,11 +3868,6 @@
 "qb" = (
 /turf/open/floor/bcircuit/off,
 /area/antag_ship/pmc_ntf/aft/engiroom/starboard)
-"qc" = (
-/obj/item/bedsheet/medical,
-/obj/structure/bed/roller/hospital_empty/bigrollerempty,
-/turf/open/floor/plating/ground/concrete,
-/area/antag_ship/icc/medical_room)
 "qe" = (
 /obj/structure/rack,
 /obj/item/armor_module/storage/uniform/black_vest,
@@ -3729,6 +3902,10 @@
 /obj/effect/landmark/start/job/vsd_spec,
 /turf/open/floor/iron/dark,
 /area/antag_ship/vsd/port)
+"qm" = (
+/obj/machinery/robotic_cradle,
+/turf/open/floor/plating/ground/concrete,
+/area/antag_ship/icc/medical_room)
 "qn" = (
 /obj/structure/ship_ammo/cas/heavygun,
 /turf/open/floor/mainship/cargo,
@@ -3980,6 +4157,11 @@
 /obj/machinery/telecomms/receiver/preset_right/som,
 /turf/open/floor/bcircuit/anim,
 /area/antag_ship)
+"rp" = (
+/turf/open/floor/mainship/sterile/side{
+	dir = 4
+	},
+/area/antag_ship/icc/medical_room)
 "rr" = (
 /obj/effect/ai_node,
 /obj/effect/decal/cleanable/blood/splatter/cum,
@@ -4069,9 +4251,15 @@
 /obj/item/bedsheet/blue,
 /turf/open/floor/plating/asteroidwarning,
 /area/antag_ship/clf_base/sleeproom)
+"rM" = (
+/obj/structure/sink{
+	pixel_y = 15
+	},
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "rP" = (
 /obj/structure/toilet,
-/turf/open/floor/plating/ground/concrete,
+/turf/open/floor/tile/white/hall/full,
 /area/antag_ship/icc/prisoner_holding)
 "rQ" = (
 /obj/structure/stairs/seamless/platform_vert{
@@ -4280,6 +4468,11 @@
 /obj/structure/urinal,
 /turf/closed/wall/mainship/gray,
 /area/antag_ship)
+"sM" = (
+/obj/effect/turf_decal/trimline/yellow/filled/warning,
+/obj/effect/turf_decal/trimline/yellow/mid_joiner,
+/turf/open/floor/plating/plating_catwalk,
+/area/antag_ship/icc/warehouse)
 "sN" = (
 /obj/structure/table/mainship,
 /obj/item/flashlight/lamp/green,
@@ -4338,18 +4531,6 @@
 	dir = 6
 	},
 /area/antag_ship/som/office/commander/field)
-"sW" = (
-/obj/structure/curtain/medical,
-/turf/open/floor/plating/ground/concrete,
-/area/antag_ship/icc/medical_room)
-"sY" = (
-/obj/structure/cable,
-/obj/machinery/door/airlock/mainship/generic{
-	dir = 2;
-	name = "\improper Quarters"
-	},
-/turf/open/floor/plating/ground/concrete,
-/area/antag_ship/icc/living_area)
 "sZ" = (
 /obj/docking_port/stationary/crashmode{
 	name = "SOM Crashland point 2";
@@ -4688,6 +4869,10 @@
 	dir = 10
 	},
 /area/antag_ship/clf_base/hallways/outside)
+"uw" = (
+/obj/structure/cable,
+/turf/closed/wall/mainship/gray,
+/area/antag_ship)
 "ux" = (
 /obj/structure/sign/security{
 	dir = 8
@@ -4888,13 +5073,6 @@
 /obj/machinery/power/apc/mainship,
 /turf/open/floor/iron/grimy,
 /area/antag_ship/som/office/commander/field)
-"vn" = (
-/obj/structure/bed/chair/north,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plating/ground/concrete,
-/area/antag_ship/icc/living_area)
 "vo" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/table/holotable,
@@ -4993,10 +5171,6 @@
 	},
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship/icc/warehouse)
-"vI" = (
-/obj/machinery/atmospherics/components/unary/cryo_cell,
-/turf/closed/mineral/smooth/desertdamrockwall/indestructible,
-/area/antag_ship)
 "vJ" = (
 /obj/structure/bed/chair/dropship/passenger,
 /obj/effect/landmark/start/latejoinmoff,
@@ -5008,6 +5182,21 @@
 	},
 /turf/open/floor/plating/ground/desertdam/asphalt/cement_sunbleached,
 /area/antag_ship/clf_base/prison)
+"vM" = (
+/obj/structure/table/mainship,
+/obj/item/storage/surgical_tray,
+/obj/item/reagent_containers/spray/cleaner{
+	desc = "Someone has crossed out the Space from Space Cleaner and written in Surgery. 'Do not remove under punishment of death!!!' is scrawled on the back.";
+	name = "Surgery Cleaner";
+	pixel_x = 12;
+	pixel_y = 2
+	},
+/obj/item/tool/soap/syndie,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/tank/anesthetic,
+/obj/item/clothing/mask/breath/medical,
+/turf/open/floor/mainship/sterile/corner,
+/area/antag_ship/icc/medical_room)
 "vN" = (
 /turf/open/floor/iron/dark/small,
 /area/antag_ship/vsd/hall)
@@ -5061,6 +5250,10 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/antag_ship/som/maintenance/south)
+"vY" = (
+/obj/machinery/computer/body_scanconsole,
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "vZ" = (
 /obj/machinery/door/airlock/mainship/generic,
 /turf/open/floor/plating/ground/concrete,
@@ -5338,6 +5531,10 @@
 /obj/machinery/computer,
 /turf/open/floor/prison/redfloor,
 /area/antag_ship/vsd/bridge)
+"xh" = (
+/obj/structure/curtain/medical,
+/turf/open/floor/mainship/sterile/dark,
+/area/antag_ship/icc/medical_room)
 "xi" = (
 /obj/structure/bed/chair/sofa,
 /obj/machinery/light/red{
@@ -5375,10 +5572,6 @@
 /obj/machinery/vending/uniform_supply/vsd,
 /turf/open/floor/iron/dark/herringbone,
 /area/antag_ship/vsd/port)
-"xo" = (
-/obj/machinery/optable,
-/turf/open/floor/plating/ground/concrete,
-/area/antag_ship/icc/medical_room)
 "xq" = (
 /obj/structure/cable,
 /obj/structure/largecrate/supply/generator,
@@ -5621,6 +5814,19 @@
 /obj/effect/landmark/start/job/som/icc,
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship/icc/warehouse)
+"yo" = (
+/obj/machinery/light/mainship{
+	dir = 1
+	},
+/obj/structure/closet/secure_closet/medical2,
+/turf/open/floor/mainship/sterile/side{
+	dir = 1
+	},
+/area/antag_ship/icc/medical_room)
+"yt" = (
+/obj/structure/bed/chair/office/dark/north,
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "yu" = (
 /obj/effect/turf_decal/trimline/dark_blue/line{
 	dir = 8
@@ -5643,6 +5849,10 @@
 	},
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship/icc/warehouse)
+"yz" = (
+/obj/machinery/light,
+/turf/open/floor/plating/ground/concrete,
+/area/antag_ship/icc/living_area)
 "yA" = (
 /obj/machinery/telecomms/bus/preset_three/som,
 /turf/open/floor/bcircuit/anim,
@@ -5665,6 +5875,12 @@
 	},
 /turf/open/floor/tile/white/hall/full,
 /area/antag_ship/icc/hangar/west)
+"yE" = (
+/obj/structure/table/mainship,
+/obj/machinery/recharger,
+/obj/item/tweezers,
+/turf/open/floor/plating/ground/concrete,
+/area/antag_ship/icc/medical_room)
 "yF" = (
 /obj/structure/filingcabinet,
 /turf/open/floor/wood,
@@ -5705,6 +5921,12 @@
 /obj/docking_port/stationary/supply/vehicle/som,
 /turf/open/floor/mainship/empty,
 /area/antag_ship/som/hangar)
+"yT" = (
+/obj/item/defibrillator/civi,
+/obj/item/defibrillator/civi,
+/obj/structure/table/mainship,
+/turf/open/floor/plating/ground/concrete,
+/area/antag_ship/icc/medical_room)
 "yU" = (
 /obj/machinery/power/smes/buildable,
 /obj/structure/cable,
@@ -5801,6 +6023,9 @@
 /obj/machinery/light/red,
 /turf/open/floor/cult/clock,
 /area/antag_ship/clf_base/reedroom)
+"zw" = (
+/turf/open/floor/mainship/sterile/dark,
+/area/antag_ship/icc/medical_room)
 "zx" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/thinplating_new/dark,
@@ -5818,7 +6043,6 @@
 /area/antag_ship/pmc_ntf/fore/bridge)
 "zA" = (
 /obj/structure/benchpress,
-/obj/effect/spawner/random/decal/blood,
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship/icc/warehouse)
 "zB" = (
@@ -5888,7 +6112,7 @@
 /area/antag_ship/som/medbay)
 "zS" = (
 /obj/structure/closet/cabinet,
-/turf/open/floor/urban/carpet/carpetbeige,
+/turf/open/floor/mainship/sterile/dark,
 /area/antag_ship/icc/living_area)
 "zU" = (
 /turf/open/floor/mainship/empty,
@@ -5947,6 +6171,13 @@
 /obj/structure/mineral_door/wood,
 /turf/open/floor/plating/ground/dirt,
 /area/antag_ship/clf_base/hallways/outside)
+"Aj" = (
+/obj/machinery/power/apc/mainship{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/plating/plating_catwalk,
+/area/antag_ship/icc/medical_room)
 "Al" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -5970,6 +6201,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/mainship/sterile/white,
 /area/antag_ship/som/medbay)
+"Ao" = (
+/turf/closed/wall/mainship/gray,
+/area/space)
 "Ap" = (
 /obj/structure/cable,
 /turf/open/floor/plating/plating_catwalk/prison,
@@ -6019,10 +6253,18 @@
 "AB" = (
 /turf/closed/wall/mainship/gray/outer,
 /area/antag_ship/som/hangar)
+"AE" = (
+/obj/machinery/computer/sleep_console,
+/turf/open/floor/mainship/sterile/dark,
+/area/antag_ship/icc/medical_room)
 "AF" = (
 /obj/machinery/light/small,
 /turf/open/floor/plating/ground/dirt,
 /area/antag_ship/clf_base/hallways/inside)
+"AI" = (
+/obj/machinery/sleeper,
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "AJ" = (
 /obj/effect/decal/cleanable/blood/oil,
 /obj/structure/table/reinforced,
@@ -6044,6 +6286,11 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/antag_ship/som/hangar)
+"AM" = (
+/obj/structure/curtain/open/medical,
+/obj/structure/curtain/open/medical,
+/turf/open/floor/plating/plating_catwalk,
+/area/space)
 "AN" = (
 /turf/closed/wall/brick,
 /area/antag_ship/clf_base/armory)
@@ -6152,6 +6399,12 @@
 /obj/machinery/light/small,
 /turf/open/floor/mainship/mono,
 /area/antag_ship/som/medbay/morgue)
+"Bj" = (
+/obj/machinery/door/airlock/mainship/medical/or/free_access{
+	dir = 1
+	},
+/turf/open/floor/mainship/sterile/dark,
+/area/antag_ship/icc/medical_room)
 "Bk" = (
 /obj/structure/cable,
 /turf/open/floor/mainship/mono,
@@ -6160,6 +6413,12 @@
 /obj/structure/cable,
 /turf/open/floor/prison,
 /area/antag_ship/vsd/hall)
+"Bm" = (
+/obj/machinery/vending/MarineMed/Blood{
+	isshared = 0
+	},
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "Bn" = (
 /obj/machinery/hydroponics,
 /obj/effect/turf_decal/siding/wood{
@@ -6482,11 +6741,6 @@
 "Cy" = (
 /turf/open/floor/plating/ground/concrete,
 /area/space)
-"Cz" = (
-/obj/effect/landmark/start/job/som/icc_medic,
-/obj/structure/cable,
-/turf/open/floor/plating/plating_catwalk,
-/area/antag_ship/icc/medical_room)
 "CA" = (
 /obj/docking_port/stationary/marine_dropship/minidropship/som,
 /turf/open/floor/plating,
@@ -6518,7 +6772,7 @@
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship/icc/generator_room)
 "CF" = (
-/obj/structure/window/framed/mainship/gray,
+/obj/structure/window/framed/mainship/bulletproof,
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship/icc/prisoner_holding)
 "CG" = (
@@ -6594,6 +6848,12 @@
 	},
 /turf/closed/wall/brick,
 /area/antag_ship/clf_base/requisition)
+"CS" = (
+/obj/machinery/light/mainship{
+	dir = 4
+	},
+/turf/open/floor/urban/carpet/carpetblack,
+/area/antag_ship/icc/generator_room)
 "CU" = (
 /obj/structure/bed/chair/sofa/corsat/left,
 /turf/open/floor/plating/asteroidwarning{
@@ -6661,10 +6921,6 @@
 	},
 /turf/open/floor/mainship/sterile/white,
 /area/antag_ship/som/bathroom)
-"Dh" = (
-/obj/machinery/computer/body_scanconsole,
-/turf/open/floor/plating/ground/concrete,
-/area/antag_ship/icc/medical_room)
 "Di" = (
 /obj/machinery/light{
 	dir = 1
@@ -6700,13 +6956,6 @@
 "Do" = (
 /turf/closed/wall/mainship/outer/reinforced,
 /area/antag_ship)
-"Dp" = (
-/obj/structure/closet/secure_closet/chemical,
-/obj/machinery/light/mainship{
-	dir = 1
-	},
-/turf/open/floor/plating/ground/concrete,
-/area/antag_ship/icc/medical_room)
 "Dq" = (
 /turf/open/floor/bcircuit/anim,
 /area/antag_ship/som/telecomms)
@@ -6727,6 +6976,12 @@
 	},
 /turf/open/floor/mainship/red/full,
 /area/antag_ship/som/bridge)
+"Ds" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/closed/wall/mainship/gray,
+/area/antag_ship)
 "Du" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 8
@@ -6748,13 +7003,6 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/antag_ship/som/hangar)
-"Dz" = (
-/obj/machinery/vending/medical/icc,
-/obj/machinery/light/mainship{
-	dir = 8
-	},
-/turf/open/floor/plating/ground/concrete,
-/area/antag_ship/icc/medical_room)
 "DA" = (
 /obj/effect/landmark/start/job/usl,
 /obj/structure/bed/chair/dropship/passenger{
@@ -6864,6 +7112,13 @@
 	dir = 4
 	},
 /area/antag_ship/clf_base/techroom)
+"Ed" = (
+/obj/machinery/iv_drip,
+/obj/machinery/light/mainship/small{
+	dir = 8
+	},
+/turf/open/floor/mainship/sterile/dark,
+/area/antag_ship/icc/medical_room)
 "Ef" = (
 /obj/machinery/vending/marineFood/som,
 /obj/machinery/camera/autoname/mainship/somship{
@@ -6939,6 +7194,11 @@
 	},
 /turf/open/floor/mainship/som,
 /area/antag_ship/som/requisition)
+"Eq" = (
+/obj/structure/curtain/medical,
+/obj/effect/turf_decal/tile/full/black,
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "Es" = (
 /obj/machinery/light/mainship{
 	dir = 4
@@ -7114,6 +7374,10 @@
 /obj/effect/landmark/start/job/usl,
 /turf/open/floor/iron/dark/smooth_edge,
 /area/antag_ship/vsd/port)
+"EU" = (
+/obj/structure/curtain/open/medical,
+/turf/open/floor/plating/plating_catwalk,
+/area/space)
 "EV" = (
 /obj/structure/bed/chair/comfy{
 	dir = 4
@@ -7162,6 +7426,10 @@
 	dir = 8
 	},
 /area/antag_ship/vsd/med)
+"Fh" = (
+/obj/machinery/vending/medical/icc,
+/turf/open/floor/plating/ground/concrete,
+/area/antag_ship/icc/medical_room)
 "Fi" = (
 /obj/machinery/light/mainship{
 	dir = 8
@@ -7257,10 +7525,6 @@
 /obj/structure/stairs/seamless/platform_vert,
 /turf/open/floor/mainship/office,
 /area/antag_ship/som/bridge)
-"FA" = (
-/obj/effect/spawner/random/decal/blood,
-/turf/open/floor/plating/ground/concrete,
-/area/antag_ship/icc/warehouse)
 "FD" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/siding/wood{
@@ -7386,6 +7650,10 @@
 /obj/effect/landmark/weapon_spawn/tier1_weapon_spawn,
 /turf/open/floor/plating/asteroidfloor,
 /area/antag_ship/clf_base/armory)
+"Gb" = (
+/obj/machinery/light/mainship,
+/turf/open/floor/tile/white/hall/full,
+/area/antag_ship/icc/hangar/west)
 "Gc" = (
 /obj/effect/ai_node,
 /obj/machinery/light/small{
@@ -7456,13 +7724,6 @@
 /obj/structure/largecrate/supply/medicine/blood,
 /turf/open/floor/plating/asteroidfloor,
 /area/antag_ship/clf_base/requisition)
-"Gu" = (
-/obj/structure/cable,
-/obj/machinery/power/apc/mainship{
-	dir = 8
-	},
-/turf/open/floor/plating/plating_catwalk,
-/area/antag_ship/icc/medical_room)
 "Gv" = (
 /obj/machinery/light/mainship{
 	dir = 8
@@ -7680,6 +7941,11 @@
 	},
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship/icc/hangar/west)
+"Hi" = (
+/turf/open/floor/mainship/sterile/side{
+	dir = 1
+	},
+/area/antag_ship/icc/medical_room)
 "Hj" = (
 /obj/structure/window/framed/mainship/gray,
 /turf/open/floor/plating/ground/concrete,
@@ -7824,13 +8090,6 @@
 /obj/machinery/door/airlock/multi_tile/mainship/blackgeneric/glass,
 /turf/open/floor/mainship/mono,
 /area/antag_ship/clf_base/techroom)
-"HQ" = (
-/obj/machinery/door/airlock/mainship/command/FCDRoffice{
-	dir = 2;
-	req_access = list(227)
-	},
-/turf/closed/mineral/smooth/desertdamrockwall/indestructible,
-/area/antag_ship/icc/generator_room)
 "HR" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 8
@@ -8100,6 +8359,9 @@
 /obj/structure/fulton_extraction_point,
 /turf/open/floor/iron/dark/small,
 /area/antag_ship/vsd/med)
+"IM" = (
+/turf/open/floor/plating/plating_catwalk,
+/area/antag_ship/icc/living_area)
 "IO" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -8382,6 +8644,10 @@
 /obj/machinery/loadout_vendor/clf,
 /turf/open/floor/plating/ground/desertdam/asphalt/tile,
 /area/antag_ship/clf_base/techroom)
+"JV" = (
+/obj/machinery/bodyscanner,
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "JW" = (
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/dirt,
@@ -8408,6 +8674,13 @@
 /obj/item/tool/crowbar,
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship/icc/hangar/east)
+"Kd" = (
+/obj/machinery/light/mainship{
+	dir = 4
+	},
+/obj/structure/filingcabinet,
+/turf/open/floor/urban/carpet/carpetblack,
+/area/antag_ship/icc/generator_room)
 "Ke" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1{
 	dir = 4
@@ -8550,6 +8823,10 @@
 "KH" = (
 /turf/closed/mineral/smooth/indestructible,
 /area/antag_ship/clf_base/hallways/outside)
+"KI" = (
+/obj/machinery/vending/MarineMed/icc,
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "KL" = (
 /obj/structure/rack,
 /obj/item/storage/toolbox/mechanical,
@@ -8592,9 +8869,7 @@
 /turf/open/floor/mainship/office,
 /area/antag_ship/som/bridge)
 "KT" = (
-/obj/machinery/light/mainship,
-/obj/structure/curtain/medical,
-/obj/effect/turf_decal/tile/full/black,
+/obj/effect/turf_decal/trimline/blue/end,
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship/icc/medical_room)
 "KV" = (
@@ -8616,12 +8891,10 @@
 /obj/structure/cable,
 /turf/open/floor/plating/plating_catwalk,
 /area/antag_ship/icc/generator_room)
-"Lb" = (
-/obj/structure/sink{
-	pixel_y = 15
-	},
+"KZ" = (
+/obj/machinery/bioprinter/stocked,
 /turf/open/floor/plating/ground/concrete,
-/area/antag_ship/icc/medical_room)
+/area/space)
 "Ld" = (
 /obj/structure/table/wood/fancy,
 /obj/item/clothing/glasses/sunglasses/blindfold/light,
@@ -8632,6 +8905,10 @@
 /obj/item/construction_kit/bdsm/bed,
 /turf/open/floor/cult/clock,
 /area/antag_ship/clf_base/reedroom)
+"Le" = (
+/obj/machinery/bioprinter/stocked,
+/turf/open/floor/mainship/sterile/side,
+/area/antag_ship/icc/medical_room)
 "Lf" = (
 /obj/machinery/light/mainship{
 	dir = 8
@@ -8888,6 +9165,12 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/antag_ship/som/security)
+"Me" = (
+/obj/machinery/optable,
+/turf/open/floor/mainship/sterile/corner{
+	dir = 4
+	},
+/area/antag_ship/icc/medical_room)
 "Mf" = (
 /obj/machinery/light/mainship{
 	dir = 1
@@ -8976,6 +9259,10 @@
 "MB" = (
 /turf/open/floor/plating/ground/desertdam/asphalt,
 /area/antag_ship/clf_base/kitchen)
+"MF" = (
+/obj/machinery/bodyscanner,
+/turf/open/floor/mainship/sterile/dark,
+/area/antag_ship/icc/medical_room)
 "MG" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -9029,6 +9316,12 @@
 /obj/structure/platform,
 /turf/open/floor/mainship/mono,
 /area/antag_ship/som/bridge)
+"MT" = (
+/obj/machinery/light/mainship{
+	dir = 8
+	},
+/turf/open/floor/urban/carpet/carpetblack,
+/area/antag_ship/icc/generator_room)
 "MU" = (
 /obj/effect/turf_decal/trimline/brown/warning{
 	dir = 9
@@ -9234,6 +9527,13 @@
 /obj/machinery/vending/marineFood/som,
 /turf/open/floor/mainship/office,
 /area/antag_ship/som/bridge)
+"NE" = (
+/obj/structure/table,
+/obj/machinery/light/mainship{
+	dir = 4
+	},
+/turf/open/floor/tile/white/hall/full,
+/area/antag_ship/icc/hangar/west)
 "NF" = (
 /obj/machinery/door/poddoor/railing{
 	dir = 8;
@@ -9392,6 +9692,10 @@
 	},
 /turf/open/floor/mainship/office,
 /area/antag_ship/som/bridge)
+"Ok" = (
+/obj/machinery/optable,
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "Ol" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/random/engineering/extinguisher,
@@ -9409,7 +9713,10 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/antag_ship/icc/warehouse)
 "Op" = (
-/obj/machinery/door/airlock/mainship/generic,
+/obj/machinery/door/airlock/mainship/generic{
+	dir = 1;
+	name = "Bathroom"
+	},
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship/icc/prisoner_holding)
 "Oq" = (
@@ -9660,6 +9967,13 @@
 /obj/machinery/telecomms/receiver/preset_right/clf,
 /turf/open/floor/plating/asteroidfloor,
 /area/antag_ship/clf_base/armory)
+"Pv" = (
+/obj/structure/bed/chair/north,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plating/ground/concrete,
+/area/antag_ship/icc/living_area)
 "Px" = (
 /obj/structure/largecrate/supply/generator,
 /obj/structure/cable,
@@ -9836,6 +10150,10 @@
 	},
 /turf/open/floor/mainship/sterile/white,
 /area/antag_ship/som/medbay)
+"Ql" = (
+/obj/machinery/chem_dispenser,
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "Qm" = (
 /obj/structure/cable,
 /obj/machinery/power/terminal,
@@ -10016,6 +10334,10 @@
 /obj/effect/ai_node,
 /turf/open/floor/plating/plating_catwalk,
 /area/antag_ship/som/maintenance/north)
+"QW" = (
+/obj/machinery/computer/autodoc_console,
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "QX" = (
 /obj/structure/cable,
 /obj/machinery/dropship_part_fabricator/tadpole{
@@ -10100,6 +10422,11 @@
 	},
 /turf/open/floor/iron/dark/side,
 /area/antag_ship/vsd/armory)
+"Rp" = (
+/obj/item/bedsheet/medical,
+/obj/structure/bed/roller/hospital_empty/bigrollerempty,
+/turf/open/floor/mainship/sterile/dark,
+/area/antag_ship/icc/medical_room)
 "Rq" = (
 /obj/structure/largecrate/supply/explosives/mortar_he,
 /turf/open/floor/plating/plating_catwalk,
@@ -10116,6 +10443,10 @@
 /obj/structure/window/framed/mainship/gray,
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship)
+"Rt" = (
+/obj/machinery/atmospherics/components/unary/cryo_cell,
+/turf/open/floor/plating/ground/concrete,
+/area/antag_ship/icc/medical_room)
 "Rv" = (
 /obj/structure/cable,
 /turf/open/floor/plating/plating_catwalk,
@@ -10519,6 +10850,21 @@
 /obj/structure/cable,
 /turf/open/floor/plating/plating_catwalk,
 /area/antag_ship/pmc_ntf/fore/restroom)
+"Ta" = (
+/obj/structure/table/mainship,
+/obj/item/storage/surgical_tray,
+/obj/item/reagent_containers/spray/cleaner{
+	desc = "Someone has crossed out the Space from Space Cleaner and written in Surgery. 'Do not remove under punishment of death!!!' is scrawled on the back.";
+	name = "Surgery Cleaner";
+	pixel_x = 12;
+	pixel_y = 2
+	},
+/obj/item/tool/soap/syndie,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/tank/anesthetic,
+/obj/item/clothing/mask/breath/medical,
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "Tb" = (
 /obj/structure/sign/prop2,
 /obj/machinery/light/mainship{
@@ -10671,6 +11017,17 @@
 	dir = 1
 	},
 /area/antag_ship/clf_base/sleeproom)
+"TD" = (
+/obj/structure/cable,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/machinery/power/apc,
+/turf/open/floor/plating/plating_catwalk,
+/area/space)
 "TE" = (
 /turf/open/floor/mainship/empty,
 /area/antag_ship/clf_base/requisition)
@@ -10847,9 +11204,12 @@
 /obj/effect/landmark/weapon_spawn/tier3_weapon_spawn,
 /turf/open/floor/plating/ground/dirt,
 /area/antag_ship/clf_base/hallways/outside)
+"Ul" = (
+/obj/structure/curtain/medical,
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "Um" = (
 /obj/item/reagent_containers/hypospray/autoinjector/synaptizine_expired,
-/obj/effect/spawner/random/decal/blood,
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship/icc/warehouse)
 "Un" = (
@@ -10974,6 +11334,13 @@
 	dir = 10
 	},
 /area/antag_ship/pmc_ntf/starboard/medbay)
+"UO" = (
+/obj/machinery/vending/medical/icc,
+/obj/machinery/light/mainship{
+	dir = 8
+	},
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "UP" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -11000,6 +11367,12 @@
 	},
 /turf/open/floor/grayscale/edge,
 /area/antag_ship/clf_base/bathroom)
+"UU" = (
+/obj/machinery/vending/MarineMed/Blood{
+	isshared = 0
+	},
+/turf/open/floor/mainship/sterile/side,
+/area/antag_ship/icc/medical_room)
 "UV" = (
 /obj/structure/sign/science{
 	dir = 4
@@ -11129,6 +11502,38 @@
 	dir = 1
 	},
 /area/antag_ship/icc/hangar/east)
+"Vt" = (
+/obj/structure/rack,
+/obj/item/stack/medical/heal_pack/gauze{
+	pixel_y = -3;
+	pixel_x = -5
+	},
+/obj/item/stack/medical/heal_pack/gauze{
+	pixel_y = -3;
+	pixel_x = -5
+	},
+/obj/item/stack/medical/heal_pack/gauze{
+	pixel_y = -3;
+	pixel_x = -5
+	},
+/obj/item/stack/medical/heal_pack/ointment{
+	pixel_y = -4;
+	pixel_x = 6
+	},
+/obj/item/stack/medical/heal_pack/ointment{
+	pixel_y = -4;
+	pixel_x = 6
+	},
+/obj/item/stack/medical/heal_pack/ointment{
+	pixel_y = -4;
+	pixel_x = 6
+	},
+/obj/item/stack/medical/heal_pack/ointment{
+	pixel_y = -4;
+	pixel_x = 6
+	},
+/turf/open/floor/mainship/sterile/dark,
+/area/antag_ship/icc/medical_room)
 "Vu" = (
 /obj/structure/cable,
 /obj/machinery/power/apc{
@@ -11257,10 +11662,6 @@
 /obj/structure/window/framed/mainship/canterbury/dropship/reinforced,
 /turf/open/space/basic,
 /area/antag_ship)
-"VM" = (
-/obj/effect/landmark/start/job/som/icc_medic,
-/turf/open/floor/plating/ground/concrete,
-/area/antag_ship/icc/living_area)
 "VN" = (
 /obj/structure/closet/secure_closet/chemical,
 /turf/open/floor/iron/dark/textured_edge{
@@ -11296,6 +11697,10 @@
 /obj/structure/largecrate/supply/supplies/flares,
 /turf/open/floor/mainship/sterile/plain,
 /area/antag_ship/pmc_ntf/center/armory)
+"VW" = (
+/obj/effect/landmark/start/job/som/icc_medic,
+/turf/open/floor/plating/plating_catwalk,
+/area/antag_ship/icc/medical_room)
 "VX" = (
 /obj/machinery/chem_dispenser,
 /turf/open/floor/plating/ground/concrete,
@@ -11500,6 +11905,10 @@
 	},
 /turf/open/floor/mainship/sterile/plain,
 /area/antag_ship/pmc_ntf/center/armory)
+"WP" = (
+/obj/machinery/door/airlock/multi_tile/mainship/generic/canteen,
+/turf/open/floor/plating/ground/concrete,
+/area/antag_ship/icc/living_area)
 "WQ" = (
 /obj/structure/cable,
 /turf/open/floor/prison,
@@ -11529,18 +11938,10 @@
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship/icc/hangar/west)
 "WZ" = (
-/obj/structure/table/mainship,
-/obj/item/storage/surgical_tray,
-/obj/item/reagent_containers/spray/cleaner{
-	desc = "Someone has crossed out the Space from Space Cleaner and written in Surgery. 'Do not remove under punishment of death!!!' is scrawled on the back.";
-	name = "Surgery Cleaner";
-	pixel_x = 12;
-	pixel_y = 2
+/obj/machinery/sleeper,
+/obj/machinery/light/mainship{
+	dir = 8
 	},
-/obj/item/tool/soap/syndie,
-/obj/item/reagent_containers/spray/cleaner,
-/obj/item/tank/anesthetic,
-/obj/item/clothing/mask/breath/medical,
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship/icc/medical_room)
 "Xb" = (
@@ -11734,6 +12135,10 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark/small,
 /area/antag_ship/vsd/hall)
+"XU" = (
+/obj/structure/bed/chair/office/dark/east,
+/turf/open/floor/urban/carpet/carpetblack,
+/area/antag_ship/icc/generator_room)
 "XW" = (
 /obj/structure/cable,
 /turf/open/floor/plating/ground/desertdam/asphalt/edge{
@@ -11761,10 +12166,6 @@
 /obj/machinery/telecomms/server/presets/common/som,
 /turf/open/floor/bcircuit/anim,
 /area/antag_ship/som/telecomms)
-"Ya" = (
-/obj/structure/filingcabinet,
-/turf/open/floor/urban/carpet/carpetblack,
-/area/antag_ship/icc/generator_room)
 "Yb" = (
 /obj/effect/decal/cleanable/blood/splatter/cum,
 /obj/structure/mineral_door/wood,
@@ -12002,10 +12403,6 @@
 /obj/item/storage/box/crate/loot/materials_pack,
 /turf/open/floor/plating/ground/concrete,
 /area/antag_ship/icc/hangar/west)
-"YT" = (
-/obj/machinery/bioprinter/stocked,
-/turf/open/floor/plating/ground/concrete,
-/area/antag_ship/icc/medical_room)
 "YV" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/mainship/medical/morgue{
@@ -12057,6 +12454,10 @@
 	},
 /turf/open/floor/prison/blackfloor,
 /area/antag_ship/vsd/hall)
+"Zj" = (
+/obj/machinery/computer/sleep_console,
+/turf/open/floor/plating/ground/concrete,
+/area/space)
 "Zk" = (
 /obj/structure/prop/vehicle/truck{
 	dir = 4
@@ -12085,12 +12486,6 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/antag_ship/som/preparation)
-"Zp" = (
-/obj/machinery/light/mainship{
-	dir = 4
-	},
-/turf/open/floor/plating/ground/concrete,
-/area/antag_ship/icc/medical_room)
 "Zq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/platform_decoration{
@@ -12193,6 +12588,10 @@
 /obj/structure/cable,
 /turf/open/floor/plating/plating_catwalk,
 /area/antag_ship/pmc_ntf/aft/engiroom/port)
+"ZO" = (
+/obj/machinery/sleeper,
+/turf/open/floor/mainship/sterile/dark,
+/area/antag_ship/icc/medical_room)
 "ZP" = (
 /obj/effect/turf_decal/trimline/brown/warning{
 	dir = 1
@@ -18507,7 +18906,7 @@ bb
 aB
 bb
 AQ
-AQ
+dL
 fB
 BK
 bb
@@ -18792,7 +19191,7 @@ fB
 fB
 fB
 fB
-fB
+Gb
 bb
 AQ
 fB
@@ -18891,7 +19290,7 @@ jQ
 jQ
 bb
 AQ
-AQ
+NE
 fB
 yD
 bb
@@ -20230,9 +20629,9 @@ la
 la
 yK
 bb
-fD
-Bt
+it
 ol
+MT
 ie
 wF
 ol
@@ -20325,7 +20724,7 @@ la
 la
 la
 SX
-HQ
+Rg
 ol
 ol
 ol
@@ -20335,7 +20734,7 @@ Lt
 RL
 ol
 ol
-IG
+ol
 bb
 zb
 zb
@@ -20421,15 +20820,15 @@ Fe
 Fe
 la
 CW
-bb
-it
+pT
 ol
-Ya
+XU
+ol
 ol
 jn
 ol
 bb
-ol
+IG
 ol
 kd
 bb
@@ -20517,10 +20916,10 @@ SX
 oe
 CE
 QQ
-bb
-bb
-bb
-bb
+pT
+fD
+Bt
+Kd
 ol
 ol
 ol
@@ -20613,9 +21012,9 @@ qA
 SX
 jo
 SX
-la
-la
-xo
+bb
+bb
+bb
 bb
 bb
 bb
@@ -20630,7 +21029,7 @@ zb
 zb
 zb
 VK
-CN
+VK
 CN
 CN
 CN
@@ -20709,11 +21108,11 @@ qA
 oe
 tK
 QQ
-la
-la
-hq
-WZ
 bb
+eX
+sg
+WZ
+ay
 bb
 Bh
 oo
@@ -20725,8 +21124,8 @@ zb
 zb
 zb
 zb
+zb
 VK
-CN
 CN
 CN
 CN
@@ -20805,24 +21204,24 @@ qA
 tx
 qA
 KY
-la
-sW
-hu
-sW
-sW
+bb
+ty
+sg
+QB
+sg
 bb
 lB
 MW
 mA
-ol
+CS
 dl
 bb
 zb
 zb
 zb
 zb
+zb
 VK
-CN
 CN
 CN
 CN
@@ -20901,11 +21300,11 @@ qA
 yI
 iD
 SX
-la
-VX
+bb
+Rt
 sg
+qm
 sg
-sg
 bb
 bb
 bb
@@ -20913,12 +21312,12 @@ bb
 bb
 bb
 bb
-zb
-zb
-zb
+bb
+bb
+bb
+bb
 zb
 It
-CN
 CN
 CN
 CN
@@ -20997,24 +21396,24 @@ qA
 BQ
 qA
 SX
-la
-Xk
-oU
-gu
+bb
+sg
+sg
+sg
 sg
 hu
 et
-la
-zb
-zb
-zb
-zb
-zb
-zb
-zb
+Ed
+xh
+Rp
+Ed
+bb
+gZ
+dN
+ps
+bb
 zb
 It
-CN
 CN
 CN
 CN
@@ -21093,24 +21492,24 @@ Zs
 Ck
 PT
 hm
-la
-Dp
-sg
-QB
-sg
-sW
-qc
-la
-zb
-zb
-zb
-zb
-zb
-zb
-zb
+bb
+ln
+mj
+mj
+ax
+hu
+xh
+dh
+xh
+xh
+dh
+bb
+lx
+zw
+bP
+bb
 zb
 VK
-CN
 CN
 CN
 CN
@@ -21187,26 +21586,26 @@ la
 la
 qO
 jy
-la
-la
-la
-la
-Lb
+bb
+bb
+bb
+hq
 sg
 sg
-sW
-sW
-la
-zb
-zb
-zb
-zb
-zb
-zb
-zb
+sg
+dh
+zw
+zw
+zw
+zw
+zw
+Bj
+zw
+zw
+Le
+bb
 zb
 VK
-CN
 CN
 CN
 CN
@@ -21284,25 +21683,25 @@ cm
 vx
 Uz
 Gv
-la
-la
-vI
+bb
+bb
+VX
 sg
-eX
 sg
-hu
-et
-la
-zb
-zb
-zb
-zb
-zb
-zb
-zb
+yT
+xh
+pr
+zw
+ZO
+zw
+MF
+bb
+Hi
+zw
+bq
+bb
 zb
 VK
-CN
 CN
 CN
 CN
@@ -21381,24 +21780,24 @@ EX
 EX
 EX
 pi
-la
-Dz
+bb
+Xk
+oU
 sg
-ty
-sg
-sW
-qc
-la
-zb
-zb
-zb
-zb
-zb
-zb
-zb
+yE
+xh
+pr
+zw
+AE
+zw
+lX
+bb
+Hi
+zw
+UU
+bb
 zb
 VK
-CN
 CN
 CN
 CN
@@ -21472,29 +21871,29 @@ jW
 bb
 iJ
 EX
-FA
+LO
 EM
 LO
 wZ
 pD
-la
-SK
+bb
+Fh
 sg
-xZ
 sg
-sW
-sW
-la
-zb
-zb
-zb
-zb
-zb
-zb
-zb
+sg
+dh
+zw
+zw
+Vt
+zw
+zw
+Bj
+zw
+zw
+Le
+bb
 zb
 VK
-CN
 CN
 CN
 CN
@@ -21573,24 +21972,24 @@ zA
 Um
 EX
 pD
-la
-gm
+bb
+SK
 sg
-pP
+xZ
 sg
 hu
-et
-la
-zb
-zb
-zb
-zb
-zb
-zb
-zb
+xh
+dh
+xh
+xh
+dh
+bb
+yo
+zw
+bP
+bb
 zb
 VK
-CN
 CN
 CN
 CN
@@ -21669,24 +22068,24 @@ Oo
 Oo
 EX
 pD
-la
-YT
+bb
+hq
 sg
-Dh
 sg
-sW
-qc
-la
-zb
-zb
-zb
-zb
-zb
-zb
-zb
+sg
+hu
+Rp
+hp
+xh
+Rp
+hp
+bb
+vM
+rp
+Me
+bb
 zb
 VK
-CN
 CN
 CN
 CN
@@ -21765,24 +22164,24 @@ sj
 Iq
 EX
 oJ
-la
-hq
-sg
-sg
-sg
+bb
+ln
+mj
+rc
+ax
 bb
 bb
-Do
-Do
-Do
-Do
-Do
-Do
-zb
-zb
+bb
+bb
+bb
+bb
+bb
+bb
+bb
+bb
+bb
 zb
 VK
-CN
 CN
 CN
 CN
@@ -21861,24 +22260,24 @@ Oo
 si
 EX
 aa
-la
-ln
-mj
-rc
+bb
+hC
+jk
+jk
 KT
 bb
 iz
+QL
 JG
 KC
 gB
 fU
 OX
-Do
+bb
 zb
 zb
 zb
 VK
-CN
 CN
 CN
 CN
@@ -21963,18 +22362,18 @@ sg
 sg
 sg
 bb
+IM
 QL
 Gl
 KC
 tm
 fU
 fU
-Do
+bb
 zb
 zb
 zb
 VK
-CN
 CN
 CN
 CN
@@ -22052,25 +22451,25 @@ jw
 WF
 vG
 EX
-cC
+sM
 rK
-Im
-sg
-sg
-sg
+VW
+rK
+rK
+rK
 bb
+KC
 cs
 KC
 KC
 tp
 YC
 fU
-Do
-zb
+bb
 zb
 zb
 VK
-CN
+VK
 CN
 CN
 CN
@@ -22152,17 +22551,17 @@ qK
 wV
 wV
 wV
-sg
-bb
-bb
+wV
+Aj
+uw
+Ze
 QL
 Ze
 KC
 KC
 KC
 vZ
-Do
-zb
+bb
 zb
 zb
 VK
@@ -22245,20 +22644,20 @@ tB
 aO
 Oo
 cC
-kQ
+ag
 sg
-Cz
-Gu
+Im
+sg
+sg
 bb
 Ze
 QL
-VM
 Ze
 Ze
-zd
 Ze
+Ze
+yz
 Do
-zb
 zb
 zb
 VK
@@ -22342,9 +22741,10 @@ Oo
 Oo
 aa
 bb
-Zp
 sg
-bb
+sg
+sg
+sg
 bb
 Ze
 QL
@@ -22354,7 +22754,6 @@ KC
 KC
 vZ
 Do
-zb
 zb
 zb
 VK
@@ -22437,11 +22836,12 @@ ik
 hR
 Oo
 oK
+Ds
 bb
 bb
 bb
 bb
-KC
+bb
 Ze
 QL
 Ze
@@ -22450,7 +22850,6 @@ tp
 Xs
 fU
 Do
-zb
 zb
 zb
 VK
@@ -22537,8 +22936,9 @@ bb
 nt
 gF
 rg
-KC
-lv
+bb
+Ze
+Ze
 QL
 Ze
 KC
@@ -22546,7 +22946,6 @@ tm
 fU
 fU
 Do
-zb
 zb
 zb
 It
@@ -22633,7 +23032,8 @@ bb
 ZD
 gF
 LB
-KC
+bb
+Ze
 Ze
 QL
 Ze
@@ -22642,7 +23042,6 @@ OX
 fU
 ve
 Do
-zb
 zb
 zb
 It
@@ -22731,14 +23130,14 @@ gF
 gF
 KD
 Ze
+Ze
 QL
 Ze
 KC
 KC
 KC
-KC
 Do
-zb
+Do
 zb
 zb
 VK
@@ -22822,19 +23221,19 @@ zc
 YA
 bb
 bb
-KC
-KC
-KC
-KC
+bb
+bb
+bb
+bb
 Ze
 QL
-Ze
+QL
 Ze
 Ze
 zd
 Ze
+Ze
 Do
-zb
 zb
 zb
 VK
@@ -22894,15 +23293,15 @@ tT
 (112,1,1) = {"
 VK
 Do
-bb
-bb
-bb
-bb
-bb
-bb
-bb
-bb
-bb
+ZE
+HV
+eZ
+Io
+uO
+hL
+hL
+hL
+hL
 yP
 fr
 fr
@@ -22920,17 +23319,17 @@ Hw
 aN
 aN
 Sd
-Bb
+Ze
+Ze
 QL
 QL
-En
 Ze
 Ze
 Ze
 Ze
 li
+Ze
 Do
-zb
 zb
 zb
 VK
@@ -22990,15 +23389,15 @@ tT
 (113,1,1) = {"
 VK
 Do
-ZE
 eS
+kD
 eZ
-Io
-uO
-Op
 eS
+Ss
+Op
+gC
 em
-bb
+hL
 yP
 dH
 fr
@@ -23017,16 +23416,16 @@ Ze
 Ze
 Ze
 Ze
+Ze
 QL
-Hj
-Hj
-Hj
-oT
-oT
-Hj
 KC
+Hj
+Hj
+Ze
+nX
+Hj
+Hj
 Do
-zb
 zb
 zb
 VK
@@ -23094,7 +23493,7 @@ Ss
 eZ
 rP
 jL
-bb
+hL
 no
 fr
 fr
@@ -23114,15 +23513,15 @@ QL
 QL
 QL
 QL
+QL
 Hj
 im
-vn
+sC
 Ze
 Ze
 Ze
 tz
 Do
-zb
 zb
 zb
 VK
@@ -23190,15 +23589,15 @@ Ss
 eZ
 eZ
 eZ
-bb
+hL
 yP
 fr
 fr
 WV
-fr
-IH
-KD
-Ze
+WV
+WV
+nV
+QL
 NH
 mu
 bN
@@ -23206,19 +23605,19 @@ bN
 DJ
 FP
 Vg
-Ze
-Ze
+QL
 Ze
 PZ
+Ze
+Yq
 Hj
 vP
 Ze
 Ze
 tz
 Ze
-im
+hW
 Do
-zb
 zb
 zb
 VK
@@ -23291,10 +23690,10 @@ WV
 WV
 WV
 WV
-WV
-WV
-sY
-QL
+fr
+IH
+Hj
+Ze
 NH
 dC
 dC
@@ -23302,11 +23701,12 @@ Ev
 dC
 FP
 kt
+QL
+Ze
+Bb
 Ze
 Ze
-Ze
-Ze
-KD
+WP
 Ze
 sC
 im
@@ -23314,7 +23714,6 @@ im
 sC
 vP
 Do
-zb
 zb
 zb
 VK
@@ -23382,27 +23781,28 @@ eS
 eZ
 CF
 eZ
-bb
+hL
 yP
 fr
 fr
-uM
-fr
-IH
-KD
-Ze
-jt
+WV
+WV
+WV
+nV
+QL
+NH
 Ik
 Ik
 Ik
 go
 FP
 Vg
-Ze
+QL
 Ze
 Hg
 Ze
-KD
+Ze
+Ze
 Ze
 Ze
 im
@@ -23410,7 +23810,6 @@ im
 Ze
 QH
 Do
-zb
 zb
 zb
 VK
@@ -23478,24 +23877,25 @@ eS
 eS
 eS
 tQ
-bb
+hL
 yP
 fr
 fr
-uM
+fr
 fr
 IH
 bb
 lv
-Ze
-Ze
-Ze
-Ze
-Ze
-Ze
-Ze
-Ze
+QL
+QL
+QL
+QL
+QL
+QL
+QL
+QL
 tz
+Ze
 Ze
 Ze
 Hj
@@ -23506,7 +23906,6 @@ vP
 Ze
 HH
 Do
-zb
 zb
 zb
 VK
@@ -23574,12 +23973,12 @@ KO
 eS
 eS
 OQ
-bb
+hL
 NS
-uM
-uM
-uM
-uM
+fr
+fr
+fr
+fr
 GU
 bb
 NL
@@ -23593,16 +23992,16 @@ Ze
 YK
 lJ
 sC
+Ze
 Yq
-KC
+Hj
 im
-sC
+Pv
 as
 oY
-Hp
+Ze
 OL
 Do
-zb
 zb
 zb
 VK
@@ -23698,7 +24097,7 @@ Do
 Do
 Do
 Do
-zb
+Do
 zb
 zb
 VK
@@ -24271,10 +24670,10 @@ CN
 CN
 CN
 CN
-CN
-CN
-CN
-CN
+zb
+Ok
+Ao
+Ao
 CN
 CN
 CN
@@ -24367,10 +24766,10 @@ CN
 CN
 CN
 CN
-CN
-CN
-CN
-CN
+zb
+dv
+Ta
+Ao
 CN
 CN
 CN
@@ -24463,10 +24862,10 @@ CN
 CN
 CN
 CN
-CN
-CN
-CN
-CN
+Ul
+nN
+Ul
+Ul
 CN
 CN
 CN
@@ -24559,10 +24958,10 @@ CN
 CN
 CN
 CN
-CN
-CN
-CN
-CN
+Ql
+Cy
+Cy
+Cy
 CN
 CN
 CN
@@ -24655,12 +25054,12 @@ CN
 CN
 CN
 CN
-CN
-CN
-CN
-CN
-CN
-CN
+gT
+yt
+AI
+Cy
+nN
+iR
 CN
 CN
 CN
@@ -24751,12 +25150,12 @@ CN
 CN
 CN
 CN
-CN
-CN
-CN
-CN
-CN
-CN
+bc
+Cy
+Zj
+Cy
+Ul
+bH
 CN
 CN
 CN
@@ -24847,12 +25246,12 @@ CN
 CN
 CN
 CN
-CN
-CN
-CN
-CN
-CN
-CN
+zb
+rM
+Cy
+Cy
+Ul
+Ul
 CN
 CN
 CN
@@ -24943,12 +25342,12 @@ CN
 CN
 CN
 CN
-CN
-CN
-CN
-CN
-CN
-CN
+fs
+Cy
+aR
+Cy
+nN
+iR
 CN
 CN
 CN
@@ -25039,12 +25438,12 @@ CN
 CN
 CN
 CN
-CN
-CN
-CN
-CN
-CN
-CN
+UO
+Cy
+QW
+Cy
+Ul
+bH
 CN
 CN
 CN
@@ -25135,12 +25534,12 @@ CN
 CN
 CN
 CN
-CN
-CN
-CN
-CN
-CN
-CN
+KI
+Cy
+cl
+Cy
+Ul
+Ul
 CN
 CN
 CN
@@ -25231,12 +25630,12 @@ CN
 CN
 CN
 CN
-CN
-CN
-CN
-CN
-CN
-CN
+Bm
+Cy
+JV
+Cy
+nN
+iR
 CN
 CN
 CN
@@ -25327,12 +25726,12 @@ CN
 CN
 CN
 CN
-CN
-CN
-CN
-CN
-CN
-CN
+KZ
+Cy
+vY
+Cy
+Ul
+bH
 CN
 CN
 CN
@@ -25423,12 +25822,12 @@ CN
 CN
 CN
 CN
-CN
-CN
-CN
-CN
-CN
-CN
+dv
+Cy
+Cy
+Cy
+Ao
+Ao
 CN
 CN
 CN
@@ -25519,12 +25918,12 @@ CN
 CN
 CN
 CN
-CN
-CN
-CN
-CN
-CN
-CN
+Eq
+EU
+AM
+de
+Ao
+TD
 CN
 CN
 CN
