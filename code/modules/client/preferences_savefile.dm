@@ -853,7 +853,7 @@
 	metadata_maybes = sanitize_text(metadata_maybes, initial(metadata_maybes))
 	metadata_favs = sanitize_text(metadata_favs, initial(metadata_favs))
 	metadata_ooc_style = sanitize_integer(metadata_ooc_style, FALSE, TRUE, initial(metadata_ooc_style))
-	if(isnewplayer(parent.mob))
+	if(parent && isnewplayer(parent.mob))
 		parent.mob.ooc_notes = metadata
 		parent.mob.ooc_notes_likes = metadata_likes
 		parent.mob.ooc_notes_dislikes = metadata_dislikes
