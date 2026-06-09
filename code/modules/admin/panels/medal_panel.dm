@@ -60,7 +60,7 @@ ADMIN_VERB(medal_management_panel, R_FUN, "Medal Management", "Manage a players 
 					break
 
 			var/make_sure_msg = "Are you sure you want to delete " + ckey + "'s medal? Citation: " + medal_to_delete.medal_citation + ". Issued by: " + medal_to_delete.issued_by_real_name + ", to " + medal_to_delete.issued_to_real_name + "."
-			if(tgui_alert(usr, make_sure_msg, "PERMANENT MEDAL DELETION FOR [ckey]", list("No", "Yes", "No") != "Yes"))
+			if(tgui_alert(usr, make_sure_msg, "PERMANENT MEDAL DELETION FOR [ckey]", list("No", "Yes")) != "Yes")
 				return FALSE
 			medal_datum.mark_medal_as_deleted(medal_to_delete)
 			message_admins("[key_name_admin(usr)] has deleted a medal (UID:[medal_to_delete.id]) for [ckey] issued at [medal_to_delete.issued_at].")
