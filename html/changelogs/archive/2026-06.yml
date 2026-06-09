@@ -25,3 +25,9 @@
   - qol: Xenos can now toggle hive target participation through the hive menu.
   - balance: Alien ambrosia stacks are capped at 125 and living healing has a 10 second
       per-target cooldown.
+2026-06-09:
+  SpooksAnno:
+  - bugfix: 'Makes it harder for the character creator to create invalid or legacy
+      saved appearance data: Character appearance rebuilds now avoid unsafe startup/shutdown
+      timing and will try to log more useful failure context. Hopefully this will
+      solve our issue without needing to butcher things up'
