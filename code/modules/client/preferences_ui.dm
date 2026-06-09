@@ -38,6 +38,7 @@
 	return sanitize_hexcolor(new_color, 6, TRUE, fallback)
 
 /atom/movable/screen/map_view/preference_preview/proc/update_body()
+	. = FALSE
 	if(!preferences)
 		return
 
@@ -83,6 +84,7 @@
 	canvas.add_overlay(body.appearance)
 	appearance = canvas.appearance
 	dir = preferences.preference_preview_dir
+	return TRUE
 
 /atom/movable/screen/map_view/preference_preview/proc/get_canvas_size()
 	// Keep the dummy sprite at native scale. Swap the background canvas instead

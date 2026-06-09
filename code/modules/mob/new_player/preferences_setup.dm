@@ -141,12 +141,18 @@
 
 
 /datum/preferences/proc/update_preview_icon()
-	try
-		sanitize_character_appearance_for_render()
-		screen_main?.update_body()
-	catch(var/exception/e)
-		var/debug_ckey = parent?.ckey || "unknown ckey"
-		log_runtime("Character preview update failed for [debug_ckey] slot [default_slot]: [e.name] ([e.file]:[e.line]) prefs=[character_debug_summary()]")
+	if(!SSticker || SSticker.current_state == GAME_STATE_STARTUP)
+		return // if it's too early just skip it, players can trigger another update later
+	var/debug_ckey
+	if(!sanitize_character_appearance_for_render())
+		debug_ckey = parent?.ckey || "unknown ckey"
+		log_runtime("sanitize_character_appearance_for_render() failed! Character preview update failed for [debug_ckey] slot [default_slot]. prefs=[character_debug_summary()]")
+	if(!istype(screen_main))
+		debug_ckey = parent?.ckey || "unknown ckey"
+		log_runtime("istype(screen_main) failed! screen_main = [logdetails(screen_main)]. Character preview update failed for [debug_ckey] slot [default_slot]. prefs=[character_debug_summary()]")
+	if(!screen_main.update_body())
+		debug_ckey = parent?.ckey || "unknown ckey"
+		log_runtime("screen_main.update_body() failed! Character preview update failed for [debug_ckey] slot [default_slot]. prefs=[character_debug_summary()]")
 
 
 /datum/preferences/proc/randomize_species_specific()
@@ -168,6 +174,7 @@
 	return "species=[species]; gender=[gender]; synth=[synthetic_type]/[synthetic_body_base]; robot=[robot_body_base]/[robot_head_base]; tail=[tail]; snout=[snout]; ears=[ears]; horns=[horns]; wings=[wings]; antenna=[synth_antenna]; fluff=[fluff]; legs=[digitigrade_legs]; markings=[marking_summary]"
 
 /datum/preferences/proc/sanitize_character_appearance_for_render()
+	. = FALSE
 	species = sanitize_inlist(species, GLOB.all_species, initial(species))
 	body_color = sanitize_hexcolor(body_color, 6, TRUE, initial(body_color))
 	moth_wings = sanitize_inlist(moth_wings, GLOB.moth_wings_list, initial(moth_wings))

@@ -12,3 +12,15 @@
 	name = "Light replacer"
 	contains = list(/obj/item/lightreplacer)
 	cost = 50
+
+/datum/supply_packs/engineering/smes_circuit
+	name = "SMES circuitboard"
+	notes = "Coils sold separately.  A SMES requires a circuitboard and 1-6 coils."
+	contains = list(/obj/item/circuitboard/machine/smes)
+	cost = 200
+
+/datum/supply_packs/engineering/smes_coil
+	name = "SMES storage coil"
+	notes = "Circuitboards sold separately.  A SMES requires a circuitboard and 1-6 coils."
+	contains = list(/obj/item/stock_parts/smes_coil)
+	cost = 200
