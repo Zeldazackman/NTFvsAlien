@@ -24,3 +24,9 @@
 	notes = "Circuitboards sold separately.  A SMES requires a circuitboard and 1-6 coils."
 	contains = list(/obj/item/stock_parts/smes_coil)
 	cost = 200
+
+/datum/supply_packs/engineering/fusion_fuel_cell
+	name = "WL-6 universal fusion fuel cell"
+	notes = "A rechargable fuel cell designed to work as a power source for the Cheyenne-Class transport or for Westingland S-52 Reactors."
+	contains = list(/obj/item/fuel_cell/full)
+	cost = 50
