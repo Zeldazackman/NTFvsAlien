@@ -292,8 +292,10 @@
 
 	if(!is_on)
 		. += span_info("It seems like it's offline.")
+		. += span_info("At max power it would produce [DisplayPower(FUSION_ENGINE_MAX_POWER_GEN)]")
 	else
 		. += span_info("The power gauge reads: [power_gen_percent]%")
+		. += span_info("It is outputting [DisplayPower(FUSION_ENGINE_MAX_POWER_GEN * 0.01 * power_gen_percent)]")
 	if(fusion_cell)
 		. += span_info("You can see a fuel cell in the receptacle.")
 		if(user.skills.getRating(SKILL_ENGINEER) >= SKILL_ENGINEER_EXPERT)
