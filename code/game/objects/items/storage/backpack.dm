@@ -266,13 +266,14 @@
 		warning = "<span class='notice'>[src]'s defibrillator recharge unit cheerfully pings as it successfully recharges the defibrillator. "
 	cell.charge -= min(cell.charge, amount)
 	if(mention_charge)
-		to_chat(user, span_notice("[warning]<b>Charge Remaining: [cell.charge]/[cell.maxcharge]</b>"))
+		to_chat(user, span_notice("[warning]<b>Charge Remaining: [cell.charge]/[cell.maxcharge]</b> Energy : [DisplayEnergyFrac(cell.charge * (2/GLOB.CELLRATE), cell.maxcharge * (2/GLOB.CELLRATE))]"))
 	update_icon()
 
 /obj/item/storage/backpack/marine/corpsman/examine(mob/user)
 	. = ..()
 	if(cell)
-		. += span_notice("Its defibrillator recharge unit has a loaded power cell and its readout counter is active. <b>Charge Remaining: [cell.charge]/[cell.maxcharge]</b>")
+		. += span_notice("Its defibrillator recharge unit has a loaded power cell and its readout counter is active. <b>Charge Remaining: [cell.charge]/[cell.maxcharge]</b> Energy : [DisplayEnergyFrac(cell.charge * (2/GLOB.CELLRATE), cell.maxcharge * (2/GLOB.CELLRATE))]")
+		. += span_notice("Cell energy : [DisplayEnergyFrac(cell.charge * (2/GLOB.CELLRATE), cell.maxcharge * (2/GLOB.CELLRATE))]")
 	else
 		. += span_warning("Its defibrillator recharge unit does not have a power cell installed!")
 
@@ -320,7 +321,7 @@
 				cell.update_icon()
 				user.put_in_hands(cell)
 			cell = W
-			to_chat(user, span_notice("[replace_install] <b>Charge Remaining: [cell.charge]/[cell.maxcharge]</b>"))
+			to_chat(user, span_notice("[replace_install] <b>Charge Remaining: [cell.charge]/[cell.maxcharge]</b> Energy : [DisplayEnergyFrac(cell.charge * (2/GLOB.CELLRATE), cell.maxcharge * (2/GLOB.CELLRATE))]"))
 			playsound(user, 'sound/weapons/guns/interact/rifle_reload.ogg', 25, 1, 5)
 			update_icon()
 	return ..()
