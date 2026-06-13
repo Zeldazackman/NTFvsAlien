@@ -31,3 +31,7 @@
       saved appearance data: Character appearance rebuilds now avoid unsafe startup/shutdown
       timing and will try to log more useful failure context. Hopefully this will
       solve our issue without needing to butcher things up'
+2026-06-13:
+  CaputCapital:
+  - rscadd: kitchen utensils, kitchen knives, rolling pin, ingredients, condiments
+      and mystery pizza boxes (box with a random pizza type)
