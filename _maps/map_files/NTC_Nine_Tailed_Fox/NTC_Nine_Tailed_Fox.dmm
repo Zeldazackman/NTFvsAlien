@@ -2397,7 +2397,7 @@
 	})
 "bZN" = (
 /obj/machinery/smartfridge/chemistry,
-/obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
+/obj/machinery/door/poddoor/shutters/mainship/open{
 	id = "researchlockdownext";
 	name = "\improper Research Lockdown"
 	},
@@ -3534,7 +3534,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
+/obj/machinery/door/poddoor/shutters/mainship/open{
 	dir = 2;
 	id = "bigdorm5";
 	name = "\improper Quarters Privacy Shutters"
@@ -7580,7 +7580,7 @@
 	name = "Research"
 	})
 "gnT" = (
-/obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
+/obj/machinery/door/poddoor/shutters/mainship/open{
 	dir = 2;
 	id = "bigdorm5";
 	name = "\improper Quarters Privacy Shutters"
@@ -9963,7 +9963,7 @@
 	},
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "inR" = (
-/obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
+/obj/machinery/door/poddoor/shutters/mainship/open{
 	dir = 2;
 	id = "bigdorm4";
 	name = "\improper Quarters Privacy Shutters"
@@ -12608,7 +12608,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
+/obj/machinery/door/poddoor/shutters/mainship/open{
 	dir = 2;
 	id = "bigdorm6";
 	name = "\improper Quarters Privacy Shutters"
@@ -18005,7 +18005,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
+/obj/machinery/door/poddoor/shutters/mainship/open{
 	dir = 2;
 	id = "bigdorm4";
 	name = "\improper Quarters Privacy Shutters"
@@ -18044,7 +18044,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
+/obj/machinery/door/poddoor/shutters/mainship/open{
 	dir = 2;
 	id = "bigdorm3";
 	name = "\improper Quarters Privacy Shutters"
@@ -20016,7 +20016,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
+/obj/machinery/door/poddoor/shutters/mainship/open{
 	dir = 2;
 	id = "bigdorm2";
 	name = "\improper Quarters Privacy Shutters"
@@ -25191,7 +25191,7 @@
 "uBe" = (
 /obj/machinery/door/firedoor/mainship,
 /obj/structure/table/reinforced,
-/obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
+/obj/machinery/door/poddoor/shutters/mainship/open{
 	id = "researchlockdownext";
 	name = "\improper Research Lockdown"
 	},
@@ -28040,7 +28040,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/shutters/mainship/open/indestructible{
+/obj/machinery/door/poddoor/shutters/mainship/open{
 	dir = 2;
 	id = "bigdorm1";
 	name = "\improper Quarters Privacy Shutters"
