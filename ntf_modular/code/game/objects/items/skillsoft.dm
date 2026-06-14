@@ -50,4 +50,4 @@
 /obj/item/skillsoft/constitution_two
 	name = "Skillsoft (Extreme Constitution)"
 	desc = "A skillsoft which grants a trait."
-	granted_campaign_quirk = /datum/perk/trait/hp_boost
+	granted_campaign_quirk = /datum/perk/trait/hp_boost/two

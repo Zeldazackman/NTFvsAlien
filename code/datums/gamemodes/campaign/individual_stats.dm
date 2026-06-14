@@ -94,7 +94,7 @@
 				to_chat(user, span_warning("One or more prerequisites missing for this perk."))
 				return FALSE
 	if(!for_free)
-		if(!use_funds(new_perk.unlock_cost))
+		if(use_funds(new_perk.unlock_cost))
 			to_chat(user, span_warning("Insufficient funds for this perk."))
 			return FALSE
 
