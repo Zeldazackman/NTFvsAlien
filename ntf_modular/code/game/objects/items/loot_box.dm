@@ -95,6 +95,7 @@
 	new /obj/item/roller/medevac(src)
 	new /obj/item/medevac_beacon(src)
 	new /obj/item/clothing/under/marine/sneaking(src)
+	new /obj/item/skillsoft/lightfooted(src)
 	new /obj/item/attachable/motiondetector/advanced/pocket/covert(src)
 
 /obj/item/storage/box/crate/loot/infiltration_lethal_pack_spec/Initialize(mapload)
@@ -131,6 +132,7 @@
 	new /obj/item/reagent_containers/hypospray/autoinjector/polyacid(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/polyacid(src)
 	new /obj/item/clothing/under/marine/sneaking(src)
+	new /obj/item/skillsoft/lightfooted(src)
 	new /obj/item/attachable/motiondetector/advanced/pocket/covert(src)
 
 /obj/item/storage/box/crate/loot/gheist_pack_spec/Initialize(mapload)
