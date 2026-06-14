@@ -30,7 +30,7 @@
 	var/resting_buff = 1
 	///If these weeds are not destroyed but just swapped
 	var/swapped = FALSE
-	cross_slowdown = SLOWDOWN_NORMAL
+	var/cross_slowdown = SLOWDOWN_NORMAL
 
 /obj/alien/weeds/on_loc_entered(datum/source, atom/movable/crosser)
 	. = ..()
