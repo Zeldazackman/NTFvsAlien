@@ -238,8 +238,7 @@ GLOBAL_LIST_INIT(specialist_gear_listed_products, list(
 	/obj/item/storage/box/crate/loot/infiltration_pack_spec = list(CAT_SPSUP, "Infiltrator Tranq Class (Sneaking suit, G22 Tranq Pistol, Nonlethal Gear, NVG, Scout Cloak)", 25, "black"),
 	/obj/item/storage/box/crate/loot/infiltration_lethal_pack_spec = list(CAT_SPSUP, "Infiltrator Lethal Class (Sneaking suit, M4A3 AP Pistol, Lethal Gear, NVG, Scout Cloak)", 25, "black"),
 	/obj/item/storage/box/crate/loot/gheist_pack_spec = list(CAT_SPSUP, "Dragoon Hybrid Class (NVG, Light Footed skillsoft, Rifle Pamphlet, Dragoon Mk1 RER)", 25, "orange"),
-	/obj/item/storage/box/crate/loot/sadarclassic_pack_spec = list(CAT_SPSUP, "Enforcer Demolition Class (SADAR, Rockets, Impr. Constitution skillsoft)", 25, "black"),
-	/obj/item/storage/box/crate/loot/minigun_pack_spec = list(CAT_SPSUP, "Enforcer Suppression Class (Minigun, Minigun Powerpack, Impr. Constitution skillsoft)", 25, "black"),
+	/obj/item/storage/box/crate/loot/mg_pack_spec = list(CAT_SPSUP, "Enforcer Gunner Class (MG27-E, Impr. Constitution skillsoft)", 25, "black"),
 	/obj/item/storage/box/crate/loot/shield_pack_spec = list(CAT_SPSUP, "Enforcer Defender Class (Soulsteel shield, Extreme Constitution skillsoft, valkyrie module)", 25, "black"),
 	/obj/item/ammo_magazine/pistol/g22tranq = list(CAT_SPSUP, "G22 Tranq Magazine", 1, "black"),
 	/obj/item/ammo_magazine/pistol/m1911/ap = list(CAT_SPSUP, "M4A3 AP Magazine", 1, "black"),
@@ -252,11 +251,6 @@ GLOBAL_LIST_INIT(specialist_gear_listed_products, list(
 	/obj/item/ammo_magazine/rifle/chamberedrifle/bluescreen = list(CAT_SPSUP, "Moonbeam bluescreen sniper magazine", 1, "black"),
 	/obj/item/ammo_magazine/rifle/boltclip/dragoon = list(CAT_SPSUP, "Dragoon RER ammunition clip", 1, "black"),
 	/obj/item/ammo_magazine/rifle/boltclip/dragoon/pox = list(CAT_SPSUP, "Dragoon RER poxomelanin ammunition clip", 3, "black"),
-	/obj/item/ammo_magazine/rocket/sadar = list(CAT_SPSUP, "SADAR Rocket", 3, "black"),
-	/obj/item/ammo_magazine/rocket/sadar/unguided = list(CAT_SPSUP, "SADAR Unguided Rocket", 3, "black"),
-	/obj/item/ammo_magazine/rocket/sadar/ap = list(CAT_SPSUP, "SADAR AP Rocket", 4, "black"),
-	/obj/item/ammo_magazine/rocket/sadar/wp = list(CAT_SPSUP, "SADAR WP Rocket", 5, "black"),
-	/obj/item/ammo_magazine/rocket/sadar/wp/unguided = list(CAT_SPSUP, "SADAR Unguided WP Rocket", 5, "black"),
 	/obj/item/ammo_magazine/minigun_powerpack = list(CAT_SPSUP, "Minigun Powerpack", 8, "black"),
 	))
 

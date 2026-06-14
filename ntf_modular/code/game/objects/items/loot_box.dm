@@ -400,18 +400,6 @@
 	new /obj/item/storage/box/explosive_mines(src)
 	new /obj/item/attachable/motiondetector/advanced/covert(src)
 
-/obj/item/storage/box/crate/loot/sadarclassic_pack_spec/PopulateContents()
-	. = ..()
-	new /obj/item/weapon/gun/launcher/rocket/sadar(src)
-	new /obj/item/ammo_magazine/rocket/sadar(src)
-	new /obj/item/ammo_magazine/rocket/sadar(src)
-	new /obj/item/ammo_magazine/rocket/sadar/unguided(src)
-	new /obj/item/ammo_magazine/rocket/sadar/unguided(src)
-	new /obj/item/ammo_magazine/rocket/sadar/ap(src)
-	new /obj/item/ammo_magazine/rocket/sadar/wp(src)
-	new /obj/item/ammo_magazine/rocket/sadar/wp/unguided(src)
-	new /obj/item/skillsoft/constitution_one(src)
-
 /obj/item/storage/box/crate/loot/shield_pack_spec/PopulateContents()
 	new /obj/item/weapon/shield/riot/marine/soulsteel(src)
 	new /obj/item/skillsoft/constitution_one(src)
@@ -438,9 +426,27 @@
 		unequipper.remove_movespeed_modifier(type)
 	. = ..()
 
-/obj/item/storage/box/crate/loot/minigun_pack_spec/PopulateContents()
-	new /obj/item/weapon/gun/minigun(src)
-	new /obj/item/ammo_magazine/minigun_powerpack(src)
-	new /obj/item/ammo_magazine/minigun_powerpack(src)
-	new /obj/item/ammo_magazine/minigun_powerpack(src)
+/obj/item/storage/box/crate/loot/mg_pack_spec/PopulateContents()
+	new /obj/item/weapon/gun/standard_mmg/machinegunner/spec(src)
+	new /obj/item/ammo_magazine/standard_mmg(src)
+	new /obj/item/ammo_magazine/standard_mmg(src)
+	new /obj/item/ammo_magazine/standard_mmg(src)
+	new /obj/item/ammo_magazine/standard_mmg(src)
+	new /obj/item/ammo_magazine/standard_mmg(src)
 	new /obj/item/skillsoft/constitution_one(src)
+
+/obj/item/weapon/gun/standard_mmg/machinegunner/spec
+	name = "\improper MG-27-E medium machinegun"
+	desc = "The MG-27-E is the home improved version of the olden MG-27, it sports lighter post-factory components and a soulsteel rifle shield that must be installed and uninstalled between deployments, allowing it to take a lot of punishment while deployed and work as if a shield for the gunner, it can be shot without being deployed in a pinch but It's impossible to utilize the gun and the bullet shield together due the weight while undeployed, therefore it is uninstalled while taking the weapon in hand. It uses 10x27mm boxes."
+	icon = 'ntf_modular/icons/obj/machines/deployable/mounted_machinegun.dmi'
+	icon_state = "t27e"
+	worn_icon_state = "t27e"
+	worn_icon_list = list(
+		slot_l_hand_str = 'ntf_modular/icons/mob/inhands/guns/machineguns_left_1.dmi',
+		slot_r_hand_str = 'ntf_modular/icons/mob/inhands/guns/machineguns_right_1.dmi',
+	)
+	scatter = 8
+	deployed_scatter_change = -50
+	wield_delay = 1.8 SECONDS
+	soft_armor = list(MELEE = 30, BULLET = 75, LASER = 75, ENERGY = 65, BOMB = 60, BIO = 100, FIRE = 0, ACID = 0)
+	max_integrity = 500
