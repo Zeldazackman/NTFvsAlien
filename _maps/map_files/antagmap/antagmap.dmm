@@ -140,6 +140,7 @@
 /obj/effect/turf_decal/trimline/brown/warning{
 	dir = 6
 	},
+/obj/item/fulton_extraction_pack/adminbus/advanced,
 /turf/open/floor/mainship/mono,
 /area/antag_ship/icc/warehouse)
 "aP" = (
@@ -5075,6 +5076,10 @@
 	},
 /turf/open/floor/prison/blackfloor,
 /area/antag_ship/vsd/hall)
+"uy" = (
+/obj/machinery/vending/armor_supply/civilian,
+/turf/open/floor/plating/ground/dirt,
+/area/antag_ship/icc/hangar/east)
 "uz" = (
 /obj/structure/largecrate/supply/supplies/plastic,
 /turf/open/floor/plating/ground/dirt,
@@ -8105,6 +8110,7 @@
 /obj/effect/turf_decal/trimline/brown/warning{
 	dir = 5
 	},
+/obj/item/fulton_extraction_pack/adminbus/advanced,
 /turf/open/floor/mainship/mono,
 /area/antag_ship/icc/warehouse)
 "GF" = (
@@ -8315,6 +8321,12 @@
 "Hr" = (
 /turf/closed/shuttle/dropship_dark/logo_wall,
 /area/shuttle/transport)
+"Hs" = (
+/obj/machinery/marine_selector/clothes/synth{
+	vendor_role = /datum/job/clf/silicon/synthetic/clf
+	},
+/turf/open/floor/plating/ground/dirt,
+/area/antag_ship/icc/hangar/east)
 "Hu" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 6
@@ -11563,6 +11575,12 @@
 	dir = 4
 	},
 /area/antag_ship/clf_base/techroom)
+"TM" = (
+/obj/machinery/marine_selector/clothes/synth{
+	vendor_role = /datum/job/clf/silicon/synthetic/clf
+	},
+/turf/open/floor/mainship/mono,
+/area/antag_ship/icc/warehouse)
 "TN" = (
 /obj/item/storage/backpack/marine/engineerpack,
 /obj/structure/closet/secure_closet/engineering_personal/som,
@@ -23784,7 +23802,7 @@ WV
 fr
 IH
 hL
-Jq
+TM
 yy
 Jq
 zc
@@ -24935,7 +24953,7 @@ Zb
 Zb
 fr
 Zb
-Bf
+uy
 Dx
 Zb
 Zb
@@ -25128,7 +25146,7 @@ Zb
 WE
 Zb
 fh
-Zb
+Bf
 eI
 Zb
 Zb
@@ -25318,7 +25336,7 @@ Zb
 Zb
 Zb
 Zb
-Zb
+Hs
 eI
 Zb
 hU
