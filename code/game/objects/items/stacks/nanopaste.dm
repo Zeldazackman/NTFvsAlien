@@ -20,10 +20,7 @@
 		if(H.species.species_flags & IS_SYNTHETIC)
 			H.set_blood_volume(BLOOD_VOLUME_NORMAL)
 
-		if(!S)
-			return
-
-		if(S.surgery_open_stage == 0)
+		if(S && S.surgery_open_stage == 0)
 			if(!(S.limb_status & LIMB_ROBOT))
 				H.balloon_alert(user, "limb not robotic!")
 				return
@@ -39,8 +36,6 @@
 				else
 					to_chat(user, span_notice("Nothing to fix here."))
 					break
-			else
-				break
 
 		if (H.can_be_operated_on())
 			if (do_surgery(H,user,src))
