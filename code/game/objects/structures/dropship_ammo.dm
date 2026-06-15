@@ -735,8 +735,8 @@
 	for(var/obj/machinery/deployable/mounted/sentry/ads_system/ads in range(GLOB.ads_intercept_range,impact))
 		if(!COOLDOWN_FINISHED(ads, intercept_cooldown))
 			continue
-		if(ads.try_intercept(impact, src, 2, 10)) //longer than usual cd cause occupies systems ig
-			//just wastes ammo, what is it gonna do? shoot the flare down?
+		ads.try_intercept(impact, src, 2, 10) //longer than usual cd cause occupies systems ig
+		//just wastes ammo, what is it gonna do? shoot the flare down?
 	addtimer(CALLBACK(src, PROC_REF(drop_cas_flare), impact), 1.5 SECONDS)
 
 /obj/structure/ship_ammo/cas/minirocket/illumination/proc/drop_cas_flare(turf/impact)
