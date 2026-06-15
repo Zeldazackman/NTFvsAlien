@@ -32,6 +32,8 @@
 				else
 					to_chat(user, span_notice("Nothing to fix here."))
 					break
+			else
+				break
 
 		if (H.can_be_operated_on())
 			if (do_surgery(H,user,src))
