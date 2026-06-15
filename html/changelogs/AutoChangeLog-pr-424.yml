@@ -1,6 +1,0 @@
-author: "CaputCapital"
-delete-after: True
-changes:
-  - rscadd: "Added new underwear to the vendors, croptops, bras, thongs, even stirrups half an inch lower"
-  - rscadd: "KZ now gets ushankas, headbands, bandanas and hardlight gas masks in their vendors"
-  - bugfix: "The regular thong had a missing side sprite, added back"
