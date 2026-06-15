@@ -658,7 +658,7 @@
 			S.set_up(1, impact)
 			S.start()
 			fire_range *= 0.5 //We want the fire to be weaker if the rocket was intercepted, to reflect the idea of a dudsplosion.
-			fire_Range = round(fire_range)
+			fire_range = round(fire_range)
 	flame_radius(fire_range, impact)
 
 /obj/structure/ship_ammo/cas/minirocket/smoke
