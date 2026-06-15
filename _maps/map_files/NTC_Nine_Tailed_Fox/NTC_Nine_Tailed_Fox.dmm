@@ -144,6 +144,7 @@
 	dir = 4
 	},
 /obj/effect/ai_node,
+/obj/structure/cable,
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/engineering/engine_core)
 "agX" = (
@@ -829,9 +830,7 @@
 /area/mainship/command/telecomms)
 "aKt" = (
 /obj/structure/cable,
-/obj/machinery/power/smes{
-	output_level = 200000
-	},
+/obj/machinery/power/smes/buildable,
 /turf/open/floor/mainship/tcomms,
 /area/mainship/groundhq/ntf/engineering/lower_engineering)
 "aKB" = (
@@ -3973,8 +3972,6 @@
 	name = "Research"
 	})
 "dnt" = (
-/obj/machinery/power/monitor/grid,
-/obj/structure/cable,
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/engineering/upper_engine_monitoring)
 "dnB" = (
@@ -4448,12 +4445,12 @@
 	outside = 1
 	})
 "dJp" = (
-/obj/structure/cable,
-/obj/machinery/power/terminal{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
 	},
-/turf/open/floor/plating/plating_catwalk,
-/area/mainship/groundhq/ntf/engineering/lower_engineering)
+/obj/structure/cable,
+/turf/open/floor/mainship/mono,
+/area/mainship/groundhq/ntf/engineering/upper_engine_monitoring)
 "dJC" = (
 /obj/machinery/vending/medical/shipside,
 /turf/open/floor/mainship/sterile/side,
@@ -4838,9 +4835,6 @@
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "edp" = (
 /obj/structure/cable,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/effect/ai_node,
 /turf/open/floor/plating/plating_catwalk,
 /area/deltastation/engineering/engine_smes{
@@ -4898,9 +4892,6 @@
 "egE" = (
 /obj/machinery/light/small{
 	dir = 1
-	},
-/obj/machinery/power/smes{
-	output_level = 200000
 	},
 /obj/machinery/camera/autoname,
 /obj/structure/cable,
@@ -5181,9 +5172,6 @@
 /turf/open/floor/prison/darkred/full,
 /area/mainship/groundhq/ntf/crimsonveil)
 "esZ" = (
-/obj/machinery/power/smes{
-	output_level = 200000
-	},
 /obj/structure/cable,
 /turf/open/floor/mainship/tcomms,
 /area/mainship/groundhq/ntf/engineering/lower_engineering)
@@ -6413,9 +6401,7 @@
 /area/mainship/hallways/hangar)
 "ftl" = (
 /obj/structure/cable,
-/obj/machinery/power/smes{
-	output_level = 200000
-	},
+/obj/machinery/power/smes/buildable,
 /turf/open/floor/plating/plating_catwalk,
 /area/sulaco/engineering/lower_engineering{
 	name = "Lower Power"
@@ -6447,8 +6433,10 @@
 /area/mainship/hull/upper_hull)
 "fwd" = (
 /obj/structure/cable,
-/obj/machinery/power/apc/mainship,
-/turf/open/floor/plating/plating_catwalk,
+/obj/machinery/power/apc/mainship{
+	dir = 1
+	},
+/turf/open/floor/mainship/tcomms,
 /area/mainship/groundhq/ntf/engineering/lower_engineering)
 "fwf" = (
 /obj/effect/turf_decal/warning_stripes/thick/corner{
@@ -13282,6 +13270,7 @@
 	dir = 4
 	},
 /obj/machinery/camera/autoname,
+/obj/structure/cable,
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/engineering/upper_engine_monitoring)
 "kPG" = (
@@ -15137,9 +15126,7 @@
 	})
 "min" = (
 /obj/structure/cable,
-/obj/machinery/power/smes{
-	output_level = 200000
-	},
+/obj/machinery/power/smes/buildable,
 /turf/open/floor/plating/plating_catwalk,
 /area/deltastation/engineering/engine_smes{
 	outside = 0
@@ -15179,9 +15166,7 @@
 	})
 "mjW" = (
 /obj/structure/cable,
-/obj/machinery/power/smes{
-	output_level = 200000
-	},
+/obj/machinery/power/smes/buildable,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/groundhq/ntf/engineering/lower_engineering)
 "mkj" = (
@@ -15866,13 +15851,9 @@
 /area/mainship/hallways/synthdorms)
 "mJO" = (
 /obj/structure/cable,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/turf/open/floor/plating/plating_catwalk,
-/area/deltastation/engineering/main{
-	outside = 0
-	})
+/obj/machinery/power/monitor/grid,
+/turf/open/floor/mainship/tcomms,
+/area/mainship/groundhq/ntf/engineering/lower_engineering)
 "mJZ" = (
 /turf/open/floor/mainship,
 /area/mainship/hallways/aft_hallway{
@@ -16150,9 +16131,10 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/upper_hull)
 "mWK" = (
+/obj/structure/window/framed/mainship,
 /obj/structure/cable,
-/turf/open/floor/stairs/rampbottom,
-/area/mainship/groundhq/ntf/engineering/upper_engine_monitoring)
+/turf/open/floor/mainship/mono,
+/area/mainship/groundhq/ntf/engineering/lower_engineering)
 "mWV" = (
 /obj/structure/disposalpipe/junction{
 	dir = 4
@@ -18665,9 +18647,6 @@
 /area/mainship/hallways/hangar)
 "pef" = (
 /obj/structure/cable,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/effect/ai_node,
 /turf/open/floor/plating/plating_catwalk,
 /area/sulaco/engineering/lower_engineering{
@@ -18878,9 +18857,6 @@
 "pms" = (
 /obj/machinery/light/small{
 	dir = 1
-	},
-/obj/machinery/power/smes{
-	output_level = 200000
 	},
 /obj/machinery/camera/autoname/mainship,
 /obj/structure/cable,
@@ -23837,6 +23813,13 @@
 	},
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/general)
+"tsv" = (
+/obj/structure/cable,
+/obj/machinery/power/smes/buildable{
+	charge = 1100000
+	},
+/turf/open/floor/mainship/tcomms,
+/area/mainship/groundhq/ntf/engineering/lower_engineering)
 "tsF" = (
 /turf/open/floor/mainship_hull/dir{
 	dir = 10
@@ -24172,13 +24155,11 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/hangar)
 "tKv" = (
-/obj/structure/cable,
-/obj/machinery/power/terminal,
-/obj/machinery/power/terminal,
 /obj/effect/ai_node,
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/structure/cable,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/groundhq/ntf/engineering/lower_engineering)
 "tKC" = (
@@ -24476,7 +24457,6 @@
 /turf/open/floor/squares,
 /area/mainship/living/officer_study)
 "tWk" = (
-/obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
@@ -24888,9 +24868,6 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/power/smes{
-	output_level = 200000
-	},
 /obj/machinery/camera/autoname/mainship,
 /turf/open/floor/plating/plating_catwalk,
 /area/sulaco/engineering/lower_engineering{
@@ -25863,11 +25840,11 @@
 /turf/open/floor/prison/darkred/full,
 /area/mainship/groundhq/ntf/hallways/gardens)
 "vdD" = (
-/obj/structure/cable,
 /obj/machinery/power/apc/mainship,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
+/obj/structure/cable,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/groundhq/ntf/engineering/engine_core)
 "veb" = (
@@ -26414,13 +26391,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/upper_hull)
-"vzD" = (
-/obj/machinery/door/airlock/mainship/maint{
-	dir = 2
-	},
-/obj/structure/cable,
-/turf/open/floor/mainship/mono,
-/area/mainship/hull/upper_hull)
 "vzE" = (
 /obj/machinery/flasher/cell1{
 	pixel_y = 30
@@ -26433,9 +26403,7 @@
 	})
 "vzT" = (
 /obj/structure/cable,
-/obj/machinery/power/smes{
-	output_level = 200000
-	},
+/obj/machinery/power/smes/buildable,
 /turf/open/floor/plating/plating_catwalk,
 /area/deltastation/engineering/main{
 	outside = 0
@@ -27036,9 +27004,6 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/power/smes{
-	output_level = 200000
-	},
 /turf/open/floor/plating/plating_catwalk,
 /area/deltastation/engineering/engine_smes{
 	outside = 0
@@ -28863,6 +28828,7 @@
 "xxC" = (
 /obj/structure/table/mainship,
 /obj/machinery/computer/station_alert,
+/obj/structure/cable,
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/engineering/upper_engine_monitoring)
 "xxE" = (
@@ -37276,7 +37242,7 @@ ezq
 qCC
 oAa
 pms
-dJp
+qtj
 nPy
 oAa
 scU
@@ -49058,7 +49024,7 @@ neE
 aMP
 pPt
 egE
-mJO
+kBp
 ltn
 rPy
 shj
@@ -57700,7 +57666,7 @@ aUk
 ulk
 aMa
 iSM
-vzD
+sLq
 tWk
 vqE
 cYG
@@ -57940,7 +57906,7 @@ aMa
 iSM
 aMa
 agV
-gAQ
+vpv
 vpv
 sQz
 fgU
@@ -58177,7 +58143,7 @@ rvl
 aMa
 iSM
 aMa
-upT
+dJp
 tQT
 xQf
 gMs
@@ -58296,7 +58262,7 @@ amS
 aMa
 iSM
 aMa
-upT
+dJp
 tQT
 tQT
 tQT
@@ -58775,7 +58741,7 @@ aMa
 upT
 xSt
 bRd
-aKt
+tsv
 qlu
 wgC
 iNP
@@ -59250,7 +59216,7 @@ gVJ
 pMX
 kEO
 xSt
-xcA
+qtj
 esZ
 grp
 sbM
@@ -59369,7 +59335,7 @@ oPQ
 dIx
 upT
 xSt
-fwd
+wcR
 qtl
 grp
 knB
@@ -59485,11 +59451,11 @@ qBo
 loz
 dIx
 muR
-mWK
+dIx
 upT
 xSt
-xcA
-esZ
+wcR
+mJO
 qlu
 jaO
 mqa
@@ -59607,8 +59573,8 @@ nkm
 vun
 cYA
 xSt
-xcA
-aKt
+wcR
+fwd
 qlu
 sbM
 eOP
@@ -59726,8 +59692,8 @@ sez
 kNS
 tFY
 xSt
-xcA
-aKt
+wcR
+esZ
 grp
 knB
 wAz
@@ -59844,9 +59810,9 @@ aMa
 fIL
 nYc
 cch
-xSt
+mWK
 tKv
-aKt
+esZ
 grp
 jaO
 mqa

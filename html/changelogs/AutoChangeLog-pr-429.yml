@@ -1,0 +1,4 @@
+author: "Colfer1"
+delete-after: True
+changes:
+  - qol: "civilians now have requisitions access to CM now"

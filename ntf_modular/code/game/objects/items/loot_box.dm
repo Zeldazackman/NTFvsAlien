@@ -448,5 +448,9 @@
 	scatter = 8
 	deployed_scatter_change = -50
 	wield_delay = 1.8 SECONDS
-	soft_armor = list(MELEE = 30, BULLET = 75, LASER = 75, ENERGY = 65, BOMB = 60, BIO = 100, FIRE = 0, ACID = 0)
+	soft_armor = list(MELEE = 30, BULLET = 80, LASER = 80, ENERGY = 70, BOMB = 60, BIO = 100, FIRE = 0, ACID = 0)
 	max_integrity = 500
+	deployable_item = /obj/machinery/deployable/mounted/shielded
+
+/obj/machinery/deployable/mounted/shielded
+	allow_pass_flags = PASS_AIR|PASS_LOW_STRUCTURE

@@ -1,0 +1,4 @@
+author: "SpooksAnno"
+delete-after: True
+changes:
+  - bugfix: "Fixed nanopaste causing a server-crashing infinite loop when used on organic limbs."

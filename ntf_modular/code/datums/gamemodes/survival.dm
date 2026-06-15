@@ -162,7 +162,7 @@
 		/datum/job/clf/medic = 1,
 		/datum/job/clf/specialist = 1,
 		/datum/job/clf/leader = 1,
-		/datum/job/xenomorph = 3,//three since there will be CM
+		/datum/job/xenomorph = 5,//five since there will be CM
 		/datum/job/icc_squad/standard = 2,
 		/datum/job/icc_squad/medic = 1,
 		/datum/job/icc_squad/tech = 1,
