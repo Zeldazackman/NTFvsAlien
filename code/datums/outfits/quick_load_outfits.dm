@@ -1955,7 +1955,7 @@
 		/obj/item/explosive/grenade/som = 2,
 		/obj/item/storage/box/MRE/som = 1,
 		/obj/item/cell/lasgun/volkite/small = 1,
-		/obj/item/binoculars/fire_support/campaign/som = 1,
+		/obj/item/binoculars/fire_support/extended/som/sl = 1,
 	)
 
 /datum/outfit/quick/som/squad_leader/standard_smg
@@ -1977,7 +1977,7 @@
 	webbing_contents = list(
 		/obj/item/explosive/grenade/som = 3,
 		/obj/item/explosive/grenade/flashbang/stun = 1,
-		/obj/item/binoculars/fire_support/campaign/som = 1,
+		/obj/item/binoculars/fire_support/extended/som/sl = 1,
 	)
 
 
@@ -1998,7 +1998,7 @@
 
 	webbing_contents = list(
 		/obj/item/explosive/grenade/som = 2,
-		/obj/item/binoculars/fire_support/campaign/som = 1,
+		/obj/item/binoculars/fire_support/extended/som/sl = 1,
 		/obj/item/explosive/grenade/flashbang/stun = 1,
 		/obj/item/storage/box/MRE/som = 1,
 	)
@@ -2021,7 +2021,7 @@
 
 	webbing_contents = list(
 		/obj/item/explosive/grenade/som = 2,
-		/obj/item/binoculars/fire_support/campaign/som = 1,
+		/obj/item/binoculars/fire_support/extended/som/sl = 1,
 		/obj/item/explosive/grenade/flashbang/stun = 1,
 		/obj/item/storage/box/MRE/som = 1,
 	)
@@ -2045,7 +2045,7 @@
 
 	webbing_contents = list(
 		/obj/item/explosive/grenade/som = 4,
-		/obj/item/binoculars/fire_support/campaign/som = 1,
+		/obj/item/binoculars/fire_support/extended/som/sl = 1,
 	)
 
 //someone must update these below
