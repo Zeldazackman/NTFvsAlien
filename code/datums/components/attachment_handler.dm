@@ -137,6 +137,7 @@
 
 	if(!CHECK_BITFIELD(attachment_data[FLAGS_ATTACH_FEATURES], ATTACH_NO_HANDS))
 		var/obj/item/in_hand = user.get_inactive_held_item()
+		if(parent != in_hand)
 			to_chat(user, span_warning("You have to hold [parent] to do that!"))
 			return FALSE
 
