@@ -376,9 +376,9 @@
 		/obj/item/attachable/stock/trenchgun,
 	)
 
-	fire_delay = 1.4 SECONDS
+	fire_delay = 1.2 SECONDS
 	max_chamber_items = 5
-	damage_mult = 1
+	damage_mult = 1.1
 	accuracy_mult_unwielded = 1
 
 	scatter = 4
