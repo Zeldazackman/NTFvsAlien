@@ -122,11 +122,11 @@
 
 /obj/item/weapon/gun/shotgun/combat/masterkey
 	name = "masterkey shotgun"
-	desc = "A weapon-mounted, three-shot shotgun. Reloadable with any normal 12 gauge shell. The short barrel reduces the ammo's effectiveness drastically in exchange for fitting as a attachment.."
+	desc = "A weapon-mounted, three-plus-one shot shotgun. Reloadable with any normal 12 gauge shell. The short barrel reduces the ammo's effectiveness drastically in exchange for fitting as a attachment.."
 	icon = 'ntf_modular/icons/obj/items/guns/attachments/gun.dmi'
 	icon_state = "masterkey"
 	cocked_sound = 'sound/weapons/guns/interact/trenchgun_pump.ogg'
-	max_chamber_items = 2
+	max_chamber_items = 3
 	attachable_allowed = list()
 	starting_attachment_types = list()
 	slot = ATTACHMENT_SLOT_UNDER

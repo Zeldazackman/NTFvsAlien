@@ -1,0 +1,4 @@
+author: "Colfer1"
+delete-after: True
+changes:
+  - rscadd: "Allowed standard hats like the NTC Beret to use all modules, like all other hats"
