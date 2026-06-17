@@ -54,3 +54,19 @@
   SpooksAnno:
   - bugfix: Fixed nanopaste causing a server-crashing infinite loop when used on organic
       limbs.
+2026-06-17:
+  Lewdissar:
+  - bugfix: adjusted new pants and shorts to show off boobs, made them available on
+      the SoM vendor.
+  Meghan-Rossi:
+  - balance: Colonist DB shotgun damage multipliers returned to 0.7, reverting the
+      recent buff to 1.2
+  - balance: NTF DB shotgun (SH-34) damage multiplier reduced to 0.9, partially reverting
+      the recent buff from 0.7 to 1.2
+  - balance: Colonist DB shotguns can no longer be fired one-handed, reverting a recent
+      change.
+  - balance: NTF DB shotgun (SH-34) can now be fired one-handed.
+  - balance: Masterkey shotgun damage multiplier reduced to 1, partially reverting
+      the recent buff from 0.85 to 1.2
+  SQLandrusk:
+  - rscadd: Adds woodland camo along with rolled and no-top versions.
