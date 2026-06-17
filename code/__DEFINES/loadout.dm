@@ -2068,7 +2068,6 @@ GLOBAL_LIST_INIT(loadout_role_essential_set, list(
 		/obj/item/supply_beacon = 2,
 		/obj/item/whistle = 1,
 		/obj/item/compass = 1,
-		/obj/item/binoculars/fire_support/campaign/som = 1,
 		/obj/item/pinpointer = 1,
 		/obj/item/clothing/gloves/marine/som/veteran = 1,
 		/obj/item/clothing/glasses/hud/health = 1,

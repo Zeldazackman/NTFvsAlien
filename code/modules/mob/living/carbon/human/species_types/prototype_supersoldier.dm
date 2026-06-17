@@ -12,6 +12,8 @@
 	<b>Psychology</b>:<br /><br /> \
 	Prototype Supersoldiers are generally more single-minded than regular humans, usually indoctrinated from the vat or training facilities alongside their genes being modified for loyalty.<br /><br />"
 
+	inherent_actions = list(/datum/action/ability/indominable)
+
 /datum/species/human/prototype_supersoldier/on_species_gain(mob/living/carbon/human/H, datum/species/old_species)
 	. = ..()
 	H.health_threshold_crit = -25
