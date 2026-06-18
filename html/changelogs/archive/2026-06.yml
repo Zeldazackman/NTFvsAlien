@@ -70,3 +70,14 @@
       the recent buff from 0.85 to 1.2
   SQLandrusk:
   - rscadd: Adds woodland camo along with rolled and no-top versions.
+2026-06-18:
+  Colfer1:
+  - bugfix: readds the synthetic selections, including robot synths
+  - rscadd: Allowed standard hats like the NTC Beret to use all modules, like all
+      other hats
+  - rscadd: Adds various dermal armors, and adds them to the style line of all vendors.
+      Enjoy!
+  - bugfix: Allows modular storages to be turned invisible with alt click
+  Lewdissar:
+  - rscadd: Added the ML-101 and 6 gauge ammo to the Req Imports section
+  - balance: Buffed 6 gauge ammunition
