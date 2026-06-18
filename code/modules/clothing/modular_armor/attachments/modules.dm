@@ -665,7 +665,7 @@
 	soft_armor = MARINE_ARMOR_HEAVY
 	slowdown = SLOWDOWN_ARMOR_HEAVY + 0.3
 
-obj/item/armor_module/module/style/superheavy_armor
+/obj/item/armor_module/module/style/superheavy_armor
 	name = "\improper Super Heavy Armor Equalizer"
 	icon_state = "style_heavy"
 	worn_icon_state = "style_heavy_a"
