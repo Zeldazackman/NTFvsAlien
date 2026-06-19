@@ -312,11 +312,11 @@
 	aim_speed_mod = 0.2
 	wield_delay_mod = 0.2 SECONDS
 
-//extended mag
+//drum mag
 /obj/item/ammo_magazine/rifle/nt_halter/drum
 	name = "\improper NT 'Halter' drum magazine (7.62x38mm)"
 	desc = "An drum magazine filled with 7.62x38mm rifle rounds for the Halter series of firearms."
-	max_rounds = 100
+	max_rounds = 80
 	icon_state = "halter_drum"
 	bonus_overlay = "halter_drum"
 	aim_speed_mod = 0.3

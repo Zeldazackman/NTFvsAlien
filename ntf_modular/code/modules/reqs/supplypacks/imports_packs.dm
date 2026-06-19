@@ -51,22 +51,22 @@
 /datum/supply_packs/imports/halterex
 	name = "NT Halter extended mag (x1)"
 	contains = list(/obj/item/ammo_magazine/rifle/nt_halter/extended)
-	cost = 5
+	cost = 15
 
 /datum/supply_packs/imports/halterdrum
 	name = "NT Halter drum mag (x1)"
 	contains = list(/obj/item/ammo_magazine/rifle/nt_halter/drum)
-	cost = 15
+	cost = 30
 
 /datum/supply_packs/imports/halterexlaser
 	name = "NT Halter extended laser mag (x1)"
 	contains = list(/obj/item/ammo_magazine/rifle/nt_halter/laser/extended)
-	cost = 5
+	cost = 15
 
 /datum/supply_packs/imports/halterdrumlaser
 	name = "NT Halter drum laser mag (x1)"
 	contains = list(/obj/item/ammo_magazine/rifle/nt_halter/laser/drum)
-	cost = 15
+	cost = 30
 
 /datum/supply_packs/imports/haltercharged
 	name = "NT Halter taser mag (x1)"
