@@ -14,6 +14,7 @@
 		/obj/machinery,
 		/obj/structure/largecrate,
 		/obj/vehicle/ridden,
+		/obj/vehicle/sealed/mecha/ntf,
 	)
 	var/static/list/teleportable_while_anchored_types = list(
 		/obj/vehicle,
