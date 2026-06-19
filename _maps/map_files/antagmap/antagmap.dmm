@@ -4275,6 +4275,7 @@
 /area/antag_ship/icc/hangar/east)
 "qC" = (
 /obj/effect/landmark/start/job/vsd_leader,
+/obj/effect/landmark/start/job/vsd_escort,
 /obj/structure/flora/pottedplant,
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 8
