@@ -234,7 +234,7 @@
 	set name = "Sleep"
 	set category = "IC"
 
-/*	if(species.species_flags & ROBOTIC_LIMBS)
+	/*if(species.species_flags & ROBOTIC_LIMBS)
 		to_chat(src, span_warning("Your artificial body does not require sleep."))
 		return*/// This whole thing prevents xenos from sleeping, I cant guess why, but robots don't get nothing from sleeping anyway
 	if(IsSleeping())
