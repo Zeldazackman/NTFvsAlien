@@ -16,6 +16,9 @@
 
 	facing_modifiers = list(VEHICLE_FRONT_ARMOUR = 0.75, VEHICLE_SIDE_ARMOUR = 1, VEHICLE_BACK_ARMOUR = 1.25)
 
+	operation_req_access = list()
+	internals_req_access = list()
+
 	can_dna_lock = FALSE
 
 	enter_delay = 25
