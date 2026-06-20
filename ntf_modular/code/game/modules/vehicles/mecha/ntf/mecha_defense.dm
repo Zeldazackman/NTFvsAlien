@@ -8,7 +8,8 @@
 		proj.damage -= pilot_damage
 		. = ..()
 		proj.damage = pilot_damage
-		pick(occupants).bullet_act(proj, actual_zone, piercing_hit)
+		var/atom/hit_occupant = pick(occupants)
+		hit_occupant.bullet_act(proj, actual_zone, piercing_hit)
 		proj.damage = original_damage
 		return
 	return ..()
