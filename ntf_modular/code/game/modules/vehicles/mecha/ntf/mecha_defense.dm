@@ -4,7 +4,6 @@
 	var/pen_quality = clamp((proj.penetration - (armor_rating * cockpit_armor)) / max(armor_rating, 1), 0, 1)
 	var/mob/living/occupant = pick(occupants)
 	if(pen_quality && LAZYLEN(occupants) && !(mecha_flags & SILICON_PILOT) && !(mecha_flags & CANNOT_OVERPENETRATE) && (actual_zone == BODY_ZONE_HEAD || actual_zone == BODY_ZONE_CHEST))
-		var/mob/living/occupant = pick(occupants)
 		var/original_damage = proj.damage
 		var/pilot_damage = round(proj.damage * pen_quality * 0.90)
 		proj.damage -= pilot_damage
