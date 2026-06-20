@@ -314,9 +314,10 @@
 	if(!occupant)
 		to_chat(usr, span_warning("There is no occupant in [src]."))
 		return
-	var/choice = tgui_alert(usr, "Are you sure you want to send [occupant] to hypersleep storage? You should ONLY do this if there is no job slots left for their job and one must be freed... Or if they asked you to.", "Fullcryo occupant", list("Yes","No"))
-	if(choice == "No")
-		return
+	if(usr != occupant)
+		var/choice = tgui_alert(usr, "Are you sure you want to send [occupant] to hypersleep storage? You should ONLY do this if there is no job slots left for their job and one must be freed... Or if they asked you to.", "Fullcryo occupant", list("Yes","No"))
+		if(choice == "No")
+			return
 	playsound(loc, 'sound/machines/hiss.ogg', 25, 1)
 	UnregisterSignal(occupant, list(COMSIG_STARTED_SEX_UPON,COMSIG_RECEIVED_SEX,COMSIG_CAME_INTO,COMSIG_CAME_INTO_BY,COMSIG_CAME_ONTO,COMSIG_CAME_ONTO_BY))
 	log_combat(usr, occupant, "fullcryoed", src)
