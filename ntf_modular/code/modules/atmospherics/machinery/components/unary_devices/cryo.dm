@@ -125,9 +125,13 @@
 
 
 /obj/structure/bed/chair/stasis/user_buckle_mob(mob/living/buckling_mob, mob/living/user, check_loc, silent)
+	if(QDELETED(user) || !isliving(user))
+		return
+	/*
 	if(buckling_mob.stat == DEAD)
 		to_chat(user, span_notice("[buckling_mob] is dead!"))
 		return FALSE
+	*/
 
 	if(isxeno(buckling_mob))
 		return FALSE
@@ -280,7 +284,7 @@
 	set category = "IC.Object"
 	set src in view(0)
 
-	if(QDELETED(occupant) || !(usr in buckled_mobs))
+	if(QDELETED(occupant) || !isliving(usr) || !(usr in buckled_mobs))
 		return FALSE
 	if(ishuman(usr) && usr.client)
 		var/mob/living/carbon/human/human_usr = usr
@@ -295,11 +299,17 @@
 	set category = "IC.Object"
 	set src in view(1)
 
+	if(QDELETED(usr) || !isliving(usr))
+		return
 	if(usr.incapacitated(TRUE))
 		return
+
 	log_combat(usr, occupant, "attempted to fullcryo", src)
 	if(occupant.client && occupant != usr)
 		to_chat(usr, span_warning("You cannot send away an awake person."))
+		return
+	if(occupant.stat == DEAD)
+		to_chat(usr, span_notice("[occupant] is dead!"))
 		return
 	if(!occupant)
 		to_chat(usr, span_warning("There is no occupant in [src]."))
@@ -319,6 +329,8 @@
 	set category = "IC.Object"
 	set src in view(1)
 
+	if(QDELETED(usr) || !isliving(usr))
+		return
 	if(usr.incapacitated(TRUE))
 		return
 	if(occupant.client)
@@ -338,6 +350,8 @@
 	set category = "IC.Object"
 	set src in view(1)
 
+	if(QDELETED(usr) || !isliving(usr))
+		return
 	if(usr.incapacitated(TRUE))
 		return
 	if(!length(contents))
