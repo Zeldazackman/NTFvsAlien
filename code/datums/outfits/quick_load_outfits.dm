@@ -436,6 +436,33 @@
 		/obj/item/explosive/grenade = 2,
 	)
 
+/datum/outfit/quick/tgmc/marine/shield_tank_45
+	name = "SMG-45 Guardian"
+	desc = "Professional bullet catcher. Equipped with an SMG-45 submachine gun, a TL-172 defensive shield and heavy armor reinforced with a 'Tyr' module. Designed to absorb as much incoming damage as possible to protect your squishier comrades, however your mobility and damage output are notably diminished. Also of note: the excellent thermal mass of the TL-172 means it is unusually effective against the SOM's volkite weaponry."
+
+	head = /obj/item/clothing/head/modular/m10x/tyr
+	glasses = /obj/item/clothing/glasses/welding
+	wear_suit = /obj/item/clothing/suit/modular/xenonauten/heavy/tyr_two
+	suit_store = /obj/item/weapon/gun/smg/standard_heavysmg/guardian
+	belt = /obj/item/storage/belt/marine/squashhead
+	r_hand = /obj/item/weapon/shield/riot/marine
+
+	backpack_contents = list(
+		/obj/item/tool/extinguisher = 1,
+		/obj/item/tool/weldingtool/largetank = 1,
+		/obj/item/ammo_magazine/smg/standard_heavysmg = 1,
+		/obj/item/ammo_magazine/packet/p41ae_squashhead = 1,
+		/obj/item/ammo_magazine/packet/p41ae = 1,
+		/obj/item/explosive/grenade/smokebomb/neuro/alt = 1,
+		/obj/item/storage/box/MRE = 1,
+	)
+
+	webbing_contents = list(
+		/obj/item/explosive/grenade/sticky = 1,
+		/obj/item/explosive/grenade/incendiary = 1,
+		/obj/item/explosive/grenade = 1,
+		/obj/item/explosive/grenade/chem_grenade/metalfoam = 2,
+	)
 
 /datum/outfit/quick/tgmc/marine/machete
 	name = "Assault Marine"
