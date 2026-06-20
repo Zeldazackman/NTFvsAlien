@@ -754,6 +754,9 @@
 	set name = "View Crew Manifest"
 	set category = "IC"
 
+	var/viewfaction = job?.faction || faction
+	if(viewfaction == FACTION_XENO)
+		viewfaction = GLOB.hive_datums[get_xeno_hivenumber()].allied_factions[1]
 	var/dat = GLOB.datacore.get_manifest(ooc = FALSE, viewfaction = job?.faction)
 
 	var/datum/browser/popup = new(src, "manifest", "<div align='center'>Crew Manifest</div>", 370, 420)

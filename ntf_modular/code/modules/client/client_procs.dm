@@ -70,8 +70,9 @@
 			doppleganger.med_hud_set_status()
 			hmob.med_hud_set_status()
 
-			for(var/obj/item/clothing/cloth in mob.contents) //duplicate outfit, only clothes tho.
-				var/lecloth = new cloth.type(doppleganger.loc)
+			for(var/obj/item/clothing/cloth in mob.contents) //duplicate outfit, only clothes tho and unremovable.
+				var/obj/item/clothing/lecloth = new cloth.type(doppleganger.loc)
+				ADD_TRAIT(lecloth, TRAIT_NODROP, "doppleganger_item")
 				doppleganger.equip_to_appropriate_slot(lecloth, TRUE)
 
 			//replace nested with doppleganger

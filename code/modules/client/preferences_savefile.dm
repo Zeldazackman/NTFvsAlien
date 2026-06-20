@@ -259,6 +259,8 @@
 	READ_FILE(S["tgui_input_big_buttons"], tgui_input_big_buttons)
 	READ_FILE(S["tgui_input_buttons_swap"], tgui_input_buttons_swap)
 
+	READ_FILE(S["quick_sex_toggle"], quick_sex_toggle)
+
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
 		update_preferences(needs_update, S)		//needs_update = savefile_version if we need an update (positive integer)
@@ -672,6 +674,7 @@
 	READ_FILE(S["metadata_maybes"], metadata_maybes)
 	READ_FILE(S["metadata_favs"], metadata_favs)
 	READ_FILE(S["metadata_ooc_style"], metadata_ooc_style)
+	READ_FILE(S["quick_sex_toggle"], quick_sex_toggle)
 
 	be_special = sanitize_integer(be_special, NONE, MAX_BITFLAG, initial(be_special))
 
@@ -1225,6 +1228,7 @@
 	WRITE_FILE(S["b_jelly"], b_jelly)
 	WRITE_FILE(S["xeno_edible_jelly_desc"], xeno_edible_jelly_desc)
 	WRITE_FILE(S["xeno_edible_jelly_flavors"], xeno_edible_jelly_flavors)
+	WRITE_FILE(S["quick_sex_toggle"], quick_sex_toggle)
 
 	return TRUE
 

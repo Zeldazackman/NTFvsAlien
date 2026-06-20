@@ -607,6 +607,10 @@
 
 /mob/living/MouseDrop_T(atom/dropping, mob/user)
 	. = ..()
+	if(!user.client.prefs)
+		return
+	if(!user.client.prefs.quick_sex_toggle)
+		return
 	if(dropping != usr)
 		return
 	if(!isliving(dropping))

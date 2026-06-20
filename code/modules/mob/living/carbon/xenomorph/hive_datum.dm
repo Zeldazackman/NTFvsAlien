@@ -1789,6 +1789,12 @@ to_chat will check for valid clients itself already so no need to double check f
 /mob/living/get_xeno_hivenumber()
 	return hivenumber
 
+/mob/dead/observer
+	var/hivenumber
+
+/mob/dead/observer/get_xeno_hivenumber()
+	return hivenumber
+
 /mob/illusion/xeno/get_xeno_hivenumber()
 	var/mob/living/carbon/xenomorph/original_xeno = original_mob
 	return original_xeno.get_xeno_hivenumber()

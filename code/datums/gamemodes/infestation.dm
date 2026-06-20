@@ -89,7 +89,7 @@
 #define AI_SCAN_DELAY 15 SECONDS
 
 ///Annonce to everyone the number of xeno and marines on ship and ground
-/datum/game_mode/infestation/announce_bioscans(show_locations = TRUE, delta = 2, ai_operator = FALSE, announce_humans = TRUE, announce_xenos = TRUE, send_fax = TRUE)
+/datum/game_mode/infestation/announce_bioscans(show_locations = TRUE, delta = 2, ai_operator = FALSE, announce_humans = TRUE, announce_xenos = TRUE, send_fax = FALSE)
 
 	if(ai_operator)
 		#ifndef TESTING

@@ -252,7 +252,7 @@
 	record_miner_repair(user)
 	return TRUE
 
-/obj/machinery/miner/proc/can_capture(var/mob/user)
+/obj/machinery/miner/proc/can_capture(mob/user)
 	var/phoron_total = 0
 	var/phoron_faction = 0
 	var/platinum_total = 0
