@@ -209,6 +209,8 @@
 		/obj/item/ammo_magazine/rifle/nt_halter/laser,
 		/obj/item/ammo_magazine/rifle/nt_halter/laser/extended,
 		/obj/item/ammo_magazine/rifle/nt_halter/laser/drum,
+		/obj/item/ammo_magazine/rifle/nt_halter/rubber,
+		/obj/item/ammo_magazine/rifle/nt_halter/rubber/extended,
 	)
 	attachable_allowed = list(
 		/obj/item/attachable/reddot,
@@ -429,7 +431,7 @@
 	desc = "An extended magazine filled with 7.62x38mm laser emitter rounds for the Halter series of firearms."
 	max_rounds = 50
 	icon_state = "halter_laser_ex"
-	bonus_overlay = "halter_laser_drum"
+	bonus_overlay = "halter_laser_ex"
 
 //extended mag
 /obj/item/ammo_magazine/rifle/nt_halter/laser/drum
@@ -438,6 +440,22 @@
 	max_rounds = 100
 	icon_state = "halter_laser_drum"
 	bonus_overlay = "halter_laser_drum"
+
+//rubber mags
+/obj/item/ammo_magazine/rifle/nt_halter/rubber
+	name = "\improper NT 'Halter' rubber magazine (7.62x38mm rub)"
+	desc = "A magazine filled with 7.62x38mm rubber rifle rounds for the Halter series of firearms."
+	icon_state = "halter_rub"
+	icon = 'ntf_modular/icons/obj/items/ammo/rifle.dmi'
+	bonus_overlay = "halter_rub_mag"
+	default_ammo = /datum/ammo/bullet/rifle/heavy/rubber
+
+/obj/item/ammo_magazine/rifle/nt_halter/rubber/extended
+	name = "\improper NT 'Halter' extended rubber magazine (7.62x38mm rub)"
+	desc = "An extended magazine filled with 7.62x38mm rubber rounds for the Halter series of firearms."
+	max_rounds = 50
+	icon_state = "halter_rub_ex"
+	bonus_overlay = "halter_rub_ex"
 
 //im not making a sprite for this im lazy
 /obj/item/ammo_magazine/packet/halter
@@ -448,11 +466,23 @@
 	default_ammo = /datum/ammo/bullet/rifle/heavy/halter
 	current_rounds = 120
 	max_rounds = 120
+	color = COLOR_MAROON
+
+/obj/item/ammo_magazine/packet/halter/rubber
+	name = "box of 7.62x38mm rub"
+	desc = "A box containing 120 rounds of 7.62x38mm rub."
+	caliber = CALIBER_762X38
+	icon_state = "7.62"
+	default_ammo = /datum/ammo/bullet/rifle/heavy/rubber
+	current_rounds = 120
+	max_rounds = 120
+	color = COLOR_BRIGHT_BLUE
 
 /obj/item/ammo_magazine/packet/halter/laser
 	name = "box of 7.62x38mm LE"
 	desc = "A box containing 120 rounds of 7.62x38mm Laser Emitters."
 	default_ammo = /datum/ammo/energy/lasgun/halter
+	color = COLOR_RED
 
 /obj/item/storage/box/visual/magazine/compact/halter_assaultrifle
 	name = "Halter magazine box"
