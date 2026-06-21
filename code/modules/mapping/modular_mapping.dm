@@ -1210,7 +1210,7 @@
 	template_width = 46
 	template_height = 46
 
-/datum/map_template/modular/end_of_round/ntf_arena
+/datum/map_template/modular/end_of_round/cr_arena
 	name = "CR Arena"
 	mappath = "_maps/modularmaps/EORG/arena_clash.dmm"
 	modular_id = "EORG"

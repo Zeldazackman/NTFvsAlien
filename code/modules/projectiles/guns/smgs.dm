@@ -213,6 +213,10 @@
 	scatter_unwielded = 11
 	akimbo_additional_delay = 0.4
 
+/obj/item/weapon/gun/smg/standard_heavysmg/guardian
+	default_ammo_type = /obj/item/ammo_magazine/smg/standard_heavysmg/squashhead
+	starting_attachment_types = list(/obj/item/attachable/magnetic_harness,/obj/item/attachable/burstfire_assembly,/obj/item/attachable/extended_barrel)
+
 //-------------------------------------------------------
 //M-25 SMG
 
