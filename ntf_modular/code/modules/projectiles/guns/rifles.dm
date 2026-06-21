@@ -405,7 +405,7 @@
 	///Deflagrate AOE damage
 	var/deflag_damage = 10
 	///Multiplier for deflagrate chance
-	var/deflagrate_mult = 0.8
+	var/deflagrate_mult = 0.7
 
 /datum/ammo/bullet/rifle/heavy/ap/foxfire/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
 	deflagrate(target_mob, proj, deflag_damage, deflagrate_mult)
