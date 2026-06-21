@@ -396,10 +396,18 @@
 	hud_state = "rifle_ap"
 	//bit less crazy than actual heavy ap
 	damage = 20
-	penetration = 20
+	penetration = 15
 	sundering = 3
-	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_INCENDIARY
 	bullet_color = COLOR_RED_LIGHT
+	//incendiary was too op for the rof so we make it less likely by using a weaker deflag
+	///Deflagrate AOE damage
+	var/deflag_damage = 10
+	///Multiplier for deflagrate chance
+	var/deflagrate_mult = 0.8
+
+/datum/ammo/bullet/rifle/heavy/ap/foxfire/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
+	deflagrate(target_mob, proj, deflag_damage, deflagrate_mult)
+
 
 //laser mag
 /obj/item/ammo_magazine/rifle/nt_halter/laser
