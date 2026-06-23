@@ -274,7 +274,7 @@
 	accuracy_mult = 0.9
 	scatter_unwielded = 14
 	wield_delay = 0.4 SECONDS
-	damage_falloff_mult = 0.8
+	damage_falloff_mult = 1
 	akimbo_additional_delay = 1.5
 	damage_mult = 0.9
 
