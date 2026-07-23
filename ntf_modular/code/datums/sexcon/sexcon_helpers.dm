@@ -38,7 +38,7 @@
 	set category = "IC"
 	set name = "ERP Panel"
 	set desc = "Fuck 'em"
-	set src in view(1)
+	set src in view()
 	erptime(usr, src)
 
 /mob/living/proc/erptime(mob/living/user, mob/living/target)
@@ -52,6 +52,13 @@
 		to_chat(user, span_warning("Unsuitable user."))
 		return
 	usersexcon.start(target)
+
+/mob/living/click_ctrl_shift(mob/user)
+	. = ..()
+	if(!istype(user, /mob/living))
+		return
+	var/mob/living/living_user = user
+	erptime(living_user, src)
 
 /* obsolete now
 /mob/living/verb/Climax()
@@ -117,6 +124,9 @@
 		if(damagemult > 0)
 			aciddamagetodeal *= damagemult
 			impregdamagetodeal *= damagemult
+		if(isxenohybrid(victim))
+			aciddamagetodeal *= 0.5
+			impregdamagetodeal *= 0.5
 		victim.apply_damage(aciddamagetodeal, BURN, damageloc, updating_health = TRUE)
 		victim.apply_damage(impregdamagetodeal, BRUTE, damageloc, updating_health = TRUE)
 		if(ismonkey(victim) || HAS_TRAIT(victim, TRAIT_FRAIL_LARVABURSTS))

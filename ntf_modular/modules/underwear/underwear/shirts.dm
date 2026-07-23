@@ -3,6 +3,7 @@
 	desc = "A shirt."
 	icon_state = "undershirt"
 	equip_slot_flags = ITEM_SLOT_SHIRT
+	blocks_top_genital = TRUE
 
 /obj/item/clothing/underwear/shirt/update_clothing_icon()
 	var/mob/M = loc
@@ -102,12 +103,16 @@
 	icon_state = "leotard_turtleneck"
 	greyscale_config = /datum/greyscale_config/shirt
 	colorable_allowed = COLOR_WHEEL_ALLOWED
+	blocks_butt = TRUE
+	blocks_bottom_genital = TRUE
 
 /obj/item/clothing/underwear/shirt/leotard_turtleneck_sleeveless
 	name = "Shirt - Turtleneck Leotard Sleeveless"
 	icon_state = "leotard_turtleneck_sleeveless"
 	greyscale_config = /datum/greyscale_config/shirt
 	colorable_allowed = COLOR_WHEEL_ALLOWED
+	blocks_butt = TRUE
+	blocks_bottom_genital = TRUE
 
 /obj/item/clothing/underwear/shirt/croptop_turtleneck
 	name = "Shirt - Crop Top Turtleneck"
@@ -303,4 +308,3 @@
 	icon_file = 'ntf_modular/modules/underwear/underwear/underwear.dmi'
 	json_config = 'ntf_modular/modules/underwear/underwear/shirt.json'
 	greyscale_flags = HYPERSCALE_ALLOW_GREYSCALE
-

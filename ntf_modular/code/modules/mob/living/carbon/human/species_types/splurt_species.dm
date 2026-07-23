@@ -448,6 +448,32 @@
 		"Digitigrade" = "digitigrade_1",
 		"Digitigrade 2" = "digitigrade_2",
 	)
+	burn_mod = 1.05
+	var/list/action_list = list(
+		/datum/action/ability/activable/xenohybrid_tail_sting,
+	)
+
+/datum/species/xenohybrid/on_species_gain(mob/living/carbon/human/H, datum/species/old_species)
+	. = ..()
+	if(!islist(H.body_markings))
+		H.body_markings = list()
+	if(!islist(H.body_markings["head"]) || !length(H.body_markings["head"]))
+		H.body_markings["head"] = list("Xeno Fangs" = list("#CCCCCC", FALSE))
+		H.update_body()
+	for(var/action_type in action_list)
+		if(H.actions_by_path[action_type])
+			continue
+		var/datum/action/action = new action_type()
+		action.give_action(H)
+
+/datum/species/xenohybrid/post_species_loss(mob/living/carbon/human/H)
+	. = ..()
+	for(var/action_type in action_list)
+		var/datum/action/action = H.actions_by_path[action_type]
+		if(!action)
+			continue
+		action.remove_action(H)
+		qdel(action)
 
 /datum/species/tajaran
 	name = "Tajaran"
@@ -511,6 +537,9 @@
 /datum/species/teshari
 	name = "Teshari"
 	icobase = BODYPART_ICON_TESHARI
+	eyes = "eyes"
+	eye_icon = 'modular_skyrat/modules/organs/icons/teshari_eyes.dmi'
+	eye_color_blend_mode = ICON_MULTIPLY
 	unarmed_type = /datum/unarmed_attack/claws
 	species_flags = HAS_LIPS|HAS_UNDERWEAR|HAS_SKIN_COLOR
 	count_human = TRUE

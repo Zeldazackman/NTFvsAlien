@@ -409,6 +409,73 @@
 		return "blank_eyes"
 	return visual_species.eyes
 
+/mob/living/carbon/human/proc/get_eye_icon_file()
+	var/datum/species/visual_species = get_visual_species()
+	if(istype(visual_species, /datum/species/robot))
+		return 'icons/mob/human_face.dmi'
+	return visual_species.eye_icon || 'icons/mob/human_face.dmi'
+
+/mob/living/carbon/human/proc/get_eye_color_blend_mode()
+	var/datum/species/visual_species = get_visual_species()
+	if(!visual_species)
+		return ICON_ADD
+	return visual_species.eye_color_blend_mode
+
+/mob/living/carbon/human/proc/color_eye_overlay(icon/eye_icon, blend_mode_override)
+	if(!eye_icon)
+		return null
+	eye_icon.Blend(rgb(r_eyes, g_eyes, b_eyes), blend_mode_override || get_eye_color_blend_mode())
+	return eye_icon
+
+/mob/living/carbon/human/proc/shift_eye_overlay(icon/eye_icon, horizontal_offset = 0, vertical_offset = 0)
+	if(!eye_icon)
+		return null
+	if(horizontal_offset > 0)
+		eye_icon.Shift(EAST, horizontal_offset)
+	else if(horizontal_offset < 0)
+		eye_icon.Shift(WEST, -horizontal_offset)
+	if(vertical_offset > 0)
+		eye_icon.Shift(NORTH, vertical_offset)
+	else if(vertical_offset < 0)
+		eye_icon.Shift(SOUTH, -vertical_offset)
+	return eye_icon
+
+/mob/living/carbon/human/proc/get_eye_overlay_icon()
+	var/eye_icon_state = get_eye_icon_state()
+	if(!eye_icon_state || eye_icon_state == "blank_eyes")
+		return null
+
+	var/eye_icon_file = get_eye_icon_file()
+	var/icon/eyes = color_eye_overlay(new/icon(eye_icon_file, eye_icon_state))
+	if(!HAS_TRAIT(src, TRAIT_QUAD_EYES))
+		return eyes
+
+	var/list/eye_states = icon_states(eye_icon_file)
+	var/quad_eye_icon_file = eye_icon_file
+	var/quad_eye_blend_mode
+	var/left_eye_state = "[eye_icon_state]_l"
+	var/right_eye_state = "[eye_icon_state]_r"
+	if(!(left_eye_state in eye_states) || !(right_eye_state in eye_states))
+		if(eye_icon_state != "eyes_s")
+			return eyes
+		quad_eye_icon_file = 'icons/mob/human/human_eyes.dmi'
+		quad_eye_blend_mode = ICON_MULTIPLY
+		left_eye_state = "eyes_l"
+		right_eye_state = "eyes_r"
+		eye_states = icon_states(quad_eye_icon_file)
+		if(!(left_eye_state in eye_states) || !(right_eye_state in eye_states))
+			return eyes
+
+	var/icon/left_eye = color_eye_overlay(new/icon(quad_eye_icon_file, left_eye_state), quad_eye_blend_mode)
+	shift_eye_overlay(left_eye, -quad_eyes_offset_width, quad_eyes_offset)
+	eyes.Blend(left_eye, ICON_OVERLAY)
+
+	var/icon/right_eye = color_eye_overlay(new/icon(quad_eye_icon_file, right_eye_state), quad_eye_blend_mode)
+	shift_eye_overlay(right_eye, quad_eyes_offset_width, quad_eyes_offset)
+	eyes.Blend(right_eye, ICON_OVERLAY)
+
+	return eyes
+
 /mob/living/carbon/human/proc/get_render_body_color()
 	if(get_effective_human_body_style() == HUMAN_BODY_STYLE_TGMC)
 		return "#FFFFFF"

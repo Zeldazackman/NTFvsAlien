@@ -21,7 +21,7 @@
 
 
 /datum/sex_action/armpit_nuzzle/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	if(user.sexcon.do_message_signature("[type]"))
+	if(user.sexcon.do_message_signature("[type]", FALSE))
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] nuzzles [target]'s armpit..."))
 
 /datum/sex_action/armpit_nuzzle/on_finish(mob/living/carbon/user, mob/living/carbon/target)

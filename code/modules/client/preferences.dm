@@ -122,6 +122,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/g_eyes = 0
 	var/b_eyes = 0
 	var/eye_emissive = FALSE
+	var/quad_eyes = FALSE
+	var/quad_eyes_offset = 0
+	var/quad_eyes_offset_width = 1
 
 	/// Genitalia overlay system
 	var/genitalia_ass = null
