@@ -7,6 +7,7 @@
 	factions = list(FACTION_ICC, FACTION_XENO, FACTION_CLF)
 	human_factions = list(FACTION_ICC, FACTION_CLF)
 	valid_job_types = list(
+		/datum/job/survivor/admin = 1,
 		/datum/job/survivor/assistant = 2,
 		/datum/job/survivor/scientist = 1,
 		/datum/job/survivor/doctor = 2,
@@ -131,73 +132,13 @@
 		round_finished = MODE_INFESTATION_M_MAJOR
 		return TRUE
 
-
-/datum/game_mode/infestation/colony_fall/survival
-	name = "Colony Survival"
-	config_tag = "Colony Survival"
-	factions = list(FACTION_XENO, FACTION_ICC, FACTION_CLF)
-	human_factions = list(FACTION_ICC, FACTION_CLF)
-	valid_job_types = list(
-		/datum/job/survivor/assistant = 2,
-		/datum/job/survivor/scientist = 1,
-		/datum/job/survivor/doctor = 2,
-		/datum/job/survivor/liaison = 1,
-		/datum/job/survivor/security = 4,
-		/datum/job/survivor/civilian = 6,
-		/datum/job/survivor/chef = 1,
-		/datum/job/survivor/botanist = 1,
-		/datum/job/survivor/atmos = 2,
-		/datum/job/survivor/chaplain = 1,
-		/datum/job/survivor/miner = 2,
-		/datum/job/survivor/salesman = 1,
-		/datum/job/survivor/marshal = 1,
-		/datum/job/survivor/non_deployed_operative = 2,
-		/datum/job/survivor/prisoner = 6,
-		/datum/job/survivor/stripper = 4,
-		/datum/job/survivor/maid = 4,
-		/datum/job/survivor/synth = 1,
-		/datum/job/clf/traitor = 6,
-		/datum/job/xenomorph = 5,//five since there will be CM
-		/datum/job/icc_squad/standard = 2,
-		/datum/job/icc_squad/medic = 1,
-		/datum/job/icc_squad/tech = 1,
-		/datum/job/icc_squad/spec = 1,
-		/datum/job/icc_squad/leader = 1,
-		/datum/job/icc/commander = 1,
-		/datum/job/icc/fieldcommander = 1,
-		/datum/job/icc/administrator = 4,
-	)
-	whitelist_ground_maps = null
-	whitelist_antag_maps = null
-	blacklist_ground_maps = list(MAP_WHISKEY_OUTPOST, MAP_OSCAR_OUTPOST, MAP_FORT_PHOBOS, MAP_COLONY1, MAP_CORSAT, MAP_LV_624BASES)
-
-/datum/game_mode/infestation/colony_fall/survival/announce()
-	to_chat("all", span_round_header("The current map is - [SSmapping.configs[GROUND_MAP].map_name]!"))
-	to_chat("all", span_information("The brave colonists from earth have settled down and heard terrible things have happened to some other colonies across the world but it is hard to believe the rumors... Surely nothing will go out of the ordinary this shift. // Stick to roleplay requirements, nobody but security must be visibly armed in green alert."))
-	priority_announce(
-		message = "It's the beginning of another shift in [SSmapping.configs[GROUND_MAP].map_name]. Make Phantom City proud!",
-		title = "Good morning, colonists.",
-		type = ANNOUNCEMENT_PRIORITY,
-		color_override = "blue"
-	)
-	var/sound/S = sound(get_sfx(SFX_QUEEN), channel = CHANNEL_ANNOUNCEMENTS, volume = 50)
-	for(var/i in (GLOB.xeno_mob_list + GLOB.observer_list))
-		var/mob/M = i
-		SEND_SOUND(M, S)
-		to_chat(M, assemble_alert(
-			title = "Queen Mother Calls.",
-			message = "Rise my children, it is time to assault this still unbuilt tall-host hive before they can call for help. You are alone, so take care and infect hosts to grow your hive. Do not let the talls find you out too soon, or you will have trouble.",
-			color_override = "purple"
-		))
-		to_chat(M, span_information("You are a xenomorph, your primary goal is to breed as many hosts as possible while keeping yourself and the larvas in the hosts alive. You must still stick to roleplay standards. There is no time limit in this mode, take your time with erp or whatever rather than spamming impregnate on people. Game ends when all Xenos or Humans die. If you allow the talls to call for help, you will have trouble."))
-		//to_chat("all", span_boldwarning("Xenos can not see mobs through walls in this mode."))
-
 /datum/game_mode/infestation/colony_fall/prison_fall
 	name = "Prison Fall"
 	config_tag = "Prison Fall"
 	factions = list(FACTION_ICC, FACTION_XENO)
 	human_factions = list(FACTION_ICC)
 	valid_job_types = list(
+		/datum/outfit/job/survivor/admin = 1,
 		/datum/job/survivor/assistant = 1,
 		/datum/job/survivor/scientist = 2,
 		/datum/job/survivor/doctor = 3,
