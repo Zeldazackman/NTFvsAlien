@@ -1237,8 +1237,13 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/command/cic)
 "bGi" = (
-/turf/open/floor/plating,
-/area/mainship/living/grunt_rnr)
+/obj/machinery/robotic_cradle,
+/turf/open/floor/mainship/sterile,
+/area/centcom/practice/medical{
+	outside = 0;
+	base_lighting_alpha = 0;
+	static_lighting = 1
+	})
 "bGC" = (
 /obj/machinery/door/airlock/mainship/security{
 	req_access = list(105)
@@ -6463,7 +6468,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/mainship/mono,
 /area/mainship/living/grunt_rnr)
 "izi" = (
 /obj/machinery/shower{
@@ -18327,14 +18332,6 @@
 /obj/effect/landmark/sensor_tower,
 /turf/open/floor/plating/ground/snow/layer3,
 /area/desert_dam/exterior/valley/valley_wilderness)
-"yci" = (
-/obj/machinery/robotic_cradle,
-/turf/open/floor/mainship/sterile,
-/area/centcom/practice/medical{
-	outside = 0;
-	base_lighting_alpha = 0;
-	static_lighting = 1
-	})
 "ycr" = (
 /obj/machinery/camera/autoname/mainship,
 /turf/open/floor/mainship/mono,
@@ -24108,7 +24105,7 @@ bas
 tVh
 vCe
 wCI
-yci
+bGi
 tVh
 jAO
 tVh
@@ -34563,7 +34560,7 @@ wta
 eok
 eok
 wta
-bGi
+rsI
 iyL
 wta
 eok
