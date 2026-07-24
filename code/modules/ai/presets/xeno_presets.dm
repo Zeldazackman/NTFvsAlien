@@ -160,14 +160,26 @@
 
 /mob/living/carbon/xenomorph/shrike/ai
 
-/mob/living/carbon/xenomorph/shrike/Initialize(mapload, do_not_set_as_ruler, _hivenumber)
+/mob/living/carbon/xenomorph/shrike/ai/Initialize(mapload, do_not_set_as_ruler, _hivenumber)
 	hivenumber = _hivenumber || hivenumber
 	. = ..()
 	AddComponent(/datum/component/ai_controller, /datum/ai_behavior/xeno)
 
 /mob/living/carbon/xenomorph/dragon/ai
 
-/mob/living/carbon/xenomorph/dragon/Initialize(mapload, do_not_set_as_ruler, _hivenumber)
+/mob/living/carbon/xenomorph/dragon/ai/Initialize(mapload, do_not_set_as_ruler, _hivenumber)
 	hivenumber = _hivenumber || hivenumber
+	. = ..()
+	AddComponent(/datum/component/ai_controller, /datum/ai_behavior/xeno)
+
+/mob/living/carbon/xenomorph/spitter/globadier/ai
+
+/mob/living/carbon/xenomorph/spitter/globadier/ai/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/ai_controller, /datum/ai_behavior/xeno/ranged)
+
+/mob/living/carbon/xenomorph/bull/ai
+
+/mob/living/carbon/xenomorph/bull/ai/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/ai_controller, /datum/ai_behavior/xeno)

@@ -1058,8 +1058,14 @@
 	if(href_list["harmful_sex_toggle_off"])
 		DISABLE_BITFIELD(client.prefs.harmful_sex_flags, text2num(href_list["harmful_sex_toggle_off"]))
 		. = TRUE
+	if(href_list["quick_sex_toggle_on"])
+		ENABLE_BITFIELD(client.prefs.quick_sex_flags, text2num(href_list["quick_sex_toggle_on"]))
+		. = TRUE
+	if(href_list["quick_sex_toggle_off"])
+		DISABLE_BITFIELD(client.prefs.quick_sex_flags, text2num(href_list["quick_sex_toggle_off"]))
+		. = TRUE
 	if(. && usr?.client)
-		toggle_harmful_sex()
+		sex_prefs()
 
 /datum/sex_controller/proc/try_stop_current_action()
 	if(!current_action)

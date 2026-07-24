@@ -660,6 +660,45 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/vending/nanoammo, (-26))
 		attack_generic(xeno_attacker, damage_amount, damage_type, armor_type, FALSE, armor_penetration)
 		return TRUE
 
+/obj/machinery/vending/nanoblood
+	name = "\improper NanoBlood"
+	desc = "Wall-mounted blood dispenser. Holds more than you'll need. Hopefully."
+	product_slogans = "The best blood on the market!;Totally came from an ethical source!;O negative is the universal donor, use it!;Prevent hypovolemic shock starting today!"
+	icon_state = "wallblood"
+	icon_vend = "wallblood-vend"
+	icon_deny = "wallblood-deny"
+	density = FALSE
+	wrenchable = FALSE
+	layer = ABOVE_OBJ_LAYER
+	resistance_flags = XENO_DAMAGEABLE
+	req_one_access = list(ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY, ACCESS_MARINE_MEDPREP)
+	products = list(
+		/obj/item/reagent_containers/blood/APlus = 5,
+		/obj/item/reagent_containers/blood/AMinus = 5,
+		/obj/item/reagent_containers/blood/BPlus = 5,
+		/obj/item/reagent_containers/blood/BMinus = 5,
+		/obj/item/reagent_containers/blood/OPlus = 5,
+		/obj/item/reagent_containers/blood/OMinus = 5,
+		/obj/item/reagent_containers/blood/empty = 10,
+	)
+	mouse_over_pointer = MOUSE_HAND_POINTER
+
+/obj/machinery/vending/nanoblood/Initialize(mapload, ndir)
+	. = ..()
+	setDir(ndir ? ndir : dir)
+
+/obj/machinery/vending/nanoblood/setDir(newdir)
+	. = ..()
+	switch(dir)
+		if(NORTH)
+			pixel_z = -14
+		if(SOUTH)
+			pixel_z = 26
+		if(EAST)
+			pixel_w = -19
+		if(WEST)
+			pixel_w = 21
+
 /obj/machinery/vending/security
 	name = "\improper SecTech"
 	desc = "A security equipment vendor."
@@ -680,7 +719,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/vending/nanoammo, (-26))
 		/obj/item/storage/donut_box = 2,
 		/obj/item/clothing/under/lewd/stripper/slutcurity = -1,
 		/obj/item/storage/belt/security = -1,
+		/obj/item/clothing/ears/earmuffs = 3,
+		/obj/item/explosive/grenade/flashbang/stun = 4,
 		/obj/item/explosive/grenade/smokebomb/sleep = 4,
+		/obj/item/explosive/grenade/chem_grenade/teargas = 8,
 		/obj/item/roller/bedroll/sec = -1,
 		/obj/item/explosive/grenade/bednade = 20,
 		/obj/item/clothing/under/rank/warden/corp = 1,
@@ -688,6 +730,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/vending/nanoammo, (-26))
 		/obj/item/clothing/under/marine/mp = 2,
 		/obj/item/tool/taperoll/police = 2,
 		/obj/item/clothing/suit/armor/patrol = 2,
+		/obj/item/cell/taser = 2,
 		/obj/item/reagent_containers/hypospray/autoinjector/combat = 8,
 	)
 

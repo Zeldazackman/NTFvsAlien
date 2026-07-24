@@ -25,6 +25,7 @@
 	total_health = 115
 	brute_mod = 0.9
 	burn_mod = 1.1
+	hunger_mult = 1.3
 	taste_sensitivity = TASTE_SENSITIVE
 	force_emissives = TRUE
 	force_hair_emissive = TRUE
@@ -56,7 +57,7 @@
 	-Last Stand-<br /><br />\
 	Resurgentis have a unique ability to go into a berserk rage when critically injured, granting them temporary healing, boosts to their speed and making them withstand dying out of pure rage and determination for its short duration, but leaving them exhausted once the effect ends. Cooldown is automatically refreshed in 5 minutes.<br /><br /> \
 	-Dense Muscles-<br /><br />\
-	Resurgentis have slightly more brute resistance than humans, slight more health and somewhat stronger punches.<br /><br />\
+	Resurgentis have slightly more brute resistance than humans, slight more health and somewhat stronger punches, but they get hungry 30% faster.<br /><br />\
 	-Temperature unregulation-<br /><br />\
 	Resurgentis have poor body insulation and temperature regulation, making them more vulnerable to burning damage due to their larger size and phsiology.<br /><br /> \
 	-Glowing Essence-<br /><br />\
@@ -123,8 +124,8 @@
 	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/adrenaline, round(rage_power*4), no_overdose = TRUE)
 	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/regen, 15, no_overdose = TRUE)
 	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/tramadol, 15, no_overdose = TRUE)
-	carbon_owner.adjustBruteLoss(-carbon_owner.getBruteLoss(TRUE) * (max(0.30, rage_power/2)))
-	carbon_owner.adjustFireLoss(-carbon_owner.getFireLoss(TRUE) * (max(0.30, rage_power/2)))
+	carbon_owner.adjustBruteLoss(-carbon_owner.getBruteLoss(TRUE) * (max(0.30, rage_power/3)))
+	carbon_owner.adjustFireLoss(-carbon_owner.getFireLoss(TRUE) * (max(0.30, rage_power/3)))
 	carbon_owner.Stun(1 SECONDS)
 	carbon_owner.emote("me", 1, "slams their fist to the ground.")
 	carbon_owner.health_threshold_crit = -100 //stop when u dead

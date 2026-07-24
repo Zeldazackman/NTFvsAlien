@@ -231,6 +231,9 @@
 /obj/machinery/miner/wirecutter_act(mob/living/user, obj/item/I)
 	if(miner_status != MINER_MEDIUM_DAMAGE)
 		return
+	if(user.faction != FACTION_TERRAGOV && user.faction != FACTION_SOM && user.faction != FACTION_ICC)
+		to_chat(user, span_warning("Your faction's high command is not interested in minerals."))
+		return FALSE
 	if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
 		user.visible_message(span_notice("[user] fumbles around figuring out [src]'s wiring."),
 		span_notice("You fumble around figuring out [src]'s wiring."))
@@ -253,6 +256,10 @@
 	return TRUE
 
 /obj/machinery/miner/proc/can_capture(mob/user)
+
+	if(!(SSticker.mode.round_type_flags2 & MODE_2_MINER_RUSH_PROT))
+		return TRUE
+
 	var/phoron_total = 0
 	var/phoron_faction = 0
 	var/platinum_total = 0
@@ -285,10 +292,10 @@
 	if(user.faction == FACTION_CLF && ((cavezone && cavezone.ceiling > CEILING_UNDERGROUND) || is_platinum()))
 		to_chat(user, span_warning("Repairing this would go against your masters' wishes and wellbeing."))
 		return FALSE
-	if(!user.faction == FACTION_TERRAGOV && !user.faction == FACTION_SOM && !user.faction == FACTION_ICC)
+	if(user.faction != FACTION_TERRAGOV && user.faction != FACTION_SOM && user.faction != FACTION_ICC)
 		to_chat(user, span_warning("Your faction's high command is not interested in minerals."))
 		return FALSE
-	if ((SSticker.mode.round_type_flags2 & MODE_2_MINER_RUSH_PROT) && (user.faction != FACTION_CLF) && !can_capture(user))
+	if ((user.faction != FACTION_CLF) && !can_capture(user))
 		user.visible_message(span_warning("Under the current truce, your faction is forbidden from seizing additional miners of this type. Only when war is declared may this restriction be lifted."))
 		return FALSE
 	if(miner_status != MINER_SMALL_DAMAGE)

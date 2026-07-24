@@ -129,7 +129,6 @@
 			/obj/item/weapon/gun/pistol/som = -1,
 			/obj/item/ammo_magazine/pistol/som = -1,
 			/obj/item/ammo_magazine/pistol/som/extended = 40,
-			/obj/item/ammo_magazine/pistol/som/incendiary = 20,
 			/obj/item/weapon/gun/pistol/plasma_pistol = -1,
 			/obj/item/ammo_magazine/pistol/plasma_pistol = -1,
 			/obj/item/weapon/gun/pistol/standard_pistol = -1,
@@ -164,6 +163,7 @@
 			/obj/item/explosive/grenade/smokebomb/acid = 5,
 			/obj/item/explosive/grenade/smokebomb/aphrotoxin = 5,
 			/obj/item/explosive/grenade/smokebomb/sleep = 10,
+			/obj/item/explosive/grenade/chem_grenade/teargas = 10,
 			/obj/item/explosive/grenade/bullet/laser = 30,
 			/obj/item/explosive/grenade/bullet/hefa = 5,
 			/obj/item/explosive/grenade/emp = 5,
@@ -774,8 +774,8 @@
 		),
 		"Backpacks" = list(
 			/obj/item/storage/backpack/satchel/som = -1,
-			/obj/item/storage/backpack/lightpack/icc = 10,
-			/obj/item/storage/backpack/lightpack/som = 10,
+			/obj/item/storage/backpack/icc = 10,
+			/obj/item/storage/backpack/som = 10,
 			/obj/item/tool/weldpack/marinestandard = -1,
 		),
 		"Instruments" = list(

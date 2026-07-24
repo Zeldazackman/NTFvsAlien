@@ -194,6 +194,8 @@
 	var/has_underwear_slots = FALSE
 	var/species_description = null
 
+	var/hunger_mult = 1
+
 /datum/species/New()
 	if(hud_type)
 		hud = new hud_type()
