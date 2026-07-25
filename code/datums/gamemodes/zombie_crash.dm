@@ -15,7 +15,7 @@
 		/datum/job/terragov/medical/professor = 1,
 		/datum/job/terragov/silicon/synthetic = 1,
 		/datum/job/terragov/command/fieldcommander = 1,
-		/datum/job/xenomorph/green = 3,
+		/datum/job/xenomorph = 3,
 	)
 	job_points_needed_by_job_type = list(
 		/datum/job/terragov/squad/smartgunner = 20,
@@ -54,6 +54,8 @@
 
 	for(var/i in (GLOB.zombie_spawner_turfs + GLOB.xeno_resin_silo_turfs))
 		new /obj/effect/ai_node/spawner/zombie(i)
+		for(var/obj/structure/xeno/xeno_struct in i)
+			qdel(xeno_struct)
 	for(var/i in GLOB.zombie_crash_vendor_landmarks)
 		new /obj/machinery/marine_selector/zombie_crash(get_turf(i))
 
