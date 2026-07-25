@@ -10,7 +10,7 @@
 
 /mob/living/carbon/human/supply_export(faction_selling, mob/user)
 	if(!can_sell_human_body(src, faction_selling))
-		return list(new /datum/export_report(0, name, faction_selling, 0))
+		return list(new /datum/export_report(0, "[name] (Not wanted!)", faction_selling, 0))
 	return ..()
 
 /mob/living/carbon/xenomorph/supply_export(faction_selling, mob/user)
