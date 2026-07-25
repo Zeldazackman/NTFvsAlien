@@ -1,0 +1,4 @@
+author: "Meghan-Rossi"
+delete-after: True
+changes:
+  - balance: "Aphrotoxin can now only stamcrit people once every five minutes, unless purged completely"
