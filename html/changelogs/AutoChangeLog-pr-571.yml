@@ -1,0 +1,4 @@
+author: "CaputCapital"
+delete-after: True
+changes:
+  - rscadd: "Fixed pre-existing turtleneck sprites and added feminine alternatives"
