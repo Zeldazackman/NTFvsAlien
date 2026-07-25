@@ -31,6 +31,10 @@
 	var/shows_butt = FALSE
 	var/shows_bottom_genital = FALSE
 	var/shows_top_genital = FALSE
+	/// Used by auxiliary clothing layers, like undershirts, that should block exposed genital visuals/interactions.
+	var/blocks_butt = FALSE
+	var/blocks_bottom_genital = FALSE
+	var/blocks_top_genital = FALSE
 
 /obj/item/clothing/Initialize(mapload)
 	. = ..()

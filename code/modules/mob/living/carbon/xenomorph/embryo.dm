@@ -308,12 +308,18 @@
 			monkey.take_overall_damage(140, BRUTE, MELEE)
 		monkey.take_overall_damage(20, BURN, MELEE)
 	if(ishuman(victim) && !(SSticker.mode.round_type_flags2 & MODE_2_CHILL_RULES))
-		if(victim.getCloneLoss() < 30)
-			victim.adjustCloneLoss(45)
-		if(!(CHECK_BITFIELD(victim.restrained_flags, RESTRAINED_XENO_NEST)) || issynth(victim)) //synth dont have cloneloss so only option is to outright kill them.
-			//victim.death(FALSE)
-			victim.adjustCloneLoss(75) //more if not nested
-		victim.visible_message(span_warning("[victim]'s body and hole are devastated by the birth."))
+		var/mob/living/carbon/human/human_victim = victim
+		if(isxenohybrid(human_victim))
+			var/clone_damage = CHECK_BITFIELD(victim.restrained_flags, RESTRAINED_XENO_NEST) ? 5 : 10
+			victim.adjustCloneLoss(clone_damage)
+			victim.visible_message(span_warning("[victim]'s hybrid body strains, but adapts to the larva's birth."))
+		else
+			if(victim.getCloneLoss() < 30)
+				victim.adjustCloneLoss(45)
+			if(!(CHECK_BITFIELD(victim.restrained_flags, RESTRAINED_XENO_NEST)) || issynth(victim)) //synth dont have cloneloss so only option is to outright kill them.
+				//victim.death(FALSE)
+				victim.adjustCloneLoss(75) //more if not nested
+			victim.visible_message(span_warning("[victim]'s body and hole are devastated by the birth."))
 
 	if(((locate(/obj/structure/bed/nest) in loc) || loc_weeds_type) && !mind)
 		var/suitablesilo = FALSE
