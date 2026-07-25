@@ -374,6 +374,10 @@
 	},
 /turf/open/floor/urban/wood/redwood,
 /area/turkenden3excluzone/indoors/diner)
+"azv" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/closed/mineral/smooth/desertdamrockwall/indestructible,
+/area/turkenden3excluzone/indoors/caves/s)
 "azK" = (
 /obj/structure/closet/cabinet,
 /turf/open/floor/urban/carpet/carpetblue,
@@ -557,6 +561,10 @@
 /obj/structure/cable,
 /turf/open/floor/mainship/sterile/purple/side,
 /area/turkenden3excluzone/indoors/medrsr/rsrdorms)
+"aHK" = (
+/obj/structure/window/framed/mainship/white,
+/turf/open/floor/mainship/sterile/dark,
+/area/turkenden3excluzone/indoors/medrsr/lab)
 "aIR" = (
 /obj/structure/sink{
 	dir = 8;
@@ -1119,10 +1127,6 @@
 /obj/item/storage/fancy/cigar,
 /turf/open/floor/carpet/edge2,
 /area/turkenden3excluzone/indoors/liquorstore)
-"btN" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/closed/mineral/smooth/desertdamrockwall,
-/area/turkenden3excluzone/indoors/caves/s)
 "bvw" = (
 /obj/structure/bed/chair/wood/normal{
 	dir = 1
@@ -1207,10 +1211,6 @@
 /obj/item/bedsheet/brown,
 /turf/open/floor/urban/carpet/carpetblue,
 /area/turkenden3excluzone/indoors/westresidencies)
-"bAM" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/e)
 "bAQ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/cable,
@@ -1908,6 +1908,10 @@
 "cqK" = (
 /turf/closed/wall/mainship/white,
 /area/turkenden3excluzone/indoors/medrsr/operatingtheatre)
+"cqY" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/closed/mineral/smooth/desertdamrockwall,
+/area/turkenden3excluzone/indoors/caves/e)
 "cro" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
@@ -2576,6 +2580,10 @@
 	},
 /turf/open/floor/wood,
 /area/turkenden3excluzone/indoors/nmilitaryoutpost/commandpost)
+"dgF" = (
+/obj/effect/landmark/xeno_silo_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/west)
 "dhQ" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -2883,10 +2891,6 @@
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/turkenden3excluzone/outdoors/reqcargo)
-"dAL" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/closed/mineral/smooth/resin_hard,
-/area/turkenden3excluzone/indoors/caves/e)
 "dAZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 10
@@ -2899,6 +2903,13 @@
 	color = "#ffe1b9"
 	},
 /area/turkenden3excluzone/outdoors/roadse)
+"dBL" = (
+/obj/effect/ai_node{
+	pixel_x = 1
+	},
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/n)
 "dCk" = (
 /obj/structure/flora/desert/grass/heavy,
 /turf/open/floor/plating/ground/mars/random/cave,
@@ -3317,13 +3328,6 @@
 "eaF" = (
 /turf/closed/wall/mainship/white,
 /area/turkenden3excluzone/indoors/medrsr/jointfac)
-"eaO" = (
-/obj/effect/ai_node{
-	pixel_x = 1
-	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/se)
 "ebK" = (
 /obj/machinery/miner/damaged,
 /turf/open/floor/plating/ground/mars/random/cave,
@@ -3458,6 +3462,10 @@
 /obj/structure/cable,
 /turf/open/floor/mainship/tcomms,
 /area/turkenden3excluzone/indoors/serverbuilding/servstore)
+"eif" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/closed/mineral/smooth/desertdamrockwall,
+/area/turkenden3excluzone/indoors/caves/n)
 "eis" = (
 /obj/structure/table/reinforced,
 /obj/structure/paper_bin{
@@ -4106,10 +4114,6 @@
 	},
 /turf/open/floor/mainship/tcomms,
 /area/turkenden3excluzone/indoors/serverbuilding/servstore)
-"eTU" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/closed/mineral/smooth/desertdamrockwall,
-/area/turkenden3excluzone/indoors/caves/ne)
 "eTW" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /turf/open/floor/tile/chapel{
@@ -4516,15 +4520,15 @@
 	color = "#969ba0"
 	},
 /area/turkenden3excluzone/indoors/mosque/halls)
-"fvj" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/closed/mineral/smooth/desertdamrockwall/indestructible,
-/area/turkenden3excluzone/indoors/caves/s)
 "fvu" = (
 /obj/structure/table/wood,
 /obj/machinery/computer3/laptop,
 /turf/open/floor/urban/carpet/carpetfadedred,
 /area/turkenden3excluzone/indoors/reqcargo/seresidencies)
+"fvK" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/closed/mineral/smooth/desertdamrockwall/indestructible,
+/area/turkenden3excluzone/indoors/caves/west)
 "fwc" = (
 /obj/structure/largecrate/random/case,
 /turf/open/floor/mainship/cargo,
@@ -4630,6 +4634,10 @@
 	},
 /turf/open/floor/mainship/sterile/dark,
 /area/turkenden3excluzone/indoors/medrsr/rsrdorms)
+"fEd" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/nw)
 "fEr" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1,
 /turf/open/floor/prison,
@@ -5093,10 +5101,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/turkenden3excluzone/outdoors/medrsrgrounds)
-"giL" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/nw)
 "giM" = (
 /obj/machinery/conveyor{
 	id = "lower_garbage"
@@ -5189,6 +5193,11 @@
 	},
 /turf/open/floor/plating/ground/desertdam/asphalt/tile,
 /area/turkenden3excluzone/indoors/swresidencies)
+"gqU" = (
+/obj/effect/landmark/weed_node,
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/west)
 "grv" = (
 /obj/structure/flora/desert/grass/heavy,
 /turf/open/floor/plating/ground/mars/random/cave,
@@ -5226,10 +5235,6 @@
 	name = "reinforced metal wall"
 	},
 /area/turkenden3excluzone/indoors/nmilitaryoutpost/barracks1)
-"gtZ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/closed/mineral/smooth/desertdamrockwall/indestructible,
-/area/turkenden3excluzone/indoors/caves/se)
 "guF" = (
 /obj/structure/bed/chair/sofa/left{
 	dir = 8
@@ -5281,10 +5286,6 @@
 /obj/effect/landmark/patrol_point/tgmc_11,
 /turf/open/floor/plating/ground/desertdam/asphalt/cement_sunbleached,
 /area/shuttle/drop1/lz1)
-"gxq" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/closed/mineral/smooth/desertdamrockwall/indestructible,
-/area/turkenden3excluzone/indoors/caves/c)
 "gyq" = (
 /turf/closed/wall/r_wall/chigusa{
 	name = "reinforced metal wall"
@@ -5319,12 +5320,6 @@
 "gBR" = (
 /turf/closed/wall/mainship/white,
 /area/turkenden3excluzone/indoors/medrsr/chemistry)
-"gBX" = (
-/obj/effect/ai_node{
-	pixel_x = 1
-	},
-/turf/open/floor/cult,
-/area/turkenden3excluzone/indoors/caves/cult)
 "gCV" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/tile/lightred/full,
@@ -5391,10 +5386,6 @@
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/turkenden3excluzone/outdoors/medrsrgrounds)
-"gFG" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/closed/mineral/smooth/resin_hard,
-/area/turkenden3excluzone/indoors/caves/n)
 "gFO" = (
 /obj/machinery/light/mainship,
 /turf/open/floor/wood,
@@ -5577,6 +5568,13 @@
 	color = "#ffe1b9"
 	},
 /area/turkenden3excluzone/outdoors/desertw)
+"gZI" = (
+/obj/effect/ai_node{
+	pixel_x = 1
+	},
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/se)
 "hab" = (
 /turf/closed/wall/variable/adobe,
 /area/turkenden3excluzone/indoors/southouthouse)
@@ -5779,13 +5777,6 @@
 /obj/effect/ai_node,
 /turf/open/floor/urban/carpet/carpetbeige,
 /area/turkenden3excluzone/indoors/miningshack)
-"hrT" = (
-/obj/effect/ai_node{
-	pixel_x = 1
-	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/n)
 "hsA" = (
 /obj/structure/rack,
 /turf/open/floor/mainship/sterile/purple,
@@ -6315,6 +6306,7 @@
 /area/turkenden3excluzone/indoors/reqcargo/lobby)
 "igW" = (
 /obj/structure/table/mainship,
+/obj/machinery/computer/shuttle/shuttle_control/dropship,
 /turf/open/floor/urban_wood,
 /area/turkenden3excluzone/indoors/landing_zone_1/lz1_console{
 	icon_state = "t3ene_lz2"
@@ -6679,6 +6671,10 @@
 /obj/effect/spawner/random/machinery/random_broken_computer/intel,
 /turf/open/floor/mainship/mono,
 /area/turkenden3excluzone/indoors/miningfacility)
+"izj" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/closed/mineral/smooth/desertdamrockwall/indestructible,
+/area/turkenden3excluzone/indoors/caves/c)
 "iAI" = (
 /obj/structure/bed/chair/wood/wings,
 /turf/open/floor/urban/carpet/carpetbeige,
@@ -6884,6 +6880,10 @@
 	},
 /turf/open/floor/plating/ground/desertdam/asphalt/tile,
 /area/turkenden3excluzone/indoors/producemarket)
+"iMN" = (
+/obj/effect/landmark/xeno_silo_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/s)
 "iMP" = (
 /turf/closed/mineral/smooth/desertdamrockwall,
 /area/turkenden3excluzone/outdoors/landing_zone_2)
@@ -7217,13 +7217,6 @@
 /obj/structure/closet/cabinet,
 /turf/open/floor/urban/carpet/carpetblue,
 /area/turkenden3excluzone/indoors/westresidencies)
-"jjc" = (
-/obj/effect/ai_node{
-	pixel_x = 1
-	},
-/obj/effect/landmark/xeno_silo_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/c)
 "jkB" = (
 /obj/machinery/door/window/secure{
 	dir = 2;
@@ -7241,6 +7234,11 @@
 	dir = 1
 	},
 /area/turkenden3excluzone/indoors/medrsr/lab)
+"jlW" = (
+/obj/effect/landmark/weed_node,
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/e)
 "jma" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1{
 	dir = 4
@@ -7322,6 +7320,10 @@
 /obj/item/book,
 /turf/open/floor/mainship/mono,
 /area/turkenden3excluzone/indoors/miningfacility/fmquarters)
+"jpz" = (
+/obj/effect/landmark/xeno_silo_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/n)
 "jpY" = (
 /turf/open/floor/urban/carpet/carpetblue,
 /area/turkenden3excluzone/indoors/sresidencies)
@@ -7540,10 +7542,6 @@
 	color = "#ffe1b9"
 	},
 /area/turkenden3excluzone/outdoors/roads)
-"jFt" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/closed/mineral/smooth/desertdamrockwall,
-/area/turkenden3excluzone/indoors/caves/se)
 "jFC" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -7797,10 +7795,6 @@
 /obj/structure/kitchenspike,
 /turf/open/floor/freezer,
 /area/turkenden3excluzone/indoors/serverbuilding/catering)
-"jVZ" = (
-/obj/effect/landmark/xeno_silo_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/sw)
 "jWn" = (
 /obj/structure/bed/bedroll,
 /obj/item/bedsheet/brown,
@@ -8032,10 +8026,6 @@
 	},
 /turf/open/floor/plating/ground/desertdam/asphalt/cement_sunbleached,
 /area/turkenden3excluzone/indoors/nmilitaryoutpost/secpoint)
-"knM" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/closed/mineral/smooth/desertdamrockwall/indestructible,
-/area/turkenden3excluzone/indoors/caves/ne)
 "knN" = (
 /obj/structure/window/framed/chigusa{
 	color = "#8c6946"
@@ -8139,6 +8129,10 @@
 /obj/structure/cable,
 /turf/open/floor/urban/carpet/carpetred,
 /area/turkenden3excluzone/indoors/medrsr/seceast)
+"kwo" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/closed/mineral/smooth/desertdamrockwall/indestructible,
+/area/turkenden3excluzone/indoors/caves/ne)
 "kwL" = (
 /obj/structure/flora/drought/grass,
 /obj/structure/prop/urban/vehicles/large/armored_trucks/nt_security/truck_1{
@@ -8631,6 +8625,10 @@
 	},
 /turf/open/floor/wood,
 /area/turkenden3excluzone/indoors/nwouthouses)
+"lac" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/closed/mineral/smooth/resin_hard,
+/area/turkenden3excluzone/indoors/caves/e)
 "lbn" = (
 /obj/structure/cable,
 /turf/open/floor/mainship/sterile/dark,
@@ -8716,6 +8714,10 @@
 	color = "#ffe1b9"
 	},
 /area/turkenden3excluzone/outdoors/roadse)
+"lik" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/closed/mineral/smooth/resin_hard,
+/area/turkenden3excluzone/indoors/caves/n)
 "liC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 10
@@ -8830,10 +8832,6 @@
 /obj/structure/flora/desert/grass,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/campaign/tgmc_airfield/outside/desert/west)
-"los" = (
-/obj/effect/landmark/xeno_silo_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/e)
 "loQ" = (
 /obj/machinery/door/airlock/multi_tile/mainship/generic{
 	dir = 8
@@ -8859,6 +8857,10 @@
 "lqh" = (
 /turf/open/floor/urban/carpet/carpetbeigedeco,
 /area/turkenden3excluzone/indoors/nresidencies)
+"lqp" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/e)
 "lqt" = (
 /obj/structure/table/wood,
 /turf/open/floor/urban/carpet/carpetbeigedeco,
@@ -9143,6 +9145,10 @@
 	name = "reinforced metal wall"
 	},
 /area/turkenden3excluzone/indoors/militaryoutpost/fieldhospital/surgery)
+"lKs" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/closed/mineral/smooth/desertdamrockwall/indestructible,
+/area/turkenden3excluzone/indoors/caves/se)
 "lKN" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/item/reagent_containers/food/snacks/meat,
@@ -9375,6 +9381,13 @@
 	dir = 4
 	},
 /area/turkenden3excluzone/indoors/medrsr/lab)
+"mbW" = (
+/obj/effect/ai_node{
+	pixel_x = 1
+	},
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/e)
 "mcE" = (
 /obj/structure/sign/chemistry{
 	dir = 8
@@ -9962,12 +9975,6 @@
 	color = "#ffe1b9"
 	},
 /area/turkenden3excluzone/outdoors/roadn)
-"mHp" = (
-/obj/effect/ai_node{
-	pixel_x = 1
-	},
-/turf/open/floor/plating/ground/desertdam/asphalt/tile,
-/area/turkenden3excluzone/indoors/nresidencies)
 "mHq" = (
 /obj/effect/ai_node{
 	pixel_x = 1
@@ -10246,6 +10253,13 @@
 	},
 /turf/open/floor/plating,
 /area/turkenden3excluzone/indoors/medrsr/generators)
+"mYF" = (
+/obj/effect/ai_node{
+	pixel_x = 1
+	},
+/obj/effect/landmark/xeno_silo_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/c)
 "mYL" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/light/mainship{
@@ -10378,6 +10392,10 @@
 	},
 /turf/open/floor/mainship/floor,
 /area/turkenden3excluzone/indoors/nwgreenhouse)
+"niK" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/closed/mineral/smooth/desertdamrockwall/indestructible,
+/area/turkenden3excluzone/indoors/caves/n)
 "niZ" = (
 /obj/structure/table/wood,
 /obj/item/tool/kitchen/knife{
@@ -10402,10 +10420,6 @@
 /obj/structure/table/wood,
 /turf/open/floor/plating/ground/desertdam/asphalt/tile,
 /area/turkenden3excluzone/indoors/farmhouse)
-"njZ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/closed/mineral/smooth/desertdamrockwall/indestructible,
-/area/turkenden3excluzone/indoors/caves/e)
 "nkc" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /turf/open/floor/mainship/mono,
@@ -10444,10 +10458,6 @@
 "nlS" = (
 /turf/open/floor/mainship/floor,
 /area/turkenden3excluzone/indoors/nwgreenhouse)
-"nmu" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/closed/mineral/smooth/desertdamrockwall,
-/area/turkenden3excluzone/indoors/caves/nw)
 "nnk" = (
 /obj/structure/platform{
 	dir = 4
@@ -10914,6 +10924,11 @@
 	dir = 4
 	},
 /area/turkenden3excluzone/indoors/miningfacility)
+"nOA" = (
+/obj/effect/landmark/xeno_tunnel_spawn,
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/nw)
 "nOP" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
 	dir = 1
@@ -11713,10 +11728,6 @@
 	dir = 4
 	},
 /area/turkenden3excluzone/indoors/miningfacility)
-"oHF" = (
-/obj/effect/landmark/xeno_silo_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/s)
 "oHS" = (
 /obj/machinery/chem_master,
 /turf/open/floor/tile/bar,
@@ -11796,6 +11807,10 @@
 	},
 /turf/open/floor/prison,
 /area/turkenden3excluzone/indoors/serverbuilding/mainoffices)
+"oOo" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/closed/mineral/smooth/desertdamrockwall,
+/area/turkenden3excluzone/indoors/caves/ne)
 "oOy" = (
 /obj/effect/ai_node,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -12056,6 +12071,10 @@
 	color = "#ffe1b9"
 	},
 /area/turkenden3excluzone/outdoors/roads)
+"pdA" = (
+/obj/effect/landmark/xeno_silo_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/sw)
 "pdE" = (
 /obj/machinery/light/mainship{
 	dir = 1
@@ -12139,10 +12158,6 @@
 /obj/item/reagent_containers/cup/glass/coffee,
 /turf/open/floor/urban/carpet/carpetblue,
 /area/turkenden3excluzone/indoors/serverbuilding/management)
-"pjY" = (
-/obj/effect/landmark/xeno_silo_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/west)
 "pkw" = (
 /obj/machinery/camera/autoname{
 	dir = 8
@@ -12341,13 +12356,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/turkenden3excluzone/indoors/reqcargo/reqmaints)
-"ptV" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/obj/effect/ai_node{
-	pixel_x = 1
-	},
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/s)
 "ptY" = (
 /obj/structure/bed/chair/sofa/right{
 	dir = 8
@@ -12373,11 +12381,6 @@
 	dir = 4
 	},
 /area/turkenden3excluzone/indoors/medrsr/jointfac)
-"pvh" = (
-/obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/e)
 "pvi" = (
 /turf/closed/wall/r_wall/chigusa{
 	name = "reinforced metal wall";
@@ -12428,10 +12431,6 @@
 	color = "#ffe1b9"
 	},
 /area/turkenden3excluzone/outdoors/nmilitaryoutpost/road)
-"pxa" = (
-/obj/effect/landmark/xeno_silo_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/se)
 "pxi" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
@@ -12478,11 +12477,6 @@
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/turkenden3excluzone/outdoors/medrsrgrounds)
-"pyG" = (
-/obj/effect/landmark/xeno_tunnel_spawn,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/nw)
 "pyW" = (
 /obj/effect/spawner/random/misc/structure/large/car{
 	dir = 8;
@@ -12502,6 +12496,10 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/urban/carpet/carpetred,
 /area/turkenden3excluzone/indoors/medrsr/seceast)
+"pzs" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/se)
 "pzu" = (
 /obj/machinery/door/airlock/mainship/security{
 	dir = 8;
@@ -12690,6 +12688,10 @@
 	dir = 1
 	},
 /area/turkenden3excluzone/indoors/reqcargo)
+"pLS" = (
+/obj/effect/landmark/xeno_silo_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/nw)
 "pLZ" = (
 /obj/machinery/light/mainship{
 	dir = 4
@@ -12780,10 +12782,6 @@
 /obj/structure/cable,
 /turf/open/floor/prison,
 /area/turkenden3excluzone/indoors/serverbuilding/southhall)
-"pQY" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/se)
 "pQZ" = (
 /obj/effect/ai_node{
 	pixel_x = 1
@@ -13422,6 +13420,10 @@
 	},
 /turf/open/floor/plating/ground/desertdam/asphalt/cement_sunbleached,
 /area/turkenden3excluzone/indoors/serverbuilding/driveinsouth)
+"qGJ" = (
+/obj/effect/landmark/xeno_silo_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/e)
 "qGY" = (
 /obj/machinery/camera/autoname{
 	dir = 4
@@ -13529,6 +13531,13 @@
 /obj/item/weapon/gun/rifle/icc_battlecarbine,
 /turf/open/floor/urban_wood,
 /area/turkenden3excluzone/indoors/nmilitaryoutpost/barracks3)
+"qOK" = (
+/obj/effect/ai_node{
+	pixel_x = 1
+	},
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/nw)
 "qPs" = (
 /obj/structure/flora/desert/grass/heavy,
 /turf/open/floor/plating/ground/mars/random/cave,
@@ -13553,6 +13562,12 @@
 	color = "#ffe1b9"
 	},
 /area/turkenden3excluzone/outdoors/roadnw)
+"qRs" = (
+/obj/effect/ai_node{
+	pixel_x = 1
+	},
+/turf/open/floor/plating/ground/desertdam/asphalt/tile,
+/area/turkenden3excluzone/indoors/nresidencies)
 "qRz" = (
 /obj/structure/flora/drought/grass,
 /obj/structure/flora/desert/grass/heavy,
@@ -13705,10 +13720,6 @@
 /obj/structure/cable,
 /turf/open/floor/mainship/sterile/dark,
 /area/turkenden3excluzone/indoors/militaryoutpost/fieldhospital/surgery)
-"raW" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/n)
 "raY" = (
 /obj/structure/bed/chair/wood/wings{
 	dir = 4
@@ -13746,6 +13757,10 @@
 	},
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/turkenden3excluzone/outdoors/mosque/ground)
+"reY" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/closed/mineral/smooth/desertdamrockwall,
+/area/turkenden3excluzone/indoors/caves/se)
 "rfJ" = (
 /obj/structure/bed/chair,
 /turf/open/floor/mainship/sterile/side{
@@ -13834,6 +13849,10 @@
 /obj/structure/flora/desert/grass/heavy,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/turkenden3excluzone/outdoors/deserts)
+"rlE" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/closed/mineral/smooth/desertdamrockwall,
+/area/turkenden3excluzone/indoors/caves/nw)
 "rlS" = (
 /obj/effect/ai_node{
 	pixel_x = 1
@@ -13878,10 +13897,6 @@
 	color = "#ffe1b9"
 	},
 /area/turkenden3excluzone/outdoors/serverbuilding/groundsw)
-"rpA" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/s)
 "rpG" = (
 /turf/closed/wall/variable/adobe,
 /area/turkenden3excluzone/indoors/nwouthouses)
@@ -14357,11 +14372,6 @@
 /obj/machinery/miner/damaged,
 /turf/open/floor/plating/ground/desertdam/cave/inner_cave,
 /area/turkenden3excluzone/indoors/caves/n)
-"rXs" = (
-/obj/effect/landmark/weed_node,
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/west)
 "rXF" = (
 /obj/structure/barricade/wooden{
 	max_integrity = 25;
@@ -14376,10 +14386,6 @@
 	},
 /turf/open/floor/urban/carpet,
 /area/turkenden3excluzone/indoors/miningfacility/secpost)
-"rYM" = (
-/obj/effect/landmark/xeno_silo_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/n)
 "rZE" = (
 /obj/structure/bed/bedroll,
 /obj/item/bedsheet/brown,
@@ -15072,10 +15078,6 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/turkenden3excluzone/indoors/swresidencies)
-"sMl" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/closed/mineral/smooth/desertdamrockwall,
-/area/turkenden3excluzone/indoors/caves/sw)
 "sMu" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/cable,
@@ -15574,6 +15576,10 @@
 /obj/machinery/light/mainship,
 /turf/open/floor/urban/wood/redwood,
 /area/turkenden3excluzone/indoors/diner)
+"trK" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/sw)
 "trR" = (
 /obj/structure/cable,
 /obj/effect/ai_node,
@@ -15710,13 +15716,6 @@
 "tCf" = (
 /turf/open/floor/mainship/sterile/dark,
 /area/turkenden3excluzone/indoors/militaryoutpost/fieldhospital/mo)
-"tCj" = (
-/obj/effect/ai_node{
-	pixel_x = 1
-	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/nw)
 "tCs" = (
 /obj/machinery/light/mainship{
 	dir = 4
@@ -16072,6 +16071,10 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/turkenden3excluzone/indoors/reqcargo/reqrigstorage)
+"uew" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/closed/mineral/smooth/desertdamrockwall/indestructible,
+/area/turkenden3excluzone/indoors/caves/nw)
 "ueG" = (
 /turf/open/floor/plating/ground/dirt2{
 	color = "#ffe1b9"
@@ -16124,10 +16127,6 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /turf/open/floor/mainship/mono,
 /area/turkenden3excluzone/indoors/reqcargo)
-"uiI" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/closed/mineral/smooth/desertdamrockwall,
-/area/turkenden3excluzone/indoors/caves/e)
 "uiJ" = (
 /obj/structure/table/wood,
 /obj/item/tool/candle,
@@ -16521,14 +16520,6 @@
 	},
 /turf/open/floor/plating/ground/desertdam/asphalt/tile,
 /area/turkenden3excluzone/indoors/sresidencies)
-"uDH" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/closed/mineral/smooth/desertdamrockwall/indestructible,
-/area/turkenden3excluzone/indoors/caves/west)
-"uDJ" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/closed/mineral/smooth/desertdamrockwall,
-/area/turkenden3excluzone/indoors/caves/n)
 "uEa" = (
 /obj/machinery/computer/pod/old{
 	name = "Register"
@@ -16917,6 +16908,10 @@
 	color = "#ffe1b9"
 	},
 /area/turkenden3excluzone/outdoors/landing_zone_2)
+"vbG" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/closed/mineral/smooth/desertdamrockwall,
+/area/turkenden3excluzone/indoors/caves/sw)
 "vbQ" = (
 /obj/structure/table/reinforced/prison{
 	color = "#6b675e"
@@ -17026,6 +17021,10 @@
 	},
 /turf/open/floor/tile/lightred/full,
 /area/turkenden3excluzone/indoors/medrsr/secwest)
+"viA" = (
+/obj/effect/landmark/xeno_silo_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/se)
 "viE" = (
 /obj/machinery/door/airlock/multi_tile/mainship/generic{
 	name = "\improper Server Workplace Rooms"
@@ -17073,6 +17072,10 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/turkenden3excluzone/indoors/serverbuilding/gensroomn)
+"vml" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/closed/mineral/smooth/desertdamrockwall,
+/area/turkenden3excluzone/indoors/caves/s)
 "vmB" = (
 /turf/open/floor/mainship/sterile/purple/corner{
 	dir = 4
@@ -17232,6 +17235,10 @@
 /obj/structure/window/framed/chigusa,
 /turf/open/floor/prison,
 /area/turkenden3excluzone/indoors/serverbuilding/breakroom)
+"vtV" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/closed/mineral/smooth/desertdamrockwall/indestructible,
+/area/turkenden3excluzone/indoors/caves/e)
 "vuw" = (
 /obj/structure/filingcabinet/nondense{
 	pixel_x = 8;
@@ -17507,6 +17514,10 @@
 /obj/item/flashlight/lamp/green,
 /turf/open/floor/mainship/mono,
 /area/turkenden3excluzone/indoors/miningfacility/fmquarters)
+"vOE" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/s)
 "vPj" = (
 /obj/structure/transmitter/colony_net/auto_id{
 	dir = 4;
@@ -18179,13 +18190,16 @@
 /obj/structure/cable,
 /turf/open/floor/urban/carpet/carpetred,
 /area/turkenden3excluzone/indoors/serverbuilding/secpost)
-"wGc" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/closed/mineral/smooth/desertdamrockwall/indestructible,
-/area/turkenden3excluzone/indoors/caves/n)
 "wGI" = (
 /turf/open/floor/kutjevo/fake_wood,
 /area/turkenden3excluzone/indoors/nmilitaryoutpost/barracks3)
+"wGL" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/obj/effect/ai_node{
+	pixel_x = 1
+	},
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/s)
 "wHb" = (
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/turkenden3excluzone/outdoors/desertn)
@@ -18401,13 +18415,6 @@
 	},
 /turf/open/floor/urban/tile/tilewhitecheckered,
 /area/turkenden3excluzone/indoors/nmilitaryoutpost/barracks1)
-"wVG" = (
-/obj/effect/ai_node{
-	pixel_x = 1
-	},
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/e)
 "wVT" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -18415,6 +18422,12 @@
 	},
 /turf/open/floor/mainship/sterile/dark,
 /area/turkenden3excluzone/indoors/medrsr/jointfac)
+"wWa" = (
+/obj/effect/ai_node{
+	pixel_x = 1
+	},
+/turf/open/floor/cult,
+/area/turkenden3excluzone/indoors/caves/cult)
 "wWw" = (
 /obj/machinery/vending/cola,
 /turf/open/floor/mainship/sterile/side{
@@ -18666,10 +18679,6 @@
 "xpt" = (
 /turf/open/floor/prison,
 /area/turkenden3excluzone/indoors/serverbuilding/breakroom)
-"xpv" = (
-/obj/effect/landmark/xeno_silo_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/nw)
 "xpI" = (
 /obj/structure/platform{
 	dir = 6
@@ -18963,10 +18972,6 @@
 	},
 /turf/open/floor/carpet/red,
 /area/turkenden3excluzone/indoors/westresidencies)
-"xII" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
-/area/turkenden3excluzone/indoors/caves/sw)
 "xJd" = (
 /obj/structure/window/framed/chigusa{
 	color = "#8c6946"
@@ -19311,6 +19316,10 @@
 	},
 /turf/open/floor/plating/ground/desertdam/asphalt/tile,
 /area/turkenden3excluzone/outdoors/mosque/paths)
+"ydz" = (
+/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
+/turf/open/floor/plating/ground/desertdam/cave/inner_cave,
+/area/turkenden3excluzone/indoors/caves/n)
 "ydG" = (
 /obj/structure/bed/chair/wood/wings{
 	dir = 4
@@ -19434,10 +19443,6 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/tile/dark,
 /area/turkenden3excluzone/indoors/serverbuilding/lobbysouth)
-"ylk" = (
-/obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
-/turf/closed/mineral/smooth/desertdamrockwall/indestructible,
-/area/turkenden3excluzone/indoors/caves/nw)
 
 (1,1,1) = {"
 cwF
@@ -32989,12 +32994,12 @@ gFT
 jvB
 mDu
 mDu
-rXs
+gqU
 pZI
 pZI
 pZI
 pZI
-rXs
+gqU
 mDu
 jvB
 jvB
@@ -33643,7 +33648,7 @@ jvB
 jvB
 bKL
 bKL
-pjY
+dgF
 bKL
 jvB
 mDu
@@ -34749,7 +34754,7 @@ svp
 vMZ
 ofY
 dTb
-gBX
+wWa
 svp
 ofY
 dTb
@@ -34960,7 +34965,7 @@ jvB
 jvB
 aEj
 plj
-gBX
+wWa
 dTb
 dTb
 dTb
@@ -34974,7 +34979,7 @@ dTb
 dTb
 dTb
 dTb
-gBX
+wWa
 dTb
 plj
 vLL
@@ -35397,14 +35402,14 @@ plj
 dTb
 dTb
 dTb
-gBX
+wWa
 dTb
 dTb
 gzT
 dTb
 uST
 dTb
-gBX
+wWa
 dTb
 dTb
 dTb
@@ -35574,15 +35579,15 @@ gFT
 gFT
 gFT
 gFT
-nmu
-ylk
-nmu
-nmu
-nmu
-pyG
-giL
-nmu
-nmu
+rlE
+uew
+rlE
+rlE
+rlE
+nOA
+fEd
+rlE
+rlE
 amv
 amv
 gFT
@@ -35791,7 +35796,7 @@ gFT
 gFT
 gFT
 amv
-ylk
+uew
 gFT
 gFT
 drk
@@ -35799,7 +35804,7 @@ drk
 drk
 drk
 drk
-nmu
+rlE
 gFT
 gFT
 amv
@@ -36008,7 +36013,7 @@ gFT
 amv
 amv
 amv
-nmu
+rlE
 gFT
 drk
 drk
@@ -36016,7 +36021,7 @@ drk
 dry
 drk
 drk
-nmu
+rlE
 gFT
 gFT
 gFT
@@ -36047,11 +36052,11 @@ aEj
 plj
 plj
 plj
-gBX
+wWa
 dTb
 dTb
 dTb
-gBX
+wWa
 dEP
 caS
 dTb
@@ -36059,7 +36064,7 @@ dTb
 dTb
 dTb
 dTb
-gBX
+wWa
 plj
 plj
 bMw
@@ -36225,15 +36230,15 @@ amv
 amv
 gFT
 gFT
-nmu
+rlE
 drk
 drk
 drk
 drk
-xpv
+pLS
 drk
 gFT
-nmu
+rlE
 gFT
 gFT
 gFT
@@ -36442,7 +36447,7 @@ amv
 gFT
 gFT
 gFT
-giL
+fEd
 drk
 drk
 drk
@@ -36450,7 +36455,7 @@ nrf
 drk
 drk
 drk
-nmu
+rlE
 gFT
 gFT
 gFT
@@ -36488,7 +36493,7 @@ plj
 dTb
 dTb
 dTb
-gBX
+wWa
 plj
 plj
 jvB
@@ -36659,7 +36664,7 @@ amv
 gFT
 gFT
 gFT
-giL
+fEd
 drk
 drk
 drk
@@ -36667,7 +36672,7 @@ drk
 drk
 drk
 drk
-giL
+fEd
 gFT
 gFT
 drk
@@ -36876,7 +36881,7 @@ amv
 amv
 gFT
 gFT
-nmu
+rlE
 drk
 drk
 drk
@@ -36884,7 +36889,7 @@ drk
 drk
 drk
 drk
-giL
+fEd
 drk
 drk
 drk
@@ -37093,7 +37098,7 @@ gFT
 amv
 gFT
 gFT
-nmu
+rlE
 drk
 drk
 drk
@@ -37101,7 +37106,7 @@ drk
 drk
 drk
 drk
-giL
+fEd
 drk
 drk
 drk
@@ -37310,15 +37315,15 @@ gFT
 amv
 amv
 gFT
-nmu
-nmu
-giL
-giL
-nmu
-giL
-nmu
-giL
-tCj
+rlE
+rlE
+fEd
+fEd
+rlE
+fEd
+rlE
+fEd
+qOK
 drk
 gFT
 drk
@@ -37555,7 +37560,7 @@ mDu
 bKL
 bKL
 bKL
-pjY
+dgF
 bKL
 bKL
 pZI
@@ -37768,7 +37773,7 @@ jvB
 jvB
 aEj
 aEj
-uDH
+fvK
 bKL
 bKL
 bKL
@@ -37985,7 +37990,7 @@ aEj
 aEj
 aEj
 jvB
-uDH
+fvK
 aEj
 bKL
 bKL
@@ -38421,10 +38426,10 @@ nsM
 nsM
 nAX
 mDu
-uDH
-uDH
-uDH
-uDH
+fvK
+fvK
+fvK
+fvK
 mDu
 mDu
 jvB
@@ -38453,15 +38458,15 @@ vLL
 vLL
 bMw
 bMw
-sMl
-sMl
-sMl
-sMl
-sMl
-sMl
-sMl
-sMl
-sMl
+vbG
+vbG
+vbG
+vbG
+vbG
+vbG
+vbG
+vbG
+vbG
 vLL
 vLL
 vLL
@@ -38670,7 +38675,7 @@ vLL
 bMw
 bMw
 vLL
-sMl
+vbG
 vLL
 vLL
 vLL
@@ -38678,7 +38683,7 @@ drz
 drz
 vLL
 drz
-xII
+trK
 vLL
 vLL
 vLL
@@ -38887,7 +38892,7 @@ bMw
 bMw
 vLL
 vLL
-sMl
+vbG
 vLL
 tzY
 drz
@@ -38895,7 +38900,7 @@ drz
 drz
 drz
 drz
-xII
+trK
 drz
 vLL
 vLL
@@ -39104,15 +39109,15 @@ vLL
 vLL
 vLL
 vLL
-sMl
+vbG
 vLL
 drz
 noi
 drz
 drz
-jVZ
+pdA
 drz
-xII
+trK
 drz
 drz
 oVx
@@ -39321,7 +39326,7 @@ drz
 vLL
 vLL
 vLL
-sMl
+vbG
 drz
 drz
 drz
@@ -39329,7 +39334,7 @@ drz
 drz
 drz
 drz
-xII
+trK
 rqc
 drz
 vLL
@@ -39538,7 +39543,7 @@ cAd
 cAd
 cAd
 jIE
-rpA
+vOE
 cAd
 cAd
 cAd
@@ -39546,7 +39551,7 @@ cAd
 cAd
 cAd
 cAd
-rpA
+vOE
 cAd
 cAd
 cAd
@@ -39755,7 +39760,7 @@ jIE
 cAd
 cAd
 cAd
-rpA
+vOE
 cAd
 cAd
 jIE
@@ -39763,7 +39768,7 @@ cAd
 cAd
 cAd
 cAd
-rpA
+vOE
 cAd
 cAd
 cAd
@@ -39972,15 +39977,15 @@ cAd
 cAd
 jIE
 cAd
-btN
-btN
-rpA
-rpA
-btN
-btN
-rpA
-rpA
-btN
+vml
+vml
+vOE
+vOE
+vml
+vml
+vOE
+vOE
+vml
 cAd
 cAd
 cAd
@@ -41216,16 +41221,16 @@ jcM
 jcM
 jcM
 jcM
-uDJ
-uDJ
-uDJ
-gFG
-gFG
-gFG
-gFG
-uDJ
-uDJ
-uDJ
+eif
+eif
+eif
+lik
+lik
+lik
+lik
+eif
+eif
+eif
 jcM
 pHo
 aoU
@@ -41433,7 +41438,7 @@ jcM
 jcM
 jcM
 jcM
-uDJ
+eif
 jcM
 pHo
 pHo
@@ -41442,7 +41447,7 @@ aoU
 pHo
 pHo
 jcM
-uDJ
+eif
 pHo
 pHo
 aoU
@@ -41650,7 +41655,7 @@ jcM
 jcM
 jcM
 jcM
-uDJ
+eif
 pHo
 pHo
 aoU
@@ -41659,7 +41664,7 @@ aoU
 aoU
 pHo
 pHo
-uDJ
+eif
 pHo
 aoU
 aoU
@@ -41867,16 +41872,16 @@ jcM
 jcM
 jcM
 jcM
-gFG
+lik
 pHo
 aoU
 aoU
 aoU
-rYM
+jpz
 dUK
 aoU
 pHo
-gFG
+lik
 pHo
 aoU
 aoU
@@ -41897,7 +41902,7 @@ eWO
 dRu
 eWO
 eWO
-dIG
+eWO
 rtU
 rtU
 mGU
@@ -42084,7 +42089,7 @@ jcM
 jcM
 jcM
 jcM
-gFG
+lik
 aoU
 aoU
 aoU
@@ -42093,7 +42098,7 @@ aoU
 the
 aoU
 aoU
-raW
+ydz
 aoU
 aoU
 dUK
@@ -42301,7 +42306,7 @@ jcM
 jcM
 jcM
 jcM
-gFG
+lik
 pHo
 aoU
 dUK
@@ -42310,7 +42315,7 @@ aoU
 aoU
 aoU
 dUK
-raW
+ydz
 aoU
 aoU
 aoU
@@ -42518,7 +42523,7 @@ jcM
 jcM
 jcM
 jcM
-uDJ
+eif
 pHo
 pHo
 aoU
@@ -42527,7 +42532,7 @@ aoU
 aoU
 aoU
 aoU
-raW
+ydz
 aoU
 mOG
 aoU
@@ -42545,7 +42550,7 @@ rtU
 rtU
 vmU
 rtU
-aPG
+eWO
 eWO
 eWO
 eWO
@@ -42587,13 +42592,13 @@ cAd
 wXe
 wXe
 wXe
-btN
-fvj
-fvj
-fvj
-fvj
-fvj
-fvj
+vml
+azv
+azv
+azv
+azv
+azv
+azv
 wXe
 wXe
 oEa
@@ -42735,7 +42740,7 @@ jcM
 jcM
 jcM
 jcM
-uDJ
+eif
 jcM
 pHo
 pHo
@@ -42744,7 +42749,7 @@ aoU
 aoU
 pHo
 pHo
-gFG
+lik
 aoU
 aoU
 aoU
@@ -42804,13 +42809,13 @@ cAd
 cAd
 wXe
 wXe
-rpA
+vOE
 cAd
 cAd
 cAd
 cAd
 cAd
-fvj
+azv
 oEa
 oEa
 oEa
@@ -42952,16 +42957,16 @@ jcM
 jcM
 jcM
 jcM
-uDJ
-uDJ
-uDJ
-gFG
-gFG
-gFG
-gFG
-gFG
-gFG
-hrT
+eif
+eif
+eif
+lik
+lik
+lik
+lik
+lik
+lik
+dBL
 aoU
 aoU
 pHo
@@ -43021,13 +43026,13 @@ cAd
 cAd
 cAd
 cAd
-rpA
+vOE
 cAd
 cAd
 cAd
-oHF
+iMN
 cAd
-fvj
+azv
 wXe
 wXe
 wXe
@@ -43238,13 +43243,13 @@ jIE
 cAd
 cAd
 cAd
-ptV
+wGL
 cAd
 cAd
 cAd
 cAd
 cAd
-fvj
+azv
 wXe
 wXe
 wXe
@@ -43275,7 +43280,7 @@ bBt
 eVp
 hsX
 moe
-pUi
+moe
 oBu
 oBu
 oBu
@@ -43455,13 +43460,13 @@ cAd
 cAd
 jIE
 cAd
-rpA
+vOE
 cAd
 cAd
 cAd
 cAd
 cAd
-fvj
+azv
 wXe
 wXe
 wXe
@@ -43492,8 +43497,8 @@ tNv
 hMu
 slA
 aQs
-pUi
-pUi
+moe
+moe
 oBu
 oBu
 oBu
@@ -43651,7 +43656,7 @@ mGU
 oOk
 eWO
 eWO
-jjc
+mYF
 eWO
 jkP
 eWO
@@ -43672,13 +43677,13 @@ cAd
 cAd
 cAd
 cAd
-rpA
+vOE
 cAd
 cAd
 cAd
 cAd
 cAd
-fvj
+azv
 wXe
 wXe
 cAd
@@ -43710,8 +43715,8 @@ uuz
 tWB
 slA
 jTe
-pUi
-pUi
+moe
+moe
 oBu
 oBu
 oBu
@@ -43889,13 +43894,13 @@ cAd
 cAd
 dNL
 cAd
-rpA
-rpA
-ptV
-rpA
-rpA
-rpA
-fvj
+vOE
+vOE
+wGL
+vOE
+vOE
+vOE
+azv
 wXe
 wXe
 cAd
@@ -44134,7 +44139,7 @@ oEa
 iHW
 igr
 oBu
-moe
+aHK
 kKs
 tFl
 jZD
@@ -44146,7 +44151,7 @@ tWB
 lBZ
 slA
 jTe
-moe
+aHK
 oBu
 oBu
 pWm
@@ -44238,14 +44243,14 @@ aoU
 skq
 jcM
 jcM
-uDJ
-uDJ
-uDJ
-uDJ
-uDJ
-uDJ
-uDJ
-wGc
+eif
+eif
+eif
+eif
+eif
+eif
+eif
+niK
 jcM
 jcM
 jcM
@@ -44286,7 +44291,7 @@ eWO
 eWO
 eWO
 eWO
-aPG
+eWO
 pbb
 rtU
 rtU
@@ -44455,14 +44460,14 @@ aoU
 skq
 jcM
 jcM
-uDJ
+eif
 jcM
 jcM
 mvE
 jcM
 jcM
 jcM
-wGc
+niK
 skq
 jcM
 jcM
@@ -44580,7 +44585,7 @@ tWB
 tWB
 aZt
 lbS
-moe
+aHK
 oBu
 oBu
 gXq
@@ -44672,14 +44677,14 @@ aoU
 skq
 jcM
 jcM
-uDJ
+eif
 jcM
 aoU
 aoU
 jcM
 jcM
 jcM
-uDJ
+eif
 skq
 jcM
 jcM
@@ -44785,8 +44790,8 @@ iHW
 hDa
 igr
 oBu
-pUi
-pUi
+moe
+moe
 noy
 uAO
 tFl
@@ -44889,14 +44894,14 @@ aoU
 skq
 jcM
 jcM
-uDJ
+eif
 aoU
 aoU
 aoU
-rYM
+jpz
 aoU
 jcM
-uDJ
+eif
 skq
 jcM
 jcM
@@ -45003,8 +45008,8 @@ iHW
 oBu
 rQJ
 oBu
-pUi
-pUi
+moe
+moe
 noy
 uAO
 vqX
@@ -45012,8 +45017,8 @@ tFl
 tWB
 aZt
 lbS
-pUi
-pUi
+moe
+moe
 oBu
 oBu
 oBu
@@ -45106,14 +45111,14 @@ aoU
 skq
 jcM
 jcM
-uDJ
+eif
 aoU
 aoU
 aoU
 aoU
 dUK
 jcM
-uDJ
+eif
 skq
 jcM
 jcM
@@ -45221,15 +45226,15 @@ oBu
 oBu
 oBu
 oBu
-pUi
-pUi
+moe
+moe
 cRG
 uAO
 lFy
 aZt
 lry
-pUi
-pUi
+moe
+moe
 oBu
 oBu
 rQJ
@@ -45323,14 +45328,14 @@ aoU
 skq
 jcM
 jcM
-uDJ
+eif
 aoU
 aoU
 aoU
 mOG
 aoU
 aoU
-uDJ
+eif
 jcM
 jcM
 jcM
@@ -45439,13 +45444,13 @@ oBu
 oBu
 oBu
 oBu
-pUi
+moe
 moe
 xfN
 jmX
 mbO
 moe
-pUi
+moe
 oBu
 igr
 oBu
@@ -45540,14 +45545,14 @@ aoU
 skq
 jcM
 jcM
-uDJ
+eif
 jcM
 aoU
 dUK
 aoU
 aoU
 aoU
-uDJ
+eif
 jcM
 jcM
 jcM
@@ -45658,9 +45663,9 @@ oBu
 igr
 oBu
 moe
-moe
+aHK
 gte
-moe
+aHK
 moe
 oBu
 oBu
@@ -45757,14 +45762,14 @@ aoU
 skq
 jcM
 jcM
-uDJ
+eif
 jcM
 jcM
 aoU
 aoU
 jcM
 jcM
-uDJ
+eif
 jcM
 jcM
 aoU
@@ -45974,14 +45979,14 @@ aoU
 skq
 jcM
 jcM
-uDJ
-uDJ
-uDJ
-raW
-raW
-raW
-uDJ
-uDJ
+eif
+eif
+eif
+ydz
+ydz
+ydz
+eif
+eif
 jcM
 jcM
 aoU
@@ -46206,20 +46211,20 @@ aoU
 jcM
 jcM
 jcM
-uDJ
-uDJ
-uDJ
-raW
-raW
-raW
-raW
-raW
-raW
-uDJ
-uDJ
+eif
+eif
+eif
+ydz
+ydz
+ydz
+ydz
+ydz
+ydz
+eif
+eif
 jcM
 skq
-gFG
+lik
 jkP
 jkP
 jkP
@@ -46423,7 +46428,7 @@ aoU
 jcM
 jcM
 jcM
-uDJ
+eif
 jcM
 aoU
 aoU
@@ -46433,10 +46438,10 @@ aoU
 aoU
 aoU
 aoU
-uDJ
+eif
 jcM
 skq
-gFG
+lik
 eWO
 eWO
 eWO
@@ -46640,20 +46645,20 @@ mOG
 jcM
 jcM
 jcM
-uDJ
+eif
 aoU
 aoU
 dUK
 aoU
 aoU
-rYM
+jpz
 aoU
 dUK
 aoU
-uDJ
+eif
 jcM
 skq
-gFG
+lik
 eWO
 eWO
 eWO
@@ -46857,7 +46862,7 @@ jcM
 jcM
 jcM
 jcM
-uDJ
+eif
 aoU
 aoU
 aoU
@@ -46867,10 +46872,10 @@ aoU
 aoU
 aoU
 skq
-wGc
+niK
 skq
 skq
-gFG
+lik
 eWO
 rDO
 eWO
@@ -47074,7 +47079,7 @@ jcM
 jcM
 jcM
 jcM
-uDJ
+eif
 jcM
 aoU
 aoU
@@ -47084,10 +47089,10 @@ aoU
 aoU
 aoU
 skq
-uDJ
+eif
 jcM
 skq
-gFG
+lik
 rtU
 eWO
 eWO
@@ -47114,7 +47119,7 @@ mGU
 mGU
 mGU
 faA
-gxq
+izj
 eWO
 eWO
 eWO
@@ -47291,7 +47296,7 @@ jcM
 jcM
 jcM
 jcM
-uDJ
+eif
 skq
 skq
 aoU
@@ -47301,10 +47306,10 @@ aoU
 aoU
 aoU
 skq
-uDJ
+eif
 jcM
 skq
-wGc
+niK
 tMC
 rtU
 eWO
@@ -47331,7 +47336,7 @@ mGU
 mGU
 mGU
 mGU
-gxq
+izj
 eWO
 eWO
 eWO
@@ -47508,7 +47513,7 @@ hEW
 hEW
 hEW
 hEW
-knM
+kwo
 hEW
 vhF
 vhF
@@ -47518,10 +47523,10 @@ kUE
 kUE
 vhF
 vhF
-eTU
+oOo
 hEW
 hEW
-njZ
+vtV
 kBw
 tMC
 rtU
@@ -47548,7 +47553,7 @@ eiw
 eiw
 eiw
 mGU
-gxq
+izj
 eWO
 eWO
 eWO
@@ -47725,23 +47730,23 @@ hEW
 hEW
 hEW
 vhF
-eTU
-eTU
-eTU
-knM
-knM
-knM
-knM
-knM
-knM
-eTU
-eTU
+oOo
+oOo
+oOo
+kwo
+kwo
+kwo
+kwo
+kwo
+kwo
+oOo
+oOo
 hEW
 hEW
-uiI
-njZ
-njZ
-dAL
+cqY
+vtV
+vtV
+lac
 oOk
 oOk
 oOk
@@ -47765,10 +47770,10 @@ eWO
 mGU
 eiw
 mGU
-gxq
-gxq
-gxq
-gxq
+izj
+izj
+izj
+izj
 eiw
 eiw
 eiw
@@ -47970,7 +47975,7 @@ ifU
 ifU
 ifU
 ifU
-uiI
+cqY
 cDm
 ifU
 ifU
@@ -47980,7 +47985,7 @@ ifU
 ifU
 ifU
 lAw
-uiI
+cqY
 cDm
 cDm
 cDm
@@ -48187,7 +48192,7 @@ fIV
 ifU
 ifU
 fIV
-bAM
+lqp
 ifU
 ifU
 ifU
@@ -48197,7 +48202,7 @@ ifU
 ifU
 ifU
 ifU
-uiI
+cqY
 cDm
 cDm
 cDm
@@ -48404,17 +48409,17 @@ ifU
 ifU
 ifU
 muT
-bAM
+lqp
 ifU
 ifU
 fIV
 ifU
-los
+qGJ
 hQA
 ifU
 ifU
 muT
-uiI
+cqY
 cDm
 cDm
 kBw
@@ -48439,15 +48444,15 @@ mOw
 nOR
 nOR
 nOR
-jFt
-jFt
-pQY
-pQY
-pQY
-eaO
-pQY
-pQY
-jFt
+reY
+reY
+pzs
+pzs
+pzs
+gZI
+pzs
+pzs
+reY
 nOR
 nOR
 nOR
@@ -48621,7 +48626,7 @@ ifU
 cDm
 cDm
 ifU
-bAM
+lqp
 ifU
 ifU
 ifU
@@ -48631,7 +48636,7 @@ ifU
 ifU
 ifU
 cDm
-uiI
+cqY
 cDm
 kBw
 kBw
@@ -48656,7 +48661,7 @@ nOR
 nOR
 nOR
 edj
-pQY
+pzs
 edj
 edj
 edj
@@ -48664,7 +48669,7 @@ edj
 edj
 edj
 edj
-jFt
+reY
 nOR
 nOR
 mOw
@@ -48838,7 +48843,7 @@ cDm
 cDm
 cDm
 cDm
-bAM
+lqp
 ifU
 ifU
 ifU
@@ -48848,7 +48853,7 @@ ifU
 ifU
 cDm
 cDm
-uiI
+cqY
 cDm
 kBw
 cDm
@@ -48873,7 +48878,7 @@ nOR
 nOR
 edj
 edj
-eaO
+gZI
 edj
 hhF
 edj
@@ -48881,7 +48886,7 @@ edj
 edj
 hhF
 edj
-pQY
+pzs
 nOR
 nOR
 mOw
@@ -49055,7 +49060,7 @@ cDm
 cDm
 cDm
 cDm
-bAM
+lqp
 ifU
 ifU
 ifU
@@ -49065,7 +49070,7 @@ ifU
 cDm
 cDm
 cDm
-njZ
+vtV
 kBw
 cDm
 cDm
@@ -49090,7 +49095,7 @@ edj
 edj
 edj
 edj
-pQY
+pzs
 edj
 edj
 edj
@@ -49098,7 +49103,7 @@ edj
 edj
 edj
 edj
-pQY
+pzs
 nOR
 mOw
 mOw
@@ -49272,17 +49277,17 @@ cDm
 cDm
 cDm
 cDm
-uiI
-bAM
-pvh
-wVG
-bAM
-bAM
-uiI
-uiI
-uiI
-njZ
-njZ
+cqY
+lqp
+jlW
+mbW
+lqp
+lqp
+cqY
+cqY
+cqY
+vtV
+vtV
 cDm
 cDm
 cDm
@@ -49307,15 +49312,15 @@ edj
 edj
 edj
 edj
-pQY
+pzs
 hhF
 edj
 edj
 edj
-pxa
+viA
 edj
 edj
-pQY
+pzs
 mOw
 mOw
 nOR
@@ -49524,7 +49529,7 @@ hhF
 edj
 edj
 edj
-pQY
+pzs
 edj
 edj
 edj
@@ -49532,7 +49537,7 @@ edj
 edj
 edj
 hhF
-gtZ
+lKs
 mOw
 nOR
 nOR
@@ -49741,7 +49746,7 @@ dUr
 edj
 hhF
 nOR
-jFt
+reY
 edj
 edj
 edj
@@ -49749,7 +49754,7 @@ edj
 edj
 edj
 edj
-gtZ
+lKs
 nOR
 nOR
 nOR
@@ -49958,7 +49963,7 @@ edj
 edj
 mMb
 nOR
-jFt
+reY
 nOR
 edj
 edj
@@ -49966,7 +49971,7 @@ edj
 edj
 edj
 mOw
-gtZ
+lKs
 nOR
 nOR
 nOR
@@ -50175,7 +50180,7 @@ edj
 nOR
 nOR
 nOR
-jFt
+reY
 nOR
 edj
 edj
@@ -50183,7 +50188,7 @@ edj
 edj
 mOw
 mOw
-jFt
+reY
 nOR
 nOR
 nOR
@@ -50392,15 +50397,15 @@ nOR
 nOR
 nOR
 nOR
-jFt
-jFt
-jFt
-gtZ
-gtZ
-gtZ
-gtZ
-jFt
-jFt
+reY
+reY
+reY
+lKs
+lKs
+lKs
+lKs
+reY
+reY
 nOR
 nOR
 nOR
@@ -52033,7 +52038,7 @@ wHb
 mke
 cid
 cid
-mHp
+qRs
 cid
 cid
 ieq
@@ -52468,7 +52473,7 @@ mke
 cid
 tYf
 cid
-mHp
+qRs
 aqc
 mke
 mke
@@ -53117,7 +53122,7 @@ wHb
 wHb
 mke
 cid
-mHp
+qRs
 cid
 cid
 ieq
@@ -55505,7 +55510,7 @@ lcS
 mke
 csT
 cid
-mHp
+qRs
 jLn
 bGw
 lcS
