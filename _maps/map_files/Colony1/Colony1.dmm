@@ -7258,11 +7258,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/hangar2)
-"jwK" = (
-/obj/item/storage/box/crate/sentry_flamer,
-/obj/item/storage/box/crate/minisentry,
-/turf/open/floor/mainship,
-/area/mainship/groundhq/ntf/shipboard/brig)
 "jxb" = (
 /obj/machinery/camera/autoname/mainship{
 	dir = 8
@@ -8936,7 +8931,13 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/squads/req)
 "lLS" = (
-/obj/structure/largecrate/supply/explosives/disposable,
+/obj/structure/rack,
+/obj/item/storage/box/visual/grenade/teargas,
+/obj/item/big_ammo_box/shotgun/tracker,
+/obj/item/storage/box/crate/minisentry,
+/obj/item/storage/box/crate/sentry_flamer,
+/obj/item/big_ammo_box/shotgun/buckshot,
+/obj/item/big_ammo_box/shotgun/flechette,
 /turf/open/floor/mainship/red,
 /area/mainship/groundhq/ntf/shipboard/brig)
 "lLU" = (
@@ -12946,7 +12947,6 @@
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "qVy" = (
 /obj/effect/ai_node,
-/obj/item/storage/box/visual/grenade/teargas,
 /turf/open/floor/mainship,
 /area/mainship/groundhq/ntf/shipboard/brig)
 "qVP" = (
@@ -15960,10 +15960,6 @@
 /obj/structure/cable,
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/hangar2)
-"vew" = (
-/obj/item/big_ammo_box/shotgun/tracker,
-/turf/open/floor/mainship,
-/area/mainship/groundhq/ntf/shipboard/brig)
 "vgC" = (
 /obj/structure/sink/bathroom{
 	pixel_y = 15
@@ -21187,7 +21183,7 @@ igT
 xlN
 saC
 aBU
-vew
+mKP
 wFx
 lLS
 ajY
@@ -21401,7 +21397,7 @@ lFG
 cah
 saC
 ezw
-jwK
+mKP
 mKP
 vRj
 ajY
