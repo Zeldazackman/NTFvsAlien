@@ -4389,6 +4389,10 @@
 /obj/effect/landmark/spawn_marker/civilian/atmos,
 /turf/open/floor/plating,
 /area/vietzhuo8/indoors/v8west/city/powerstation)
+"elN" = (
+/obj/effect/landmark/sensor_tower,
+/turf/open/ground/grass/weedable/patch/grassyellow,
+/area/vietzhuo8/outdoors/v8ne/village)
 "elU" = (
 /obj/machinery/vending/cola,
 /obj/machinery/light,
@@ -5821,11 +5825,9 @@
 	},
 /area/vietzhuo8/indoors/v8sentafsec/checkpoint_north)
 "fvS" = (
-/obj/effect/landmark/campaign_structure/sensor_tower,
-/turf/open/urban/street/sidewalk{
-	dir = 1
-	},
-/area/vietzhuo8/indoors/v8west/stripmall)
+/obj/effect/landmark/patrol_point/tgmc_21,
+/turf/open/floor/plating/ground/desertdam/asphalt,
+/area/vietzhuo8/outdoors/landing_zone_2)
 "fwe" = (
 /obj/structure/table/mainship,
 /obj/structure/window,
@@ -8495,9 +8497,11 @@
 /turf/open/floor/urban/tile/tilebeigecheckered,
 /area/vietzhuo8/indoors/v8west/stripmall/dresses)
 "hVV" = (
-/obj/effect/landmark/patrol_point/tgmc_21,
-/turf/open/floor/plating,
-/area/shuttle/drop1/lz1)
+/obj/effect/landmark/sensor_tower,
+/turf/open/urban/street/sidewalk{
+	dir = 1
+	},
+/area/vietzhuo8/indoors/v8west/stripmall)
 "hWl" = (
 /obj/structure/cable,
 /obj/effect/ai_node,
@@ -12606,9 +12610,12 @@
 /turf/open/floor/urban/tile/tilebeigecheckered,
 /area/vietzhuo8/indoors/v8west/stripmall/dresses)
 "lQg" = (
-/obj/effect/landmark/campaign_structure/sensor_tower,
-/turf/open/ground/grass/weedable/patch/grassyellow,
-/area/vietzhuo8/outdoors/v8ne/village)
+/obj/effect/urban/decal/road/lines3{
+	pixel_y = -2
+	},
+/obj/effect/landmark/patrol_point/tgmc_11,
+/turf/open/floor/plating/ground/desertdam/asphalt,
+/area/vietzhuo8/outdoors/landing_zone_1)
 "lQm" = (
 /turf/closed/wall/wood,
 /area/vietzhuo8/indoors/v8ne/village/guard/post_south)
@@ -19787,7 +19794,7 @@
 /turf/open/floor/plating,
 /area/vietzhuo8/indoors/v8sentaf/substation/maintenance)
 "smM" = (
-/obj/effect/landmark/campaign_structure/sensor_tower,
+/obj/effect/landmark/sensor_tower,
 /turf/open/floor/plating,
 /area/vietzhuo8/indoors/v8central/cargo_requisitions)
 "smR" = (
@@ -31692,7 +31699,7 @@ rab
 rab
 rab
 oPr
-oPr
+fvS
 oPr
 oPr
 oPr
@@ -38154,7 +38161,7 @@ bSo
 bSo
 sDb
 bSo
-fvS
+bSo
 bSo
 bSo
 bSo
@@ -38371,7 +38378,7 @@ bSo
 bSo
 sDb
 bSo
-bSo
+hVV
 bSo
 noq
 bSo
@@ -62632,7 +62639,7 @@ fFv
 fFv
 fFv
 fFv
-lQg
+fFv
 fFv
 fFv
 fFv
@@ -62848,7 +62855,7 @@ fFv
 kac
 fFv
 fFv
-fFv
+elN
 fFv
 fFv
 fFv
@@ -68799,7 +68806,7 @@ xYK
 xYK
 xYK
 xYK
-onl
+lQg
 xYK
 xYK
 xYK
@@ -68809,7 +68816,7 @@ ubO
 eUy
 eUy
 eUy
-hVV
+eUy
 eUy
 eUy
 eUy

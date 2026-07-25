@@ -597,6 +597,9 @@
 	READ_FILE(S["g_eyes"], g_eyes)
 	READ_FILE(S["b_eyes"], b_eyes)
 	READ_FILE(S["eye_emissive"], eye_emissive)
+	READ_FILE(S["quad_eyes"], quad_eyes)
+	READ_FILE(S["quad_eyes_offset"], quad_eyes_offset)
+	READ_FILE(S["quad_eyes_offset_width"], quad_eyes_offset_width)
 	READ_FILE(S["body_color"], body_color)
 
 	READ_FILE(S["moth_wings"], moth_wings)
@@ -785,6 +788,9 @@
 	g_eyes = sanitize_integer(g_eyes, 0, 255, initial(g_eyes))
 	b_eyes = sanitize_integer(b_eyes, 0, 255, initial(b_eyes))
 	eye_emissive = sanitize_integer(eye_emissive, FALSE, TRUE, initial(eye_emissive))
+	quad_eyes = sanitize_integer(quad_eyes, FALSE, TRUE, initial(quad_eyes))
+	quad_eyes_offset = sanitize_integer(quad_eyes_offset, -2, 2, initial(quad_eyes_offset))
+	quad_eyes_offset_width = sanitize_integer(quad_eyes_offset_width, -2, 2, initial(quad_eyes_offset_width))
 	body_color = sanitize_hexcolor(body_color, 6, TRUE, initial(body_color))
 
 	moth_wings = sanitize_inlist(moth_wings, GLOB.moth_wings_list, initial(moth_wings))
@@ -1024,6 +1030,9 @@
 	g_eyes = sanitize_integer(g_eyes, 0, 255, initial(g_eyes))
 	b_eyes = sanitize_integer(b_eyes, 0, 255, initial(b_eyes))
 	eye_emissive = sanitize_integer(eye_emissive, FALSE, TRUE, initial(eye_emissive))
+	quad_eyes = sanitize_integer(quad_eyes, FALSE, TRUE, initial(quad_eyes))
+	quad_eyes_offset = sanitize_integer(quad_eyes_offset, -2, 2, initial(quad_eyes_offset))
+	quad_eyes_offset_width = sanitize_integer(quad_eyes_offset_width, -2, 2, initial(quad_eyes_offset_width))
 	body_color = sanitize_hexcolor(body_color, 6, TRUE, initial(body_color))
 
 	moth_wings = sanitize_inlist(moth_wings, GLOB.moth_wings_list, initial(moth_wings))
@@ -1194,6 +1203,9 @@
 	WRITE_FILE(S["g_eyes"], g_eyes)
 	WRITE_FILE(S["b_eyes"], b_eyes)
 	WRITE_FILE(S["eye_emissive"], eye_emissive)
+	WRITE_FILE(S["quad_eyes"], quad_eyes)
+	WRITE_FILE(S["quad_eyes_offset"], quad_eyes_offset)
+	WRITE_FILE(S["quad_eyes_offset_width"], quad_eyes_offset_width)
 	WRITE_FILE(S["body_color"], body_color)
 
 	WRITE_FILE(S["moth_wings"], moth_wings)

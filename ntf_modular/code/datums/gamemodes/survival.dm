@@ -138,7 +138,7 @@
 	factions = list(FACTION_ICC, FACTION_XENO)
 	human_factions = list(FACTION_ICC)
 	valid_job_types = list(
-		/datum/outfit/job/survivor/admin = 1,
+		/datum/job/survivor/admin = 1,
 		/datum/job/survivor/assistant = 1,
 		/datum/job/survivor/scientist = 2,
 		/datum/job/survivor/doctor = 3,
