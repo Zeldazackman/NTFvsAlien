@@ -75,10 +75,6 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/shipboard/brig)
 "acR" = (
-/obj/machinery/door/poddoor/railing{
-	dir = 2;
-	id = "supply_elevator_railing"
-	},
 /turf/open/floor/mainship/cargo/arrow{
 	dir = 1
 	},
@@ -910,12 +906,9 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/living/officer_study)
 "bhx" = (
-/obj/item/storage/box/crate/minisentry,
-/obj/item/storage/box/crate/sentry_flamer,
-/turf/open/floor/mainship/red{
-	dir = 4
-	},
-/area/mainship/groundhq/ntf/shipboard/brig)
+/obj/structure/largecrate/supply/weapons/hpr,
+/turf/open/floor/mainship/mono,
+/area/mainship/squads/req)
 "bim" = (
 /obj/structure/largecrate/supply/weapons/pistols,
 /turf/open/floor/plating/ground/snow/layer3,
@@ -1366,11 +1359,7 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/shipboard/brig)
 "bNI" = (
-/obj/machinery/computer/supplycomp{
-	home_id = "supply_hq";
-	shuttle_id = "supplyhq";
-	faction = "Colonial Militia"
-	},
+/obj/machinery/computer/supplycomp/colony,
 /turf/open/floor/mainship/mono,
 /area/mainship/squads/req)
 "bOQ" = (
@@ -1509,12 +1498,7 @@
 	name = "HQ Northwest Hallways"
 	})
 "bVD" = (
-/obj/structure/rack,
-/obj/item/xeno_iff_tag,
-/obj/item/xeno_iff_tag,
-/obj/item/xeno_iff_tag,
-/obj/item/xeno_iff_tag,
-/obj/item/xeno_iff_tag,
+/obj/structure/largecrate/supply/ammo/shotgun,
 /turf/open/floor/mainship/mono,
 /area/mainship/squads/req)
 "bVE" = (
@@ -2336,10 +2320,6 @@
 /turf/closed/wall/mainship,
 /area/mainship/squads/req)
 "cYn" = (
-/obj/machinery/door/poddoor/railing{
-	dir = 1;
-	id = "supply_elevator_railing"
-	},
 /obj/effect/ai_node,
 /turf/open/floor/mainship/cargo/arrow,
 /area/mainship/squads/req)
@@ -7279,11 +7259,10 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/hangar2)
 "jwK" = (
-/obj/machinery/gear{
-	id = "supply_elevator_gear"
-	},
-/turf/open/floor/mainship/mono,
-/area/mainship/squads/req)
+/obj/item/storage/box/crate/sentry_flamer,
+/obj/item/storage/box/crate/minisentry,
+/turf/open/floor/mainship,
+/area/mainship/groundhq/ntf/shipboard/brig)
 "jxb" = (
 /obj/machinery/camera/autoname/mainship{
 	dir = 8
@@ -7998,6 +7977,10 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/hangar2)
+"ksB" = (
+/obj/structure/largecrate/supply/medicine/medkits,
+/turf/open/floor/mainship/mono,
+/area/mainship/squads/req)
 "ktk" = (
 /obj/structure/table/mainship,
 /obj/machinery/computer/station_alert,
@@ -8385,13 +8368,12 @@
 /turf/open/floor/wood,
 /area/mainship/groundhq/ntf/command/corporateliaison)
 "kXb" = (
-/obj/machinery/door/poddoor/railing{
-	id = "supply_elevator_railing"
-	},
-/turf/open/floor/mainship/cargo/arrow{
-	dir = 8
-	},
-/area/mainship/squads/req)
+/obj/item/facepaint/green,
+/obj/item/facepaint/green,
+/obj/item/facepaint/green,
+/obj/item/facepaint/green,
+/turf/open/floor/mainship/mono,
+/area/mainship/hallways/hangar2)
 "kXm" = (
 /obj/structure/toilet,
 /turf/open/floor/mainship/sterile/dark,
@@ -8954,9 +8936,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/squads/req)
 "lLS" = (
-/obj/structure/rack,
-/obj/item/storage/box/visual/grenade/teargas,
-/obj/item/big_ammo_box/shotgun/tracker,
+/obj/structure/largecrate/supply/explosives/disposable,
 /turf/open/floor/mainship/red,
 /area/mainship/groundhq/ntf/shipboard/brig)
 "lLU" = (
@@ -9673,11 +9653,9 @@
 	},
 /area/mainship/medical/lower_medical)
 "mNQ" = (
-/obj/machinery/door/poddoor/railing{
-	dir = 2;
-	id = "supply_elevator_railing"
-	},
-/turf/open/floor/mainship/floor,
+/obj/structure/rack,
+/obj/item/storage/box/crate/minisentry,
+/turf/open/floor/mainship/mono,
 /area/mainship/squads/req)
 "mOa" = (
 /obj/machinery/camera/autoname,
@@ -12968,6 +12946,7 @@
 /area/mainship/groundhq/ntf/living/grunt_rnr)
 "qVy" = (
 /obj/effect/ai_node,
+/obj/item/storage/box/visual/grenade/teargas,
 /turf/open/floor/mainship,
 /area/mainship/groundhq/ntf/shipboard/brig)
 "qVP" = (
@@ -14426,10 +14405,6 @@
 	name = "HQ Central Hallways"
 	})
 "sQr" = (
-/obj/machinery/door/poddoor/railing{
-	dir = 1;
-	id = "supply_elevator_railing"
-	},
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/req)
 "sRU" = (
@@ -15493,9 +15468,8 @@
 /turf/open/floor/wood,
 /area/mainship/hallways/ntf/dorm1)
 "uuW" = (
-/obj/machinery/door/poddoor/railing{
-	dir = 8;
-	id = "supply_elevator_railing"
+/obj/machinery/gear{
+	id = "supply_elevator_gear"
 	},
 /turf/open/floor/mainship/floor,
 /area/mainship/squads/req)
@@ -15931,13 +15905,7 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/groundhq/ntf/hallways/bathroom)
 "uZI" = (
-/obj/machinery/door/poddoor/railing{
-	dir = 8;
-	id = "supply_elevator_railing"
-	},
-/turf/open/floor/mainship/cargo/arrow{
-	dir = 4
-	},
+/turf/open/floor/mainship/cargo/arrow,
 /area/mainship/squads/req)
 "vaB" = (
 /obj/structure/sign/safety/autodoc,
@@ -15992,6 +15960,10 @@
 /obj/structure/cable,
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/hangar2)
+"vew" = (
+/obj/item/big_ammo_box/shotgun/tracker,
+/turf/open/floor/mainship,
+/area/mainship/groundhq/ntf/shipboard/brig)
 "vgC" = (
 /obj/structure/sink/bathroom{
 	pixel_y = 15
@@ -16162,9 +16134,7 @@
 /turf/open/floor/wood,
 /area/mainship/hallways/ntf/dorm1)
 "vsw" = (
-/obj/docking_port/stationary/supplyhq{
-	name = "hqdock"
-	},
+/obj/docking_port/stationary/supplycolony,
 /turf/open/floor/mainship/empty,
 /area/mainship/squads/req)
 "vsO" = (
@@ -16643,10 +16613,10 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/living/grunt_rnr)
 "vTW" = (
-/obj/machinery/door/poddoor/railing{
-	id = "supply_elevator_railing"
+/obj/effect/urban/decal/dirt,
+/turf/open/floor/mainship/cargo/arrow{
+	dir = 4
 	},
-/turf/open/floor/mainship/floor,
 /area/mainship/squads/req)
 "vUx" = (
 /obj/machinery/light,
@@ -16711,6 +16681,14 @@
 	},
 /turf/open/floor/wood,
 /area/mainship/living/grunt_rnr)
+"vZa" = (
+/obj/effect/urban/decal/dirt,
+/obj/effect/urban/decal/dirt,
+/obj/effect/urban/decal/dirt,
+/turf/open/floor/mainship/cargo/arrow{
+	dir = 8
+	},
+/area/mainship/squads/req)
 "vZT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/door/firedoor/mainship{
@@ -21209,7 +21187,7 @@ igT
 xlN
 saC
 aBU
-mKP
+vew
 wFx
 lLS
 ajY
@@ -21423,7 +21401,7 @@ lFG
 cah
 saC
 ezw
-mKP
+jwK
 mKP
 vRj
 ajY
@@ -22061,7 +22039,7 @@ xTm
 xTm
 xTm
 hzV
-bhx
+dGt
 ssM
 dGt
 dGt
@@ -22992,13 +22970,13 @@ cat
 vSI
 vSI
 lJS
-jwK
-vTW
-vTW
-kXb
-vTW
-vTW
-jwK
+qFg
+sQr
+uuW
+sQr
+uuW
+sQr
+qFg
 aqc
 hcS
 cTc
@@ -23099,12 +23077,12 @@ anO
 anO
 anO
 uqp
-mNQ
-hqq
-hqq
-hqq
-hqq
-hqq
+sQr
+qFg
+sQr
+vZa
+sQr
+qFg
 sQr
 aqc
 hcS
@@ -23203,15 +23181,15 @@ qFg
 wDm
 qFg
 eDj
-bVD
 cLM
-giB
 mNQ
+giB
+sQr
+qFg
+acR
 hqq
-hqq
-hqq
-hqq
-hqq
+uZI
+qFg
 sQr
 aqc
 oiL
@@ -23314,11 +23292,11 @@ qFg
 qFg
 giB
 acR
-hqq
-hqq
+qFg
+acR
 vsw
-hqq
-hqq
+uZI
+qFg
 cYn
 ech
 iBW
@@ -23420,12 +23398,12 @@ cLM
 cLM
 wZI
 giB
-mNQ
+sQr
+qFg
+acR
 hqq
-hqq
-hqq
-hqq
-hqq
+uZI
+qFg
 sQr
 aqc
 oiL
@@ -23523,16 +23501,16 @@ xQz
 qFe
 lBn
 qFg
-oec
-oec
+ksB
+bVD
 oec
 giB
-mNQ
-hqq
-hqq
-hqq
-hqq
-hqq
+sQr
+qFg
+sQr
+vTW
+sQr
+qFg
 sQr
 aqc
 hcS
@@ -23634,13 +23612,13 @@ qFg
 qFg
 qFg
 giB
-jwK
+qFg
+sQr
 uuW
+sQr
 uuW
-uZI
-uuW
-uuW
-jwK
+sQr
+qFg
 aqc
 hcS
 cWB
@@ -23735,7 +23713,7 @@ vFN
 eyR
 iCa
 rXW
-qFg
+bhx
 qpA
 qFg
 qFg
@@ -23959,7 +23937,7 @@ mgs
 oDC
 wgH
 oDC
-mgs
+kXb
 tgB
 cWu
 cWu
