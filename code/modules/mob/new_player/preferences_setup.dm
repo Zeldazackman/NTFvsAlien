@@ -159,7 +159,7 @@
 
 
 /datum/preferences/proc/randomize_species_specific()
-	moth_wings = pick(GLOB.moth_wings_list - "Burnt Off")
+	moth_wings = pick(GLOB.moth_wings_list - list("Burnt Off", "None"))
 	tail = pick(character_creator_tail_options() - "None")
 	snout = pick(GLOB.snouts_list - "None")
 	ears = pick(GLOB.ears_list - "None")
