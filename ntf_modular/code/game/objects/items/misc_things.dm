@@ -46,7 +46,7 @@
 
 /obj/item/dropship_points_voucher
 	name = "dropship fabricator voucher"
-	desc = "A small keycard stamped by a Terra Gov logo. It contains points you can redeem at a dropship fabricator. One use only."
+	desc = "A small keycard stamped by a NT logo. It contains points you can redeem at a dropship fabricator. One use only."
 	icon = 'icons/obj/items/card.dmi'
 	icon_state = "centcom"
 	///This is the number of points this thing has to give.

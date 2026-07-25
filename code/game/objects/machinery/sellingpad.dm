@@ -81,7 +81,7 @@
 		var/dropship_points = 0
 		for(var/datum/export_report/export_report in export_reports)
 			points += export_report.points
-			dropship_points += export_report.dropship_points
+			dropship_points[user.faction] += export_report.dropship_points
 			SSpoints.export_history += export_report
 		visible_message(span_notice("[src] buzzes: The [onpad] has been sold for [points ? points : "no"] supply point[points == 1 ? "" : "s"][dropship_points ? " and [dropship_points] dropship point[dropship_points == 1 ? "" : "s"]" : ""]."))
 		qdel(onpad)

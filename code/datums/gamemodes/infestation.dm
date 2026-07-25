@@ -443,7 +443,7 @@
 	disk_cycle_reward = ROUND_UP(clamp(disk_cycle_reward, DISK_CYCLE_REWARD_MIN, DISK_CYCLE_REWARD_MAX))
 
 	SSpoints.supply_points[FACTION_TERRAGOV] += disk_cycle_reward
-	SSpoints.dropship_points += disk_cycle_reward/10
+	SSpoints.dropship_points[FACTION_TERRAGOV] += disk_cycle_reward/10
 	GLOB.round_statistics.points_from_objectives += disk_cycle_reward
 
 	generating_computer.say("Program has execution has rewarded [disk_cycle_reward] requisitions points!")
