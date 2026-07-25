@@ -448,6 +448,7 @@
 		"Digitigrade" = "digitigrade_1",
 		"Digitigrade 2" = "digitigrade_2",
 	)
+	default_language_holder = /datum/language_holder/xeno
 	burn_mod = 1.05
 	var/list/action_list = list(
 		/datum/action/ability/activable/xenohybrid_tail_sting,
