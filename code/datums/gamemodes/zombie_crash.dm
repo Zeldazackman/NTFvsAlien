@@ -15,7 +15,7 @@
 		/datum/job/terragov/medical/professor = 1,
 		/datum/job/terragov/silicon/synthetic = 1,
 		/datum/job/terragov/command/fieldcommander = 1,
-		/datum/job/xenomorph/green = 3,
+		/datum/job/xenomorph = 3,
 	)
 	job_points_needed_by_job_type = list(
 		/datum/job/terragov/squad/smartgunner = 20,
