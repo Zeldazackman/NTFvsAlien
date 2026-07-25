@@ -1,0 +1,17 @@
+author: "SpooksAnno"
+delete-after: True
+changes:
+  - rscadd: "Added a Xenomorph Hybrid Tail Sting ability with selectable toxin and delivery method."
+  - balance: "Xenomorph Hybrids now take 5% more burn damage."
+  - balance: "Xenomorph Hybrids are more resistant to xenomorph reproduction effects and take reduced clone loss from larva birth."
+  - rscadd: "Added additional mob interaction actions, including social, tail, self, knot, and flare interactions."
+  - qol: "Added controls for hiding or showing interactions that are unavailable due to missing body parts."
+  - qol: "Added genital visibility and clothing-rule controls to the mob interaction menu."
+  - qol: "Mob interaction menus can now be opened from farther away, with close-range actions still requiring proximity."
+  - imageadd: "Added and updated Teshari clothing and eye sprites across multiple equipment slots."
+  - bugfix: "Fixed several Teshari clothing items rendering with incorrect human-style positioning."
+  - qol: "OOC/background information can now be edited from character setup."
+  - qol: "Added a None option for moth wings so they can be unselected."
+  - bugfix: "Moth wing randomization no longer picks None or Burnt Off."
+  - rscadd: "Resurgentis hair and eyes got a rule for forced glow (That one is on you Vide) Currently disabled"
+  - rscadd: "Xenomorph Hybrids can now use the xenomorph language."
