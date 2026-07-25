@@ -736,6 +736,7 @@
 /area/vietzhuo8/indoors/caves
 	name = "Vietzhuo-8 - Caves"
 	minimap_color = MINIMAP_AREA_CAVES
+	ceiling = CEILING_DEEP_UNDERGROUND
 
 /area/vietzhuo8/indoors/caves/northwest
 	name = "Vietzhuo-8 - North Western Caverns"
