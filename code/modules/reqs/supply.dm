@@ -244,7 +244,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 		for(var/atom/movable/AM in shuttle_area)
 			if(AM.anchored)
 				continue
-			var/list/datum/export_report = AM.supply_export(faction, user_weakref.resolve())
+			var/list/datum/export_report/export_report = AM.supply_export(faction, user_weakref.resolve())
 			if(export_report)
 				SSpoints.export_history += export_report
 			qdel(AM)
@@ -441,13 +441,14 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	for(var/datum/export_report/report AS in SSpoints.export_history)
 		if(report.faction != user.faction)
 			continue
-		if(report.points == 0)
+		if((report.points == 0) && (report.dropship_points == 0))
 			continue
 		if(report.export_name == lastexport)
 			.["export_history"][id]["amount"] += 1
 			.["export_history"][id]["total"] += report.points
+			.["export_history"][id]["dropshiptotal"] += report.dropship_points
 		else
-			.["export_history"] += list(list("id" = id, "name" = report.export_name, "points" = report.points, "amount" = 1, "total" = report.points))
+			.["export_history"] += list(list("id" = id, "name" = report.export_name, "points" = report.points, "amount" = 1, "total" = report.points, "dropshippoints" = report.dropship_points, "dropshiptotal" = report.dropship_points))
 			id++
 			lastexport = report.export_name
 	.["shopping_history"] = list()

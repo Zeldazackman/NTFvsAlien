@@ -1,7 +1,7 @@
 ///Function that sells whatever object this is to the faction_selling; returns a /datum/export_report if successful
 /atom/movable/proc/supply_export(faction_selling, mob/user)
 	var/list/points = get_export_value()
-	if(!points)
+	if(!islist(points) || ((!points[1]) && (!points[2])))
 		return FALSE
 
 	SSpoints.add_supply_points(faction_selling, points[1])
