@@ -736,6 +736,7 @@
 	name = "Turkenden-3 Excluzone - Caves - Hive"
 	icon_state = "t3e_ccaves"
 	minimap_color = MINIMAP_AREA_CAVES
+	ceiling = CEILING_DEEP_UNDERGROUND
 
 /area/turkenden3excluzone/indoors/caves/sw
 	name = "Turkenden-3 Excluzone - Caves - Southwest"
