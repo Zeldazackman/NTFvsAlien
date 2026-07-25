@@ -1,0 +1,4 @@
+author: "CaputCapital"
+delete-after: True
+changes:
+  - rscadd: "adds Vietzhuo-8 Borders & Turkenden-3 Excluzone\nto be added: west vietzhuo national guard & east vietzhuo watchmen AI to properly fight back with firearms\nto be fixed(?): random streakers, naked civilians that aren't assigned outfits"
