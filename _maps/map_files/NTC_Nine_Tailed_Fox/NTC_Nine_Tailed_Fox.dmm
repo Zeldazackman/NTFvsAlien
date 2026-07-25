@@ -4501,6 +4501,8 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/upper_hull)
 "dNM" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/docking_port/stationary/marine_dropship/crash_target,
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/upper_medical{
@@ -7869,6 +7871,10 @@
 	},
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/hangar)
+"gzN" = (
+/obj/docking_port/stationary/marine_dropship/crash_target,
+/turf/open/floor/prison,
+/area/mainship/groundhq/ntf/shipboard/brig_cells)
 "gzX" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -19447,6 +19453,7 @@
 	})
 "pLH" = (
 /obj/machinery/computer/body_scanconsole,
+/obj/docking_port/stationary/marine_dropship/crash_target,
 /turf/open/floor/mainship/sterile/side,
 /area/mainship/medical/upper_medical{
 	name = "Shipside Medbay"
@@ -25714,6 +25721,10 @@
 /obj/item/tool/soap,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/dorm2)
+"uJI" = (
+/obj/docking_port/stationary/marine_dropship/crash_target,
+/turf/open/liquid/water/river/deep,
+/area/mainship/groundhq/ntf/living/grunt_rnr)
 "uJS" = (
 /obj/structure/table/reinforced,
 /obj/structure/transmitter/desk{
@@ -36849,7 +36860,7 @@ vYS
 mpq
 tJy
 rOw
-dNM
+vYS
 vYS
 vYS
 vYS
@@ -36959,10 +36970,10 @@ tKP
 kyS
 wYd
 ocM
-dNM
+vYS
 exy
 axx
-axx
+dNM
 oGW
 kMH
 aNT
@@ -57555,7 +57566,7 @@ aPj
 nan
 vxL
 tXd
-tXd
+gzN
 prP
 prP
 tXd
@@ -61338,7 +61349,7 @@ ugC
 ufO
 opm
 rEa
-opm
+uJI
 qjs
 bNR
 qQX
