@@ -3907,9 +3907,6 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/engineering/engine_core)
 "eZI" = (
-/obj/machinery/door/airlock/mainship/ai/glass{
-	name = "\improper CIC Lounge"
-	},
 /obj/structure/curtain/open/black,
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/command/cic)
