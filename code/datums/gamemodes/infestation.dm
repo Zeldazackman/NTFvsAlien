@@ -442,8 +442,8 @@
 	var/disk_cycle_reward = DISK_CYCLE_REWARD_MIN + ((DISK_CYCLE_REWARD_MAX - DISK_CYCLE_REWARD_MIN) * (SSmonitor.maximum_connected_players_count / HIGH_PLAYER_POP))
 	disk_cycle_reward = ROUND_UP(clamp(disk_cycle_reward, DISK_CYCLE_REWARD_MIN, DISK_CYCLE_REWARD_MAX))
 
-	SSpoints.supply_points[FACTION_TERRAGOV] += disk_cycle_reward
-	SSpoints.dropship_points[FACTION_TERRAGOV] += disk_cycle_reward/10
+	SSpoints.add_supply_points(FACTION_TERRAGOV, disk_cycle_reward)
+	SSpoints.add_dropship_points(FACTION_TERRAGOV, disk_cycle_reward/10)
 	GLOB.round_statistics.points_from_objectives += disk_cycle_reward
 
 	generating_computer.say("Program has execution has rewarded [disk_cycle_reward] requisitions points!")
