@@ -52,9 +52,28 @@
 		user.temporarilyRemoveItemFromInventory(src) //Removes the item without qdeling it, qdeling it this early will break the rest of the procs
 		moveToNullspace()
 
-	if(isliving(spirited_away))
-		var/mob/living/spirited_away_living = spirited_away
-		spirited_away_living.despawn()
+	if(ishuman(spirited_away))
+		var/mob/living/carbon/human/liwwie = spirited_away
+		if(LAZYLEN(liwwie.ckey_history)) //sell ai humans or husks ig
+			var/turf/thespot = pick(GLOB.latejoinsurvivor) //gl
+			switch(liwwie.faction)
+				if(FACTION_CLF)
+					thespot = pick(GLOB.latejoinclf)
+				if(FACTION_SOM)
+					thespot = pick(GLOB.latejoinsom)
+				if(FACTION_VSD)
+					thespot = pick(GLOB.latejoinsurvivor)
+				if(FACTION_MOTHELLIAN)
+					thespot = pick(GLOB.latejoinmoff)
+				if(FACTION_NANOTRASEN,FACTION_TERRAGOV)
+					thespot = pick(GLOB.reclone_tp_spots)
+				else
+					thespot = pick(GLOB.latejoinsurvivor)
+			liwwie.forceMove(thespot.loc)
+			return
+	else
+		if(isliving(spirited_away))
+			var/mob/living/spirited_away_living = spirited_away
 	if(!QDELETED(spirited_away))
 		qdel(spirited_away)
 
@@ -315,6 +334,12 @@
 		if(isliving(movable_target))
 			REMOVE_TRAIT(movable_target, TRAIT_IMMOBILE, type)
 	else
+		if(ishuman(target))
+			var/mob/living/carbon/human/liwwie = target
+			if(LAZYLEN(liwwie.ckey_history))
+				if(uses < 1)
+					qdel(src)
+				return
 		qdel(target)
 		if(uses < 1)
 			qdel(src)

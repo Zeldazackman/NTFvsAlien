@@ -61,6 +61,8 @@
 			. = list(800, 400)
 		if(JOB_CAT_COMMAND, JOB_CAT_COMMANDSOM)
 			. = list(1000, 500)
+	if(stat != DEAD)
+		. *= 2
 	return
 
 /mob/living/carbon/xenomorph/get_export_value()
@@ -77,19 +79,22 @@
 			. = list(1000, 500)
 		if(XENO_TIER_FOUR)
 			. = list(2000, 1000)
+	if(stat != DEAD)
+		. *= 2
 	return
 
 //I hate it but it's how it was so I'm not touching it further than this
 /mob/living/carbon/xenomorph/shrike/get_export_value()
-	return list(1200, 600)
+	. = list(1200, 600)
+	if(stat != DEAD)
+		. *= 2
+	return
 
 /obj/item/reagent_containers/food/snacks/req_pizza/get_export_value()
 	return list(60, 30)
 
 /// Return TRUE if the relation between the two factions are bad enough that a bounty is on the human_to_sell head
 /proc/can_sell_human_body(mob/living/carbon/human/human_to_sell, seller_faction)
-	if(!HAS_TRAIT(human_to_sell, TRAIT_UNDEFIBBABLE) && human_to_sell.stat == DEAD) //dead but not unrevivable, i guess if you ever wanted to sell a live slave or something lmao
-		return FALSE
 	var/to_sell_alignement = GLOB.faction_to_alignement[human_to_sell.faction]
 	switch(to_sell_alignement)
 		if(ALIGNEMENT_NEUTRAL) //No one hates neutral
