@@ -52,42 +52,46 @@
 	. = list(0,0)
 
 /mob/living/carbon/human/get_export_value()
+	var/modifier = 1
+	if(stat != DEAD)
+		modifier = 2
 	switch(job.job_category)
 		if(JOB_CAT_ENGINEERING, JOB_CAT_MEDICAL, JOB_CAT_REQUISITIONS, JOB_CAT_ENGINEERINGSOM, JOB_CAT_MEDICALSOM, JOB_CAT_REQUISITIONSSOM, JOB_CAT_SURVIVOR)
-			. = list(200, 100)
+			. = list(200 * modifier, 100 * modifier)
 		if(JOB_CAT_MARINE, JOB_CAT_MARINESOM, JOB_CAT_ICC, JOB_CAT_CLF, JOB_CAT_PMC, JOB_CAT_VSD)
-			. = list(300, 150)
+			. = list(300 * modifier, 150 * modifier)
 		if(JOB_CAT_SILICON)
-			. = list(800, 400)
+			. = list(800 * modifier, 400 * modifier)
 		if(JOB_CAT_COMMAND, JOB_CAT_COMMANDSOM)
-			. = list(1000, 500)
-	if(stat != DEAD)
-		. *= 2
+			. = list(1000 * modifier, 500 * modifier)
 	return
 
 /mob/living/carbon/xenomorph/get_export_value()
+	var/modifier = 1
+	if(stat != DEAD)
+		modifier = 2
 	switch(tier)
 		if(XENO_TIER_MINION)
-			. = list(60, 30)
+			. = list(60 * modifier, 30 * modifier)
 		if(XENO_TIER_ZERO)
-			. = list(200, 100)
+			. = list(200 * modifier, 100 * modifier)
 		if(XENO_TIER_ONE)
-			. = list(300, 150)
+			. = list(300 * modifier, 150 * modifier)
 		if(XENO_TIER_TWO)
-			. = list(600, 300)
+			. = list(600 * modifier, 300 * modifier)
 		if(XENO_TIER_THREE)
-			. = list(1000, 500)
+			. = list(1000 * modifier, 500 * modifier)
 		if(XENO_TIER_FOUR)
-			. = list(2000, 1000)
-	if(stat != DEAD)
-		. *= 2
+			. = list(2000 * modifier, 1000 * modifier)
 	return
 
 //I hate it but it's how it was so I'm not touching it further than this
 /mob/living/carbon/xenomorph/shrike/get_export_value()
-	. = list(1200, 600)
+	var/modifier = 1
 	if(stat != DEAD)
-		. *= 2
+		modifier = 2
+	. = list(1200 * modifier, 600 * modifier)
+
 	return
 
 /obj/item/reagent_containers/food/snacks/req_pizza/get_export_value()
