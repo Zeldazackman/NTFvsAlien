@@ -39,16 +39,16 @@
 			/obj/item/ammo_magazine/rifle/nt_halter/foxfire = 5,
 		),
 		"Energy Weapons" = list(
-			/obj/item/weapon/gun/energy/lasgun/lasrifle = -1,
-			/obj/item/weapon/gun/energy/lasgun/M43 = -1,
-			/obj/item/weapon/gun/energy/lasgun/M43/practice = -1,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle = 5,
+			/obj/item/weapon/gun/energy/lasgun/M43 = 5,
+			/obj/item/weapon/gun/energy/lasgun/M43/practice = 5,
 			/obj/item/cell/lasgun/lasrifle = -1,
-			/obj/item/cell/lasgun/volkite/powerpack/marine = -1,
-			/obj/item/cell/lasgun/volkite/powerpack/marine/backpack = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_sniper = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_mlaser = -1,
+			/obj/item/cell/lasgun/volkite/powerpack/marine = 10,
+			/obj/item/cell/lasgun/volkite/powerpack/marine/backpack = 5,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle = 5,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_sniper = 3,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine = 6,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_mlaser = 5,
 			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_pistol = -1,
 			/obj/item/weapon/gun/energy/lasgun/lasrifle/tesla = 2,
 		),
@@ -361,13 +361,16 @@
 			/obj/item/ammo_magazine/rifle/nt_halter/foxfire = 5,
 		),
 		"Energy Weapons" = list(
+			/obj/item/weapon/gun/energy/lasgun/lasrifle = 5,
+			/obj/item/weapon/gun/energy/lasgun/M43 = 5,
+			/obj/item/weapon/gun/energy/lasgun/M43/practice = 5,
 			/obj/item/cell/lasgun/lasrifle = -1,
-			/obj/item/cell/lasgun/volkite/powerpack/marine = -1,
-			/obj/item/cell/lasgun/volkite/powerpack/marine/backpack = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_sniper = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine = -1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_mlaser = -1,
+			/obj/item/cell/lasgun/volkite/powerpack/marine = 10,
+			/obj/item/cell/lasgun/volkite/powerpack/marine/backpack = 5,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle = 5,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_sniper = 3,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine = 6,
+			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_mlaser = 5,
 			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_pistol = -1,
 			/obj/item/weapon/gun/energy/lasgun/lasrifle/tesla = 2,
 		),
@@ -646,6 +649,9 @@
 			/obj/item/ammo_magazine/packet/p4570 = -1,
 		),
 		"Energy Weapons" = list(
+			/obj/item/weapon/gun/energy/lasgun/lasrifle = -1,
+			/obj/item/weapon/gun/energy/lasgun/M43 = -1,
+			/obj/item/weapon/gun/energy/lasgun/M43/practice = -1,
 			/obj/item/cell/lasgun/lasrifle = -1,
 			/obj/item/cell/lasgun/volkite/powerpack/marine = -1,
 			/obj/item/cell/lasgun/volkite/powerpack/marine/backpack = -1,
@@ -1085,7 +1091,7 @@
 	)
 
 /obj/machinery/vending/lasgun
-	name = "\improper Terra Experimental cell field charger"
+	name = "\improper old world cell field charger"
 	desc = "An automated power cell dispenser and charger. Used to recharge energy weapon power cells, including in the field. Has an internal battery that charges off the power grid when wrenched down."
 	icon_state = "lascharger"
 	icon_vend = "lascharger-vend"
@@ -1647,7 +1653,6 @@
 			/obj/item/storage/pouch/tools/full = -1,
 			/obj/item/storage/pouch/field_pouch = -1,
 			/obj/item/storage/pouch/general/large = -1,
-			/obj/item/cell/lasgun/volkite/powerpack/marine = -1,
 			/obj/item/storage/pouch/general/medium = -1,
 			/obj/item/storage/pouch/protein_pack = -1,
 		),
@@ -1691,7 +1696,6 @@
 			/obj/item/storage/holster/m37 = -1,
 			/obj/item/storage/backpack/marine/smock/lite = -1,
 			/obj/item/storage/backpack/marine/duffelbag = -1,
-			/obj/item/cell/lasgun/volkite/powerpack/marine/backpack = -1,
 		),
 		"Instruments" = list(
 			/obj/item/instrument/violin = -1,
