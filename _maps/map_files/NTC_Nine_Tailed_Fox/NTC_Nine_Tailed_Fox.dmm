@@ -26249,13 +26249,6 @@
 /area/outpost/cargo{
 	outside = 1
 	})
-"vgJ" = (
-/obj/item/reagent_containers/cup/glass/waterbottle/large,
-/turf/closed/wall/mainship,
-/area/sulaco/liaison/quarters{
-	outside = 0;
-	name = "CEO Office"
-	})
 "vgL" = (
 /obj/item/spacecash/c20{
 	pixel_x = 3;
@@ -61723,7 +61716,7 @@ wpC
 liW
 kmK
 lAK
-vgJ
+qnG
 pbZ
 qnG
 qnG
