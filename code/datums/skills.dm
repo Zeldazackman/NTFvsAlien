@@ -691,7 +691,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 
 /datum/skills/specialist/vanguard
 	name = VANGUARD
-	unarmed = SKILL_UNARMED_TRAINED
+	unarmed = SKILL_UNARMED_MASTER //they are proven specialists basically that got pushed into a more ship job
 	construction = SKILL_CONSTRUCTION_DEFAULT
 	engineer = SKILL_ENGINEER_DEFAULT
 	medical = SKILL_MEDICAL_PRACTICED

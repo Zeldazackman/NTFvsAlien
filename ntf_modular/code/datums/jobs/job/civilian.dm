@@ -28,6 +28,8 @@ GLOBAL_LIST_EMPTY(spawn_evzcivneutral)
 			new_human.AddComponent(/datum/component/ai_controller, /datum/ai_behavior/human/civilian/doctor)
 		if("engineer")
 			new_human.AddComponent(/datum/component/ai_controller, /datum/ai_behavior/human/civilian/engineer)
+	ADD_TRAIT(new_human, TRAIT_PSY_DRAINED, "civilian") //cant be used for larva or psydrain.
+	ADD_TRAIT(new_human, TRAIT_MAPSPAWNED, "civilian")
 	qdel(src)
 
 /obj/effect/landmark/spawn_marker/civilian/Initialize(mapload)

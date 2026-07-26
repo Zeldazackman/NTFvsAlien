@@ -28,6 +28,7 @@
 	blacklist_ground_maps = list(MAP_COLONY1, MAP_BIG_RED, MAP_DELTA_STATION, MAP_LV_624, MAP_LV_624BASES, MAP_WHISKEY_OUTPOST, MAP_OSCAR_OUTPOST, MAP_FORT_PHOBOS, MAP_CHIGUSA, MAP_LAVA_OUTPOST, MAP_CORSAT, MAP_KUTJEVO_REFINERY, MAP_BLUESUMMERS)
 	time_between_round = 1 HOURS
 	xenorespawn_time = 3 MINUTES
+	max_larva_preg_at_once = 3
 
 /datum/game_mode/infestation/crash/zombie/can_start(bypass_checks = FALSE)
 	if(!(config_tag in SSmapping.configs[GROUND_MAP].gamemodes) && !bypass_checks)

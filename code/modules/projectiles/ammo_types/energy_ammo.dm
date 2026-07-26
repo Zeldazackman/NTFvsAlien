@@ -490,7 +490,7 @@
 	name = "sniper laser bolt"
 	hud_state = "laser_sniper"
 	damage = 60
-	penetration = 20
+	penetration = 30
 	accurate_range_min = 5
 	ammo_behavior_flags = AMMO_ENERGY|AMMO_HITSCAN|AMMO_BETTER_COVER_RNG|AMMO_SNIPER
 	sundering = 5
@@ -515,7 +515,7 @@
 	icon_state = "microwavelaser"
 	hud_state = "laser_impact"
 	damage = 40
-	penetration = 10
+	penetration = 30
 	accurate_range_min = 5
 	sundering = 10
 	hitscan_effect_icon = "pu_laser"
@@ -538,8 +538,8 @@
 	name = "sniper laser bolt"
 	icon_state = "microwavelaser"
 	hud_state = "laser_disabler"
-	damage = 100
-	penetration = 30
+	damage = 40
+	penetration = 10
 	ammo_behavior_flags = AMMO_ENERGY|AMMO_HITSCAN|AMMO_BETTER_COVER_RNG|AMMO_SNIPER
 	sundering = 1
 	hitscan_effect_icon = "u_laser_beam"
@@ -547,19 +547,23 @@
 	bullet_color = COLOR_DISABLER_BLUE
 
 /datum/ammo/energy/lasgun/marine/ricochet/one
-	damage = 80
+	damage = 35
+	ammo_behavior_flags = AMMO_ENERGY|AMMO_HITSCAN
 	bonus_projectiles_type = /datum/ammo/energy/lasgun/marine/ricochet
 
 /datum/ammo/energy/lasgun/marine/ricochet/two
-	damage = 65
+	damage = 30
+	ammo_behavior_flags = AMMO_ENERGY|AMMO_HITSCAN
 	bonus_projectiles_type = /datum/ammo/energy/lasgun/marine/ricochet/one
 
 /datum/ammo/energy/lasgun/marine/ricochet/three
-	damage = 50
+	damage = 25
+	ammo_behavior_flags = AMMO_ENERGY|AMMO_HITSCAN
 	bonus_projectiles_type = /datum/ammo/energy/lasgun/marine/ricochet/two
 
 /datum/ammo/energy/lasgun/marine/ricochet/four
-	damage = 40
+	damage = 20
+	ammo_behavior_flags = AMMO_ENERGY|AMMO_HITSCAN
 	bonus_projectiles_type = /datum/ammo/energy/lasgun/marine/ricochet/three
 
 /datum/ammo/energy/lasgun/marine/ricochet/on_hit_turf(turf/target_turf, atom/movable/projectile/proj)

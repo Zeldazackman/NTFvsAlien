@@ -88,6 +88,8 @@
 
 /// Return TRUE if the relation between the two factions are bad enough that a bounty is on the human_to_sell head
 /proc/can_sell_human_body(mob/living/carbon/human/human_to_sell, seller_faction)
+	if(!HAS_TRAIT(human_to_sell, TRAIT_UNDEFIBBABLE) && human_to_sell.stat == DEAD) //dead but not unrevivable, i guess if you ever wanted to sell a live slave or something lmao
+		return FALSE
 	var/to_sell_alignement = GLOB.faction_to_alignement[human_to_sell.faction]
 	switch(to_sell_alignement)
 		if(ALIGNEMENT_NEUTRAL) //No one hates neutral

@@ -140,6 +140,7 @@
 	var/atom/movable/screen/text/screen_timer/nuke_hud_timer = null
 	var/nuking_faction = "Unknown"
 	var/total_war = FALSE
+	var/saved_larva_count = 0
 
 /datum/game_mode/infestation/secret_of_life/on_nuke_started(datum/source, obj/machinery/nuclearbomb/nuke)
 	. = ..()
@@ -185,6 +186,11 @@
 		*/
 		for(var/obj/item/teleporter_kit/indestructible/teles in GLOB.indestructible_teleporters)
 			teles.set_destructible(TRUE)
+		var/datum/job/xenomorph/xeno_job = SSjob.GetJobType(/datum/job/xenomorph)
+		var/burrowed = xeno_job.total_positions - xeno_job.current_positions
+		message_admins("saving [burrowed] burrowed for normal hive, war reserve burrowed is [FREE_XENO_AT_START]")
+		saved_larva_count = burrowed
+		xeno_job.total_positions = xeno_job.current_positions + FREE_XENO_AT_START
 		respawn_time = 10 MINUTES //we have cloning here and small pop so its not 30 minutes.
 		xenorespawn_time = 5 MINUTES
 		bioscan_interval = 15 MINUTES
@@ -200,6 +206,9 @@
 		)
 		for(var/obj/item/teleporter_kit/indestructible/teles in GLOB.indestructible_teleporters)
 			teles.set_destructible(FALSE)
+		var/datum/job/xenomorph/xeno_job = SSjob.GetJobType(/datum/job/xenomorph)
+		xeno_job.total_positions = saved_larva_count
+		message_admins("re-setting [saved_larva_count] burrowed for normal hive.")
 		GLOB.time_before_dnr = SOL_DNR_TIME
 		GLOB.max_larva_count_per_mob = MAX_LARVA_PREGNANCIES_SOL
 		respawn_time = initial(respawn_time)
