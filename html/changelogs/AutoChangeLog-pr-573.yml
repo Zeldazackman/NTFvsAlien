@@ -1,0 +1,8 @@
+author: "CaputCapital"
+delete-after: True
+changes:
+  - bugfix: "makes caves on T3E & V8B deep_underground so CAS can't strafe them"
+  - balance: "gives more silo spawns on T3E & sacrifices some xeno starting structures"
+  - balance: "gives more silo spawns on V8B (for more potential zombie spawns)"
+  - balance: "changes the total V8B civilian count from 116 to 48"
+  - rscadd: "more AI_nodes on V8B to help with AI pathfinding"
