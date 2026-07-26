@@ -54,7 +54,7 @@
 
 /obj/item/dropship_points_voucher/examine(mob/user)
 	. = ..()
-	to_chat(user, "It contains [extra_points] points.")
+	. += "It contains [extra_points] points."
 
 /obj/item/dropship_points_voucher/get_export_value()
 	return list(0, extra_points)

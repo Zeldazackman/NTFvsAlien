@@ -1,7 +1,7 @@
 ///Function that sells whatever object this is to the faction_selling; returns a /datum/export_report if successful
 /atom/movable/proc/supply_export(faction_selling, mob/user)
 	var/list/points = get_export_value()
-	if(!points)
+	if(!islist(points) || ((!points[1]) && (!points[2])))
 		return FALSE
 
 	SSpoints.add_supply_points(faction_selling, points[1])
@@ -10,7 +10,7 @@
 
 /mob/living/carbon/human/supply_export(faction_selling, mob/user)
 	if(!can_sell_human_body(src, faction_selling))
-		return list(new /datum/export_report(0, name, faction_selling, 0))
+		return list(new /datum/export_report(0, "[name] (Not wanted!)", faction_selling, 0))
 	return ..()
 
 /mob/living/carbon/xenomorph/supply_export(faction_selling, mob/user)
