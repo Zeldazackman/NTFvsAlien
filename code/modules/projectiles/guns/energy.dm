@@ -61,7 +61,6 @@
 	gun_skill_category = SKILL_PISTOLS
 	movement_acc_penalty_mult = 0
 	w_class = WEIGHT_CLASS_SMALL
-
 	fire_delay = 2 SECONDS
 	accuracy_mult = 1.15
 	scatter = 2
