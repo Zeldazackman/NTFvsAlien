@@ -588,9 +588,9 @@
 			/obj/item/clothing/suit/modular/style/barrier/lightbarrier = -1,
 			/obj/item/clothing/suit/modular/style/barrier/mediumbarrier = -1,
 			/obj/item/clothing/suit/modular/style/barrier/heavybarrier = -1,
-			/obj/item/clothing/suit/modular/rownin/dermal = -1,
-			/obj/item/clothing/gloves/dermal = -1,
-			/obj/item/clothing/shoes/dermal = -1,
+			/obj/item/clothing/suit/modular/dermal = -1,
+			/obj/item/clothing/gloves/marine/dermal = -1,
+			/obj/item/clothing/shoes/marine/dermal = -1,
 			/obj/item/clothing/head/helmet/HoS/dermal = -1,
 		),
 		"OLD SCHOOL" = list(
