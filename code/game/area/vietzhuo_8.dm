@@ -777,3 +777,9 @@
 	'sound/effects/urban/outdoors/deepcave1.ogg',
 	'sound/effects/urban/outdoors/deepcave2.ogg',
 	)
+
+/area/vietzhuo8/indoors/caves/rock //catchall for closed turfs we want immune to rain/easily visible to map editing tools
+	name = "Enclosed Area"
+	icon_state = "enclosed"
+	minimap_color = null
+	area_flags = CANNOT_NUKE
