@@ -90,7 +90,7 @@
 	)
 	worn_icon_state = "vortex"
 	caliber = CALIBER_9X19
-	max_shells = 50
+	max_shells = 60
 	w_class = WEIGHT_CLASS_NORMAL
 	equip_slot_flags = ITEM_SLOT_BACK
 	type_of_casings = null
@@ -136,8 +136,8 @@
 	scatter_unwielded = 8
 	aim_speed_modifier = 5.8
 	min_scatter_unwielded = 8
-	scatter_increase = 1
-	scatter_increase_unwielded = 1
+	scatter_increase = 0.5
+	scatter_increase_unwielded = 0.5
 	scatter_decay = 3
 	scatter_decay_unwielded = 3
 	min_scatter = -1

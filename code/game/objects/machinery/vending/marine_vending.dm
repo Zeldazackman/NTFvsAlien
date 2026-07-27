@@ -42,6 +42,7 @@
 			/obj/item/weapon/gun/energy/lasgun/lasrifle = 5,
 			/obj/item/weapon/gun/energy/lasgun/M43 = 5,
 			/obj/item/weapon/gun/energy/lasgun/M43/practice = 5,
+			/obj/item/cell/lasgun = -1,
 			/obj/item/cell/lasgun/lasrifle = -1,
 			/obj/item/cell/lasgun/volkite/powerpack/marine = 10,
 			/obj/item/cell/lasgun/volkite/powerpack/marine/backpack = 5,
