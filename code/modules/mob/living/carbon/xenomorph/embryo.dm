@@ -33,6 +33,7 @@
 		if(xeno_loc.xeno_caste.tier == XENO_TIER_MINION || xeno_loc.xeno_caste.caste_type_path == /datum/xeno_caste/larva || xeno_loc.xeno_caste.caste_type_path == /datum/xeno_caste/puppet || xeno_loc.xeno_caste.caste_type_path == /datum/xeno_caste/spiderling)
 			return INITIALIZE_HINT_QDEL //letting these be larva farms makes it too easy to get larva.
 	affected_mob = loc
+	ADD_TRAIT(affected_mob, TRAIT_XENO_HOST(hivenumber), src)
 	affected_mob.status_flags |= XENO_HOST
 	log_combat(affected_mob, null, "been infected with an embryo")
 	START_PROCESSING(SSobj, src)
@@ -42,6 +43,7 @@
 
 /obj/item/alien_embryo/Destroy()
 	if(affected_mob)
+		REMOVE_TRAIT(affected_mob, TRAIT_XENO_HOST(hivenumber), src)
 		log_combat(affected_mob, null, "had their embryo removed")
 		var/anyleft = FALSE
 		for(var/obj/item/alien_embryo/remainingembryo in affected_mob)
@@ -71,6 +73,7 @@
 		return FALSE
 
 	if(loc != affected_mob)
+		REMOVE_TRAIT(affected_mob, TRAIT_XENO_HOST(hivenumber), src)
 		var/anyleft = FALSE
 		for(var/obj/item/alien_embryo/remainingembryo in affected_mob)
 			if(!QDELETED(remainingembryo))
@@ -278,6 +281,7 @@
 			SSpoints.add_strategic_psy_points(embryo.hivenumber, embryo.psypoint_reward)
 			SSpoints.add_tactical_psy_points(embryo.hivenumber, embryo.psypoint_reward*0.25)
 			SSpoints.add_biomass_points(embryo.hivenumber, embryo.biomass_reward)
+	REMOVE_TRAIT(victim, TRAIT_XENO_HOST(embryo.hivenumber), embryo)
 	QDEL_NULL(embryo)
 
 	var/anyleft = FALSE
