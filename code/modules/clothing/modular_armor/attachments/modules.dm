@@ -142,9 +142,8 @@
 	icon_state = "mod_armor"
 	worn_icon_state = "mod_armor_a"
 	attachment_layer = COLLAR_LAYER
-	soft_armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 10, FIRE = 10, ACID = 10) //tyr2 + heavy basically superheavy
+	soft_armor = list(MELEE = 15, BULLET = 15, LASER = 15, ENERGY = 15, BOMB = 15, BIO = 15, FIRE = 15, ACID = 15)
 	slowdown = 0.2
-	stamina_regen_mod = -0.2
 	slot = ATTACHMENT_SLOT_MODULE
 	variants_by_parent_type = list(/obj/item/clothing/suit/modular/xenonauten = "mod_armor_xn", /obj/item/clothing/suit/modular/tdf = "", /obj/item/clothing/suit/modular/goon = "", /obj/item/clothing/suit/modular/rownin = "")
 
@@ -161,9 +160,8 @@
 	desc = "Designed for mounting on modular armor. A substantial amount of additional armor plating designed to grant the user extra protection against all forms of damage. Will definitely impact mobility. Made by ArcherCorp."
 	icon_state = "mod_armor_lower"
 	worn_icon_state = "mod_armor_lower_a"
-	soft_armor = list(MELEE = 5, BULLET = 5, LASER = 5, ENERGY = 5, BOMB = 5, BIO = 5, FIRE = 5, ACID = 5)
+	soft_armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 10, FIRE = 10, ACID = 10)
 	slowdown = 0.1
-	stamina_regen_mod = -0.1
 
 /obj/item/armor_module/module/tyr_extra_armor/som
 	name = "\improper Lorica Armor Reinforcement"
@@ -172,7 +170,7 @@
 	icon_state = "lorica_armor"
 	worn_icon_state = "lorica_armor_a"
 	attachment_layer = null
-	soft_armor = list(MELEE = 5, BULLET = 5, LASER = 5, ENERGY = 5, BOMB = 5, BIO = 5, FIRE = 5, ACID = 5)
+	soft_armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 10, FIRE = 10, ACID = 10)
 	slowdown = 0.1
 	stamina_regen_mod = -0.1
 
