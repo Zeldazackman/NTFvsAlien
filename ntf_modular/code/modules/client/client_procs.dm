@@ -62,6 +62,8 @@
 				embryos.forceMove(doppleganger)
 				embryos.affected_mob = doppleganger
 				doppleganger.status_flags |= XENO_HOST
+				REMOVE_TRAIT(mob, TRAIT_XENO_HOST(embryos.hivenumber), embryos)
+				ADD_TRAIT(mob, TRAIT_XENO_HOST(embryos.hivenumber), embryos)
 			for(var/mob/living/carbon/xenomorph/larva/larba in mob.contents)
 				larba.forceMove(doppleganger)
 				doppleganger.status_flags |= XENO_HOST
