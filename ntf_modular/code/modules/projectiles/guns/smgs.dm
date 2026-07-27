@@ -235,6 +235,7 @@
 	icon_state = "v21_rad"
 	default_ammo = /datum/ammo/bullet/smg/taser
 	icon_state_mini = "mag_smg_dark_blue"
+	color = COLOR_DARK_CYAN
 
 /datum/ammo/bullet/smg/taser
 	name = "charged submachinegun bullet"
