@@ -6,6 +6,7 @@
 	layer = ABOVE_MOB_LAYER
 	faction = FACTION_SOM
 	home_dock = SHUTTLE_CAS_DOCK_SOM
+	req_access = list(ACCESS_SOM_TADPOLE)
 
 ///Handles updating the cockpit overlay
 /obj/structure/caspart/caschair/som/set_cockpit_overlay(new_state)
