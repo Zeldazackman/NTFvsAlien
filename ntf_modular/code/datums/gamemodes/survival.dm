@@ -26,6 +26,7 @@
 		/datum/job/survivor/stripper = 4,
 		/datum/job/survivor/maid = 4,
 		/datum/job/survivor/synth = 1,
+		/datum/job/survivor/bartender = 1,
 		/datum/job/clf/traitor = 3,
 		/datum/job/xenomorph = 2,//two so they dont wipe by a mistake or maybe duo.
 	)
@@ -154,6 +155,7 @@
 		/datum/job/survivor/stripper = 1,
 		/datum/job/survivor/maid = 1,
 		/datum/job/survivor/synth = 1,
+		/datum/job/survivor/bartender = 1,
 		/datum/job/xenomorph = 4,
 	)
 	whitelist_ground_maps = list(MAP_PRISON_STATION)
