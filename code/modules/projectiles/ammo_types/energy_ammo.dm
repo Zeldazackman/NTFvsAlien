@@ -128,15 +128,13 @@
 
 /datum/ammo/energy/tesla/emp/on_hit_obj(obj/target_obj, atom/movable/projectile/proj)
 	. = ..()
-	if(prob(emp_chance))
-		do_sparks(3, TRUE, target_obj)
-		empulse(target_obj, 0, 0, 1, 2)
+	do_sparks(3, TRUE, target_obj)
+	empulse(target_obj, 0, 0, 1, 2)
 
 /datum/ammo/energy/tesla/emp/on_hit_turf(turf/target_turf, atom/movable/projectile/proj)
 	. = ..()
-	if(prob(emp_chance))
-		do_sparks(3, TRUE, target_turf)
-		empulse(target_turf, 0, 0, 1, 2)
+	do_sparks(3, TRUE, target_turf)
+	empulse(target_turf, 0, 0, 1, 2)
 
 #define BFG_SOUND_DELAY_SECONDS 1
 /datum/ammo/energy/bfg

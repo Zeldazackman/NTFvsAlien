@@ -267,3 +267,15 @@
 			human_victim.visible_message(span_warning("[human_victim] shudders violently whilst spitting out error text before collapsing, flailing on the ground randomly."), span_blue("You are bluescreening, but you should be able to recover from this by rebooting automatically in about 15s."), span_notice("You hear a clanker glitching."))
 	else
 		human_victim.adjustStaminaLoss(proj.damage/2)
+
+/datum/ammo/bullet/smg/taser/on_hit_obj(obj/target_obj, atom/movable/projectile/proj)
+	. = ..()
+	if(prob(emp_chance))
+		do_sparks(3, TRUE, target_obj)
+		empulse(target_obj, 0, 0, 0, 1)
+
+/datum/ammo/bullet/smg/taser/on_hit_turf(turf/target_turf, atom/movable/projectile/proj)
+	. = ..()
+	if(prob(emp_chance))
+		do_sparks(3, TRUE, target_turf)
+		empulse(target_turf, 0, 0, 0, 1)
