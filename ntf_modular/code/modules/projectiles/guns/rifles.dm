@@ -141,7 +141,7 @@
 		human_victim.AdjustStun(0.5 SECONDS)
 		if(human_victim.getStaminaLoss() > 20)
 			human_victim.overlay_fullscreen_timer(human_victim.getStaminaLoss(), 10, "glitch", /atom/movable/screen/fullscreen/robot_glitch)
-		if((human_victim.getStaminaLoss() >= human_victim.maxHealth*2) && !human_victim.IsUnconscious())
+		if((human_victim.getStaminaLoss() >= human_victim.maxHealth*2) && !human_victim.IsParalyzed())
 			human_victim.ParalyzeNoChain(15 SECONDS) //fake unconscious basically
 			human_victim.AdjustMute(15 SECONDS)
 			human_victim.overlay_fullscreen_timer(15 SECONDS, 10, "bluescreen", /atom/movable/screen/fullscreen/dead/robot)
@@ -326,7 +326,7 @@
 //emp mag
 /obj/item/ammo_magazine/rifle/nt_halter/charged
 	name = "\improper NT 'Halter' taser magazine (7.62x39mm Taser)"
-	desc = "A magazine filled with specialized 7.62x39mm rifle rounds to deliver a powerful shock ontop of blunt force, for the Halter series of firearms."
+	desc = "A magazine filled with specialized 7.62x39mm rifle rounds to deliver a powerful shock ontop of blunt force, for the Halter series of firearms. This has a 15% chance per shot to deliver an EM pulse."
 	icon_state = "halter_charged"
 	bonus_overlay = "halter_charged"
 	default_ammo = /datum/ammo/bullet/rifle/heavy/halter/charged
@@ -356,7 +356,7 @@
 		human_victim.AdjustStun(0.1 SECONDS)
 		if(human_victim.getStaminaLoss() > 20)
 			human_victim.overlay_fullscreen_timer(human_victim.getStaminaLoss(), 10, "glitch", /atom/movable/screen/fullscreen/robot_glitch)
-		if((human_victim.getStaminaLoss() >= human_victim.maxHealth*2) && !human_victim.IsUnconscious())
+		if((human_victim.getStaminaLoss() >= human_victim.maxHealth*2) && !human_victim.IsParalyzed())
 			human_victim.ParalyzeNoChain(15 SECONDS) //fake unconscious basically
 			human_victim.AdjustMute(15 SECONDS)
 			human_victim.overlay_fullscreen_timer(15 SECONDS, 10, "bluescreen", /atom/movable/screen/fullscreen/dead/robot)
@@ -1216,7 +1216,7 @@
 		human_victim.AdjustStun(0.1 SECONDS)
 		if(human_victim.getStaminaLoss() > 25)
 			human_victim.overlay_fullscreen_timer(human_victim.getStaminaLoss(), 10, "glitch", /atom/movable/screen/fullscreen/robot_glitch)
-		if((human_victim.getStaminaLoss() >= human_victim.maxHealth*2) && !human_victim.IsUnconscious())
+		if((human_victim.getStaminaLoss() >= human_victim.maxHealth*2) && !human_victim.IsParalyzed())
 			human_victim.ParalyzeNoChain(15 SECONDS) //fake unconscious basically
 			human_victim.AdjustMute(15 SECONDS)
 			human_victim.overlay_fullscreen_timer(10 SECONDS, 10, "bluescreen", /atom/movable/screen/fullscreen/dead/robot)

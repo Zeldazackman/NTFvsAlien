@@ -94,8 +94,6 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	equip_slot_flags = ITEM_SLOT_BACK
 	type_of_casings = null
-	muzzle_flash = null
-	fire_sound = SFX_GUN_SILENCED
 	default_ammo_type = /obj/item/ammo_magazine/smg/vortex
 	allowed_ammo_types = list(
 		/obj/item/ammo_magazine/smg/vortex,
@@ -103,8 +101,9 @@
 		/obj/item/ammo_magazine/smg/vortex/ap,
 		/obj/item/ammo_magazine/smg/vortex/incendiary,
 		/obj/item/ammo_magazine/smg/vortex/extended,
-		/obj/item/ammo_magazine/smg/vortex/rad,
+		/obj/item/ammo_magazine/smg/vortex/taser,
 		/obj/item/ammo_magazine/smg/vortex/squashhead,
+		/obj/item/attachable/suppressor/unremovable/invisible,
 	)
 	fire_sound = 'sound/weapons/guns/fire/vector_fire.ogg'
 	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC)
@@ -116,9 +115,11 @@
 		/obj/item/attachable/scope/mini,
 		/obj/item/attachable/magnetic_harness,
 		/obj/item/attachable/motiondetector,
+		/obj/item/attachable/suppressor/unremovable/invisible/vortex,
 	)
 
-	starting_attachment_types = list(/obj/item/attachable/suppressor/unremovable/invisible)
+	//negating some of the suppressor barrel length increase effects in stats, this is only in this for the sound and muzzle flash removal etc
+	starting_attachment_types = list(/obj/item/attachable/suppressor/unremovable/invisible/vortex)
 
 	attachable_offset = list("muzzle_x" = 38, "muzzle_y" = 20,"rail_x" = 28, "rail_y" = 22, "under_x" = 31, "under_y" = 15, "stock_x" = 24, "stock_y" = 10)
 
@@ -130,11 +131,11 @@
 	accuracy_mult = 1.15
 	accuracy_mult_unwielded = 0.75
 
-	recoil = 0
-	recoil_unwielded = 4.5
+	recoil = 1
+	recoil_unwielded = 7.5
 
-	scatter = -1 //gets progressively worse while shot, also angled grip included
-	scatter_unwielded = 8
+	scatter = 1 //gets progressively worse while shot, also angled grip included in stats
+	scatter_unwielded = 10
 	aim_speed_modifier = 5.8
 	min_scatter_unwielded = 8
 	scatter_increase = 0.5
@@ -146,6 +147,13 @@
 
 	akimbo_additional_delay = 0.7
 	var/extended = FALSE
+
+/obj/item/weapon/gun/smg/vortex/examine(mob/user)
+	. = ..()
+	dat += "A screen on top shows potential inaccuracy due heat is [max(0,scatter)]"
+
+/obj/item/attachable/suppressor/unremovable/invisible/vortex
+	name = "Electromagnetic firing system"
 
 /obj/item/weapon/gun/smg/vortex/unique_action(mob/living/user)
 	if(!do_after(user, 10, TRUE, src, BUSY_ICON_DANGER))
@@ -225,9 +233,37 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	aim_speed_mod = 0.1
 
-/obj/item/ammo_magazine/smg/vortex/rad
-	name = "\improper NT Vortex radioactive SMG magazine (9x19mm Parabellum)"
-	desc = "A 9x19mm Parabellum caseless SMG magazine, loaded with radioactive rounds. Handle with care."
+/obj/item/ammo_magazine/smg/vortex/taser
+	name = "\improper NT Vortex HC SMG magazine (9x19mm Parabellum)"
+	desc = "A 9x19mm Parabellum caseless SMG magazine, loaded with HC rounds. It uses High-Conductive projectiles charged by the EM gun itself. This has a 5% chance per shot to deliver an EM pulse."
 	icon_state = "v21_rad"
-	default_ammo = /datum/ammo/bullet/smg/rad
-	icon_state_mini = "mag_smg_greenyellow"
+	default_ammo = /datum/ammo/bullet/smg/taser
+	icon_state_mini = "mag_smg_dark_blue"
+
+/datum/ammo/bullet/smg/taser
+	name = "charged submachinegun bullet"
+	hud_state = "smg_rad"
+	damage = 15
+	sundering = 1.5
+	bullet_color = COLOR_BRIGHT_BLUE
+	var/emp_chance = 5
+
+/datum/ammo/bullet/smg/taser/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
+	. = ..()
+	do_sparks(1, TRUE, target_mob)
+	if(!ishuman(target_mob))
+		return
+	var/mob/living/carbon/human/human_victim = target_mob
+	if(prob(emp_chance))
+		empulse(target_mob.loc, 0,0,0,1)
+	if(human_victim.species.species_flags & ROBOTIC_LIMBS)
+		human_victim.adjustStaminaLoss(proj.damage)
+		if(human_victim.getStaminaLoss() > 25)
+			human_victim.overlay_fullscreen_timer(human_victim.getStaminaLoss(), 10, "glitch", /atom/movable/screen/fullscreen/robot_glitch)
+		if((human_victim.getStaminaLoss() >= human_victim.maxHealth*2) && !human_victim.IsParalyzed())
+			human_victim.ParalyzeNoChain(15 SECONDS) //fake unconscious basically
+			human_victim.AdjustMute(15 SECONDS)
+			human_victim.overlay_fullscreen_timer(15 SECONDS, 10, "bluescreen", /atom/movable/screen/fullscreen/dead/robot)
+			human_victim.visible_message(span_warning("[human_victim] shudders violently whilst spitting out error text before collapsing, flailing on the ground randomly."), span_blue("You are bluescreening, but you should be able to recover from this by rebooting automatically in about 15s."), span_notice("You hear a clanker glitching."))
+	else
+		human_victim.adjustStaminaLoss(proj.damage/2)

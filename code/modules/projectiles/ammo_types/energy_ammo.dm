@@ -107,14 +107,12 @@
 	hitscan_effect_icon = "beam_stun"
 	max_range = 9
 	bullet_color = COLOR_LIGHT_ORANGE
-	var/emp_chance = 100
 
 /datum/ammo/energy/tesla/emp/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
 	. = ..()
-	if(prob(emp_chance))
-		do_sparks(3, TRUE, target_mob)
-		empulse(target_mob, 0, 1, 1, 2)
-		staggerstun(target_mob, proj, stun = 0.5 SECONDS)
+	do_sparks(3, TRUE, target_mob)
+	empulse(target_mob, 0, 1, 1, 2)
+	staggerstun(target_mob, proj, stun = 0.5 SECONDS)
 	var/mob/living/carbon/human/human_victim = target_mob
 	if(human_victim.species.species_flags & ROBOTIC_LIMBS)
 		human_victim.adjustStaminaLoss(proj.damage/2)
@@ -122,7 +120,7 @@
 		human_victim.AdjustStun(0.2 SECONDS)
 		if(human_victim.getStaminaLoss() > 20)
 			human_victim.overlay_fullscreen_timer(human_victim.getStaminaLoss(), 10, "glitch", /atom/movable/screen/fullscreen/robot_glitch)
-		if((human_victim.getStaminaLoss() >= human_victim.maxHealth*2) && !human_victim.IsUnconscious())
+		if((human_victim.getStaminaLoss() >= human_victim.maxHealth*2) && !human_victim.IsParalyzed())
 			human_victim.ParalyzeNoChain(15 SECONDS) //fake unconscious basically
 			human_victim.AdjustMute(15 SECONDS)
 			human_victim.overlay_fullscreen_timer(15 SECONDS, 10, "bluescreen", /atom/movable/screen/fullscreen/dead/robot)
