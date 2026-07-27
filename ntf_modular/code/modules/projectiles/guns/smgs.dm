@@ -110,7 +110,6 @@
 	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC)
 
 	attachable_allowed = list(
-		/obj/item/attachable/suppressor,
 		/obj/item/attachable/reddot,
 		/obj/item/attachable/verticalgrip,
 		/obj/item/attachable/lasersight,
@@ -126,21 +125,23 @@
 
 	fire_delay = 0.1 SECONDS
 	aim_slowdown = 0.15
-	wield_delay = 0.4 SECONDS
+	wield_delay = 0.3 SECONDS
 
-	accuracy_mult = 1
-	accuracy_mult_unwielded = 0.8
+	accuracy_mult = 1.15
+	accuracy_mult_unwielded = 0.75
 
-	recoil = 4
+	recoil = 0
 	recoil_unwielded = 4.5
 
-	scatter = 0 //gets progressively worse while shot
+	scatter = -1 //gets progressively worse while shot, also angled grip included
+	scatter_unwielded = 8
+	aim_speed_modifier = 5.8
+	min_scatter_unwielded = 8
 	scatter_increase = 1
 	scatter_increase_unwielded = 1
 	scatter_decay = 3
 	scatter_decay_unwielded = 3
-	min_scatter = 0
-	scatter_unwielded = 8
+	min_scatter = -1
 	movement_acc_penalty_mult = 4
 
 	akimbo_additional_delay = 0.7
