@@ -148,10 +148,6 @@
 	akimbo_additional_delay = 0.7
 	var/extended = FALSE
 
-/obj/item/weapon/gun/smg/vortex/examine(mob/user)
-	. = ..()
-	dat += "A screen on top shows potential inaccuracy due heat is [max(0,scatter)]"
-
 /obj/item/attachable/suppressor/unremovable/invisible/vortex
 	name = "Electromagnetic firing system"
 
