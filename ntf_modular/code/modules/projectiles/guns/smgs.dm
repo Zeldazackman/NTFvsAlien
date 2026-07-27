@@ -81,15 +81,13 @@
 
 /obj/item/weapon/gun/smg/vortex
 	name = "\improper NT Vortex rapid-fire EM SMG"
-	desc = "The Ninetails Vortex electromagnetic submachinegun is the specialized weapon made by commission for Novamed Trauma Teams, calibered in 9x19mm Parabellum but it uses special rounds without a primer or anything for it's electromagnetic operation. Made to be used by hospital security and combat medics. Though much like other new-world design weapons, this lacks fire-modes and it is always on full-auto. - With it's foldable design, it is easily carried around in satchels until need arises. It is designed in such a way it retains it's accuracy in rapid fire, and since it is firing electromagnetically, it does not have muzzle flash or much sound... But it is rather attachment-unfriendly due to being packable. Use Unique action key to deploy/undeploy it."
+	desc = "The Ninetails Vortex electromagnetic submachinegun is the specialized weapon made by commission for Novamed Trauma Teams, calibered in 9x19mm Parabellum but it uses special rounds without a primer or anything for it's electromagnetic operation. Made to be used by hospital security and combat medics. Though much like other new-world design weapons, this lacks fire-modes and it is always on full-auto. - With it's foldable design, it is easily carried around in satchels until need arises. It is designed in such a way it retains great accuracy in rapid fire but the accuracy quickly decays on sustained fire and must be rested a little while to let heatsinks do it's work, and since it is firing electromagnetically, it does not have muzzle flash or much sound... But it is rather muzzle attachment-unfriendly due to being packable. Use Unique action key to deploy/undeploy it."
 	icon_state = "vortex"
 	icon = 'ntf_modular/icons/obj/items/guns/submachineguns64.dmi'
 	worn_icon_list = list(
 		slot_l_hand_str = 'ntf_modular/icons/mob/inhands/guns/submachineguns_left_1.dmi',
 		slot_r_hand_str = 'ntf_modular/icons/mob/inhands/guns/submachineguns_right_1.dmi',
 	)
-	inhand_x_dimension = 64
-	inhand_y_dimension = 32
 	worn_icon_state = "vortex"
 	caliber = CALIBER_9X19
 	max_shells = 50
@@ -112,32 +110,36 @@
 	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC)
 
 	attachable_allowed = list(
+		/obj/item/attachable/suppressor,
 		/obj/item/attachable/reddot,
 		/obj/item/attachable/verticalgrip,
-		/obj/item/attachable/compensator,
 		/obj/item/attachable/lasersight,
 		/obj/item/attachable/flashlight,
-		/obj/item/attachable/heavy_barrel,
 		/obj/item/attachable/scope/mini,
 		/obj/item/attachable/magnetic_harness,
 		/obj/item/attachable/motiondetector,
 	)
 
-	starting_attachment_types = list()
+	starting_attachment_types = list(/obj/item/attachable/suppressor/unremovable/invisible)
 
-	attachable_offset = list("muzzle_x" = 38, "muzzle_y" = 20,"rail_x" = 13, "rail_y" = 22, "under_x" = 31, "under_y" = 15, "stock_x" = 24, "stock_y" = 10)
+	attachable_offset = list("muzzle_x" = 38, "muzzle_y" = 20,"rail_x" = 28, "rail_y" = 22, "under_x" = 31, "under_y" = 15, "stock_x" = 24, "stock_y" = 10)
 
 	fire_delay = 0.1 SECONDS
 	aim_slowdown = 0.15
 	wield_delay = 0.4 SECONDS
 
-	accuracy_mult = 1.2
-	accuracy_mult_unwielded = 0.9
+	accuracy_mult = 1
+	accuracy_mult_unwielded = 0.8
 
-	recoil = 0
-	recoil_unwielded = 0.5
+	recoil = 4
+	recoil_unwielded = 4.5
 
-	scatter = 5
+	scatter = 0 //gets progressively worse while shot
+	scatter_increase = 1
+	scatter_increase_unwielded = 1
+	scatter_decay = 3
+	scatter_decay_unwielded = 3
+	min_scatter = 0
 	scatter_unwielded = 8
 	movement_acc_penalty_mult = 4
 

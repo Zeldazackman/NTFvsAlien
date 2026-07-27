@@ -65,13 +65,30 @@
 	living_victim.apply_status_effect(STATUS_EFFECT_SHATTER, shatter_duration)
 
 
-
+/*
 /datum/ammo/bullet/smg/incendiary
 	name = "incendiary submachinegun bullet"
 	hud_state = "smg_fire"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_INCENDIARY
 	damage = 18
 	penetration = 0
+*/
+//smg incend is too much, ntf edit
+/datum/ammo/bullet/smg/incendiary
+	name = "incendiary submachinegun bullet"
+	hud_state = "smg_fire"
+	ammo_behavior_flags = AMMO_BALLISTIC
+	damage = 18
+	penetration = 0
+	//incendiary was too op for the rof so we make it less likely by using a weaker deflag
+	///Deflagrate AOE damage
+	var/deflag_damage = 2
+	///Multiplier for deflagrate chance
+	var/deflagrate_mult = 0.3
+
+/datum/ammo/bullet/smg/incendiary/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
+	deflagrate(target_mob, proj, deflag_damage, deflagrate_mult)
+
 
 /datum/ammo/bullet/smg/rad
 	name = "radioactive submachinegun bullet"
