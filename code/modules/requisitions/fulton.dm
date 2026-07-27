@@ -71,9 +71,6 @@
 					thespot = pick(GLOB.latejoinsurvivor)
 			liwwie.forceMove(thespot.loc)
 			return
-	else
-		if(isliving(spirited_away))
-			var/mob/living/spirited_away_living = spirited_away
 	if(!QDELETED(spirited_away))
 		qdel(spirited_away)
 
