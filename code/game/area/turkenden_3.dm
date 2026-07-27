@@ -778,3 +778,9 @@
 	name = "Turkenden-3 Excluzone - Caves - West Cult Temple"
 	icon_state = "t3ew_cult_temple"
 	minimap_color = MINIMAP_AREA_LIVING
+
+/area/turkenden3excluzone/indoors/caves/rock //catchall for closed turfs we want immune to rain/easily visible to map editing tools
+	name = "Enclosed Area"
+	icon_state = "enclosed"
+	minimap_color = null
+	area_flags = CANNOT_NUKE
