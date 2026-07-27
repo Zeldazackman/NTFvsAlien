@@ -125,6 +125,7 @@
 	fire_delay = 0.1 SECONDS
 	aim_slowdown = 0.15
 	wield_delay = 0.3 SECONDS
+	burst_amount = 1
 
 	accuracy_mult = 1.15
 	accuracy_mult_unwielded = 0.75
