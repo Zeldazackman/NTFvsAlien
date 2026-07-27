@@ -40,9 +40,6 @@
 		),
 		"Energy Weapons" = list(
 			/obj/item/weapon/gun/energy/lasgun/lasrifle = 5,
-			/obj/item/weapon/gun/energy/lasgun/M43 = 5,
-			/obj/item/weapon/gun/energy/lasgun/M43/practice = 5,
-			/obj/item/cell/lasgun = -1,
 			/obj/item/cell/lasgun/lasrifle = -1,
 			/obj/item/cell/lasgun/volkite/powerpack/marine = 10,
 			/obj/item/cell/lasgun/volkite/powerpack/marine/backpack = 5,
@@ -266,11 +263,6 @@
 			/obj/item/attachable/flamer_nozzle = -1,
 			/obj/item/attachable/flamer_nozzle/wide = -1,
 			/obj/item/attachable/flamer_nozzle/long = -1,
-			/obj/item/attachable/focuslens = -1,
-			/obj/item/attachable/widelens = -1,
-			/obj/item/attachable/heatlens = -1,
-			/obj/item/attachable/efflens = -1,
-			/obj/item/attachable/pulselens = -1,
 		),
 		"Boxes" = list(
 			/obj/item/ammo_magazine/packet/p9mm = -1,
@@ -370,9 +362,6 @@
 		),
 		"Energy Weapons" = list(
 			/obj/item/weapon/gun/energy/lasgun/lasrifle = 5,
-			/obj/item/weapon/gun/energy/lasgun/M43 = 5,
-			/obj/item/weapon/gun/energy/lasgun/M43/practice = 5,
-			/obj/item/cell/lasgun/lasrifle = -1,
 			/obj/item/cell/lasgun/volkite/powerpack/marine = 10,
 			/obj/item/cell/lasgun/volkite/powerpack/marine/backpack = 5,
 			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle = 5,
@@ -658,9 +647,6 @@
 		),
 		"Energy Weapons" = list(
 			/obj/item/weapon/gun/energy/lasgun/lasrifle = -1,
-			/obj/item/weapon/gun/energy/lasgun/M43 = -1,
-			/obj/item/weapon/gun/energy/lasgun/M43/practice = -1,
-			/obj/item/cell/lasgun/lasrifle = -1,
 			/obj/item/cell/lasgun/volkite/powerpack/marine = -1,
 			/obj/item/cell/lasgun/volkite/powerpack/marine/backpack = -1,
 			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle = -1,
