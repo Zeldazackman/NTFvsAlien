@@ -1091,11 +1091,6 @@
 /obj/machinery/vending/snack,
 /turf/open/floor/mainship/mono,
 /area/vietzhuo8/indoors/v8ntc/breakroom)
-"bcO" = (
-/obj/effect/ai_node,
-/obj/structure/cable,
-/turf/open/floor/plating/ground/desertdam/asphalt,
-/area/vietzhuo8/outdoors/v8ne/village)
 "bcW" = (
 /obj/machinery/door/airlock/mainship/generic,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -2051,6 +2046,11 @@
 	dir = 8
 	},
 /area/vietzhuo8/indoors/v8west/city/embassy/visascenter)
+"bVL" = (
+/obj/structure/cable,
+/obj/structure/plasticflaps,
+/turf/open/floor/plating,
+/area/vietzhuo8/indoors/v8ne/village/power_station)
 "bVS" = (
 /obj/structure/prop/mainship/sensor_computer2/black,
 /turf/open/floor/kutjevo/colors/orange,
@@ -4206,13 +4206,11 @@
 /turf/open/floor/urban/tile/tilewhite,
 /area/vietzhuo8/indoors/v8west/city/hanakohilton/room)
 "eeo" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	color = "#a6aeab";
-	dir = 4
+/obj/machinery/light/small{
+	dir = 8
 	},
-/obj/structure/cable,
 /turf/open/floor/plating,
-/area/vietzhuo8/indoors/v8west/city/powerstation)
+/area/vietzhuo8/indoors/v8ne/village/power_station)
 "eer" = (
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone{
 	dir = 2
@@ -5334,11 +5332,6 @@
 /obj/docking_port/stationary/crashmode,
 /turf/open/floor/plating/ground/desertdam/asphalt,
 /area/vietzhuo8/outdoors/v8west/city/centralstreets)
-"eYV" = (
-/obj/structure/cable,
-/obj/structure/plasticflaps,
-/turf/open/floor/plating,
-/area/vietzhuo8/indoors/v8ne/village/power_station)
 "eZe" = (
 /obj/structure/window/framed/mainship/gray,
 /turf/open/urban/street/sidewalkfull,
@@ -9105,6 +9098,14 @@
 	},
 /turf/open/liquid/water/river/deep,
 /area/vietzhuo8/outdoors/river/southern)
+"iyH" = (
+/obj/structure/cable,
+/obj/machinery/power/terminal{
+	pixel_y = 1;
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/vietzhuo8/indoors/v8central/cargo_storage)
 "iyT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	color = "#a6aeab";
@@ -10319,6 +10320,14 @@
 	},
 /turf/open/floor/freezer,
 /area/vietzhuo8/indoors/v8west/city/cafediner)
+"jLs" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	color = "#a6aeab";
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/vietzhuo8/indoors/v8sentaf/substation)
 "jLH" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -10327,6 +10336,10 @@
 	},
 /turf/open/floor/urban/carpet/carpetred,
 /area/vietzhuo8/indoors/v8west/city/border/security/south)
+"jME" = (
+/obj/effect/landmark/spawn_marker/civilian/viet/random,
+/turf/open/floor/wood,
+/area/vietzhuo8/indoors/v8ne/village/civilian_farm_hut)
 "jNh" = (
 /turf/open/floor/tile/bar,
 /area/vietzhuo8/indoors/v8west/city/hospital/doctorsoffice)
@@ -10842,10 +10855,6 @@
 /obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
 /turf/open/ground/grass/weedable,
 /area/vietzhuo8/outdoors/v8west/city/southarea)
-"kmj" = (
-/obj/effect/landmark/spawn_marker/civilian/viet/random,
-/turf/open/floor/wood/broken,
-/area/vietzhuo8/indoors/v8ne/village/civilian_farm_hut)
 "kmo" = (
 /obj/machinery/door/airlock/multi_tile/mainship/medidoor{
 	name = "\improper Medical Clinic"
@@ -11862,11 +11871,13 @@
 /turf/open/ground/grass/weedable,
 /area/vietzhuo8/outdoors/v8ne/village)
 "liC" = (
-/obj/machinery/door/airlock/multi_tile/mainship/generic{
-	name = "\improper Power Station"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	color = "#a6aeab";
+	dir = 4
 	},
+/obj/structure/cable,
 /turf/open/floor/plating,
-/area/vietzhuo8/indoors/v8ne/village/power_station)
+/area/vietzhuo8/indoors/v8west/city/powerstation)
 "liN" = (
 /obj/structure/cable,
 /turf/open/floor/mainship/mono,
@@ -12509,6 +12520,10 @@
 /obj/structure/window,
 /turf/open/floor/mainship/mono,
 /area/vietzhuo8/indoors/v8ntc/officesmain)
+"lHL" = (
+/obj/machinery/light,
+/turf/open/floor/plating,
+/area/vietzhuo8/indoors/v8sentaf/substation)
 "lHM" = (
 /turf/closed/wall/urban/colony,
 /area/vietzhuo8/indoors/v8west/stripmall/liquor)
@@ -12528,9 +12543,11 @@
 /turf/closed/wall/urban/colony,
 /area/vietzhuo8/indoors/v8west/city/precinct/swatarmory)
 "lJd" = (
-/obj/machinery/light,
-/turf/open/floor/plating,
-/area/vietzhuo8/indoors/v8sentaf/substation)
+/obj/effect/landmark/spawn_marker/civilian/random,
+/turf/open/floor/prison{
+	dir = 8
+	},
+/area/vietzhuo8/indoors/v8west/city/embassy/visascenter/lobby)
 "lJp" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	color = "#a6aeab";
@@ -12806,9 +12823,10 @@
 /turf/open/floor/plating,
 /area/vietzhuo8/indoors/v8west/city/precinct/halls)
 "lXd" = (
-/obj/effect/landmark/spawn_marker/civilian/viet/random,
-/turf/open/floor/wood,
-/area/vietzhuo8/indoors/v8ne/village/civilian_farm_hut)
+/obj/effect/ai_node,
+/obj/structure/cable,
+/turf/open/floor/plating/ground/desertdam/asphalt,
+/area/vietzhuo8/outdoors/v8ne/village)
 "lXD" = (
 /obj/machinery/light/mainship{
 	dir = 4
@@ -13053,17 +13071,9 @@
 /turf/open/floor/plating,
 /area/vietzhuo8/indoors/v8ne/village/warehouseEC)
 "mjM" = (
-/obj/machinery/door/airlock/mainship/engineering/free_access{
-	name = "\improper Power Station";
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	color = "#a6aeab";
-	dir = 1
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/vietzhuo8/indoors/v8sentaf/substation)
+/obj/effect/landmark/spawn_marker/civilian/viet/random,
+/turf/open/floor/wood,
+/area/vietzhuo8/indoors/v8ne/village/civilian_hut)
 "mke" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	color = "#a6aeab"
@@ -13230,12 +13240,11 @@
 /turf/open/floor/urban/tile/tilebeigecheckered,
 /area/vietzhuo8/indoors/v8west/city/embassy/officeslobby)
 "msc" = (
-/obj/machinery/power/apc/high{
-	dir = 1
+/obj/machinery/door/airlock/multi_tile/mainship/generic{
+	name = "\improper Power Station"
 	},
-/obj/structure/cable,
 /turf/open/floor/plating,
-/area/vietzhuo8/indoors/v8central/cargo_storage)
+/area/vietzhuo8/indoors/v8ne/village/power_station)
 "msj" = (
 /obj/structure/bed/bedroll{
 	dir = 10
@@ -16417,13 +16426,11 @@
 /turf/open/floor/urban/carpet/carpetred,
 /area/vietzhuo8/indoors/v8west/city/border/security/south)
 "pom" = (
-/obj/structure/cable,
-/obj/machinery/power/terminal{
-	pixel_y = 1;
-	dir = 1
+/obj/machinery/light/small{
+	dir = 4
 	},
 /turf/open/floor/plating,
-/area/vietzhuo8/indoors/v8central/cargo_storage)
+/area/vietzhuo8/indoors/v8ne/village/power_station)
 "poz" = (
 /obj/effect/urban/decal/road/lines3{
 	pixel_y = -2
@@ -17563,11 +17570,16 @@
 /turf/open/urban/street/sidewalkfull,
 /area/vietzhuo8/outdoors/v8west/city/centralarea)
 "qtS" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	color = "#a6aeab";
+	dir = 1
+	},
 /obj/effect/landmark/spawn_marker/civilian/random,
 /turf/open/floor/prison{
 	dir = 8
 	},
-/area/vietzhuo8/indoors/v8west/city/embassy/visascenter/lobby)
+/area/vietzhuo8/indoors/v8west/city/embassy/visascenter)
 "qtT" = (
 /obj/structure/sink/kitchen{
 	dir = 8
@@ -18791,11 +18803,6 @@
 	},
 /turf/open/floor/urban/tile/tilebeige,
 /area/vietzhuo8/indoors/v8west/city/precinct/lobby)
-"rrW" = (
-/obj/structure/cable,
-/obj/machinery/power/terminal,
-/turf/open/floor/plating,
-/area/vietzhuo8/indoors/v8ne/village/power_station)
 "rsk" = (
 /obj/machinery/door/airlock/mainship/medical/glass/free_access{
 	dir = 1;
@@ -19860,9 +19867,17 @@
 /turf/open/floor/urban/tile/tilewhite,
 /area/vietzhuo8/indoors/v8west/city/gym)
 "smK" = (
-/obj/effect/landmark/spawn_marker/civilian/viet/random,
-/turf/open/floor/wood,
-/area/vietzhuo8/indoors/v8ne/village/civilian_hut)
+/obj/machinery/door/airlock/mainship/engineering/free_access{
+	name = "\improper Power Station";
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	color = "#a6aeab";
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/vietzhuo8/indoors/v8sentaf/substation)
 "smM" = (
 /obj/effect/landmark/sensor_tower,
 /turf/open/floor/plating,
@@ -22280,6 +22295,13 @@
 	},
 /turf/open/floor/plating/ground/desertdam/asphalt,
 /area/vietzhuo8/outdoors/v8west/city/centralstreets)
+"uvf" = (
+/obj/machinery/power/apc/high{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/vietzhuo8/indoors/v8central/cargo_storage)
 "uvF" = (
 /obj/machinery/light/mainship{
 	dir = 4
@@ -23623,9 +23645,10 @@
 /turf/open/floor/mainship/mono,
 /area/vietzhuo8/indoors/v8sentafsec/security_dorms_west)
 "vDc" = (
-/obj/effect/landmark/spawn_marker/civilian/random,
-/turf/open/floor/freezer,
-/area/vietzhuo8/indoors/v8west/city/cafediner)
+/obj/structure/cable,
+/obj/machinery/power/terminal,
+/turf/open/floor/plating,
+/area/vietzhuo8/indoors/v8ne/village/power_station)
 "vDj" = (
 /obj/effect/urban/decal/road/lines3{
 	pixel_y = -2
@@ -24425,16 +24448,9 @@
 /turf/open/urban/street/sidewalkfull,
 /area/vietzhuo8/outdoors/v8west/city/centralarea)
 "wpp" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	color = "#a6aeab";
-	dir = 1
-	},
-/obj/effect/landmark/spawn_marker/civilian/random,
-/turf/open/floor/prison{
-	dir = 8
-	},
-/area/vietzhuo8/indoors/v8west/city/embassy/visascenter)
+/obj/effect/landmark/spawn_marker/civilian/viet/random,
+/turf/open/floor/wood/broken,
+/area/vietzhuo8/indoors/v8ne/village/civilian_farm_hut)
 "wpO" = (
 /obj/machinery/door/airlock/mainship/generic/corporate{
 	name = "Hanako Hilton Room 2";
@@ -24579,13 +24595,9 @@
 	},
 /area/vietzhuo8/indoors/v8west/stripmall)
 "wtM" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	color = "#a6aeab";
-	dir = 1
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/vietzhuo8/indoors/v8sentaf/substation)
+/obj/effect/landmark/spawn_marker/civilian/random,
+/turf/open/floor/freezer,
+/area/vietzhuo8/indoors/v8west/city/cafediner)
 "wtN" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
 	color = "#a6aeab"
@@ -28308,7 +28320,7 @@ idr
 rzV
 qbP
 hdH
-wpp
+qtS
 vSj
 vSj
 vSj
@@ -29395,7 +29407,7 @@ set
 tbq
 epJ
 wls
-qtS
+lJd
 eth
 iaa
 oRQ
@@ -43499,7 +43511,7 @@ lab
 oaR
 ahm
 hzx
-vDc
+wtM
 ahm
 hzx
 ppX
@@ -44316,7 +44328,7 @@ imm
 mUN
 mxc
 uGh
-eeo
+liC
 xbg
 cTn
 mUN
@@ -51717,9 +51729,9 @@ mpL
 mpL
 vZU
 tYI
-pom
+iyH
 frJ
-msc
+uvf
 vZU
 vZU
 fjp
@@ -62283,7 +62295,7 @@ fFv
 fFv
 jns
 jns
-eYV
+bVL
 jns
 jns
 fFv
@@ -62413,7 +62425,7 @@ mUm
 eiY
 oDR
 uKo
-lJd
+lHL
 kZz
 kZz
 fRi
@@ -62500,7 +62512,7 @@ fFv
 jns
 jns
 lwc
-rrW
+vDc
 btm
 jns
 lia
@@ -62630,8 +62642,8 @@ mUm
 mUm
 aSi
 fMS
-wtM
-mjM
+jLs
+smK
 iYc
 rTN
 xKw
@@ -62714,12 +62726,12 @@ lia
 fFv
 lia
 fFv
-liC
-aGH
+msc
+eeo
 aGH
 ePN
 aGH
-liC
+msc
 fFv
 lia
 fFv
@@ -62932,7 +62944,7 @@ lia
 lia
 fFv
 aGH
-aGH
+pom
 aGH
 ePN
 aGH
@@ -63151,7 +63163,7 @@ fFv
 jns
 jns
 lwc
-rrW
+vDc
 btm
 jns
 fFv
@@ -63368,7 +63380,7 @@ lia
 fFv
 jns
 jns
-eYV
+bVL
 jns
 jns
 lia
@@ -63593,7 +63605,7 @@ iiU
 uHN
 uHN
 uHN
-bcO
+lXd
 uHN
 cdI
 iHq
@@ -71420,7 +71432,7 @@ qvL
 jbl
 dwG
 rwI
-kmj
+wpp
 jbl
 qvL
 qvL
@@ -72062,7 +72074,7 @@ kqH
 cWo
 kqH
 cIy
-smK
+mjM
 sQG
 cWo
 lia
@@ -72085,7 +72097,7 @@ fFv
 qvL
 cYH
 jbl
-lXd
+jME
 jbl
 ncu
 qvL
