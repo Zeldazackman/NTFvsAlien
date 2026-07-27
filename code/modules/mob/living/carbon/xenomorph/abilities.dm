@@ -874,6 +874,20 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 	playsound(owner.loc, 'sound/voice/alien/drool1.ogg', 50, 1)
 	to_chat(owner, span_xenodanger("We feel our acid glands refill. We can spray acid again."))
 
+/datum/action/ability/activable/xeno/spray_acid/ai_should_start_consider()
+	return TRUE
+
+/datum/action/ability/activable/xeno/spray_acid/ai_should_use(atom/target)
+	if(!iscarbon(target))
+		return FALSE
+	if(get_dist(target, owner) > 6)
+		return FALSE
+	if(!line_of_sight(owner, target))
+		return FALSE
+	if(owner.issamexenohive(target))
+		return FALSE
+	return TRUE
+
 /datum/action/ability/activable/xeno/xeno_spit
 	name = "Xeno Spit"
 	action_icon_state = "shift_spit_neurotoxin"
