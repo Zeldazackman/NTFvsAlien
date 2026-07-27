@@ -263,3 +263,10 @@
   - rscadd: Resurgentis hair and eyes got a rule for forced glow (That one is on you
       Vide) Currently disabled
   - rscadd: Xenomorph Hybrids can now use the xenomorph language.
+2026-07-27:
+  Meghan-Rossi:
+  - balance: 'Colony fall evo requirements increased: Shrike: 6 -> 8, Queen: 8 ->
+      10, King, Dragon: 12 -> 14'
+  SpooksAnno:
+  - bugfix: Fixed simple sexcon interactions not applying quick-heal/healsex effects
+      for opted-in targets.

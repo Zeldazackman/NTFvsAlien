@@ -1,4 +1,0 @@
-author: "SpooksAnno"
-delete-after: True
-changes:
-  - bugfix: "Fixed simple sexcon interactions not applying quick-heal/healsex effects for opted-in targets."
