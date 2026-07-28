@@ -66,7 +66,7 @@
 				return FALSE
 			if(pixel_y <= MAXIMUM_PIXEL_SHIFT + initial(pixel_y))
 				pixel_y++
-				layer += 0.1
+				layer -= 0.1
 				is_shifted = TRUE
 		if(EAST)
 			if(!canface())
