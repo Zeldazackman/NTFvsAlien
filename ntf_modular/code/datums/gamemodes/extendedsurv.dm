@@ -37,4 +37,6 @@
 		/datum/job/survivor/maid = -1,
 		/datum/job/survivor/synth = -1,
 		/datum/job/survivor/bartender = -1,
+		/datum/job/survivor/chemist = -1,
+		/datum/job/survivor/roboticist = -1,
 	)
