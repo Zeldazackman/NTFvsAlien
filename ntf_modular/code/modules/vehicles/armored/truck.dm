@@ -41,7 +41,7 @@
 	desc = "A lightly armored logistic transport vehicle with treads designed to transport troops and supplies wherever necessary, quickly and hopefully in one piece. It's threads make it possible to turn on spot, be immune to flat tires and traverse rough terrain, probably."
 	icon = 'icons/obj/vehicles/large_truck.dmi'
 	icon_state = "truck_enclosed_treads"
-	hitbox = /obj/hitbox/thin/threads
+	hitbox = /obj/hitbox/thin_threads
 	max_integrity = 750
 	soft_armor = list(MELEE = 50, BULLET = 80 , LASER = 80, ENERGY = 70, BOMB = 70, BIO = 100, FIRE = 100, ACID = 55)
 	hard_armor = list(MELEE = 0, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 100, FIRE = 0, ACID = 0)
