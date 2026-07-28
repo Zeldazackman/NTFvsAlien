@@ -21,8 +21,8 @@
 	required_entry_skill = SKILL_LARGE_VEHICLE_DEFAULT
 	minimap_icon_state = null
 	turret_icon = null
-	pixel_x = -32
-	pixel_y = -32
+	pixel_x = 0
+	pixel_y = 0
 	max_integrity = 700
 	soft_armor = list(MELEE = 50, BULLET = 70 , LASER = 70, ENERGY = 60, BOMB = 60, BIO = 100, FIRE = 100, ACID = 50)
 	hard_armor = list(MELEE = 0, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 100, FIRE = 0, ACID = 0)
@@ -53,7 +53,7 @@
 /obj/hitbox/thin
 	bound_x = 0
 	bound_y = -32
-	vehicle_length = 96
+	vehicle_length = 32
 	vehicle_width = 32
 
 /obj/hitbox/thin/owner_turned(datum/source, old_dir, new_dir)
@@ -173,10 +173,52 @@
 
 //threaded hitbox behavior
 /obj/hitbox/thin_threads
-	bound_x = 0
-	bound_y = -32
+	bound_x = 0 //middle tile
+	bound_y = 0
 	vehicle_length = 96
 	vehicle_width = 32
+
+/obj/hitbox/thin_threads/owner_turned(datum/source, old_dir, new_dir)
+	. = ..()
+	if(!.)
+		return
+	var/list/old_locs = locs.Copy()
+	switch(new_dir)
+		if(NORTH)
+			bound_height = vehicle_length
+			bound_width = vehicle_width
+		if(SOUTH)
+			bound_height = vehicle_length
+			bound_width = vehicle_width
+		if(WEST)
+			bound_height = vehicle_width
+			bound_width = vehicle_length
+		if(EAST)
+			bound_height = vehicle_width
+			bound_width = vehicle_length
+
+	var/angle_change = dir2angle(new_dir) - dir2angle(old_dir)
+	//north needing to be considered 0 OR 360 is inconvenient, I'm sure there is a non ungabrain way to do this
+	switch(angle_change)
+		if(-270)
+			angle_change = 90
+		if(270)
+			angle_change = -90
+	for(var/mob/living/desant AS in tank_desants)
+		if(desant.loc == root.loc)
+			continue
+		var/new_x
+		var/new_y
+		if(angle_change > 0) //clockwise turn
+			new_x = root.x + (desant.y - root.y)
+			new_y = root.y - (desant.x - root.x)
+		else //anti-clockwise
+			new_x = root.x - (desant.y - root.y)
+			new_y = root.y + (desant.x - root.x)
+
+		desant.forceMove(locate(new_x, new_y, z))
+
+	SEND_SIGNAL(src, COMSIG_MULTITILE_VEHICLE_ROTATED, loc, new_dir, null, old_locs)
 
 /obj/hitbox/thin_threads/on_attempt_drive(atom/movable/movable_parent, mob/living/user, direction)
 	if(ISDIAGONALDIR(direction))

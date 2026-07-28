@@ -57,6 +57,7 @@
 #include "code\datums\sexcon\sex_actions\force\force_crotch_nuzzle.dm"
 #include "code\datums\sexcon\sex_actions\force\force_cunnilingus.dm"
 #include "code\datums\sexcon\sex_actions\force\force_ear_sex.dm"
+#include "code\datums\sexcon\sex_actions\force\force_eye_sex.dm"
 #include "code\datums\sexcon\sex_actions\force\force_foot_lick.dm"
 #include "code\datums\sexcon\sex_actions\force\force_footjob.dm"
 #include "code\datums\sexcon\sex_actions\force\force_milk_genitals.dm"

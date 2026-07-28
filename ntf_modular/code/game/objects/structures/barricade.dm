@@ -17,4 +17,4 @@
 /obj/structure/barricade/Initialize(mapload, mob/user)
 	. = ..()
 	if(!user)
-		addtimer(CALLBACK(PROC_REF(eord_stuff)), 2 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(eord_stuff)), 2 SECONDS)
