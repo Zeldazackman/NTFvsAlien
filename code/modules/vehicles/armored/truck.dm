@@ -18,7 +18,7 @@
 	soft_armor = list(MELEE = 50, BULLET = 90 , LASER = 90, ENERGY = 70, BOMB = 80, BIO = 100, FIRE = 100, ACID = 50)
 	hard_armor = list(MELEE = 0, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 100, FIRE = 0, ACID = 0)
 	facing_modifiers = list(VEHICLE_FRONT_ARMOUR = 0.7, VEHICLE_SIDE_ARMOUR = 1, VEHICLE_BACK_ARMOUR = 1.5)
-	max_occupants = 12
+	max_occupants = 24
 	enter_delay = 0.4 SECONDS
 	ram_damage = 200
 	move_delay = 0.15 SECONDS

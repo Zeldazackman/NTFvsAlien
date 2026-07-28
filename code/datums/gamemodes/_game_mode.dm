@@ -78,7 +78,7 @@ GLOBAL_VAR(common_report) //Contains common part of roundend report
 	///If the gamemode has a whitelist of valid ground maps. Whitelist overrides the blacklist
 	var/list/whitelist_ground_maps
 	///If the gamemode has a blacklist of disallowed ground maps
-	var/list/blacklist_ground_maps = list(MAP_WHISKEY_OUTPOST, MAP_OSCAR_OUTPOST, MAP_FORT_PHOBOS, MAP_COLONY1, MAP_CORSAT, MAP_LV_624BASES)
+	var/list/blacklist_ground_maps = list(MAP_WHISKEY_OUTPOST, MAP_DELTA_STATION, MAP_OSCAR_OUTPOST, MAP_FORT_PHOBOS, MAP_COLONY1, MAP_CORSAT, MAP_LV_624BASES)
 	///If the gamemode has a whitelist of valid antag maps. Whitelist overrides the blacklist
 	var/list/whitelist_antag_maps
 	///If the gamemode has a blacklist of disallowed antag maps

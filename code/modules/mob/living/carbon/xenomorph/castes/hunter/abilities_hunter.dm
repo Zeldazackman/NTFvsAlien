@@ -336,7 +336,7 @@
 	xenoowner.add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/everyone, "hunter_disguise", disguised_icon)
 	ADD_TRAIT(xenoowner, TRAIT_XENOMORPH_INVISIBLE_BLOOD, STEALTH_TRAIT)
 	xenoowner.update_wounds()
-	xenoowner.update_xeno_gender()
+	INVOKE_ASYNC(xenoowner, TYPE_PROC_REF(/mob/living/carbon/xenomorph, update_xeno_gender))
 	return ..()
 
 /datum/action/ability/xeno_action/stealth/disguise/cancel_stealth()
@@ -345,7 +345,7 @@
 	REMOVE_TRAIT(xenoowner, TRAIT_XENOMORPH_INVISIBLE_BLOOD, STEALTH_TRAIT)
 	xenoowner.remove_alt_appearance("hunter_disguise")
 	xenoowner.update_wounds()
-	xenoowner.update_xeno_gender()
+	INVOKE_ASYNC(xenoowner, TYPE_PROC_REF(/mob/living/carbon/xenomorph, update_xeno_gender))
 
 /datum/action/ability/xeno_action/stealth/disguise/handle_stealth()
 	if(!xeno_owner.plasma_stored)
