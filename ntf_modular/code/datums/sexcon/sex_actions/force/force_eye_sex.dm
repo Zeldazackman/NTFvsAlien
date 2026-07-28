@@ -40,6 +40,7 @@
 		target.visible_message(target.sexcon.spanify_force("[target] [target.sexcon.get_generic_force_adjective()] fucks [user]'s eye."))
 	playsound(user, 'ntf_modular/sound/misc/mat/segso.ogg', 50, TRUE, 5, ignore_walls = FALSE)
 
+	var/flags = user.client.prefs.harmful_sex_flags
 	target.sexcon.perform_sex_action(target, 2, 0, TRUE)
 	if(target.sexcon.check_active_ejaculation())
 		target.visible_message(span_love("[target] cums into [user]'s eye!"))
@@ -68,7 +69,6 @@
 		target.sexcon.perform_sex_action(user, 1.2, 3, FALSE)
 	else
 		target.sexcon.perform_sex_action(user, 2.4, 7, FALSE)
-	var/flags = user.client.prefs.harmful_sex_flags
 	if(flags & HARMFUL_SEX_ROUGH_SEX)
 		if(ishuman(user))
 			if(flags & HARMFUL_SEX_ROUGH_SEX)
