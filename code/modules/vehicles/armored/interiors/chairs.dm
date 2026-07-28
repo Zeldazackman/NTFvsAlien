@@ -37,7 +37,7 @@
 	///owner of this object, assigned during interior linkage
 	var/obj/vehicle/sealed/armored/owner
 	///The skill required to man this chair
-	var/skill_req = SKILL_LARGE_VEHICLE_VETERAN
+	var/skill_req = SKILL_LARGE_VEHICLE_DEFAULT
 	///Control flags given to the mob on buckle
 	var/control_flags = NONE
 
