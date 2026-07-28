@@ -79,5 +79,6 @@
 #define HOLE_VAGINA "pussy"
 #define HOLE_NIPPLE "nipple"
 #define HOLE_EAR "ear"
+#define HOLE_EYE "eye"
 
 #define HOLE_LIST list(HOLE_MOUTH,HOLE_ASS,HOLE_VAGINA,HOLE_NIPPLE,HOLE_EAR)

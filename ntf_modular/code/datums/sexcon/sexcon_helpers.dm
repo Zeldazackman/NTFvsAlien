@@ -132,16 +132,35 @@
 			victim.apply_damage(impregdamagetodeal, BRUTE, damageloc, updating_health = TRUE)
 	if(!can_implant_embryo(victim))
 		to_chat(src, span_warning("We came but this host is already full of young ones."))
+		claim_hive_target_reward(victim)
 		return
 	if(victim.stat == DEAD)
 		to_chat(src, span_warning("We impregnate \the [victim] with a dormant larva."))
+	log_combat(src, victim, "got impregnated by", addition="with their impregnate ability")
 	if(prob(5))
 		to_chat(src, span_warning("We sense we impregnated \the [victim] with TWINS!."))
 		implant_embryo(victim, hole_target, 2, source = src)
 	else
 		implant_embryo(victim, hole_target, source = src)
+	claim_hive_target_reward(victim)
 
-/mob/living/carbon/xenomorph/proc/xenoimpregify()
+/mob/living/carbon/xenomorph/proc/xenoimpregify(mob/living/carbon/father)
+	if(isxeno(father) && !(SSticker.mode.round_type_flags2 & MODE_2_CHILL_RULES))
+		return FALSE
+	if(ishuman(father) && !(SSticker.mode.round_type_flags2 & MODE_2_CHILL_RULES))
+		if(father.getCloneLoss() >= 45 || HAS_TRAIT(father, TRAIT_PSY_DRAINED))
+			if(!preggo)
+				to_chat(src, "This one is too weak to impregnate us!")
+			claim_hive_target_reward(father)
+			return FALSE
+		if(father.status_flags & XENO_HOST)
+			if(!preggo)
+				to_chat(src, "This one is already a host!")
+			claim_hive_target_reward(father)
+			return FALSE
+		father.adjustCloneLoss(45)
+		father.Shake(duration = 2 SECONDS)
+	claim_hive_target_reward(father)
 	if(!preggo && gender == FEMALE)
 /*		if(!(SSticker.mode.round_type_flags2 & MODE_2_CHILL_RULES) && client?.prefs?.xenogender == 4) //futa
 			to_chat(src, span_alien("We can't bear larvas during war times, our mixed physiology makes it difficult."))

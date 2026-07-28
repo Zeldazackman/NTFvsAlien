@@ -40,6 +40,7 @@
 #include "code\datums\sexcon\sex_actions\candle\candle_breasts.dm"
 #include "code\datums\sexcon\sex_actions\candle\candle_butt.dm"
 #include "code\datums\sexcon\sex_actions\deviant\ear_sex.dm"
+#include "code\datums\sexcon\sex_actions\deviant\eye_sex.dm"
 #include "code\datums\sexcon\sex_actions\deviant\facesitting.dm"
 #include "code\datums\sexcon\sex_actions\deviant\footjob.dm"
 #include "code\datums\sexcon\sex_actions\deviant\force_thighjob.dm"

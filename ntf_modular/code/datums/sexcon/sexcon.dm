@@ -220,7 +220,7 @@
 		playsound(target, pick(list('ntf_modular/sound/misc/mat/mouthend (1).ogg','ntf_modular/sound/misc/mat/mouthend (2).ogg')), 100, FALSE, 7, ignore_walls = FALSE)
 	else
 		playsound(target, 'ntf_modular/sound/misc/mat/endin.ogg', 50, TRUE, 7, ignore_walls = FALSE)
-	if(user.gender == MALE)
+	if(user.sexcon.can_use_testicles())
 		filled?.reagents?.add_reagent(/datum/reagent/consumable/nutriment/cum, 10)
 	else
 		filled?.reagents?.add_reagent(/datum/reagent/consumable/nutriment/cum/girl, 10)
@@ -563,15 +563,54 @@
 /datum/sex_controller/proc/can_use_penis()
 	if(!user.client)
 		return TRUE //return true for clientless shit anyway
-	if(user.client?.prefs?.genitalia_cock)
+	if(isxeno(user))
+		var/mob/living/carbon/xenomorph/userxeno = user
+		if(userxeno.client?.prefs?.xenogender >= 3)
+			return TRUE
+	if(ishuman(user))
+		if(user.client?.prefs?.genitalia_cock)
+			return TRUE
+	return FALSE
+
+/datum/sex_controller/proc/can_use_testicles()
+	if(!user.client)
+		return TRUE //return true for clientless shit anyway
+	if(isxeno(user))
+		var/mob/living/carbon/xenomorph/userxeno = user
+		if(userxeno.client?.prefs?.xenogender >= 3)
+			return TRUE
+	if(ishuman(user))
+		if(user.client?.prefs?.genitalia_testicles)
+			return TRUE
+	return FALSE
+
+/datum/sex_controller/proc/can_use_vagina()
+	if(!user.client)
+		return TRUE //return true for clientless shit anyway
+	if(ishuman(user))
+		if(user.client?.prefs?.genitalia_vagina)
+			return TRUE
+	return FALSE
+
+/datum/sex_controller/proc/can_use_tail()
+	if(!user.client)
+		return TRUE //return true for clientless shit anyway
+	if(isxeno(user))
+		return TRUE
+	if(user.client?.prefs?.tail)
 		return TRUE
 	return FALSE
 
 /datum/sex_controller/proc/can_use_breasts()
 	if(!user.client)
 		return TRUE //return true for clientless shit anyway
-	if(user.client?.prefs?.genitalia_boobs)
-		return TRUE
+	if(isxeno(target))
+		var/mob/living/carbon/xenomorph/userxeno = user
+		if(userxeno.client?.prefs?.xenogender == 2 || userxeno.client?.prefs?.xenogender == 4)
+			return TRUE
+	if(ishuman(user))
+		if(user.client?.prefs?.genitalia_boobs)
+			return TRUE
 	return FALSE
 
 /datum/sex_controller/proc/considered_limp()
