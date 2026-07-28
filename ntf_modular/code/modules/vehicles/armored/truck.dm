@@ -41,6 +41,7 @@
 	desc = "A lightly armored logistic transport vehicle with treads designed to transport troops and supplies wherever necessary, quickly and hopefully in one piece. It's threads make it possible to turn on spot, be immune to flat tires and traverse rough terrain, probably."
 	icon = 'icons/obj/vehicles/large_truck.dmi'
 	icon_state = "truck_enclosed_treads"
+	hitbox = /obj/hitbox/thin/threads
 	max_integrity = 750
 	soft_armor = list(MELEE = 50, BULLET = 80 , LASER = 80, ENERGY = 70, BOMB = 70, BIO = 100, FIRE = 100, ACID = 55)
 	hard_armor = list(MELEE = 0, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 100, FIRE = 0, ACID = 0)
@@ -176,3 +177,50 @@
 	bound_y = -32
 	vehicle_length = 96
 	vehicle_width = 32
+
+/obj/hitbox/thin_threads/on_attempt_drive(atom/movable/movable_parent, mob/living/user, direction)
+	if(ISDIAGONALDIR(direction))
+		return COMPONENT_DRIVER_BLOCK_MOVE
+	var/obj/vehicle/sealed/armored/armor = root
+	var/is_strafing = FALSE
+	if(armor?.strafe)
+		is_strafing = TRUE
+		for(var/mob/driver AS in armor.return_drivers())
+			if(driver.client?.keys_held["Alt"])
+				is_strafing = FALSE
+				break
+	if((root.dir == direction) || (root.dir == REVERSE_DIR(direction)))
+		is_strafing = FALSE
+	else if(!is_strafing) //we turn
+		root.setDir(direction)
+		return COMPONENT_DRIVER_BLOCK_MOVE
+	///////////////////////////
+	var/turf/centerturf = get_step(root, direction)
+	var/list/enteringturfs = list()
+	switch(direction)
+		if(NORTH)
+			enteringturfs += get_step(centerturf, turn(direction, -90))
+		if(SOUTH)
+			centerturf = get_step(centerturf, direction)
+			enteringturfs += get_step(centerturf, turn(direction, 90))
+		if(EAST)
+			centerturf = get_step(centerturf, direction)
+			enteringturfs += get_step(centerturf, turn(direction, -90))
+		if(WEST)
+			enteringturfs += get_step(centerturf, turn(direction, 90))
+	enteringturfs += centerturf
+	////////////////////////////////////
+	var/canstep = TRUE
+	for(var/turf/T AS in enteringturfs)	//No break because we want to crush all the turfs before we start trying to move
+		if(!T.Enter(root, direction))	//Check if we can cross the turf first/bump the turf
+			canstep = FALSE
+
+		for(var/atom/movable/AM AS in T.contents) // this is checked in turf/enter but it doesnt return false so lmao
+			if(AM.pass_flags & PASS_TANK) //rather than add it to AM/CanAllowThrough for this one interaction, lets just check it manually
+				continue
+			if(AM.CanPass(root))	// Then check for obstacles to crush
+				continue
+			root.Bump(AM) //manually call bump on everything
+			canstep = FALSE
+
+	return canstep ? NONE : COMPONENT_DRIVER_BLOCK_MOVE
