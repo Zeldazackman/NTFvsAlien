@@ -40,11 +40,7 @@
 		update_smoke_dir(null, null, newdir)
 
 /obj/vehicle/sealed/armored/multitile/mrap/enter_locations(atom/movable/entering_thing)
-	var/first_turf = get_step_away(get_step(src, REVERSE_DIR(dir)), src, 2)
-	return list(
-		first_turf,
-		get_step(first_turf, turn(dir, -90)),
-	)
+	return list(get_step_away(get_step(src, REVERSE_DIR(dir)), src, 2))
 
 /obj/vehicle/sealed/armored/multitile/mrap/wreck_vehicle()
 	. = ..()

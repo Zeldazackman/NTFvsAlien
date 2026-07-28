@@ -106,6 +106,7 @@
 		/obj/item/attachable/suppressor/unremovable/invisible,
 	)
 	fire_sound = 'sound/weapons/guns/fire/vector_fire.ogg'
+	gun_features_flags = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER|GUN_DEPLOYED_FIRE_ONLY
 	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC)
 
 	attachable_allowed = list(

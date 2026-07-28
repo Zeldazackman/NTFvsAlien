@@ -264,6 +264,7 @@
 #include "code\modules\reqs\supplypacks\imports_packs.dm"
 #include "code\modules\reqs\supplypacks\medical_packs.dm"
 #include "code\modules\reqs\supplypacks\operations_packs.dm"
+#include "code\modules\reqs\supplypacks\vehicles_packs.dm"
 #include "code\modules\reqs\supplypacks\weapons_packs.dm"
 #include "code\modules\status_updates\status_updates.dm"
 #include "code\modules\tgui\states\genital_menu.dm"

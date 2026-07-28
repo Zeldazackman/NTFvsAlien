@@ -161,6 +161,7 @@
 	if(!isarmoredvehicle(spirited_away))
 		return ..()
 	RegisterSignal(spirited_away, COMSIG_ARMORED_DO_EXTRACT, PROC_REF(extract_vehicle))
+	RegisterSignal(spirited_away, COMSIG_ARMORED_DO_EXTRACT_FAKE, PROC_REF(extract_vehicle_fake))
 
 	user.visible_message(span_notice("[user] finishes attaching [src] to [spirited_away], ready for fastening"),\
 	span_notice("You attach the pack to [spirited_away], ready for fastening."), null, 5)
@@ -173,6 +174,19 @@
 	do_extract(spirited_away, user)
 	spirited_away.moveToNullspace()
 	addtimer(CALLBACK(spirited_away, TYPE_PROC_REF(/obj/vehicle/sealed/armored, return_to_base)), 8 SECONDS)
+
+/obj/item/fulton_extraction_pack/tank/proc/extract_vehicle_fake(obj/vehicle/sealed/armored/spirited_away, mob/living/user)
+	SIGNAL_HANDLER
+	var/turf/return_loc = spirited_away.loc
+	do_extract(spirited_away, user)
+	spawn(16 SECONDS)
+	spirited_away.unwreck_vehicle()
+	spirited_away.pixel_z = 400
+	spirited_away.forceMove(return_loc)
+	playsound(loc, 'sound/items/fultext_deploy.ogg', 30, TRUE)
+	animate(spirited_away, time = 2 SECONDS, pixel_z = 0, easing=SINE_EASING|EASE_OUT, flags = ANIMATION_PARALLEL)
+	spawn(2 SECONDS)
+	playsound(spirited_away.loc, 'sound/effects/metal_crash.ogg', 50, TRUE)
 
 /obj/effect/fulton_extraction_holder
 	name = "fulton extraction holder"

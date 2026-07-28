@@ -78,6 +78,7 @@
 		/obj/structure/largecrate/machine/bodyscanner = 1,
 		/obj/structure/largecrate/machine/sleeper = 2,
 		/obj/structure/largecrate/supply/medicine/optable = 1,
+		/obj/structure/largecrate/supply/medicine/optablestasis = 1,
 		/obj/structure/largecrate/supply/supplies/tables_racks = 1,
 	)
 /*NEW SUPPLY CRATES*/

@@ -9,11 +9,12 @@
 	filename = "logitruck"
 
 /obj/vehicle/sealed/armored/multitile/mrap/logi
-	name = "\improper TransCO 'Roughauler' Military Truck"
-	desc = "A lightly armored logistic transport vehicle designed to transport troops and supplies wherever necessary, quickly and hopefully in one piece."
+	name = "\improper TransCO 'Roadmaster' Logistics Truck"
+	desc = "A lightly armored logistic transport vehicle designed to transport trade goods across the earth wherever necessary while being able to outrun and take a few shots from the usual raider interception. It comes after-market equipped with tesla coils due to the xenomorph threats."
 	icon = 'ntf_modular/icons/obj/vehicles/large_truck.dmi'
+	damage_icon_path = 'ntf_modular/icons/obj/vehicles/large_truck.dmi'
 	icon_state = "truck_enclosed"
-	hitbox = /obj/hitbox/thin
+	hitbox = /obj/hitbox/medium/truck
 	interior = /datum/interior/armored/logi
 	permitted_weapons = NONE
 	permitted_mods = list(/obj/item/tank_module/ability/tesla)
@@ -21,11 +22,11 @@
 	required_entry_skill = SKILL_LARGE_VEHICLE_DEFAULT
 	minimap_icon_state = null
 	turret_icon = null
-	pixel_x = 0
-	pixel_y = 0
+	pixel_x = -16
+	pixel_y = -40
 	max_integrity = 700
-	soft_armor = list(MELEE = 50, BULLET = 70 , LASER = 70, ENERGY = 60, BOMB = 60, BIO = 100, FIRE = 100, ACID = 50)
-	hard_armor = list(MELEE = 0, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 100, FIRE = 0, ACID = 0)
+	soft_armor = list(MELEE = 50, BULLET = 55 , LASER = 55, ENERGY = 45, BOMB = 50, BIO = 100, FIRE = 100, ACID = 50)
+	hard_armor = list(MELEE = 0, BULLET = 5, LASER = 5, ENERGY = 5, BOMB = 5, BIO = 100, FIRE = 0, ACID = 0)
 	facing_modifiers = list(VEHICLE_FRONT_ARMOUR = 0.8, VEHICLE_SIDE_ARMOUR = 1, VEHICLE_BACK_ARMOUR = 1.2) //not too much diff
 	ram_damage = 150
 	move_delay = 0.1 SECONDS
@@ -36,52 +37,43 @@
 		/obj/structure/closet/crate,
 	)
 
+/obj/vehicle/sealed/armored/multitile/mrap/logi/enter_locations(atom/movable/entering_thing)
+	return list(get_step(src, REVERSE_DIR(dir)))
+
 /obj/vehicle/sealed/armored/multitile/mrap/logi/treads
-	name = "\improper TransCO 'Roughauler-T' Treaded Military Truck"
-	desc = "A lightly armored logistic transport vehicle with treads designed to transport troops and supplies wherever necessary, quickly and hopefully in one piece. It's threads make it possible to turn on spot, be immune to flat tires and traverse rough terrain, probably."
+	name = "\improper TransCO 'Roughauler' Treaded Military Truck"
+	desc = "A treaded, armored logistic transport vehicle, designed to transport troops and supplies wherever necessary, relatively quickly and hopefully in one piece thanks to it's ballistic plating. It's threads make it possible to turn on spot, be immune to flat tires, resist side-shots and traverse rough terrain, probably.  It comes after-market equipped with tesla coils due to the xenomorph threats."
 	icon = 'icons/obj/vehicles/large_truck.dmi'
 	icon_state = "truck_enclosed_treads"
-	hitbox = /obj/hitbox/thin_threads
-	max_integrity = 750
+	hitbox = /obj/hitbox/medium
+	max_integrity = 800
 	soft_armor = list(MELEE = 50, BULLET = 80 , LASER = 80, ENERGY = 70, BOMB = 70, BIO = 100, FIRE = 100, ACID = 55)
 	hard_armor = list(MELEE = 0, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 100, FIRE = 0, ACID = 0)
 	facing_modifiers = list(VEHICLE_FRONT_ARMOUR = 0.8, VEHICLE_SIDE_ARMOUR = 0.8, VEHICLE_BACK_ARMOUR = 1.2) //tracks are armored yay
-	move_delay = 0.15 SECONDS
-	glide_size = 8.5
+	move_delay = 0.2 SECONDS
+	glide_size = 7
 
-//logistic trucc 1x3
-/obj/hitbox/thin
-	bound_x = 0
-	bound_y = -32
-	vehicle_length = 32
-	vehicle_width = 32
+//logistic trucc 2x2
 
-/obj/hitbox/thin/owner_turned(datum/source, old_dir, new_dir)
+/obj/hitbox/medium/truck/owner_turned(datum/source, old_dir, new_dir)
 	. = ..()
 	if(!.)
 		return
 	var/list/old_locs = locs.Copy()
+
 	switch(new_dir)
 		if(NORTH)
-			bound_height = vehicle_length
-			bound_width = vehicle_width
-			bound_x = 0
-			bound_y = -32
+			bound_x = -16
+			bound_y = -40
 		if(SOUTH)
-			bound_height = vehicle_length
-			bound_width = vehicle_width
-			bound_x = -0
-			bound_y = -32
+			bound_x = -16
+			bound_y = -40
 		if(WEST)
-			bound_height = vehicle_width
-			bound_width = vehicle_length
-			bound_x = 0
-			bound_y = 0
+			bound_x = -32
+			bound_y = -20
 		if(EAST)
-			bound_height = vehicle_width
-			bound_width = vehicle_length
-			bound_x = 0
-			bound_y = 0
+			bound_x = -32
+			bound_y = -40
 
 	var/angle_change = dir2angle(new_dir) - dir2angle(old_dir)
 	//north needing to be considered 0 OR 360 is inconvenient, I'm sure there is a non ungabrain way to do this
@@ -106,7 +98,7 @@
 
 	SEND_SIGNAL(src, COMSIG_MULTITILE_VEHICLE_ROTATED, loc, new_dir, null, old_locs)
 
-/obj/hitbox/thin/on_attempt_drive(atom/movable/movable_parent, mob/living/user, direction)
+/obj/hitbox/medium/truck/on_attempt_drive(atom/movable/movable_parent, mob/living/user, direction)
 	var/obj/vehicle/sealed/armored/armor = root
 	var/movement_dir
 	var/facing_dir = armor.dir
@@ -169,100 +161,3 @@
 	root.setDir(facing_dir)
 	COOLDOWN_START(root, cooldown_vehicle_move, root.move_delay * 2)  //turns are essentially making two moves
 	return COMPONENT_DRIVER_BLOCK_MOVE
-
-
-//threaded hitbox behavior
-/obj/hitbox/thin_threads
-	bound_x = 0 //middle tile
-	bound_y = 0
-	vehicle_length = 96
-	vehicle_width = 32
-
-/obj/hitbox/thin_threads/owner_turned(datum/source, old_dir, new_dir)
-	. = ..()
-	if(!.)
-		return
-	var/list/old_locs = locs.Copy()
-	switch(new_dir)
-		if(NORTH)
-			bound_height = vehicle_length
-			bound_width = vehicle_width
-		if(SOUTH)
-			bound_height = vehicle_length
-			bound_width = vehicle_width
-		if(WEST)
-			bound_height = vehicle_width
-			bound_width = vehicle_length
-		if(EAST)
-			bound_height = vehicle_width
-			bound_width = vehicle_length
-
-	var/angle_change = dir2angle(new_dir) - dir2angle(old_dir)
-	//north needing to be considered 0 OR 360 is inconvenient, I'm sure there is a non ungabrain way to do this
-	switch(angle_change)
-		if(-270)
-			angle_change = 90
-		if(270)
-			angle_change = -90
-	for(var/mob/living/desant AS in tank_desants)
-		if(desant.loc == root.loc)
-			continue
-		var/new_x
-		var/new_y
-		if(angle_change > 0) //clockwise turn
-			new_x = root.x + (desant.y - root.y)
-			new_y = root.y - (desant.x - root.x)
-		else //anti-clockwise
-			new_x = root.x - (desant.y - root.y)
-			new_y = root.y + (desant.x - root.x)
-
-		desant.forceMove(locate(new_x, new_y, z))
-
-	SEND_SIGNAL(src, COMSIG_MULTITILE_VEHICLE_ROTATED, loc, new_dir, null, old_locs)
-
-/obj/hitbox/thin_threads/on_attempt_drive(atom/movable/movable_parent, mob/living/user, direction)
-	if(ISDIAGONALDIR(direction))
-		return COMPONENT_DRIVER_BLOCK_MOVE
-	var/obj/vehicle/sealed/armored/armor = root
-	var/is_strafing = FALSE
-	if(armor?.strafe)
-		is_strafing = TRUE
-		for(var/mob/driver AS in armor.return_drivers())
-			if(driver.client?.keys_held["Alt"])
-				is_strafing = FALSE
-				break
-	if((root.dir == direction) || (root.dir == REVERSE_DIR(direction)))
-		is_strafing = FALSE
-	else if(!is_strafing) //we turn
-		root.setDir(direction)
-		return COMPONENT_DRIVER_BLOCK_MOVE
-	///////////////////////////
-	var/turf/centerturf = get_step(root, direction)
-	var/list/enteringturfs = list()
-	switch(direction)
-		if(NORTH)
-			enteringturfs += get_step(centerturf, turn(direction, -90))
-		if(SOUTH)
-			centerturf = get_step(centerturf, direction)
-			enteringturfs += get_step(centerturf, turn(direction, 90))
-		if(EAST)
-			centerturf = get_step(centerturf, direction)
-			enteringturfs += get_step(centerturf, turn(direction, -90))
-		if(WEST)
-			enteringturfs += get_step(centerturf, turn(direction, 90))
-	enteringturfs += centerturf
-	////////////////////////////////////
-	var/canstep = TRUE
-	for(var/turf/T AS in enteringturfs)	//No break because we want to crush all the turfs before we start trying to move
-		if(!T.Enter(root, direction))	//Check if we can cross the turf first/bump the turf
-			canstep = FALSE
-
-		for(var/atom/movable/AM AS in T.contents) // this is checked in turf/enter but it doesnt return false so lmao
-			if(AM.pass_flags & PASS_TANK) //rather than add it to AM/CanAllowThrough for this one interaction, lets just check it manually
-				continue
-			if(AM.CanPass(root))	// Then check for obstacles to crush
-				continue
-			root.Bump(AM) //manually call bump on everything
-			canstep = FALSE
-
-	return canstep ? NONE : COMPONENT_DRIVER_BLOCK_MOVE

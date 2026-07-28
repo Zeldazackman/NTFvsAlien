@@ -497,9 +497,8 @@
 			do_sparks(rand(1,2), TRUE, loc)
 			proj.ammo.bonus_projectiles_type = proj.ammo.type
 			proj.proj_max_range /= rand(2,3)
-			proj.damage_falloff *= 3
-			proj.accuracy /= 3
-			proj.ammo.reflect(get_turf(src), proj, 20)
+			proj.ammo.reflect(get_turf(src), proj, 90)
+			proj.proj_max_range = 0 //kill original proj
 			return FALSE
 	if(src == proj.original_target)
 		return TRUE
