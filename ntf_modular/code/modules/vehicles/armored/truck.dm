@@ -22,7 +22,7 @@
 	required_entry_skill = SKILL_LARGE_VEHICLE_DEFAULT
 	minimap_icon_state = null
 	turret_icon = null
-	pixel_x = -40
+	pixel_x = -16
 	pixel_y = -40
 	max_integrity = 700
 	soft_armor = list(MELEE = 50, BULLET = 80 , LASER = 80, ENERGY = 70, BOMB = 30, BIO = 100, FIRE = 100, ACID = 50)
@@ -57,26 +57,13 @@
 
 //logistic trucc 2x2
 
+vehicle_width = 64
+
 /obj/hitbox/medium/truck/owner_turned(datum/source, old_dir, new_dir)
 	. = ..()
 	if(!.)
 		return
 	var/list/old_locs = locs.Copy()
-
-	switch(new_dir)
-		if(NORTH)
-			root.pixel_x = -40
-			root.pixel_y = -40
-		if(SOUTH)
-			root.pixel_x = -40
-			root.pixel_y = -40
-		if(WEST)
-			root.pixel_x = -32
-			root.pixel_y = -20
-		if(EAST)
-			root.pixel_x = -32
-			root.pixel_y = -40
-
 	var/angle_change = dir2angle(new_dir) - dir2angle(old_dir)
 	//north needing to be considered 0 OR 360 is inconvenient, I'm sure there is a non ungabrain way to do this
 	switch(angle_change)
@@ -95,6 +82,24 @@
 		else //anti-clockwise
 			new_x = root.x - (desant.y - root.y)
 			new_y = root.y + (desant.x - root.x)
+
+	switch(new_dir)
+		if(NORTH)
+			root.pixel_x = -16
+			root.pixel_y = -40
+			vehicle_width = 32
+		if(SOUTH)
+			root.pixel_x = -16
+			root.pixel_y = -40
+			vehicle_width = 32
+		if(WEST)
+			root.pixel_x = -32
+			root.pixel_y = -20
+			vehicle_width = 64
+		if(EAST)
+			root.pixel_x = -32
+			root.pixel_y = -20
+			vehicle_width = 64
 
 		desant.forceMove(locate(new_x, new_y, z))
 
