@@ -151,6 +151,14 @@ GLOBAL_LIST_EMPTY(indestructible_teleporters)
 		return FALSE
 	return TRUE
 
+/obj/machinery/deployable/teleporter/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/teleporter_kit))
+		var/obj/item/teleporter_kit/own_kit = get_internal_item()
+		if(istype(own_kit))
+			own_kit.attackby(I, user)
+			. = TRUE
+	return ..()
+
 /obj/machinery/deployable/teleporter/AIShiftClick()
 	. = ..()
 	attempt_teleport(usr)
