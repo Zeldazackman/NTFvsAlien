@@ -180,9 +180,9 @@
 	var/turf/return_loc = spirited_away.loc
 	do_extract(spirited_away, user)
 	balloon_alert(user, "Will return here in 16 seconds!")
-	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/vehicle/sealed/armored, return_vehicle) spirited_away, user), 16 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(return_vehicle), spirited_away, user, return_loc), 16 SECONDS)
 
-/obj/item/fulton_extraction_pack/tank/proc/return_vehicle(obj/vehicle/sealed/armored/spirited_away, mob/living/user)
+/obj/item/fulton_extraction_pack/tank/proc/return_vehicle(obj/vehicle/sealed/armored/spirited_away, mob/living/user, turf/return_loc)
 	spirited_away.unwreck_vehicle()
 	spirited_away.pixel_z = 400
 	spirited_away.forceMove(return_loc)

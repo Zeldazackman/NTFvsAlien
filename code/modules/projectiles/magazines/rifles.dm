@@ -919,7 +919,7 @@
 	name = "\improper L26 box mag (5.56x45mm)"
 	desc = "A 200 round box mag for the L26."
 	caliber = CALIBER_556X45
-	default_ammo = /datum/ammo/bullet/rifle/vsd_mg_main
+	default_ammo = /datum/ammo/bullet/rifle/machinegun
 	icon_state = "l26"
 	icon = 'icons/obj/items/ammo/machinegun.dmi'
 	icon_state_mini = "mag_drum_big_long"
