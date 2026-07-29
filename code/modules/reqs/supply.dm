@@ -1029,6 +1029,7 @@ GLOBAL_LIST_INIT(armored_guntypes, armored_init_guntypes())
 				return
 			var/newtype = text2path(params["type"])
 			if(!ispath(newtype, /obj/item/tank_module))
+				current_driver_mod = null
 				return
 			if(!(newtype in GLOB.armored_modtypes[current_veh_type]))
 				return
@@ -1040,6 +1041,7 @@ GLOBAL_LIST_INIT(armored_guntypes, armored_init_guntypes())
 				return
 			var/newtype = text2path(params["type"])
 			if(!ispath(newtype, /obj/item/tank_module))
+				current_gunner_mod = null
 				return
 			if(!(newtype in GLOB.armored_modtypes[current_veh_type]))
 				return
@@ -1238,6 +1240,7 @@ GLOBAL_LIST_INIT(armored_guntypes, armored_init_guntypes())
 				return
 			var/newtype = text2path(params["type"])
 			if(!ispath(newtype, /obj/item/tank_module))
+				current_driver_mod = null
 				return
 			if(!(newtype in GLOB.armored_modtypes[current_veh_type]))
 				return
@@ -1249,6 +1252,7 @@ GLOBAL_LIST_INIT(armored_guntypes, armored_init_guntypes())
 				return
 			var/newtype = text2path(params["type"])
 			if(!ispath(newtype, /obj/item/tank_module))
+				current_gunner_mod = null
 				return
 			if(!(newtype in GLOB.armored_modtypes[current_veh_type]))
 				return
