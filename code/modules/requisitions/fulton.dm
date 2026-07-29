@@ -179,13 +179,16 @@
 	SIGNAL_HANDLER
 	var/turf/return_loc = spirited_away.loc
 	do_extract(spirited_away, user)
-	spawn(16 SECONDS)
+	balloon_alert(user, "Will return here in 16 seconds!")
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/vehicle/sealed/armored, return_vehicle) spirited_away, user), 16 SECONDS)
+
+/obj/item/fulton_extraction_pack/tank/proc/return_vehicle(obj/vehicle/sealed/armored/spirited_away, mob/living/user)
 	spirited_away.unwreck_vehicle()
 	spirited_away.pixel_z = 400
 	spirited_away.forceMove(return_loc)
 	playsound(loc, 'sound/items/fultext_deploy.ogg', 30, TRUE)
 	animate(spirited_away, time = 2 SECONDS, pixel_z = 0, easing=SINE_EASING|EASE_OUT, flags = ANIMATION_PARALLEL)
-	spawn(2 SECONDS)
+	sleep(2 SECONDS)
 	playsound(spirited_away.loc, 'sound/effects/metal_crash.ogg', 50, TRUE)
 
 /obj/effect/fulton_extraction_holder

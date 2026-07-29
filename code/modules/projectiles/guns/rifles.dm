@@ -3337,7 +3337,7 @@
 // VSD weapons
 // L26
 
-s
+/obj/item/weapon/gun/rifle/vsd_lmg
 	name = "\improper L26 support machine gun"
 	desc = "The KZ's main all purpose machine gun, chambered in 5.56. It's design seems... outdated yet still reliable. Fires rapidly with devasting kicks, at a cost of movement speed."
 	icon = 'icons/obj/items/guns/machineguns64.dmi'

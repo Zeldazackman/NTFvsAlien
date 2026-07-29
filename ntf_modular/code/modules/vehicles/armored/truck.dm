@@ -36,7 +36,7 @@
 		/obj/structure/largecrate,
 		/obj/structure/closet/crate,
 	)
-	armor_integrity_mod = 8 //10 initial ap to penetrate, large caliber rifles and  shouldnt bounce off.
+	armor_integrity_mod = 8 //10 initial ap to penetrate, large caliber rifles and shouldnt bounce off.
 
 /obj/vehicle/sealed/armored/multitile/mrap/logi/enter_locations(atom/movable/entering_thing)
 	return list(get_step(src, REVERSE_DIR(dir)))
@@ -48,11 +48,12 @@
 	icon_state = "truck_enclosed_treads"
 	hitbox = /obj/hitbox/medium
 	max_integrity = 800
-	soft_armor = list(MELEE = 50, BULLET = 80 , LASER = 80, ENERGY = 70, BOMB = 70, BIO = 100, FIRE = 100, ACID = 55)
+	soft_armor = list(MELEE = 50, BULLET = 80 , LASER = 80, ENERGY = 70, BOMB = 50, BIO = 100, FIRE = 100, ACID = 55)
 	hard_armor = list(MELEE = 0, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 100, FIRE = 0, ACID = 0)
 	facing_modifiers = list(VEHICLE_FRONT_ARMOUR = 0.8, VEHICLE_SIDE_ARMOUR = 0.8, VEHICLE_BACK_ARMOUR = 1.2) //tracks are armored yay
 	move_delay = 0.2 SECONDS
 	glide_size = 7
+	armor_integrity_mod = 5 //16 initial ap to penetrate, should tank large caliber rifles.
 
 //logistic trucc 2x2
 

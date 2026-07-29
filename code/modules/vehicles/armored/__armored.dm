@@ -98,7 +98,7 @@
 
 	//ntf addition
 	///what fraction of the soft_armor AP needed to damage at all? 3 would make it so 33 ap needed if it has 100 soft bullet armor, this decrases as integrity does.
-	var/armor_integrity_mod = 3
+	var/armor_integrity_mod = 4
 
 /obj/vehicle/sealed/armored/Initialize(mapload)
 	if(type != /obj/vehicle/sealed/armored/multitile) //TODO: TESTING ONLY, SO MRAP DOESN'T HAVE A VALUE OF 5 IN A SEPARATE PR
