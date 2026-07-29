@@ -678,7 +678,6 @@
 /area/shuttle/dropship/alamo)
 "IA" = (
 /obj/structure/rack,
-/obj/structure/largecrate/supply/vehicle/truck,
 /obj/structure/largecrate/supply/medicine/medkits,
 /turf/open/shuttle/dropship/floor,
 /area/shuttle/dropship/alamo)

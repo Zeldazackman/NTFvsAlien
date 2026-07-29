@@ -191,6 +191,7 @@
 	slowdown = SLOWDOWN_ARMOR_MEDIUM
 	resistance_flags = UNACIDABLE
 	autobalance_monitor_value = B18_PRICE
+	anti_hug = 1 //binary for body
 
 /obj/item/clothing/suit/storage/marine/specialist/Initialize(mapload, ...)
 	. = ..()

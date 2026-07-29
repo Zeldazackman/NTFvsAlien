@@ -36,6 +36,9 @@
 	var/blocks_bottom_genital = FALSE
 	var/blocks_top_genital = FALSE
 
+	//ntf moved here
+	var/anti_hug = 0
+
 /obj/item/clothing/Initialize(mapload)
 	. = ..()
 	attachments_allowed = string_list(attachments_allowed)
@@ -284,7 +287,6 @@
 	equip_slot_flags = ITEM_SLOT_MASK
 	armor_protection_flags = FACE|EYES
 	blood_sprite_state = "maskblood"
-	var/anti_hug = 0
 	var/toggleable = FALSE
 	active = TRUE
 	/// If defined, what voice should we override with if TTS is active?
