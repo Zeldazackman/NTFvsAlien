@@ -606,7 +606,7 @@
 		carbon_victim.reagents.add_reagent(/datum/reagent/toxin/poxomelanin, 4, no_overdose = FALSE)
 
 //mg27-e
-/obj/item/weapon/gun/standard_mmg/machinegunner/spec
+/obj/item/weapon/gun/standard_mmg/spec
 	name = "\improper MG-27-E medium machinegun"
 	desc = "The MG-27-E is the home improved version of the olden MG-27, it sports lighter post-factory components and a soulsteel rifle shield that must be installed and uninstalled between deployments, allowing it to take a lot of punishment while deployed and work as if a shield for the gunner, it can be shot without being deployed in a pinch but It's impossible to utilize the gun and the bullet shield together due the weight while undeployed, therefore it is uninstalled while taking the weapon in hand. It uses 10x27mm boxes."
 	icon = 'ntf_modular/icons/obj/machines/deployable/mounted_machinegun.dmi'

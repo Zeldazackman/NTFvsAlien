@@ -56,13 +56,6 @@
 	penetration = 30
 	sundering = 4.5
 
-/datum/ammo/bullet/rifle/vsd_mg_main
-	name = "heavy rifle bullet"
-	hud_state = "rifle_heavy"
-	damage = 15
-	penetration = 35
-	sundering = 0.85
-
 /datum/ammo/bullet/rifle/heavy/rubber
 	name = "heavy rifle rubber bullet"
 	damage = 33
@@ -93,16 +86,6 @@
 	damage = 25
 	penetration = 10
 	sundering = 0.75
-
-/datum/ammo/bullet/rifle/som_machinegun
-	name = "machinegun bullet"
-	hud_state = "rifle_heavy"
-	damage = 28
-	penetration = 12.5
-	sundering = 1
-
-/datum/ammo/bullet/rifle/som_machinegun/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
-	staggerstun(target_mob, proj, max_range = 20, slowdown = 0.5)
 
 /datum/ammo/bullet/rifle/vsd_mg
 	name = "machinegun bullet"

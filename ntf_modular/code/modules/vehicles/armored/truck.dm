@@ -25,7 +25,7 @@
 	pixel_x = -16
 	pixel_y = -40
 	max_integrity = 700
-	soft_armor = list(MELEE = 50, BULLET = 55 , LASER = 55, ENERGY = 45, BOMB = 50, BIO = 100, FIRE = 100, ACID = 50)
+	soft_armor = list(MELEE = 50, BULLET = 80 , LASER = 80, ENERGY = 70, BOMB = 30, BIO = 100, FIRE = 100, ACID = 50)
 	hard_armor = list(MELEE = 0, BULLET = 5, LASER = 5, ENERGY = 5, BOMB = 5, BIO = 100, FIRE = 0, ACID = 0)
 	facing_modifiers = list(VEHICLE_FRONT_ARMOUR = 0.8, VEHICLE_SIDE_ARMOUR = 1, VEHICLE_BACK_ARMOUR = 1.2) //not too much diff
 	ram_damage = 150
@@ -36,6 +36,7 @@
 		/obj/structure/largecrate,
 		/obj/structure/closet/crate,
 	)
+	armor_integrity_mod = 8 //10 initial ap to penetrate, large caliber rifles and  shouldnt bounce off.
 
 /obj/vehicle/sealed/armored/multitile/mrap/logi/enter_locations(atom/movable/entering_thing)
 	return list(get_step(src, REVERSE_DIR(dir)))
@@ -63,17 +64,17 @@
 
 	switch(new_dir)
 		if(NORTH)
-			bound_x = -16
-			bound_y = -40
+			root.pixel_x = -16
+			root.pixel_y = -40
 		if(SOUTH)
-			bound_x = -16
-			bound_y = -40
+			root.pixel_x = -16
+			root.pixel_y = -40
 		if(WEST)
-			bound_x = -32
-			bound_y = -20
+			root.pixel_x = -32
+			root.pixel_y = -20
 		if(EAST)
-			bound_x = -32
-			bound_y = -40
+			root.pixel_x = -32
+			root.pixel_y = -40
 
 	var/angle_change = dir2angle(new_dir) - dir2angle(old_dir)
 	//north needing to be considered 0 OR 360 is inconvenient, I'm sure there is a non ungabrain way to do this
