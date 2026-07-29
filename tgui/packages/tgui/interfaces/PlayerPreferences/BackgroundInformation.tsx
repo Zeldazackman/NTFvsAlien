@@ -53,6 +53,8 @@ const PictureSection = ({
   action,
   param,
   onChange,
+  width,
+  height,
 }) => {
   const { act } = useBackend<BackgroundInformationData>();
 
@@ -74,6 +76,9 @@ const PictureSection = ({
         </Box>
       }
     >
+      (Width:{width} Height:{height})
+      <br />
+      Set to &quot;!clear&quot; to clear
       <TextArea
         expensive
         fluid
@@ -84,7 +89,7 @@ const PictureSection = ({
       />
       {original ? (
         <Box mt={1} textAlign="center">
-          <img src={original} width={180} height={210} />
+          <img src={original} width={width} height={height} />
         </Box>
       ) : null}
     </Section>
@@ -310,6 +315,8 @@ export const BackgroundInformation = (props) => {
               action="profile_pic"
               param="profilePic"
               onChange={setProfilePic}
+              width={300}
+              height={350}
             />
           </Stack.Item>
           <Stack.Item grow>
@@ -320,6 +327,8 @@ export const BackgroundInformation = (props) => {
               action="nsfwprofile_pic"
               param="nsfwprofilePic"
               onChange={setNSFWProfilePic}
+              width={300}
+              height={350}
             />
           </Stack.Item>
           <Stack.Item grow>
@@ -330,6 +339,8 @@ export const BackgroundInformation = (props) => {
               action="xenoprofile_pic"
               param="xenoprofilePic"
               onChange={setXenoProfilePic}
+              width={300}
+              height={350}
             />
           </Stack.Item>
         </Stack>
