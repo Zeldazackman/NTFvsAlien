@@ -83,6 +83,8 @@
 			new_x = root.x - (desant.y - root.y)
 			new_y = root.y + (desant.x - root.x)
 
+		desant.forceMove(locate(new_x, new_y, z))
+
 	switch(new_dir)
 		if(NORTH)
 			root.pixel_x = -16
@@ -101,7 +103,6 @@
 			root.pixel_y = -20
 			vehicle_width = 64
 
-		desant.forceMove(locate(new_x, new_y, z))
 
 	SEND_SIGNAL(src, COMSIG_MULTITILE_VEHICLE_ROTATED, loc, new_dir, null, old_locs)
 

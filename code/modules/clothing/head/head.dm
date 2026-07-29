@@ -12,7 +12,7 @@
 	armor_features_flags = ARMOR_NO_DECAP
 	inventory_flags = BLOCKSHARPOBJ
 	soft_armor = MARINE_ARMOR_HEAVY
-	var/anti_hug = 0
+	anti_hug = 0
 	attachments_by_slot = list(
 		ATTACHMENT_SLOT_VISOR,
 		ATTACHMENT_SLOT_STORAGE,
