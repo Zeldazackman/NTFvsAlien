@@ -664,14 +664,14 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 
 		if(target_hole == HOLE_VAGINA || target_hole == HOLE_ASS) //check other holes if face full
 			if(target.wear_suit)
-				var/obj/item/clothing/suit/W = target.wear_suit
-				if(istype(W))
-					if(istype(W, /obj/item/clothing/mask/facehugger))
-						var/obj/item/clothing/mask/facehugger/hugger = W
+				var/obj/item/clothing/suit/S = target.wear_suit
+				if(istype(S))
+					if(istype(S, /obj/item/clothing/mask/facehugger))
+						var/obj/item/clothing/mask/facehugger/hugger = S
 						if(hugger.stat != DEAD)
 							return FALSE //face full, bottom full
 
-					if(W.anti_hug > 0 || HAS_TRAIT(W, TRAIT_NODROP))
+					if(S.anti_hug > 0 || HAS_TRAIT(S, TRAIT_NODROP))
 						return FALSE //couldnt grab bottoms either
 
 	//there is atleast bottoms to hug.

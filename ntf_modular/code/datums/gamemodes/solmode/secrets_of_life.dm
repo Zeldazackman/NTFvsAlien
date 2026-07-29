@@ -201,6 +201,8 @@
 		round_type_flags2 &= ~(MODE_2_CHILL_RULES|MODE_2_MINER_RUSH_PROT)
 		GLOB.time_before_dnr = STANDARD_DNR_TIME
 		GLOB.max_larva_count_per_mob = MAX_LARVA_PREGNANCIES
+		GLOB.phoron_crate_value = PHORON_CRATE_SELL_AMOUNT
+		GLOB.plat_crate_value = PLATINUM_CRATE_SELL_AMOUNT
 	else
 		evo_requirements = list(
 			/datum/xeno_caste/queen = 0,
@@ -214,6 +216,8 @@
 		message_admins("re-setting [saved_larva_count] burrowed for normal hive.")
 		GLOB.time_before_dnr = SOL_DNR_TIME
 		GLOB.max_larva_count_per_mob = MAX_LARVA_PREGNANCIES_SOL
+		GLOB.phoron_crate_value = PHORON_CRATE_SELL_AMOUNT_WAR
+		GLOB.plat_crate_value = PLATINUM_CRATE_SELL_AMOUNT_WAR
 		respawn_time = initial(respawn_time)
 		xenorespawn_time = initial(xenorespawn_time)
 		bioscan_interval = initial(bioscan_interval)
@@ -231,6 +235,12 @@
 	)
 	SSvote.initiate_vote()
 
+//have to have this late
+/datum/game_mode/post_setup()
+	. = ..()
+	if(!(round_type_flags2 & MODE_2_CHILL_RULES))
+		GLOB.plat_crate_value = PLATINUM_CRATE_SELL_AMOUNT_WAR
+		GLOB.phoron_crate_value = PHORON_CRATE_SELL_AMOUNT_WAR
 
 //sets NTC and SOM squads
 /datum/game_mode/infestation/secret_of_life/set_valid_squads()
