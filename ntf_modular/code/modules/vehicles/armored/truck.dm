@@ -56,8 +56,8 @@
 	armor_integrity_mod = 5 //16 initial ap to penetrate, should tank large caliber rifles.
 
 //logistic trucc 2x2
-
-vehicle_width = 64
+/obj/hitbox/medium/truck/
+	vehicle_width = 64
 
 /obj/hitbox/medium/truck/owner_turned(datum/source, old_dir, new_dir)
 	. = ..()
