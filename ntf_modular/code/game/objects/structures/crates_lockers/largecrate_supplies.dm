@@ -15,11 +15,10 @@
 
 /obj/structure/largecrate/supply/vehicle/truck
 	name = "transport truck crate (x1)"
-	desc = "A crate containing standard transport truck, packed in unspeakable ways for easier transport."
-	supplies = list(/obj/vehicle/sealed/armored/multitile/mrap/logi = 1,)
-
+	desc = "A crate containing standard transport truck, packed in unspeakable ways for easier transport. WARNING: UNPACK ONLY IN MIDDLE OF AM OPEN 5X5 AREA"
+	supplies = list(/obj/vehicle/sealed/armored/multitile/mrap/logi = 1)
 
 /obj/structure/largecrate/supply/vehicle/truck_treaded
 	name = "armored transport truck crate (x1)"
-	desc = "A crate containing a treaded, armored transport truck, packed in unspeakable ways for easier transport."
-	supplies = list(/obj/vehicle/sealed/armored/multitile/mrap/logi/treads = 1,)
+	desc = "A crate containing a treaded, armored transport truck, packed in unspeakable ways for easier transport. WARNING: UNPACK ONLY IN MIDDLE OF AM OPEN 5X5 AREA"
+	supplies = list(/obj/vehicle/sealed/armored/multitile/mrap/logi/treads = 1)
