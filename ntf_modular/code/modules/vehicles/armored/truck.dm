@@ -22,7 +22,7 @@
 	required_entry_skill = SKILL_LARGE_VEHICLE_DEFAULT
 	minimap_icon_state = null
 	turret_icon = null
-	pixel_x = -16
+	pixel_x = -40
 	pixel_y = -40
 	max_integrity = 700
 	soft_armor = list(MELEE = 50, BULLET = 80 , LASER = 80, ENERGY = 70, BOMB = 30, BIO = 100, FIRE = 100, ACID = 50)
@@ -65,10 +65,10 @@
 
 	switch(new_dir)
 		if(NORTH)
-			root.pixel_x = -16
+			root.pixel_x = -40
 			root.pixel_y = -40
 		if(SOUTH)
-			root.pixel_x = -16
+			root.pixel_x = -40
 			root.pixel_y = -40
 		if(WEST)
 			root.pixel_x = -32
