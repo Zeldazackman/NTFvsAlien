@@ -270,3 +270,6 @@
   SpooksAnno:
   - bugfix: Fixed simple sexcon interactions not applying quick-heal/healsex effects
       for opted-in targets.
+2026-07-29:
+  CaputCapital:
+  - balance: edit V8B LZs to make it more defensible, as with one LZ on T3E
