@@ -212,6 +212,7 @@
 /obj/item/ammo_magazine/rifle/lmg_d/belt
 	name = "\improper lMG-D ammo buttpack (7.62x39mm)"
 	desc = "A metallic belt pack for the lMG-D which carries a huge amount of ammo inside."
+	icon = 'ntf_modular/icons/obj/items/ammo/machinegun.dmi'
 	icon_state = "rpd_belt"
 	equip_slot_flags = ITEM_SLOT_BELT
 	magazine_flags = MAGAZINE_WORN
