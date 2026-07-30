@@ -817,6 +817,20 @@
 
 //faction specific things below here.
 
+/datum/supply_packs/imports/vortexammo
+	name = "NT Vortex AP SMG magazine (9x19mm Parabellum) (Ninetails Supply)"
+	contains = list(/obj/item/ammo_magazine/smg/vortex/ap)
+	faction_lock = list(FACTION_TERRAGOV)
+	cost = 60
+
+/datum/supply_packs/imports/vortexammo/incend
+	name = "NT Vortex incendiary SMG magazine (9x19mm Parabellum) (Ninetails Supply)"
+	contains = list(/obj/item/ammo_magazine/smg/vortex/incendiary)
+
+/datum/supply_packs/imports/vortexammo/taser
+	name = "NT Vortex HC SMG magazine (9x19mm Parabellum) (Ninetails Supply)"
+	contains = list(/obj/item/ammo_magazine/smg/vortex/taser)
+
 /datum/supply_packs/imports/antienergyshieldfs
 	name = "NTC Anti Energy Shield (Ninetails Supply)"
 	contains = list(/obj/item/armor_module/module/eshield/absorbant/energy)
@@ -900,6 +914,20 @@
 	contains = list(/obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/caliver)
 	faction_lock = list(FACTION_SOM)
 	cost = 325
+
+/datum/supply_packs/imports/somsmgammo
+	name = "V-21 AP submachinegun magazine (10x20mm) (Sons of Mars Supply)"
+	contains = list(/obj/item/ammo_magazine/smg/som/ap)
+	faction_lock = list(FACTION_SOM)
+	cost = 60
+
+/datum/supply_packs/imports/somsmgammo/incend
+	name = "V-21 incendiary submachinegun magazine (10x20mm) (Sons of Mars Supply)"
+	contains = list(/obj/item/ammo_magazine/smg/som/incendiary)
+
+/datum/supply_packs/imports/somsmgammo/rad
+	name = "V-21 radioactive submachinegun magazine (10x20mm) (Sons of Mars Supply)"
+	contains = list(/obj/item/ammo_magazine/smg/som/rad)
 
 /datum/supply_packs/imports/ml41afrag
 	name = " ML-41A Autoshotgun frag drum (Colonial Militia Supply)"
