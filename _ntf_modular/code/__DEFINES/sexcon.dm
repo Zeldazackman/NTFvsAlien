@@ -60,16 +60,16 @@
 #define PAIN_MINIMUM_FOR_DAMAGE PAIN_MED_EFFECT
 #define PAIN_DAMAGE_DIVISOR 50
 
-#define QUICK_SEX (1 << 0)
-#define QUICK_SEX_HEAL (1 << 1)
-#define QUICK_SEX_ALL ((1 << 2) - 1)
-
-#define HARMFUL_SEX_ROUGH_SEX (1 << 0)
-#define HARMFUL_SEX_CHOKING (1 << 1)
-#define HARMFUL_SEX_STAMINA_DRAIN (1 << 2)
-#define HARMFUL_SEX_BLOOD_DRAIN (1 << 3)
-#define HARMFUL_SEX_ALL ((1 << 4) - 1)
-
+#define SEXPREF_ROUGH_SEX (1 << 0)
+#define SEXPREF_CHOKING (1 << 1)
+#define SEXPREF_STAMINA_DRAIN (1 << 2)
+#define SEXPREF_BLOOD_DRAIN (1 << 3)
+#define SEXPREF_QUICK_SEX (1 << 4)
+#define SEXPREF_QUICK_SEX_HEAL (1 << 5)
+#define SEXPREF_FACEHUGGER_LEWD (1 << 6)
+#define SEXPREF_BURSTSCREAMS (1 << 7)
+#define SEXPREF_APHRO (1 << 8)
+#define SEXPREF_ALL ((1 << 9) - 1)
 
 #define VIOLATED_ALLOWED_TIME (10 MINUTES)
 

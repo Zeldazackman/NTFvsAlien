@@ -141,7 +141,7 @@
 	if(quick_heal_requires_target_pref \
 		&& user?.sexcon?.drain_style == SEX_DRAIN_STYLE_HEAL_TARGET \
 		&& action_target?.mind \
-		&& !(action_target.client?.prefs.quick_sex_flags & QUICK_SEX_HEAL))
+		&& !(action_target.client?.prefs.sex_pref_flags & SEXPREF_QUICK_SEX_HEAL))
 		return FALSE
 	return ..()
 

@@ -746,17 +746,17 @@
 	if(user.incapacitated(TRUE))
 		return
 	if(dropping != src)
-		if(!(user.client?.prefs.quick_sex_flags & QUICK_SEX))
+		if(!(user.client?.prefs.sex_pref_flags & SEXPREF_QUICK_SEX))
 			balloon_alert(user,"Your QK sex pref is OFF!")
 			return
 		//they are just warnings to show your action isnt working on this fucking snowflake
-		if(user.a_intent == INTENT_DISARM && !((client?.prefs.quick_sex_flags & QUICK_SEX_HEAL)))
+		if(user.a_intent == INTENT_DISARM && !((client?.prefs.sex_pref_flags & SEXPREF_QUICK_SEX_HEAL)))
 			balloon_alert_to_viewers("QK Heal sex is off!")
 			return
-		if(user.a_intent == INTENT_DISARM && !((client?.prefs.harmful_sex_flags & HARMFUL_SEX_STAMINA_DRAIN) && (client?.prefs.harmful_sex_flags & HARMFUL_SEX_CHOKING)))
+		if(user.a_intent == INTENT_DISARM && !((client?.prefs.sex_pref_flags & SEXPREF_STAMINA_DRAIN) && (client?.prefs.sex_pref_flags & SEXPREF_CHOKING)))
 			balloon_alert_to_viewers("Some Stam sex prefs are OFF!")
 			return
-		if(user.a_intent == INTENT_HARM && !(client?.prefs.harmful_sex_flags & HARMFUL_SEX_BLOOD_DRAIN) && ((client?.prefs.harmful_sex_flags & HARMFUL_SEX_ALL) && (client?.prefs.harmful_sex_flags & HARMFUL_SEX_ROUGH_SEX)))
+		if(user.a_intent == INTENT_HARM && !(client?.prefs.sex_pref_flags & SEXPREF_BLOOD_DRAIN) && ((client?.prefs.sex_pref_flags & SEXPREF_ALL) && (client?.prefs.sex_pref_flags & SEXPREF_ROUGH_SEX)))
 			balloon_alert_to_viewers("Some Harm sex prefs are OFF!")
 			return
 		user.sexcon.set_target(src)

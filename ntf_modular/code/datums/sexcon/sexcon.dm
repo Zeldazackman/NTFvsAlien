@@ -172,7 +172,7 @@
 				if(!isxeno(blame_mob) || SSticker.mode.round_type_flags2 & MODE_2_CHILL_RULES)
 					user.adjustCloneLoss(-(rand(5,10)+(5*blame_mob_sexskill)))
 			if(SEX_DRAIN_STYLE_DRAIN_STAMINA)
-				if((!(user.mind)) || (user.client?.prefs.harmful_sex_flags & HARMFUL_SEX_STAMINA_DRAIN))
+				if((!(user.mind)) || (user.client?.prefs.sex_pref_flags & SEXPREF_STAMINA_DRAIN))
 					to_chat(user, span_warning("You feel weak as [blame_mob] exhausts you through your orgasm."))
 					log_combat(blame_mob, user, "drained stamina from", "an orgasm")
 					blame_mob.heal_overall_damage(rand(10, 20)+ (10*blame_mob_sexskill), rand(10, 20)+(10*blame_mob_sexskill), TRUE, TRUE)
@@ -183,7 +183,7 @@
 					else
 						user.adjustStaminaLoss(rand(40,80)+(60*blame_mob_sexskill))
 			if(SEX_DRAIN_STYLE_DRAIN_BLOOD_FAST)
-				if((!(user.mind)) || (user.client?.prefs.harmful_sex_flags & HARMFUL_SEX_BLOOD_DRAIN))
+				if((!(user.mind)) || (user.client?.prefs.sex_pref_flags & SEXPREF_BLOOD_DRAIN))
 					to_chat(user, span_userdanger("You feel weak and dizzy as [blame_mob] drains your life force through your orgasm!"))
 					log_combat(blame_mob, user, "drained life from", "an orgasm")
 					blame_mob.heal_overall_damage(rand(20, 40)+(20*blame_mob_sexskill), rand(20, 40)+(20*blame_mob_sexskill), TRUE, TRUE)
@@ -195,7 +195,7 @@
 						user.adjust_blood_volume(-(115+(15*blame_mob_sexskill)))
 					blame_mob.adjust_blood_volume(20+blame_mob_sexskill)
 			if(SEX_DRAIN_STYLE_DRAIN_BLOOD_SLOW)
-				if((!(user.mind)) || (user.client?.prefs.harmful_sex_flags & HARMFUL_SEX_BLOOD_DRAIN))
+				if((!(user.mind)) || (user.client?.prefs.sex_pref_flags & SEXPREF_BLOOD_DRAIN))
 					to_chat(user, span_userdanger("You feel weak and dizzy as [blame_mob] drains your life force through your orgasm!"))
 					log_combat(blame_mob, user, "drained life from", "an orgasm")
 					blame_mob.heal_overall_damage(rand(20, 40)+(20*blame_mob_sexskill), rand(20, 40)+(20*blame_mob_sexskill), TRUE, TRUE)
@@ -357,7 +357,7 @@
 	human.update_genitals(FALSE)
 
 /datum/sex_controller/proc/perform_deepthroat_oxyloss(mob/living/action_target, oxyloss_amt)
-	if(action_target.mind && !(action_target.client?.prefs.harmful_sex_flags & HARMFUL_SEX_CHOKING))
+	if(action_target.mind && !(action_target.client?.prefs.sex_pref_flags & SEXPREF_CHOKING))
 		return FALSE
 	var/oxyloss_multiplier = 0
 	switch(force)
@@ -422,7 +422,7 @@
 						var/heal_amount = (healing_amount*2)*(1+blame_mob_sexskill) + (xeno_user.recovery_aura * xeno_user.maxHealth * 0.01)
 						HEAL_XENO_DAMAGE(xeno_user, heal_amount, FALSE)
 				if(SEX_DRAIN_STYLE_DRAIN_STAMINA)
-					if((!(user.mind)) || (user.client?.prefs.harmful_sex_flags & HARMFUL_SEX_STAMINA_DRAIN))
+					if((!(user.mind)) || (user.client?.prefs.sex_pref_flags & SEXPREF_STAMINA_DRAIN))
 						blame_mob.heal_overall_damage((healing_amount*0.5)+(3*blame_mob_sexskill), (healing_amount*0.3)+(3*blame_mob_sexskill), TRUE, TRUE)
 						if(isxeno(user))
 							var/mob/living/carbon/xenomorph/xeno_user = user
@@ -430,14 +430,14 @@
 						else
 							user.adjustStaminaLoss(healing_amount*(1+blame_mob_sexskill))
 				if(SEX_DRAIN_STYLE_DRAIN_BLOOD_FAST)
-					if((!(user.mind)) || (user.client?.prefs.harmful_sex_flags & HARMFUL_SEX_BLOOD_DRAIN))
+					if((!(user.mind)) || (user.client?.prefs.sex_pref_flags & SEXPREF_BLOOD_DRAIN))
 						blame_mob.heal_overall_damage(healing_amount*(1+blame_mob_sexskill), healing_amount*(1+blame_mob_sexskill), TRUE, TRUE)
 						if(isxeno(user))
 							user.adjustBruteLoss(healing_amount/2)
 						else
 							user.adjust_blood_volume(-healing_amount/2)
 				if(SEX_DRAIN_STYLE_DRAIN_BLOOD_SLOW)
-					if((!(user.mind)) || (user.client?.prefs.harmful_sex_flags & HARMFUL_SEX_BLOOD_DRAIN))
+					if((!(user.mind)) || (user.client?.prefs.sex_pref_flags & SEXPREF_BLOOD_DRAIN))
 						blame_mob.heal_overall_damage(healing_amount*(1+blame_mob_sexskill), healing_amount*(1+blame_mob_sexskill), TRUE, TRUE)
 						if(isxeno(user))
 							user.adjustBruteLoss(healing_amount/2)
@@ -445,10 +445,10 @@
 							user.adjust_blood_volume(-healing_amount/2)
 
 	adjust_arousal(arousal_amt+blame_mob_sexskill)
-	if((!(user.mind)) || (user.client?.prefs.harmful_sex_flags & HARMFUL_SEX_ROUGH_SEX))
+	if((!(user.mind)) || (user.client?.prefs.sex_pref_flags & SEXPREF_ROUGH_SEX))
 		damage_from_pain(pain_amt)
 	try_do_moan(arousal_amt, pain_amt, applied_force, giving)
-	if((!(user.mind)) || (user.client?.prefs.harmful_sex_flags & HARMFUL_SEX_ROUGH_SEX))
+	if((!(user.mind)) || (user.client?.prefs.sex_pref_flags & SEXPREF_ROUGH_SEX))
 		try_do_pain_effect(pain_amt, giving)
 
 /datum/sex_controller/proc/damage_from_pain(pain_amt)
@@ -1098,17 +1098,11 @@
 		return
 	if(!client)
 		return
-	if(href_list["harmful_sex_toggle_on"])
-		ENABLE_BITFIELD(client.prefs.harmful_sex_flags, text2num(href_list["harmful_sex_toggle_on"]))
+	if(href_list["sex_prefs_toggle_on"])
+		ENABLE_BITFIELD(client.prefs.sex_pref_flags, text2num(href_list["sex_prefs_toggle_on"]))
 		. = TRUE
-	if(href_list["harmful_sex_toggle_off"])
-		DISABLE_BITFIELD(client.prefs.harmful_sex_flags, text2num(href_list["harmful_sex_toggle_off"]))
-		. = TRUE
-	if(href_list["quick_sex_toggle_on"])
-		ENABLE_BITFIELD(client.prefs.quick_sex_flags, text2num(href_list["quick_sex_toggle_on"]))
-		. = TRUE
-	if(href_list["quick_sex_toggle_off"])
-		DISABLE_BITFIELD(client.prefs.quick_sex_flags, text2num(href_list["quick_sex_toggle_off"]))
+	if(href_list["sex_prefs_toggle_off"])
+		DISABLE_BITFIELD(client.prefs.sex_pref_flags, text2num(href_list["sex_prefs_toggle_off"]))
 		. = TRUE
 	if(. && usr?.client)
 		sex_prefs()

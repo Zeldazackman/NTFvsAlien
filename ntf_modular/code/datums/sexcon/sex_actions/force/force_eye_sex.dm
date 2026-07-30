@@ -18,9 +18,9 @@
 
 /datum/sex_action/eye_sex/on_start(mob/living/carbon/user, mob/living/carbon/target)
 	target.visible_message(span_warning("[target] slides [target.p_their()] cock into [user]'s eye!"))
-	var/flags = user.client.prefs.harmful_sex_flags
+	var/flags = user.client.prefs.sex_pref_flags
 	if(ishuman(user))
-		if(flags & HARMFUL_SEX_ROUGH_SEX)
+		if(flags & SEXPREF_ROUGH_SEX)
 			var/mob/living/carbon/human/H = user
 			var/datum/internal_organ/eyes/E = H.get_organ_slot(ORGAN_SLOT_EYES)
 			E.take_damage(rand(2, 4), TRUE)
@@ -40,12 +40,12 @@
 		target.visible_message(target.sexcon.spanify_force("[target] [target.sexcon.get_generic_force_adjective()] fucks [user]'s eye."))
 	playsound(user, 'ntf_modular/sound/misc/mat/segso.ogg', 50, TRUE, 5, ignore_walls = FALSE)
 
-	var/flags = user.client.prefs.harmful_sex_flags
+	var/flags = user.client.prefs.sex_pref_flags
 	target.sexcon.perform_sex_action(target, 2, 0, TRUE)
 	if(target.sexcon.check_active_ejaculation())
 		target.visible_message(span_love("[target] cums into [user]'s eye!"))
 		if(ishuman(user))
-			if(flags & HARMFUL_SEX_ROUGH_SEX)
+			if(flags & SEXPREF_ROUGH_SEX)
 				var/mob/living/carbon/human/H = user
 				var/datum/internal_organ/eyes/E = H.get_organ_slot(ORGAN_SLOT_EYES)
 				E.take_damage(rand(2, 4), TRUE)
@@ -69,12 +69,12 @@
 		target.sexcon.perform_sex_action(user, 1.2, 3, FALSE)
 	else
 		target.sexcon.perform_sex_action(user, 2.4, 7, FALSE)
-	if(flags & HARMFUL_SEX_ROUGH_SEX)
+	if(flags & SEXPREF_ROUGH_SEX)
 		if(ishuman(user))
-			if(flags & HARMFUL_SEX_ROUGH_SEX)
+			if(flags & SEXPREF_ROUGH_SEX)
 				if(sc.force > SEX_FORCE_HIGH)
 					if(ishuman(user))
-						if(flags & HARMFUL_SEX_ROUGH_SEX)
+						if(flags & SEXPREF_ROUGH_SEX)
 							var/mob/living/carbon/human/H = user
 							var/datum/internal_organ/eyes/E = H.get_organ_slot(ORGAN_SLOT_EYES)
 							E.take_damage(1, TRUE)

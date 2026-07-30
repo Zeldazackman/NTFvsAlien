@@ -125,6 +125,9 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 	//we use slow animation for player hugger
 	worn_item_state_slots = list(slot_wear_mask_str = "facehugger_face_slow", slot_underwear_str = "facehugger_crotch_slow", slot_shirt_str = "facehugger_back_slow")
 	//
+	var/flags = S?.client.prefs.sex_pref_flags
+	if(!(flags & SEXPREF_FACEHUGGER_LEWD)) //non thrusting versions, for hugger itself with prefs disabled
+		worn_item_state_slots = list(slot_wear_mask_str = "facehugger_face_stop", slot_underwear_str = "facehugger_crotch_stop", slot_shirt_str = "facehugger_back_stop")
 	RegisterSignal(S, COMSIG_QDELETING, PROC_REF(clear_hugger_source))
 
 /// Sets the fire immunity and adds/removes an outline filter if it gained or lost fire immunity.
@@ -718,6 +721,9 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 		if(ishuman(user))
 			var/hugsound = user.gender == FEMALE ? SFX_FEMALE_HUGGED : SFX_MALE_HUGGED
 			playsound(loc, hugsound, 25, 0)
+	var/flags = user?.client.prefs.sex_pref_flags
+	if(!(flags & SEXPREF_FACEHUGGER_LEWD)) //non thrusting versions
+		worn_item_state_slots = list(slot_wear_mask_str = "facehugger_face_stop", slot_underwear_str = "facehugger_crotch_stop", slot_shirt_str = "facehugger_back_stop")
 	if(!issamexenohive(user))
 		user.ParalyzeNoChain(10 SECONDS)
 		user.apply_damage(100, STAMINA)
@@ -725,13 +731,15 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 	attached = TRUE
 	go_idle(FALSE, TRUE)
 	if(!sterile)
-		playsound(src, 'sound/effects/alien_plapping.ogg', 5)
+		if(!user.client || flags & SEXPREF_FACEHUGGER_LEWD)
+			playsound(src, 'sound/effects/alien_plapping.ogg', 5)
 		addtimer(CALLBACK(src, PROC_REF(try_impregnate), user), IMPREGNATION_TIME)
 
 /// Try to put an embryo into the target mob
 /obj/item/clothing/mask/facehugger/proc/try_impregnate(mob/living/carbon/human/target)
 	//ADD_TRAIT(src, TRAIT_NODROP, HUGGER_TRAIT)
 	var/as_planned = target?.wear_mask == src  || target?.w_underwear == src || target?.w_undershirt == src
+	var/flags = target?.client.prefs.sex_pref_flags
 	if((target.can_be_facehugged(src, FALSE, FALSE, TRUE)) && !sterile && as_planned && can_implant_embryo(target)) //is hugger still on face and can they still be impregnated
 		if(source && (hivenumber == source.get_xeno_hivenumber()))
 			implant_embryo(target, target_hole, source = source)
@@ -747,19 +755,23 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 	if(as_planned)
 		var/damage = 15
 		if(sterile || target.status_flags & XENO_HOST)
-			switch(target_hole)
-				if(HOLE_MOUTH)
-					target.visible_message("<span class='danger'>[src] falls limp after fucking [target]'s face with it's proboscis!</span>")
-				if(HOLE_ASS)
-					target.visible_message("<span class='danger'>[src] falls limp after fucking [target]'s ass!</span>")
-				if(HOLE_VAGINA)
-					target.visible_message("<span class='danger'>[src] falls limp after fucking [target.gender==MALE ? "itself on [target]'s cock" : "[target]'s vagina"]!</span>")
+			if(!target.client || (flags & SEXPREF_FACEHUGGER_LEWD))
+				switch(target_hole)
+					if(HOLE_MOUTH)
+						target.visible_message("<span class='danger'>[src] falls limp after fucking [target]'s face with it's proboscis!</span>")
+					if(HOLE_ASS)
+						target.visible_message("<span class='danger'>[src] falls limp after fucking [target]'s ass!</span>")
+					if(HOLE_VAGINA)
+						target.visible_message("<span class='danger'>[src] falls limp after fucking [target.gender==MALE ? "itself on [target]'s cock" : "[target]'s vagina"]!</span>")
 			if(ismonkey(target))
 				damage = target.check_shields(COMBAT_MELEE_ATTACK, damage, MELEE, shield_flags = SHIELD_FLAG_XENOMORPH)
 				if(damage)
 					target.apply_damage(damage, BRUTE, BODY_ZONE_PRECISE_GROIN, MELEE, updating_health = TRUE)
 		else //Huggered but not impregnated, deal damage.
-			target.visible_message(span_danger("[src] frantically claws and fucks [target] before falling down!"),span_danger("[src] frantically claws and fucks you before falling down! Auugh!"))
+			if(!target.client || (flags & SEXPREF_FACEHUGGER_LEWD))
+				target.visible_message(span_danger("[src] frantically claws and fucks [target] before falling down!"),span_danger("[src] frantically claws and fucks you before falling down! Auugh!"))
+			else
+				target.visible_message(span_danger("[src] frantically claws [target] before falling down!"),span_danger("[src] frantically claws you before falling down! Auugh!"))
 			damage = target.check_shields(COMBAT_MELEE_ATTACK, damage, MELEE, shield_flags = SHIELD_FLAG_XENOMORPH)
 			if(damage)
 				target.apply_damage(damage, BRUTE, BODY_ZONE_PRECISE_GROIN, MELEE, updating_health = TRUE)
