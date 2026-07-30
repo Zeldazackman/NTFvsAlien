@@ -1751,7 +1751,10 @@ GLOBAL_LIST_INIT(pattern_images_list, list(
 	action_icon = 'icons/Xeno/patterns.dmi'
 	target_flags = ABILITY_TURF_TARGET
 	gamemode_flags = ABILITY_ALL_GAMEMODE
+	keybinding_signals = list(
+		KEYBINDING_NORMAL = COMSIG_XENOABILITY_PLACE_PATTERN,
 		KEYBINDING_ALTERNATE = COMSIG_XENOABILITY_SELECT_PATTERN,
+	)
 	use_state_flags = ABILITY_USE_LYING
 	var/datum/buildingpattern/selected_pattern = new /datum/buildingpattern/square2x2
 	/// Holograms are used to show the pattern before placing it
