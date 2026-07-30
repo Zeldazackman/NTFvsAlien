@@ -144,3 +144,23 @@
 		return crunch + repeat_string(desired_format, "0")
 
 	return crunch + .
+
+/// Returns a valid hex color for body and mutant part recolors.
+/// Keep player-selected colors close to their chosen value, but avoid fully crushed
+/// black/white channels that flatten greyscale sprite detail.
+/proc/sanitize_character_recolor(color, default = "#FFFFFF")
+	var/sanitized_color = sanitize_hexcolor(color, 6, TRUE, default)
+	if(lowertext(sanitized_color) == lowertext(default))
+		return sanitized_color
+	return clamp_character_recolor(sanitized_color)
+
+/proc/clamp_character_recolor(color)
+	var/r = clamp(hex2num(copytext(color, 2, 4)), 17, 238)
+	var/g = clamp(hex2num(copytext(color, 4, 6)), 17, 238)
+	var/b = clamp(hex2num(copytext(color, 6, 8)), 17, 238)
+	return "#[lowertext(num2hex(r, 2))][lowertext(num2hex(g, 2))][lowertext(num2hex(b, 2))]"
+
+/// Returns a valid hex color for hair overlays.
+/// Hair sprites already carry their own shading, so unlike body recolors this does not brighten the chosen color.
+/proc/sanitize_hair_recolor(color, default = "#000000")
+	return sanitize_hexcolor(color, 6, TRUE, default)

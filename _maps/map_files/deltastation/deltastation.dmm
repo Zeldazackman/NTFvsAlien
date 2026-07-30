@@ -2590,7 +2590,6 @@
 /area/deltastation/hallway/secondary/entry)
 "aBJ" = (
 /obj/machinery/door/poddoor/shutters/opened{
-	dir = 4;
 	id = "cmoshutter";
 	name = "CMO Office Shutters"
 	},
@@ -2598,6 +2597,13 @@
 /obj/effect/spawner/random/misc/structure/broken_reinforced_window,
 /turf/open/floor/plating,
 /area/deltastation/command/heads_quarters/cmo)
+"aBL" = (
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 8;
+	pixel_x = 14
+	},
+/turf/open/floor/plating,
+/area/deltastation/service/abandoned_gambling_den)
 "aBQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -4087,6 +4093,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/deltastation/maintenance/department/medical/morgue)
+"aSb" = (
+/obj/effect/turf_decal/tile/transparent/neutral/fourcorners,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 8;
+	pixel_x = 14
+	},
+/turf/open/floor/iron/dark,
+/area/deltastation/ai_monitored/turret_protected/ai)
 "aSd" = (
 /obj/structure/table/reinforced,
 /obj/item/packageWrap,
@@ -4645,7 +4660,6 @@
 "aXD" = (
 /obj/structure/window/framed/colony/reinforced,
 /obj/machinery/door/poddoor/shutters/opened{
-	dir = 4;
 	id = "roboticsprivacy";
 	name = "Robotics Shutters"
 	},
@@ -5938,6 +5952,7 @@
 /area/deltastation/asteroidcaves/westerncaves)
 "bkZ" = (
 /obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/iron,
 /area/deltastation/engineering/supermatter/room)
 "bla" = (
@@ -8190,7 +8205,6 @@
 /obj/structure/cable,
 /obj/structure/window/framed/colony/reinforced,
 /obj/machinery/door/poddoor/shutters/opened{
-	dir = 4;
 	id = "ceprivacy";
 	name = "Chief's Privacy Shutters"
 	},
@@ -8753,12 +8767,8 @@
 /turf/open/floor/plating,
 /area/deltastation/maintenance/port)
 "bOt" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/firealarm,
-/obj/effect/turf_decal/tile/transparent/brown/half/contrasted{
-	dir = 1
-	},
-/turf/open/floor/iron,
+/obj/docking_port/stationary/supplycolony,
+/turf/open/floor/mainship/empty,
 /area/deltastation/cargo/warehouse)
 "bOw" = (
 /obj/effect/turf_decal/tile/transparent/brown/half/contrasted,
@@ -10557,12 +10567,15 @@
 /turf/open/floor/iron,
 /area/deltastation/science/robotics/mechbay)
 "cim" = (
-/obj/structure/disposalpipe/segment,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/tile/transparent/brown/half/contrasted{
-	dir = 1
+/obj/structure/prop/mainship/railing{
+	dir = 4
 	},
+/obj/effect/urban/decal/dirt,
+/obj/effect/urban/decal/dirt,
+/obj/effect/urban/decal/dirt,
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/iron,
 /area/deltastation/cargo/warehouse)
 "cit" = (
@@ -13435,7 +13448,6 @@
 "cPM" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/mainship/security{
-	dir = 4;
 	name = "Prison Wing"
 	},
 /obj/structure/cable,
@@ -13624,13 +13636,10 @@
 "cRV" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/poddoor/shutters{
-	dir = 4;
 	id = "visitation";
 	name = "Visitation Shutters"
 	},
-/obj/machinery/door/window{
-	dir = 4
-	},
+/obj/machinery/door/window,
 /turf/open/floor/iron,
 /area/deltastation/security/prison/visit)
 "cRZ" = (
@@ -14423,6 +14432,7 @@
 "cZM" = (
 /obj/effect/turf_decal/tile/transparent/neutral/fourcorners,
 /obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/iron,
 /area/deltastation/cargo/lobby)
 "cZO" = (
@@ -16205,7 +16215,6 @@
 /area/deltastation/hallway/primary/central/fore)
 "dsL" = (
 /obj/machinery/door/window{
-	dir = 4;
 	name = "Secure Creature Pen"
 	},
 /obj/effect/turf_decal/warning_stripes/box/empty,
@@ -16672,6 +16681,7 @@
 /obj/effect/turf_decal/tile/transparent/neutral/fourcorners,
 /obj/structure/cable,
 /obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/iron,
 /area/deltastation/science/research)
 "dxx" = (
@@ -17606,11 +17616,16 @@
 /turf/open/floor/plating,
 /area/deltastation/maintenance/department/medical/morgue)
 "dGa" = (
-/obj/effect/turf_decal/tile/transparent/brown/half/contrasted{
-	dir = 1
+/obj/effect/turf_decal/tile/transparent/neutral/half/contrasted{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment,
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 4;
+	pixel_x = -14
 	},
 /turf/open/floor/iron,
-/area/deltastation/cargo/warehouse)
+/area/deltastation/maintenance/starboard/aft)
 "dGd" = (
 /obj/effect/turf_decal/tile/transparent/neutral{
 	dir = 1
@@ -18904,6 +18919,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/transparent/brown/half/contrasted,
 /obj/effect/landmark/weed_node,
+/obj/structure/prop/camera{
+	dir = 1;
+	name = "cargo camera"
+	},
 /turf/open/floor/iron,
 /area/deltastation/cargo/warehouse)
 "dSz" = (
@@ -23376,7 +23395,6 @@
 "eIS" = (
 /obj/structure/window/framed/colony/reinforced,
 /obj/machinery/door/poddoor/shutters/opened{
-	dir = 4;
 	id = "robotics_surgery_privacy";
 	name = "Robotics Shutters"
 	},
@@ -23832,7 +23850,6 @@
 "eOm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/door/window{
-	dir = 4;
 	name = "Fitness Ring"
 	},
 /obj/effect/turf_decal/siding/white{
@@ -24535,7 +24552,6 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/machinery/telecomms/relay/preset/telecomms,
 /turf/open/floor/iron/dark,
 /area/storage/testroom)
 "eVX" = (
@@ -25565,6 +25581,10 @@
 "fgj" = (
 /obj/effect/turf_decal/tile/transparent/brown/anticorner/contrasted{
 	dir = 8
+	},
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 4;
+	pixel_x = -14
 	},
 /turf/open/floor/iron,
 /area/deltastation/cargo/warehouse)
@@ -27519,7 +27539,6 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/machinery/door/poddoor/shutters{
-	dir = 4;
 	id = "psych_shutters";
 	name = "Psychology Privacy Shutters"
 	},
@@ -30526,6 +30545,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 6
 	},
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/iron,
 /area/deltastation/cargo/warehouse)
 "gfv" = (
@@ -32187,9 +32209,7 @@
 /turf/open/floor/iron,
 /area/deltastation/hallway/primary/central/fore)
 "gvS" = (
-/obj/effect/turf_decal/trimline/red/filled/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/trimline/red/filled/line,
 /obj/effect/landmark/corpsespawner/security/regular,
 /obj/effect/spawner/random/decal/blood,
 /turf/open/floor/iron,
@@ -32517,7 +32537,6 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/machinery/door/poddoor/shutters{
-	dir = 4;
 	id = "psych_shutters";
 	name = "Psychology Privacy Shutters"
 	},
@@ -34002,8 +34021,8 @@
 /obj/item/storage/box/rxglasses,
 /obj/effect/spawner/random/engineering/extinguisher/regularweighted,
 /obj/effect/spawner/random/engineering/extinguisher/regularweighted,
-/obj/item/clothing/glasses/night,
-/obj/item/clothing/glasses/night,
+/obj/item/clothing/glasses,
+/obj/item/clothing/glasses,
 /obj/effect/turf_decal/delivery,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
@@ -34046,7 +34065,6 @@
 "gPr" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters{
-	dir = 4;
 	id = "teleporterhubshutters";
 	name = "Teleporter Shutters"
 	},
@@ -35053,6 +35071,7 @@
 	pixel_x = -3
 	},
 /obj/effect/spawner/random/misc/cigar,
+/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/carpet,
 /area/deltastation/security/detectives_office)
 "hbc" = (
@@ -36345,7 +36364,7 @@
 /area/deltastation/engineering/atmos)
 "hng" = (
 /obj/structure/table/wood,
-/obj/item/phone{
+/obj/structure/transmitter/colony_net/desk/auto_id{
 	desc = "Supposedly a direct line to Nanotrasen Central Command. It's not even plugged in.";
 	pixel_x = -3;
 	pixel_y = 3
@@ -37550,7 +37569,6 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/maintenance_hatch{
-	dir = 4;
 	name = "Maintenance Hatch"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -37722,6 +37740,10 @@
 	dir = 1
 	},
 /obj/structure/cable,
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 4;
+	pixel_x = -14
+	},
 /turf/open/floor/iron/white,
 /area/deltastation/medical/virology)
 "hCP" = (
@@ -40772,7 +40794,6 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/window{
-	dir = 4;
 	name = "Warden's Desk"
 	},
 /obj/machinery/door/window{
@@ -42514,6 +42535,10 @@
 "iFj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/weed_node,
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 4;
+	pixel_x = -14
+	},
 /turf/open/floor/iron,
 /area/deltastation/maintenance/fore)
 "iFr" = (
@@ -44853,9 +44878,7 @@
 	dir = 5
 	},
 /obj/effect/landmark/weed_node,
-/obj/machinery/sleeper{
-	dir = 4
-	},
+/obj/machinery/sleeper,
 /turf/open/floor/iron/white,
 /area/deltastation/medical/treatment_center)
 "jcC" = (
@@ -44923,8 +44946,7 @@
 /area/deltastation/engineering/lobby)
 "jdz" = (
 /obj/machinery/power/apc/drained{
-	name = "Syndicate Cargo Pod APC";
-	start_charge = 0
+	name = "Syndicate Cargo Pod APC"
 	},
 /obj/structure/cable,
 /obj/structure/closet/crate/secure/gear,
@@ -45391,8 +45413,8 @@
 /obj/effect/turf_decal/tile/transparent/brown/half/contrasted{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/weed_node,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/deltastation/cargo/warehouse)
 "jjD" = (
@@ -45557,6 +45579,9 @@
 "jkT" = (
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/visible{
 	dir = 6
+	},
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
 	},
 /turf/open/floor/iron,
 /area/deltastation/engineering/atmos/hfr_room)
@@ -45763,6 +45788,7 @@
 	dir = 10
 	},
 /obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/iron,
 /area/deltastation/engineering/storage/tech)
 "jnf" = (
@@ -47019,9 +47045,7 @@
 /turf/open/floor/iron,
 /area/deltastation/hallway/primary/port)
 "jBW" = (
-/obj/effect/turf_decal/trimline/red/filled/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/trimline/red/filled/line,
 /turf/open/floor/iron,
 /area/deltastation/security/lockers)
 "jCa" = (
@@ -47485,6 +47509,10 @@
 /obj/effect/turf_decal/tile/transparent/neutral/fourcorners,
 /obj/machinery/holopad,
 /obj/effect/turf_decal/warning_stripes/box/empty,
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 8;
+	pixel_x = 14
+	},
 /turf/open/floor/iron/dark,
 /area/deltastation/science/auxlab/firing_range)
 "jHU" = (
@@ -47965,7 +47993,6 @@
 /area/deltastation/command/corporate_showroom)
 "jNi" = (
 /obj/machinery/door/window{
-	dir = 4;
 	name = "Primary AI Core Access"
 	},
 /obj/effect/turf_decal/tile/transparent/neutral/fourcorners,
@@ -48722,6 +48749,7 @@
 	dir = 8
 	},
 /obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/wood,
 /area/deltastation/service/library/abandoned)
 "jUA" = (
@@ -49115,6 +49143,7 @@
 "jYb" = (
 /obj/structure/table,
 /obj/effect/spawner/random/weaponry/gun/sidearms,
+/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/plating,
 /area/deltastation/external/landingzone)
 "jYi" = (
@@ -50253,7 +50282,6 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/window{
-	dir = 4;
 	name = "Mining Desk"
 	},
 /obj/effect/turf_decal/warning_stripes/box,
@@ -51381,9 +51409,7 @@
 /obj/effect/turf_decal/tile/transparent/neutral/fourcorners,
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/cable,
-/obj/effect/turf_decal/siding{
-	dir = 2
-	},
+/obj/effect/turf_decal/siding,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /obj/effect/ai_node,
 /turf/open/floor/iron,
@@ -51936,9 +51962,7 @@
 /obj/structure/morgue{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/neutral/warning{
-	dir = 2
-	},
+/obj/effect/turf_decal/trimline/neutral/warning,
 /obj/effect/turf_decal/trimline/neutral/mid_joiner,
 /turf/open/floor/iron/dark/textured_half,
 /area/deltastation/service/chapel/storage)
@@ -52309,6 +52333,7 @@
 /obj/effect/spawner/random/misc/handcuffs,
 /obj/item/flash,
 /obj/effect/turf_decal/tile/transparent/red/fourcorners,
+/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/iron/dark,
 /area/deltastation/security/office)
 "kHb" = (
@@ -53148,7 +53173,6 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
-	dir = 4;
 	id = "mechbay";
 	name = "Mech Bay Shutters"
 	},
@@ -54157,6 +54181,9 @@
 "lbL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/transparent/brown/half/contrasted,
+/obj/machinery/air_alarm{
+	dir = 1
+	},
 /turf/open/floor/iron,
 /area/deltastation/cargo/warehouse)
 "lbP" = (
@@ -54230,6 +54257,10 @@
 "lcI" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/transparent/red/anticorner/contrasted,
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 1;
+	pixel_y = -28
+	},
 /turf/open/floor/iron/dark,
 /area/deltastation/security/checkpoint)
 "lcQ" = (
@@ -54294,7 +54325,6 @@
 	pixel_y = -2
 	},
 /obj/machinery/door/poddoor/shutters/opened{
-	dir = 4;
 	id = "chemisttop";
 	name = "Pharmacy Shutters"
 	},
@@ -54884,9 +54914,7 @@
 "ljT" = (
 /obj/structure/morgue,
 /obj/machinery/light/small,
-/obj/effect/turf_decal/trimline/neutral/warning{
-	dir = 2
-	},
+/obj/effect/turf_decal/trimline/neutral/warning,
 /obj/effect/turf_decal/trimline/neutral/mid_joiner,
 /turf/open/floor/iron/dark/textured_half,
 /area/deltastation/security/detectives_office)
@@ -55487,7 +55515,9 @@
 /area/deltastation/engineering/atmos/pumproom)
 "lpI" = (
 /obj/structure/table,
-/obj/machinery/computer/security,
+/obj/machinery/computer/security{
+	dir = 8
+	},
 /turf/open/floor/tile/dark,
 /area/deltastation/external/landingzone)
 "lpM" = (
@@ -55561,7 +55591,6 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/mainship/generic{
-	dir = 4;
 	name = "Holodeck Access"
 	},
 /obj/machinery/door/firedoor,
@@ -55647,6 +55676,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
+	},
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
 	},
 /turf/open/floor/iron/white,
 /area/deltastation/science/research)
@@ -58425,7 +58457,6 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters{
-	dir = 4;
 	id = "warehouse_shutters";
 	name = "Warehouse Shutters"
 	},
@@ -59403,7 +59434,6 @@
 /area/deltastation/maintenance/starboard/lesser)
 "mdM" = (
 /obj/machinery/door/poddoor/shutters/opened{
-	dir = 4;
 	id = "cmoshutter";
 	name = "CMO Office Shutters"
 	},
@@ -59791,6 +59821,7 @@
 /obj/effect/turf_decal/tile/transparent/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/iron,
 /area/deltastation/engineering/supermatter/room)
 "mgW" = (
@@ -59951,7 +59982,6 @@
 /area/deltastation/commons/fitness/recreation)
 "miO" = (
 /obj/machinery/door/airlock/mainship/security{
-	dir = 4;
 	name = "Permabrig Cell 3"
 	},
 /obj/effect/turf_decal/stripes/line{
@@ -60538,6 +60568,7 @@
 /area/deltastation/commons/storage/primary)
 "mpK" = (
 /obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/iron/grimy,
 /area/deltastation/service/library)
 "mpL" = (
@@ -60721,9 +60752,7 @@
 /turf/open/floor/iron,
 /area/deltastation/service/abandoned_gambling_den/gaming)
 "msk" = (
-/obj/machinery/sleeper{
-	dir = 4
-	},
+/obj/machinery/sleeper,
 /obj/machinery/light/small,
 /turf/open/floor/iron/white,
 /area/deltastation/asteroidcaves/derelictwest)
@@ -61041,6 +61070,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
+/obj/machinery/firealarm,
 /turf/open/floor/iron,
 /area/deltastation/cargo/warehouse)
 "mvY" = (
@@ -61073,6 +61103,7 @@
 	dir = 4
 	},
 /obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/iron,
 /area/deltastation/security/brig)
 "mwe" = (
@@ -62285,7 +62316,7 @@
 /turf/open/floor/gcircuit,
 /area/deltastation/engineering/gravity_generator)
 "mIO" = (
-/obj/item/phone{
+/obj/structure/transmitter/colony_net/desk/auto_id{
 	desc = "Supposedly a direct line to Nanotrasen Central Command. It's not even plugged in.";
 	pixel_x = -3;
 	pixel_y = 3
@@ -63748,6 +63779,7 @@
 "mZU" = (
 /obj/effect/turf_decal/warning_stripes/box/empty,
 /obj/structure/cable,
+/obj/effect/landmark/patrol_point/xeno/xeno_11,
 /turf/open/floor/iron/dark/textured_large,
 /area/deltastation/engineering/atmos/hfr_room)
 "mZX" = (
@@ -65370,7 +65402,6 @@
 /area/deltastation/command/bridge)
 "nrW" = (
 /obj/machinery/door/airlock/mainship/security{
-	dir = 4;
 	name = "Permabrig Cell 2"
 	},
 /obj/effect/turf_decal/stripes/line{
@@ -66238,7 +66269,6 @@
 /area/deltastation/maintenance/port/fore)
 "nAU" = (
 /obj/machinery/door/poddoor/shutters{
-	dir = 4;
 	id = "warehouse_shutters";
 	name = "Warehouse Shutters"
 	},
@@ -69384,6 +69414,16 @@
 /obj/machinery/light,
 /turf/open/floor/iron,
 /area/deltastation/asteroidcaves/ship)
+"ojl" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/effect/spawner/random/misc/plant,
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 8;
+	pixel_x = 14
+	},
+/turf/open/floor/iron,
+/area/deltastation/engineering/supermatter/room)
 "ojn" = (
 /obj/effect/spawner/random/misc/plant,
 /obj/effect/spawner/random/machinery/status_display{
@@ -71413,11 +71453,11 @@
 /area/deltastation/maintenance/port/aft)
 "oEw" = (
 /obj/effect/turf_decal/warning_stripes/box/empty,
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment/corner{
 	dir = 1
 	},
 /obj/effect/ai_node,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/deltastation/cargo/warehouse)
 "oEA" = (
@@ -71621,9 +71661,7 @@
 /area/deltastation/security/brig)
 "oGh" = (
 /obj/structure/morgue,
-/obj/effect/turf_decal/trimline/neutral/warning{
-	dir = 2
-	},
+/obj/effect/turf_decal/trimline/neutral/warning,
 /obj/effect/turf_decal/trimline/neutral/mid_joiner,
 /obj/structure/sign/securearea,
 /turf/open/floor/iron/textured_half,
@@ -72480,7 +72518,6 @@
 /area/deltastation/hallway/primary/port)
 "oPE" = (
 /obj/machinery/door/poddoor/shutters{
-	dir = 4;
 	id = "service_maint_shutters";
 	name = "Vacant Room Shutters"
 	},
@@ -72707,6 +72744,11 @@
 	},
 /turf/open/floor/iron/white,
 /area/deltastation/medical/medbay)
+"oSz" = (
+/obj/effect/turf_decal/tile/transparent/neutral/fourcorners,
+/obj/effect/landmark/static_comms/net_one,
+/turf/open/floor/iron,
+/area/deltastation/hallway/secondary/exit/departure_lounge)
 "oSK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -73098,9 +73140,7 @@
 /turf/open/floor/iron/dark,
 /area/deltastation/maintenance/port)
 "oXe" = (
-/obj/structure/cargo_container/horizontal{
-	dir = 2
-	},
+/obj/structure/cargo_container/horizontal,
 /turf/open/floor/asteroidfloor,
 /area/deltastation/external/landingzone)
 "oXi" = (
@@ -76122,6 +76162,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/iron,
 /area/deltastation/security/prison)
 "pBX" = (
@@ -77014,7 +77055,7 @@
 /area/deltastation/medical/pharmacy)
 "pJE" = (
 /obj/structure/closet/crate,
-/obj/item/clothing/glasses/night,
+/obj/item/clothing/glasses,
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
@@ -77545,9 +77586,7 @@
 /obj/effect/spawner/random/misc/structure/directional_window,
 /obj/effect/spawner/random/misc/structure/directional_window/west,
 /obj/effect/spawner/random/misc/structure/directional_window/north,
-/obj/machinery/door/window{
-	dir = 4
-	},
+/obj/machinery/door/window,
 /obj/effect/turf_decal/warning_stripes/box,
 /turf/open/floor/iron,
 /area/deltastation/maintenance/disposal)
@@ -79568,7 +79607,6 @@
 /area/deltastation/science/ordnance/office)
 "qiL" = (
 /obj/machinery/door/window{
-	dir = 4;
 	name = "'Monkey Pen"
 	},
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -80858,7 +80896,6 @@
 "qwH" = (
 /obj/structure/window/framed/colony/reinforced,
 /obj/machinery/door/poddoor/shutters/opened{
-	dir = 4;
 	id = "paramed_dispatch";
 	name = "Privacy Shutters"
 	},
@@ -81217,7 +81254,6 @@
 "qAh" = (
 /obj/structure/cable,
 /obj/machinery/door/poddoor/shutters/opened{
-	dir = 4;
 	id = "cmoshutter";
 	name = "CMO Office Shutters"
 	},
@@ -81543,7 +81579,6 @@
 /area/deltastation/security/medical)
 "qDg" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	dir = 4;
 	name = "Maintenance Hatch"
 	},
 /turf/open/floor/plating,
@@ -81790,7 +81825,7 @@
 /obj/structure/table/wood,
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/transparent/neutral/fourcorners,
-/obj/item/phone{
+/obj/structure/transmitter/colony_net/desk/auto_id{
 	desc = "Supposedly a direct line to Nanotrasen Central Command. It's not even plugged in.";
 	pixel_x = -3;
 	pixel_y = 3
@@ -83227,7 +83262,6 @@
 	name = "Security Desk"
 	},
 /obj/machinery/door/window{
-	dir = 4;
 	name = "Security Desk"
 	},
 /obj/effect/spawner/random/misc/folder,
@@ -83335,6 +83369,7 @@
 /area/deltastation/command/bridge)
 "qUT" = (
 /obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/iron,
 /area/deltastation/hallway/primary/fore)
 "qVu" = (
@@ -83876,7 +83911,6 @@
 /area/deltastation/engineering/atmos/pumproom)
 "rcB" = (
 /obj/machinery/door/airlock/mainship/security{
-	dir = 4;
 	name = "Permabrig Cell 4"
 	},
 /obj/effect/turf_decal/stripes/line{
@@ -83929,9 +83963,7 @@
 /turf/open/floor/iron/dark,
 /area/deltastation/ai_monitored/turret_protected/aisat_interior)
 "rcH" = (
-/obj/effect/turf_decal/trimline/red/filled/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/trimline/red/filled/line,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/iron,
 /area/deltastation/security/lockers)
@@ -84415,9 +84447,7 @@
 /area/deltastation/hallway/secondary/entry)
 "riP" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor{
-	dir = 4
-	},
+/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/external{
 	name = "Mining Dock Airlock"
 	},
@@ -84542,7 +84572,7 @@
 /obj/item/trash/cigbutt{
 	pixel_x = 7
 	},
-/obj/item/phone{
+/obj/structure/transmitter/colony_net/desk/auto_id{
 	desc = "Supposedly a direct line to Nanotrasen Central Command. It's not even plugged in.";
 	pixel_x = -3;
 	pixel_y = 3
@@ -84557,6 +84587,19 @@
 /obj/effect/spawner/random/misc/structure/directional_window/north,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/deltastation/asteroidcaves/westerncaves/garbledradio)
+"rjZ" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
+	},
+/turf/open/floor/plating,
+/area/deltastation/maintenance/department/science)
 "rkb" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/transparent/neutral/fourcorners,
@@ -87151,6 +87194,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
+/obj/structure/transmitter/colony_net/auto_id{
+	pixel_y = 24
+	},
 /turf/open/floor/iron,
 /area/deltastation/engineering/atmos)
 "rKz" = (
@@ -87596,7 +87642,6 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/maintenance_hatch{
-	dir = 4;
 	name = "Maintenance Hatch"
 	},
 /turf/open/floor/iron,
@@ -87751,7 +87796,6 @@
 /obj/structure/cable,
 /obj/structure/table/wood/fancy,
 /obj/machinery/door/window{
-	dir = 4;
 	name = "High-Risk Modules"
 	},
 /turf/open/floor/rcircuit,
@@ -88088,7 +88132,6 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/opened{
-	dir = 4;
 	id = "roboticsprivacy";
 	name = "Robotics Shutters"
 	},
@@ -89197,6 +89240,10 @@
 "sic" = (
 /obj/effect/mapping_helpers/simple_pipes/dark/visible,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 4;
+	pixel_x = -14
+	},
 /turf/open/floor/iron,
 /area/deltastation/maintenance/disposal/incinerator)
 "sif" = (
@@ -90473,7 +90520,6 @@
 "suv" = (
 /obj/structure/window/framed/colony/reinforced,
 /obj/machinery/door/poddoor/shutters/opened{
-	dir = 4;
 	id = "chemisttop";
 	name = "Pharmacy Shutters"
 	},
@@ -92458,6 +92504,11 @@
 /obj/effect/spawner/random/misc/structure/chair_or_metal/east,
 /turf/open/floor/iron,
 /area/deltastation/hallway/primary/central/aft)
+"sPd" = (
+/obj/effect/mapping_helpers/simple_pipes/green/visible,
+/obj/effect/landmark/patrol_point/xeno/xeno_21,
+/turf/open/floor/iron,
+/area/deltastation/engineering/supermatter/room)
 "sPe" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/stripes/line{
@@ -93416,6 +93467,10 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 4;
+	pixel_x = -14
+	},
 /turf/open/floor/iron,
 /area/deltastation/engineering/storage_shared)
 "sZv" = (
@@ -95338,7 +95393,6 @@
 "ttt" = (
 /obj/structure/window/framed/colony/reinforced,
 /obj/machinery/door/poddoor/shutters/opened{
-	dir = 4;
 	id = "rdrnd";
 	name = "Research and Development Shutters"
 	},
@@ -96258,7 +96312,6 @@
 /area/deltastation/asteroidcaves/derelictwest)
 "tCY" = (
 /obj/machinery/door/window{
-	dir = 4;
 	name = "Secondary AI Core Access";
 	pixel_x = 4
 	},
@@ -96785,9 +96838,7 @@
 /area/deltastation/science/auxlab/firing_range)
 "tIV" = (
 /obj/structure/morgue,
-/obj/effect/turf_decal/trimline/neutral/warning{
-	dir = 2
-	},
+/obj/effect/turf_decal/trimline/neutral/warning,
 /obj/effect/turf_decal/trimline/neutral/mid_joiner,
 /turf/open/floor/iron/dark/textured_half,
 /area/deltastation/service/chapel/storage)
@@ -98781,7 +98832,6 @@
 /area/deltastation/asteroidcaves/derelictwest)
 "udo" = (
 /obj/machinery/door/airlock/mainship/security{
-	dir = 4;
 	name = "Permabrig Cell 1"
 	},
 /obj/effect/turf_decal/stripes/line{
@@ -100677,9 +100727,7 @@
 /turf/open/floor/iron/dark,
 /area/deltastation/engineering/transit_tube)
 "uwa" = (
-/obj/structure/cargo_container/horizontal{
-	dir = 2
-	},
+/obj/structure/cargo_container/horizontal,
 /turf/open/floor/plating,
 /area/deltastation/external/landingzone)
 "uwb" = (
@@ -101155,7 +101203,6 @@
 /area/deltastation/cargo/miningoffice)
 "uAE" = (
 /obj/machinery/door/poddoor/shutters/opened{
-	dir = 4;
 	id = "paramed_dispatch";
 	name = "Privacy Shutters"
 	},
@@ -101556,6 +101603,14 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/iron,
 /area/deltastation/security/office)
+"uGk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 8;
+	pixel_x = 14
+	},
+/turf/open/floor/iron,
+/area/deltastation/science/research/abandoned)
 "uGp" = (
 /obj/machinery/newscaster{
 	dir = 4
@@ -105391,6 +105446,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/transmitter/colony_net/auto_id{
+	dir = 4;
+	pixel_x = -14
+	},
 /turf/open/floor/plating,
 /area/deltastation/maintenance/disposal)
 "vrV" = (
@@ -108524,7 +108583,6 @@
 /area/deltastation/science/lobby)
 "vYH" = (
 /obj/machinery/door/poddoor/shutters{
-	dir = 4;
 	id = "mechbay";
 	name = "Mech Bay Shutters"
 	},
@@ -110067,7 +110125,6 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external{
-	dir = 4;
 	name = "External Docking Port"
 	},
 /turf/open/floor/iron,
@@ -111483,10 +111540,6 @@
 /obj/structure/window/framed/colony/reinforced/hull,
 /turf/open/floor/plating,
 /area/deltastation/maintenance/department/science/xenobiology)
-"wBi" = (
-/obj/effect/landmark/weed_node,
-/turf/open/floor/plating/ground/mars/random/cave,
-/area/deltastation/medical/virology)
 "wBm" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/random/engineering/plasteel,
@@ -113053,8 +113106,7 @@
 /area/deltastation/command/heads_quarters/hop)
 "wQz" = (
 /obj/machinery/power/apc/drained{
-	name = "Syndicate Forgotten Ship APC";
-	start_charge = 0
+	name = "Syndicate Forgotten Ship APC"
 	},
 /obj/structure/cable,
 /turf/open/floor/prison/blackfloor,
@@ -113302,9 +113354,7 @@
 /turf/open/floor/wood,
 /area/deltastation/service/abandoned_gambling_den)
 "wTD" = (
-/obj/machinery/sleeper{
-	dir = 4
-	},
+/obj/machinery/sleeper,
 /turf/open/floor/iron/white,
 /area/deltastation/asteroidcaves/derelictwest)
 "wTF" = (
@@ -114051,6 +114101,7 @@
 "xcT" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/random/misc/clipboard,
+/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/wood,
 /area/deltastation/service/electronic_marketing_den)
 "xdd" = (
@@ -115292,7 +115343,6 @@
 /area/deltastation/asteroidcaves/derelictwest)
 "xpP" = (
 /obj/machinery/door/window{
-	dir = 4;
 	name = "Mass Driver"
 	},
 /obj/effect/turf_decal/stripes/line{
@@ -115430,18 +115480,7 @@
 /turf/open/floor/asteroidfloor,
 /area/deltastation/external/landingzone)
 "xqQ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/machinery/air_alarm,
-/obj/structure/prop/camera{
-	name = "cargo camera"
-	},
-/obj/effect/turf_decal/tile/transparent/brown/half/contrasted{
-	dir = 1
-	},
-/turf/open/floor/iron,
+/turf/open/floor/mainship/empty,
 /area/deltastation/cargo/warehouse)
 "xqV" = (
 /obj/effect/spawner/random/engineering/cable,
@@ -117374,6 +117413,7 @@
 /area/deltastation/maintenance/solars/starboard/aft)
 "xJE" = (
 /obj/structure/cable,
+/obj/effect/landmark/static_comms/net_two,
 /turf/open/floor/plating,
 /area/deltastation/medical/virology)
 "xJH" = (
@@ -118191,9 +118231,7 @@
 /area/deltastation/hallway/secondary/entry)
 "xRC" = (
 /obj/effect/turf_decal/tile/transparent/blue/fourcorners,
-/obj/machinery/sleeper{
-	dir = 4
-	},
+/obj/machinery/sleeper,
 /turf/open/floor/iron,
 /area/deltastation/medical/treatment_center)
 "xRD" = (
@@ -120045,6 +120083,7 @@
 	dir = 1
 	},
 /obj/structure/cable,
+/obj/machinery/computer/supplycomp/colony,
 /turf/open/floor/iron,
 /area/deltastation/cargo/warehouse)
 "yjJ" = (
@@ -128118,7 +128157,7 @@ ybi
 xvN
 wlI
 dAN
-xvN
+aSb
 iXV
 ckX
 kCc
@@ -143042,7 +143081,7 @@ oQC
 sEz
 nVE
 aqn
-jFd
+sPd
 llW
 vxg
 dFe
@@ -143813,7 +143852,7 @@ fgA
 klt
 wyI
 sIj
-fEO
+ojl
 vBD
 akg
 vBD
@@ -144369,7 +144408,7 @@ nro
 hlX
 uFU
 ykX
-ttn
+aBL
 wgD
 rjb
 qwW
@@ -146671,7 +146710,7 @@ pZK
 vzL
 oZP
 oZP
-lPR
+rjZ
 ltx
 cER
 hof
@@ -147450,7 +147489,7 @@ oRa
 lCL
 ccV
 tjc
-fiQ
+uGk
 jZh
 iam
 wxu
@@ -156223,7 +156262,7 @@ lBe
 bLw
 mgf
 iUB
-wBi
+nGE
 nGE
 vNR
 vNR
@@ -156481,7 +156520,7 @@ dKE
 ekk
 uyZ
 xJE
-wBi
+nGE
 vNR
 vNR
 vNR
@@ -156736,7 +156775,7 @@ nPx
 qIL
 shg
 sRG
-wBi
+nGE
 nGE
 nGE
 vNR
@@ -162771,7 +162810,7 @@ ekc
 iOf
 syB
 aUf
-dGa
+xqQ
 ibR
 orC
 fUf
@@ -163918,7 +163957,7 @@ dAz
 mxE
 qZa
 pQX
-mxE
+oSz
 mxE
 wNP
 gna
@@ -172630,7 +172669,7 @@ yfN
 sEy
 fsK
 sEy
-sEy
+dGa
 yfN
 kvF
 ibB

@@ -2,7 +2,7 @@
 	caste_base_type = /datum/xeno_caste/behemoth
 	name = "Behemoth"
 	desc = "A resilient and equally ferocious monster that commands the earth itself."
-	icon = 'icons/Xeno/castes/behemoth.dmi'
+	icon = 'ntf_modular/icons/Xeno/castes/behemoth.dmi'
 	icon_state = "Behemoth Walking"
 	bubble_icon = "alienleft"
 	health = 750
@@ -14,7 +14,7 @@
 	mob_size = MOB_SIZE_BIG
 	max_buckled_mobs = 2
 	pixel_x = -28.5
-
+	footstep_type = FOOTSTEP_XENO_HEAVY
 
 // ***************************************
 // *********** Special States
@@ -24,7 +24,7 @@
 	if(!behemoth_roll_action || !behemoth_roll_action.charge_ability_on)
 		return FALSE
 	if(behemoth_roll_action.valid_steps_taken == behemoth_roll_action.max_steps_buildup)
-		icon_state = "Behemoth[(xeno_flags & XENO_ROUNY) ? " rouny" : ""] Charging"
+		icon_state = "Behemoth[is_a_rouny ? " rouny" : ""] Charging"
 	else
 		icon_state = "Behemoth Rolling"
 	return TRUE
@@ -44,11 +44,14 @@
 	. = ..()
 	if(!target_mounting)
 		user = pulling
-	if(!isxeno(user))
-		return FALSE
-	var/mob/living/carbon/xenomorph/grabbed = user
-	if(grabbed.incapacitated() || !(grabbed.xeno_caste.can_flags & CASTE_CAN_RIDE_CRUSHER))
-		return FALSE
+	if(ishuman(user))
+		var/mob/living/carbon/human/human_pulled = user
+		if(human_pulled.stat == DEAD)
+			return FALSE
+	if(isxeno(user))
+		var/mob/living/carbon/xenomorph/grabbed = user
+		if(grabbed.incapacitated() || !(grabbed.xeno_caste.can_flags & CASTE_CAN_RIDE_CRUSHER))
+			return FALSE
 	return TRUE
 
 /mob/living/carbon/xenomorph/crusher/resisted_against(datum/source)

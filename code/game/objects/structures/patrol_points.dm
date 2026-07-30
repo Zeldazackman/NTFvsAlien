@@ -85,8 +85,29 @@
 /obj/structure/patrol_point/tgmc_11
 	id = "TGMC_1"
 
+/obj/structure/patrol_point/tgmc_12
+	id = "TGMC_12"
+
+/obj/structure/patrol_point/tgmc_13
+	id = "TGMC_13"
+
+/obj/structure/patrol_point/tgmc_14
+	id = "TGMC_14"
+
 /obj/structure/patrol_point/tgmc_21
 	id = "TGMC_2"
+	icon_state = "patrol_point_2"
+
+/obj/structure/patrol_point/tgmc_22
+	id = "TGMC_22"
+	icon_state = "patrol_point_2"
+
+/obj/structure/patrol_point/tgmc_23
+	id = "TGMC_23"
+	icon_state = "patrol_point_2"
+
+/obj/structure/patrol_point/tgmc_24
+	id = "TGMC_24"
 	icon_state = "patrol_point_2"
 
 /obj/structure/patrol_point/som_11

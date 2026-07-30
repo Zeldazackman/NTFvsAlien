@@ -7,19 +7,20 @@
 	hitbox = /obj/hitbox/two_three
 	interior = /datum/interior/armored/mrap
 	permitted_weapons = NONE
-	permitted_mods = list(/obj/item/tank_module/ability/tesla)
-	armored_flags = ARMORED_HAS_HEADLIGHTS|ARMORED_HAS_UNDERLAY|ARMORED_WRECKABLE|ARMORED_PURCHASABLE_TRANSPORT|ARMORED_SELF_WALL_DAMAGE
+	permitted_mods = list(/obj/item/tank_module/ability/tesla, /obj/item/tank_module/interior/teletruck)
+	armored_flags = ARMORED_HAS_HEADLIGHTS|ARMORED_HAS_UNDERLAY|ARMORED_WRECKABLE|ARMORED_PURCHASABLE_TRANSPORT
 	required_entry_skill = SKILL_LARGE_VEHICLE_DEFAULT
 	minimap_icon_state = "apc"
 	turret_icon = null
 	pixel_x = -24
 	pixel_y = -32
 	max_integrity = 900
-	soft_armor = list(MELEE = 50, BULLET = 100 , LASER = 90, ENERGY = 60, BOMB = 60, BIO = 100, FIRE = 50, ACID = 50)
-	hard_armor = list(MELEE = 0, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 0, BIO = 20, FIRE = 0, ACID = 0)
-	max_occupants = 12
+	soft_armor = list(MELEE = 50, BULLET = 90 , LASER = 90, ENERGY = 70, BOMB = 80, BIO = 100, FIRE = 100, ACID = 50)
+	hard_armor = list(MELEE = 0, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 100, FIRE = 0, ACID = 0)
+	facing_modifiers = list(VEHICLE_FRONT_ARMOUR = 0.7, VEHICLE_SIDE_ARMOUR = 1, VEHICLE_BACK_ARMOUR = 1.5)
+	max_occupants = 24
 	enter_delay = 0.4 SECONDS
-	ram_damage = 30
+	ram_damage = 200
 	move_delay = 0.15 SECONDS
 	glide_size = 8.5
 	easy_load_list = list(
@@ -30,8 +31,6 @@
 
 /obj/vehicle/sealed/armored/multitile/mrap/Initialize(mapload)
 	. = ..()
-	var/obj/item/tank_module/module = new /obj/item/tank_module/ability/tesla()
-	module.on_equip(src)
 
 /obj/vehicle/sealed/armored/multitile/mrap/setDir(newdir)
 	. = ..()
@@ -39,11 +38,7 @@
 		update_smoke_dir(null, null, newdir)
 
 /obj/vehicle/sealed/armored/multitile/mrap/enter_locations(atom/movable/entering_thing)
-	var/first_turf = get_step_away(get_step(src, REVERSE_DIR(dir)), src, 2)
-	return list(
-		first_turf,
-		get_step(first_turf, turn(dir, -90)),
-	)
+	return list(get_step_away(get_step(src, REVERSE_DIR(dir)), src, 2))
 
 /obj/vehicle/sealed/armored/multitile/mrap/wreck_vehicle()
 	. = ..()

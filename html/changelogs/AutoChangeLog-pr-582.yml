@@ -1,0 +1,4 @@
+author: "Meghan-Rossi"
+delete-after: True
+changes:
+  - rscadd: "Added teleporter interior module as an alternative to the Sambar MRAP's tesla module.  Taking it adds a special teleporter that can be used from within the vehicle, but removes all vendors, periscopes and seats (except the driver seat).  It also slows the vehicle down to the same speed as an Athena APC."

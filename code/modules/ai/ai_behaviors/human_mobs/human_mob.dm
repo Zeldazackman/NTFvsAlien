@@ -41,6 +41,9 @@
 
 /datum/ai_behavior/human/New(loc, mob/parent_to_assign, atom/escorted_atom)
 	. = ..()
+	if(ishuman(mob_parent))
+		var/mob/living/carbon/human/hparent = mob_parent
+		hparent.npc_characterise() //randomise ai appearance
 	mob_inventory = new(mob_parent)
 	RegisterSignal(mob_parent, COMSIG_MOB_DROPPING_ITEM, PROC_REF(on_item_unequip)) //we do this on New because we want to know about items lost when dead
 
@@ -130,13 +133,19 @@
 	. = ..()
 
 	for(var/datum/action/action in ability_list)
-		if(!action.ai_should_use(atom_to_walk_to)) //todo: some of these probably should be aimmed at combat_target somehow...
+		if(action.ai_should_use(combat_target))
+			if(istype(action, /datum/action/ability/activable))
+				var/datum/action/ability/activable/activable_action = action
+				activable_action.use_ability(combat_target)
+			else
+				action.action_activate()
 			continue
-		if(istype(action, /datum/action/ability/activable))
-			var/datum/action/ability/activable/activable_action = action
-			activable_action.use_ability(atom_to_walk_to)
-		else
-			action.action_activate()
+		if(action.ai_should_use(atom_to_walk_to))
+			if(istype(action, /datum/action/ability/activable))
+				var/datum/action/ability/activable/activable_action = action
+				activable_action.use_ability(atom_to_walk_to)
+			else
+				action.action_activate()
 
 	if(human_ai_behavior_flags & HUMAN_AI_USE_WEAPONS)
 		if(!grenade_process())
@@ -153,7 +162,7 @@
 			set_interact_target(atom)
 
 /datum/ai_behavior/human/should_hold()
-	if(human_ai_state_flags & HUMAN_AI_BUSY_ACTION && COOLDOWN_FINISHED(src, ai_heal_after_dam_cooldown)) //Don't just stand there when taking damage
+	if((human_ai_state_flags & HUMAN_AI_BUSY_ACTION) && COOLDOWN_FINISHED(src, ai_heal_after_dam_cooldown)) //Don't just stand there when taking damage
 		return TRUE
 	if(HAS_TRAIT(mob_parent, TRAIT_IS_RELOADING))
 		return TRUE
@@ -163,13 +172,20 @@
 		return TRUE
 	if(HAS_TRAIT(mob_parent, TRAIT_IS_EQUIPPING_ITEM))
 		return TRUE
-	if(mob_parent.pulledby?.faction == mob_parent.faction)
+	if(GLOB.faction_to_iff[mob_parent.pulledby?.faction] & GLOB.faction_to_iff[mob_parent.faction])
 		return TRUE //lets players wrangle NPC's
+	if(HAS_TRAIT(mob_parent, TRAIT_STASIS)) //ntf addition
+		return TRUE
+	if(ishuman(mob_parent))
+		var/mob/living/carbon/human/mob_human = mob_parent
+		if(mob_human.devouring_mob) //ntf addition
+			return TRUE
 	return FALSE
 
 /datum/ai_behavior/human/scheduled_move()
 	if(human_ai_state_flags & HUMAN_AI_BUSY_ACTION)
-		registered_for_move = FALSE
+		deltimer(next_move_timer)
+		next_move_timer = null
 		return
 	return ..()
 
@@ -195,6 +211,8 @@
 	. = ..()
 	if(.)
 		return
+	if(non_aggressive)
+		return FALSE
 	if(get_dist(mob_parent, combat_target) <= AI_COMBAT_TARGET_BLIND_DISTANCE)
 		return FALSE
 	if(!line_of_sight(mob_parent, combat_target, target_distance))
@@ -239,8 +257,8 @@
 	remove_atom_of_interest(old_target)
 
 	if(QDELETED(old_target)) //if they're deleted we need to ensure engineering and medical stuff is cleaned up properly
-		if(human_ai_state_flags & HUMAN_AI_HEALING)
-			on_heal_end(old_target)
+		if(human_ai_state_flags & HUMAN_AI_HEALING_OTHER)
+			on_heal_other_end(old_target)
 		else
 			remove_from_heal_list(old_target)
 		if(human_ai_state_flags & HUMAN_AI_BUILDING)
@@ -258,8 +276,8 @@
 			remove_from_heal_list(old_target)
 	else
 		remove_from_heal_list(old_target)
-	if((human_ai_state_flags & HUMAN_AI_HEALING) && !revive_target)
-		on_heal_end(old_target)
+	if((human_ai_state_flags & HUMAN_AI_HEALING_OTHER) && !revive_target)
+		on_heal_other_end(old_target)
 	return ..()
 
 ///Sets run move intent if able
@@ -381,3 +399,11 @@
 
 /datum/ai_behavior/human/suicidal
 	minimum_health = 0
+
+/datum/ai_behavior/human/monkey
+	human_ai_behavior_flags = HUMAN_AI_NO_FF|HUMAN_AI_AVOID_HAZARDS
+	///Flags about what the AI is current doing or wanting
+	human_ai_state_flags = 0
+	///To what level they will handle healing others
+	medical_rating = AI_MED_SELFISH
+	non_aggressive = TRUE

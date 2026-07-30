@@ -2,8 +2,10 @@
 	name = "Encounter"
 	config_tag = "Encounter"
 	round_type_flags = MODE_LATE_OPENING_SHUTTER_TIMER|MODE_TWO_HUMAN_FACTIONS|MODE_INFESTATION|MODE_PSY_POINTS|MODE_SILO_RESPAWN|MODE_ENCOUNTER|MODE_HUMAN_ONLY
+	round_type_flags2 = MODE_2_CAMPAIGN_LITE_SUPPORT|MODE_2_ALLOW_LOADOUTS
 	xeno_abilities_flags = ABILITY_ENCOUNTER
 	factions = list(FACTION_TERRAGOV, FACTION_SOM, FACTION_XENO)
+	human_factions = list(FACTION_TERRAGOV, FACTION_SOM)
 	valid_job_types = list(
 		/datum/job/terragov/squad/engineer = 8,
 		/datum/job/terragov/squad/corpsman = 8,
@@ -29,7 +31,8 @@
 	game_timer_delay = 0
 	whitelist_ship_maps = list(MAP_COMBAT_PATROL_BASE)
 	blacklist_ship_maps = null
-	blacklist_ground_maps = list(MAP_WHISKEY_OUTPOST, MAP_OSCAR_OUTPOST, MAP_FORT_PHOBOS, MAP_CHIGUSA, MAP_CORSAT)
+	blacklist_ground_maps = list(MAP_WHISKEY_OUTPOST, MAP_OSCAR_OUTPOST, MAP_FORT_PHOBOS, MAP_CORSAT)
+	whitelist_antag_maps = list(MAP_ANTAGMAP_NOSPAWN)
 
 	var/capture_point_target = 1200
 	///TGMC's point count
@@ -39,7 +42,7 @@
 	///Xenos' point count
 	var/xeno_cap_points = 0
 	///Tower req value for owning faction per process()
-	var/tower_req_value = 6
+	var/tower_req_value = 8
 	///Tower xeno tactical point value for owning faction per process()
 	var/tower_xeno_tactical_point_value = 1
 	///Tower xeno strategic point value for owning faction per process()
@@ -51,7 +54,7 @@
 
 /datum/game_mode/hvh/combat_patrol/encounter/announce()
 	to_chat(world, "<b>The current game mode is - Free for all!</b>")
-	to_chat(world, "<b>SOM and Terragov forces are fighting for control of this sector and an alien threat has emerged, capture the sensor towers for your team.</b>")
+	to_chat(world, "<b>SOM and NTF forces are fighting for control of this sector and an alien threat has emerged, capture the sensor towers for your team.</b>")
 
 /datum/game_mode/hvh/combat_patrol/encounter/get_deploy_point_message(mob/living/user)
 	. = "Capture as many sensor towers as possible, deny them to the other teams."
@@ -84,6 +87,8 @@
 
 	for(var/i in GLOB.xeno_encounter_resin_silo_turfs)
 		new /obj/structure/xeno/silo(i)
+
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(send_global_signal), COMSIG_GLOB_HVH_REQ), 1 SECONDS)
 
 	// Apply Evolution Xeno Population Locks:
 	for(var/datum/xeno_caste/caste AS in evo_requirements)

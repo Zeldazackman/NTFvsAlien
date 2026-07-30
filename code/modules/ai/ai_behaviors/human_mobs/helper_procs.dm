@@ -208,7 +208,7 @@
 		if(!(magazine.type in valid_ammo))
 			continue
 		if(!behavior_datum.try_store_item(magazine))
-			return
+			break
 		ammo_count ++
 	if(!ammo_count)
 		behavior_datum.try_speak("No ammo for me here!")
@@ -328,7 +328,7 @@
 	return list(0, 2)
 
 /obj/item/weapon/gun/get_ai_combat_range()
-	if((gun_features_flags & GUN_IFF) || (ammo_datum_type::ammo_behavior_flags & AMMO_IFF))
+	if((gun_features_flags & GUN_IFF) || (HAS_TRAIT(src, TRAIT_GUN_IS_AIMING)) || (ammo_datum_type::ammo_behavior_flags & AMMO_IFF))
 		return list(5, 7)
 	return list(4, 5)
 

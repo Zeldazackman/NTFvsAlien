@@ -10,7 +10,7 @@
 	closed_layer = CLOSED_DOOR_LAYER
 	smoothing_groups = null
 
-	resistance_flags = RESIST_ALL
+	resistance_flags = XENO_DAMAGEABLE
 
 	/// For supply shuttle integration
 	var/obj/docking_port/mobile/supply/linked_pad

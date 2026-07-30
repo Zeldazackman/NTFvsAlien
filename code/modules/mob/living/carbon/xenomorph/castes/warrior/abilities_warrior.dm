@@ -159,6 +159,7 @@
 	UnregisterSignal(source, list(COMSIG_MOVABLE_POST_THROW, COMSIG_MOVABLE_IMPACT))
 	var/mob/living/living_target = source
 	living_target.Knockdown(0.5 SECONDS)
+	living_target.Immobilize(0.5 SECONDS)
 	living_target.remove_pass_flags(PASS_XENO, THROW_TRAIT)
 
 /obj/effect/temp_visual/warrior/impact
@@ -274,8 +275,9 @@
 		var/mob/living/living_target = A
 		GLOB.round_statistics.warrior_grabs++
 		SSblackbox.record_feedback("tally", "round_statistics", 1, "warrior_grabs")
-		xeno_owner.setGrabState(GRAB_NECK)
-		living_target.resistance_flags |= RESTRAINED_NECKGRAB
+		if(ishuman(living_target))
+			xeno_owner.setGrabState(GRAB_NECK)
+			living_target.resistance_flags |= RESTRAINED_NECKGRAB
 		living_target.drop_all_held_items()
 		living_target.Paralyze(0.1 SECONDS)
 		living_target.balloon_alert(xeno_owner, "Grabbed [living_target]")
@@ -663,8 +665,8 @@
 	add_slowdown(slowdown_stacks)
 	adjust_stagger(stagger_stacks)
 	adjust_blurriness(slowdown_stacks)
-	apply_damage(punch_damage, BRUTE, target_limb ? target_limb : 0, MELEE, attacker = xeno)
-	apply_damage(punch_damage, STAMINA, updating_health = TRUE, attacker = xeno)
+	apply_damage(punch_damage * 0.9, BRUTE, target_limb ? target_limb : 0, MELEE, attacker = xeno)
+	apply_damage(punch_damage * 1.06, STAMINA, updating_health = TRUE, attacker = xeno)
 	var/turf_behind = get_step(src, REVERSE_DIR(get_dir(src, xeno)))
 	if(!push)
 		return

@@ -1,6 +1,6 @@
 /obj/vehicle/ridden/big_bike
 	name = "big bike"
-	desc = "A TGMC heavy motorbike. Used to swiftly carry up to 2 soldiers over the roughest of terrain, at high speed and with respectable survivibility. Is typically armed with a pair of forwarded mounted weapons. Favoured for rapid assaults."
+	desc = "A AC heavy motorbike. Used to swiftly carry up to 2 soldiers over the roughest of terrain, at high speed and with respectable survivibility. Is typically armed with a pair of forwarded mounted weapons. Favoured for rapid assaults."
 	icon = 'icons/obj/vehicles/big_bike.dmi'
 	icon_state = "big_bike"
 	max_integrity = 425
@@ -23,6 +23,11 @@
 	COOLDOWN_DECLARE(rev_cooldown)
 	/// The looping sound that plays when the bike is operating
 	var/datum/looping_sound/bike_idle/engine_sound
+
+/obj/vehicle/ridden/big_bike/buckle_mob(mob/living/buckling_mob, force, check_loc, lying_buckle, hands_needed, target_hands_needed, silent)
+	if(!do_after(buckling_mob, 2 SECONDS, IGNORE_HELD_ITEM, src, BUSY_ICON_GENERIC))
+		return FALSE
+	. = ..()
 
 /obj/vehicle/ridden/big_bike/Initialize(mapload)
 	. = ..()

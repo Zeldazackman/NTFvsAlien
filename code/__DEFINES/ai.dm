@@ -95,6 +95,8 @@ GLOBAL_LIST_EMPTY(nodes_with_construction)
 ///Obstacle can be ignored
 #define AI_OBSTACLE_IGNORED "ai_obstacle_ignored"
 
+//human_ai_behavior_flags
+
 ///If the mob parent can heal itself and so should flee
 #define HUMAN_AI_SELF_HEAL (1<<0)
 ///Uses weapons
@@ -106,19 +108,23 @@ GLOBAL_LIST_EMPTY(nodes_with_construction)
 ///Will try avoid hazards when possible
 #define HUMAN_AI_AVOID_HAZARDS (1<<4)
 
+//human_ai_state_flags
+
 ///Currently shooting
 #define HUMAN_AI_FIRING (1<<0)
 ///Looking for weapons
 #define HUMAN_AI_NEED_WEAPONS (1<<1)
-///Healing or being healed
-#define HUMAN_AI_HEALING (1<<2)
+///Being healed by another NPC
+#define HUMAN_AI_BEING_HEALED (1<<2)
 ///Healing self
 #define HUMAN_AI_SELF_HEALING (1<<3)
 ///Building something
 #define HUMAN_AI_BUILDING (1<<4)
+///Healing someone else
+#define HUMAN_AI_HEALING_OTHER (1<<5)
 
 ///Any action that we generally don't want to interrupt
-#define HUMAN_AI_BUSY_ACTION (HUMAN_AI_HEALING|HUMAN_AI_SELF_HEALING|HUMAN_AI_BUILDING)
+#define HUMAN_AI_BUSY_ACTION (HUMAN_AI_SELF_HEALING|HUMAN_AI_BUILDING|HUMAN_AI_HEALING_OTHER|HUMAN_AI_BEING_HEALED)
 
 ///We're good to shoot
 #define AI_FIRE_CAN_HIT (1<<0)
@@ -293,7 +299,7 @@ GLOBAL_LIST_INIT(ai_squad_presets, list(
 		/datum/job/som/ert/standard,
 		/datum/job/som/ert/specialist,
 	),
-	"PMC squad" = list(
+	"AC squad" = list(
 		/datum/job/pmc/standard,
 		/datum/job/pmc/standard,
 		/datum/job/pmc/leader,
@@ -317,7 +323,7 @@ GLOBAL_LIST_INIT(ai_squad_presets, list(
 		/datum/job/icc/standard,
 		/datum/job/icc/guard,
 	),
-	"CLF squad" = list(
+	"Cult squad" = list(
 		/datum/job/clf/standard,
 		/datum/job/clf/standard,
 		/datum/job/clf/leader,

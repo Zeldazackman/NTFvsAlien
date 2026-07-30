@@ -3,6 +3,8 @@
 // ***************************************
 /datum/action/ability/activable/xeno/spray_acid/line
 	name = "Spray Acid"
+	desc = "Spray a line of dangerous acid at your target."
+
 	ability_cost = 250
 	cooldown_duration = 30 SECONDS
 	/// If the owner makes use of and has this much stored globs, non-opaque gas is created along with the acid. Must be non-zero.
@@ -88,14 +90,15 @@
 				B.acid_spray_act(owner)
 
 		xenomorph_spray(TF, xeno_owner.xeno_caste.acid_spray_duration, xeno_owner.xeno_caste.acid_spray_damage, xeno_owner, TRUE, TRUE)
-		var/current_globs = xeno_owner.corrosive_ammo + xeno_owner.neurotoxin_ammo
+		var/current_globs = xeno_owner.corrosive_ammo + xeno_owner.neurotoxin_ammo + xeno_owner.aphro_ammo
 		if(xeno_owner.ammo && gaseous_spray_threshold && current_globs >= gaseous_spray_threshold)
 			var/datum/effect_system/smoke_spread/xeno/smoke
-			switch(xeno_owner.ammo.type)
-				if(/datum/ammo/xeno/boiler_gas/corrosive, /datum/ammo/xeno/boiler_gas/corrosive/lance)
-					smoke = new /datum/effect_system/smoke_spread/xeno/acid()
-				if(/datum/ammo/xeno/boiler_gas, /datum/ammo/xeno/boiler_gas/lance)
-					smoke = new /datum/effect_system/smoke_spread/xeno/neuro/light()
+			if(istype(xeno_owner.ammo, /datum/ammo/xeno/boiler_gas/corrosive))
+				smoke = new /datum/effect_system/smoke_spread/xeno/acid()
+			else if(istype(xeno_owner.ammo, /datum/ammo/xeno/boiler_gas/aphro))
+				smoke = new /datum/effect_system/smoke_spread/xeno/aphrotoxin/light()
+			else
+				smoke = new /datum/effect_system/smoke_spread/xeno/neuro/light()
 			if(smoke)
 				smoke.set_up(0, TF)
 				smoke.start()
@@ -120,6 +123,7 @@
 	action_icon_state = "scatter_spit"
 	action_icon = 'icons/Xeno/actions/spitter.dmi'
 	desc = "Spits a spread of acid projectiles that splatter on the ground."
+
 	ability_cost = 280
 	cooldown_duration = 5 SECONDS
 	keybinding_signals = list(
@@ -156,6 +160,20 @@
 	owner.playsound_local(owner, 'sound/voice/alien/drool1.ogg', 25, 0, 1)
 	return ..()
 
+/datum/action/ability/activable/xeno/scatter_spit/ai_should_start_consider()
+	return TRUE
+
+/datum/action/ability/activable/xeno/scatter_spit/ai_should_use(atom/target)
+	if(!iscarbon(target))
+		return FALSE
+	if(get_dist(target, owner) > 6)
+		return FALSE
+	if(!line_of_sight(owner, target))
+		return FALSE
+	if(owner.issamexenohive(target))
+		return FALSE
+	return TRUE
+
 // ***************************************
 // *********** Acid Grenade
 // ***************************************
@@ -180,6 +198,14 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 	RESIN_GRENADE = image('icons/xeno/effects.dmi', icon_state = "sticky"),
 	GAS_GRENADE = image('icons/effects/effects.dmi', icon_state = "smoke"),
 	HEAL_GRENADE = image('icons/effects/effects.dmi', icon_state = "mech_toxin"),
+))
+
+GLOBAL_LIST_INIT(globadier_grenade_types_list, list(
+	ACID_GRENADE,
+	FIRE_GRENADE,
+	RESIN_GRENADE,
+	GAS_GRENADE,
+	HEAL_GRENADE,
 ))
 
 /datum/action/ability/activable/xeno/toss_grenade
@@ -248,7 +274,7 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 		if(!health_loss_percentage_per_grenade || xeno_owner.selected_grenade == /obj/item/explosive/grenade/globadier/heal)
 			owner.balloon_alert(owner, "No grenades!")
 			return fail_activate()
-		var/health_to_lose = xeno_owner.xeno_caste.max_health * health_loss_percentage_per_grenade;
+		var/health_to_lose = xeno_owner.maxHealth * health_loss_percentage_per_grenade;
 		if(xeno_owner.health_threshold_crit > xeno_owner.health - health_to_lose) // Hugbox to stop them from suiciding into critical.
 			owner.balloon_alert(owner, "Not enough health!")
 			return fail_activate()
@@ -304,6 +330,21 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 	xeno_owner.selected_grenade = grenade_choice
 	to_chat(xeno_owner, span_info("Grenade Effects: " + grenade_choice.select_message))
 	to_chat(xeno_owner, span_info("Mine Effects: " + grenade_choice.mine_message))
+
+/datum/action/ability/activable/xeno/toss_grenade/ai_should_start_consider()
+	return TRUE
+
+/datum/action/ability/activable/xeno/toss_grenade/ai_should_use(atom/target)
+	if(!iscarbon(target))
+		return FALSE
+	if(get_dist(target, owner) > 6)
+		return FALSE
+	if(!line_of_sight(owner, target))
+		return FALSE
+	if(owner.issamexenohive(target))
+		return FALSE
+	xeno_owner.selected_grenade = pick(GLOB.globadier_grenade_types_list)
+	return TRUE
 
 // ***************************************
 // *********** Acid Grenade
@@ -495,6 +536,8 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 
 /datum/action/ability/xeno_action/acid_mine/can_use_action(silent, override_flags, selecting)
 	. = ..()
+	if(!.)
+		return FALSE
 	var/turf/T = get_turf(owner)
 	if(!T || !T.is_weedable() || T.density)
 		if(!silent)
@@ -572,6 +615,13 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 	visual_references[timervref] = time
 	button.add_overlay(visual_references[timervref])
 
+/datum/action/ability/activable/xeno/acid_mine/ai_should_start_consider()
+	return TRUE
+
+/datum/action/ability/activable/xeno/acid_mine/ai_should_use(atom/target)
+	xeno_owner.selected_grenade = pick(GLOB.globadier_grenade_types_list)
+	return TRUE
+
 // ***************************************
 // *********** Gas Mine
 // ***************************************
@@ -640,3 +690,18 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 	add_cooldown()
 	GLOB.round_statistics.globadier_XADAR_fired++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "globadier_XADAR_fired")
+
+/datum/action/ability/activable/xeno/acid_rocket/ai_should_start_consider()
+	return TRUE
+
+/datum/action/ability/activable/xeno/acid_rocket/ai_should_use(atom/target)
+	if(!iscarbon(target))
+		return FALSE
+	if(get_dist(target, owner) > 6)
+		return FALSE
+	if(!line_of_sight(owner, target))
+		return FALSE
+	if(owner.issamexenohive(target))
+		return FALSE
+	return TRUE
+

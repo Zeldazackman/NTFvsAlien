@@ -97,6 +97,15 @@
 /datum/greyscale_config/armor_mk1/skirmisher
 	icon_file = 'icons/mob/modular/mark_one/skirmisher.dmi'
 
+/datum/greyscale_config/armor_mk1/kabuto
+	icon_file = 'icons/mob/modular/mark_one/kabuto.dmi'
+
+/datum/greyscale_config/armor_mk1/hotaru
+	icon_file = 'icons/mob/modular/mark_one/hotaru.dmi'
+
+/datum/greyscale_config/armor_mk1/dashe
+	icon_file = 'icons/mob/modular/mark_one/dashe.dmi'
+
 /datum/greyscale_config/armor_mk1/mjolnir
 	icon_file = 'icons/mob/modular/mark_one/mjolnir.dmi'
 
@@ -125,11 +134,19 @@
 
 /datum/greyscale_config/vsd_hardsuit/alt
 	prefix = "superheavy_alt_"
+	json_config = 'ntf_modular/code/datums/greyscale/json_configs/vsd_hardsuit_alt.json'
 
 /datum/greyscale_config/vsd_hardsuit/alt_two
 	prefix = "superheavy_alt_two_"
+	json_config = 'ntf_modular/code/datums/greyscale/json_configs/vsd_hardsuit_alt.json'
 
 /datum/greyscale_config/vsd_hardsuit/exoskeleton
+
+/datum/greyscale_config/vsd_hardsuit/exoskeleton/nt
+
+/datum/greyscale_config/vsd_hardsuit/bikini
+	prefix = "superheavy_bikini_"
+	json_config = 'ntf_modular/code/datums/greyscale/json_configs/vsd_hardsuit_bikini.json'
 
 //Mark 2
 
@@ -166,6 +183,9 @@
 
 /datum/greyscale_config/armor_mk2/trooper
 	icon_file = 'icons/mob/modular/mark_two/trooper.dmi'
+
+/datum/greyscale_config/armor_mk2/hotaru
+	icon_file = 'icons/mob/modular/mark_two/hotaru.dmi'
 
 /datum/greyscale_config/armor_mk2/mjolnir_open
 	icon_file = 'icons/mob/modular/mark_two/mjolnir_open.dmi'
@@ -210,6 +230,11 @@
 
 /datum/greyscale_config/style_hat/badge
 	json_config = 'code/datums/greyscale/json_configs/stylehats_greyscale.json'
+
+/datum/greyscale_config/ushanka/worn_teshari
+	name = "Ushanka (Teshari Worn)"
+	icon_file = 'icons/mob/clothing/head/costume.dmi'
+	json_config = 'code/datums/greyscale/json_configs/ushanka.json'
 
 /datum/greyscale_config/duster
 	icon_file = 'icons/mob/modular/style_mob.dmi'
@@ -259,6 +284,10 @@
 /datum/greyscale_config/protein
 	json_config = 'code/datums/greyscale/json_configs/protein.json'
 	icon_file = 'icons/obj/items/food/mre.dmi'
+
+/datum/greyscale_config/nutrient_jelly
+	json_config = 'code/datums/greyscale/json_configs/nutrient_jelly.json'
+	icon_file = 'icons/obj/items/food/xeno.dmi'
 
 ///AMMO - for both bullets and magazines
 /datum/greyscale_config/ammo

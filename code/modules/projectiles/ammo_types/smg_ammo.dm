@@ -10,18 +10,25 @@
 	hud_state_empty = "smg_empty"
 	ammo_behavior_flags = AMMO_BALLISTIC
 	accuracy_variation = 7
+	shell_speed = 3.5
 	damage = 20
 	accurate_range = 4
 	damage_falloff = 1
 	sundering = 0.5
 	penetration = 5
 
+/datum/ammo/bullet/smg/rubber
+	name = "rubber submachinegun bullet"
+	damage = 22
+	damage_type = STAMINA
+	shrapnel_chance = 0
+
 /datum/ammo/bullet/smg/ap
 	name = "armor-piercing submachinegun bullet"
 	hud_state = "smg_ap"
-	damage = 15
-	penetration = 30
-	sundering = 3
+	damage = 20
+	penetration = 10
+	sundering = 1.5
 
 /datum/ammo/bullet/smg/ap/hv
 	name = "high velocity armor-piercing submachinegun bullet"
@@ -45,6 +52,7 @@
 	armor_type = BOMB
 	sundering = 1
 	damage_falloff = 2
+	accurate_range = 5
 	shrapnel_chance = 0
 	///shatter effection duration when hitting mobs
 	var/shatter_duration = 3 SECONDS
@@ -57,26 +65,42 @@
 	living_victim.apply_status_effect(STATUS_EFFECT_SHATTER, shatter_duration)
 
 
-
+/*
 /datum/ammo/bullet/smg/incendiary
 	name = "incendiary submachinegun bullet"
 	hud_state = "smg_fire"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_INCENDIARY
 	damage = 18
 	penetration = 0
+*/
+//smg incend is too much, ntf edit
+/datum/ammo/bullet/smg/incendiary
+	name = "incendiary submachinegun bullet"
+	hud_state = "smg_fire"
+	ammo_behavior_flags = AMMO_BALLISTIC
+	damage = 18
+	penetration = 0
+	//incendiary was too op for the rof so we make it less likely by using a weaker deflag
+	///Deflagrate AOE damage
+	var/deflag_damage = 2
+	///Multiplier for deflagrate chance
+	var/deflagrate_mult = 0.3
+
+/datum/ammo/bullet/smg/incendiary/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
+	deflagrate(target_mob, proj, deflag_damage, deflagrate_mult)
+
 
 /datum/ammo/bullet/smg/rad
 	name = "radioactive submachinegun bullet"
 	hud_state = "smg_rad"
 	damage = 15
-	penetration = 15
 	sundering = 1
 
 /datum/ammo/bullet/smg/rad/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
 	if(!isliving(target_mob))
 		return
 	var/mob/living/living_victim = target_mob
-	if(!prob(living_victim.modify_by_armor(proj.damage, BIO, penetration, proj.def_zone)))
+	if(!prob(living_victim.modify_by_armor(proj.damage, BIO, 15, proj.def_zone)))
 		return
 	living_victim.apply_radiation(2, 2)
 
@@ -85,6 +109,12 @@
 	damage = 27.5
 	penetration = 10
 	sundering = 1
+
+/datum/ammo/bullet/smg/heavy/rubber
+	name = "heavy rubber submachinegun bullet"
+	damage = 31
+	damage_type = STAMINA
+	shrapnel_chance = 0
 
 /datum/ammo/bullet/smg/val
 	name = "heavy submachinegun bullet"
