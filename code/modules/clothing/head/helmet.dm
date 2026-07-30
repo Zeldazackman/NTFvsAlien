@@ -42,6 +42,8 @@
 	desc = "You're not quite sure how you manage to take it on and off, but it implants nicely in your head."
 	icon_state = "dermal"
 	worn_icon_state = "dermal"
+	inv_hide_flags = null
+	inventory_flags = BLOCKSHARPOBJ
 	siemens_coefficient = 0.6
 	soft_armor = MARINE_ARMOR_HEAVY
 
