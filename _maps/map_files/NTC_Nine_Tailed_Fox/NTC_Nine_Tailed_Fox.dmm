@@ -1486,6 +1486,10 @@
 /obj/effect/ai_node,
 /turf/open/floor/wood,
 /area/mainship/groundhq/ntf/shipboard/brig)
+"bnE" = (
+/obj/docking_port/stationary/marine_dropship/crash_target,
+/turf/open/space/basic,
+/area/space)
 "bnG" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
@@ -1999,6 +2003,9 @@
 /obj/machinery/door/poddoor/lift/preopen{
 	elevator_mode = 1;
 	transport_linked_id = "elevator"
+	},
+/obj/structure/barricade/folding{
+	dir = 8
 	},
 /turf/open/floor/mainship/stripesquare,
 /area/mainship/hallways/port_umbilical{
@@ -3277,6 +3284,13 @@
 /area/mainship/hallways/aft_hallway{
 	name = "Ship Floor 3 Hallways"
 	})
+"cKw" = (
+/obj/structure/cable,
+/obj/structure/barricade/folding,
+/turf/open/floor/plating/plating_catwalk,
+/area/mainship/hallways/port_umbilical{
+	name = "Ship Floor 2 Hallways"
+	})
 "cKJ" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 1
@@ -3617,6 +3631,10 @@
 	outside = 0;
 	name = "CEO Office"
 	})
+"cWk" = (
+/obj/docking_port/stationary/marine_dropship/crash_target,
+/turf/open/floor/wood,
+/area/mainship/squads/specialist)
 "cWB" = (
 /obj/structure/prop/mainship/ship_memorial,
 /obj/structure/cable,
@@ -4281,6 +4299,10 @@
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
 	})
+"dDC" = (
+/obj/docking_port/stationary/marine_dropship/crash_target,
+/turf/closed/wall/mainship,
+/area/mainship/groundhq/ntf/hallways/gardens)
 "dDK" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
@@ -4361,6 +4383,7 @@
 	},
 /obj/structure/cable,
 /obj/item/radio/intercom/general,
+/obj/docking_port/stationary/marine_dropship/crash_target,
 /turf/open/floor/mainship/sterile/side{
 	dir = 1
 	},
@@ -4502,11 +4525,12 @@
 /area/mainship/hull/upper_hull)
 "dNM" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/docking_port/stationary/marine_dropship/crash_target,
-/turf/open/floor/mainship/sterile/dark,
-/area/mainship/medical/upper_medical{
-	name = "Shipside Medbay"
+/obj/structure/barricade/folding{
+	dir = 1
+	},
+/turf/open/floor/plating/plating_catwalk,
+/area/mainship/hallways/port_umbilical{
+	name = "Ship Floor 2 Hallways"
 	})
 "dOD" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
@@ -5190,6 +5214,7 @@
 	},
 /obj/effect/landmark/start/job/requisitionsofficer,
 /obj/structure/disposalpipe/segment,
+/obj/docking_port/stationary/marine_dropship/crash_target,
 /turf/open/floor/mainship/mono,
 /area/mainship/squads/req)
 "esK" = (
@@ -5535,9 +5560,6 @@
 	name = "Research"
 	})
 "eMH" = (
-/obj/structure/barricade/solid{
-	dir = 4
-	},
 /obj/structure/sign/directions/security{
 	pixel_y = 20
 	},
@@ -5655,6 +5677,23 @@
 /obj/machinery/power/apc/mainship,
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/workerprep)
+"eQw" = (
+/obj/structure/barricade/solid/plasteel{
+	dir = 1
+	},
+/obj/structure/barricade/solid{
+	dir = 8
+	},
+/obj/structure/barricade/solid{
+	dir = 4
+	},
+/obj/structure/barricade/solid/plasteel,
+/obj/item/weapon/gun/sentry/big_sentry/premade/radial,
+/obj/docking_port/stationary/marine_dropship/crash_target,
+/turf/open/floor/mainship/mono,
+/area/mainship/hallways/bow_hallway{
+	name = "Ship Floor 1 Hallways"
+	})
 "eQx" = (
 /turf/closed/wall/mainship,
 /area/mainship/command/self_destruct)
@@ -5998,6 +6037,7 @@
 	})
 "fcj" = (
 /obj/effect/ai_node,
+/obj/docking_port/stationary/marine_dropship/crash_target,
 /turf/open/floor/plating,
 /area/mainship/hallways/hangar)
 "fcB" = (
@@ -7012,6 +7052,16 @@
 /obj/machinery/vending/boozeomat,
 /turf/open/floor/wood/darker,
 /area/mainship/medical/lower_medical)
+"fQh" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/structure/cable,
+/obj/structure/barricade/folding{
+	dir = 4
+	},
+/turf/open/floor/plating/plating_catwalk,
+/area/mainship/hallways/port_umbilical{
+	name = "Ship Floor 2 Hallways"
+	})
 "fQo" = (
 /obj/machinery/door/firedoor/mainship{
 	dir = 2
@@ -7774,6 +7824,17 @@
 	},
 /turf/open/floor/mainship/cargo,
 /area/mainship/hallways/hangar)
+"guh" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment,
+/obj/structure/barricade/folding{
+	dir = 8
+	},
+/turf/open/floor/plating/plating_catwalk,
+/area/mainship/hallways/port_umbilical{
+	name = "Ship Floor 2 Hallways"
+	})
 "gul" = (
 /obj/machinery/door/airlock/mainship/generic{
 	name = "\improper Sauna"
@@ -10467,6 +10528,13 @@
 	dir = 9
 	},
 /area/mainship/command/cic)
+"iCT" = (
+/obj/structure/cable,
+/obj/structure/barricade/solid,
+/turf/open/floor/plating/plating_catwalk,
+/area/mainship/hallways/port_umbilical{
+	name = "Ship Floor 2 Hallways"
+	})
 "iDa" = (
 /obj/structure/bed/chair/comfy/black{
 	dir = 1
@@ -11574,6 +11642,13 @@
 	dir = 8
 	},
 /area/mainship/groundhq/ntf/shipboard/brig_cells)
+"jwp" = (
+/obj/structure/bed/chair/sofa/corner{
+	dir = 8
+	},
+/obj/docking_port/stationary/marine_dropship/crash_target,
+/turf/open/floor/wood,
+/area/mainship/groundhq/clf/living/cafeteria)
 "jxm" = (
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/surgery_hallway{
@@ -12842,6 +12917,7 @@
 /obj/structure/bed/chair/comfy{
 	dir = 8
 	},
+/obj/docking_port/stationary/marine_dropship/crash_target,
 /turf/open/floor/wood,
 /area/mainship/ntf/fcroom)
 "kvt" = (
@@ -14739,6 +14815,13 @@
 	},
 /turf/open/shuttle/escapepod/five,
 /area/mainship/command/self_destruct)
+"lKK" = (
+/obj/structure/cable,
+/obj/docking_port/stationary/marine_dropship/crash_target,
+/turf/open/floor/mainship/sterile/dark,
+/area/mainship/medical/upper_medical{
+	name = "Shipside Medbay"
+	})
 "lKP" = (
 /turf/open/floor/mainship/sterile/side,
 /area/mainship/medical/upper_medical{
@@ -17117,6 +17200,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
+/obj/structure/barricade/folding{
+	dir = 8
+	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
@@ -20445,6 +20531,9 @@
 /obj/machinery/door/firedoor/mainship,
 /obj/machinery/door/poddoor/mainship/droppod,
 /obj/structure/cable,
+/obj/structure/barricade/folding{
+	dir = 4
+	},
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/hangar/droppod)
 "qzi" = (
@@ -21323,6 +21412,16 @@
 	dir = 10
 	},
 /area/mainship/squads/general)
+"rln" = (
+/obj/machinery/door/poddoor/shutters/mainship/open/checkpoint{
+	dir = 2;
+	id = "Lowershiplockdown"
+	},
+/obj/docking_port/stationary/marine_dropship/crash_target,
+/turf/open/floor/mainship/stripesquare,
+/area/mainship/hallways/bow_hallway{
+	name = "Ship Floor 1 Hallways"
+	})
 "rls" = (
 /obj/machinery/light{
 	dir = 4
@@ -22986,6 +23085,16 @@
 /obj/effect/ai_node,
 /turf/open/floor/stairs/rampbottom,
 /area/mainship/hull/upper_hull)
+"sCj" = (
+/obj/machinery/door/airlock/mainship/generic{
+	dir = 1;
+	name = "Bathroom"
+	},
+/obj/structure/barricade/folding{
+	dir = 4
+	},
+/turf/open/floor/mainship/floor,
+/area/campaign/jungle_outpost/outpost/living/bathroom)
 "sCz" = (
 /obj/machinery/door/airlock/multi_tile/mainship/medidoor/medbay/free_access{
 	dir = 2
@@ -25041,6 +25150,9 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
 	dir = 4
 	},
+/obj/structure/barricade/folding{
+	dir = 4
+	},
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
@@ -26761,6 +26873,7 @@
 	dir = 4
 	},
 /obj/effect/ai_node,
+/obj/docking_port/stationary/marine_dropship/crash_target,
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/upper_medical{
 	name = "Shipside Medbay"
@@ -27180,6 +27293,7 @@
 "waQ" = (
 /obj/structure/table/reinforced,
 /obj/machinery/reagentgrinder,
+/obj/docking_port/stationary/marine_dropship/crash_target,
 /turf/open/floor/prison/kitchen,
 /area/mainship/groundhq/ntf/shipboard/brig_cells)
 "wbL" = (
@@ -27886,6 +28000,15 @@
 /obj/structure/cable,
 /turf/open/floor/mainship/floor,
 /area/mainship/groundhq/ntf/shipboard/brig)
+"wEo" = (
+/obj/structure/cable,
+/obj/structure/barricade/solid{
+	dir = 1
+	},
+/turf/open/floor/plating/plating_catwalk,
+/area/mainship/hallways/port_umbilical{
+	name = "Ship Floor 2 Hallways"
+	})
 "wFf" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -31394,7 +31517,7 @@ nwr
 nwr
 nwr
 nwr
-nwr
+bnE
 nwr
 nwr
 nwr
@@ -34481,14 +34604,14 @@ jrS
 kyS
 kyS
 orA
-wZr
+eQw
 orA
 kyS
 kyS
 kyS
 kyS
 kyS
-jrS
+rln
 kyS
 kjD
 kyS
@@ -34510,7 +34633,7 @@ izo
 xPo
 kkx
 izo
-woS
+cwf
 izo
 izo
 woS
@@ -35185,7 +35308,7 @@ hyG
 gkJ
 bfy
 rUZ
-sfV
+sCj
 eXp
 gkJ
 kyS
@@ -36966,13 +37089,13 @@ ocM
 vYS
 exy
 axx
-dNM
+axx
 oGW
 kMH
 aNT
 aNT
 aNT
-aNT
+lKK
 aNT
 aNT
 aNT
@@ -36985,7 +37108,7 @@ juD
 mKo
 wnq
 jkr
-eKG
+cWk
 tJc
 mKo
 kyS
@@ -47545,7 +47668,7 @@ neU
 neU
 ldu
 neU
-neU
+fQh
 wQm
 wQm
 wQm
@@ -47664,11 +47787,11 @@ cup
 cup
 bJK
 iGu
-rtT
+cKw
 qte
 hXu
 neI
-rtT
+dNM
 iGu
 bJK
 cup
@@ -47783,11 +47906,11 @@ jTF
 jTF
 cup
 bUJ
-rtT
+iCT
 qgO
 qgO
 hXu
-rtT
+wEo
 hDJ
 cup
 jTF
@@ -47902,11 +48025,11 @@ cup
 cup
 bJK
 sEx
-rtT
+cKw
 puE
 hXu
 eMH
-rtT
+dNM
 sEx
 bJK
 cup
@@ -48025,7 +48148,7 @@ nPi
 hfp
 aUL
 aUL
-gKo
+guh
 kMd
 gHi
 gHi
@@ -58612,7 +58735,7 @@ kNe
 kJf
 oAW
 nss
-xSQ
+jwp
 cFu
 rLn
 dQB
@@ -61763,7 +61886,7 @@ ryc
 pPn
 pPn
 jNJ
-pPn
+dDC
 pPn
 qPC
 pPn

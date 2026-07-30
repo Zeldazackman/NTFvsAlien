@@ -131,6 +131,13 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	home_id = "supply_KZ_home"
 	railing_gear_name = "supply_KZ"
 
+/obj/docking_port/mobile/supply/som
+	name = "SOM supply shuttle"
+	id = SHUTTLE_SOM_SUPPLY
+	faction = FACTION_SOM
+	home_id = "supply_SOM_home"
+	railing_gear_name = "supply_SOM"
+
 /obj/docking_port/mobile/supply/Destroy(force)
 	for(var/i in railings)
 		var/obj/machinery/door/poddoor/railing/railing = i

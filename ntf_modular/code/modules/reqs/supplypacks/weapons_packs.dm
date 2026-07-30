@@ -105,7 +105,7 @@
 	faction_lock = list(FACTION_SOM)
 	cost = 30
 
-/datum/supply_packs/weapons/rpg_tangle
+/datum/supply_packs/weapons/specdemo/rpg_tangle
 	name = "RL-152 SADAR tanglefoot rocket"
 	contains = list(/obj/item/ammo_magazine/rocket/sadar/plasmaloss)
 	cost = 125

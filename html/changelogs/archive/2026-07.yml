@@ -208,6 +208,27 @@
 2026-07-21:
   Lumipharon:
   - code_imp: fixed the install_byond.sh
+  mudzbe:
+  - rscadd: 'Added Encounter gamemode: 3 Teams, TGMC, SOM, xenos fight for control
+      over sensor towers, control over towers gives humans req points, for xenos both
+      kinds of psy points'
+  - rscadd: Added req area to combat patrol outpost, accessible on Encounter
+  - rscadd: Hive abilities, purchasable blessings that grant every caste access to
+      abilities, they can use if they have enough plasma, accessible on Encounter
+  - rscadd: Added Fireball, punch, resting weed, wall, fireproof jelly hive abilities
+2026-07-23:
+  Lumipharon:
+  - bugfix: fixed NPC's not holding still when healing in some cases
+  - qol: Added some missing feedback for certain abilities that can be blocked by
+      shields
+  - balance: Warrior lunge can be blocked by shields similarly to runners or hunters.
+  - bugfix: fixed shield code working the wrong way for certain interactions
+  - code_imp: Shield code works sensibly for touch interactions
+  - bugfix: fixed an infinite loop bug with gnome teleportation
+  - bugfix: NPC's will properly take ammo from ammo boxes
+  mudzbe:
+  - rscdel: Remove flaregun from civil war uniform
+  - rscadd: Added big MG60 belt box to zcrash vendor
 2026-07-24:
   CaputCapital:
   - rscadd: Neutral AI that uses Healdirt's modified monkey with the assistance of
@@ -273,3 +294,12 @@
 2026-07-29:
   CaputCapital:
   - balance: edit V8B LZs to make it more defensible, as with one LZ on T3E
+2026-07-30:
+  Meghan-Rossi:
+  - rscadd: Added teleporter interior module as an alternative to the Sambar MRAP's
+      tesla module.  Taking it adds a special teleporter that can be used from within
+      the vehicle, but removes all vendors, periscopes and seats (except the driver
+      seat).  It also slows the vehicle down to the same speed as an Athena APC.
+  - rscdel: Removed deathrattles from survivor (colonist) jobs
+  - balance: SoM and NTC now have unlimited squash-head magazines for the vortex and
+      v-21, respectively
