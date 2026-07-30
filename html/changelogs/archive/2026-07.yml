@@ -273,3 +273,12 @@
 2026-07-29:
   CaputCapital:
   - balance: edit V8B LZs to make it more defensible, as with one LZ on T3E
+2026-07-30:
+  Meghan-Rossi:
+  - rscadd: Added teleporter interior module as an alternative to the Sambar MRAP's
+      tesla module.  Taking it adds a special teleporter that can be used from within
+      the vehicle, but removes all vendors, periscopes and seats (except the driver
+      seat).  It also slows the vehicle down to the same speed as an Athena APC.
+  - rscdel: Removed deathrattles from survivor (colonist) jobs
+  - balance: SoM and NTC now have unlimited squash-head magazines for the vortex and
+      v-21, respectively
