@@ -41,7 +41,8 @@
 /obj/vehicle/sealed/armored/multitile/mrap/logi/treads
 	name = "\improper TransCO 'Roughauler' Treaded Military Truck"
 	desc = "A treaded, armored logistic transport vehicle, designed to transport troops and supplies wherever necessary, relatively quickly and hopefully in one piece thanks to it's ballistic plating. It's threads make it possible to turn on spot, be immune to flat tires, resist side-shots and traverse rough terrain, probably.  It comes after-market equipped with tesla coils due to the xenomorph threats."
-	icon = 'icons/obj/vehicles/large_truck.dmi'
+	icon = 'ntf_modular/icons/obj/vehicles/large_truck.dmi'
+	damage_icon_path = 'ntf_modular/icons/obj/vehicles/large_truck.dmi'
 	icon_state = "truck_enclosed_treads"
 	hitbox = /obj/hitbox/medium
 	max_integrity = 800
