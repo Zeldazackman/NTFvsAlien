@@ -9568,9 +9568,13 @@
 	},
 /area/mainship/groundhq/ntf/shipboard/brig)
 "hRY" = (
-/obj/machinery/vending/nanomed,
-/turf/closed/wall/mainship,
-/area/mainship/hallways/hangar/droppod)
+/obj/machinery/door_control/mainship/droppod{
+	dir = 4
+	},
+/turf/open/floor/mainship/mono,
+/area/mainship/hallways/port_umbilical{
+	name = "Ship Floor 2 Hallways"
+	})
 "hSa" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment/corner{
@@ -15501,6 +15505,14 @@
 	dir = 1
 	},
 /area/mainship/groundhq/ntf/shipboard/brig)
+"mnU" = (
+/obj/machinery/vending/nanomed{
+	dir = 4
+	},
+/turf/open/floor/mainship/mono,
+/area/mainship/hallways/port_umbilical{
+	name = "Ship Floor 2 Hallways"
+	})
 "moF" = (
 /turf/open/floor/mainship/sterile/plain,
 /area/mainship/living/tankerbunks)
@@ -47431,7 +47443,7 @@ dUR
 dUR
 iAH
 iAH
-hRY
+iAH
 iAH
 dUR
 qyN
@@ -47549,8 +47561,8 @@ hXu
 hXu
 hXu
 baz
-hXu
-hXu
+mnU
+hRY
 baz
 hXu
 bZI
