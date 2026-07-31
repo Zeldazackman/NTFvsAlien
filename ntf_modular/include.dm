@@ -2,6 +2,7 @@
 #include "code\_DEFINES\sexcon_defines.dm"
 #include "code\_DEFINES\skills.dm"
 #include "code\_HELPERS\announce.dm"
+#include "code\_HELPERS\matrices.dm"
 #include "code\_onclick\hud\fullscreen.dm"
 #include "code\controllers\subsystem\debug.dm"
 #include "code\controllers\subsystem\ssdaylight.dm"
