@@ -1096,6 +1096,7 @@
 /obj/structure/barricade/solid{
 	dir = 8
 	},
+/obj/effect/landmark/autowire,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
@@ -2249,6 +2250,7 @@
 	dir = 1
 	},
 /obj/structure/barricade/folding,
+/obj/effect/landmark/autowire,
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
@@ -3287,6 +3289,7 @@
 "cKw" = (
 /obj/structure/cable,
 /obj/structure/barricade/folding,
+/obj/effect/landmark/autowire,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
@@ -4528,6 +4531,7 @@
 /obj/structure/barricade/folding{
 	dir = 1
 	},
+/obj/effect/landmark/autowire,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
@@ -7058,6 +7062,7 @@
 /obj/structure/barricade/folding{
 	dir = 4
 	},
+/obj/effect/landmark/autowire,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
@@ -7280,6 +7285,14 @@
 /turf/open/floor/mainship/mono,
 /area/outpost/cargo{
 	outside = 1
+	})
+"fXW" = (
+/obj/machinery/vending/nanomed{
+	dir = 4
+	},
+/turf/open/floor/mainship/mono,
+/area/mainship/hallways/port_umbilical{
+	name = "Ship Floor 2 Hallways"
 	})
 "fYc" = (
 /obj/effect/ai_node,
@@ -7831,6 +7844,7 @@
 /obj/structure/barricade/folding{
 	dir = 8
 	},
+/obj/effect/landmark/autowire,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
@@ -8770,6 +8784,7 @@
 /obj/structure/barricade/solid{
 	dir = 8
 	},
+/obj/effect/landmark/autowire,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
@@ -9245,6 +9260,7 @@
 /obj/structure/barricade/folding{
 	dir = 1
 	},
+/obj/effect/landmark/autowire,
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
@@ -10535,6 +10551,7 @@
 "iCT" = (
 /obj/structure/cable,
 /obj/structure/barricade/solid,
+/obj/effect/landmark/autowire,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
@@ -10633,6 +10650,7 @@
 	dir = 1
 	},
 /obj/structure/barricade/solid/plasteel,
+/obj/effect/landmark/autowire,
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
@@ -14960,6 +14978,12 @@
 /obj/item/tool/soap,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/dorm3)
+"lPu" = (
+/obj/structure/largecrate/supply/vehicle/truck_treaded,
+/turf/open/floor/mainship/cargo,
+/area/outpost/cargo{
+	outside = 1
+	})
 "lPC" = (
 /obj/machinery/computer/cloning_console/vats,
 /turf/open/floor/mainship/sterile/corner,
@@ -15505,14 +15529,6 @@
 	dir = 1
 	},
 /area/mainship/groundhq/ntf/shipboard/brig)
-"mnU" = (
-/obj/machinery/vending/nanomed{
-	dir = 4
-	},
-/turf/open/floor/mainship/mono,
-/area/mainship/hallways/port_umbilical{
-	name = "Ship Floor 2 Hallways"
-	})
 "moF" = (
 /turf/open/floor/mainship/sterile/plain,
 /area/mainship/living/tankerbunks)
@@ -17215,6 +17231,7 @@
 /obj/structure/barricade/folding{
 	dir = 8
 	},
+/obj/effect/landmark/autowire,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
@@ -23166,6 +23183,7 @@
 	dir = 1
 	},
 /obj/structure/barricade/solid/plasteel,
+/obj/effect/landmark/autowire,
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
@@ -25165,6 +25183,7 @@
 /obj/structure/barricade/folding{
 	dir = 4
 	},
+/obj/effect/landmark/autowire,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
@@ -28017,6 +28036,7 @@
 /obj/structure/barricade/solid{
 	dir = 1
 	},
+/obj/effect/landmark/autowire,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
@@ -28360,6 +28380,7 @@
 /obj/structure/barricade/solid{
 	dir = 4
 	},
+/obj/effect/landmark/autowire,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hallways/port_umbilical{
 	name = "Ship Floor 2 Hallways"
@@ -35600,7 +35621,7 @@ thM
 qsl
 izo
 izo
-izo
+lPu
 izo
 izo
 izo
@@ -47561,7 +47582,7 @@ hXu
 hXu
 hXu
 baz
-mnU
+fXW
 hRY
 baz
 hXu
