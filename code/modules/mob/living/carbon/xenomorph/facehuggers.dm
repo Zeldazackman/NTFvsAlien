@@ -77,11 +77,11 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 	var/target_hole = HOLE_MOUTH
 	var/face_tint = TINT_BLIND
 	var/can_self_remove = TRUE
+	var/filtercolor
 
-/obj/item/clothing/mask/facehugger/Initialize(mapload)
-	. = ..()
-	if(face_tint)
-		AddComponent(/datum/component/clothing_tint, face_tint, TRUE, SLOT_WEAR_MASK)
+/obj/item/clothing/mask/facehugger/proc/set_filtercolor(color)
+	filtercolor = color
+	add_filter("base_color", -10, color_matrix_filter(filtercolor))
 
 /obj/item/clothing/mask/facehugger/Initialize(mapload, input_hivenumber, input_source, new_fire_immunity)
 	. = ..()
@@ -110,6 +110,9 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 		COMSIG_ATOM_EXITED = PROC_REF(on_exited),
 	)
 	AddElement(/datum/element/connect_loc, connections)
+	if(face_tint)
+		AddComponent(/datum/component/clothing_tint, face_tint, TRUE, SLOT_WEAR_MASK)
+	set_filtercolor(filtercolor)
 
 /obj/item/clothing/mask/facehugger/Moved(atom/old_loc, movement_dir, forced, list/old_locs)
 	. = ..()
@@ -885,11 +888,6 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 	sterile = TRUE
 	combat_hugger = TRUE
 	equip_slot_flags = NONE
-	var/filtercolor
-
-/obj/item/clothing/mask/facehugger/combat/Initialize(mapload, ...)
-	. = ..()
-	add_filter("base_color", -10, color_matrix_filter(filtercolor))
 
 /obj/item/clothing/mask/facehugger/combat/chem_injector
 	desc = "This strange creature has a single prominent sharp proboscis."
