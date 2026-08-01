@@ -1,9 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aai" = (
-/obj/machinery/conveyor{
-	id = "shipfloor2_garbage"
-	},
 /obj/machinery/door/window,
+/obj/machinery/conveyor/auto,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/hull/upper_hull)
 "aal" = (
@@ -3921,9 +3919,8 @@
 	},
 /area/mainship/squads/general)
 "djm" = (
-/obj/structure/target_stake/occupied,
-/turf/open/floor/mainship/black{
-	dir = 4
+/turf/open/floor/mainship/cargo/arrow{
+	dir = 1
 	},
 /area/mainship/shipboard/firing_range)
 "dju" = (
@@ -7882,8 +7879,10 @@
 	},
 /area/mainship/medical/lower_medical)
 "gvU" = (
-/obj/structure/target_stake/occupied/alien,
-/turf/open/floor/mainship,
+/obj/machinery/camera/autoname/mainship{
+	dir = 4
+	},
+/turf/open/floor/mainship/black/full,
 /area/mainship/shipboard/firing_range)
 "gvX" = (
 /turf/closed/wall/mainship,
@@ -11459,6 +11458,9 @@
 "jmu" = (
 /obj/structure/table/mainship/nometal,
 /obj/machinery/computer/supplydrop_console,
+/obj/machinery/door_control/old/req{
+	pixel_x = 14
+	},
 /turf/open/floor/mainship/green{
 	dir = 1
 	},
@@ -25212,11 +25214,6 @@
 /obj/machinery/door/airlock/mainship/generic/pilot/bunk,
 /turf/open/floor/mainship/floor,
 /area/mainship/living/pilotbunks)
-"uhP" = (
-/turf/open/floor/mainship/cargo/arrow{
-	dir = 1
-	},
-/area/mainship/shipboard/firing_range)
 "uhY" = (
 /turf/open/floor/mainship/orange{
 	dir = 4
@@ -26211,6 +26208,10 @@
 	dir = 8
 	},
 /area/mainship/groundhq/ntf/hallways/gardens)
+"uYU" = (
+/obj/structure/target_stake/occupied/alien,
+/turf/open/floor/mainship,
+/area/mainship/shipboard/firing_range)
 "uZn" = (
 /obj/machinery/suit_storage_unit/carbon_unit,
 /turf/open/floor/mainship/mono,
@@ -27337,10 +27338,10 @@
 	},
 /area/mainship/command/cic)
 "weq" = (
-/obj/machinery/camera/autoname/mainship{
+/obj/structure/target_stake/occupied,
+/turf/open/floor/mainship/black{
 	dir = 4
 	},
-/turf/open/floor/mainship/black/full,
 /area/mainship/shipboard/firing_range)
 "weL" = (
 /obj/structure/cable,
@@ -50558,7 +50559,7 @@ hPr
 hPr
 jAV
 pJE
-weq
+gvU
 sbX
 vDv
 flh
@@ -50677,7 +50678,7 @@ dDT
 dDT
 sNA
 wWW
-uhP
+djm
 sbX
 vtb
 flh
@@ -50791,12 +50792,12 @@ dDT
 dDT
 dDT
 dDT
-gvU
+uYU
 dDT
 dDT
 sNA
 wWW
-uhP
+djm
 sbX
 wWW
 flh
@@ -50907,7 +50908,7 @@ vve
 kHI
 bNX
 bNX
-djm
+weq
 bNX
 bNX
 bNX
@@ -50915,7 +50916,7 @@ bNX
 bNX
 bEM
 wWW
-uhP
+djm
 vre
 fTX
 flh
