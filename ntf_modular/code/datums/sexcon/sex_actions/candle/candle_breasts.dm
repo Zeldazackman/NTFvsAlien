@@ -13,8 +13,6 @@
 	if(user == target)
 		return FALSE
 
-	if(!target.sexcon.can_use_vagina())
-		return FALSE
 	if(!get_candle_in_either_hand(user))
 		return FALSE
 	var/obj/item/tool/candle/C = get_candle_in_either_hand(user)

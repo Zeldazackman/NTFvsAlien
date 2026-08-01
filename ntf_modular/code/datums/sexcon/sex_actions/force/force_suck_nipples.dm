@@ -6,14 +6,10 @@
 /datum/sex_action/force_suck_nipples/shows_on_menu(mob/living/carbon/user, mob/living/carbon/target)
 	if(user == target)
 		return FALSE
-	if(!user.sexcon.can_use_breasts())
-		return FALSE
 	return TRUE
 
 /datum/sex_action/force_suck_nipples/can_perform(mob/living/carbon/user, mob/living/carbon/target)
 	if(user == target)
-		return FALSE
-	if(!user.sexcon.can_use_breasts())
 		return FALSE
 	return TRUE
 

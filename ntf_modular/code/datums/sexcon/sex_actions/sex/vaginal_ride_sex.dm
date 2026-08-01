@@ -7,19 +7,10 @@
 /datum/sex_action/vaginal_ride_sex/shows_on_menu(mob/living/carbon/user, mob/living/carbon/target)
 	if(user == target)
 		return FALSE
-	if(!user.sexcon.can_use_vagina())
-		return FALSE
-	if(!target.sexcon.can_use_penis())
-		return FALSE
-
 	return TRUE
 
 /datum/sex_action/vaginal_ride_sex/can_perform(mob/living/carbon/user, mob/living/carbon/target)
 	if(user == target)
-		return FALSE
-	if(!user.sexcon.can_use_vagina())
-		return FALSE
-	if(!target.sexcon.can_use_penis())
 		return FALSE
 	return TRUE
 

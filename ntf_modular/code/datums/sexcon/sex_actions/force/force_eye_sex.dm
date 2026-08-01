@@ -1,22 +1,19 @@
-/datum/sex_action/eye_sex
+/datum/sex_action/force_eye_sex
 	name = "Force them to fuck eye"
 	stamina_cost = 2.0
 	menu_color = "red"
 
-/datum/sex_action/eye_sex/shows_on_menu(mob/living/carbon/user, mob/living/carbon/target)
+/datum/sex_action/force_eye_sex/shows_on_menu(mob/living/carbon/user, mob/living/carbon/target)
 	if(user == target)
 		return FALSE
 	return TRUE
 
-/datum/sex_action/eye_sex/can_perform(mob/living/carbon/user, mob/living/carbon/target)
+/datum/sex_action/force_eye_sex/can_perform(mob/living/carbon/user, mob/living/carbon/target)
 	if(user == target)
-		return FALSE
-
-	if(!target.sexcon.can_use_penis())
 		return FALSE
 	return TRUE
 
-/datum/sex_action/eye_sex/on_start(mob/living/carbon/user, mob/living/carbon/target)
+/datum/sex_action/force_eye_sex/on_start(mob/living/carbon/user, mob/living/carbon/target)
 	target.visible_message(span_warning("[target] slides [target.p_their()] cock into [user]'s eye!"))
 	var/flags = user.client.prefs.sex_pref_flags
 	if(ishuman(user))
@@ -35,7 +32,7 @@
 				to_chat(H, span_warning("Your eye hurts!"))
 	playsound(user, pick(list('ntf_modular/sound/misc/mat/insert (1).ogg','ntf_modular/sound/misc/mat/insert (2).ogg')), 20, TRUE, 7, ignore_walls = FALSE)
 
-/datum/sex_action/eye_sex/on_perform(mob/living/carbon/user, mob/living/carbon/target)
+/datum/sex_action/force_eye_sex/on_perform(mob/living/carbon/user, mob/living/carbon/target)
 	if(target.sexcon.do_message_signature("[type]"))
 		target.visible_message(target.sexcon.spanify_force("[target] [target.sexcon.get_generic_force_adjective()] fucks [user]'s eye."))
 	playsound(user, 'ntf_modular/sound/misc/mat/segso.ogg', 50, TRUE, 5, ignore_walls = FALSE)
@@ -93,11 +90,11 @@
 						user.adjustBrainLoss(0.2)
 	user.sexcon.handle_passive_ejaculation(target)
 
-/datum/sex_action/eye_sex/on_finish(mob/living/carbon/user, mob/living/carbon/target)
+/datum/sex_action/force_eye_sex/on_finish(mob/living/carbon/user, mob/living/carbon/target)
 	playsound(src, pick(list('ntf_modular/sound/misc/cork_pop.ogg','ntf_modular/sound/misc/cork_pop (2).ogg')), 75, TRUE, 7, ignore_walls = FALSE)
 	target.visible_message(span_warning("[target] pulls [target.p_their()] cock out of [user]'s eye."))
 
-/datum/sex_action/eye_sex/is_finished(mob/living/carbon/user, mob/living/carbon/target)
+/datum/sex_action/force_eye_sex/is_finished(mob/living/carbon/user, mob/living/carbon/target)
 	if(target.sexcon.finished_check())
 		return TRUE
 	return FALSE

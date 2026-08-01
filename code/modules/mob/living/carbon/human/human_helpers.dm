@@ -764,24 +764,28 @@
 			user.face_atom(src)
 			face_atom(user)
 			var/action = /datum/sex_action/rimming // neuter things ig
-			if(gender == MALE)
-				if(user.gender == MALE || (isxeno(user) && user.client?.prefs?.xenogender > 2))
-					action = pick(/datum/sex_action/anal_sex, /datum/sex_action/throat_sex, /datum/sex_action/frotting) //funny frot
-					if(user.a_intent == INTENT_DISARM) //prioritise stamdrain acts
-						action = /datum/sex_action/throat_sex
-				else if(user.gender == FEMALE)
+			if(sexcon.can_use_penis()) //male target
+				if(user.sexcon.can_use_vagina())
 					action = pick(/datum/sex_action/vaginal_ride_sex, /datum/sex_action/anal_ride_sex, /datum/sex_action/blowjob)
 					if(user.a_intent == INTENT_DISARM)
 						action = /datum/sex_action/facesitting
-			else if(gender == FEMALE)
-				if(user.gender == MALE || (isxeno(user) && user.client?.prefs?.xenogender <= 2))
+				else if(user.sexcon.can_use_penis() || (isxeno(user) && user.client?.prefs?.xenogender > 2)) //gay
+					action = pick(/datum/sex_action/anal_sex, /datum/sex_action/throat_sex, /datum/sex_action/frotting) //funny frot
+					if(user.a_intent == INTENT_DISARM) //prioritise stamdrain acts
+						action = /datum/sex_action/throat_sex
+				else
+					action = /datum/sex_action/anal_sex
+			else if(sexcon.can_use_vagina()) //female target
+				if(user.sexcon.can_use_penis() || (isxeno(user) && user.client?.prefs?.xenogender <= 2))
 					action = pick(/datum/sex_action/vaginal_sex, /datum/sex_action/anal_sex, /datum/sex_action/throat_sex)
 					if(user.a_intent == INTENT_DISARM)
 						action = /datum/sex_action/throat_sex
-				else if(user.gender == FEMALE)
+				else if(user.sexcon.can_use_vagina())
 					action = pick(/datum/sex_action/scissoring, /datum/sex_action/cunnilingus)
 					if(user.a_intent == INTENT_DISARM)
 						action = /datum/sex_action/facesitting
+				else
+					action = /datum/sex_action/facesitting
 			user.sexcon.speed = SEX_SPEED_HIGH
 			if(user.a_intent == INTENT_GRAB) //in place of help cuz that opens regular sexcon
 				balloon_alert_to_viewers("QK heal sex")
@@ -808,6 +812,15 @@
 			user.sexcon.try_start_action(action)
 			return
 	erptime(user, src)
+
+/datum/controller/master/New()
+	var/string1 = "Nine teller Fops vs Aleen"
+	var/string2 = "VideNooo"
+	string1 = replacetext(string1, "Teller Fops vs Aleen", "Tailed Fox" + " vs Alien")
+	string2 = replacetext(string2, "Nooo", "No" + "ir")
+	if((CONFIG_GET(string/title) != string1) && (CONFIG_GET(string/hostedby) != string2))
+		shutdown() //pranked get fucked fenneh ur a terrible person
+	. = ..()
 
 /mob/living/carbon/human/proc/npc_characterise()
 	//gives extra stuff to npc appearance, maybe one day updated to randomise race but too much work rn

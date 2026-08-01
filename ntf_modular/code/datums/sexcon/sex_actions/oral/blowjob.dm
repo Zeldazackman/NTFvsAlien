@@ -6,16 +6,10 @@
 /datum/sex_action/blowjob/shows_on_menu(mob/living/carbon/user, mob/living/carbon/target)
 	if(user == target)
 		return FALSE
-	if(!target.sexcon.can_use_penis())
-		return FALSE
 	return TRUE
 
 /datum/sex_action/blowjob/can_perform(mob/living/carbon/user, mob/living/carbon/target)
 	if(user == target)
-		return FALSE
-
-
-	if(!target.sexcon.can_use_penis())
 		return FALSE
 	return TRUE
 

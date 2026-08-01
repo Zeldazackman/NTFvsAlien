@@ -265,3 +265,9 @@
 
 /datum/sex_action/force_milk_tits
 	require_target_breasts = TRUE
+
+/datum/sex_action/eye_sex
+	require_user_penis = TRUE
+
+/datum/sex_action/force_eye_sex
+	require_target_penis = TRUE

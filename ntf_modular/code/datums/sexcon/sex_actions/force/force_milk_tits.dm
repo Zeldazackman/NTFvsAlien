@@ -5,8 +5,6 @@
 /datum/sex_action/force_milk_tits/shows_on_menu(mob/living/carbon/user, mob/living/carbon/target)
 	if(user == target)
 		return FALSE
-	if(!target.sexcon.can_use_breasts())
-		return FALSE
 	return TRUE
 
 /datum/sex_action/force_milk_tits/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
@@ -14,8 +12,6 @@
 	if(!istype(holding, /obj/item/reagent_containers/glass) && !istype(holding, /obj/item/reagent_containers/cup) && !istype(holding, /obj/item/reagent_containers/food/drinks))
 		return FALSE
 	if(user == target)
-		return FALSE
-	if(!target.sexcon.can_use_breasts())
 		return FALSE
 	return TRUE
 

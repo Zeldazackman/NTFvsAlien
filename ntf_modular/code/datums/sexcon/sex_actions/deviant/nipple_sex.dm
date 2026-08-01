@@ -3,22 +3,12 @@
 	stamina_cost = 1.0
 
 /datum/sex_action/nipple_sex/shows_on_menu(mob/living/carbon/user, mob/living/carbon/target)
-
 	if(user == target)
-		return FALSE
-	if(!target.sexcon.can_use_breasts())
-		return FALSE
-	if(!user.sexcon.can_use_penis())
 		return FALSE
 	return TRUE
 
 /datum/sex_action/nipple_sex/can_perform(mob/living/carbon/user, mob/living/carbon/target)
 	if(user == target)
-		return FALSE
-
-	if(!target.sexcon.can_use_breasts())
-		return FALSE
-	if(!user.sexcon.can_use_penis())
 		return FALSE
 	return TRUE
 

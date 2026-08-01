@@ -6,16 +6,14 @@
 /datum/sex_action/masturbate_penis_over/shows_on_menu(mob/living/carbon/user, mob/living/carbon/target)
 	if(user == target)
 		return FALSE
-	if(!user.sexcon.can_use_penis())
-		return FALSE
 	return TRUE
+
 
 /datum/sex_action/masturbate_penis_over/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
 		return FALSE
-	if(!user.sexcon.can_use_penis())
-		return FALSE
 	return TRUE
+
 
 /datum/sex_action/masturbate_penis_over/on_start(mob/living/carbon/user, mob/living/carbon/target)
 	..()

@@ -3,8 +3,7 @@
 	check_incapacitated = FALSE
 
 /datum/sex_action/tailpegging_vaginal/shows_on_menu(mob/living/carbon/user, mob/living/carbon/target)
-	if(!target.sexcon.can_use_vagina())
-		return FALSE
+
 	if(!user.sexcon.can_use_tail())
 		return TRUE
 	return FALSE
