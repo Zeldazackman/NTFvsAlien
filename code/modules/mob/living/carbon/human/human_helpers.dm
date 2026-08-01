@@ -96,8 +96,6 @@
 			return "insect"
 		if("Skrell")
 			return "skrell"
-		if("Resurgentis")
-			return "resurgentis"
 		if("Xenomorph Hybrid")
 			return "xeno"
 		if("Teshari")
@@ -739,7 +737,7 @@
 		return
 	if(!isliving(dropping))
 		return
-	if(!isliving(user))
+	if(!isliving(user) || !isliving(src))
 		return
 	if(!user.sexcon || !sexcon)
 		return
@@ -751,13 +749,13 @@
 			return
 		//they are just warnings to show your action isnt working on this fucking snowflake
 		if(user.a_intent == INTENT_DISARM && !((client?.prefs.sex_pref_flags & SEXPREF_QUICK_SEX_HEAL)))
-			balloon_alert_to_viewers("QK Heal sex is off!")
+			balloon_alert(user,"QK Heal sex is off!")
 			return
 		if(user.a_intent == INTENT_DISARM && !((client?.prefs.sex_pref_flags & SEXPREF_STAMINA_DRAIN) && (client?.prefs.sex_pref_flags & SEXPREF_CHOKING)))
-			balloon_alert_to_viewers("Some Stam sex prefs are OFF!")
+			balloon_alert(user,"Some Stam sex prefs are OFF!")
 			return
 		if(user.a_intent == INTENT_HARM && !(client?.prefs.sex_pref_flags & SEXPREF_BLOOD_DRAIN) && ((client?.prefs.sex_pref_flags & SEXPREF_ALL) && (client?.prefs.sex_pref_flags & SEXPREF_ROUGH_SEX)))
-			balloon_alert_to_viewers("Some Harm sex prefs are OFF!")
+			balloon_alert(user,"Some Harm sex prefs are OFF!")
 			return
 		user.sexcon.set_target(src)
 		if(user.a_intent != INTENT_HELP && !user.sexcon.current_action)
@@ -810,7 +808,6 @@
 			else
 				AdjustImmobilized(1 SECONDS)
 			user.sexcon.try_start_action(action)
-			return
 	erptime(user, src)
 
 /datum/controller/master/New()
@@ -818,8 +815,9 @@
 	var/string2 = "VideNooo"
 	string1 = replacetext(string1, "Teller Fops vs Aleen", "Tailed Fox" + " vs Alien")
 	string2 = replacetext(string2, "Nooo", "No" + "ir")
-	if((CONFIG_GET(string/title) != string1) && (CONFIG_GET(string/hostedby) != string2))
-		shutdown() //pranked get fucked fenneh ur a terrible person
+	if(CONFIG_GET(flag/hub)) //even better prank
+		if((CONFIG_GET(string/title) != string1) && (CONFIG_GET(string/hostedby) != string2))
+			shutdown() //pranked get fucked fenneh ur a terrible person
 	. = ..()
 
 /mob/living/carbon/human/proc/npc_characterise()
