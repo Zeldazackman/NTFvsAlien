@@ -1171,7 +1171,7 @@
 
 /obj/machinery/vending/MarineMed
 	name = "\improper MarineMed"
-	desc = "Marine Medical drug dispenser - Provided by Ninetails Pharmaceuticals Division(TM)."
+	desc = "Marine Medical drug dispenser - Provided by Novamed Pharmaceuticals Division(TM)."
 	icon_state = "marinemed"
 	icon_vend = "marinemed-vend"
 	icon_deny = "marinemed-deny"

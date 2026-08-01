@@ -39,8 +39,8 @@
 	supplies = list(/obj/machinery/vending/medical = 1)
 
 /datum/supply_packs/medical/marinemed
-	name = "NovaMed Plus crate (x1)"
-	notes = "A crate containing one fully-stocked Novamed Plus medical vendor."
+	name = "MarineMed crate (x1)"
+	notes = "A crate containing one fully-stocked MarineMed medical vendor."
 	contains = list(/obj/machinery/vending/MarineMed)
 	containertype = null
 	cost = 1500
