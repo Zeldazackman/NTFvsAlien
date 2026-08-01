@@ -30,5 +30,18 @@
 	notes = "A crate containing one fully-stocked Novamed Plus medical vendor."
 	contains = list(/obj/structure/largecrate/supply/medicine/medivend)
 	containertype = null
-	cost = 500
+	cost = 2500
+	access = ACCESS_MARINE_MEDBAY
+
+/obj/structure/largecrate/supply/medicine/marinemed
+	name = "\improper NovaMed Plus crate (x1)"
+	desc = "A crate containing one fully-stocked Novamed Plus medical vendor."
+	supplies = list(/obj/machinery/vending/medical = 1)
+
+/datum/supply_packs/medical/marinemed
+	name = "NovaMed Plus crate (x1)"
+	notes = "A crate containing one fully-stocked Novamed Plus medical vendor."
+	contains = list(/obj/machinery/vending/MarineMed)
+	containertype = null
+	cost = 1500
 	access = ACCESS_MARINE_MEDBAY
