@@ -6,5 +6,29 @@
 	/obj/item/explosive/grenade/chem_grenade/healing_foam,
 	/obj/item/explosive/grenade/chem_grenade/healing_foam,
 	)
-	cost = 300
+	cost = 200
+	access = ACCESS_MARINE_MEDBAY
+
+/datum/supply_packs/medical/optable_crate
+	name = "Medical operation crate (x1)"
+	notes = "A crate containing an operating table, two tanks of anasthetic, a surgery kit, some anasthetic injectors, and some space cleaner."
+	contains = list(/obj/structure/largecrate/supply/medicine/optable)
+	containertype = null
+	cost = 500
+	access = ACCESS_MARINE_MEDBAY
+
+/datum/supply_packs/medical/iv_crate
+	name = "IV stand crate (x3)"
+	notes = "A crate containing three IV stands."
+	contains = list(/obj/structure/largecrate/supply/medicine/iv)
+	cost = 50
+	containertype = null
+	access = null
+
+/datum/supply_packs/medical/medvend
+	name = "NovaMed Plus crate (x1)"
+	notes = "A crate containing one fully-stocked Novamed Plus medical vendor."
+	contains = list(/obj/structure/largecrate/supply/medicine/medivend)
+	containertype = null
+	cost = 500
 	access = ACCESS_MARINE_MEDBAY
