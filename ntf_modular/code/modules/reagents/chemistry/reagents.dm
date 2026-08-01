@@ -323,6 +323,7 @@
 		debuff_owner.emote("moan")
 		debuff_owner.visible_message(span_warning("[debuff_owner] cums on the floor!"), span_warning("You cum on the floor."), span_warning("You hear a splatter."), 5)
 		debuff_owner.balloon_alert(debuff_owner, "Orgasmed.")
+		debuff_owner.sexcon.set_arousal(0)
 	debuff_owner.adjustStaminaLoss(75)
 
 	if(flags & SEXPREF_APHRO)
