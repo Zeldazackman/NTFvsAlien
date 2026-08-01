@@ -95,7 +95,7 @@
 	return
 
 /obj/item/reagent_containers/food/snacks/req_pizza/get_export_value()
-	return list(10, 0)
+	return list(60, 30)
 
 /// Return TRUE if the relation between the two factions are bad enough that a bounty is on the human_to_sell head
 /proc/can_sell_human_body(mob/living/carbon/human/human_to_sell, seller_faction)
