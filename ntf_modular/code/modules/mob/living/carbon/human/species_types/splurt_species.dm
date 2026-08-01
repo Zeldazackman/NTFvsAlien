@@ -450,9 +450,23 @@
 	)
 	default_language_holder = /datum/language_holder/xeno
 	burn_mod = 1.05
+	brute_mod = 0.95
 	var/list/action_list = list(
 		/datum/action/ability/activable/xenohybrid_tail_sting,
 	)
+	species_description = "<br /><br /><b>Lore</b>:<br /><br /> \
+	Result of few years of totally ethical xenomorph research of collective corporate research. They are hybirdisation of humanoid species and xenomorphs.<br /><br /> \
+	<b>Physiology</b>:<br /><br /> \
+	They are much like humans but are slightly more suspectible to burn damage, but they can use their tail to sting their enemies with aphrotoxin or neurotoxin and can use their physiology to speak in the xenomorph language.<br /><br /> \
+	<b>Psychology</b>:<br /><br /> \
+	Xenomorph hybrids are a complex species that were man-made, they usually behave similiar to xenomorphs but take their faction for their 'hive'. But it varies, they could be acting more human instead.<br /><br /> \
+	<br /><br /><b>Mechanics:</b><br /><br /> \
+	-Xenomorph-<br /><br /> \
+	Xenomorph hybrids can use their hybrid physique to do a variety of maneuvers, from biting to tail swing that injects aphrotoxin or neurotoxin.<br /><br /> \
+	-Exoskeleton-<br /><br /> \
+	Xenomorph hybrids have a tough exoskeleton that provides them with some brute protection.<br /><br /> \
+	-Fire Weakness-<br /><br /> \
+	Xenomorph hybrids have a slight weakness to fire damage."
 
 /datum/species/xenohybrid/on_species_gain(mob/living/carbon/human/H, datum/species/old_species)
 	. = ..()
