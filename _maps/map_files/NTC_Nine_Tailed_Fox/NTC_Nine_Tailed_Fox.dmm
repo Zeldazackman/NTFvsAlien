@@ -3921,9 +3921,9 @@
 	},
 /area/mainship/squads/general)
 "djm" = (
-/obj/item/ammo_casing/bullet,
-/turf/open/floor/mainship/cargo/arrow{
-	dir = 1
+/obj/structure/target_stake/occupied,
+/turf/open/floor/mainship/black{
+	dir = 4
 	},
 /area/mainship/shipboard/firing_range)
 "dju" = (
@@ -7882,11 +7882,8 @@
 	},
 /area/mainship/medical/lower_medical)
 "gvU" = (
-/obj/structure/table/reinforced,
-/obj/machinery/camera/autoname/mainship{
-	dir = 8
-	},
-/turf/open/floor/mainship/black/full,
+/obj/structure/target_stake/occupied/alien,
+/turf/open/floor/mainship,
 /area/mainship/shipboard/firing_range)
 "gvX" = (
 /turf/closed/wall/mainship,
@@ -12035,14 +12032,6 @@
 /area/mainship/hallways/aft_hallway{
 	name = "Ship Floor 3 Hallways"
 	})
-"jLh" = (
-/obj/item/ammo_casing/bullet{
-	pixel_y = -8
-	},
-/turf/open/floor/mainship/cargo/arrow{
-	dir = 1
-	},
-/area/mainship/shipboard/firing_range)
 "jLv" = (
 /turf/closed/wall/mainship,
 /area/mainship/hallways/workerprep)
@@ -13252,7 +13241,6 @@
 /turf/open/floor/mainship/floor,
 /area/mainship/groundhq/ntf/shipboard/brig)
 "kHI" = (
-/obj/structure/target_stake/occupied,
 /turf/open/floor/mainship/black{
 	dir = 5
 	},
@@ -13553,7 +13541,7 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/dorm2)
 "kQD" = (
-/obj/structure/target_stake/occupied/alien,
+/obj/structure/target_stake/occupied/syndicate,
 /turf/open/floor/mainship/black{
 	dir = 1
 	},
@@ -25225,10 +25213,6 @@
 /turf/open/floor/mainship/floor,
 /area/mainship/living/pilotbunks)
 "uhP" = (
-/obj/item/ammo_casing/bullet{
-	pixel_x = -7;
-	pixel_y = 4
-	},
 /turf/open/floor/mainship/cargo/arrow{
 	dir = 1
 	},
@@ -26227,10 +26211,6 @@
 	dir = 8
 	},
 /area/mainship/groundhq/ntf/hallways/gardens)
-"uYU" = (
-/obj/structure/target_stake/occupied/syndicate,
-/turf/open/floor/mainship,
-/area/mainship/shipboard/firing_range)
 "uZn" = (
 /obj/machinery/suit_storage_unit/carbon_unit,
 /turf/open/floor/mainship/mono,
@@ -27357,10 +27337,10 @@
 	},
 /area/mainship/command/cic)
 "weq" = (
-/obj/structure/target_stake/occupied,
-/turf/open/floor/mainship/black{
-	dir = 8
+/obj/machinery/camera/autoname/mainship{
+	dir = 4
 	},
+/turf/open/floor/mainship/black/full,
 /area/mainship/shipboard/firing_range)
 "weL" = (
 /obj/structure/cable,
@@ -50568,7 +50548,7 @@ qgZ
 aMa
 vve
 nVN
-weq
+hPr
 hPr
 hPr
 icA
@@ -50578,7 +50558,7 @@ hPr
 hPr
 jAV
 pJE
-sbX
+weq
 sbX
 vDv
 flh
@@ -50807,16 +50787,16 @@ aMa
 vve
 qtL
 dDT
-uYU
 dDT
 dDT
 dDT
 dDT
+gvU
 dDT
 dDT
 sNA
 wWW
-jLh
+uhP
 sbX
 wWW
 flh
@@ -50927,15 +50907,15 @@ vve
 kHI
 bNX
 bNX
-bNX
+djm
 bNX
 bNX
 bNX
 bNX
 bNX
 bEM
-gvU
-djm
+wWW
+uhP
 vre
 fTX
 flh
