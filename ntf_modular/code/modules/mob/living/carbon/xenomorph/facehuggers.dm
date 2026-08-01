@@ -52,7 +52,7 @@
 			span_notice("You hear squelching."), vision_distance = 1)
 		else
 			wearer.visible_message(span_danger("[src] implants [wearer] with something!"),
-			span_lovebold("[src] implants you with something!"),
+			span_danger("[src] implants you with something!"),
 			span_notice("You hear something."), vision_distance = 1)
 		if(source && issamexenohive(source))
 			implant_embryo(wearer, target_hole, 1, source = source)
@@ -66,7 +66,7 @@
 			wearer.reagents.add_reagent(/datum/reagent/consumable/nutriment/cum/xeno, 10)
 		else
 			wearer.visible_message(span_danger("[src] injects [wearer] with a corrosive substance!"),
-			span_lovebold("[src] injects you with a corrosive substance! It burns!"),
+			span_danger("[src] injects you with a corrosive substance! It burns!"),
 			span_notice("You hear injecting."), vision_distance = 1)
 			wearer.reagents.add_reagent(/datum/reagent/consumable/nutriment/cum/xeno/sfw, 10)
 	if(!wearer.client || flags & SEXPREF_FACEHUGGER_LEWD)
@@ -232,12 +232,13 @@
 		wearer.visible_message(span_loveextreme("[src] slams it's [cock_flavor] ballsdeep into [wearer]'s [target_hole] and it's balls start to throb strongly, pumping thick globs of something inside!"),span_loveextreme("[src] slams it's [cock_flavor] ballsdeep into your [target_hole] and it's balls start to throb strongly, pumping thick globs of something inside!"), vision_distance = 1)
 		wearer.visible_message(span_lovebold("[injected_chemical_type.name] gas explodes out of [wearer]'s [target_hole], around [src]'s [cock_flavor]!"),span_lovebold("[injected_chemical_type.name] gas explodes out of your [target_hole], around [src]'s [cock_flavor]!"), vision_distance = 1)
 	else
-		wearer.visible_message(span_danger("[injected_chemical_type.name] gas vents out of [src]!"),span_lovebold("[injected_chemical_type.name] gas vents out of [src]!"), vision_distance = 1)
+		wearer.visible_message(span_danger("[injected_chemical_type.name] gas vents out of [src]!"),span_danger("[injected_chemical_type.name] gas vents out of [src]!"), vision_distance = 1)
 	var/smoke_choice = hugger_smoke_list[injected_chemical_type]
-	var/datum/effect_system/smoke_spread/smoke = new smoke_choice(get_turf(wearer))
-	smoke.set_up(1, get_turf(wearer), 2)
-	playsound(src, 'sound/effects/airhiss.ogg', 25)
-	smoke.start()
+	if(smoke_choice)
+		var/datum/effect_system/smoke_spread/smoke = new smoke_choice(get_turf(wearer))
+		smoke.set_up(1, get_turf(wearer), 2)
+		playsound(src, 'sound/effects/airhiss.ogg', 25)
+		smoke.start()
 	if(wearer.reagents.get_reagent_amount(injected_chemical_type) < 50)
 		wearer.reagents.add_reagent(injected_chemical_type, amount_injected, no_overdose = TRUE)
 
@@ -248,7 +249,7 @@
 			wearer.visible_message(span_love("[src] slams it's [cock_flavor] ballsdeep into [wearer]'s [target_hole]! Leaking slightly..!"),span_love("[src] slams it's [cock_flavor] ballsdeep into your [target_hole]! Leaking slightly..!"), vision_distance = 1)
 			wearer.sexcon.adjust_arousal(5)
 		else
-			wearer.visible_message(span_danger("[src] injects [wearer] with something!"),span_love("[src] injects you with something!"), vision_distance = 1)
+			wearer.visible_message(span_danger("[src] injects [wearer] with something!"),span_danger("[src] injects you with something!"), vision_distance = 1)
 			wearer.adjustOxyLoss(1)
 		wearer.reagents.add_reagent(injected_chemical_type, 1)
 	if(!wearer.client || flags & SEXPREF_FACEHUGGER_LEWD)
@@ -271,7 +272,7 @@
 			wearer.visible_message(span_love("[src] slams it's [cock_flavor] ballsdeep into [wearer] and seemingly writhes it around [wearer.p_their()] [target_hole]! Rubbing pheromones inside..."),span_love("[src] slams it's [cock_flavor] ballsdeep into your [target_hole] writhes it around! You feel hotter..."), vision_distance = 1)
 			wearer.sexcon.adjust_arousal(5)
 		else
-			wearer.visible_message(span_danger("[src] injects [wearer] with something!"),span_love("[src] injects you with something!"), vision_distance = 1)
+			wearer.visible_message(span_danger("[src] injects [wearer] with something!"),span_danger("[src] injects you with something!"), vision_distance = 1)
 			wearer.adjustOxyLoss(1)
 		wearer.reagents.add_reagent(injected_chemical_type, 1)
 	if(!wearer.client || flags & SEXPREF_FACEHUGGER_LEWD)
@@ -323,7 +324,7 @@
 	else
 		injected_chemical_type = /datum/reagent/toxin/acid/potent_xenocum/sfw
 		wearer.reagents.add_reagent(/datum/reagent/consumable/nutriment/cum/xeno/sfw, 10)
-		wearer.visible_message(span_danger("acid explodes out of [src]!"),span_lovebold("acid explodes out of [src]!"), vision_distance = 1)
+		wearer.visible_message(span_danger("acid explodes out of [src]!"), vision_distance = 1)
 	playsound(loc, 'sound/bullets/acid_impact1.ogg', 50, 1)
 	for(var/turf/acid_tile AS in RANGE_TURFS(1, loc))
 		xenomorph_spray(acid_tile, 2 SECONDS, 5, null, TRUE)
@@ -372,7 +373,7 @@
 			wearer.reagents.add_reagent(/datum/reagent/consumable/nutriment/cum/xeno/resin, 2)
 			wearer.sexcon.adjust_arousal(5)
 		else
-			wearer.visible_message(span_love("[src] covers [wearer] in resin!"),span_love("[src] covers you in resin!"), vision_distance = 1)
+			wearer.visible_message(span_danger("[src] covers [wearer] in resin!"),span_danger("[src] covers you in resin!"), vision_distance = 1)
 			wearer.reagents.add_reagent(/datum/reagent/consumable/nutriment/cum/xeno/resin/sfw, 2)
 			wearer.adjustOxyLoss(1)
 	if(!wearer.client || flags & SEXPREF_FACEHUGGER_LEWD)
@@ -406,6 +407,7 @@ GLOBAL_LIST_INIT(hugger_to_latching, list(
 		/obj/item/clothing/mask/facehugger/combat/chem_injector/aphrotoxin = /obj/item/clothing/mask/facehugger/latching/chemical/aphrotox,
 		/obj/item/clothing/mask/facehugger/combat/acid = /obj/item/clothing/mask/facehugger/latching/chemical/acid,
 		/obj/item/clothing/mask/facehugger/combat/resin = /obj/item/clothing/mask/facehugger/latching/chemical/resin,
+		/obj/item/clothing/mask/facehugger/combat/chem_injector/tricordrazine = /obj/item/clothing/mask/facehugger/latching/chemical/tricordrazine,
 		))
 
 /datum/action/ability/xeno_action/lay_egg/alternate_action_activate()
@@ -576,3 +578,27 @@ GLOBAL_LIST_INIT(hugger_to_latching, list(
 //immortal
 /obj/item/clothing/mask/facehugger/latching/chemical/medical/check_lifecycle()
 	return FALSE
+
+/obj/item/clothing/mask/facehugger/combat/chem_injector/tricordrazine
+	name = "tricordrazine hugger"
+	injected_chemical_type = /datum/reagent/medicine/tricordrazine
+	filtercolor = COLOR_REAGENT_TRICORDRAZINE
+
+/obj/item/clothing/mask/facehugger/latching/chemical/tricordrazine
+	name = "evolved tricordrazine facehugger"
+	desc = "It has some sort of weird jelly-like floppy thick alien cock with MASSIVE balls storing some <b>gray</b> glowing chemical... It can also fix overdose of tricordrazine."
+	cock_flavor = "jelly-like cock"
+	injected_chemical_type = /datum/reagent/medicine/tricordrazine
+	filter_color = COLOR_REAGENT_TRICORDRAZINE
+
+/obj/item/clothing/mask/facehugger/latching/chemical/tricordrazine/special_effect()
+	. = ..()
+	if(wearer.reagents.get_reagent_amount(injected_chemical_type) > REAGENTS_OVERDOSE)
+		wearer.reagents.remove_all_type(injected_chemical_type)
+	var/flags = wearer?.client.prefs.sex_pref_flags
+	if(!wearer.client || flags & SEXPREF_FACEHUGGER_LEWD)
+		wearer.visible_message(span_love("[src] ferociously slams it's [cock_flavor] ballsdeep into [wearer]'s [target_hole], expelling excess chemicals..!"),span_love("[src] ferociously slams it's [cock_flavor] ballsdeep into your [target_hole], expelling excess chemicals ..!"), vision_distance = 1)
+		wearer.sexcon.adjust_arousal(5)
+	else
+		wearer.visible_message(span_notice("[src] filters something out of [wearer]'s blood!"),span_notice("[src] filters something out of your blood!"), vision_distance = 1)
+		wearer.adjustOxyLoss(1)

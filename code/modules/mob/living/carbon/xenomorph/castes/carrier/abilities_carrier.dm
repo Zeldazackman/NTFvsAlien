@@ -5,6 +5,7 @@
 #define RESIN_HUGGER "resin hugger"
 #define OZELOMELYN_HUGGER "ozelomelyn hugger"
 #define APHROTOXIN_HUGGER "aphrotoxin hugger"
+#define TRICORDRAZINE_HUGGER "tricordrazine hugger"
 
 //List of huggie types
 GLOBAL_LIST_INIT(hugger_type_list, list(
@@ -13,6 +14,7 @@ GLOBAL_LIST_INIT(hugger_type_list, list(
 		/obj/item/clothing/mask/facehugger/combat/chem_injector/neuro,
 		/obj/item/clothing/mask/facehugger/combat/chem_injector/ozelomelyn,
 		/obj/item/clothing/mask/facehugger/combat/chem_injector/aphrotoxin,
+		/obj/item/clothing/mask/facehugger/combat/chem_injector/tricordrazine,
 		/obj/item/clothing/mask/facehugger/combat/acid,
 		/obj/item/clothing/mask/facehugger/combat/resin,
 		))
@@ -23,6 +25,7 @@ GLOBAL_LIST_INIT(hugger_to_ammo, list(
 	/obj/item/clothing/mask/facehugger/combat/chem_injector/neuro = /datum/ammo/xeno/hugger/neuro,
 	/obj/item/clothing/mask/facehugger/combat/chem_injector/ozelomelyn = /datum/ammo/xeno/hugger/ozelomelyn,
 	/obj/item/clothing/mask/facehugger/combat/chem_injector/aphrotoxin = /datum/ammo/xeno/hugger/aphrotoxin,
+	/obj/item/clothing/mask/facehugger/combat/chem_injector/tricordrazine = /datum/ammo/xeno/hugger/tricordrazine,
 	/obj/item/clothing/mask/facehugger/combat/acid = /datum/ammo/xeno/hugger/acid,
 	/obj/item/clothing/mask/facehugger/combat/resin = /datum/ammo/xeno/hugger/resin,
 ))
@@ -34,6 +37,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	NEURO_HUGGER = image('icons/Xeno/actions/carrier.dmi', icon_state = NEURO_HUGGER),
 	OZELOMELYN_HUGGER = image('icons/Xeno/actions/carrier.dmi', icon_state = OZELOMELYN_HUGGER),
 	APHROTOXIN_HUGGER = image('ntf_modular/icons/Xeno/actions.dmi', icon_state = APHROTOXIN_HUGGER),
+	TRICORDRAZINE_HUGGER = image('ntf_modular/icons/Xeno/actions.dmi', icon_state = TRICORDRAZINE_HUGGER),
 	ACID_HUGGER = image('icons/Xeno/actions/carrier.dmi', icon_state = ACID_HUGGER),
 	RESIN_HUGGER = image('icons/Xeno/actions/carrier.dmi', icon_state = RESIN_HUGGER),
 ))
