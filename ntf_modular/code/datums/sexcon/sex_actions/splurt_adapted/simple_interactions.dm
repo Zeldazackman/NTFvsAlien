@@ -59,6 +59,9 @@
 	var/perform_sound_volume = 20
 	var/replaced_by_base_action = FALSE
 	var/quick_heal_requires_target_pref = TRUE
+	var/penetrative = FALSE
+	var/user_penetrative = FALSE
+	var/target_hole = null
 
 /datum/sex_action/simple_interaction/shows_on_menu(mob/living/carbon/user, mob/living/carbon/target)
 	if(replaced_by_base_action)
@@ -136,6 +139,18 @@
 	var/message = sexcon_interaction_message(finish_message, user, target)
 	if(message)
 		user.visible_message(span_warning(message))
+	if(isxeno(user) && penetrative) //assumed male xeno -> human
+		var/mob/living/carbon/xenomorph/X = user
+		X.impregify(target, target_hole)
+	if(isxeno(user) && user_penetrative) //rider xeno -> human
+		var/mob/living/carbon/xenomorph/X = user
+		X.xenoimpregify(target)
+	if(isxeno(target) && penetrative) //human male -> xeno
+		var/mob/living/carbon/xenomorph/X = target
+		X.xenoimpregify(target)
+	if(isxeno(target) && user_penetrative) //human female -> xeno
+		var/mob/living/carbon/xenomorph/X = user
+		X.impregify(user, target_hole)
 
 /datum/sex_action/simple_interaction/can_heal(mob/living/carbon/user, mob/living/carbon/target, mob/living/action_target)
 	if(quick_heal_requires_target_pref \
@@ -265,6 +280,8 @@
 	finish_message = "%USER% climbs off %TARGET%."
 	user_arousal = 10
 	target_arousal = 10
+	user_penetrative = TRUE
+	target_hole = HOLE_VAGINA
 
 /datum/sex_action/simple_interaction/mount_anus
 	name = "Mount (Anus)"
@@ -277,6 +294,8 @@
 	user_arousal = 8
 	target_arousal = 10
 	user_pain = 3
+	user_penetrative = TRUE
+	target_hole = HOLE_ASS
 
 /datum/sex_action/simple_interaction/mount_face
 	name = "Mount Face"
@@ -313,6 +332,8 @@
 	finish_message = "%USER% pulls away from %TARGET%'s belly."
 	user_arousal = 8
 	target_arousal = 3
+	penetrative = TRUE
+	target_hole = HOLE_BELLY
 
 /datum/sex_action/simple_interaction/nuzzle_belly
 	name = "Nuzzle Belly"
@@ -619,6 +640,8 @@
 	user_arousal = 10
 	target_arousal = 12
 	target_pain = 2
+	penetrative = TRUE
+	target_hole = HOLE_VAGINA
 
 /datum/sex_action/simple_interaction/knot_anal
 	name = "Anal Knotfuck"
@@ -630,6 +653,8 @@
 	user_arousal = 10
 	target_arousal = 10
 	target_pain = 5
+	penetrative = TRUE
+	target_hole = HOLE_ASS
 
 /datum/sex_action/simple_interaction/knot_oral
 	name = "Oral Knotfuck"
@@ -641,6 +666,8 @@
 	user_arousal = 10
 	target_arousal = 4
 	target_pain = 3
+	penetrative = TRUE
+	target_hole = HOLE_MOUTH
 
 /datum/sex_action/simple_interaction/knotride_vagina
 	name = "Knotride (Vagina)"
@@ -653,6 +680,8 @@
 	user_arousal = 12
 	target_arousal = 10
 	user_pain = 2
+	user_penetrative = TRUE
+	target_hole = HOLE_VAGINA
 
 /datum/sex_action/simple_interaction/knotride_anal
 	name = "Knotride (Anus)"
@@ -664,6 +693,8 @@
 	user_arousal = 10
 	target_arousal = 10
 	user_pain = 5
+	user_penetrative = TRUE
+	target_hole = HOLE_ASS
 
 /datum/sex_action/simple_interaction/flare_vagina
 	name = "Flarefuck"
@@ -676,6 +707,8 @@
 	user_arousal = 9
 	target_arousal = 10
 	target_pain = 1
+	penetrative = TRUE
+	target_hole = HOLE_VAGINA
 
 /datum/sex_action/simple_interaction/flare_anal
 	name = "Anal Flarefuck"
@@ -687,6 +720,8 @@
 	user_arousal = 9
 	target_arousal = 9
 	target_pain = 3
+	penetrative = TRUE
+	target_hole = HOLE_ASS
 
 /datum/sex_action/simple_interaction/flare_oral
 	name = "Oral Flarefuck"
@@ -698,6 +733,8 @@
 	user_arousal = 9
 	target_arousal = 4
 	target_pain = 1
+	penetrative = TRUE
+	target_hole = HOLE_MOUTH
 
 /datum/sex_action/simple_interaction/flareride_vagina
 	name = "Flareride (Vagina)"
@@ -710,6 +747,8 @@
 	user_arousal = 10
 	target_arousal = 9
 	user_pain = 1
+	user_penetrative = TRUE
+	target_hole = HOLE_VAGINA
 
 /datum/sex_action/simple_interaction/flareride_anal
 	name = "Flareride (Anus)"
@@ -721,6 +760,8 @@
 	user_arousal = 9
 	target_arousal = 9
 	user_pain = 3
+	user_penetrative = TRUE
+	target_hole = HOLE_ASS
 
 #undef SEXCON_CUTE_INTERACTION_COLOR
 #undef SEXCON_CUTE_INTERACTION_PRIORITY
