@@ -37,7 +37,7 @@
 
 
 /mob/new_player/proc/check_playerpolls()
-	if(CONFIG_GET(flag/amia_whitelist_enabled) && client)
+	if(client && CONFIG_GET(flag/amia_whitelist_enabled) && !WHITELIST_CHECK(client))
 		return FALSE
 	var/output
 	if (SSdbcore.Connect())
