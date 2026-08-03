@@ -813,7 +813,7 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 	return FALSE
 
 /datum/game_mode/proc/CanLateSpawn(mob/new_player/NP, datum/job/job)
-	if(!WHITELIST_CHECK(NP.client))
+	if(CONFIG_GET(flag/amia_whitelist_enabled) && NP.client)
 		WHITELIST_MESSAGE(NP.client)
 		return FALSE
 	if(!isnewplayer(NP))

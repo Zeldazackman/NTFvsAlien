@@ -38,7 +38,7 @@
 /datum/action/observer_action/take_ssd_mob/action_activate()
 	var/mob/dead/observer/dead_owner = owner
 
-	if(!WHITELIST_CHECK(owner.client))
+	if(CONFIG_GET(flag/amia_whitelist_enabled) && owner.client)
 		WHITELIST_MESSAGE(owner.client)
 		return
 

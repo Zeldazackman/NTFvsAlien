@@ -104,7 +104,7 @@ SUBSYSTEM_DEF(job)
 	if(!job.player_old_enough(player.client))
 		JobDebug("AR player not old enough, Player: [player], Job:[job.title]")
 		return FALSE
-	if(!WHITELIST_CHECK(player.client))
+	if(CONFIG_GET(flag/amia_whitelist_enabled) && player.client)
 		WHITELIST_MESSAGE(player.client)
 		JobDebug("AR player not whitelisted for the server, Player: [player], Job:[job.title]")
 		return FALSE
