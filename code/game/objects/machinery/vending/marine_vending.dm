@@ -2594,6 +2594,7 @@
 		/obj/item/stack/cable_coil = -1,
 		/obj/item/tool/crowbar = -1,
 		/obj/item/tool/weldingtool = -1,
+		/obj/item/tool/surgery/solderingtool = 3,
 		/obj/item/tool/wirecutters = -1,
 		/obj/item/tool/wrench = -1,
 		/obj/item/tool/screwdriver = -1,

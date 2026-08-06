@@ -45,3 +45,9 @@
 	containertype = null
 	cost = 1500
 	access = ACCESS_MARINE_MEDBAY
+
+/datum/supply_packs/medical/soldering_tool
+	name = "Soldering tool"
+	notes = "contains 1 soldering tool for repair robots."
+	contains = list(/obj/item/tool/surgery/solderingtool)
+	cost = 30
