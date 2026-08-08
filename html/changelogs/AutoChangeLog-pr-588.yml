@@ -1,0 +1,5 @@
+author: "CaputCapital"
+delete-after: True
+changes:
+  - rscadd: "Gleichseitig-16 Flashpoints Winter map to the list"
+  - rscadd: "Additional sprites for G16F"
