@@ -159,7 +159,7 @@ GLOBAL_VAR(common_report) //Contains common part of roundend report
 	SHOULD_CALL_PARENT(TRUE)
 	if(custom_dnr_time)
 		GLOB.time_before_dnr = custom_dnr_time
-	SSpoints.prepare_supply_packs_list(CHECK_BITFIELD(round_type_flags, MODE_HUMAN_ONLY))
+	SSpoints.prepare_supply_packs_list(CHECK_BITFIELD(round_type_flags, MODE_HUMAN_ONLY|MODE_ENCOUNTER))
 	for(var/faction in human_factions)
 		SSpoints.dropship_points[faction] = 0
 		SSpoints.supply_points[faction] = 0
@@ -170,6 +170,7 @@ GLOBAL_VAR(common_report) //Contains common part of roundend report
 	create_characters()
 	spawn_characters()
 	transfer_characters()
+/*
 	SSpoints.prepare_supply_packs_list(CHECK_BITFIELD(round_type_flags, MODE_HUMAN_ONLY|MODE_ENCOUNTER))
 	SSpoints.dropship_points = 0
 	SSpoints.supply_points[FACTION_TERRAGOV] = 0
@@ -177,6 +178,7 @@ GLOBAL_VAR(common_report) //Contains common part of roundend report
 	for(var/hivenum in GLOB.hive_datums)
 		var/datum/hive_status/hive = GLOB.hive_datums[hivenum]
 		hive.purchases.setup_upgrades()
+*/
 	return TRUE
 
 ///Gamemode setup run after the game has started
