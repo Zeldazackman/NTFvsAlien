@@ -1,0 +1,4 @@
+author: "CaputCapital"
+delete-after: True
+changes:
+  - bugfix: "remapped smes layouts for V8E"
