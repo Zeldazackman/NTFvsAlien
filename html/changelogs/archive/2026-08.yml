@@ -8,3 +8,6 @@
   CaputCapital:
   - rscadd: Gleichseitig-16 Flashpoints Winter map to the list
   - rscadd: Additional sprites for G16F
+2026-08-15:
+  CaputCapital:
+  - bugfix: remapped smes layouts for V8E
